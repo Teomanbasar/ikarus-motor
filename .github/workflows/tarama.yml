@@ -11,6 +11,9 @@ concurrency:
   group: tarama
   cancel-in-progress: false
 
+permissions:
+  contents: write
+
 jobs:
   tara:
     runs-on: ubuntu-latest
@@ -51,4 +54,15 @@ jobs:
           git push
 
       - name: Telegram bildirimi
-        run: python -m ikarus.bildirim
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then python -m ikarus.bildirim; else python -m ikarus.bildirim --zorla; fi
+
+      - name: Sohbet numarasini kaydet
+        run: |
+          if [ -f data/telegram_chat.txt ] && [ -n "$(git status --porcelain data/telegram_chat.txt)" ]; then
+            git config user.name "ikarus-bot"
+            git config user.email "ikarus-bot@users.noreply.github.com"
+            git add data/telegram_chat.txt
+            git commit -m "Telegram sohbet numarasi"
+            git push
+          fi

@@ -2,7 +2,7 @@
 
 Ayarlar (ortam degiskeni ya da ayarlar.txt):
   telegram_token  : @BotFather'in verdigi bot anahtari
-  telegram_chat   : mesajin gidecegi sohbet numarasi (python -m ikarus.bildirim --chat ile bulunur)
+  telegram_chat   : sohbet numarasi; verilmezse bota son yazan kisi otomatik bulunur ve data/telegram_chat.txt'ye kaydedilir
   app_url         : uygulamanin adresi (mesajin altina link olarak eklenir)
 Kullanim:
   python -m ikarus.bildirim          # cikti/sonuclar.json'dan mesaj gonder
@@ -90,20 +90,31 @@ def mesaj(res: dict, tf: str = "D") -> str | None:
     return "\n".join(lines)[:4000]
 
 
+def _chat_bul(token: str) -> str | None:
+    """Bota en son yazan kisinin sohbet numarasi (getUpdates). Bulunursa data/telegram_chat.txt'ye yazar."""
+    r = requests.get(API.format(token, "getUpdates"), timeout=30).json()
+    msgs = [u["message"] for u in r.get("result", []) if "message" in u and u["message"]["chat"]["type"] == "private"]
+    if not msgs:
+        return None
+    chat = str(msgs[-1]["chat"]["id"])
+    (D.DATA / "telegram_chat.txt").write_text(chat + "\n", encoding="utf-8")
+    return chat
+
+
 def main(argv):
-    token, chat = D.ayar("telegram_token"), D.ayar("telegram_chat")
+    token = D.ayar("telegram_token")
     if not token:
         print("telegram_token yok, bildirim atlandi.")
         return
-    if "--chat" in argv:
-        r = requests.get(API.format(token, "getUpdates"), timeout=30).json()
-        ids = {(u["message"]["chat"]["id"], u["message"]["chat"].get("first_name", ""))
-               for u in r.get("result", []) if "message" in u}
-        print("Sohbetler:", ids or "yok (once bota Telegram'dan bir mesaj yaz)")
-        return
-    if not chat:
-        print("telegram_chat yok, bildirim atlandi.")
-        return
+    f = D.DATA / "telegram_chat.txt"
+    chat = D.ayar("telegram_chat") or (f.read_text(encoding="utf-8").strip() if f.exists() else None)
+    if "--chat" in argv or not chat:
+        chat = _chat_bul(token)
+        if not chat:
+            print("Sohbet numarasi bulunamadi: Telegram'da bota bir mesaj yaz, sonra tekrar calistir.")
+            return
+        print(f"Sohbet numarasi bulundu ve kaydedildi: {chat}")
+        _send(token, chat, "IKARUS bildirimleri bağlandı ✅ Her iş günü taramadan sonra özet buraya gelecek.")
     if "--test" in argv:
         _send(token, chat, "IKARUS bildirimleri çalışıyor ✅")
         return
@@ -113,7 +124,7 @@ def main(argv):
         print(f"Son veri {res['piyasa']['xu100_tarih']}, bugun {bugun}: borsa kapali ya da veri gelmedi, bildirim yok.")
         return
     _send(token, chat, mesaj(res, "D"))
-    if date.today().weekday() == 4:  # cuma: haftalik ozet de
+    if date.fromisoformat(res["piyasa"]["xu100_tarih"]).weekday() == 4 or "--haftalik" in argv:
         _send(token, chat, mesaj(res, "W"))
     print("Telegram mesaji gonderildi.")
 
