@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "40 15 * * 1-5"   # hafta ici 18:40 (Turkiye saati = UTC+3)
   workflow_dispatch: {}        # Actions sekmesinden elle de calistirilabilir
+  push:
+    paths: ["tetik.txt"]       # bu dosya degisince de calisir (uzaktan tetikleme)
 
 concurrency:
   group: tarama
