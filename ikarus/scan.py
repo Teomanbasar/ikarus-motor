@@ -23,6 +23,21 @@ OUT = D.ROOT / "cikti"
 SIG_ORDER = {"ALINABILIR": 0, "TOPLANIYOR": 1, "YAKIN": 2, "DAGITIM": 3, "BEKLE": 4}
 
 
+def _temiz(x):
+    """JSON'da gecersiz NaN/Infinity yerine null."""
+    if isinstance(x, dict):
+        return {k: _temiz(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [_temiz(v) for v in x]
+    if isinstance(x, (float, np.floating)):
+        return None if not np.isfinite(x) else float(x)
+    if isinstance(x, np.integer):
+        return int(x)
+    if isinstance(x, np.bool_):
+        return bool(x)
+    return x
+
+
 def scan_one(df: pd.DataFrame, xu: pd.Series, m3: pd.Series) -> dict | None:
     res = {}
     for tf in ("D", "W"):
@@ -103,7 +118,7 @@ def run(tickers: list[str] | None = None) -> dict:
         "not": "Yatirim tavsiyesi degildir. Sinyal kurali 19 Zippo tablosundan cikarilmis adaydir.",
     }
     OUT.mkdir(exist_ok=True)
-    (OUT / "sonuclar.json").write_text(json.dumps(result, ensure_ascii=False, separators=(",", ":"), default=float), encoding="utf-8")
+    (OUT / "sonuclar.json").write_text(json.dumps(_temiz(result), ensure_ascii=False, separators=(",", ":"), allow_nan=False), encoding="utf-8")
     flat = []
     for s in stocks:
         for tf in ("D", "W"):
