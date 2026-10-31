@@ -1,0 +1,52 @@
+name: IKARUS gunluk tarama
+
+on:
+  schedule:
+    - cron: "40 15 * * 1-5"   # hafta ici 18:40 (Turkiye saati = UTC+3)
+  workflow_dispatch: {}        # Actions sekmesinden elle de calistirilabilir
+
+concurrency:
+  group: tarama
+  cancel-in-progress: false
+
+jobs:
+  tara:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      TZ: Europe/Istanbul
+      IKARUS_EVDS_KEY: ${{ secrets.EVDS_KEY }}
+      IKARUS_TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      IKARUS_TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
+      IKARUS_APP_URL: ${{ vars.APP_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Paketler
+        run: pip install -r requirements.txt
+
+      - name: Tarama
+        run: python -m ikarus.scan
+
+      - name: Sonuclari uygulamaya gonder
+        env:
+          APP_TOKEN: ${{ secrets.APP_TOKEN }}
+          APP_REPO: ${{ vars.APP_REPO }}
+        run: |
+          git clone --depth 1 "https://x-access-token:${APP_TOKEN}@github.com/${APP_REPO}.git" app
+          mkdir -p app/data
+          cp cikti/sonuclar.json app/data/sonuclar.json
+          cd app
+          git config user.name "ikarus-bot"
+          git config user.email "ikarus-bot@users.noreply.github.com"
+          git add data/sonuclar.json
+          git commit -m "Tarama $(date +%Y-%m-%d)" || echo "degisiklik yok"
+          git push
+
+      - name: Telegram bildirimi
+        run: python -m ikarus.bildirim

@@ -1,0 +1,3 @@
+# Bu dosyanin adini ayarlar.txt yap ve degerleri doldur.
+# EVDS API anahtari: evds3.tcmb.gov.tr > Giris / Uye ol > Profil > API Anahtari
+evds_key=
