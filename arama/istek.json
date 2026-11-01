@@ -1,5 +1,6 @@
 [
- {"ad": "V6.2 ALINABILIR (12 Eyl 13:00 paylasim)", "tarih": "2026-09-11", "dip": 3805.88, "tepe": 26161.88, "pct": 7.0},
- {"ad": "V6.2 ALINABILIR ayni, gun ici ihtimali", "tarih": "2026-09-14", "dip": 3805.88, "tepe": 26161.88, "pct": 7.0},
- {"ad": "V6.x BEKLE (8 Eyl 22:06 paylasim)", "tarih": "2026-09-08", "dip": 80.5, "tepe": 228.17, "pct": 2.0}
+ {"hisse": "KONYA", "tf": "W", "tarih": "2026-09-11", "zippo": "V6.2 pct7 mem10 comp8.0 rec7.8(vel7.25)UU macro10 rs7.3(vel4.86)UU mtf7 hacim2.68 top52.4 5yildiz ALINABILIR"},
+ {"hisse": "FROTO", "tf": "W", "tarih": "2026-09-08", "zippo": "pct2 mem10 comp4.9 rec3.0UU macro7 rs0.1-> mtf2 hacim0.56 top34.8 3yildiz BEKLE"},
+ {"hisse": "KONYA", "tf": "D", "tarih": "2026-09-11", "zippo": "(gunluk karsilastirma icin)"},
+ {"hisse": "FROTO", "tf": "D", "tarih": "2026-09-08", "zippo": "(gunluk karsilastirma icin)"}
 ]

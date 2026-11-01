@@ -23,6 +23,19 @@ def main():
     m3 = D.m3()
     out = []
     for q in istek:
+        if "hisse" in q:  # detay: bilinen hissenin o tarihteki tablosu ve ara degerler
+            t, tf, day = q["hisse"], q.get("tf", "D"), pd.Timestamp(q["tarih"])
+            d = px[t][px[t].index <= day]
+            r = E.compute(d, xu[xu.index <= day], m3, tf, ha=q.get("ha", False))
+            k = ["close", "percentile", "memory", "compression", "recovery", "rec_pct3", "rs", "rs_pct5",
+                 "mtf", "hacim", "macro_sc", "toplam", "eksik", "chg1", "d_stop", "sinyal", "dip", "tepe", "stop"]
+            out.append(f"=== DETAY {t} {tf} {q['tarih']}  Zippo: {q.get('zippo', '')}")
+            out.append(r[k].tail(8).round(3).to_string())
+            for n in (1, 2, 3, 5):
+                out.append(f"  rec-rec[{n}]={r['recovery'].iloc[-1]-r['recovery'].iloc[-1-n]:.2f}  "
+                           f"rs-rs[{n}]={r['rs'].iloc[-1]-r['rs'].iloc[-1-n]:.2f}")
+            out.append("")
+            continue
         day = pd.Timestamp(q["tarih"])
         rows = []
         for t, df in px.items():
