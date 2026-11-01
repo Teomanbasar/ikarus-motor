@@ -13,6 +13,7 @@ import pickle
 import time
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -67,6 +68,26 @@ def _norm(df: pd.DataFrame) -> pd.DataFrame:
     return df.dropna(subset=["close"])
 
 
+def fix_splits(df: pd.DataFrame, esik: float = 0.25) -> pd.DataFrame:
+    """Yahoo bazi bedelsiz sermaye artirimlarini (bolunme) duzeltmiyor (or. CCOLA Agustos 2024).
+    BIST'te gunluk fiyat limiti +-%10 oldugu icin %25'ten buyuk tek gunluk degisim bolunmedir:
+    onceki barlari acilis/onceki kapanis oraniyla geriye dogru duzeltir."""
+    A = {k: df[k].to_numpy(dtype=float).copy() for k in ("open", "high", "low", "close", "volume")}
+    c, o = A["close"], A["open"]
+    for i in range(len(c) - 1, 0, -1):
+        if not (c[i - 1] > 0 and np.isfinite(c[i - 1]) and np.isfinite(c[i])):
+            continue
+        if abs(c[i] / c[i - 1] - 1) > esik:
+            f = o[i] / c[i - 1] if o[i] > 0 and abs(o[i] / c[i - 1] - 1) > esik else c[i] / c[i - 1]
+            for k in ("open", "high", "low", "close"):
+                A[k][:i] *= f
+            A["volume"][:i] /= f
+    out = df.copy()
+    for k, v in A.items():
+        out[k] = v
+    return out
+
+
 def prices(tickers: list[str], start: str = START, chunk: int = 80, refresh: bool = True) -> dict[str, pd.DataFrame]:
     """Gunluk OHLCV (temettu duzeltmeli). Donus: {ticker: DataFrame}."""
     import yfinance as yf
@@ -85,7 +106,7 @@ def prices(tickers: list[str], start: str = START, chunk: int = 80, refresh: boo
         for t, s in zip(part, sy):
             try:
                 df = raw[s] if len(sy) > 1 else raw
-                df = _norm(df)
+                df = fix_splits(_norm(df))
                 if len(df) > 50:
                     out[t] = df
             except Exception:
@@ -99,7 +120,7 @@ def prices(tickers: list[str], start: str = START, chunk: int = 80, refresh: boo
                               group_by="ticker", threads=False, progress=False)
             for t in part:
                 try:
-                    df = _norm(raw[t + ".IS"] if len(part) > 1 else raw)
+                    df = fix_splits(_norm(raw[t + ".IS"] if len(part) > 1 else raw))
                     if len(df) > 50:
                         out[t] = df
                 except Exception:
