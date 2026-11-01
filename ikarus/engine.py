@@ -184,6 +184,8 @@ DEFAULTS = dict(
     pct_n=200, stop_w=55, mem_n=15, ucuz=20.0, rec_n=50, comp_n=200, comp_from="2024-01-01",
     rs_n_d=60, rs_n_w=20, mtf_n=200, macro_n=250, macro_hi=60.0, macro_lo=40.0,
     vol_n=20, kir_esik=3.5, kal5=50.0,
+    # sinyal deneme ayarlari (varsayilan = v4.6 aday): hacim penceresi, dusus gun sayisi/esigi, faz kalicilik
+    sig_kv=1, sig_kd=1, sig_thr=0.5, sig_m=1,
 )
 
 MACRO_SC = {"RISK-ON": 10.0, "GENISLEME": 7.0, "TOPARLANMA": 6.0, "NOTR": 5.0, "DARALMA": 3.0}
@@ -322,11 +324,13 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
     c2 = rec >= 6
     c3 = total >= 36
     c4 = mtf <= 50
-    c5 = vr >= 1.2
+    vr_s = pd.Series(vr).rolling(P["sig_kv"], min_periods=1).max().values if P["sig_kv"] > 1 else vr
+    c5 = vr_s >= 1.2
     c6 = np.isin(macro, ["GENISLEME", "RISK-ON"])
     nMiss = (~c1).astype(int) + (~c2) + (~c3) + (~c4) + (~c5) + (~c6)
 
     chg1 = 100 * (adjC / shift(adjC, 1) - 1)
+    chgk = 100 * (adjC / shift(adjC, P["sig_kd"]) - 1) if P["sig_kd"] > 1 else chg1
     prevStp = lowest(shift(adjC, 1), stop_n - 1)
     dStop = 100 * (adjC / prevStp - 1)
 
@@ -336,12 +340,18 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
             sig[i] = "ALINABILIR"
         elif not c1[i]:
             sig[i] = "BEKLE"
-        elif chg1[i] < -0.5:
+        elif chgk[i] < -P["sig_thr"]:
             sig[i] = "BEKLE" if dStop[i] <= -P["kir_esik"] else "DAGITIM"
         elif nMiss[i] <= 2:
             sig[i] = "TOPLANIYOR" if rsL[i] >= 1 else "YAKIN"
         else:
             sig[i] = "BEKLE"
+    m = P["sig_m"]
+    if m > 1:  # faz: yeni sinyal m bar surmeden degistirme (ALINABILIR ve ucuz bolgeden cikis hemen)
+        base = sig.copy()
+        for i in range(1, len(c)):
+            if not (base[i] == "ALINABILIR" or not c1[i] or all(base[j] == base[i] for j in range(max(0, i - m + 1), i + 1))):
+                sig[i] = sig[i - 1]
 
     ucuz = pct <= P["ucuz"]
     macroTxt = np.array([m + (" + UCUZ" if u and m == "GENISLEME" else "") for m, u in zip(macro, ucuz)], dtype=object)

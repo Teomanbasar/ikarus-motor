@@ -16,6 +16,11 @@ BAS = "2023-07-01"   # haftalik 200 bar MTF + 200 gun degerleme icin yeterli gec
 
 
 def main():
+    import json
+    try:
+        varyant = json.loads((R / "istek.txt").read_text(encoding="utf-8"))
+    except Exception:
+        varyant = {}
     lst = D.bist_list()
     px = D.prices(lst["ticker"].tolist())
     xu = D.xu100()
@@ -25,7 +30,7 @@ def main():
         if len(df) < 400:
             continue
         try:
-            r = E.compute(df, xu, m3, "D")
+            r = E.compute(df, xu, m3, "D", **varyant)
         except Exception as e:
             print("atlandi", t, e)
             continue
@@ -55,6 +60,8 @@ def main():
             if len(a):
                 s.append(f"{h}g: ort {a.mean():+6.2f} medyan {a.median():+6.2f} kazanma %{100*(a>0).mean():4.1f}")
         L.append(" | ".join(s))
+    L.append(f"Varyant: {varyant or 'v4.6 aday (varsayilan)'}")
+    L.append(f"Sinyal degisen gun orani: %{100*(A['sinyal'] != A['onceki']).mean():.1f}")
     L.append(f"Donem {A.index.min():%Y-%m-%d} - {A.index.max():%Y-%m-%d}, {A['t'].nunique()} hisse. Getiriler BIST100'e gore fazla getiri (%).")
     L.append("\n== Tum gunler (referans)")
     ozet("hepsi", A)
