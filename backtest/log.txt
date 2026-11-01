@@ -1,5 +1,3 @@
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/utils.py:587: Pandas4Warning: The inplace keyword in DataFrame.sort_index is deprecated and will be removed in a future version (PDEP-8).
-See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   dividends.sort_index(inplace=True)
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/utils.py:514: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
@@ -35,6 +33,8 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 400 MGROS
 500 SASA
 600 VSNMD
+Varyant: {'sig_kv': 5, 'sig_thr': 2}
+Sinyal degisen gun orani: %24.4
 Donem 2023-07-03 - 2026-10-30, 579 hisse. Getiriler BIST100'e gore fazla getiri (%).
 
 == Tum gunler (referans)
@@ -52,25 +52,25 @@ pct  80-90    | n=27132 | 20g: ort  +0.24 medyan  -2.20 kazanma %43.7 | 60g: ort
 pct  90-100.1 | n=58300 | 20g: ort  +2.68 medyan  -0.62 kazanma %48.5 | 60g: ort  +6.34 medyan  -3.43 kazanma %45.4 | 120g: ort +12.11 medyan  -7.58 kazanma %43.4
 
 == Sinyaller (her gun, sinyal o gun neyse)
-ALINABILIR  | n=3993 | 20g: ort  +0.62 medyan  -1.97 kazanma %42.5 | 60g: ort  -0.01 medyan  -5.86 kazanma %36.4 | 120g: ort  +1.19 medyan -10.11 kazanma %34.6
-TOPLANIYOR  | n=17764 | 20g: ort  +0.54 medyan  -2.21 kazanma %41.6 | 60g: ort  +1.48 medyan  -4.12 kazanma %40.8 | 120g: ort  +5.91 medyan  -6.11 kazanma %40.2
-YAKIN       | n=36945 | 20g: ort  +0.09 medyan  -1.60 kazanma %42.9 | 60g: ort  +1.55 medyan  -3.05 kazanma %42.3 | 120g: ort  +5.01 medyan  -5.79 kazanma %40.0
-DAGITIM     | n=97988 | 20g: ort  -0.70 medyan  -2.21 kazanma %40.4 | 60g: ort  +0.60 medyan  -4.00 kazanma %40.7 | 120g: ort  +3.79 medyan  -7.02 kazanma %38.9
-BEKLE       | n=278200 | 20g: ort  +0.69 medyan  -1.82 kazanma %44.2 | 60g: ort  +2.59 medyan  -4.41 kazanma %42.1 | 120g: ort  +6.12 medyan  -8.40 kazanma %40.2
+ALINABILIR  | n=7799 | 20g: ort  +1.02 medyan  -1.27 kazanma %45.1 | 60g: ort  +0.06 medyan  -5.83 kazanma %36.6 | 120g: ort  +1.63 medyan  -9.21 kazanma %35.3
+TOPLANIYOR  | n=24478 | 20g: ort  +0.33 medyan  -2.11 kazanma %41.7 | 60g: ort  +1.52 medyan  -3.83 kazanma %41.4 | 120g: ort  +6.09 medyan  -5.65 kazanma %41.1
+YAKIN       | n=71621 | 20g: ort  -0.13 medyan  -1.81 kazanma %41.9 | 60g: ort  +1.41 medyan  -3.19 kazanma %41.9 | 120g: ort  +5.56 medyan  -5.60 kazanma %40.5
+DAGITIM     | n=46462 | 20g: ort  -0.97 medyan  -2.39 kazanma %40.3 | 60g: ort  +0.49 medyan  -4.07 kazanma %41.0 | 120g: ort  +3.28 medyan  -7.41 kazanma %38.6
+BEKLE       | n=284530 | 20g: ort  +0.62 medyan  -1.87 kazanma %43.9 | 60g: ort  +2.46 medyan  -4.49 kazanma %41.9 | 120g: ort  +5.85 medyan  -8.56 kazanma %39.9
 
 == Sinyal BASLANGICLARI (bir onceki gun farkli sinyaldeydi)
-ALINABILIR  | n=2511 | 20g: ort  +0.89 medyan  -1.58 kazanma %43.7 | 60g: ort  +0.58 medyan  -5.44 kazanma %36.7 | 120g: ort  +3.35 medyan  -8.27 kazanma %36.6
-TOPLANIYOR  | n=11852 | 20g: ort  +0.74 medyan  -2.31 kazanma %41.3 | 60g: ort  +1.52 medyan  -4.27 kazanma %40.6 | 120g: ort  +5.92 medyan  -5.94 kazanma %40.2
-YAKIN       | n=22339 | 20g: ort  -0.11 medyan  -1.77 kazanma %42.1 | 60g: ort  +1.32 medyan  -3.28 kazanma %41.8 | 120g: ort  +5.63 medyan  -5.68 kazanma %40.2
-DAGITIM     | n=57415 | 20g: ort  -0.43 medyan  -2.07 kazanma %41.0 | 60g: ort  +1.06 medyan  -3.81 kazanma %41.1 | 120g: ort  +4.40 medyan  -6.82 kazanma %39.2
+ALINABILIR  | n=2736 | 20g: ort  +1.11 medyan  -1.30 kazanma %44.4 | 60g: ort  +1.48 medyan  -4.71 kazanma %38.0 | 120g: ort  +3.94 medyan  -8.21 kazanma %36.8
+TOPLANIYOR  | n=12933 | 20g: ort  +0.63 medyan  -2.26 kazanma %41.3 | 60g: ort  +1.67 medyan  -3.98 kazanma %41.1 | 120g: ort  +6.17 medyan  -5.54 kazanma %40.8
+YAKIN       | n=25837 | 20g: ort  -0.35 medyan  -1.92 kazanma %41.8 | 60g: ort  +1.11 medyan  -3.44 kazanma %41.3 | 120g: ort  +5.02 medyan  -5.65 kazanma %40.6
+DAGITIM     | n=36948 | 20g: ort  -0.63 medyan  -2.24 kazanma %40.8 | 60g: ort  +0.83 medyan  -3.99 kazanma %41.0 | 120g: ort  +3.76 medyan  -7.16 kazanma %38.9
 
 == Eksik sart sayisi (ucuz bolgede, pct<=35)
-eksik 0 | n=3993 | 20g: ort  +0.62 medyan  -1.97 kazanma %42.5 | 60g: ort  -0.01 medyan  -5.86 kazanma %36.4 | 120g: ort  +1.19 medyan -10.11 kazanma %34.6
-eksik 1 | n=23363 | 20g: ort  +0.35 medyan  -1.52 kazanma %43.8 | 60g: ort  +1.08 medyan  -3.97 kazanma %40.3 | 120g: ort  +5.53 medyan  -6.29 kazanma %39.5
-eksik 2 | n=69452 | 20g: ort  -0.33 medyan  -2.07 kazanma %41.0 | 60g: ort  +1.12 medyan  -3.28 kazanma %42.1 | 120g: ort  +4.78 medyan  -5.72 kazanma %40.2
-eksik 3 | n=90786 | 20g: ort  -0.87 medyan  -2.28 kazanma %40.0 | 60g: ort  +0.57 medyan  -4.30 kazanma %39.9 | 120g: ort  +4.92 medyan  -6.75 kazanma %39.7
-eksik 4 | n=23613 | 20g: ort  +0.36 medyan  -1.31 kazanma %44.7 | 60g: ort  +2.59 medyan  -2.59 kazanma %44.4 | 120g: ort  +0.96 medyan  -8.72 kazanma %36.6
-eksik 5 | n=3832 | 20g: ort  +0.94 medyan  -2.02 kazanma %41.8 | 60g: ort  +4.14 medyan  -3.70 kazanma %41.7 | 120g: ort  +2.37 medyan -11.31 kazanma %36.0
+eksik 0 | n=7799 | 20g: ort  +1.02 medyan  -1.27 kazanma %45.1 | 60g: ort  +0.06 medyan  -5.83 kazanma %36.6 | 120g: ort  +1.63 medyan  -9.21 kazanma %35.3
+eksik 1 | n=43129 | 20g: ort  +0.23 medyan  -1.73 kazanma %42.7 | 60g: ort  +1.40 medyan  -3.38 kazanma %41.7 | 120g: ort  +5.64 medyan  -5.73 kazanma %40.2
+eksik 2 | n=81205 | 20g: ort  -0.65 medyan  -2.22 kazanma %40.5 | 60g: ort  +1.03 medyan  -3.51 kazanma %41.6 | 120g: ort  +5.27 medyan  -5.81 kazanma %40.6
+eksik 3 | n=65016 | 20g: ort  -0.83 medyan  -2.21 kazanma %40.3 | 60g: ort  +0.71 medyan  -4.26 kazanma %40.1 | 120g: ort  +3.76 medyan  -7.35 kazanma %38.7
+eksik 4 | n=15578 | 20g: ort  +0.39 medyan  -1.39 kazanma %44.3 | 60g: ort  +2.13 medyan  -2.92 kazanma %43.9 | 120g: ort  +0.22 medyan  -9.83 kazanma %35.5
+eksik 5 | n=2312 | 20g: ort  +1.51 medyan  -1.55 kazanma %43.2 | 60g: ort  +4.87 medyan  -2.70 kazanma %43.8 | 120g: ort  +3.49 medyan  -9.37 kazanma %37.4
 eksik 6 | n=0
 
 == Yillara gore: pct<20 vs hepsi (60g)
