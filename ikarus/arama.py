@@ -23,6 +23,15 @@ def main():
     m3 = D.m3()
     out = []
     for q in istek:
+        if "veri" in q:  # arastirma icin fiyat verisini depoya yaz
+            vd = R / "veri"
+            vd.mkdir(exist_ok=True)
+            for t in q["veri"]:
+                if t in px:
+                    px[t].round(4).to_csv(vd / f"{t}.csv")
+            xu.round(2).to_csv(vd / "XU100.csv")
+            out.append(f"veri yazildi: {len(q['veri'])} hisse")
+            continue
         if "hisse" in q:  # detay: bilinen hissenin o tarihteki tablosu ve ara degerler
             t, tf, day = q["hisse"], q.get("tf", "D"), pd.Timestamp(q["tarih"])
             d = px[t][px[t].index <= day]
