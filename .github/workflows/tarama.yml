@@ -54,15 +54,21 @@ jobs:
           git push
 
       - name: Telegram bildirimi
+        if: always()
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then python -m ikarus.bildirim; else python -m ikarus.bildirim --zorla; fi
+          echo "zaman: $(date '+%Y-%m-%d %H:%M')  olay: ${{ github.event_name }}" > data/son_bildirim.log
+          if [ -n "$IKARUS_TELEGRAM_TOKEN" ]; then echo "TELEGRAM_TOKEN: var (${#IKARUS_TELEGRAM_TOKEN} karakter)" >> data/son_bildirim.log; else echo "TELEGRAM_TOKEN: YOK" >> data/son_bildirim.log; fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARG=""; else ARG="--zorla"; fi
+          python -m ikarus.bildirim $ARG >> data/son_bildirim.log 2>&1 || echo "HATA kodu $?" >> data/son_bildirim.log
+          cat data/son_bildirim.log
 
-      - name: Sohbet numarasini kaydet
+      - name: Sohbet numarasi ve bildirim kaydini sakla
+        if: always()
         run: |
-          if [ -f data/telegram_chat.txt ] && [ -n "$(git status --porcelain data/telegram_chat.txt)" ]; then
-            git config user.name "ikarus-bot"
-            git config user.email "ikarus-bot@users.noreply.github.com"
-            git add data/telegram_chat.txt
-            git commit -m "Telegram sohbet numarasi"
-            git push
-          fi
+          git config user.name "ikarus-bot"
+          git config user.email "ikarus-bot@users.noreply.github.com"
+          git add data/son_bildirim.log
+          [ -f data/telegram_chat.txt ] && git add data/telegram_chat.txt
+          git commit -m "Bildirim kaydi" || exit 0
+          git pull --rebase -q || true
+          git push
