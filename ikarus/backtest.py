@@ -44,15 +44,21 @@ def islemler(t, r, c, x, maxb=120, cikis="faz"):
     return out
 
 
-def main():
+def main(varyant=None):
     import json
-    try:
-        varyant = json.loads((R / "istek.txt").read_text(encoding="utf-8"))
-    except Exception:
-        varyant = {}
+    if varyant is None:
+        try:
+            varyant = json.loads((R / "istek.txt").read_text(encoding="utf-8"))
+        except Exception:
+            varyant = {}
+        if isinstance(varyant, list):  # birden fazla varyant: sirayla, tek is
+            for v in varyant:
+                main(dict(v))
+            return
+    global H
+    H = (20, 60, 120)
     etiket = varyant.pop("etiket", "v46")
     tf = varyant.pop("tf", "D"); ha = varyant.pop("ha", False); cikis = varyant.pop("cikis", "faz")
-    global H
     if tf == "W":
         H = (4, 12, 26)
     lst = D.bist_list()
