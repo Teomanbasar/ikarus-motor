@@ -1,5 +1,7 @@
 name: Temel analiz verisi
 on:
+  schedule:
+    - cron: "23 3 * * 6"   # cumartesi 06:23 TR: tum BIST temel verisi
   workflow_dispatch: {}
   push:
     paths: ["temel/istek.txt"]
@@ -14,6 +16,7 @@ jobs:
     timeout-minutes: 120
     env:
       TZ: Europe/Istanbul
+      IKARUS_EVDS_KEY: ${{ secrets.EVDS_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -21,7 +24,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m ikarus.temel $(cat temel/istek.txt) 2>&1 | tail -60 | tee temel/log.txt || true
+      - run: python -m ikarus.temel $( [ "${{ github.event_name }}" = schedule ] && echo hesapla || cat temel/istek.txt ) 2>&1 | tail -60 | tee temel/log.txt || true
       - run: |
           git config user.name "ikarus-bot"
           git config user.email "ikarus-bot@users.noreply.github.com"

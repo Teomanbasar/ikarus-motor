@@ -57,6 +57,33 @@ def scan_one(df: pd.DataFrame, xu: pd.Series, m3: pd.Series) -> dict | None:
     return res
 
 
+def _temel_ekle(stocks):
+    """temel/temel.json (haftalik temel analiz isi) varsa her hisseye 'temel' karti ekler.
+    F/K ve PD/DD guncel fiyatla burada hesaplanir (sermaye x fiyat = piyasa degeri; BIST'te nominal 1 TL)."""
+    f = D.ROOT / "temel" / "temel.json"
+    if not f.exists():
+        return
+    try:
+        T = json.loads(f.read_text(encoding="utf-8"))["hisseler"]
+    except Exception as e:
+        print("[uyari] temel.json okunamadi:", e)
+        return
+    for s in stocks:
+        k = T.get(s["t"])
+        if not k or "maddeler" not in k:
+            continue
+        k = dict(k)
+        ham = k.pop("ham", {}) or {}
+        fiyat = (s.get("D") or {}).get("fiyat")
+        sermaye, nk, oz = ham.get("sermaye"), ham.get("net_kar"), ham.get("ozkaynak")
+        if fiyat and sermaye and sermaye > 0:
+            pd_ = fiyat * sermaye
+            k["piyasa_degeri"] = pd_
+            k["fk"] = pd_ / nk if nk and nk > 0 else None
+            k["pddd"] = pd_ / oz if oz and oz > 0 else None
+        s["temel"] = k
+
+
 def run(tickers: list[str] | None = None) -> dict:
     t0 = time.time()
     lst = D.bist_list()
@@ -84,6 +111,8 @@ def run(tickers: list[str] | None = None) -> dict:
             continue
         stocks.append({"t": t, "ad": info.at[t, "ad"] if t in info.index else t,
                        "sektor": info.at[t, "sektor"] if t in info.index else "", **r})
+
+    _temel_ekle(stocks)
 
     # piyasa ozeti (makro etiketi BIST100'den, tum hisselerde ayni)
     m3e = E.m3_effective(m3)
