@@ -103,6 +103,20 @@ def _m3_oran(m3, d1, d0):
     return a / b if a and b else None
 
 
+def _bilanco_donemi(tab, d):
+    """Bilancosu dolu en yakin donem (d ya da oncesi, en fazla 2 ceyrek geri). Is Yatirim'da bazi
+    ceyreklerin bilancosu bos gelebiliyor (ornek AKBNK 2025/9)."""
+    y, m = d
+    for _ in range(3):
+        v = tab.get((y, m), {})
+        if (v.get("1BL") or v.get("1Z") or 0) > 0:
+            return (y, m)
+        m -= 3
+        if m <= 0:
+            m += 12; y -= 1
+    return d
+
+
 def _bol(a, b):
     try:
         return a / b if a is not None and b not in (None, 0) else None
@@ -119,9 +133,11 @@ def skor(grup, tab, m3):
     if d1 not in tab:
         return {"donem": f"{y}/{m:02d}", "not": "gecen yilin ayni donemi yok"}
     T = lambda kod, dd=d: _ttm(tab, dd, kod)
-    B = lambda kod, dd=d: tab.get(dd, {}).get(kod)
-    m3c = _m3_oran(m3, d, d1)
-    out = {"donem": f"{y}/{m:02d}", "tip": "banka" if grup == "UFRS" else "sanayi", "maddeler": []}
+    bd, bd1 = _bilanco_donemi(tab, d), _bilanco_donemi(tab, d1)
+    B = lambda kod, dd=d: tab.get(bd if dd == d else bd1 if dd == d1 else dd, {}).get(kod)
+    m3c = _m3_oran(m3, bd, bd1)  # bilanco kalemleri (ozkaynak) icin
+    m3c_akim = _m3_oran(m3, d, d1)  # gelir kalemleri (son 4 ceyrek) icin
+    out = {"donem": f"{y}/{m:02d}", "bilanco_karsilastirma": f"{bd1[0]}/{bd1[1]:02d}", "tip": "banka" if grup == "UFRS" else "sanayi", "maddeler": []}
 
     def madde(ad, deger, gecti, aciklama, bicim="tl"):
         out["maddeler"].append({"ad": ad, "deger": deger, "gecti": None if gecti is None else bool(gecti), "aciklama": aciklama, "bicim": bicim})
@@ -137,11 +153,11 @@ def skor(grup, tab, m3):
         madde("Özkaynak M3'ten hızlı büyüdü", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
               "Özkaynak bir yılda para arzından (M3) hızlı büyüdü mü? Değer, M3'e göre reel büyüme.", "yuzde")
         g2 = _bol(nfg, nfg1)
-        madde("Net faiz geliri M3'ten hızlı büyüdü", None if g2 is None or not m3c else g2 / m3c - 1, None if g2 is None or not m3c or (nfg1 or 0) <= 0 else g2 > m3c,
+        madde("Net faiz geliri M3'ten hızlı büyüdü", None if g2 is None or not m3c_akim else g2 / m3c_akim - 1, None if g2 is None or not m3c_akim or (nfg1 or 0) <= 0 else g2 > m3c_akim,
               "Bankanın ana işi olan faiz geliri M3'ten hızlı büyüdü mü? Değer reel büyüme.", "yuzde")
         madde("ROE en az %30", roe, None if roe is None else roe >= 0.30, "Yüksek faiz ortamında özkaynak kârlılığı mevduat getirisine yakın mı?", "yuzde")
         out["oranlar"] = {"roe": roe, "ozkaynak_reel_buyume": None if g is None or not m3c else g / m3c - 1,
-                          "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c or nk1 <= 0 else (nk / nk1) / m3c - 1}
+                          "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c_akim or nk1 <= 0 else (nk / nk1) / m3c_akim - 1}
     else:
         nk, nk1 = T("3Z"), T("3Z", d1)
         nak, nak1 = T("4C"), T("4C", d1)
@@ -177,7 +193,7 @@ def skor(grup, tab, m3):
         madde("Brüt kâr marjı arttı", marj, None if marj is None or marj1 is None else marj > marj1, "Brüt kâr / satışlar geçen yıldan yüksek mi? Fiyatlama gücünün işareti.", "yuzde")
         out["oranlar"] = {"roe": roe, "net_borc_favok": nbf, "cari_oran": cari, "brut_marj": marj,
                           "ozkaynak_reel_buyume": None if g is None or not m3c else g / m3c - 1,
-                          "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c or nk1 <= 0 else (nk / nk1) / m3c - 1,
+                          "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c_akim or nk1 <= 0 else (nk / nk1) / m3c_akim - 1,
                           "serbest_nakit": T("4CB")}
     out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA")}
     gec = [x["gecti"] for x in out["maddeler"]]
