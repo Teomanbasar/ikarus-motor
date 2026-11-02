@@ -1,1 +1,1 @@
-{"etiket":"v46"}
+{"skor": true}

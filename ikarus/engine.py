@@ -143,11 +143,11 @@ def to_weekly(df: pd.DataFrame) -> pd.DataFrame:
     return w
 
 
-def m3_effective(m3: pd.Series) -> pd.Series:
+def m3_effective(m3: pd.Series, ek_gun: int = 0) -> pd.Series:
     """TradingView'de ECONOMICS:TRM3'un ay damgali degeri (ornek: 1 Eylul) gunluk/haftalik
     grafikte ancak o ay KAPANINCA (1 Ekim) devreye girer. Seriyi bu gecerlilik tarihine tasir."""
     m3 = m3.dropna().sort_index()
-    idx = pd.DatetimeIndex(m3.index).to_period("M").to_timestamp() + pd.offsets.MonthBegin(1)
+    idx = pd.DatetimeIndex(m3.index).to_period("M").to_timestamp() + pd.offsets.MonthBegin(1) + pd.Timedelta(days=ek_gun)
     return pd.Series(m3.to_numpy(float), index=idx)
 
 
@@ -188,6 +188,7 @@ DEFAULTS = dict(
     sig_kv=1, sig_kd=1, sig_thr=0.5, sig_m=1,
     sig_mod="v46",  # "faz": faz motoru (deneme)
     faz_m=3, faz_kr=1,
+    m3_gecikme_gun=0,  # backtest icin: M3'u TCMB'nin gercek yayim tarihinden sonra kullan (or. 25 gun)
 )
 
 MACRO_SC = {"RISK-ON": 10.0, "GENISLEME": 7.0, "TOPARLANMA": 6.0, "NOTR": 5.0, "DARALMA": 3.0}
@@ -215,7 +216,7 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
     daily = daily.sort_index()
     daily = daily[~daily.index.duplicated(keep="last")].dropna(subset=["close"])
     xu100 = xu100.sort_index().dropna()
-    m3 = m3_effective(m3)
+    m3 = m3_effective(m3, P["m3_gecikme_gun"])
 
     wk_raw = to_weekly(daily)
     wk = heikin_ashi(wk_raw) if ha else wk_raw
