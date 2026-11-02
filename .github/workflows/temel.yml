@@ -1,0 +1,30 @@
+name: Temel analiz verisi
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ["temel/istek.txt"]
+permissions:
+  contents: write
+concurrency:
+  group: temel
+  cancel-in-progress: false
+jobs:
+  temel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      TZ: Europe/Istanbul
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m ikarus.temel $(cat temel/istek.txt) 2>&1 | tail -60 | tee temel/log.txt || true
+      - run: |
+          git config user.name "ikarus-bot"
+          git config user.email "ikarus-bot@users.noreply.github.com"
+          git add temel/
+          git commit -m "Temel veri" || exit 0
+          for k in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep 5; done
