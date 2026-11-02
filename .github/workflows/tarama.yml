@@ -2,7 +2,10 @@ name: IKARUS gunluk tarama
 
 on:
   schedule:
-    - cron: "40 15 * * 1-5"   # hafta ici 18:40 (Turkiye saati = UTC+3)
+    - cron: "43 15 * * 1-5"   # hafta ici 18:43 (Turkiye saati = UTC+3)
+    - cron: "17 16 * * 1-5"   # yedek 19:17 (GitHub zamanlamayi bazen atliyor/geciktiriyor)
+    - cron: "11 17 * * 1-5"   # yedek 20:11
+    - cron: "37 18 * * 1-5"   # yedek 21:37
   workflow_dispatch: {}        # Actions sekmesinden elle de calistirilabilir
   push:
     paths: ["tetik.txt"]       # bu dosya degisince de calisir (uzaktan tetikleme)
@@ -27,18 +30,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Bugun zaten tarandi mi (yedek zamanlamalar icin)
+        id: kontrol
+        env:
+          APP_REPO: ${{ vars.APP_REPO }}
+        run: |
+          OLUS=$(curl -s "https://raw.githubusercontent.com/${APP_REPO}/main/data/sonuclar.json?t=$(date +%s)" | python -c "import sys,json; print(json.load(sys.stdin).get('olusturma',''))" 2>/dev/null || echo "")
+          echo "son tarama: $OLUS"
+          if [ "${{ github.event_name }}" = "schedule" ] && [[ "$OLUS" == "$(date +%Y-%m-%d) 1[89]:"* || "$OLUS" == "$(date +%Y-%m-%d) 2"* ]]; then
+            echo "atla=1" >> $GITHUB_OUTPUT
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.kontrol.outputs.atla != '1'
         with:
           python-version: "3.12"
           cache: pip
 
       - name: Paketler
+        if: steps.kontrol.outputs.atla != '1'
         run: pip install -r requirements.txt
 
       - name: Tarama
+        if: steps.kontrol.outputs.atla != '1'
         run: python -m ikarus.scan
 
       - name: Sonuclari uygulamaya gonder
+        if: steps.kontrol.outputs.atla != '1'
         env:
           APP_TOKEN: ${{ secrets.APP_TOKEN }}
           APP_REPO: ${{ vars.APP_REPO }}
@@ -54,7 +72,7 @@ jobs:
           git push
 
       - name: Telegram bildirimi
-        if: always()
+        if: always() && steps.kontrol.outputs.atla != '1'
         run: |
           echo "zaman: $(date '+%Y-%m-%d %H:%M')  olay: ${{ github.event_name }}" > data/son_bildirim.log
           if [ -n "$IKARUS_TELEGRAM_TOKEN" ]; then echo "TELEGRAM_TOKEN: var (${#IKARUS_TELEGRAM_TOKEN} karakter)" >> data/son_bildirim.log; else echo "TELEGRAM_TOKEN: YOK" >> data/son_bildirim.log; fi
@@ -63,7 +81,7 @@ jobs:
           cat data/son_bildirim.log
 
       - name: Sohbet numarasi ve bildirim kaydini sakla
-        if: always()
+        if: always() && steps.kontrol.outputs.atla != '1'
         run: |
           git config user.name "ikarus-bot"
           git config user.email "ikarus-bot@users.noreply.github.com"
