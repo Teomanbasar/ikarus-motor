@@ -1,0 +1,58 @@
+Varyant: {'sig_mod': 'faz', 'macro_mod': 'm3', 'macro_ok': True} | tf W | HA False | cikis faz
+Makro etiket dagilimi: {'GENISLEME': 0.627, 'RISK-ON': 0.202, 'TOPARLANMA': 0.161, 'NOTR': 0.011}
+Sinyal degisen gun orani: %2.9
+Donem 2023-07-03 - 2026-11-02, 579 hisse. Getiriler BIST100'e gore fazla getiri (%).
+
+== Tum gunler (referans)
+hepsi | n=90992 | 4g: ort  +0.25 medyan  -1.85 kazanma %43.1 | 12g: ort  +1.96 medyan  -4.06 kazanma %41.7 | 26g: ort  +6.45 medyan  -7.58 kazanma %40.0
+
+== Percentile dilimleri (degerleme cekirdegi, Zippo ile birebir)
+pct   0-5     | n=12005 | 4g: ort  -1.10 medyan  -2.42 kazanma %38.0 | 12g: ort  +1.04 medyan  -3.75 kazanma %40.7 | 26g: ort  +5.81 medyan  -5.50 kazanma %41.0
+pct   5-10    | n=3918 | 4g: ort  +0.41 medyan  -1.54 kazanma %42.9 | 12g: ort  +0.79 medyan  -4.03 kazanma %39.6 | 26g: ort  +3.23 medyan  -8.79 kazanma %36.3
+pct  10-20    | n=5848 | 4g: ort  +0.05 medyan  -1.96 kazanma %41.4 | 12g: ort  +0.76 medyan  -4.88 kazanma %39.0 | 26g: ort  +3.28 medyan  -9.51 kazanma %36.6
+pct  20-35    | n=7602 | 4g: ort  +0.48 medyan  -1.78 kazanma %42.7 | 12g: ort  +2.16 medyan  -4.39 kazanma %40.2 | 26g: ort  +6.20 medyan  -7.83 kazanma %39.4
+pct  35-50    | n=7422 | 4g: ort  +0.63 medyan  -1.73 kazanma %43.2 | 12g: ort  +1.65 medyan  -4.17 kazanma %40.8 | 26g: ort  +5.67 medyan  -6.36 kazanma %41.7
+pct  50-65    | n=31960 | 4g: ort  +0.47 medyan  -1.75 kazanma %43.9 | 12g: ort  +2.84 medyan  -3.90 kazanma %42.3 | 26g: ort  +9.18 medyan  -7.87 kazanma %39.8
+pct  65-80    | n=7097 | 4g: ort  -0.12 medyan  -2.12 kazanma %42.5 | 12g: ort  +1.20 medyan  -4.18 kazanma %42.0 | 26g: ort  +4.55 medyan  -8.50 kazanma %38.1
+pct  80-90    | n=5191 | 4g: ort  +0.03 medyan  -1.44 kazanma %45.5 | 12g: ort  +1.51 medyan  -3.93 kazanma %43.1 | 26g: ort  +3.57 medyan  -8.27 kazanma %39.4
+pct  90-100.1 | n=9949 | 4g: ort  +1.02 medyan  -1.26 kazanma %46.5 | 12g: ort  +2.07 medyan  -3.84 kazanma %44.4 | 26g: ort  +4.81 medyan  -6.74 kazanma %43.4
+
+== Sinyaller (her gun, sinyal o gun neyse)
+ALINABILIR  | n=1096 | 4g: ort  -0.45 medyan  -2.76 kazanma %40.0 | 12g: ort  -2.62 medyan  -8.75 kazanma %34.5 | 26g: ort  -6.97 medyan -18.09 kazanma %29.7
+TOPLANIYOR  | n=1128 | 4g: ort  -0.32 medyan  -2.45 kazanma %40.7 | 12g: ort  -2.35 medyan  -6.99 kazanma %34.2 | 26g: ort  -6.85 medyan -14.20 kazanma %30.7
+YAKIN       | n=116 | 4g: ort  +0.59 medyan  -1.64 kazanma %43.1 | 12g: ort  -3.34 medyan  -6.53 kazanma %35.3 | 26g: ort -11.34 medyan -13.13 kazanma %27.1
+DAGITIM     | n=8094 | 4g: ort  -0.67 medyan  -2.52 kazanma %37.7 | 12g: ort  +0.06 medyan  -5.42 kazanma %36.9 | 26g: ort  +5.59 medyan  -7.24 kazanma %39.4
+BEKLE       | n=80558 | 4g: ort  +0.36 medyan  -1.73 kazanma %43.7 | 12g: ort  +2.29 medyan  -3.77 kazanma %42.5 | 26g: ort  +6.89 medyan  -7.43 kazanma %40.3
+
+== Sinyal BASLANGICLARI (bir onceki gun farkli sinyaldeydi)
+ALINABILIR  | n=184 | 4g: ort  -0.24 medyan  -3.01 kazanma %40.2 | 12g: ort  -1.66 medyan  -7.11 kazanma %37.1 | 26g: ort  -4.27 medyan -20.40 kazanma %29.1
+TOPLANIYOR  | n=163 | 4g: ort  +2.30 medyan  -0.36 kazanma %47.2 | 12g: ort  +0.98 medyan  -4.95 kazanma %38.1 | 26g: ort  -1.95 medyan -13.98 kazanma %32.4
+YAKIN       | n=18 | 4g: ort  +4.30 medyan  +1.15 kazanma %55.6 | 12g: ort  +2.46 medyan  -7.21 kazanma %38.9 | 26g: ort  +0.35 medyan  -3.92 kazanma %33.3
+DAGITIM     | n=1126 | 4g: ort  -0.63 medyan  -1.89 kazanma %40.6 | 12g: ort  +0.30 medyan  -5.08 kazanma %37.6 | 26g: ort  +6.24 medyan  -7.55 kazanma %40.0
+
+== Eksik sart sayisi (ucuz bolgede, pct<=35)
+eksik 0 | n=364 | 4g: ort  +0.68 medyan  -2.69 kazanma %43.1 | 12g: ort  -0.97 medyan  -6.61 kazanma %38.9 | 26g: ort  -6.23 medyan -18.15 kazanma %28.8
+eksik 1 | n=2898 | 4g: ort  +1.23 medyan  -1.40 kazanma %44.5 | 12g: ort  +2.18 medyan  -4.61 kazanma %40.3 | 26g: ort  +1.74 medyan -12.28 kazanma %34.2
+eksik 2 | n=7809 | 4g: ort  -0.28 medyan  -2.15 kazanma %40.7 | 12g: ort  +1.65 medyan  -3.98 kazanma %40.6 | 26g: ort  +5.45 medyan  -7.54 kazanma %38.7
+eksik 3 | n=16384 | 4g: ort  -0.76 medyan  -2.31 kazanma %38.8 | 12g: ort  +0.78 medyan  -4.27 kazanma %39.5 | 26g: ort  +5.86 medyan  -6.33 kazanma %40.2
+eksik 4 | n=2154 | 4g: ort  +1.57 medyan  -0.50 kazanma %47.8 | 12g: ort  +2.27 medyan  -4.04 kazanma %41.2 | 26g: ort  +4.75 medyan  -7.64 kazanma %39.4
+eksik 5 | n=0
+eksik 6 | n=0
+
+== Yillara gore: pct<20 vs hepsi (60g)
+2023: pct<20 ort +14.12 (n=757) | hepsi ort +8.81
+2024: pct<20 ort +3.43 (n=3826) | hepsi ort -0.36
+2025: pct<20 ort +2.07 (n=7646) | hepsi ort +3.40
+2026: pct<20 ort -3.86 (n=6003) | hepsi ort -1.45
+
+== ISLEM SIMULASYONU: alim fazina girince al, faz bitince (BEKLE/DAGITIM) ya da 120 gunde sat
+islem 308 | ort sure 7.0 gun | getiri ort +1.43 medyan -1.69 | endekse gore fazla ort -0.78 medyan -4.02 | kazanan (fazla>0) %40.6 | mutlak kazanan %46.8
+  giris ALINABILIR  n=150 sure 5.7 fazla ort -1.66 medyan -2.37 kazanan %46.0
+  giris TOPLANIYOR  n=158 sure 8.3 fazla ort +0.05 medyan -5.73 kazanan %35.4
+  cikis DAGITIM         n=148 sure 7.7 fazla ort -9.51 kazanan %12.8
+  cikis azami           n=6 sure 26.0 fazla ort -19.47 kazanan %0.0
+  cikis stop/ucuz-disi  n=154 sure 5.6 fazla ort +8.33 kazanan %68.8
+  ort kazanc +16.98 / ort kayip -12.91
+  HISSE GECMIS BASARI FILTRESI (en az 3 eski islem, basari >= %50): n=2 fazla ort -11.31 medyan -11.31 kazanan %0.0 | en iyi %5 haric ort -15.90
+  HISSE GECMIS BASARI FILTRESI (en az 3 eski islem, basari >= %60): n=2 fazla ort -11.31 medyan -11.31 kazanan %0.0 | en iyi %5 haric ort -15.90
+  TUM ISLEMLER en iyi %5 haric ort -3.74
