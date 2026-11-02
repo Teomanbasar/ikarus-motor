@@ -170,7 +170,8 @@ def skor(grup, tab, m3):
             fb = (B("2AA", dd) or 0) + (B("2BA", dd) or 0)
             return fb - (B("1AA", dd) or 0) - (B("1AB", dd) or 0)
         nb, nb1 = netborc(d), netborc(d1)
-        nbf, nbf1 = _bol(nb, favok), _bol(nb1, favok1)
+        nbf = _bol(nb, favok) if (favok or 0) > 0 else None   # FAVOK negatifse oran anlamsiz
+        nbf1 = _bol(nb1, favok1) if (favok1 or 0) > 0 else None
         cari, cari1 = _bol(B("1A"), B("2A")), _bol(B("1A", d1), B("2A", d1))
         bedelli = T("4CBC")
         g = _bol(oz, oz1)
@@ -181,7 +182,9 @@ def skor(grup, tab, m3):
         madde("Özsermaye kârlılığı (ROE) arttı", roe, None if roe is None or roe1 is None else roe > roe1, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi?", "yuzde")
         madde("Nakit kârdan büyük (kâr kalitesi)", None if nak is None or nk is None else nak - nk, None if nak is None or nk is None else nak > nk,
               "Faaliyet nakdi net kârdan büyük mü? Değilse kâr kâğıt üstünde kalıyor olabilir. Değer: nakit − kâr.")
-        if nb is not None and nb1 is not None and nb <= 0 and nb1 <= 0:
+        if (favok or 0) <= 0:
+            madde("Net borç / FAVÖK azaldı", None, False, "FAVÖK (faaliyet kârı + amortisman) negatif: şirket esas faaliyetinden zarar ediyor, borcu kârla ödeyemez.", "kat")
+        elif nb is not None and nb1 is not None and nb <= 0 and nb1 <= 0:
             madde("Net borç / FAVÖK azaldı", nbf, True, "Şirket net nakitte: kasasındaki para finansal borcundan fazla.", "kat")
         else:
             madde("Net borç / FAVÖK azaldı", nbf, None if nbf is None or nbf1 is None or (favok or 0) <= 0 else nbf < nbf1,
@@ -191,7 +194,7 @@ def skor(grup, tab, m3):
         madde("Özkaynak M3'ten hızlı büyüdü", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
               "Özkaynak bir yılda para arzından (M3) hızlı büyüdü mü? Değer, M3'e göre reel büyüme.", "yuzde")
         madde("Brüt kâr marjı arttı", marj, None if marj is None or marj1 is None else marj > marj1, "Brüt kâr / satışlar geçen yıldan yüksek mi? Fiyatlama gücünün işareti.", "yuzde")
-        out["oranlar"] = {"roe": roe, "net_borc_favok": nbf, "cari_oran": cari, "brut_marj": marj,
+        out["oranlar"] = {"roe": roe, "net_borc_favok": nbf, "favok_negatif": (favok or 0) <= 0, "net_nakit": nb is not None and nb <= 0, "cari_oran": cari, "brut_marj": marj,
                           "ozkaynak_reel_buyume": None if g is None or not m3c else g / m3c - 1,
                           "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c_akim or nk1 <= 0 else (nk / nk1) / m3c_akim - 1,
                           "serbest_nakit": T("4CB")}
