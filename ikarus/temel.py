@@ -123,23 +123,23 @@ def skor(grup, tab, m3):
     m3c = _m3_oran(m3, d, d1)
     out = {"donem": f"{y}/{m:02d}", "tip": "banka" if grup == "UFRS" else "sanayi", "maddeler": []}
 
-    def madde(ad, deger, gecti, aciklama):
-        out["maddeler"].append({"ad": ad, "deger": deger, "gecti": None if gecti is None else bool(gecti), "aciklama": aciklama})
+    def madde(ad, deger, gecti, aciklama, bicim="tl"):
+        out["maddeler"].append({"ad": ad, "deger": deger, "gecti": None if gecti is None else bool(gecti), "aciklama": aciklama, "bicim": bicim})
 
     if grup == "UFRS":
         nk, nk1 = T("3Z"), T("3Z", d1)
         oz, oz1 = B("2O"), B("2O", d1)
         roe = _bol(nk, oz); roe1 = _bol(nk1, oz1)
         nfg, nfg1 = T("3C"), T("3C", d1)
-        madde("Net kar pozitif", nk, nk is not None and nk > 0, "Son 4 ceyrekte banka para kazandi mi?")
-        madde("ROE gecen yildan yuksek", roe, None if roe is None or roe1 is None else roe > roe1, "Ozkaynak karliligi iyilesiyor mu?")
+        madde("Net kâr pozitif", nk, None if nk is None else nk > 0, "Son 4 çeyrekte banka para kazandı mı?")
+        madde("Özsermaye kârlılığı (ROE) arttı", roe, None if roe is None or roe1 is None else roe > roe1, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi?", "yuzde")
         g = _bol(oz, oz1)
-        madde("Ozkaynak M3'ten hizli buyudu", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
-              "Ozkaynak buyumesi para arzi buyumesinin ustunde mi (reel buyume)?")
+        madde("Özkaynak M3'ten hızlı büyüdü", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
+              "Özkaynak bir yılda para arzından (M3) hızlı büyüdü mü? Değer, M3'e göre reel büyüme.", "yuzde")
         g2 = _bol(nfg, nfg1)
-        madde("Net faiz geliri M3'ten hizli", None if g2 is None or not m3c else g2 / m3c - 1, None if g2 is None or not m3c or (nfg1 or 0) <= 0 else g2 > m3c,
-              "Bankanin ana isi (faiz marji) reel olarak buyuyor mu?")
-        madde("ROE >= %30", roe, None if roe is None else roe >= 0.30, "Yuksek faiz ortaminda ozkaynak karliligi mevduat getirisine yakin mi?")
+        madde("Net faiz geliri M3'ten hızlı büyüdü", None if g2 is None or not m3c else g2 / m3c - 1, None if g2 is None or not m3c or (nfg1 or 0) <= 0 else g2 > m3c,
+              "Bankanın ana işi olan faiz geliri M3'ten hızlı büyüdü mü? Değer reel büyüme.", "yuzde")
+        madde("ROE en az %30", roe, None if roe is None else roe >= 0.30, "Yüksek faiz ortamında özkaynak kârlılığı mevduat getirisine yakın mı?", "yuzde")
         out["oranlar"] = {"roe": roe, "ozkaynak_reel_buyume": None if g is None or not m3c else g / m3c - 1,
                           "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c or nk1 <= 0 else (nk / nk1) / m3c - 1}
     else:
@@ -160,21 +160,21 @@ def skor(grup, tab, m3):
         g = _bol(oz, oz1)
         marj, marj1 = _bol(T("3D"), T("3C")), _bol(T("3D", d1), T("3C", d1))
 
-        madde("Net kar pozitif", nk, None if nk is None else nk > 0, "Son 4 ceyrekte sirket (ana ortaklik) para kazandi mi?")
-        madde("Faaliyetlerden nakit pozitif", nak, None if nak is None else nak > 0, "Kasaya gercekten nakit giriyor mu?")
-        madde("ROE gecen yildan yuksek", roe, None if roe is None or roe1 is None else roe > roe1, "Ozkaynak karliligi (net kar / ozkaynak) iyilesiyor mu?")
-        madde("Nakit > kar (kar kalitesi)", None if nak is None or nk is None else nak - nk, None if nak is None or nk is None else nak > nk,
-              "Kar kagit ustunde mi kaliyor, yoksa nakde donuyor mu?")
+        madde("Net kâr pozitif", nk, None if nk is None else nk > 0, "Son 4 çeyrekte şirket (ana ortaklık payı) para kazandı mı?")
+        madde("Faaliyetlerden nakit pozitif", nak, None if nak is None else nak > 0, "Esas faaliyetlerden kasaya gerçekten nakit giriyor mu? (son 4 çeyrek)")
+        madde("Özsermaye kârlılığı (ROE) arttı", roe, None if roe is None or roe1 is None else roe > roe1, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi?", "yuzde")
+        madde("Nakit kârdan büyük (kâr kalitesi)", None if nak is None or nk is None else nak - nk, None if nak is None or nk is None else nak > nk,
+              "Faaliyet nakdi net kârdan büyük mü? Değilse kâr kâğıt üstünde kalıyor olabilir. Değer: nakit − kâr.")
         if nb is not None and nb1 is not None and nb <= 0 and nb1 <= 0:
-            madde("Net borc / FAVOK azaldi", nbf, True, "Sirket net nakitte (borcundan fazla nakdi var).")
+            madde("Net borç / FAVÖK azaldı", nbf, True, "Şirket net nakitte: kasasındaki para finansal borcundan fazla.", "kat")
         else:
-            madde("Net borc / FAVOK azaldi", nbf, None if nbf is None or nbf1 is None or (favok or 0) <= 0 else nbf < nbf1,
-                  "Borcun, yillik faaliyet karina (FAVOK) orani dusuyor mu? 2'nin alti rahat, 3-4 ustu riskli.")
-        madde("Cari oran iyilesti", cari, None if cari is None or cari1 is None else cari > cari1, "Kisa vadeli borclari donen varliklarla karsilama gucu artiyor mu?")
-        madde("Bedelli sermaye artirimi yok", bedelli, None if bedelli is None else bedelli <= 0, "Ortaklardan para toplanip hisse sulandirildi mi? (bedelsiz sayilmaz)")
-        madde("Ozkaynak M3'ten hizli buyudu", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
-              "Ozkaynak (sirketin degeri) para arzindan hizli mi buyudu? Enflasyonu yenen buyume.")
-        madde("Brut kar marji arttı", marj, None if marj is None or marj1 is None else marj > marj1, "Sattigi maldan kazandigi pay artiyor mu (fiyatlama gucu)?")
+            madde("Net borç / FAVÖK azaldı", nbf, None if nbf is None or nbf1 is None or (favok or 0) <= 0 else nbf < nbf1,
+                  "Net borcun yıllık FAVÖK'e oranı geçen yıldan düşük mü? 2'nin altı rahat, 3–4 üstü riskli.", "kat")
+        madde("Cari oran iyileşti", cari, None if cari is None or cari1 is None else cari > cari1, "Dönen varlıklar / kısa vadeli borçlar geçen yıldan yüksek mi? 1'in altı sıkışık.", "kat")
+        madde("Bedelli sermaye artırımı yok", bedelli, None if bedelli is None else bedelli <= 0, "Son 4 çeyrekte ortaklardan para toplanıp hisse sulandırıldı mı? (Bedelsiz sayılmaz.) Değer: toplanan para.")
+        madde("Özkaynak M3'ten hızlı büyüdü", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
+              "Özkaynak bir yılda para arzından (M3) hızlı büyüdü mü? Değer, M3'e göre reel büyüme.", "yuzde")
+        madde("Brüt kâr marjı arttı", marj, None if marj is None or marj1 is None else marj > marj1, "Brüt kâr / satışlar geçen yıldan yüksek mi? Fiyatlama gücünün işareti.", "yuzde")
         out["oranlar"] = {"roe": roe, "net_borc_favok": nbf, "cari_oran": cari, "brut_marj": marj,
                           "ozkaynak_reel_buyume": None if g is None or not m3c else g / m3c - 1,
                           "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c or nk1 <= 0 else (nk / nk1) / m3c - 1,
