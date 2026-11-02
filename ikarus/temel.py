@@ -74,7 +74,7 @@ def cek(hisse: str, ceyrek: int = 12):
                     v = it.get(f"value{j}")
                     if v not in (None, ""):
                         tab.setdefault(d, {})[it["itemCode"]] = float(v)
-            time.sleep(0.6)
+            time.sleep(0.3)
         # dolu donemler: toplam varlik/aktif > 0
         tab = {d: v for d, v in tab.items() if (v.get("1BL") or v.get("1Z") or 0) > 0 or (v.get("3C") or v.get("3A") or 0) != 0}
         if tab:
@@ -203,27 +203,46 @@ def skor(grup, tab, m3):
     return out
 
 
-def hesapla(hisseler=None):
+def hesapla(hisseler=None, butce_dk: float = 95, isci: int = 4):
+    """Paralel ceker; sure butcesi dolunca o ana kadarkini yazar. Sonraki calisma en eski guncellenenlerden devam eder."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     R.mkdir(exist_ok=True)
-    if not hisseler:
-        hisseler = D.bist_list()["ticker"].tolist()
-    m3 = D.m3()
     f = R / "temel.json"
     eski = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
     sonuc = dict(eski.get("hisseler", {}))
-    for i, h in enumerate(hisseler):
-        try:
-            grup, tab = cek(h)
-            s = skor(grup, tab, m3)
+    if not hisseler:
+        hisseler = D.bist_list()["ticker"].tolist()
+        hisseler.sort(key=lambda h: sonuc.get(h, {}).get("guncelleme", ""))  # once hic/eski cekilenler
+    m3 = D.m3()
+    t0 = time.time()
+    bitti = 0
+
+    def yaz():
+        out = {"olusturma": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"), "hisseler": sonuc}
+        f.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":"), default=float), encoding="utf-8")
+
+    def is_(h):
+        if time.time() - t0 > butce_dk * 60:
+            return h, "atla"
+        grup, tab = cek(h)
+        return h, skor(grup, tab, m3)
+
+    with ThreadPoolExecutor(isci) as ex:
+        for fut in as_completed([ex.submit(is_, h) for h in hisseler]):
+            try:
+                h, s = fut.result()
+            except Exception as e:
+                print("hata", e); continue
+            if s == "atla":
+                continue
+            bitti += 1
             if s:
+                s["guncelleme"] = pd.Timestamp.now().strftime("%Y-%m-%d")
                 sonuc[h] = s
-        except Exception as e:
-            print("hata", h, e)
-        if i % 50 == 0:
-            print(i, h, sonuc.get(h, {}).get("puan"))
-    out = {"olusturma": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"), "hisseler": sonuc}
-    f.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":"), default=float), encoding="utf-8")
-    print(f"{len(sonuc)} hisse yazildi")
+            if bitti % 50 == 0:
+                print(f"{bitti}/{len(hisseler)} {time.time() - t0:.0f} sn"); yaz()
+    yaz()
+    print(f"{bitti}/{len(hisseler)} hisse islendi, dosyada {len(sonuc)} hisse ({time.time() - t0:.0f} sn)")
 
 
 def ornek(hisseler):
