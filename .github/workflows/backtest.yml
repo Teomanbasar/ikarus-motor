@@ -24,7 +24,7 @@ jobs:
       - run: |
           git config user.name "ikarus-bot"
           git config user.email "ikarus-bot@users.noreply.github.com"
-          git add backtest/*.txt backtest/islemler_*.csv 2>/dev/null; git add backtest/*.txt
+          git add backtest/*.txt; git add backtest/*.csv || true
           git commit -m "Backtest sonucu" || exit 0
           git pull --rebase -q || true
           git push

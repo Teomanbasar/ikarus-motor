@@ -1,1 +1,1 @@
-{"skor": true}
+{"skor": true, "n": 2}

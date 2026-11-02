@@ -13,7 +13,7 @@ R = D.ROOT / "backtest"
 BAS = "2023-07-01"
 
 
-def islem(r, c, x, X, maxb):
+def islem(r, c, x, X, maxb, T_AD=''):
     tot = r["toplam"].values; ds = r["d_stop"].values; idx = r.index; out = []
     i = 1
     while i < len(tot):
@@ -24,7 +24,7 @@ def islem(r, c, x, X, maxb):
             if j >= len(tot):
                 break
             g = 100 * (c[j] / c[i] - 1); gx = 100 * (x[j] / x[i] - 1)
-            out.append((idx[i], j - i, g, g - gx, r["percentile"].values[i]))
+            out.append((idx[i], j - i, g, g - gx, r["percentile"].values[i], T_AD))
             i = j
         i += 1
     return out
@@ -50,13 +50,15 @@ def main():
                     c = E.to_weekly(df)["close"].reindex(r.index).values
                     x = xw.reindex(r.index).ffill().values; maxb = 26
                 for X in (36, 40, 45, 50):
-                    res.setdefault((lag, tf, X), []).extend(islem(r, c, x, X, maxb))
+                    res.setdefault((lag, tf, X), []).extend(islem(r, c, x, X, maxb, t))
         if k % 100 == 0:
             print(k, t)
     L = ["Toplam skor esigi ile giris, faz cikisi (Toplam < X-5 ya da stop kirildi ya da azami sure). Fazla getiri = hisse - BIST100.",
          "lag 0 = TradingView gibi (ay kapaninca), lag 25 = TCMB'nin yayim gecikmesine gore +25 gun (gecmise sarinca o gun bilinen M3).", ""]
     for (lag, tf, X), T in sorted(res.items()):
-        T = pd.DataFrame(T, columns=["tarih", "bar", "getiri", "fazla", "pct"])
+        T = pd.DataFrame(T, columns=["tarih", "bar", "getiri", "fazla", "pct", "hisse"])
+        if lag == 25:
+            T.to_csv(R / f"skor_islem_{tf}{X}.csv", index=False)
         if not len(T):
             continue
         L.append(f"M3 gecikme {lag:2d}g | {tf} | Toplam>={X} | islem {len(T):5d} | ort sure {T.bar.mean():5.1f} bar | "
