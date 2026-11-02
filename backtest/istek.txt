@@ -1,1 +1,1 @@
-{"sig_kv": 5, "sig_thr": 2}
+{"sig_mod":"faz","etiket":"faz"}

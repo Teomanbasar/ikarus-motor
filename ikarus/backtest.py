@@ -15,17 +15,38 @@ H = (20, 60, 120)
 BAS = "2023-07-01"   # haftalik 200 bar MTF + 200 gun degerleme icin yeterli gecmis sonrasi
 
 
+def islemler(t, r, c, x):
+    """Alim fazina giriste al (ALINABILIR/TOPLANIYOR), alim fazi bitince (BEKLE/DAGITIM) ya da 120 gunde sat."""
+    sig = r["sinyal"].values; idx = r.index; out = []
+    alim = np.isin(sig, ["ALINABILIR", "TOPLANIYOR"])
+    i = 1
+    while i < len(sig):
+        if alim[i] and not alim[i - 1] and idx[i] >= pd.Timestamp(BAS):
+            j = i + 1
+            while j < len(sig) and j - i < 120 and sig[j] not in ("BEKLE", "DAGITIM"):
+                j += 1
+            if j >= len(sig):
+                break
+            g = 100 * (c[j] / c[i] - 1); gx = 100 * (x[j] / x[i] - 1)
+            neden = "120g" if j - i >= 120 else ("stop/ucuz-disi" if sig[j] == "BEKLE" else "DAGITIM")
+            out.append((t, idx[i], sig[i], j - i, g, g - gx, neden))
+            i = j
+        i += 1
+    return out
+
+
 def main():
     import json
     try:
         varyant = json.loads((R / "istek.txt").read_text(encoding="utf-8"))
     except Exception:
         varyant = {}
+    etiket = varyant.pop("etiket", "v46")
     lst = D.bist_list()
     px = D.prices(lst["ticker"].tolist())
     xu = D.xu100()
     m3 = D.m3()
-    rows = []
+    rows = []; ISL = []
     for i, (t, df) in enumerate(sorted(px.items())):
         if len(df) < 400:
             continue
@@ -36,6 +57,8 @@ def main():
             continue
         c = df["close"].reindex(r.index).values
         x = xu.reindex(r.index).ffill().values
+        if (df["close"] * df["volume"]).tail(250).mean() > 5e6:
+            ISL.extend(islemler(t, r, c, x))
         out = pd.DataFrame({"t": t, "pct": r["percentile"].values, "sinyal": r["sinyal"].values,
                             "onceki": np.r_[[None], r["sinyal"].values[:-1]], "eksik": r["eksik"].values,
                             "toplam": r["toplam"].values, "hacim_tl": (df["close"] * df["volume"]).reindex(r.index).rolling(20).mean().values},
@@ -83,8 +106,21 @@ def main():
         Y = A[A.index.year == y]
         a1 = Y[Y["pct"] < 20]["a60"].dropna(); a2 = Y["a60"].dropna()
         L.append(f"{y}: pct<20 ort {a1.mean():+.2f} (n={len(a1)}) | hepsi ort {a2.mean():+.2f}")
+    T = pd.DataFrame(ISL, columns=["t", "tarih", "giris", "gun", "getiri", "fazla", "cikis"])
+    L.append("\n== ISLEM SIMULASYONU: alim fazina girince al, faz bitince (BEKLE/DAGITIM) ya da 120 gunde sat")
+    if len(T):
+        L.append(f"islem {len(T)} | ort sure {T.gun.mean():.1f} gun | getiri ort {T.getiri.mean():+.2f} medyan {T.getiri.median():+.2f} | "
+                 f"endekse gore fazla ort {T.fazla.mean():+.2f} medyan {T.fazla.median():+.2f} | kazanan (fazla>0) %{100*(T.fazla>0).mean():.1f} | "
+                 f"mutlak kazanan %{100*(T.getiri>0).mean():.1f}")
+        for g, G in T.groupby("giris"):
+            L.append(f"  giris {g:11s} n={len(G)} sure {G.gun.mean():.1f} fazla ort {G.fazla.mean():+.2f} medyan {G.fazla.median():+.2f} kazanan %{100*(G.fazla>0).mean():.1f}")
+        for g, G in T.groupby("cikis"):
+            L.append(f"  cikis {g:15s} n={len(G)} sure {G.gun.mean():.1f} fazla ort {G.fazla.mean():+.2f} kazanan %{100*(G.fazla>0).mean():.1f}")
+        kz = T.fazla[T.fazla > 0].mean(); ky = T.fazla[T.fazla <= 0].mean()
+        L.append(f"  ort kazanc {kz:+.2f} / ort kayip {ky:+.2f}")
+        T.to_csv(R / f"islemler_{etiket}.csv", index=False)
     txt = "\n".join(L)
-    (R / "sonuc.txt").write_text(txt, encoding="utf-8")
+    (R / f"sonuc_{etiket}.txt").write_text(txt, encoding="utf-8")
     print(txt)
 
 

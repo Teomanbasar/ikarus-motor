@@ -186,6 +186,8 @@ DEFAULTS = dict(
     vol_n=20, kir_esik=3.5, kal5=50.0,
     # sinyal deneme ayarlari (varsayilan = v4.6 aday): hacim penceresi, dusus gun sayisi/esigi, faz kalicilik
     sig_kv=1, sig_kd=1, sig_thr=0.5, sig_m=1,
+    sig_mod="v46",  # "faz": faz motoru (deneme)
+    faz_m=3, faz_kr=1,
 )
 
 MACRO_SC = {"RISK-ON": 10.0, "GENISLEME": 7.0, "TOPARLANMA": 6.0, "NOTR": 5.0, "DARALMA": 3.0}
@@ -346,6 +348,32 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
             sig[i] = "TOPLANIYOR" if rsL[i] >= 1 else "YAKIN"
         else:
             sig[i] = "BEKLE"
+    if P["sig_mod"] == "faz":
+        # FAZ MOTORU (deneme, 2 Kas 2026): sinyal en az faz_m bar surmeden degismez.
+        # Ucuz bolgeden cikis, stop kirilmasi ve ALINABILIR hemen gecerli.
+        kr = P["faz_kr"]
+        rsd = rs - shift(rs, kr)
+        base = np.empty(len(c), dtype=object)
+        for i in range(len(c)):
+            if not c1[i]:
+                base[i] = "BEKLE"
+            elif dStop[i] <= -P["kir_esik"]:
+                base[i] = "BEKLE"
+            elif nMiss[i] == 0:
+                base[i] = "ALINABILIR"
+            elif chgk[i] < -P["sig_thr"]:
+                base[i] = "DAGITIM"
+            elif nMiss[i] <= 2:
+                base[i] = "TOPLANIYOR" if rsd[i] > 0 else "YAKIN"
+            else:
+                base[i] = "BEKLE"
+        sig = base.copy()
+        fm = P["faz_m"]
+        for i in range(1, len(c)):
+            if base[i] == "ALINABILIR" or not c1[i] or dStop[i] <= -P["kir_esik"]:
+                continue
+            if not all(base[j] == base[i] for j in range(max(0, i - fm + 1), i + 1)):
+                sig[i] = sig[i - 1]
     m = P["sig_m"]
     if m > 1:  # faz: yeni sinyal m bar surmeden degistirme (ALINABILIR ve ucuz bolgeden cikis hemen)
         base = sig.copy()
