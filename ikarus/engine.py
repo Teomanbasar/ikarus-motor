@@ -188,7 +188,9 @@ DEFAULTS = dict(
     sig_kv=1, sig_kd=1, sig_thr=0.5, sig_m=1,
     sig_mod="v46",  # "faz": faz motoru (deneme)
     faz_m=3, faz_kr=1,
-    m3_gecikme_gun=0,  # backtest icin: M3'u TCMB'nin gercek yayim tarihinden sonra kullan (or. 25 gun)
+    m3_gecikme_gun=0,
+    macro_mod="xu100",  # "m3": taban etiket M3'un son macro_k bardaki degisiminden (deneme, 2 Kas)
+    macro_k=15, macro_ok=False,  # macro_ok: ok kurali (RISK-ON 10 / ucuz+RS yukari 10 / TOPARLANMA 6)  # backtest icin: M3'u TCMB'nin gercek yayim tarihinden sonra kullan (or. 25 gun)
 )
 
 MACRO_SC = {"RISK-ON": 10.0, "GENISLEME": 7.0, "TOPARLANMA": 6.0, "NOTR": 5.0, "DARALMA": 3.0}
@@ -299,7 +301,22 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
     macro = np.where(xuTrend >= P["macro_hi"], "GENISLEME",
                      np.where(xuTrend <= P["macro_lo"], "DARALMA", "NOTR")).astype(object)
     macro[np.isnan(xuTrend)] = "NOTR"
+    if P["macro_mod"] == "m3":
+        k = P["macro_k"]
+        dm = m3b / shift(m3b, k) - 1
+        macro = np.where(dm > 1e-9, "GENISLEME", np.where(dm < -1e-9, "DARALMA", "NOTR")).astype(object)
+        macro[np.isnan(dm)] = "NOTR"
     macroSc = np.array([MACRO_SC[m] for m in macro])
+    if P["macro_ok"]:
+        _ucz = pct <= P["ucuz"]
+        for i in range(len(macro)):
+            ro, so = recL[i], rsL[i]
+            if ro == 2 and so == 2 and not _ucz[i]:
+                macro[i], macroSc[i] = "RISK-ON", 10.0
+            elif _ucz[i] and so >= 1 and ro >= 0:
+                macroSc[i] = 10.0
+            elif ro == 2 and so < 1:
+                macro[i], macroSc[i] = "TOPARLANMA", 6.0
 
     # MTF: haftalik Percentile (canli)
     if tf == "W":
