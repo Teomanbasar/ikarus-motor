@@ -215,6 +215,8 @@ def ornek(hisseler):
     for h in hisseler:
         grup, tab = cek(h)
         print(h, grup, sorted(tab)[-1] if tab else None, len(tab))
+        (R / f"ham_{h}.json").write_text(json.dumps({"grup": grup, "tab": {f"{y}/{m}": v for (y, m), v in sorted(tab.items())}},
+                                                   ensure_ascii=False), encoding="utf-8")
 
 
 if __name__ == "__main__":
