@@ -1,0 +1,1340 @@
+{
+"XI_29": {
+"ok": true,
+"errorCode": null,
+"errorDescription": null,
+"transactionId": "f89f42014dee4211a0695af6223cb79c",
+"value": [
+{
+"itemCode": "1A",
+"itemDescTr": "Dönen Varlıklar",
+"itemDescEng": "CURRENT ASSETS",
+"value1": "512191000000",
+"value2": "485646000000",
+"value3": "513912099203",
+"value4": "425657000000"
+},
+{
+"itemCode": "1AA",
+"itemDescTr": "  Nakit ve Nakit Benzerleri",
+"itemDescEng": "Cash and Cash Equivalents",
+"value1": "80346000000",
+"value2": "71141000000",
+"value3": "101313500671",
+"value4": "100325000000"
+},
+{
+"itemCode": "1AB",
+"itemDescTr": "  Finansal Yatırımlar",
+"itemDescEng": "Short-Term Financial Investments",
+"value1": "213510000000",
+"value2": "212420000000",
+"value3": "215182409539",
+"value4": "159028000000"
+},
+{
+"itemCode": "1AC",
+"itemDescTr": "  Ticari Alacaklar",
+"itemDescEng": "Short-Term Trade Receivables",
+"value1": "69062000000",
+"value2": "61676000000",
+"value3": "53922781534",
+"value4": "47764000000"
+},
+{
+"itemCode": "1AD",
+"itemDescTr": "  Finans Sektörü Faaliyetlerinden Alacaklar",
+"itemDescEng": "Short-Term Receivables from Financial Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AE",
+"itemDescTr": "  Diğer Alacaklar",
+"itemDescEng": "Short-Term Other Receivables",
+"value1": "38727000000",
+"value2": "38417000000",
+"value3": "46357977346",
+"value4": "47826000000"
+},
+{
+"itemCode": "1AEA",
+"itemDescTr": "  Müşteri Sözleşmelerinden Doğan Varlıklar",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AF",
+"itemDescTr": "  Stoklar",
+"itemDescEng": "Inventories",
+"value1": "51528000000",
+"value2": "47665000000",
+"value3": "48836793164",
+"value4": "37254000000"
+},
+{
+"itemCode": "1AG",
+"itemDescTr": "  Canlı Varlıklar",
+"itemDescEng": "Short-Term Live Assets",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AH",
+"itemDescTr": "  Diğer Dönen Varlıklar",
+"itemDescEng": "Other Current Assets",
+"value1": "59018000000",
+"value2": "54327000000",
+"value3": "48298636950",
+"value4": "33460000000"
+},
+{
+"itemCode": "1AI",
+"itemDescTr": "    (Ara Toplam)",
+"itemDescEng": "  (Subtotal)",
+"value1": "512191000000",
+"value2": "485646000000",
+"value3": "513912099203",
+"value4": "425657000000"
+},
+{
+"itemCode": "1AJ",
+"itemDescTr": "  Satış Amacıyla Elde Tutulan Duran Varlıklar",
+"itemDescEng": "Assets to be Sold",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AK",
+"itemDescTr": "Duran Varlıklar",
+"itemDescEng": "LONG TERM ASSETS",
+"value1": "1847846000000",
+"value2": "1672387000000",
+"value3": "1837424285964",
+"value4": "1368789000000"
+},
+{
+"itemCode": "1B",
+"itemDescTr": "  Ticari Alacaklar",
+"itemDescEng": "Trade Receivables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1BA",
+"itemDescTr": "  Finans Sektörü Faaliyetlerinden Alacaklar",
+"itemDescEng": "Long-Term Receivables from Financial Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1BB",
+"itemDescTr": "  Diğer Alacaklar",
+"itemDescEng": "Other Receivables",
+"value1": "107215000000",
+"value2": "95266000000",
+"value3": "102321513184",
+"value4": "54720000000"
+},
+{
+"itemCode": "1BBA",
+"itemDescTr": "  Müşteri Sözleşmelerinden Doğan Varlıklar",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1BC",
+"itemDescTr": "  Finansal Yatırımlar",
+"itemDescEng": "Financial Investments",
+"value1": "151206000000",
+"value2": "131760000000",
+"value3": "135375138457",
+"value4": "67351000000"
+},
+{
+"itemCode": "1BD",
+"itemDescTr": "  Özkaynak Yöntemiyle Değerlenen Yatırımlar",
+"itemDescEng": "Investments with Equity Method",
+"value1": "33901000000",
+"value2": "35467000000",
+"value3": "38474047701",
+"value4": "30824000000"
+},
+{
+"itemCode": "1BE",
+"itemDescTr": "  Canlı Varlıklar",
+"itemDescEng": "Long-Term Live Assets",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1BF",
+"itemDescTr": "  Yatırım Amaçlı Gayrimenkuller",
+"itemDescEng": "Real Estate Investments",
+"value1": "2014000000",
+"value2": "1920000000",
+"value3": "2182064471",
+"value4": "1795000000"
+},
+{
+"itemCode": "1BFA",
+"itemDescTr": "  Stoklar",
+"itemDescEng": "Stoklar",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1BFAA",
+"itemDescTr": "  Kullanım Hakkı Varlıkları",
+"itemDescEng": null,
+"value1": "989351000000",
+"value2": "896499000000",
+"value3": "998306860023",
+"value4": "762572000000"
+},
+{
+"itemCode": "1BG",
+"itemDescTr": "  Maddi Duran Varlıklar",
+"itemDescEng": "Tangible Fixed Assets",
+"value1": "420999000000",
+"value2": "384091000000",
+"value3": "427013412988",
+"value4": "335388000000"
+},
+{
+"itemCode": "1BGA",
+"itemDescTr": "  Şerefiye",
+"itemDescEng": "Goodwill",
+"value1": "1245000000",
+"value2": "1187000000",
+"value3": "1348334495",
+"value4": "1109000000"
+},
+{
+"itemCode": "1BH",
+"itemDescTr": "  Maddi Olmayan Duran Varlıklar",
+"itemDescEng": "Intangible Fixed Assets",
+"value1": "5397000000",
+"value2": "7741000000",
+"value3": "9093309144",
+"value4": "6509000000"
+},
+{
+"itemCode": "1BJ",
+"itemDescTr": "  Ertelenmiş Vergi Varlığı",
+"itemDescEng": "Long Term Deffered Tax Assets",
+"value1": "26075000000",
+"value2": "20376000000",
+"value3": "20857380414",
+"value4": "28493000000"
+},
+{
+"itemCode": "1BK",
+"itemDescTr": "  Diğer Duran Varlıklar",
+"itemDescEng": "Other Long-Term Assets",
+"value1": "110443000000",
+"value2": "98080000000",
+"value3": "102452225087",
+"value4": "80028000000"
+},
+{
+"itemCode": "1BL",
+"itemDescTr": "TOPLAM VARLIKLAR",
+"itemDescEng": "TOTAL ASSETS",
+"value1": "2360037000000",
+"value2": "2158033000000",
+"value3": "2351336385167",
+"value4": "1794446000000"
+},
+{
+"itemCode": "1BM",
+"itemDescTr": "KAYNAKLAR",
+"itemDescEng": "LIABILITIES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2A",
+"itemDescTr": "Kısa Vadeli Yükümlülükler",
+"itemDescEng": "SHORT TERM LIABILITIES",
+"value1": "566751000000",
+"value2": "498369000000",
+"value3": "520581939010",
+"value4": "433401000000"
+},
+{
+"itemCode": "2AA",
+"itemDescTr": "  Finansal Borçlar",
+"itemDescEng": "Short-Term Financial Loans",
+"value1": "187257000000",
+"value2": "166590000000",
+"value3": "191282150230",
+"value4": "150890000000"
+},
+{
+"itemCode": "2AAG",
+"itemDescTr": "  Diğer Finansal Yükümlülükler",
+"itemDescEng": "Other Short-Term Financial Liabilities",
+"value1": "5000000",
+"value2": "7000000",
+"value3": "1177585",
+"value4": "0"
+},
+{
+"itemCode": "2AAGAA",
+"itemDescTr": "  Ticari Borçlar",
+"itemDescEng": "Short-Term Trade Payables",
+"value1": "85355000000",
+"value2": "74701000000",
+"value3": "92605261728",
+"value4": "72258000000"
+},
+{
+"itemCode": "2AAGAB",
+"itemDescTr": "  Diğer Borçlar",
+"itemDescEng": "Other Short-Term Loans",
+"value1": "20673000000",
+"value2": "9677000000",
+"value3": "13810713499",
+"value4": "8743000000"
+},
+{
+"itemCode": "2AAGAC",
+"itemDescTr": "  Müşteri Söz. Doğan Yük.",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2AAGB",
+"itemDescTr": "  Finans Sektörü Faaliyetlerinden Borçlar",
+"itemDescEng": "Short-Term Loans from Financial Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2AAGC",
+"itemDescTr": "  Devlet Teşvik ve Yardımları",
+"itemDescEng": "Short-Term Government Promotions and Aids",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2AAGCA",
+"itemDescTr": "  Ertelenmiş Gelirler (Müşteri Söz. Doğan Yük. Dış.Kal.)",
+"itemDescEng": null,
+"value1": "224689000000",
+"value2": "198484000000",
+"value3": "178117930738",
+"value4": "145911000000"
+},
+{
+"itemCode": "2AAGD",
+"itemDescTr": "  Dönem Karı Vergi Yükümlülüğü",
+"itemDescEng": "Taxation Liabilities on Income (-)",
+"value1": "0",
+"value2": "0",
+"value3": "506361426",
+"value4": "0"
+},
+{
+"itemCode": "2AAGE",
+"itemDescTr": "  Borç Karşılıkları",
+"itemDescEng": "Short-Term Provisions",
+"value1": "7695000000",
+"value2": "7868000000",
+"value3": "7533009401",
+"value4": "6300000000"
+},
+{
+"itemCode": "2AAGF",
+"itemDescTr": "  Diğer Kısa Vadeli Yükümlülükler",
+"itemDescEng": "Other Short-Term Liabilities",
+"value1": "41077000000",
+"value2": "41042000000",
+"value3": "36725334404",
+"value4": "49299000000"
+},
+{
+"itemCode": "2AAGG",
+"itemDescTr": "    (Ara Toplam)",
+"itemDescEng": "  (Subtotal)",
+"value1": "566751000000",
+"value2": "498369000000",
+"value3": "520581939010",
+"value4": "433401000000"
+},
+{
+"itemCode": "2AAGH",
+"itemDescTr": "  Satış Amaçlı Elde Tutulan Duran Varlıklara İlişkin Yükümlülükler",
+"itemDescEng": "Liabilities on Assets to be Sold",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2B",
+"itemDescTr": "Uzun Vadeli Yükümlülükler",
+"itemDescEng": "LONG TERM LIABILITIES",
+"value1": "774833000000",
+"value2": "693301000000",
+"value3": "757673312110",
+"value4": "517094000000"
+},
+{
+"itemCode": "2BA",
+"itemDescTr": "  Finansal Borçlar",
+"itemDescEng": "Long-Term Financial Loans",
+"value1": "726977000000",
+"value2": "647365000000",
+"value3": "708690498442",
+"value4": "493725000000"
+},
+{
+"itemCode": "2BB",
+"itemDescTr": "  Diğer Finansal Yükümlülükler",
+"itemDescEng": "Other Short-Term Financial Liabilities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2BBA",
+"itemDescTr": "  Ticari Borçlar",
+"itemDescEng": "Long-Term Trade Payables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2BBB",
+"itemDescTr": "  Diğer Borçlar",
+"itemDescEng": "Other Long-Term Loans",
+"value1": "1617000000",
+"value2": "3639000000",
+"value3": "1454317119",
+"value4": "1221000000"
+},
+{
+"itemCode": "2BBBA",
+"itemDescTr": "  Müşteri Söz.Doğan Yük.",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2BC",
+"itemDescTr": "  Finans Sektörü Faaliyetlerinden Borçlar",
+"itemDescEng": "Long-Term Loans from Financial Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2BD",
+"itemDescTr": "  Devlet Teşvik ve Yardımları",
+"itemDescEng": "Long-Term Government Promotions and Aids",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2BDA",
+"itemDescTr": "  Ertelenmiş Gelirler (Müşteri Söz.Doğan Yük. Dış.Kal.)",
+"itemDescEng": null,
+"value1": "2972000000",
+"value2": "2858000000",
+"value3": "3815374466",
+"value4": "3710000000"
+},
+{
+"itemCode": "2BE",
+"itemDescTr": "    Uzun vadeli karşılıklar",
+"itemDescEng": "Long-Term Provisions",
+"value1": "25549000000",
+"value2": "21678000000",
+"value3": "24113402142",
+"value4": "15998000000"
+},
+{
+"itemCode": "2BF",
+"itemDescTr": "  Çalışanlara Sağlanan Faydalara İliş.Karş.",
+"itemDescEng": "Provisions for Retirment Pay",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2BG",
+"itemDescTr": "  Ertelenmiş Vergi Yükümlülüğü",
+"itemDescEng": "Deferred Tax Liabilities",
+"value1": "1179000000",
+"value2": "2663000000",
+"value3": "3669353962",
+"value4": "2440000000"
+},
+{
+"itemCode": "2BH",
+"itemDescTr": "  Diğer Uzun Vadeli Yükümlülükler",
+"itemDescEng": "Other Long-Term Liabilities",
+"value1": "16539000000",
+"value2": "15098000000",
+"value3": "15930365980",
+"value4": "0"
+},
+{
+"itemCode": "2N",
+"itemDescTr": "Özkaynaklar",
+"itemDescEng": "SHAREHOLDERS EQUITY",
+"value1": "1018453000000",
+"value2": "966363000000",
+"value3": "1073081134047",
+"value4": "843951000000"
+},
+{
+"itemCode": "2O",
+"itemDescTr": "  Ana Ortaklığa Ait Özkaynaklar",
+"itemDescEng": "Parent Shareholders Capital",
+"value1": "1018517000000",
+"value2": "966388000000",
+"value3": "1073041096166",
+"value4": "843939000000"
+},
+{
+"itemCode": "2OA",
+"itemDescTr": "  Ödenmiş Sermaye",
+"itemDescEng": "Share Capital",
+"value1": "1380000000",
+"value2": "1380000000",
+"value3": "1380000000",
+"value4": "1380000000"
+},
+{
+"itemCode": "2OC",
+"itemDescTr": "  Karşılıklı İştirak Sermayesi Düzeltmesi (-)",
+"itemDescEng": "Adjustments to Share Capital",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OCA",
+"itemDescTr": "  Hisse Senedi İhraç Primleri",
+"itemDescEng": "Premium in Excess of Par",
+"value1": "43000000",
+"value2": "43000000",
+"value3": "50636143",
+"value4": "45000000"
+},
+{
+"itemCode": "2OCB",
+"itemDescTr": "  Değer Artış Fonları",
+"itemDescEng": "Market Value Surpluses",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OCC",
+"itemDescTr": "  Yabancı Para Çevrim Farkları",
+"itemDescEng": "FX Translation Differences ",
+"value1": "52861000000",
+"value2": "52193000000",
+"value3": "53318680576",
+"value4": "48708000000"
+},
+{
+"itemCode": "2OCD",
+"itemDescTr": "  Kardan Ayrılan Kısıtlanmış Yedekler",
+"itemDescEng": "Income Reserves",
+"value1": "1540000000",
+"value2": "1540000000",
+"value3": "1449606780",
+"value4": "1131000000"
+},
+{
+"itemCode": "2OCE",
+"itemDescTr": "  Geçmiş Yıllar Kar/Zararları",
+"itemDescEng": "Retained Earnings /(Acc. Losses)",
+"value1": "450325000000",
+"value2": "450325000000",
+"value3": "391459775372",
+"value4": "332526000000"
+},
+{
+"itemCode": "2OCF",
+"itemDescTr": "  Dönem Net Kar/Zararı",
+"itemDescEng": "Current Year Income /(Losses)",
+"value1": "18864000000",
+"value2": "9915000000",
+"value3": "139199933601",
+"value4": "81064000000"
+},
+{
+"itemCode": "2OD",
+"itemDescTr": "  Diğer Özsermaye Kalemleri",
+"itemDescEng": "Other Sholders Equity Items",
+"value1": "493504000000",
+"value2": "450992000000",
+"value3": "485937396792",
+"value4": "379085000000"
+},
+{
+"itemCode": "2ODA",
+"itemDescTr": "  Azınlık Payları",
+"itemDescEng": "Minority Interests",
+"value1": "-64000000",
+"value2": "-25000000",
+"value3": "40037880",
+"value4": "12000000"
+},
+{
+"itemCode": "2ODB",
+"itemDescTr": "TOPLAM KAYNAKLAR",
+"itemDescEng": "TOTAL LIABILITIES AND S.HOLDERS EQUITY",
+"value1": "2360037000000",
+"value2": "2158033000000",
+"value3": "2351336385167",
+"value4": "1794446000000"
+},
+{
+"itemCode": "3B",
+"itemDescTr": "Sürdürülen Faaliyetler",
+"itemDescEng": "Continuing Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3C",
+"itemDescTr": "Satış Gelirleri",
+"itemDescEng": "Net Sales",
+"value1": "585069000000",
+"value2": "257961000000",
+"value3": "1125149219659",
+"value4": "690825000000"
+},
+{
+"itemCode": "3CA",
+"itemDescTr": "Satışların Maliyeti (-)",
+"itemDescEng": "Cost Of Sales",
+"value1": "-542482000000",
+"value2": "-236393000000",
+"value3": "-941964141907",
+"value4": "-572138000000"
+},
+{
+"itemCode": "3CAA",
+"itemDescTr": "Ticari Faaliyetlerden Diğer Kar (Zarar)",
+"itemDescEng": "Other Profit (Loss) from Trade Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CAB",
+"itemDescTr": "Ticari Faaliyetlerden Brüt Kar (Zarar)",
+"itemDescEng": "Gross Profit (Loss) from Trade Operations",
+"value1": "42587000000",
+"value2": "21568000000",
+"value3": "183185077752",
+"value4": "118687000000"
+},
+{
+"itemCode": "3CAC",
+"itemDescTr": "Faiz, Ücret, Prim, Komisyon ve Diğer Gelirler",
+"itemDescEng": "Proceeds from Interest, Fee, Premium, Commission and Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CAD",
+"itemDescTr": "Faiz, Ücret, Prim, Komisyon ve Diğer Giderler (-)",
+"itemDescEng": "Expenses from Interest, Fee, Premium, Commission and Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CAE",
+"itemDescTr": "Finans Sektörü Faaliyetlerinden Diğer Kar (Zarar)",
+"itemDescEng": "Other Profit (Loss) from Financial Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CAF",
+"itemDescTr": "Finans Sektörü Faaliyetlerinden Brüt Kar (Zarar)",
+"itemDescEng": "Gross Profit (Loss) from Financial Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CB",
+"itemDescTr": "Diğer Gelir ve Giderler",
+"itemDescEng": "Other Income (Expenses)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3D",
+"itemDescTr": "BRÜT KAR (ZARAR)",
+"itemDescEng": "GROSS PROFIT (LOSS)",
+"value1": "42587000000",
+"value2": "21568000000",
+"value3": "183185077752",
+"value4": "118687000000"
+},
+{
+"itemCode": "3DA",
+"itemDescTr": "Pazarlama, Satış ve Dağıtım Giderleri (-)",
+"itemDescEng": "Marketing Selling & Distrib. Expenses (-)",
+"value1": "-44021000000",
+"value2": "-21121000000",
+"value3": "-83904088293",
+"value4": "-52224000000"
+},
+{
+"itemCode": "3DB",
+"itemDescTr": "Genel Yönetim Giderleri (-)",
+"itemDescEng": "General Administrative Expenses (-)",
+"value1": "-13300000000",
+"value2": "-7544000000",
+"value3": "-24463144801",
+"value4": "-15451000000"
+},
+{
+"itemCode": "3DC",
+"itemDescTr": "Araştırma ve Geliştirme Giderleri (-)",
+"itemDescEng": "Research & Development Expenses (-)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3DD",
+"itemDescTr": "Diğer Faaliyet Gelirleri",
+"itemDescEng": "Income from Other Operations",
+"value1": "13782000000",
+"value2": "9214000000",
+"value3": "35485337702",
+"value4": "18458000000"
+},
+{
+"itemCode": "3DE",
+"itemDescTr": "Diğer Faaliyet Giderleri (-)",
+"itemDescEng": "Expenses from Other Operations (-)",
+"value1": "-4146000000",
+"value2": "-4568000000",
+"value3": "-4168649879",
+"value4": "-1863000000"
+},
+{
+"itemCode": "3DEA",
+"itemDescTr": "Faaliyet Karı Öncesi Diğer Gelir ve Giderler",
+"itemDescEng": "Other Income (Expenses) Before Operating Profits",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3DF",
+"itemDescTr": "FAALİYET KARI (ZARARI)",
+"itemDescEng": "OPERATING PROFITS",
+"value1": "-5098000000",
+"value2": "-2451000000",
+"value3": "106134532481",
+"value4": "67607000000"
+},
+{
+"itemCode": "3H",
+"itemDescTr": "Net Faaliyet Kar/Zararı",
+"itemDescEng": "Net Operating Profits",
+"value1": "-14734000000",
+"value2": "-7097000000",
+"value3": "74817844658",
+"value4": "51012000000"
+},
+{
+"itemCode": "3HA",
+"itemDescTr": "  Yatırım Faaliyetlerinden Gelirler",
+"itemDescEng": null,
+"value1": "46197000000",
+"value2": "21699000000",
+"value3": "67207114666",
+"value4": "37046000000"
+},
+{
+"itemCode": "3HAA",
+"itemDescTr": "  Yatırım Faaliyetlerinden Giderler (-)",
+"itemDescEng": null,
+"value1": "-4235000000",
+"value2": "-3664000000",
+"value3": "-3107646054",
+"value4": "-2445000000"
+},
+{
+"itemCode": "3HAB",
+"itemDescTr": "  Diğer Gelir ve Giderler",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3HAC",
+"itemDescTr": "Özkaynak Yöntemiyle Değerlenen Yatırımların Kar/Zararlarındaki Paylar",
+"itemDescEng": "Profit (Loss) from Subsidiaries",
+"value1": "-2247000000",
+"value2": "-2692000000",
+"value3": "5412179335",
+"value4": "4239000000"
+},
+{
+"itemCode": "3HACA",
+"itemDescTr": "Finansman Gideri Öncesi Faaliyet Karı/Zararı",
+"itemDescEng": null,
+"value1": "34617000000",
+"value2": "12892000000",
+"value3": "175646180428",
+"value4": "106447000000"
+},
+{
+"itemCode": "3HB",
+"itemDescTr": "(Esas Faaliyet Dışı) Finansal Gelirler",
+"itemDescEng": "Financial Income (from Other Operations)",
+"value1": "10128000000",
+"value2": "5923000000",
+"value3": "35504179058",
+"value4": "25748000000"
+},
+{
+"itemCode": "3HC",
+"itemDescTr": "(Esas Faaliyet Dışı) Finansal Giderler (-)",
+"itemDescEng": "Financial Expenses (from Other Operations) (-)",
+"value1": "-30739000000",
+"value2": "-14407000000",
+"value3": "-49140610019",
+"value4": "-38135000000"
+},
+{
+"itemCode": "3HCA",
+"itemDescTr": "Vergi Öncesi Diğer Gelir ve Giderler",
+"itemDescEng": "Other Income (Expenses) Before Tax",
+"value1": "41962000000",
+"value2": "18035000000",
+"value3": "64099468612",
+"value4": "34601000000"
+},
+{
+"itemCode": "3I",
+"itemDescTr": "SÜRDÜRÜLEN FAALİYETLER VERGİ ÖNCESİ KARI (ZARARI)",
+"itemDescEng": "PROFIT BEFORE TAX FROM CONTINUING OPERATIONS ",
+"value1": "14006000000",
+"value2": "4408000000",
+"value3": "162009749467",
+"value4": "94060000000"
+},
+{
+"itemCode": "3IA",
+"itemDescTr": "Sürdürülen Faaliyetler Vergi Geliri (Gideri)",
+"itemDescEng": "Taxation on Continuing Operations",
+"value1": "4760000000",
+"value2": "5448000000",
+"value3": "-22916976074",
+"value4": "-13109000000"
+},
+{
+"itemCode": "3IB",
+"itemDescTr": "  Dönem Vergi Geliri (Gideri)",
+"itemDescEng": "  Taxation on Income (Expenses)",
+"value1": "-4716000000",
+"value2": "-90000000",
+"value3": "-13570486218",
+"value4": "-16180000000"
+},
+{
+"itemCode": "3IC",
+"itemDescTr": "  Ertelenmiş Vergi Geliri (Gideri)",
+"itemDescEng": "  Income (Expenses) of Deferred Tax",
+"value1": "9476000000",
+"value2": "5538000000",
+"value3": "-9346489857",
+"value4": "3071000000"
+},
+{
+"itemCode": "3ID",
+"itemDescTr": "  Diğer Vergi Geliri (Gideri)",
+"itemDescEng": "  Other Taxation Income (Expenses)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3J",
+"itemDescTr": "SÜRDÜRÜLEN FAALİYETLER DÖNEM KARI/ZARARI",
+"itemDescEng": "PROFIT FROM CONTINUING OPERATIONS ",
+"value1": "18766000000",
+"value2": "9856000000",
+"value3": "139092773392",
+"value4": "80951000000"
+},
+{
+"itemCode": "3K",
+"itemDescTr": "DURDURULAN FAALİYETLER",
+"itemDescEng": "DISCONTINUED OPERATIONS ",
+"value1": "0",
+"value2": "0",
+"value3": null,
+"value4": "0"
+},
+{
+"itemCode": "3KA",
+"itemDescTr": "Durdurulan Faaliyetler Vergi Sonrası Dönem Karı (Zararı)",
+"itemDescEng": "Profit After Taxes from Discontinued Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3L",
+"itemDescTr": "DÖNEM KARI (ZARARI)",
+"itemDescEng": "NET PROFIT AFTER TAXES",
+"value1": "18766000000",
+"value2": "9856000000",
+"value3": "139092773392",
+"value4": "80951000000"
+},
+{
+"itemCode": "3LA",
+"itemDescTr": "Dönem Kar/Zararının Dağılımı",
+"itemDescEng": "Distrubition of Profit (Loss)",
+"value1": "0",
+"value2": "0",
+"value3": null,
+"value4": "0"
+},
+{
+"itemCode": "3LB",
+"itemDescTr": "Azınlık Payları",
+"itemDescEng": "Minority Interests",
+"value1": "-98000000",
+"value2": "-59000000",
+"value3": "-107160209",
+"value4": "-113000000"
+},
+{
+"itemCode": "3Z",
+"itemDescTr": "Ana Ortaklık Payları",
+"itemDescEng": "Parent Shares",
+"value1": "18864000000",
+"value2": "9915000000",
+"value3": "139199933601",
+"value4": "81064000000"
+},
+{
+"itemCode": "3ZD",
+"itemDescTr": "Hisse Başına Kazanç",
+"itemDescEng": "Earnings per Share",
+"value1": "14",
+"value2": "7",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3ZE",
+"itemDescTr": "Seyreltilmiş Hisse Başına Kazanç",
+"itemDescEng": "Diluted Earnings per Share",
+"value1": "14",
+"value2": "7",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3ZF",
+"itemDescTr": "Sürdürülen Faaliyetlerden Hisse Başına Kazanç",
+"itemDescEng": "Earnings per Share from Continuing Operations ",
+"value1": "0",
+"value2": "7",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3ZG",
+"itemDescTr": "Sürdürülen Faaliyetlerden Seyreltilmiş Hisse Başına Kazanç",
+"itemDescEng": "Earnings per Share from Discontinued Operations ",
+"value1": "14",
+"value2": "7",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "4B",
+"itemDescTr": "Amortisman Giderleri",
+"itemDescEng": "Depreciation & Amortization",
+"value1": "58665000000",
+"value2": "28358000000",
+"value3": "111496075673",
+"value4": "67762000000"
+},
+{
+"itemCode": "4BA",
+"itemDescTr": "Kıdem Tazminatı",
+"itemDescEng": "Severance Payments",
+"value1": "798000000",
+"value2": "395000000",
+"value3": "1481401567",
+"value4": "1002000000"
+},
+{
+"itemCode": "4BB",
+"itemDescTr": "Finansman Giderleri",
+"itemDescEng": "Financial Expenses",
+"value1": "-30739000000",
+"value2": "-14407000000",
+"value3": "-49140610019",
+"value4": "-38135000000"
+},
+{
+"itemCode": "4BC",
+"itemDescTr": "Yurtiçi Satışlar",
+"itemDescEng": "Domestic Sales",
+"value1": "43855000000",
+"value2": "17857000000",
+"value3": "92599374",
+"value4": "60127000000"
+},
+{
+"itemCode": "4BD",
+"itemDescTr": "Yurtdışı Satışlar",
+"itemDescEng": "Export Sales",
+"value1": "519794000000",
+"value2": "230605000000",
+"value3": "990160329",
+"value4": "605465000000"
+},
+{
+"itemCode": "4BE",
+"itemDescTr": "Net Yabancı Para Pozisyonu",
+"itemDescEng": "Net Fx Position",
+"value1": "-299075000000",
+"value2": "-258931000000",
+"value3": "-326950507280",
+"value4": "-219830000000"
+},
+{
+"itemCode": "4BEA",
+"itemDescTr": "Parasal net yabancı para varlık/(yükümlülük) pozisyonu",
+"itemDescEng": "Parasal net yabancı para varlık/(yükümlülük) pozisyonu",
+"value1": "-392004000000",
+"value2": "-344084000000",
+"value3": "-420846401853",
+"value4": "-267772000000"
+},
+{
+"itemCode": "4BEB",
+"itemDescTr": "Net YPP (Hedge Dahil)",
+"itemDescEng": "Net YPP (Hedge Dahil)",
+"value1": "-268708000000",
+"value2": "-250163000000",
+"value3": "-325108764791",
+"value4": "-221448000000"
+},
+{
+"itemCode": "4C",
+"itemDescTr": " İşletme Faaliyetlerinden Kaynaklanan Net Nakit",
+"itemDescEng": " Net Cash from Operations",
+"value1": "74326000000",
+"value2": "43336000000",
+"value3": "218810548035",
+"value4": "140149000000"
+},
+{
+"itemCode": "4CA",
+"itemDescTr": " Düzeltme Öncesi Kar",
+"itemDescEng": " Earnings Before Adjustments",
+"value1": "18766000000",
+"value2": "9856000000",
+"value3": "139092773392",
+"value4": "80951000000"
+},
+{
+"itemCode": "4CAA",
+"itemDescTr": " Düzeltmeler:",
+"itemDescEng": " Adjustments:",
+"value1": "35846000000",
+"value2": "1531000000",
+"value3": "96435944795",
+"value4": "67336000000"
+},
+{
+"itemCode": "4CAB",
+"itemDescTr": "  Amortisman & İtfa Payları",
+"itemDescEng": "  Depreciation & Amortisation",
+"value1": "58665000000",
+"value2": "28358000000",
+"value3": "111496075673",
+"value4": "67762000000"
+},
+{
+"itemCode": "4CAC",
+"itemDescTr": "  Karşılıklardaki Değişim",
+"itemDescEng": "  Change in Provisions",
+"value1": "5446000000",
+"value2": "4066000000",
+"value3": "8955531732",
+"value4": "3248000000"
+},
+{
+"itemCode": "4CAD",
+"itemDescTr": "  Diğer Gelir/ Gider",
+"itemDescEng": "  Other Income / Expense",
+"value1": "-28265000000",
+"value2": "-30893000000",
+"value3": "-24015662610",
+"value4": "-3674000000"
+},
+{
+"itemCode": "4CAE",
+"itemDescTr": " İşletme Sermayesinde Değişikler Öncesi Faaliyet Karı (+)",
+"itemDescEng": " Operating Profit Before Changes in Working Capital (+)",
+"value1": "54612000000",
+"value2": "11387000000",
+"value3": "235528718187",
+"value4": "148287000000"
+},
+{
+"itemCode": "4CAF",
+"itemDescTr": "  İşletme Sermayesindeki Değişiklikler",
+"itemDescEng": "  Change in Working Capital",
+"value1": "32392000000",
+"value2": "20884000000",
+"value3": "-8858969786",
+"value4": "-2456000000"
+},
+{
+"itemCode": "4CAG",
+"itemDescTr": " Esas Faaliyet ile İlgili Oluşan Nakit (+)",
+"itemDescEng": " Cash from Core Operations (+)",
+"value1": "87004000000",
+"value2": "32271000000",
+"value3": "226669748401",
+"value4": "145831000000"
+},
+{
+"itemCode": "4CAH",
+"itemDescTr": "  Diğer İşletme Faaliyetlerinden Nakit",
+"itemDescEng": "  Cash from Other Operations",
+"value1": "-12678000000",
+"value2": "11065000000",
+"value3": "-7859200366",
+"value4": "-5682000000"
+},
+{
+"itemCode": "4CAI",
+"itemDescTr": "  Sabit Sermaye Yatırımları",
+"itemDescEng": "  Capital Expenditures (CapEx)",
+"value1": "-43613000000",
+"value2": "-20125000000",
+"value3": "-90457347214",
+"value4": "-51663000000"
+},
+{
+"itemCode": "4CAJ",
+"itemDescTr": "  Diğer Yatırım Faaliyetlerinden Nakit",
+"itemDescEng": "  Cash from Other Investment Operations",
+"value1": "-16826000000",
+"value2": "-26132000000",
+"value3": "-79902655443",
+"value4": "-5836000000"
+},
+{
+"itemCode": "4CAK",
+"itemDescTr": " Yatırım Faaliyetlerinden Kaynaklanan Nakit",
+"itemDescEng": " Cash from Investment Operations",
+"value1": "-60439000000",
+"value2": "-46257000000",
+"value3": "-170360002657",
+"value4": "-57499000000"
+},
+{
+"itemCode": "4CB",
+"itemDescTr": "Serbest Nakit Akım",
+"itemDescEng": "Free Cash Flow",
+"value1": "13887000000",
+"value2": "-2921000000",
+"value3": "48450545378",
+"value4": "82650000000"
+},
+{
+"itemCode": "4CBA",
+"itemDescTr": "Finansal Borçlardaki Değişim",
+"itemDescEng": "Change in Financial Debt",
+"value1": "38197000000",
+"value2": "20154000000",
+"value3": "42865261091",
+"value4": "-9558000000"
+},
+{
+"itemCode": "4CBB",
+"itemDescTr": "Temettü Ödemeleri",
+"itemDescEng": "Dividends Paid",
+"value1": "0",
+"value2": "0",
+"value3": "-10540560754",
+"value4": "-8951000000"
+},
+{
+"itemCode": "4CBC",
+"itemDescTr": "Sermaye Artırımı",
+"itemDescEng": "Rights Issue",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "4CBD",
+"itemDescTr": "Diğer Finansman Faaliyetlerinden Nakit",
+"itemDescEng": "Cash from Other Financial Operations",
+"value1": "-51634000000",
+"value2": "-28952000000",
+"value3": "-90301906032",
+"value4": "-57191000000"
+},
+{
+"itemCode": "4CBE",
+"itemDescTr": "Finansman Faaliyetlerden Kaynaklanan Nakit",
+"itemDescEng": "Cash from Financial Operations",
+"value1": "-13437000000",
+"value2": "-8798000000",
+"value3": "-57977205696",
+"value4": "-75700000000"
+},
+{
+"itemCode": "4CBF",
+"itemDescTr": "Yab. Para Çev. Fark. Etk. Önc.Nak.Ve Nak. Benz. Net Artış/Azalış",
+"itemDescEng": "Cash Net Inc. / Dec. before For.Cur. Trans. Dif.",
+"value1": "450000000",
+"value2": "-11719000000",
+"value3": "-9526660318",
+"value4": "6950000000"
+},
+{
+"itemCode": "4CBG",
+"itemDescTr": " Yab.ı Para Çevrim Fark. Nakit Ve Nakit Benz. Üzerindeki Etkisi",
+"itemDescEng": " Foreign Curr. Trans.Diff.Cash and Cash Benz. Imp.",
+"value1": "-5515000000",
+"value2": "-1673000000",
+"value3": "1305941445",
+"value4": "0"
+},
+{
+"itemCode": "4CBH",
+"itemDescTr": " Diğer Nakit Girişi/Çıkışı",
+"itemDescEng": " Other Cash Inflow/Outflow",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "4CBI",
+"itemDescTr": "Nakit ve Benzerlerindeki Değişim",
+"itemDescEng": "Change in Cash & Cash Equivalents",
+"value1": "-5065000000",
+"value2": "-13392000000",
+"value3": "-8220718872",
+"value4": "6950000000"
+},
+{
+"itemCode": "4CBJ",
+"itemDescTr": "Diğer Nakit ve Nakit Benzerlerindeki Artış",
+"itemDescEng": "Other Cash & Cash Equivalents Change",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "4CBK",
+"itemDescTr": "Dönem Başı Nakit Değerler",
+"itemDescEng": "Cash at the beginning of the Quarter",
+"value1": "83183000000",
+"value2": "83183000000",
+"value3": "106175747946",
+"value4": "90164000000"
+},
+{
+"itemCode": "4CBL",
+"itemDescTr": "Dönem Sonu Nakit",
+"itemDescEng": "Cash at the End of the Quarter",
+"value1": "78118000000",
+"value2": "69791000000",
+"value3": "97955029073",
+"value4": "97114000000"
+}
+]
+},
+"UFRS": {
+"ok": true,
+"errorCode": null,
+"errorDescription": null,
+"transactionId": "82ca35774bfa48fc9265b62b564bd6d3",
+"value": []
+}
+}

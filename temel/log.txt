@@ -1,0 +1,4 @@
+THYAO {'XI_29': 147, 'UFRS': 0}
+BIMAS {'XI_29': 147, 'UFRS': 0}
+AKBNK {'XI_29': 0, 'UFRS': 192}
+KCHOL {'XI_29': 147, 'UFRS': 0}

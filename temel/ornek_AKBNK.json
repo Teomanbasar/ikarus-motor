@@ -1,0 +1,1745 @@
+{
+"XI_29": {
+"ok": true,
+"errorCode": null,
+"errorDescription": null,
+"transactionId": "c2a8edced8b746a6920eaba30729b0e0",
+"value": []
+},
+"UFRS": {
+"ok": true,
+"errorCode": null,
+"errorDescription": null,
+"transactionId": "a8d797ee153c479391fdb149663b1106",
+"value": [
+{
+"itemCode": "1A",
+"itemDescTr": "I. NAKİT DEĞERLER VE MERKEZ BANKASI",
+"itemDescEng": "I. CASH AND BALANCES WITH THE CENTRAL BANK OF TURKEY",
+"value1": "570495000000",
+"value2": "501656898000",
+"value3": "559433242000",
+"value4": "0"
+},
+{
+"itemCode": "1AA",
+"itemDescTr": "II. GERÇEĞE UYGUN DEĞ./ZAR. YANS.(Net)",
+"itemDescEng": "II.FINANCIAL ASSETS WHERE FAIR VAL. Chng. (Net)",
+"value1": "29819000000",
+"value2": "28159700000",
+"value3": "28664708000",
+"value4": "0"
+},
+{
+"itemCode": "1AAA",
+"itemDescTr": "2.1 Alım Satım Amaçlı Finansal Varlıklar",
+"itemDescEng": "2.1 Trading Financial Assets (Net)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AAB",
+"itemDescTr": "2.1.1 Devlet Borçlanma Senetleri",
+"itemDescEng": "2.1.1 Public Sector Debt Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AAC",
+"itemDescTr": "2.1.2 Sermayede Payı Temsil Eden Menkul Değerler",
+"itemDescEng": "2.1.2 Share Certificates",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AAD",
+"itemDescTr": "2.1.3 Alım Satım Amaçlı Türev Finansal Varlıklar",
+"itemDescEng": "2.1.3 Trading Derivative Financial Assets",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AAE",
+"itemDescTr": "2.1.4 Diğer Menkul Değerler",
+"itemDescEng": "2.1.4 Other Marketable Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AB",
+"itemDescTr": "2.2 Gerçeğe Uyg. Değ. Kar/Zarara Yans.",
+"itemDescEng": "2.2 Reclassed as Financial Assets Designated at Fair Value",
+"value1": "29819000000",
+"value2": "28159700000",
+"value3": "28664708000",
+"value4": "0"
+},
+{
+"itemCode": "1ABA",
+"itemDescTr": "2.2.1 Devlet Borçlanma Senetleri",
+"itemDescEng": "2.2.1 Government Debt Securities",
+"value1": "15558000000",
+"value2": "14846805000",
+"value3": "15258208000",
+"value4": "0"
+},
+{
+"itemCode": "1ABB",
+"itemDescTr": "2.2.2 Sermayede Payı Temsil Eden Menkul Değerler",
+"itemDescEng": "2.2.2 Securities Representing Share in Equity",
+"value1": "2932000000",
+"value2": "2462254000",
+"value3": "2757347000",
+"value4": "0"
+},
+{
+"itemCode": "1ABC",
+"itemDescTr": "2.2.3 Krediler",
+"itemDescEng": "2.2.3 Loans",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ABD",
+"itemDescTr": "2.2.4 Diğer Menkul Değerler",
+"itemDescEng": "2.2.4 Other Marketable Securities",
+"value1": "11329000000",
+"value2": "10850641000",
+"value3": "10649153000",
+"value4": "0"
+},
+{
+"itemCode": "1AC",
+"itemDescTr": "III. BANKALAR",
+"itemDescEng": "III. BANKS",
+"value1": "43239000000",
+"value2": "75077333000",
+"value3": "34023810000",
+"value4": "0"
+},
+{
+"itemCode": "1AD",
+"itemDescTr": "IV. PARA PİYASALARINDAN ALACAKLAR",
+"itemDescEng": "IV. RECEIVABLES FROM MONEY MARKETS",
+"value1": "1280000000",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ADA",
+"itemDescTr": "4.1 Bankalararası Para Piyasasından Alacaklar",
+"itemDescEng": "4.1 Interbank Money Market Placements",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ADB",
+"itemDescTr": "4.2 İMKB Takasbank Piyasasından Alacaklar",
+"itemDescEng": "4.2 Receivables From Istanbul Stock Exchange Money Market",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ADC",
+"itemDescTr": "4.3 Ters Repo İşlemlerinden Alacaklar",
+"itemDescEng": "4.3 Receivables From Reverse Repurchase Agreements",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AE",
+"itemDescTr": "V. SATILMAYA HAZIR FİNANSAL VARLIKLAR (Net)",
+"itemDescEng": "V.AVAILABLE VAILABLE FOR SALE FINANCIAL ASSETS (Net)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AEA",
+"itemDescTr": "5.1 Sermayede Payı Temsil Eden Menkul Değerler",
+"itemDescEng": "5.1 Securities Representing Share in Equity",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AEB",
+"itemDescTr": "5.2 Devlet Borçlanma Senetleri",
+"itemDescEng": "5.2 Government Debt Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AEC",
+"itemDescTr": "5.3 Diğer Menkul Değerler",
+"itemDescEng": "5.3 Other Marketable Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AF",
+"itemDescTr": "VI. KREDİLER",
+"itemDescEng": "VI. LOANS",
+"value1": "2061098000000",
+"value2": "1884653992000",
+"value3": "1782068947000",
+"value4": "0"
+},
+{
+"itemCode": "1AFA",
+"itemDescTr": "6.1 Krediler",
+"itemDescEng": "6.1 Short Term",
+"value1": "2061098000000",
+"value2": "1884653992000",
+"value3": "1782068947000",
+"value4": "0"
+},
+{
+"itemCode": "1AFB",
+"itemDescTr": "6.1.1 Bankanın Dahil Olduğu Risk Grubuna Kullandırılan Krediler",
+"itemDescEng": "6.1.1 Loans Granted To The Bank's Risk Group",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AFC",
+"itemDescTr": "6.1.2 Diğer",
+"itemDescEng": "6.1.2 Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AFD",
+"itemDescTr": "6.2 Takipteki Krediler",
+"itemDescEng": "6.3 Loans Under Follow-Up",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AFE",
+"itemDescTr": "6.3 Özel Karşılıklar (-)",
+"itemDescEng": "6.4 Specific Provisions (-)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AG",
+"itemDescTr": "VII. FAKTORİNG ALACAKLARI",
+"itemDescEng": "VII. FACTORING RECEIVABLES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AH",
+"itemDescTr": "VIII. VADEYE KADAR ELDE TUTULACAK YATIRIMLAR (Net)",
+"itemDescEng": "VIII. HELD TO MATURITY INVESTMENT (Net)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AHA",
+"itemDescTr": "8.1 Devlet Borçlanma Senetleri",
+"itemDescEng": "8.1 Government Debt Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AHB",
+"itemDescTr": "8.2 Diğer Menkul Değerler",
+"itemDescEng": "8.2 Other Marketable Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AI",
+"itemDescTr": "IX. İŞTİRAKLER (Net)",
+"itemDescEng": "IX. INVESTMENTS AND ASSOCIATES (Net)",
+"value1": "21000000",
+"value2": "20956000",
+"value3": "20956000",
+"value4": "0"
+},
+{
+"itemCode": "1AIA",
+"itemDescTr": "9.1 Özkaynak Yöntemine Göre Muhasebeleştirilenler",
+"itemDescEng": "9.1 Accounted With Equity Method",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AIB",
+"itemDescTr": "9.2 Konsolide Edilmeyenler",
+"itemDescEng": "9.2 Non-Consolidated Investments And Associates",
+"value1": "21000000",
+"value2": "20956000",
+"value3": "20956000",
+"value4": "0"
+},
+{
+"itemCode": "1AIC",
+"itemDescTr": "9.2.1 Mali İştirakler",
+"itemDescEng": "9.2.1 Financial Investments And Associates",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AID",
+"itemDescTr": "9.2.2 Mali Olmayan İştirakler",
+"itemDescEng": "9.2.2 Non-Financial Investments And Associates",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AJ",
+"itemDescTr": "X. BAĞLI ORTAKLIKLAR  (Net)",
+"itemDescEng": "X. SUBSIDIARIES (Net)",
+"value1": "100515000000",
+"value2": "92646086000",
+"value3": "90189567000",
+"value4": "0"
+},
+{
+"itemCode": "1AJA",
+"itemDescTr": "10.1 Konsolide Edilmeyen Mali Ortaklıklar",
+"itemDescEng": "10.1 Financial Subsidiaries",
+"value1": "94924000000",
+"value2": "87480864000",
+"value3": "85293034000",
+"value4": "0"
+},
+{
+"itemCode": "1AJB",
+"itemDescTr": "10.2 Konsolide Edilmeyen Mali Olmayan Ortaklıklar",
+"itemDescEng": "10.2 Non-Financial Subsidiaries",
+"value1": "5591000000",
+"value2": "5165222000",
+"value3": "4896533000",
+"value4": "0"
+},
+{
+"itemCode": "1AK",
+"itemDescTr": "XI. BİRLİKTE KONTROL EDİLEN ORTAKLIKLAR (İŞ ORTAKLIKLARI) (Net)",
+"itemDescEng": "XI. JOINT VENTURES (BUSINESS PARTNERS) (Net)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AKA",
+"itemDescTr": "11.1 Özkaynak Yöntemine Göre Muhasebeleştirilenler",
+"itemDescEng": "11.1 Accounted With Eequity Method",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AKB",
+"itemDescTr": "11.2 Konsolide Edilmeyenler",
+"itemDescEng": "11.2 Non-Consolidated Jointly Controlled Associates",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AKC",
+"itemDescTr": "11.2.1 Mali Ortaklıklar",
+"itemDescEng": "11.2.1 Financial Jointly Controlled Associates",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AKD",
+"itemDescTr": "11.2.2 Mali Olmayan Ortaklıklar",
+"itemDescEng": "11.2.2 Non-Financial Jointly Controlled Associates",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AL",
+"itemDescTr": "XII. KİRALAMA İŞLEMLERİNDEN ALACAKLAR",
+"itemDescEng": "XII. RECEIVABLES FROM LEASING TRANSACTIONS",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ALA",
+"itemDescTr": "12.1 Finansal Kiralama Alacakları",
+"itemDescEng": "12.1 Gross Finance Lease Receivables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ALB",
+"itemDescTr": "12.2 Faaliyet Kiralaması Alacakları",
+"itemDescEng": "12.2 Operational Lease Receivables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ALC",
+"itemDescTr": "12.3 Diğer",
+"itemDescEng": "12.3 Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ALD",
+"itemDescTr": "12.4 Kazanılmamış Gelirler (-)",
+"itemDescEng": "12.4 Unearned Income (-)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AM",
+"itemDescTr": "XIII. RİSKTEN KORUNMA AMAÇLI TÜREV FİNANSAL VARLIKLAR",
+"itemDescEng": "XIII. DERIVATIVE FINANCIAL ASSETS FOR HEDGE PURPOSES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AMA",
+"itemDescTr": "13.1 Gerçeğe Uygun Değer Riskinden Korunma Amaçlılar",
+"itemDescEng": "13.1 Hedging For Fair Value Risk",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AMB",
+"itemDescTr": "13.2 Nakit Akış Riskinden Korunma Amaçlılar",
+"itemDescEng": "13.2 Hedging For Cash Flow Risk",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AMC",
+"itemDescTr": "13.3 Yurtdışındaki Net Yatırım Riskinden Korunma Amaçlılar",
+"itemDescEng": "13.3 Hedging For Net Investments Risk in Abroad",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AN",
+"itemDescTr": "XIV. MADDİ DURAN VARLIKLAR (Net)",
+"itemDescEng": "XIV. PROPERTY AND EQUIPMENT (Net)",
+"value1": "50130000000",
+"value2": "49670407000",
+"value3": "50081398000",
+"value4": "0"
+},
+{
+"itemCode": "1AO",
+"itemDescTr": "XV. MADDİ OLMAYAN DURAN VARLIKLAR (Net)",
+"itemDescEng": "XV. INTANGIBLE ASSETS (Net)",
+"value1": "13854000000",
+"value2": "12628500000",
+"value3": "10340581000",
+"value4": "0"
+},
+{
+"itemCode": "1AOA",
+"itemDescTr": "15.1 Şerefiye",
+"itemDescEng": "17.1 Goodwill",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AOB",
+"itemDescTr": "15.2 Diğer",
+"itemDescEng": "17.2 Other",
+"value1": "13854000000",
+"value2": "12628500000",
+"value3": "10340581000",
+"value4": "0"
+},
+{
+"itemCode": "1AP",
+"itemDescTr": "XVI. YATIRIM AMAÇLI GAYRİMENKULLER (Net)",
+"itemDescEng": "XVI. REAL ESTATES FOR INVESTMENT PURPOSE (Net)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AR",
+"itemDescTr": "XVII. VERGİ VARLIĞI",
+"itemDescEng": "XVII. TAX ASSETS",
+"value1": "645000000",
+"value2": "614684000",
+"value3": "413253000",
+"value4": "0"
+},
+{
+"itemCode": "1ARA",
+"itemDescTr": "17.1 Cari Vergi Varlığı",
+"itemDescEng": "17.1 Current Tax Assets",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1ARB",
+"itemDescTr": "17.2 Ertelenmiş Vergi Varlığı",
+"itemDescEng": "17.2 Deferred Tax Assets",
+"value1": "645000000",
+"value2": "614684000",
+"value3": "413253000",
+"value4": "0"
+},
+{
+"itemCode": "1AS",
+"itemDescTr": "XVIII. SATIŞ AMAÇLI  FAALİYETLERE İLİŞKİN DUV",
+"itemDescEng": "XVIII. PROPERTY AND EQU. OPER.(Net)",
+"value1": "4438000000",
+"value2": "3676241000",
+"value3": "3632985000",
+"value4": "0"
+},
+{
+"itemCode": "1ASA",
+"itemDescTr": "18.1 Satış Amaçlı",
+"itemDescEng": "18.1 Held For Sale Purpose",
+"value1": "4438000000",
+"value2": "3676241000",
+"value3": "3632985000",
+"value4": "0"
+},
+{
+"itemCode": "1ASB",
+"itemDescTr": "18.2 Durdurulan Faaliyetlere İlişkin",
+"itemDescEng": "18.2 Held From Terminated Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "1AT",
+"itemDescTr": "XIX. DİĞER AKTİFLER",
+"itemDescEng": "XIX. OTHER ASSETS",
+"value1": "100606000000",
+"value2": "79323214000",
+"value3": "64427082000",
+"value4": "0"
+},
+{
+"itemCode": "1Z",
+"itemDescTr": "AKTİF TOPLAMI",
+"itemDescEng": "TOTAL ASSETS",
+"value1": "3727680000000",
+"value2": "3419802978000",
+"value3": "3336006508000",
+"value4": "0"
+},
+{
+"itemCode": "2A",
+"itemDescTr": "I. MEVDUAT",
+"itemDescEng": "I. DEPOSITS",
+"value1": "2382280000000",
+"value2": "2216602561000",
+"value3": "2071580423000",
+"value4": "0"
+},
+{
+"itemCode": "2AA",
+"itemDescTr": "1.1 Bankanın Dahil Olduğu Risk Grubunun Mevduatı",
+"itemDescEng": "1.1 Deposits Held By The Bank's Risk Group",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2AB",
+"itemDescTr": "1.2 Diğer",
+"itemDescEng": "1.2 Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2B",
+"itemDescTr": "II. ALIM SATIM AMAÇLI TÜREV FİNANSAL BORÇLAR",
+"itemDescEng": "II. TRADING DERIVATIVE FINANCIAL LIABILITIES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2C",
+"itemDescTr": "III. ALINAN KREDİLER",
+"itemDescEng": "III. FUNDS BORROWED",
+"value1": "159819000000",
+"value2": "144469281000",
+"value3": "144505032000",
+"value4": "0"
+},
+{
+"itemCode": "2D",
+"itemDescTr": "IV. PARA PİYASALARINA BORÇLAR",
+"itemDescEng": "IV. FUNDS FROM MONEY MARKET",
+"value1": "267117000000",
+"value2": "221375361000",
+"value3": "329545313000",
+"value4": "0"
+},
+{
+"itemCode": "2DA",
+"itemDescTr": "4.1 Bankalararası Para Piyasalarına Borçlar",
+"itemDescEng": "4.1 Interbank Money Market Payables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2DB",
+"itemDescTr": "4.2 İMKB Takasbank Piyasasına Borçlar",
+"itemDescEng": "4.2 Istanbul Stock Exchange Money Market Payables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2DC",
+"itemDescTr": "4.3 Repo İşlemlerinden Sağlanan Fonlar",
+"itemDescEng": "4.3 Funds Provided Under Repurchase Agreements",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2E",
+"itemDescTr": "V. İHRAÇ EDİLEN MENKUL KIYMETLER (Net)",
+"itemDescEng": "V. MARKETABLE SECURITIES ISSUED (Net)",
+"value1": "228187000000",
+"value2": "196703428000",
+"value3": "199357169000",
+"value4": "0"
+},
+{
+"itemCode": "2EA",
+"itemDescTr": "5.1 Bonolar",
+"itemDescEng": "5.1 Bills",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2EB",
+"itemDescTr": "5.2 Varlığa Dayalı Menkul Kıymetler",
+"itemDescEng": "5.2 Asset Backed Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2EC",
+"itemDescTr": "5.3 Tahviller",
+"itemDescEng": "5.3 Bonds",
+"value1": "228187000000",
+"value2": "196703428000",
+"value3": "199357169000",
+"value4": "0"
+},
+{
+"itemCode": "2F",
+"itemDescTr": "VI. FONLAR",
+"itemDescEng": "VI. FUNDS",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2FA",
+"itemDescTr": "6.1 Müstakriz Fonları",
+"itemDescEng": "6.1 Borrower Funds",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2FB",
+"itemDescTr": "6.2 Diğer",
+"itemDescEng": "6.2 Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2G",
+"itemDescTr": "VII. MUHTELİF BORÇLAR",
+"itemDescEng": "VII. MISCELLANEOUS PAYABLES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2H",
+"itemDescTr": "VIII. DİĞER YABANCI KAYNAKLAR",
+"itemDescEng": "VIII. OTHER EXTERNAL RESOURCES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2I",
+"itemDescTr": "IX. FAKTORİNG BORÇLARI",
+"itemDescEng": "IX. FACTORING PAYABLES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2J",
+"itemDescTr": "X. KİRALAMA İŞLEMLERİNDEN BORÇLAR",
+"itemDescEng": "X. LEASING TRANSACTONS PAYABLES",
+"value1": "3271000000",
+"value2": "3456514000",
+"value3": "3464161000",
+"value4": "0"
+},
+{
+"itemCode": "2JA",
+"itemDescTr": "10.1 Finansal Kiralama Borçları",
+"itemDescEng": "10.1 Gross Financial Lease Payables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2JB",
+"itemDescTr": "10.2 Faaliyet Kiralaması Borçları",
+"itemDescEng": "10.2 Operational Financial Lease Payables",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2JC",
+"itemDescTr": "10.3 Diğer",
+"itemDescEng": "10.3 Other",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2JD",
+"itemDescTr": "10.4 Ertelenmiş Finansal Kiralama Giderleri ( - )",
+"itemDescEng": "10.4 Deferred Finance Leasing Expenses ( - )",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2K",
+"itemDescTr": "XI.  RİSKTEN KORUNMA AMAÇLI TÜREV FİNANSAL BORÇLAR",
+"itemDescEng": "XI. DERIVATIVE FINANCIAL LIABILITIES FOR HEDGE PURPOSES",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2KA",
+"itemDescTr": "11.1 Gerçeğe Uygun Değer Riskinden Korunma Amaçlılar",
+"itemDescEng": "11.1 Hedging For Fair Value Risk",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2KB",
+"itemDescTr": "11.2 Nakit Akış Riskinden Korunma Amaçlılar",
+"itemDescEng": "11.2 Hedging For Cash Flow Risk",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2KC",
+"itemDescTr": "11.3 Yurtdışındaki Net Yatırım Riskinden Korunma Amaçlılar",
+"itemDescEng": "11.3 Hedging For Net Investments Risk in Abroad",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2L",
+"itemDescTr": "XII.  KARŞILIKLAR",
+"itemDescEng": "XII. PROVISIONS",
+"value1": "9204000000",
+"value2": "8545203000",
+"value3": "8265956000",
+"value4": "0"
+},
+{
+"itemCode": "2LA",
+"itemDescTr": "12.1 Genel Karşılıklar",
+"itemDescEng": "12.1 General Loan Loss Provision",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2LB",
+"itemDescTr": "12.2 Yeniden Yapılanma Karşılığı",
+"itemDescEng": "12.2 Restructuring Provision",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2LC",
+"itemDescTr": "12.3 Çalışan Hakları Karşılığı",
+"itemDescEng": "12.3 Provision For Employ Benefits",
+"value1": "5018000000",
+"value2": "4390423000",
+"value3": "4121145000",
+"value4": "0"
+},
+{
+"itemCode": "2LD",
+"itemDescTr": "12.4 Sigorta Teknik Karşılıkları (Net)",
+"itemDescEng": "12.4 Insurance Technical Reserves (Net)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2LE",
+"itemDescTr": "12.5 Diğer Karşılıklar",
+"itemDescEng": "12.5 Other Provisions",
+"value1": "4186000000",
+"value2": "4154780000",
+"value3": "4144811000",
+"value4": "0"
+},
+{
+"itemCode": "2M",
+"itemDescTr": "XIII. VERGİ BORCU",
+"itemDescEng": "XIII. TAX LIABILITIES",
+"value1": "23731000000",
+"value2": "28561127000",
+"value3": "27258468000",
+"value4": "0"
+},
+{
+"itemCode": "2MA",
+"itemDescTr": "13.1 Cari Vergi Borcu",
+"itemDescEng": "13.1 Current Tax Liabilities",
+"value1": "22010000000",
+"value2": "26042814000",
+"value3": "13928644000",
+"value4": "0"
+},
+{
+"itemCode": "2MB",
+"itemDescTr": "13.2 Ertelenmiş Vergi Borcu",
+"itemDescEng": "13.2 Deferred Tax Liabilities",
+"value1": "1721000000",
+"value2": "2518313000",
+"value3": "13329824000",
+"value4": "0"
+},
+{
+"itemCode": "2N",
+"itemDescTr": "XIV. SATIŞ AMAÇLI ELDE TUTULAN  DUV  BORÇ.",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2NA",
+"itemDescTr": "14.1 Satış Amaçlı",
+"itemDescEng": "14.1 Held For Sale Purpose",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2NB",
+"itemDescTr": "14.2 Durdurulan Faaliyetlere İlişkin",
+"itemDescEng": "14.2 Held From Terminated Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2NBA",
+"itemDescTr": "XV.  SERMAYE BENZERİ KREDİLER",
+"itemDescEng": "XV. SUBORDINATED LOANS",
+"value1": "118535000000",
+"value2": "112711058000",
+"value3": "82804217000",
+"value4": "0"
+},
+{
+"itemCode": "2O",
+"itemDescTr": "XVI. ÖZKAYNAKLAR",
+"itemDescEng": "XVI. SHAREHOLDERS' EQUITY",
+"value1": "324746000000",
+"value2": "302597564000",
+"value3": "310158190000",
+"value4": "0"
+},
+{
+"itemCode": "2OA",
+"itemDescTr": "16.1 Ödenmiş Sermaye",
+"itemDescEng": "16.1 Paid-in Capital",
+"value1": "5200000000",
+"value2": "5200000000",
+"value3": "5200000000",
+"value4": "0"
+},
+{
+"itemCode": "2OB",
+"itemDescTr": "16.2 Sermaye Yedekleri",
+"itemDescEng": "16.2 Capital Reserves",
+"value1": "5401000000",
+"value2": "5400628000",
+"value3": "5400628000",
+"value4": "0"
+},
+{
+"itemCode": "2OC",
+"itemDescTr": "16.2.1 Hisse Senedi İhraç Primleri",
+"itemDescEng": "16.2.1 Share Premium",
+"value1": "3506000000",
+"value2": "3505742000",
+"value3": "3505742000",
+"value4": "0"
+},
+{
+"itemCode": "2OD",
+"itemDescTr": "16.2.2 Hisse Senedi İptal Karları",
+"itemDescEng": "16.2.2 Share Cancellation Profits",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OE",
+"itemDescTr": "16.2.3 Menkul Değerler Değerleme Farkları",
+"itemDescEng": "16.2.3 Valuation Changes Of Marketable Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OF",
+"itemDescTr": "16.2.4 Maddi Duran Varlıklar Yeniden Değerleme Farkları",
+"itemDescEng": "16.2.4 Revaluation Changes Of Property And Equipment",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OG",
+"itemDescTr": "16.2.5 Maddi Olmayan Duran Varlıklar Yeniden Değerleme Farkları",
+"itemDescEng": "16.2.5 Revaluation Changes Of Intangible Assets",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OH",
+"itemDescTr": "16.2.6 Yatırım Amaçlı Gayrimenkuller Yeniden Değerleme Farkları",
+"itemDescEng": "16.2.6 Revaluation changes of real estates for investment purpose",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OI",
+"itemDescTr": "16.2.7 İşt. Bağlı Ort. Bedelsiz Hisse Senetleri",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OJ",
+"itemDescTr": "16.2.8 Riskten Korunma Fonları (Etkin kısım)",
+"itemDescEng": "16.2.8 Hedge Funds",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OK",
+"itemDescTr": "16.2.9 Satış Amaçlı Elde Tut. Dur. DUV Farkları",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OL",
+"itemDescTr": "16.2.10 Diğer Sermaye Yedekleri",
+"itemDescEng": "16.2.6 Other Capital Reserves",
+"value1": "1895000000",
+"value2": "1894886000",
+"value3": "1894886000",
+"value4": "0"
+},
+{
+"itemCode": "2OM",
+"itemDescTr": "16.3 Kar Yedekleri",
+"itemDescEng": "16.3 Profit Reserves",
+"value1": "245588000000",
+"value2": "245513802000",
+"value3": "199716101000",
+"value4": "0"
+},
+{
+"itemCode": "2ON",
+"itemDescTr": "16.3.1 Yasal Yedekler",
+"itemDescEng": "16.3.1 Legal Reserves",
+"value1": "5477000000",
+"value2": "5476871000",
+"value3": "4357935000",
+"value4": "0"
+},
+{
+"itemCode": "2OO",
+"itemDescTr": "16.3.2 Statü Yedekleri",
+"itemDescEng": "16.3.2 Status Reserves",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OP",
+"itemDescTr": "16.3.3 Olağanüstü Yedekler",
+"itemDescEng": "16.3.3 Extraordinary Reserves",
+"value1": "216703000000",
+"value2": "216434518000",
+"value3": "179433499000",
+"value4": "0"
+},
+{
+"itemCode": "2OR",
+"itemDescTr": "16.3.4 Diğer Kar Yedekleri",
+"itemDescEng": "16.3.4 Other Profit Reserves",
+"value1": "23408000000",
+"value2": "23602413000",
+"value3": "15924667000",
+"value4": "0"
+},
+{
+"itemCode": "2OT",
+"itemDescTr": "16.4 Kar veya Zarar",
+"itemDescEng": "16.4 Profit or Loss",
+"value1": "34378000000",
+"value2": "19178575000",
+"value3": "57247061000",
+"value4": "0"
+},
+{
+"itemCode": "2OU",
+"itemDescTr": "16.4.1 Geçmiş Yıllar Kar/Zararı",
+"itemDescEng": "16.4.1 Prior Year Profit/Loss",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2OV",
+"itemDescTr": "16.4.2 Dönem Net Kar/Zararı",
+"itemDescEng": "16.4.2 Current Year Profit/Loss",
+"value1": "34378000000",
+"value2": "19178575000",
+"value3": "57247061000",
+"value4": "0"
+},
+{
+"itemCode": "2OVA",
+"itemDescTr": "16.5 Azınlık Payları",
+"itemDescEng": "16.5 Minority Shares'",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "2Z",
+"itemDescTr": "PASİF TOPLAMI",
+"itemDescEng": "TOTAL LIABILITIES",
+"value1": "3727680000000",
+"value2": "3419802978000",
+"value3": "3336006508000",
+"value4": "0"
+},
+{
+"itemCode": "3A",
+"itemDescTr": "I. FAİZ GELİRLERİ",
+"itemDescEng": "I. INTEREST INCOME",
+"value1": "349461000000",
+"value2": "162844257000",
+"value3": "628173603000",
+"value4": "461610000000"
+},
+{
+"itemCode": "3AA",
+"itemDescTr": "1.1 Kredilerden Alınan Faizler",
+"itemDescEng": "1.1 Interest on Loans",
+"value1": "232672000000",
+"value2": "110822398000",
+"value3": "395028739000",
+"value4": "287056000000"
+},
+{
+"itemCode": "3AB",
+"itemDescTr": "1.2 Zorunlu Karşılıklardan Alınan Faizler",
+"itemDescEng": "1.2 Interest Received From Reserve Deposits",
+"value1": "33146000000",
+"value2": "15099710000",
+"value3": "63514521000",
+"value4": "47959000000"
+},
+{
+"itemCode": "3AC",
+"itemDescTr": "1.3 Bankalardan Alınan Faizler",
+"itemDescEng": "1.3 Interest Received From Banks",
+"value1": "757000000",
+"value2": "342089000",
+"value3": "2068216000",
+"value4": "1658000000"
+},
+{
+"itemCode": "3AD",
+"itemDescTr": "1.4 Para Piyasası İşlemlerinden Alınan Faizler",
+"itemDescEng": "1.4 Interest Received From Money Market Transactions",
+"value1": "293000000",
+"value2": "228722000",
+"value3": "1656758000",
+"value4": "1519000000"
+},
+{
+"itemCode": "3AE",
+"itemDescTr": "1.5 Menkul Değerlerden Alınan Faizler",
+"itemDescEng": "1.5 Interest Received From Marketable Securities Portfolio",
+"value1": "81589000000",
+"value2": "35895906000",
+"value3": "164066609000",
+"value4": "122444000000"
+},
+{
+"itemCode": "3AF",
+"itemDescTr": "1.5.1 Alım Satım Amaçlı  Finansal Varlıklardan",
+"itemDescEng": "1.5.1 Trading Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3AG",
+"itemDescTr": "1.5.2 Gerçeğe Uygun Değ. Sınıflandırılan FV",
+"itemDescEng": null,
+"value1": "1552000000",
+"value2": "892866000",
+"value3": "4119709000",
+"value4": "3096000000"
+},
+{
+"itemCode": "3AH",
+"itemDescTr": "1.5.3 Satılmaya Hazır Finansal Varlıklardan",
+"itemDescEng": "1.5.3 Available-for-Sale Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3AJ",
+"itemDescTr": "1.5.4 Vadeye Kadar Elde Tutulacak Yatırımlardan",
+"itemDescEng": "1.5.4 Held to Maturity Securities",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3AK",
+"itemDescTr": "1.6 Finansal Kiralama Gelirleri",
+"itemDescEng": "1.6 Financial Lease Income",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3AL",
+"itemDescTr": "1.7 Diğer Faiz Gelirleri",
+"itemDescEng": "1.7 Other Interest Income",
+"value1": "1004000000",
+"value2": "455432000",
+"value3": "1838760000",
+"value4": "974000000"
+},
+{
+"itemCode": "3B",
+"itemDescTr": "II. FAİZ GİDERLERİ",
+"itemDescEng": "II. INTEREST EXPENSE",
+"value1": "266288000000",
+"value2": "122247415000",
+"value3": "526958597000",
+"value4": "396550000000"
+},
+{
+"itemCode": "3BA",
+"itemDescTr": "2.1 Mevduata Verilen Faizler",
+"itemDescEng": "2.1 Interst on Deposits",
+"value1": "227524000000",
+"value2": "103300416000",
+"value3": "440525627000",
+"value4": "329190000000"
+},
+{
+"itemCode": "3BB",
+"itemDescTr": "2.2 Kullanılan Kredilere Verilen Faizler",
+"itemDescEng": "2.2 Interest on Funds Borrowed",
+"value1": "3929000000",
+"value2": "1894023000",
+"value3": "7341804000",
+"value4": "5320000000"
+},
+{
+"itemCode": "3BC",
+"itemDescTr": "2.3 Para Piyasası İşlemlerine Verilen Faizler",
+"itemDescEng": "2.3 Interest on Money Market Transactions",
+"value1": "23578000000",
+"value2": "11878363000",
+"value3": "64016651000",
+"value4": "51650000000"
+},
+{
+"itemCode": "3BD",
+"itemDescTr": "2.4 İhraç Edilen Menkul Kıymetlere Verilen Faizler",
+"itemDescEng": "2.4 Interest on Securities Issued",
+"value1": "10746000000",
+"value2": "4931891000",
+"value3": "14325046000",
+"value4": "9944000000"
+},
+{
+"itemCode": "3BE",
+"itemDescTr": "2.5 Diğer Faiz Giderleri",
+"itemDescEng": "2.5 Other Interest Expense",
+"value1": "82000000",
+"value2": "42922000",
+"value3": "193200000",
+"value4": "61000000"
+},
+{
+"itemCode": "3C",
+"itemDescTr": "III. NET FAİZ GELİRİ/GİDERİ (I - II)",
+"itemDescEng": "III. NET INTEREST INCOME/EXPENSES (I - II)",
+"value1": "83173000000",
+"value2": "40596842000",
+"value3": "101215006000",
+"value4": "65060000000"
+},
+{
+"itemCode": "3CA",
+"itemDescTr": "IV. NET ÜCRET VE KOMİSYON GELİRLERİ/GİDERLERİ",
+"itemDescEng": "IV. NET FEES AND COMMISSIONS INCOME/EXPENSES",
+"value1": "64433000000",
+"value2": "30158371000",
+"value3": "114402397000",
+"value4": "81901000000"
+},
+{
+"itemCode": "3CAA",
+"itemDescTr": "4.1 Alınan Ücret ve Komisyonlar",
+"itemDescEng": "4.1 Fees and Commissions Received",
+"value1": "81179000000",
+"value2": "37997730000",
+"value3": "140105160000",
+"value4": "100174000000"
+},
+{
+"itemCode": "3CAB",
+"itemDescTr": "4.1.1 Gayri Nakdi Kredilerden",
+"itemDescEng": "4.1.1 Non-Cash Loans",
+"value1": "2088000000",
+"value2": "1043843000",
+"value3": "3313584000",
+"value4": "2358000000"
+},
+{
+"itemCode": "3CAC",
+"itemDescTr": "4.1.2 Diğer",
+"itemDescEng": "4.1.2 Other",
+"value1": "79091000000",
+"value2": "36953887000",
+"value3": "136791576000",
+"value4": "97816000000"
+},
+{
+"itemCode": "3CAD",
+"itemDescTr": "4.2 Verilen Ücret ve Komisyonlar",
+"itemDescEng": "4.2 Fees and Commissions Paid",
+"value1": "16746000000",
+"value2": "7839359000",
+"value3": "25702763000",
+"value4": "18273000000"
+},
+{
+"itemCode": "3CAE",
+"itemDescTr": "4.2.1 Gayri Nakdi Kredilere",
+"itemDescEng": "4.2.1 Non-Cash Loans",
+"value1": "29000000",
+"value2": "11128000",
+"value3": "33331000",
+"value4": "22000000"
+},
+{
+"itemCode": "3CAF",
+"itemDescTr": "4.2.2 Diğer",
+"itemDescEng": "4.2.2 Others",
+"value1": "16717000000",
+"value2": "7828231000",
+"value3": "25669432000",
+"value4": "18251000000"
+},
+{
+"itemCode": "3CB",
+"itemDescTr": "V. TEMETTÜ GELİRLERİ",
+"itemDescEng": "V. DIVIDEND INCOME",
+"value1": "231000000",
+"value2": "71114000",
+"value3": "61337000",
+"value4": "57000000"
+},
+{
+"itemCode": "3CC",
+"itemDescTr": "VI. TİCARİ KAR / ZARAR (Net)",
+"itemDescEng": "VI. NET TRADING INCOME",
+"value1": "-20563000000",
+"value2": "-4956739000",
+"value3": "-12975010000",
+"value4": "-4582000000"
+},
+{
+"itemCode": "3CCA",
+"itemDescTr": "6.1 Sermaye Piyasası İşlemleri Karı/Zararı",
+"itemDescEng": "6.1 Profit/Losses on Trading Account Securities",
+"value1": "5690000000",
+"value2": "3279717000",
+"value3": "9035576000",
+"value4": "6234000000"
+},
+{
+"itemCode": "3CCB",
+"itemDescTr": "6.2 Türev Finansal İşlemlerden Kar/Zarar",
+"itemDescEng": "6.2 Profit/Losses on Derivative Financial Trades",
+"value1": "-54176000000",
+"value2": "-33711401000",
+"value3": "-813080000",
+"value4": "3782000000"
+},
+{
+"itemCode": "3CCC",
+"itemDescTr": "6.3 Kambiyo İşlemleri Karı/Zararı",
+"itemDescEng": "6.3 Foreign Exchange Profit/Losses",
+"value1": "27923000000",
+"value2": "25474945000",
+"value3": "-21197506000",
+"value4": "-14598000000"
+},
+{
+"itemCode": "3CD",
+"itemDescTr": "VII. DİĞER FAALİYET GELİRLERİ",
+"itemDescEng": "VII. OTHER OPERATING INCOME",
+"value1": "5659000000",
+"value2": "3394927000",
+"value3": "6367158000",
+"value4": "5252000000"
+},
+{
+"itemCode": "3CE",
+"itemDescTr": "VIII. FAALİYET GELİRLERİ/GİDERLERİ TOPLAMI (III+IV+V+VI+VII)",
+"itemDescEng": "VIII. TOTAL OPERATING INCOME/EXPENSES (III+IV+V+VI+VII)",
+"value1": "132933000000",
+"value2": "69264515000",
+"value3": "209070888000",
+"value4": "147688000000"
+},
+{
+"itemCode": "3CF",
+"itemDescTr": "IX. KREDİ VE DİĞER ALACAKLAR DEĞER DÜŞÜŞ KARŞILIĞI (-)",
+"itemDescEng": "IX. PROVISIONS FOR LOAN LOSSES OR OTHER RECEIVABLES",
+"value1": "26369000000",
+"value2": "11913574000",
+"value3": "39678632000",
+"value4": "31276000000"
+},
+{
+"itemCode": "3CG",
+"itemDescTr": "X. DİĞER FAALİYET GİDERLERİ (-)",
+"itemDescEng": "X. OTHER OPERATING EXPENSES (-)",
+"value1": "43960000000",
+"value2": "20875327000",
+"value3": "70699385000",
+"value4": "51111000000"
+},
+{
+"itemCode": "3CH",
+"itemDescTr": "XI. NET FAALİYET KARI/ZARARI (VIII-IX-X)",
+"itemDescEng": "XI. NET OPERATING INCOME (IX-X-XI)",
+"value1": "37931000000",
+"value2": "22802941000",
+"value3": "62692296000",
+"value4": "38640000000"
+},
+{
+"itemCode": "3CI",
+"itemDescTr": "XII. BİRLEŞME İŞLEMİ SONRASINDA GELİR OLARAK KAYDEDİLEN FAZLALIK TUTARI",
+"itemDescEng": "XII. SURPLUS WRITTEN AS GAIN AFTER MERGER",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CJ",
+"itemDescTr": "XIII. ÖZKAYNAK YÖNTEMİ UYGULANAN ORTAKLIKLARDAN KAR/ZARAR",
+"itemDescEng": "XIII. PROFIT/LOSSES FROM ASSOCIATES AND SUBSIDIARIES",
+"value1": "7276000000",
+"value2": "3312504000",
+"value3": "11429065000",
+"value4": "8014000000"
+},
+{
+"itemCode": "3CK",
+"itemDescTr": "XIV. NET PARASAL POZİSYON KARI/ZARARI",
+"itemDescEng": "XIV. NET MONETORY POSITION GAIN/LOSS",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CL",
+"itemDescTr": "XV. SÜRDÜRÜLEN FAALİYETLER VERGİ ÖNCESİ K/Z (XI+XII+XIII+XIV)",
+"itemDescEng": "XV. PROFIT/LOSS BEFORE TAXES FROM CONTINUING OPERATIONS (XI+XII+XIII+XIV)",
+"value1": "45207000000",
+"value2": "26115445000",
+"value3": "74121361000",
+"value4": "46654000000"
+},
+{
+"itemCode": "3CM",
+"itemDescTr": "XVI. SÜRDÜRÜLEN FAALİYETLER VERGİ KARŞILIĞI (±)",
+"itemDescEng": "XVI. PROVISION FOR TAXES ON INCOME FROM CONTINUING OPERATIONS (±)",
+"value1": "10829000000",
+"value2": "6936870000",
+"value3": "16874300000",
+"value4": "7738000000"
+},
+{
+"itemCode": "3CMA",
+"itemDescTr": "16.1 Cari Vergi Karşılığı",
+"itemDescEng": "16.1 Current Tax Provision",
+"value1": "17119000000",
+"value2": "11605689000",
+"value3": "2529783000",
+"value4": "2185000000"
+},
+{
+"itemCode": "3CMB",
+"itemDescTr": "16.2 Ertelenmiş Vergi Karşılığı",
+"itemDescEng": "16.2 Deferred Tax Provision",
+"value1": "-6290000000",
+"value2": "-4668819000",
+"value3": "14344517000",
+"value4": "5553000000"
+},
+{
+"itemCode": "3CN",
+"itemDescTr": "XVII. SÜRDÜRÜLEN FAALİYETLER DÖNEM NET K/Z (XV±XVI)",
+"itemDescEng": "XVII. NET PROFIT/LOSS FROM CONTINUING OPERATIONS (XV±XVI)",
+"value1": "34378000000",
+"value2": "19178575000",
+"value3": "57247061000",
+"value4": "38916000000"
+},
+{
+"itemCode": "3CO",
+"itemDescTr": "XVIII. DURDURULAN FAALİYETLERDEN GELİRLER",
+"itemDescEng": "XVIII. INCOME FROM TERMINATED OPERATIONS",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3COA",
+"itemDescTr": "18.1 Satış Amaçlı Elde Tutulan Duran Varlık Gelirleri",
+"itemDescEng": "18.1 Property And Equipment Income Held For Sale",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3COB",
+"itemDescTr": "18.2 İştirak, Bağlı Ortaklık ve Bir.",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3COC",
+"itemDescTr": "18.3 Diğer Durdurulan Faaliyet Gelirleri",
+"itemDescEng": "18.3 Other Income From Terminated Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CP",
+"itemDescTr": "XIX. DURDURULAN FAALİYETLERDEN GİDERLER (-)",
+"itemDescEng": "XIX. EXPENSES FROM TERMINATED OPERATIONS (-)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CPA",
+"itemDescTr": "19.1 Satış Amaçlı Elde Tutulan Duran Varlık Giderleri",
+"itemDescEng": "19.1 Property And Equipment Expense Held For Sale",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CPB",
+"itemDescTr": "19.2 İştirak, Bağlı Ortaklık ve Bir. Satış Zararları",
+"itemDescEng": null,
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CPC",
+"itemDescTr": "19.3 Diğer Durdurulan Faaliyet Giderleri",
+"itemDescEng": "19.3 Other Expenses From Terminated Operations",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CR",
+"itemDescTr": "XX. DURDURULAN FAALİYETLER VERGİ ÖNCESİ K/Z (XVIII-XIX)",
+"itemDescEng": "XX. PROFIT/LOSS BEFORE TAXES FROM TERMINATED OPERATIONS (XVIII-XIX)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CS",
+"itemDescTr": "XXI. DURDURULAN FAALİYETLER VERGİ KARŞILIĞI (±)",
+"itemDescEng": "XXI. PROVISION FOR TAXES ON INCOME FROM TERMINATED OPERATIONS (±)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CSA",
+"itemDescTr": "21.1 Cari Vergi Karşılığı",
+"itemDescEng": "21.1 Current Tax Provision",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CSB",
+"itemDescTr": "21.2 Ertelenmiş Vergi Karşılığı",
+"itemDescEng": "21.2 Deferred Tax Provision",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3CT",
+"itemDescTr": "XXII. DURDURULAN FAALİYETLER DÖNEM NET K/Z (XX±XXI)",
+"itemDescEng": "XXII. NET PROFIT/LOSS FROM TERMINATED OPERATIONS (XX±XXI)",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3D",
+"itemDescTr": "DİĞER KAR/ZARAR",
+"itemDescEng": "OTHER PROFIT/LOSS",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3Z",
+"itemDescTr": "XXIII. NET DÖNEM KARI/ZARARI (XVII+XXII)",
+"itemDescEng": "XXIII. NET PROFIT/LOSSES (XVII+XXII)",
+"value1": "34378000000",
+"value2": "19178575000",
+"value3": "57247061000",
+"value4": "38916000000"
+},
+{
+"itemCode": "3ZA",
+"itemDescTr": "23.1 Grubun Karı/Zararı",
+"itemDescEng": "23.1. Group's Profit/Losses",
+"value1": "34378000000",
+"value2": "19178575000",
+"value3": "57247061000",
+"value4": "38916000000"
+},
+{
+"itemCode": "3ZB",
+"itemDescTr": "23.2 Azınlık Hakları Karı/Zararı (-)",
+"itemDescEng": "23.2. Minority Shares' Profits/Losses",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+},
+{
+"itemCode": "3ZC",
+"itemDescTr": "Hisse Başına Kar/Zarar",
+"itemDescEng": "Earnings/Losses Per Share",
+"value1": "0",
+"value2": "0",
+"value3": "0",
+"value4": "0"
+}
+]
+}
+}
