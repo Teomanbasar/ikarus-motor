@@ -1,8 +1,8 @@
 Toplam skor esigi ile giris, faz cikisi (Toplam < X-5 ya da stop kirildi ya da azami sure). Fazla getiri = hisse - BIST100.
 lag 0 = TradingView gibi (ay kapaninca), lag 25 = TCMB'nin yayim gecikmesine gore +25 gun (gecmise sarinca o gun bilinen M3).
 
-M3 gecikme  0g | D | Toplam>=36 | islem  4869 | ort sure  27.1 bar | getiri ort  +3.37 medyan  -2.71 | fazla ort  +1.35 medyan  -2.72 | endeksi gecen %37.0 | kazanc/kayip +17.1/-7.9
-      giriste pct 0-35: n 3679 fazla ort +1.03 medyan -3.12 gecen %35.8
+M3 gecikme  0g | D | Toplam>=36 | islem  4870 | ort sure  27.1 bar | getiri ort  +3.37 medyan  -2.71 | fazla ort  +1.35 medyan  -2.74 | endeksi gecen %37.0 | kazanc/kayip +17.1/-7.9
+      giriste pct 0-35: n 3680 fazla ort +1.02 medyan -3.12 gecen %35.8
       giriste pct 35-101: n 1190 fazla ort +2.34 medyan -1.53 gecen %40.8
 M3 gecikme  0g | D | Toplam>=40 | islem  3114 | ort sure  18.7 bar | getiri ort  +1.84 medyan  -2.42 | fazla ort  +0.78 medyan  -3.02 | endeksi gecen %37.0 | kazanc/kayip +13.6/-6.8
       giriste pct 0-35: n 2697 fazla ort +0.85 medyan -3.10 gecen %37.3
