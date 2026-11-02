@@ -1,1 +1,1 @@
-{"sig_mod":"faz","macro_mod":"m3","macro_ok":true,"tf":"W","ha":false,"etiket":"W_fazm3"}
+{"sig_mod":"faz","macro_mod":"m3","macro_ok":true,"tf":"W","ha":true,"cikis":"adil","etiket":"WHA_fazm3_adil"}
