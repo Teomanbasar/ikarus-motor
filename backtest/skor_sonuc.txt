@@ -1,0 +1,51 @@
+Toplam skor esigi ile giris, faz cikisi (Toplam < X-5 ya da stop kirildi ya da azami sure). Fazla getiri = hisse - BIST100.
+lag 0 = TradingView gibi (ay kapaninca), lag 25 = TCMB'nin yayim gecikmesine gore +25 gun (gecmise sarinca o gun bilinen M3).
+
+M3 gecikme  0g | D | Toplam>=36 | islem  4869 | ort sure  27.1 bar | getiri ort  +3.37 medyan  -2.71 | fazla ort  +1.35 medyan  -2.72 | endeksi gecen %37.0 | kazanc/kayip +17.1/-7.9
+      giriste pct 0-35: n 3679 fazla ort +1.03 medyan -3.12 gecen %35.8
+      giriste pct 35-101: n 1190 fazla ort +2.34 medyan -1.53 gecen %40.8
+M3 gecikme  0g | D | Toplam>=40 | islem  3114 | ort sure  18.7 bar | getiri ort  +1.84 medyan  -2.42 | fazla ort  +0.78 medyan  -3.02 | endeksi gecen %37.0 | kazanc/kayip +13.6/-6.8
+      giriste pct 0-35: n 2697 fazla ort +0.85 medyan -3.10 gecen %37.3
+      giriste pct 35-101: n 417 fazla ort +0.38 medyan -2.79 gecen %35.5
+M3 gecikme  0g | D | Toplam>=45 | islem  1239 | ort sure   9.4 bar | getiri ort  +1.17 medyan  -2.11 | fazla ort  +0.31 medyan  -2.63 | endeksi gecen %37.3 | kazanc/kayip +10.3/-5.7
+      giriste pct 0-35: n 1078 fazla ort +0.20 medyan -2.86 gecen %36.7
+      giriste pct 35-101: n 161 fazla ort +1.06 medyan -1.78 gecen %41.0
+M3 gecikme  0g | D | Toplam>=50 | islem   184 | ort sure   5.0 bar | getiri ort  -0.05 medyan  -2.37 | fazla ort  -1.05 medyan  -3.64 | endeksi gecen %32.6 | kazanc/kayip +8.5/-5.7
+      giriste pct 0-35: n 167 fazla ort -1.31 medyan -3.67 gecen %32.3
+      giriste pct 35-101: n 17 fazla ort +1.54 medyan -3.08 gecen %35.3
+M3 gecikme  0g | W | Toplam>=36 | islem  1530 | ort sure   9.4 bar | getiri ort  +7.07 medyan  -5.74 | fazla ort  +4.53 medyan  -5.46 | endeksi gecen %32.1 | kazanc/kayip +36.4/-10.6
+      giriste pct 0-35: n 984 fazla ort +3.83 medyan -5.46 gecen %29.8
+      giriste pct 35-101: n 546 fazla ort +5.80 medyan -5.40 gecen %36.3
+M3 gecikme  0g | W | Toplam>=40 | islem   777 | ort sure   9.1 bar | getiri ort  +7.40 medyan  -5.74 | fazla ort  +5.52 medyan  -5.87 | endeksi gecen %34.1 | kazanc/kayip +36.4/-10.5
+      giriste pct 0-35: n 630 fazla ort +5.11 medyan -6.00 gecen %34.0
+      giriste pct 35-101: n 147 fazla ort +7.27 medyan -5.52 gecen %34.7
+M3 gecikme  0g | W | Toplam>=45 | islem   445 | ort sure   5.9 bar | getiri ort  +4.07 medyan  -4.54 | fazla ort  +2.91 medyan  -4.97 | endeksi gecen %35.1 | kazanc/kayip +25.2/-9.1
+      giriste pct 0-35: n 391 fazla ort +2.45 medyan -4.94 gecen %35.5
+      giriste pct 35-101: n 54 fazla ort +6.30 medyan -6.26 gecen %31.5
+M3 gecikme  0g | W | Toplam>=50 | islem    68 | ort sure   3.9 bar | getiri ort  +0.91 medyan  -2.87 | fazla ort  +0.98 medyan  -3.15 | endeksi gecen %41.2 | kazanc/kayip +14.1/-8.2
+      giriste pct 0-35: n 58 fazla ort +1.58 medyan -2.97 gecen %41.4
+      giriste pct 35-101: n 10 fazla ort -2.55 medyan -7.14 gecen %40.0
+M3 gecikme 25g | D | Toplam>=36 | islem  4770 | ort sure  27.9 bar | getiri ort  +3.50 medyan  -2.91 | fazla ort  +1.46 medyan  -2.65 | endeksi gecen %37.1 | kazanc/kayip +17.5/-8.0
+      giriste pct 0-35: n 3620 fazla ort +1.20 medyan -2.94 gecen %36.0
+      giriste pct 35-101: n 1150 fazla ort +2.30 medyan -1.66 gecen %40.8
+M3 gecikme 25g | D | Toplam>=40 | islem  3104 | ort sure  19.0 bar | getiri ort  +2.11 medyan  -2.27 | fazla ort  +0.95 medyan  -2.90 | endeksi gecen %37.0 | kazanc/kayip +14.1/-6.8
+      giriste pct 0-35: n 2716 fazla ort +0.96 medyan -2.94 gecen %37.2
+      giriste pct 35-101: n 388 fazla ort +0.94 medyan -2.70 gecen %36.3
+M3 gecikme 25g | D | Toplam>=45 | islem  1269 | ort sure   9.1 bar | getiri ort  +1.05 medyan  -2.46 | fazla ort  +0.18 medyan  -2.88 | endeksi gecen %35.1 | kazanc/kayip +10.7/-5.5
+      giriste pct 0-35: n 1090 fazla ort -0.07 medyan -2.99 gecen %34.6
+      giriste pct 35-101: n 179 fazla ort +1.68 medyan -1.70 gecen %38.5
+M3 gecikme 25g | D | Toplam>=50 | islem   158 | ort sure   4.8 bar | getiri ort  +0.69 medyan  -2.44 | fazla ort  +0.01 medyan  -3.24 | endeksi gecen %36.1 | kazanc/kayip +9.9/-5.6
+      giriste pct 0-35: n 150 fazla ort -0.20 medyan -3.44 gecen %34.7
+      giriste pct 35-101: n 8 fazla ort +4.10 medyan +1.75 gecen %62.5
+M3 gecikme 25g | W | Toplam>=36 | islem  1522 | ort sure   9.6 bar | getiri ort  +7.06 medyan  -5.53 | fazla ort  +4.50 medyan  -5.49 | endeksi gecen %32.5 | kazanc/kayip +36.3/-10.8
+      giriste pct 0-35: n 989 fazla ort +3.91 medyan -5.34 gecen %30.7
+      giriste pct 35-101: n 533 fazla ort +5.58 medyan -5.90 gecen %35.6
+M3 gecikme 25g | W | Toplam>=40 | islem   791 | ort sure   9.0 bar | getiri ort  +7.77 medyan  -5.67 | fazla ort  +5.91 medyan  -5.74 | endeksi gecen %34.6 | kazanc/kayip +36.9/-10.5
+      giriste pct 0-35: n 649 fazla ort +6.03 medyan -5.37 gecen %34.8
+      giriste pct 35-101: n 142 fazla ort +5.39 medyan -6.41 gecen %33.8
+M3 gecikme 25g | W | Toplam>=45 | islem   451 | ort sure   5.9 bar | getiri ort  +4.68 medyan  -4.37 | fazla ort  +3.49 medyan  -5.01 | endeksi gecen %33.9 | kazanc/kayip +27.6/-8.9
+      giriste pct 0-35: n 397 fazla ort +3.11 medyan -5.09 gecen %33.8
+      giriste pct 35-101: n 54 fazla ort +6.24 medyan -4.79 gecen %35.2
+M3 gecikme 25g | W | Toplam>=50 | islem    68 | ort sure   4.0 bar | getiri ort  +1.42 medyan  -2.08 | fazla ort  +1.72 medyan  -0.24 | endeksi gecen %48.5 | kazanc/kayip +12.5/-8.4
+      giriste pct 0-35: n 60 fazla ort +1.91 medyan -0.24 gecen %48.3
+      giriste pct 35-101: n 8 fazla ort +0.25 medyan -1.93 gecen %50.0

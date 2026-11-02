@@ -1,20 +1,3 @@
-2 Failed downloads:
-['ALTIN.IS', 'DMLKT.IS']: possibly delisted; no timezone found
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/multi.py:220: Pandas4Warning: The inplace keyword in DataFrame.rename is deprecated and will be removed in a future version (PDEP-8).
-See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
-  data.rename(columns=ctx.isins, inplace=True)
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/utils.py:568: Pandas4Warning: The inplace keyword in DataFrame.sort_index is deprecated and will be removed in a future version (PDEP-8).
-See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
-  quotes.sort_index(inplace=True)
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/utils.py:514: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
-See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
-  df.drop(
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/utils.py:518: Pandas4Warning: The inplace keyword in DataFrame.rename is deprecated and will be removed in a future version (PDEP-8).
-See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
-  df.rename(columns={
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/multi.py:220: Pandas4Warning: The inplace keyword in DataFrame.rename is deprecated and will be removed in a future version (PDEP-8).
-See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
-  data.rename(columns=ctx.isins, inplace=True)
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/yfinance/multi.py:224: Pandas4Warning: The inplace keyword in DataFrame.sort_index is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   data.sort_index(level=0, axis=1, inplace=True)
@@ -22,59 +5,56 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 100 BIZIM
 200 EMKEL
 300 INVES
-400 MGROS
-500 SASA
-600 VSNMD
-Varyant: {'sig_mod': 'faz'}
-Sinyal degisen gun orani: %4.2
-Donem 2023-07-03 - 2026-10-30, 579 hisse. Getiriler BIST100'e gore fazla getiri (%).
+500 SARKY
+600 VRGYO
+Toplam skor esigi ile giris, faz cikisi (Toplam < X-5 ya da stop kirildi ya da azami sure). Fazla getiri = hisse - BIST100.
+lag 0 = TradingView gibi (ay kapaninca), lag 25 = TCMB'nin yayim gecikmesine gore +25 gun (gecmise sarinca o gun bilinen M3).
 
-== Tum gunler (referans)
-hepsi | n=434890 | 20g: ort  +0.41 medyan  -1.89 kazanma %43.2 | 60g: ort  +2.35 medyan  -4.05 kazanma %41.9 | 120g: ort  +6.31 medyan  -7.29 kazanma %40.3
-
-== Percentile dilimleri (degerleme cekirdegi, Zippo ile birebir)
-pct   0-5     | n=89283 | 20g: ort  -1.03 medyan  -2.24 kazanma %39.7 | 60g: ort  +1.79 medyan  -2.43 kazanma %43.9 | 120g: ort  +6.53 medyan  -4.91 kazanma %41.9
-pct   5-10    | n=30224 | 20g: ort  +0.12 medyan  -1.76 kazanma %42.4 | 60g: ort  +1.77 medyan  -3.44 kazanma %41.7 | 120g: ort  +7.14 medyan  -5.29 kazanma %41.0
-pct  10-20    | n=43938 | 20g: ort  +0.42 medyan  -1.73 kazanma %42.8 | 60g: ort  +1.88 medyan  -4.18 kazanma %40.4 | 120g: ort  +5.43 medyan  -6.50 kazanma %39.6
-pct  20-35    | n=48801 | 20g: ort  +0.21 medyan  -1.90 kazanma %42.8 | 60g: ort  +0.91 medyan  -4.95 kazanma %39.0 | 120g: ort  +3.35 medyan  -8.46 kazanma %37.3
-pct  35-50    | n=41256 | 20g: ort  +0.36 medyan  -1.97 kazanma %43.2 | 60g: ort  +1.44 medyan  -4.90 kazanma %39.8 | 120g: ort  +3.41 medyan  -9.70 kazanma %36.9
-pct  50-65    | n=57198 | 20g: ort  +0.74 medyan  -1.84 kazanma %44.1 | 60g: ort  +2.17 medyan  -4.70 kazanma %41.3 | 120g: ort  +5.30 medyan  -8.84 kazanma %39.3
-pct  65-80    | n=38288 | 20g: ort  +0.20 medyan  -2.48 kazanma %42.8 | 60g: ort  +1.61 medyan  -5.30 kazanma %41.2 | 120g: ort  +5.38 medyan  -8.66 kazanma %41.4
-pct  80-90    | n=27272 | 20g: ort  +0.28 medyan  -2.23 kazanma %43.7 | 60g: ort  +1.91 medyan  -5.50 kazanma %41.7 | 120g: ort  +6.29 medyan  -8.92 kazanma %40.8
-pct  90-100.1 | n=58630 | 20g: ort  +2.65 medyan  -0.63 kazanma %48.5 | 60g: ort  +6.34 medyan  -3.44 kazanma %45.4 | 120g: ort +12.40 medyan  -7.60 kazanma %43.4
-
-== Sinyaller (her gun, sinyal o gun neyse)
-ALINABILIR  | n=12538 | 20g: ort  +0.49 medyan  -1.80 kazanma %42.5 | 60g: ort  +0.90 medyan  -5.33 kazanma %37.4 | 120g: ort  +6.35 medyan  -7.29 kazanma %38.1
-TOPLANIYOR  | n=16631 | 20g: ort  +0.39 medyan  -1.42 kazanma %44.1 | 60g: ort  +1.17 medyan  -2.97 kazanma %42.7 | 120g: ort  +4.74 medyan  -4.57 kazanma %41.9
-YAKIN       | n=4573 | 20g: ort  +0.62 medyan  -1.37 kazanma %43.2 | 60g: ort  +1.16 medyan  -3.57 kazanma %40.0 | 120g: ort  +4.98 medyan  -3.96 kazanma %40.4
-DAGITIM     | n=79563 | 20g: ort  -0.82 medyan  -2.46 kazanma %39.2 | 60g: ort  +0.39 medyan  -4.17 kazanma %40.1 | 120g: ort  +4.48 medyan  -6.70 kazanma %39.3
-BEKLE       | n=321585 | 20g: ort  +0.71 medyan  -1.76 kazanma %44.2 | 60g: ort  +2.95 medyan  -4.04 kazanma %42.5 | 120g: ort  +6.83 medyan  -7.76 kazanma %40.5
-
-== Sinyal BASLANGICLARI (bir onceki gun farkli sinyaldeydi)
-ALINABILIR  | n=1638 | 20g: ort  +1.20 medyan  -1.57 kazanma %43.9 | 60g: ort  +1.96 medyan  -4.82 kazanma %38.0 | 120g: ort  +6.22 medyan  -7.60 kazanma %37.7
-TOPLANIYOR  | n=2057 | 20g: ort  +0.15 medyan  -1.72 kazanma %42.8 | 60g: ort  +1.02 medyan  -3.03 kazanma %42.6 | 120g: ort  +6.00 medyan  -4.64 kazanma %42.2
-YAKIN       | n=525 | 20g: ort  +2.03 medyan  -0.34 kazanma %48.8 | 60g: ort  +3.53 medyan  -2.59 kazanma %44.2 | 120g: ort  +6.56 medyan  -3.14 kazanma %44.3
-DAGITIM     | n=7144 | 20g: ort  -0.98 medyan  -2.43 kazanma %39.1 | 60g: ort  +0.21 medyan  -4.25 kazanma %40.5 | 120g: ort  +4.09 medyan  -6.52 kazanma %39.1
-
-== Eksik sart sayisi (ucuz bolgede, pct<=35)
-eksik 0 | n=3909 | 20g: ort  +0.80 medyan  -1.92 kazanma %42.7 | 60g: ort  +0.72 medyan  -5.58 kazanma %37.0 | 120g: ort  +3.04 medyan  -9.14 kazanma %35.9
-eksik 1 | n=22918 | 20g: ort  +0.53 medyan  -1.49 kazanma %43.9 | 60g: ort  +1.85 medyan  -3.75 kazanma %40.8 | 120g: ort  +7.15 medyan  -5.58 kazanma %40.7
-eksik 2 | n=67941 | 20g: ort  -0.19 medyan  -1.99 kazanma %41.3 | 60g: ort  +1.97 medyan  -2.99 kazanma %42.7 | 120g: ort  +7.01 medyan  -4.87 kazanma %41.6
-eksik 3 | n=91124 | 20g: ort  -0.78 medyan  -2.26 kazanma %40.0 | 60g: ort  +0.79 medyan  -4.16 kazanma %40.2 | 120g: ort  +5.62 medyan  -6.40 kazanma %40.1
-eksik 4 | n=24005 | 20g: ort  +0.31 medyan  -1.38 kazanma %44.5 | 60g: ort  +2.63 medyan  -2.59 kazanma %44.3 | 120g: ort  +1.15 medyan  -8.63 kazanma %36.7
-eksik 5 | n=3785 | 20g: ort  +1.06 medyan  -1.88 kazanma %42.2 | 60g: ort  +4.39 medyan  -3.56 kazanma %42.2 | 120g: ort  +2.79 medyan -10.89 kazanma %36.5
-eksik 6 | n=0
-
-== Yillara gore: pct<20 vs hepsi (60g)
-2023: pct<20 ort +6.55 (n=9308) | hepsi ort +9.16
-2024: pct<20 ort +2.19 (n=44625) | hepsi ort -0.35
-2025: pct<20 ort +2.98 (n=55368) | hepsi ort +3.66
-2026: pct<20 ort -2.21 (n=31292) | hepsi ort -0.63
-
-== ISLEM SIMULASYONU: alim fazina girince al, faz bitince (BEKLE/DAGITIM) ya da 120 gunde sat
-islem 3046 | ort sure 10.1 gun | getiri ort +0.03 medyan -1.50 | endekse gore fazla ort -0.08 medyan -1.23 | kazanan (fazla>0) %44.0 | mutlak kazanan %46.2
-  giris ALINABILIR  n=1083 sure 7.8 fazla ort +0.12 medyan +0.30 kazanan %51.2
-  giris TOPLANIYOR  n=1963 sure 11.4 fazla ort -0.19 medyan -1.69 kazanan %40.0
-  cikis DAGITIM         n=1498 sure 11.1 fazla ort -4.45 kazanan %17.5
-  cikis stop/ucuz-disi  n=1548 sure 9.2 fazla ort +4.15 kazanan %69.6
-  ort kazanc +7.62 / ort kayip -6.13
+M3 gecikme  0g | D | Toplam>=36 | islem  4869 | ort sure  27.1 bar | getiri ort  +3.37 medyan  -2.71 | fazla ort  +1.35 medyan  -2.72 | endeksi gecen %37.0 | kazanc/kayip +17.1/-7.9
+      giriste pct 0-35: n 3679 fazla ort +1.03 medyan -3.12 gecen %35.8
+      giriste pct 35-101: n 1190 fazla ort +2.34 medyan -1.53 gecen %40.8
+M3 gecikme  0g | D | Toplam>=40 | islem  3114 | ort sure  18.7 bar | getiri ort  +1.84 medyan  -2.42 | fazla ort  +0.78 medyan  -3.02 | endeksi gecen %37.0 | kazanc/kayip +13.6/-6.8
+      giriste pct 0-35: n 2697 fazla ort +0.85 medyan -3.10 gecen %37.3
+      giriste pct 35-101: n 417 fazla ort +0.38 medyan -2.79 gecen %35.5
+M3 gecikme  0g | D | Toplam>=45 | islem  1239 | ort sure   9.4 bar | getiri ort  +1.17 medyan  -2.11 | fazla ort  +0.31 medyan  -2.63 | endeksi gecen %37.3 | kazanc/kayip +10.3/-5.7
+      giriste pct 0-35: n 1078 fazla ort +0.20 medyan -2.86 gecen %36.7
+      giriste pct 35-101: n 161 fazla ort +1.06 medyan -1.78 gecen %41.0
+M3 gecikme  0g | D | Toplam>=50 | islem   184 | ort sure   5.0 bar | getiri ort  -0.05 medyan  -2.37 | fazla ort  -1.05 medyan  -3.64 | endeksi gecen %32.6 | kazanc/kayip +8.5/-5.7
+      giriste pct 0-35: n 167 fazla ort -1.31 medyan -3.67 gecen %32.3
+      giriste pct 35-101: n 17 fazla ort +1.54 medyan -3.08 gecen %35.3
+M3 gecikme  0g | W | Toplam>=36 | islem  1530 | ort sure   9.4 bar | getiri ort  +7.07 medyan  -5.74 | fazla ort  +4.53 medyan  -5.46 | endeksi gecen %32.1 | kazanc/kayip +36.4/-10.6
+      giriste pct 0-35: n 984 fazla ort +3.83 medyan -5.46 gecen %29.8
+      giriste pct 35-101: n 546 fazla ort +5.80 medyan -5.40 gecen %36.3
+M3 gecikme  0g | W | Toplam>=40 | islem   777 | ort sure   9.1 bar | getiri ort  +7.40 medyan  -5.74 | fazla ort  +5.52 medyan  -5.87 | endeksi gecen %34.1 | kazanc/kayip +36.4/-10.5
+      giriste pct 0-35: n 630 fazla ort +5.11 medyan -6.00 gecen %34.0
+      giriste pct 35-101: n 147 fazla ort +7.27 medyan -5.52 gecen %34.7
+M3 gecikme  0g | W | Toplam>=45 | islem   445 | ort sure   5.9 bar | getiri ort  +4.07 medyan  -4.54 | fazla ort  +2.91 medyan  -4.97 | endeksi gecen %35.1 | kazanc/kayip +25.2/-9.1
+      giriste pct 0-35: n 391 fazla ort +2.45 medyan -4.94 gecen %35.5
+      giriste pct 35-101: n 54 fazla ort +6.30 medyan -6.26 gecen %31.5
+M3 gecikme  0g | W | Toplam>=50 | islem    68 | ort sure   3.9 bar | getiri ort  +0.91 medyan  -2.87 | fazla ort  +0.98 medyan  -3.15 | endeksi gecen %41.2 | kazanc/kayip +14.1/-8.2
+      giriste pct 0-35: n 58 fazla ort +1.58 medyan -2.97 gecen %41.4
+      giriste pct 35-101: n 10 fazla ort -2.55 medyan -7.14 gecen %40.0
+M3 gecikme 25g | D | Toplam>=36 | islem  4770 | ort sure  27.9 bar | getiri ort  +3.50 medyan  -2.91 | fazla ort  +1.46 medyan  -2.65 | endeksi gecen %37.1 | kazanc/kayip +17.5/-8.0
+      giriste pct 0-35: n 3620 fazla ort +1.20 medyan -2.94 gecen %36.0
+      giriste pct 35-101: n 1150 fazla ort +2.30 medyan -1.66 gecen %40.8
+M3 gecikme 25g | D | Toplam>=40 | islem  3104 | ort sure  19.0 bar | getiri ort  +2.11 medyan  -2.27 | fazla ort  +0.95 medyan  -2.90 | endeksi gecen %37.0 | kazanc/kayip +14.1/-6.8
+      giriste pct 0-35: n 2716 fazla ort +0.96 medyan -2.94 gecen %37.2
+      giriste pct 35-101: n 388 fazla ort +0.94 medyan -2.70 gecen %36.3
+M3 gecikme 25g | D | Toplam>=45 | islem  1269 | ort sure   9.1 bar | getiri ort  +1.05 medyan  -2.46 | fazla ort  +0.18 medyan  -2.88 | endeksi gecen %35.1 | kazanc/kayip +10.7/-5.5
+      giriste pct 0-35: n 1090 fazla ort -0.07 medyan -2.99 gecen %34.6
+      giriste pct 35-101: n 179 fazla ort +1.68 medyan -1.70 gecen %38.5
+M3 gecikme 25g | D | Toplam>=50 | islem   158 | ort sure   4.8 bar | getiri ort  +0.69 medyan  -2.44 | fazla ort  +0.01 medyan  -3.24 | endeksi gecen %36.1 | kazanc/kayip +9.9/-5.6
+      giriste pct 0-35: n 150 fazla ort -0.20 medyan -3.44 gecen %34.7
+      giriste pct 35-101: n 8 fazla ort +4.10 medyan +1.75 gecen %62.5
+M3 gecikme 25g | W | Toplam>=36 | islem  1522 | ort sure   9.6 bar | getiri ort  +7.06 medyan  -5.53 | fazla ort  +4.50 medyan  -5.49 | endeksi gecen %32.5 | kazanc/kayip +36.3/-10.8
+      giriste pct 0-35: n 989 fazla ort +3.91 medyan -5.34 gecen %30.7
+      giriste pct 35-101: n 533 fazla ort +5.58 medyan -5.90 gecen %35.6
+M3 gecikme 25g | W | Toplam>=40 | islem   791 | ort sure   9.0 bar | getiri ort  +7.77 medyan  -5.67 | fazla ort  +5.91 medyan  -5.74 | endeksi gecen %34.6 | kazanc/kayip +36.9/-10.5
+      giriste pct 0-35: n 649 fazla ort +6.03 medyan -5.37 gecen %34.8
+      giriste pct 35-101: n 142 fazla ort +5.39 medyan -6.41 gecen %33.8
+M3 gecikme 25g | W | Toplam>=45 | islem   451 | ort sure   5.9 bar | getiri ort  +4.68 medyan  -4.37 | fazla ort  +3.49 medyan  -5.01 | endeksi gecen %33.9 | kazanc/kayip +27.6/-8.9
+      giriste pct 0-35: n 397 fazla ort +3.11 medyan -5.09 gecen %33.8
+      giriste pct 35-101: n 54 fazla ort +6.24 medyan -4.79 gecen %35.2
+M3 gecikme 25g | W | Toplam>=50 | islem    68 | ort sure   4.0 bar | getiri ort  +1.42 medyan  -2.08 | fazla ort  +1.72 medyan  -0.24 | endeksi gecen %48.5 | kazanc/kayip +12.5/-8.4
+      giriste pct 0-35: n 60 fazla ort +1.91 medyan -0.24 gecen %48.3
+      giriste pct 35-101: n 8 fazla ort +0.25 medyan -1.93 gecen %50.0
