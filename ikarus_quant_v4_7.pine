@@ -1,0 +1,329 @@
+//@version=5
+// IKARUS QUANT v4.7 (2 Kasim 2026). v4.6 aday + Makro etiketi para arzindan.
+// v4.7 DEGISIKLIGI: Makro taban etiketi BIST100 trendinden degil, M3 (ECONOMICS:TRM3) degisiminden:
+//  M3 son 15 barda artmissa GENISLEME (7), degismemisse NOTR (5), azalmissa DARALMA (3). Grafigin zaman diliminde.
+//  Zippo tablolarinin 21/21'i ile uyumlu (haftalik tablolar hep GENISLEME; TOASO G 27 Eki NOTR). Ayarlardan v4.6'ya donulebilir.
+// Eski baslik: IKARUS QUANT v4.6 ADAY (28 Ekim 2026, son derleme) - Zippo IKARUS CORE tablo duzeniyle. v4.5 + asagidaki 28 Ekim degisiklikleri.
+// v4.6 DEGISIKLIKLERI (hepsi Ayarlar > Girdiler'den v4.5 haline dondurulebilir; degerleme cekirdegi ve Memory AYNEN korundu):
+//  1) Makro sarti: Zippo NOTR ve TOPARLANMA'yi eksik sart sayiyor (TOASO, ENJSA). Artik yalniz GENISLEME ve RISK-ON sarti gecer.
+//     Puanlar Toplam'dan dogrulandi: RISK-ON 10, GENISLEME 7, TOPARLANMA 6, NOTR 5. "+ UCUZ" eki yalniz GENISLEME ile gorulduyse eklenir.
+//  2) Recovery: M3 duzeltmeli kapanisin son 50 barlik aralik icindeki yeri (19 tabloda ort. sapma 1.21 -> 0.31; birebir degil).
+//  3) Sinyal (aday, 19 tablonun 18'i): eksik sart yoksa ALINABILIR. Percentile <= 35 iken: bar %0.5'ten fazla dusmusse
+//     fiyat onceki Stop'un %3.5'ten fazla altindaysa BEKLE ("stop kirildi"), degilse DAGITIM; dusmemisse en fazla 2 eksikte
+//     RS oku yukariysa TOPLANIYOR, degilse YAKIN; 3+ eksikte BEKLE. Percentile > 35 ise BEKLE. Tutmayan: MIATK G 20 Eki.
+// v4.5 YENILIGI - DEGERLEME CEKIRDEGI COZULDU (Ayarlar > "Degerleme" ile v4.4'e donulebilir):
+//  Zippo fiyati Turkiye M3 para arzina gore duzeltiyor: duzeltilmis fiyat = kapanis x (bugunku M3 / o gunku M3)
+//  (TradingView sembolu ECONOMICS:TRM3, aylik; temettu duzeltmesi ACIK veri)
+//  Dip        = son 200 barin en dusuk duzeltilmis kapanisi (bugunku bar dahil)
+//  Tepe       = son 200 barin en yuksek duzeltilmis kapanisi
+//  Percentile = ta.percentrank(kapanis / M3, 200)   (Value = (100 - Percentile) / 10)
+//  MTF        = ayni Percentile'in haftalik hali (request.security "W")
+//  Stop       = haftalik grafikte son 55 haftanin en dusuk duzeltilmis kapanisi, gunlukte Dip
+//  Memory     = son 15 barin (bugun dahil) kacinda Percentile <= 20 idi, x 10 / 15  ("ucuz bolgede kalma suresi")
+//  ONEMLI: Zippo'nun bazi tablolari HEIKIN ASHI mum grafiginde alinmis (AKBNK H 25 Eki, CCOLA H 9 Eki, OZRDN, TAVHL H, MGROS).
+//  Heikin Ashi'de kapanis = (acilis+yuksek+dusuk+kapanis)/4 oldugu icin tum degerler degisir. Gosterge grafigin
+//  kapanisini kullandigi icin ayni mum tipinde Zippo ile ayni sonucu verir: tabloyu karsilastirirken mum tipine dikkat.
+//  Dogrulama (16 Zippo tablosu, kendi tarihli barinda, dogru mum tipiyle): 15 tabloda Dip ve Tepe kurusu kurusuna ayni;
+//  kapanis sonrasi tablolarin hepsinde Percentile, MTF ve Stop da ayni (AKBNK H 14/14/45.18/134.88/64.81).
+//  Memory 15 tablonun 14'unde birebir (ENJSA 1 bar farkli). Gun ici tablolarda canli fiyat yuzunden +-0.5 fark normal.
+//  Tutmayan tek tablo RUZYE (Zippo'nun fiyat verisi farkli gorunuyor).
+//  Bu cekirdek bilanco kullanmaz: yeni bilanco aciklaninca gecmis degerler degismez.
+// v4.4'TEN DEVAM EDENLER (ayarlardan kapatilabilir):
+//  Oklar yuzde degisimden (Recovery 3 bar +-%0.5/%2, RS 5 bar +-%2/%5); Compression v4.3;
+//  Kalite yildizlari Toplam'dan (<36: 2, 36-41: 3, >=41: 4; 5 yildiz esigi tahmin 50); "+ UCUZ" = Percentile <= 20.
+// BILINEN EKSIKLER: Compression (ort. sapma ~0.8) ve RS puani (ort. sapma ~1.2) birebir degil; Recovery yaklasik (~0.3).
+//  Makro etiketi hisseye ozel (ayni gun AKBNK 10, THYAO 7 puan); bu kod hala BIST100 trendinden tek etiket uretiyor.
+//  v4.6 sinyal kurali 19 tablodan cikarilmis bir aday; yeni tablolarla sinanmali.
+indicator("IKARUS QUANT v4.7", shorttitle = "IKARUS v4.7", overlay = true, max_bars_back = 1000)
+
+// ---------- Ayarlar ----------
+valMode  = input.string("M3 (para arzi)", "Degerleme (Dip/Tepe/Percentile/MTF/Stop)", options = ["M3 (para arzi)", "Bilanco (v4.4)"])
+okMode   = input.string("Yuzde degisim", "Ok yontemi", options = ["Yuzde degisim", "Puan degisimi (v4.2)"])
+memMode  = input.string("v4.5 (ucuz bolge suresi)", "Memory", options = ["v4.5 (ucuz bolge suresi)", "v4.3", "v4.2"])
+mcMode   = input.string("v4.3", "Compression", options = ["v4.3", "v4.2"])
+kalMode  = input.string("Toplamdan", "Kalite yildizlari", options = ["Toplamdan", "Bilancodan (v4.2)"])
+kal5     = input.float(50.0, "5 yildiz esigi (Toplam >=, tahmin)")
+ucuzMode = input.string("Percentile'dan", "UCUZ etiketi", options = ["Percentile'dan", "Endeksten (v4.2)"])
+ucuzEsik = input.float(20.0, "UCUZ esigi (Percentile <=)")
+recMode  = input.string("v4.6 (M3, 50 bar)", "Recovery", options = ["v4.6 (M3, 50 bar)", "v4.5 (20 bar)"])
+mcrMode  = input.string("v4.6 (GENISLEME/RISK-ON gecer)", "Makro sarti", options = ["v4.6 (GENISLEME/RISK-ON gecer)", "v4.5 (DARALMA haric gecer)"])
+sigMode  = input.string("v4.6 aday", "Sinyal kurali", options = ["v4.6 aday", "v4.4"])
+kirEsik  = input.float(3.5, "Stop kirilma esigi % (v4.6 sinyal)")
+makMode  = input.string("v4.7 (M3 degisimi)", "Makro etiketi", options = ["v4.7 (M3 degisimi)", "v4.6 (BIST100 trendi)"])
+makK     = input.int(15, "Makro: M3 degisim penceresi (bar)", minval = 1)
+
+// Bankalar / sigorta / finansal kiralama: FAVOK, net borc ve ROCE anlamsiz
+isFin = str.contains(str.lower(syminfo.sector), "financ") or str.contains(str.lower(syminfo.industry), "bank")
+
+// ---------- Temel veriler ----------
+fin(id, p) => request.financial(syminfo.tickerid, id, p, ignore_invalid_symbol = true)
+bv   = fin("BOOK_VALUE_PER_SHARE", "FQ")
+eps  = fin("EARNINGS_PER_SHARE_BASIC", "TTM")
+ebit = fin("EBIT", "TTM")
+tas  = fin("TOTAL_ASSETS", "FQ")
+tcl  = fin("TOTAL_CURRENT_LIABILITIES", "FQ")
+ebd  = fin("EBITDA", "TTM")
+nd   = fin("NET_DEBT", "FQ")
+rev  = fin("TOTAL_REVENUE", "TTM")
+sh   = fin("TOTAL_SHARES_OUTSTANDING", "FQ")
+
+// 1 yil kac bar: gunlukte 252, haftalikta 52, aylikta 12, gun icinde ~8 saatlik seans
+Y = timeframe.isdaily ? 252 : timeframe.isweekly ? 52 : timeframe.ismonthly ? 12 : math.round(252 * 28800 / timeframe.in_seconds())
+roe  = bv > 0 ? eps / bv : na
+roce = (tas - tcl) > 0 ? ebit / (tas - tcl) : na
+roe1  = roe[Y]
+roce1 = roce[Y]
+
+// Degerleme carpanlari: PD/DD ve FD/Satis (FD = piyasa degeri + net borc). Bankalarda FD anlamsiz, PD/DD kullanilir.
+pb   = bv > 0 ? close / bv : na
+evs  = rev > 0 and sh > 0 ? (close * sh + nz(nd)) / rev : na
+// Pencere: grafigin son 200 bari, ama 2024 oncesine (enflasyon muhasebesi oncesi) gecmez.
+in24  = time >= timestamp(2024, 1, 1, 0, 0)
+pbW   = in24 ? pb : na
+evsW  = in24 ? evs : na
+// Sadece kapanmis barlar ([1])
+pbMin  = ta.lowest(pbW, 200)[1]
+pbMax  = ta.highest(pbW, 200)[1]
+evsMin = ta.lowest(evsW, 200)[1]
+dipEVS = sh > 0 ? (evsMin * rev - nz(nd)) / sh : na
+// FD/Satis sadece banka degilse ve FD/Satis dibi anlamliysa (> 0) kullanilir (holdinglerde PD/DD).
+useEVS = not isFin and not na(dipEVS) and dipEVS > 0
+dip    = useEVS ? dipEVS : bv * pbMin
+tepe   = bv * pbMax
+center = math.sqrt(dip * tepe)
+
+// ---------- Percentile / Value ----------
+pctFn() =>
+    e  = rev > 0 and sh > 0 ? (close * sh + nz(nd)) / rev : na
+    p  = bv > 0 ? close / bv : na
+    dE = sh > 0 ? (ta.lowest(time >= timestamp(2024, 1, 1, 0, 0) ? e : na, 200)[1] * rev - nz(nd)) / sh : na
+    rE = ta.percentrank(e, 200)
+    rP = ta.percentrank(p, 200)
+    not isFin and not na(dE) and dE > 0 ? rE : rP
+rankEVS = ta.percentrank(evs, 200)
+rankPB  = ta.percentrank(pb, 200)
+pct   = nz(useEVS ? rankEVS : rankPB, 50)
+value = (100 - pct) / 10
+
+// ---------- v4.5 Degerleme cekirdegi: M3 para arzina gore duzeltilmis fiyat ----------
+valM3  = valMode == "M3 (para arzi)"
+// M3 trilyon TL cinsinden kullanilir (cok kucuk sayilarda TradingView karsilastirmasi hatali calisiyor)
+m3     = request.security("ECONOMICS:TRM3", timeframe.period, close, ignore_invalid_symbol = true) / 1e12
+adjC   = m3 > 0 ? close / m3 : na
+dipM3  = ta.lowest(adjC, 200) * m3
+tepeM3 = ta.highest(adjC, 200) * m3
+pctM3  = ta.percentrank(adjC, 200)
+stopM3 = timeframe.isweekly ? ta.lowest(adjC, 55) * m3 : dipM3
+m3PctFn() =>
+    mm = request.security("ECONOMICS:TRM3", "W", close, ignore_invalid_symbol = true) / 1e12
+    ta.percentrank(close / mm, 200)
+pctWM3 = request.security(syminfo.tickerid, "W", m3PctFn())
+dip   := valM3 ? dipM3 : dip
+tepe  := valM3 ? tepeM3 : tepe
+pct   := valM3 ? nz(pctM3, 50) : pct
+value := (100 - pct) / 10
+
+// ---------- Memory ----------
+// v4.2: fiyat/merkez orani bugunkuyle +-%10 olan gecmis barlarda 6 ay sonra yukselme orani (son 2 bar)
+rt = close / center
+float mem42 = na
+if bar_index >= last_bar_index - 1
+    int cnt = 0
+    int hit = 0
+    H   = int(Y / 2)
+    lim = math.min(3 * Y, 990)
+    if H < lim
+        for i = H to lim
+            if not na(rt[i]) and not na(close[i - H]) and rt[i] <= rt * 1.10
+                cnt += 1
+                if close[i - H] > close[i]
+                    hit += 1
+    mem42 := 10.0 * hit / math.max(cnt, 10)
+// v4.3: fiyat seviyesi hafizasi (gunluk veriyle, son 60 gunluk barda hesaplanir)
+memD() =>
+    float m = na
+    if bar_index >= last_bar_index - 60
+        int cnt = 0
+        int hit = 0
+        for k = 252 to 990
+            if time[k] >= timestamp(2024, 1, 1, 0, 0) and math.abs(close[k] / close - 1) <= 0.15
+                cnt += 1
+                if close[k - 252] > close[k]
+                    hit += 1
+        m := cnt > 0 ? 10.0 * hit / cnt : 0.0
+    m
+mem43  = request.security(syminfo.tickerid, "D", memD())
+// v4.5: son 15 barin (bugun dahil) kacinda Percentile <= 20 idi (ucuz bolgede kalma suresi), 10 uzerinden
+memUcz = 10.0 * math.sum(pct <= 20 ? 1 : 0, 15) / 15
+memory = memMode == "v4.5 (ucuz bolge suresi)" ? memUcz : memMode == "v4.3" ? mem43 : mem42
+
+// ---------- Compression / Recovery / RS ----------
+stochC(src, n) =>
+    lo = ta.lowest(src, n)
+    hi = ta.highest(src, n)
+    hi > lo ? 10 * (src - lo) / (hi - lo) : 5.0
+// v4.2: ATR(14)/fiyat'in 200 gunluk sirasi, ters cevrilmis (her zaman gunluk)
+compD() => 10 * (1 - ta.percentrank(ta.atr(14) / close, 200) / 100)
+comp42 = request.security(syminfo.tickerid, "D", compD())
+// v4.3: grafigin zaman diliminde ATR(14)/fiyat, 2024 sonrasi son 200 barin en dusuk-en yuksek araligi, ters cevrilmis
+atrp   = ta.atr(14) / close
+atrpW  = in24 ? atrp : na
+atrpLo = ta.lowest(atrpW, 200)
+atrpHi = ta.highest(atrpW, 200)
+comp43 = atrpHi > atrpLo ? 10 * (atrpHi - atrp) / (atrpHi - atrpLo) : 5.0
+comp   = mcMode == "v4.3" ? comp43 : comp42
+// Recovery: kapanisin son 20 barlik aralik icindeki yeri. Ok icin: puan degisimi (3 bar) ve kapanisin % degisimi (3 bar)
+recD() =>
+    x = stochC(close, 20)
+    [x, x - x[3], 100 * (close / close[3] - 1)]
+// Relative Strength: hisse/XU100 oraninin aralik icindeki yeri (gunlukte 60 gun, haftalikta 20 hafta). Ok icin: puan degisimi (3 bar) ve oranin % degisimi (5 bar)
+rsD(simple string tf, simple int n) =>
+    r = close / request.security("BIST:XU100", tf, close)
+    x = stochC(r, n)
+    [x, x - x[3], 100 * (r / r[5] - 1)]
+tfRR = timeframe.isweekly ? "W" : "D"
+rsN  = timeframe.isweekly ? 20 : 60
+[rec45, recVel, recPct] = request.security(syminfo.tickerid, tfRR, recD())
+// v4.6: M3 duzeltmeli kapanisin son 50 barlik araliktaki yeri (grafigin zaman diliminde)
+rec46 = stochC(adjC, 50)
+rec   = recMode == "v4.6 (M3, 50 bar)" and valM3 ? nz(rec46, rec45) : rec45
+[rs, rsVel, rsPct]    = request.security(syminfo.tickerid, tfRR, rsD(tfRR, rsN))
+
+// ---------- Macro ----------
+xuTrend = request.security("BIST:XU100", "W", ta.percentrank(close, 250))
+xuCheap = request.security("BIST:XU100/FX_IDC:USDTRY", "D", ta.percentrank(close, 750)) <= 35
+macroXU  = xuTrend >= 60 ? "GENISLEME" : xuTrend <= 40 ? "DARALMA" : "NOTR"
+m3Chg    = m3 / m3[makK] - 1
+macroM3  = na(m3Chg) ? "NOTR" : m3Chg > 1e-9 ? "GENISLEME" : m3Chg < -1e-9 ? "DARALMA" : "NOTR"
+macroBase = makMode == "v4.7 (M3 degisimi)" and valM3 ? macroM3 : macroXU
+ucuz      = ucuzMode == "Percentile'dan" ? pct <= ucuzEsik : xuCheap
+macroTxt  = macroBase + (ucuz and (mcrMode == "v4.5 (DARALMA haric gecer)" or macroBase == "GENISLEME") ? " + UCUZ" : "")
+// Zippo tablolarindan: GENISLEME = 7, NOTR = 5 (UCUZ etiketi puani degistirmiyor)
+macroSc   = macroBase == "RISK-ON" ? 10.0 : macroBase == "GENISLEME" ? 7.0 : macroBase == "TOPARLANMA" ? 6.0 : macroBase == "NOTR" ? 5.0 : 3.0
+
+// ---------- MTF (haftalik) ve Hacim ----------
+pctW   = valM3 ? nz(pctWM3, 50) : nz(request.security(syminfo.tickerid, "W", pctFn()), 50)
+mtfOk  = pctW <= 50
+vr     = volume / ta.sma(volume, 20)
+
+// ---------- Toplam ----------
+total = value + nz(memory) + comp + rec + macroSc + rs
+
+// ---------- Kalite ----------
+// v4.2: 5 temel kontrol (bilancodan)
+q1 = roe >= 0.10
+q2 = isFin ? roe >= 0.20 : roce >= 0.12
+q3 = isFin ? (not na(roe1) and roe > roe1) : (not na(roce1) and roce > roce1)
+q4 = isFin ? (not na(bv[Y]) and bv > bv[Y]) : (ebd > 0 and nd / ebd < 2.5)
+q5 = eps > 0 and (na(eps[Y]) or eps > eps[Y])
+stars42 = (q1 ? 1 : 0) + (q2 ? 1 : 0) + (q3 ? 1 : 0) + (q4 ? 1 : 0) + (q5 ? 1 : 0)
+// v4.4: Toplam'dan (Zippo 11/11). 2 yildizin altindaki esikler gozlenmedi.
+starsT  = total >= kal5 ? 5 : total >= 41 ? 4 : total >= 36 ? 3 : 2
+stars   = kalMode == "Toplamdan" ? starsT : stars42
+
+// ---------- Sinyal ----------
+c1 = pct <= 35
+c2 = rec >= 6
+c3 = total >= 36
+c4 = mtfOk
+c5 = vr >= 1.2
+c6 = mcrMode == "v4.6 (GENISLEME/RISK-ON gecer)" ? (macroBase == "GENISLEME" or macroBase == "RISK-ON") : macroBase != "DARALMA"
+nMiss = (c1 ? 0 : 1) + (c2 ? 0 : 1) + (c3 ? 0 : 1) + (c4 ? 0 : 1) + (c5 ? 0 : 1) + (c6 ? 0 : 1)
+// Ok kademeleri
+lvl(v) => v > 2 ? 2 : v > 0.5 ? 1 : v < -2 ? -2 : v < -0.5 ? -1 : 0
+lvlP(v, t1, t2) => v > t2 ? 2 : v > t1 ? 1 : v < -t2 ? -2 : v < -t1 ? -1 : 0
+pctOk = okMode == "Yuzde degisim"
+recL = pctOk ? lvlP(recPct, 0.5, 2.0) : lvl(recVel)
+rsL  = pctOk ? lvlP(rsPct, 2.0, 5.0) : lvl(rsVel)
+// DAGITIM = Recovery cift asagi ve (3+ eksik sart ya da RS cift yukari)
+signal44 = nMiss == 0 ? "ALINABILIR" : recL == -2 and (nMiss >= 3 or rsL == 2) ? "DAGITIM" : c1 and nMiss <= 2 ? "YAKIN" : "BEKLE"
+// v4.6 aday: barin degisimi ve onceki Stop'a uzaklik (M3 duzeltmeli)
+stopN   = timeframe.isweekly ? 55 : 200
+chg1    = 100 * (adjC / adjC[1] - 1)
+prevStp = ta.lowest(adjC[1], stopN - 1)
+dStop   = 100 * (adjC / prevStp - 1)
+signal46 = nMiss == 0 ? "ALINABILIR" : not c1 ? "BEKLE" : chg1 < -0.5 ? (dStop <= -kirEsik ? "BEKLE" : "DAGITIM") : nMiss <= 2 ? (rsL >= 1 ? "TOPLANIYOR" : "YAKIN") : "BEKLE"
+signal = sigMode == "v4.6 aday" and valM3 ? signal46 : signal44
+stopRef = valM3 ? stopM3 : dip
+
+// ---------- Alarmlar ----------
+f2a(x) => str.tostring(x, "#.##")
+if barstate.isconfirmed and signal == "ALINABILIR" and signal[1] != "ALINABILIR"
+    alert(syminfo.ticker + " IKARUS ALINABILIR (MTF onayli). Total: " + f2a(total) + ", Percent: " + f2a(total / 60 * 100) + ", Recovery: " + f2a(rec) + ", Percentile: " + f2a(pct) + ", RS: " + f2a(rs) + ", fiyat: " + str.tostring(close), alert.freq_once_per_bar_close)
+if barstate.isconfirmed and signal == "YAKIN" and signal[1] != "YAKIN"
+    alert(syminfo.ticker + " ALINABILIR esigine yakin (en fazla 2 sart eksik). Panelden Eksik Sartlar satirina bak, fiyat: " + str.tostring(close), alert.freq_once_per_bar_close)
+alertcondition(signal == "ALINABILIR" and signal[1] != "ALINABILIR", "IKARUS ALINABILIR", "{{ticker}} IKARUS ALINABILIR, fiyat: {{close}}")
+alertcondition(signal == "YAKIN" and signal[1] != "YAKIN", "IKARUS YAKIN", "{{ticker}} ALINABILIR esigine yakin (en fazla 2 sart eksik), fiyat: {{close}}")
+
+// Veri penceresinde okunabilsin diye gizli ciktilar
+plot(pct, "Percentile", display = display.data_window)
+plot(memory, "Memory", display = display.data_window)
+plot(comp, "Compression", display = display.data_window)
+plot(rec, "Recovery", display = display.data_window)
+plot(macroSc, "Macro", display = display.data_window)
+plot(rs, "RS", display = display.data_window)
+plot(total, "Toplam", display = display.data_window)
+plot(dip, "Dip", display = display.data_window)
+plot(tepe, "Tepe", display = display.data_window)
+plot(stopRef, "Stop", display = display.data_window)
+plot(stars, "Kalite", display = display.data_window)
+plot(vr, "Hacim", display = display.data_window)
+plot(pctW, "MTF", display = display.data_window)
+plot(recPct, "Recovery %3", display = display.data_window)
+plot(rsPct, "RS %5", display = display.data_window)
+plot(recL, "Recovery ok", display = display.data_window)
+plot(rsL, "RS ok", display = display.data_window)
+plot(nMiss, "Eksik sart", display = display.data_window)
+plot(m3, "M3", display = display.data_window)
+plot(chg1, "Bar degisimi %", display = display.data_window)
+plot(dStop, "Onceki Stop'a uzaklik %", display = display.data_window)
+
+// ---------- Mini grafik ----------
+var BLK = array.from("▁", "▂", "▃", "▄", "▅", "▆", "▇", "█")
+spark(src) =>
+    string s = ""
+    for i = 9 to 0
+        k = int(math.max(0, math.min(7, math.round(nz(src[i]) / 10 * 7))))
+        s += array.get(BLK, k)
+    s
+recSpark = spark(rec)
+rsSpark  = spark(rs)
+
+// ---------- Tablo ----------
+// Zippo'nun yazim bicimi: ".5", "10.0", ".69x", fiyatlarda "219.3" / "30.12" (yuvarlama yarim yukari)
+rnd(x, d) => math.round(x * math.pow(10, d) + 1e-7) / math.pow(10, d)
+f1(x) => na(x) ? "-" : str.tostring(rnd(x, 1), "#.0")
+f2(x) => na(x) ? "-" : str.tostring(rnd(x, 2), "#.00")
+fP(x) => na(x) ? "-" : str.tostring(rnd(x, 2), "#.##")
+arrowL(l) => l == 2 ? " ↑↑" : l == 1 ? " ↑" : l == -2 ? " ↓↓" : l == -1 ? " ↓" : " →"
+scCol(x) => x >= 7 ? #4caf50 : x >= 4 ? #fdd835 : #ef5350
+pctCol(x) => x <= 35 ? #4caf50 : x <= 65 ? #fdd835 : #ef5350
+C_DARK = #131a2e
+C_GRAY = #334155
+
+var table t = table.new(position.top_right, 2, 17, border_width = 1)
+row(i, lbl, val, bg, fg) =>
+    table.cell(t, 0, i, lbl, bgcolor = bg, text_color = fg, text_size = size.small)
+    table.cell(t, 1, i, val, bgcolor = bg, text_color = fg, text_size = size.small)
+
+if barstate.islast
+    missTxt = (c1 ? "" : "Percentile " + f1(pct) + "/35.0\n") + (c2 ? "" : "Recovery " + f1(rec) + "/6.0\n") + (c3 ? "" : "Kalite " + f1(total) + "/36.0\n") + (c4 ? "" : "MTF " + f1(pctW) + "/50.0\n") + (c5 ? "" : "Hacim " + f2(vr) + "/1.20\n") + (c6 ? "" : "Macro (" + macroBase + ")\n")
+    sigCol = signal == "ALINABILIR" ? #4caf50 : signal == "YAKIN" ? #ff9800 : signal == "TOPLANIYOR" ? #26a69a : signal == "DAGITIM" ? #ef5350 : #9e9e9e
+    starTxt = str.repeat("★", stars) + str.repeat("☆", 5 - stars)
+    row(0,  "IKARUS CORE", "QUANT v4.7", C_DARK, color.white)
+    row(1,  "Percentile", f1(pct) + " / 100", pctCol(pct), color.black)
+    row(2,  "Value", f1(value) + " / 10", scCol(value), color.black)
+    row(3,  "Memory", f1(memory) + " / 10", scCol(nz(memory)), color.black)
+    row(4,  "Compression", f1(comp) + " / 10", scCol(comp), color.black)
+    row(5,  "Recovery", f1(rec) + " / 10" + arrowL(recL) + "\n" + recSpark, scCol(rec), color.black)
+    row(6,  "Macro", macroTxt, scCol(macroSc), color.black)
+    row(7,  "Relative Strength", f1(rs) + " / 10" + arrowL(rsL) + "\n" + rsSpark, scCol(rs), color.black)
+    row(8,  "MTF Onay (W)", f1(pctW) + " / 100 - " + (mtfOk ? "ONAYLI" : "ONAYSIZ"), mtfOk ? #4caf50 : #ef5350, color.black)
+    row(9,  "Hacim Onayi", f2(vr) + "x ort. - " + (c5 ? "ONAYLI" : "ONAYSIZ"), c5 ? #4caf50 : #ef5350, color.black)
+    row(10, "Toplam Skor", f1(total) + " / 60\n(%" + f1(total / 60 * 100) + ")", C_GRAY, color.white)
+    row(11, "Kalite", starTxt, C_DARK, color.white)
+    row(12, "SIGNAL ENGINE", signal, sigCol, color.white)
+    row(13, "Eksik Sartlar", missTxt == "" ? "-" : missTxt, C_GRAY, color.white)
+    row(14, "Dip Fiyat", fP(dip), #1b5e20, color.white)
+    row(15, "Tepe Fiyat", fP(tepe), #b71c1c, color.white)
+    row(16, "Stop Referans", fP(stopRef), #8d3b0c, color.white)

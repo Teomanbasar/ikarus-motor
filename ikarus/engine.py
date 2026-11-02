@@ -189,7 +189,7 @@ DEFAULTS = dict(
     sig_mod="v46",  # "faz": faz motoru (deneme)
     faz_m=3, faz_kr=1,
     m3_gecikme_gun=0,
-    macro_mod="xu100",  # "m3": taban etiket M3'un son macro_k bardaki degisiminden (deneme, 2 Kas)
+    macro_mod="m3",  # v4.7: taban etiket M3'un son macro_k bardaki degisiminden (eski: "xu100")
     macro_k=15, macro_ok=False,  # macro_ok: ok kurali (RISK-ON 10 / ucuz+RS yukari 10 / TOPARLANMA 6)  # backtest icin: M3'u TCMB'nin gercek yayim tarihinden sonra kullan (or. 25 gun)
 )
 
