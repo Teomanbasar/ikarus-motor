@@ -32,6 +32,42 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "aralik" in q:  # genis arama: farkli kaynak/uzunluk/M3 ile dip-tepe eslesmesi
+            day = pd.Timestamp(q["tarih"])
+            m3e = E.m3_effective(m3)
+            rows = []
+            for t, df in px.items():
+                d = df[df.index <= day]
+                if len(d) < 60:
+                    continue
+                cl = float(d["close"].iloc[-1])
+                if q.get("fiyat") and abs(cl / q["fiyat"] - 1) > 0.25:
+                    continue
+                W = d.resample("W-FRI").agg({"open": "first", "high": "max", "low": "min", "close": "last"}).dropna()
+                M = d.resample("ME").agg({"open": "first", "high": "max", "low": "min", "close": "last"}).dropna()
+                for tfn, X in (("D", d), ("W", W), ("M", M)):
+                    mm = E.align_m3(X.index, m3e)
+                    for adj in (False, True):
+                        f = (mm[-1] / mm) if adj else np.ones(len(X))
+                        for kay in ("c", "hl"):
+                            lo_s = (X["low"] if kay == "hl" else X["close"]).values * f
+                            hi_s = (X["high"] if kay == "hl" else X["close"]).values * f
+                            for n in (20, 50, 52, 100, 104, 150, 200, 250, 260, 300, 500, 750, 1000, 99999):
+                                if n != 99999 and len(X) < n:
+                                    continue
+                                lo, hi = np.nanmin(lo_s[-n:]), np.nanmax(hi_s[-n:])
+                                e = abs(lo / q["dip"] - 1) + abs(hi / q["tepe"] - 1)
+                                rows.append((e, t, f"{tfn}-{'M3' if adj else 'ham'}-{kay}-{n}", lo, hi, cl))
+            rows.sort(key=lambda x: x[0])
+            out.append(f"=== ARALIK {q['tarih']} Dip {q['dip']} Tepe {q['tepe']} fiyat~{q.get('fiyat')}")
+            for e, t, k, lo, hi, cl in rows[:40]:
+                out.append(f"{t:7s} {k:18s} hata {e*100:6.2f}%  dip {lo:.2f} tepe {hi:.2f} kapanis {cl:.2f} konum {100*(cl-lo)/(hi-lo):.1f}")
+            vd = R / "veri"
+            vd.mkdir(exist_ok=True)
+            for t in dict.fromkeys(r[1] for r in rows[:40]):
+                px[t].round(4).to_csv(vd / f"{t}.csv")
+            out.append("")
+            continue
         if "hisse" in q:  # detay: bilinen hissenin o tarihteki tablosu ve ara degerler
             t, tf, day = q["hisse"], q.get("tf", "D"), pd.Timestamp(q["tarih"])
             d = px[t][px[t].index <= day]
