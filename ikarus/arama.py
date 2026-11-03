@@ -32,6 +32,19 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "ham_veri" in q:  # temettu duzeltmesiz (TradingView varsayilani) fiyat
+            import yfinance as yf
+            vd = R / "veri"
+            vd.mkdir(exist_ok=True)
+            for t in q["ham_veri"]:
+                try:
+                    raw = yf.download(t + ".IS", start="2010-01-01", auto_adjust=False, progress=False)
+                    raw.columns = [c[0] if isinstance(c, tuple) else c for c in raw.columns]
+                    raw.round(4).to_csv(vd / f"{t}_ham.csv")
+                    out.append(f"ham veri {t}: {len(raw)} satir")
+                except Exception as e:
+                    out.append(f"ham veri {t} HATA {e}")
+            continue
         if "aralik" in q:  # genis arama: farkli kaynak/uzunluk/M3 ile dip-tepe eslesmesi
             day = pd.Timestamp(q["tarih"])
             m3e = E.m3_effective(m3)

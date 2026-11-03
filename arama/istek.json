@@ -1,4 +1,1 @@
-[{"aralik": 1, "tarih": "2026-11-03", "dip": 29.02, "tepe": 99.00, "fiyat": 30.35},
- {"aralik": 1, "tarih": "2026-10-31", "dip": 29.02, "tepe": 99.00, "fiyat": 30.35},
- {"ad": "IKARUS sade (EREGL?)", "tarih": "2026-11-03", "dip": 29.02, "tepe": 99.00, "pct": 1.9},
- {"veri": ["EREGL","KRDMD","KRDMA","KRDMB","IZMDC","CEMTS","XU030"]}]
+[{"ham_veri": ["EREGL","KRDMD","GESAN","THYAO","ASELS"]}]
