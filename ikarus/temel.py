@@ -57,6 +57,44 @@ def _cek4(hisse, grup, dl):
     return []
 
 
+KODLAR = {"1A", "1AA", "1AB", "1BL", "1Z", "2A", "2AA", "2BA", "2N", "2O", "2OA", "3C", "3D", "3DF", "3Z", "4B", "4C", "4CB", "4CBC"}
+
+
+def gecmis(ceyrek: int = 28, butce_dk: float = 120, isci: int = 4):
+    """Geriye donuk test icin tum BIST'in uzun ceyrek gecmisi -> temel/gecmis.json.gz (yalniz gereken kalemler)."""
+    import gzip
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    R.mkdir(exist_ok=True)
+    f = R / "gecmis.json.gz"
+    G = json.loads(gzip.decompress(f.read_bytes())) if f.exists() else {}
+    hisseler = [h for h in D.bist_list()["ticker"].tolist() if h not in G]
+    t0 = time.time()
+
+    def yaz():
+        f.write_bytes(gzip.compress(json.dumps(G, separators=(",", ":")).encode()))
+
+    def is_(h):
+        if time.time() - t0 > butce_dk * 60:
+            return h, None, None
+        grup, tab = cek(h, ceyrek)
+        return h, grup, tab
+    n = 0
+    with ThreadPoolExecutor(isci) as ex:
+        for fut in as_completed([ex.submit(is_, h) for h in hisseler]):
+            try:
+                h, grup, tab = fut.result()
+            except Exception as e:
+                print("hata", e); continue
+            if grup is None:
+                continue
+            G[h] = {"grup": grup, "tab": {f"{y}/{m}": {k: v for k, v in val.items() if k in KODLAR} for (y, m), val in tab.items()}}
+            n += 1
+            if n % 50 == 0:
+                print(f"{n}/{len(hisseler)} {time.time() - t0:.0f} sn"); yaz()
+    yaz()
+    print(f"gecmis: {n} yeni, dosyada {len(G)} hisse ({time.time() - t0:.0f} sn)")
+
+
 def cek(hisse: str, ceyrek: int = 12):
     """{(yil, ay): {kod: deger}}, grup ("XI_29" sanayi / "UFRS" banka)."""
     bugun = date.today()
@@ -124,10 +162,13 @@ def _bol(a, b):
         return None
 
 
-def skor(grup, tab, m3):
+def skor(grup, tab, m3, d=None):
     if not tab:
         return None
-    d = max(tab)  # son donem
+    if d is None:
+        d = max(tab)  # son donem
+    elif d not in tab:
+        return None
     y, m = d
     d1 = (y - 1, m)
     if d1 not in tab:
@@ -260,5 +301,12 @@ def ornek(hisseler):
 if __name__ == "__main__":
     if sys.argv[1] == "ornek":
         ornek(sys.argv[2:])
+    elif sys.argv[1] == "gecmis":
+        gecmis()
+        from . import temel_bt
+        temel_bt.main()
+    elif sys.argv[1] == "bt":
+        from . import temel_bt
+        temel_bt.main()
     elif sys.argv[1] == "hesapla":
         hesapla(sys.argv[2:] or None)
