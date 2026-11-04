@@ -225,7 +225,7 @@ EVDS_SERI = "TP.HPBITABLO1.18"
 def m3(update: bool = True) -> pd.Series:
     """Aylik M3 (TL). index = TradingView ay damgasi (ayin 1'i).
     data/m3.csv TradingView'den alinmis gecmisi tutar; sonraki aylar her calismada EVDS'ten eklenir
-    (yalniz ayin son cuma verisi yayimlanmissa, TradingView de o zaman alir)."""
+    (ayin yayimlanmis son haftasi; TradingView de oyle)."""
     f = DATA / "m3.csv"
     s = pd.read_csv(f, comment="#", parse_dates=["tarih"]).set_index("tarih")["m3"].astype(float)
     key = ayar("evds_key")
@@ -244,8 +244,7 @@ def m3(update: bool = True) -> pd.Series:
 
 
 def _evds_m3(key: str) -> pd.Series:
-    """EVDS haftalik M3'ten aylik seri: her ayin son cuma degeri (TL).
-    Ayin son cumasi henuz yayimlanmadiysa o ay alinmaz."""
+    """EVDS haftalik M3'ten aylik seri: her ayin yayimlanmis son haftasinin degeri (TL)."""
     import requests
     bas = (pd.Timestamp.today() - pd.DateOffset(months=14)).strftime("01-%m-%Y")
     url = f"{EVDS_URL}series={EVDS_SERI}&startDate={bas}&endDate=31-12-2099&type=json&frequency=3"
@@ -261,11 +260,7 @@ def _evds_m3(key: str) -> pd.Series:
     w = pd.Series(w, dtype=float).sort_index()
     if w.empty:
         return w
-    son = w.index.max()
-    out = {}
-    for ay, g in w.groupby(w.index.to_period("M")):
-        ay_sonu = ay.to_timestamp(how="end").normalize()
-        son_cuma = ay_sonu - pd.Timedelta(days=(ay_sonu.weekday() - 4) % 7)
-        if son >= son_cuma:  # ayin son cumasi yayimlanmis
-            out[ay.to_timestamp()] = g.iloc[-1]
+    # TradingView ECONOMICS:TRM3 ay damgasina o ayin YAYIMLANMIS EN SON haftasini yaziyor (4 Kas 2026'da
+    # Ekim damgasi = 23 Ekim haftasi; ayin son cumasini beklemiyor). Ayni sekilde: her ayin son mevcut haftasi.
+    out = {ay.to_timestamp(): g.iloc[-1] for ay, g in w.groupby(w.index.to_period("M"))}
     return pd.Series(out, dtype=float).sort_index()
