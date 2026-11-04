@@ -1,13 +1,15 @@
 //@version=5
-// IKARUS SADE (DENEME) - 3 Kasim 2026. Zippo'nun sade "IKARUS" tablosunu (EREGL, 3 Kas 17:35 paylasimi) taklit denemesi.
-// COZULEN (EREGL ile birebir):
-//   Ucuzluk (Destek) = en dusuk(kapanis / M3) x guncel M3    -> 29.02 (biz 29.01). Fiyat TEMETTU DUZELTMESIZ olmali (TradingView varsayilani).
-//   Adil Deger       = (Pahali + Ucuzluk) / 2                  -> 64.01
-//   Ucuz<->Pahali    = (fiyat - Ucuzluk) / (Pahali - Ucuzluk) x 100   (dogrusal konum, percentrank DEGIL) -> 1.9
-// COZULMEYEN: Pahali (Direnc) 99.00. Tum gecmis max 117.46, 1000 bar 93.86 veriyor; tam 99 veren pencere yok.
-//   Bu yuzden Pahali icin yontem ve uzunluk ayarlardan secilebilir. Yeni Zippo ornekleriyle netlesecek.
+// IKARUS SADE (DENEME) - 4 Kasim 2026. Zippo'nun sade "IKARUS" tablosunun taklidi (ornek: EREGL, 3 Kas 17:35 paylasimi).
+// ONEMLI: Grafikte TEMETTU DUZELTMESI KAPALI olmali ("adj" dugmesi kapali). Zippo bu tabloyu duzeltmesiz grafikte almis:
+//   duzeltmesiz fiyatla Ucuzluk 29.01 (Zippo 29.02), duzeltmeliyle 28.62 cikiyor. (Ana IKARUS CORE ise duzeltme ACIK.)
+// COZULEN (EREGL ile):
+//   Ucuzluk (Destek) = tum gecmisin en dusuk (kapanis / M3) degeri x guncel M3   (EREGL'de 1 yildan uzun her pencere ayni)
+//   Adil Deger       = (Pahali + Ucuzluk) / 2                  -> 64.01 birebir
+//   Ucuz<->Pahali    = (fiyat - Ucuzluk) / (Pahali - Ucuzluk) x 100   (dogrusal konum, percentrank DEGIL) -> 1.9 birebir
+// COZULMEYEN: Pahali (Direnc) 99.00. Ayni seride tum gecmis tepe 117.46 (16 Ara 2021); hicbir kayan pencere 99 vermiyor
+//   (97.45 -> 101.74 atliyor). Yuzdelik, ortalama+sapma, Heikin Ashi, en yuksek, haftalik/aylik denendi: dogal bir eslesme yok.
+//   Ayarlardan yontem secilebilir; yeni Zippo ornekleriyle netlesecek. Varsayilan "Tum gecmis" EREGL'de 117 civari gosterir.
 // Kademe esikleri TAHMIN (tek ornek: 1.9 -> AL 3/3). Ayarlardan degistirilebilir.
-// KAYDETME / test icin ayri gosterge olarak ekle.
 indicator("IKARUS SADE (deneme)", overlay = true, max_bars_back = 5000)
 
 grpD = "Degerleme"
