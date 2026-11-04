@@ -32,6 +32,24 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "m3_kontrol" in q:  # EVDS haftalik son degerler + TradingView TRM3
+            import requests
+            key = D.ayar("evds_key")
+            try:
+                bas = (pd.Timestamp.today() - pd.DateOffset(months=3)).strftime("01-%m-%Y")
+                url = f"{D.EVDS_URL}series={D.EVDS_SERI}&startDate={bas}&endDate=31-12-2099&type=json&frequency=3"
+                it = requests.get(url, headers={"key": key}, timeout=30).json()["items"]
+                out.append("EVDS haftalik: " + " | ".join(f"{x['Tarih']}={x.get(D.EVDS_SERI.replace('.', '_'))}" for x in it[-8:]))
+            except Exception as e:
+                out.append(f"EVDS hata {e}")
+            for ep in ("global", "economics", "turkey"):
+                try:
+                    r = requests.post(f"https://scanner.tradingview.com/{ep}/scan", timeout=30,
+                                      json={"symbols": {"tickers": ["ECONOMICS:TRM3"]}, "columns": ["close", "time", "update_time"]})
+                    out.append(f"TV {ep}: {r.status_code} {r.text[:300]}")
+                except Exception as e:
+                    out.append(f"TV {ep} hata {e}")
+            continue
         if "tv_test" in q:  # TradingView tamamlama denemesi
             import io, contextlib
             b = io.StringIO()
