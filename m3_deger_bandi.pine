@@ -1,5 +1,5 @@
 //@version=5
-// IKARUS SADE (DENEME) - 4 Kasim 2026. Zippo'nun sade "IKARUS" tablosunun taklidi (ornek: EREGL, 3 Kas 17:35 paylasimi).
+// M3 DEGER BANDI (deneme) - 4 Kasim 2026. Zippo'nun sade "IKARUS" tablosunun taklidi (ornek: EREGL, 3 Kas 17:35 paylasimi).
 // ONEMLI: Zippo bu tabloyu TEMETTU DUZELTMESI KAPALI ("adj" kapali) grafikte almis. TradingView verisiyle EREGL Ucuzluk
 //   29.0214 -> 29.02 birebir (o gunku M3 = Eylul degeri). Duzeltmeliyle tum gecmisin dibi 2009'a kayiyor.
 //   Bu surum duzeltmesiz fiyati KENDISI ceker (ayar: "Fiyat verisi"), grafikteki adj dugmesi ne olursa olsun ayni sonucu verir.
@@ -12,7 +12,7 @@
 //   (97.45 -> 101.74 atliyor). Yuzdelik, ortalama+sapma, Heikin Ashi, en yuksek, haftalik/aylik denendi: dogal bir eslesme yok.
 //   Ayarlardan yontem secilebilir; yeni Zippo ornekleriyle netlesecek. Varsayilan "Tum gecmis" EREGL'de 117 civari gosterir.
 // Kademe esikleri TAHMIN (tek ornek: 1.9 -> AL 3/3). Ayarlardan degistirilebilir.
-indicator("IKARUS SADE (deneme) - adj KAPALI veriyle", overlay = true, max_bars_back = 5000)
+indicator("M3 Deger Bandi", shorttitle = "M3 Bant", overlay = true, max_bars_back = 5000)
 
 grpD = "Degerleme"
 dipMod  = input.string("Tum gecmis", "Ucuzluk penceresi", options = ["Tum gecmis", "N bar"], group = grpD)
@@ -69,7 +69,7 @@ if barstate.islast
     cR = color.new(#f77c80, 0)
     cA = color.new(#b2b5be, 0)
     cBol = puan <= 33 ? cG : puan >= 67 ? cR : cA
-    table.cell(T, 0, 0, "IKARUS SADE (deneme)", text_color = color.white, bgcolor = color.gray)
+    table.cell(T, 0, 0, "M3 DEGER BANDI", text_color = color.white, bgcolor = color.gray)
     table.merge_cells(T, 0, 0, 1, 0)
     table.cell(T, 0, 1, "Ucuz <-> Pahali (0-100)", text_color = color.white, bgcolor = cB)
     table.cell(T, 1, 1, str.tostring(puan, "#.0") + " / 100", text_color = color.white, bgcolor = cB)
