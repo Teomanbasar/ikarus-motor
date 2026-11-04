@@ -232,6 +232,10 @@ def m3(update: bool = True) -> pd.Series:
     if update and key:
         try:
             s2 = _evds_m3(key)
+            # Son 3 ayi EVDS'in guncel degeriyle yenile (csv'deki son ay eksik haftayla kaydedilmis olabilir:
+            # Eylul 2026 csv 32.6136 trilyon, TradingView 32.6320 = 25 Eylul haftasi)
+            son3 = s2[s2.index >= s.index.max() - pd.DateOffset(months=2)]
+            s.loc[son3.index.intersection(s.index)] = son3.loc[son3.index.intersection(s.index)]
             yeni = s2[s2.index > s.index.max()]
             if len(yeni):
                 s = pd.concat([s, yeni])
