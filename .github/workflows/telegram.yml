@@ -33,7 +33,7 @@ jobs:
         if: steps.d.outputs.tara == '1'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run tarama.yml -R ${{ github.repository }}
+        run: gh api -X POST repos/${{ github.repository }}/actions/workflows/tarama.yml/dispatches -f ref=main
       - name: Offset kaydet
         run: |
           git config user.name "ikarus-bot"
