@@ -43,8 +43,9 @@ def mesaj(res: dict, tf: str = "D") -> str | None:
     L = res["listeler"][tf]
     g = lambda t: H[t][tf]
     p = res["piyasa"]
+    gun = p.get("veri_tarih") or p["xu100_tarih"]
     baslik = "Günlük" if tf == "D" else "Haftalık"
-    lines = [f"<b>IKARUS · {baslik} · {date.fromisoformat(p['xu100_tarih']):%d.%m.%Y}</b>",
+    lines = [f"<b>IKARUS · {baslik} · {date.fromisoformat(gun):%d.%m.%Y}</b>",
              f"BIST100 {_fmt(p['xu100'], 0)} ({'+' if p['xu100_degisim'] >= 0 else ''}{_fmt(p['xu100_degisim'])}%) · Makro {p['makro']}", ""]
 
     def satir(t, ek=""):
@@ -119,13 +120,28 @@ def main(argv):
         _send(token, chat, "IKARUS bildirimleri çalışıyor ✅")
         return
     res = json.loads((D.ROOT / "cikti" / "sonuclar.json").read_text(encoding="utf-8"))
-    bugun = date.today().isoformat()
-    if res["piyasa"]["xu100_tarih"] != bugun and "--zorla" not in argv:
-        print(f"Son veri {res['piyasa']['xu100_tarih']}, bugun {bugun}: borsa kapali ya da veri gelmedi, bildirim yok.")
-        return
+    # Verinin tarihi: hisselerin en yaygin son gunu (XU100 Yahoo'da bazen bir gun geride kaliyor)
+    from collections import Counter
+    gunler = Counter((s.get("D") or {}).get("tarih") for s in res["hisseler"])
+    gunler.pop(None, None)
+    veri_gun = gunler.most_common(1)[0][0] if gunler else res["piyasa"]["xu100_tarih"]
+    # GitHub zamanlamasi saatlerce gecikebiliyor (gece yarisini gecince 'bugun' degisiyor).
+    # Bu yuzden 'bugun mu' yerine: bu veri gunu daha once bildirildi mi?
+    kayit = D.DATA / "son_bildirilen.txt"
+    onceki = kayit.read_text(encoding="utf-8").strip() if kayit.exists() else ""
+    if "--zorla" not in argv:
+        if veri_gun <= onceki:
+            print(f"Veri gunu {veri_gun} zaten bildirildi ({onceki}), tekrar yok.")
+            return
+        if (date.today() - date.fromisoformat(veri_gun)).days > 4:
+            print(f"Veri cok eski ({veri_gun}), bildirim yok.")
+            return
+    res["piyasa"]["veri_tarih"] = veri_gun
     _send(token, chat, mesaj(res, "D"))
-    if date.fromisoformat(res["piyasa"]["xu100_tarih"]).weekday() == 4 or "--haftalik" in argv:
+    if date.fromisoformat(veri_gun).weekday() == 4 or "--haftalik" in argv:
         _send(token, chat, mesaj(res, "W"))
+    if veri_gun > onceki:
+        kayit.write_text(veri_gun + "\n", encoding="utf-8")
     print("Telegram mesaji gonderildi.")
 
 

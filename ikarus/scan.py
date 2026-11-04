@@ -96,6 +96,7 @@ def run(tickers: list[str] | None = None) -> dict:
     print(f"{len(lst)} hisse. Fiyatlar indiriliyor...")
     px = D.prices(lst["ticker"].tolist())
     xu = D.xu100()
+    px, xu, _ = D.tv_tamamla(px, xu)
     m3 = D.m3()
     print(f"{len(px)} hissenin verisi geldi ({time.time() - t0:.0f} sn). Hesaplaniyor...")
 

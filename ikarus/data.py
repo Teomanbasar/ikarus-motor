@@ -130,6 +130,64 @@ def prices(tickers: list[str], start: str = START, chunk: int = 80, refresh: boo
     return out
 
 
+def son_seans(simdi=None) -> pd.Timestamp:
+    """Kapanmis son seansin tarihi (Istanbul saati): hafta ici 18:15 sonrasi bugun, yoksa onceki is gunu.
+    Resmi tatiller burada bilinmiyor; tatilde TradingView fiyati onceki kapanisla ayni olur ve eklenmez."""
+    import datetime as _dt
+    from zoneinfo import ZoneInfo
+    n = simdi or _dt.datetime.now(ZoneInfo("Europe/Istanbul"))
+    d = n.date()
+    if not (d.weekday() < 5 and (n.hour, n.minute) >= (18, 15)):
+        d -= _dt.timedelta(days=1)
+        while d.weekday() >= 5:
+            d -= _dt.timedelta(days=1)
+    return pd.Timestamp(d)
+
+
+def tv_tamamla(px: dict, xu: pd.Series | None = None):
+    """Yahoo bazen son seansi saatlerce gec veriyor (or. 3 Kas gece taramasinda 587 hissenin 585'inde yoktu).
+    Eksikse son seansin OHLCV'sini TradingView tarayicisindan ekler. Donus: (px, xu, eklenen sayisi)."""
+    import datetime as _dt
+    from zoneinfo import ZoneInfo
+    n0 = _dt.datetime.now(ZoneInfo("Europe/Istanbul"))
+    if n0.weekday() < 5 and (9, 55) <= (n0.hour, n0.minute) < (18, 15):
+        return px, xu, 0   # seans icinde TradingView degeri bugunun canli fiyati: son seans yerine konamaz
+    gun = son_seans(n0)
+    eksik = [t for t, df in px.items() if len(df) and df.index[-1] < gun]
+    xu_eksik = xu is not None and len(xu) and xu.index[-1] < gun
+    if not eksik and not xu_eksik:
+        return px, xu, 0
+    try:
+        import requests
+        tick = ["BIST:" + t for t in eksik] + (["BIST:XU100"] if xu_eksik else [])
+        body = {"symbols": {"tickers": tick}, "columns": ["open", "high", "low", "close", "volume"]}
+        r = requests.post("https://scanner.tradingview.com/turkey/scan", json=body, timeout=30)
+        r.raise_for_status()
+        Q = {it["s"].split(":")[1]: it["d"] for it in r.json()["data"]}
+    except Exception as e:
+        print("[uyari] TradingView tamamlama yapilamadi:", e)
+        return px, xu, 0
+    n = 0
+    for t in eksik:
+        q = Q.get(t)
+        if not q or any(v is None for v in q[:4]):
+            continue
+        o, h, l, c, v = q
+        df = px[t]
+        son = df.iloc[-1]
+        if abs(c - son["close"]) < 1e-9 and abs(o - son["open"]) < 1e-9:   # tatil / islem yok
+            continue
+        px[t] = pd.concat([df, pd.DataFrame({"open": [o], "high": [h], "low": [l], "close": [c], "volume": [v or 0.0]},
+                                            index=pd.DatetimeIndex([gun], name="date"))])
+        n += 1
+    if xu_eksik and Q.get("XU100") and Q["XU100"][3] and abs(Q["XU100"][3] - xu.iloc[-1]) > 1e-9:
+        xu = pd.concat([xu, pd.Series([float(Q["XU100"][3])], index=pd.DatetimeIndex([gun]))])
+        xu.name = "xu100"
+    print(f"TradingView tamamlama: son seans {gun:%Y-%m-%d}, {len(eksik)} eksik hisseden {n} eklendi"
+          + (", XU100 eklendi" if xu_eksik else ""))
+    return px, xu, n
+
+
 def xu100(start: str = START) -> pd.Series:
     import yfinance as yf
     raw = yf.download("XU100.IS", start=start, auto_adjust=True, progress=False)

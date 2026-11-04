@@ -32,6 +32,17 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "tv_test" in q:  # TradingView tamamlama denemesi
+            import io, contextlib
+            b = io.StringIO()
+            with contextlib.redirect_stdout(b):
+                p2, x2, n = D.tv_tamamla({t: px[t] for t in q["tv_test"] if t in px}, xu)
+            out.append(b.getvalue().strip())
+            for t in q["tv_test"]:
+                if t in p2:
+                    out.append(f"{t}\n" + p2[t].tail(3).to_string())
+            out.append("XU100\n" + x2.tail(3).to_string())
+            continue
         if "ham_veri" in q:  # temettu duzeltmesiz (TradingView varsayilani) fiyat
             import yfinance as yf
             vd = R / "veri"
