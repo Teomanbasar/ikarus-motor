@@ -35,6 +35,11 @@ src  = fiyatMod == "Grafikteki gibi" ? close : nz(ham, close)
 // M3: ana IKARUS ile ayni okuma (ay kapaninca devreye girer)
 m3   = request.security("ECONOMICS:TRM3", timeframe.period, close, ignore_invalid_symbol = true) / 1e12
 adjC = m3 > 0 ? src / m3 : na
+// Tablodaki fiyat: Zippo aylik Heikin Ashi grafikte calisiyor -> fiyat = ayin (acilis+yuksek+dusuk+kapanis)/4
+// (SISE 5 Kas: 33.885 -> +460/+227/-6% birebir; EREGL 3 Kas da tutuyor). Seviyeler ise GUNLUK grafikte hesaplanmali.
+pxMod  = input.string("Aylik Heikin Ashi (Zippo)", "Tablo fiyati", options = ["Aylik Heikin Ashi (Zippo)", "Son kapanis"])
+pxHA   = request.security(ticker.modify(syminfo.tickerid, adjustment = adjustment.none), "1M", ohlc4, lookahead = barmerge.lookahead_off)
+pxNow  = pxMod == "Son kapanis" ? src : nz(pxHA, src)
 
 var float minAll = na
 var float maxAll = na
@@ -49,7 +54,7 @@ tepeA = tepeMod == "Tum gecmis" ? maxAll : hiN
 ucuz  = dipA * m3
 pahali = tepeA * m3
 adil  = (ucuz + pahali) / 2
-puan  = pahali > ucuz ? 100 * (src - ucuz) / (pahali - ucuz) : na
+puan  = pahali > ucuz ? 100 * (pxNow - ucuz) / (pahali - ucuz) : na
 
 bolge = puan <= 33 ? "UCUZ (DESTEK)" : puan >= 67 ? "PAHALI (DIRENC)" : "ADIL (ORTA)"
 kademe = puan <= al3 ? "AL 3 / 3" : puan <= al2 ? "AL 2 / 3" : puan <= al1 ? "AL 1 / 3" :
@@ -60,7 +65,7 @@ plot(adil, "Adil Deger", color.new(color.gray, 0), 1)
 plot(ucuz, "Ucuzluk (Destek)", color.new(color.teal, 0), 2)
 plot(puan, "Ucuz-Pahali", display = display.data_window)
 
-pct(x) => str.tostring(x, "#.00") + " TL (" + (x >= src ? "+" : "") + str.tostring(100 * (x / src - 1), "#") + "%)"
+pct(x) => str.tostring(x, "#.00") + " TL (" + (x >= pxNow ? "+" : "") + str.tostring(100 * (x / pxNow - 1), "#") + "%)"
 pos = konum == "Sag ust" ? position.top_right : konum == "Sag alt" ? position.bottom_right : konum == "Sol ust" ? position.top_left : position.bottom_left
 var table T = table.new(pos, 2, 9, border_width = 1)
 if barstate.islast
@@ -85,5 +90,6 @@ if barstate.islast
     table.cell(T, 1, 6, pct(ucuz), text_color = color.white, bgcolor = cG)
     table.cell(T, 0, 7, "Kademe", text_color = color.white, bgcolor = cBol)
     table.cell(T, 1, 7, kademe, text_color = color.white, bgcolor = cBol)
-    table.cell(T, 0, 8, fiyatMod == "Grafikteki gibi" ? "Not: grafikte 'adj' (temettu duzeltmesi) KAPALI olmali" : "Fiyat: temettu duzeltmesiz (adj kapali) veri", text_color = color.white, bgcolor = color.new(#131a2e, 0), text_size = size.tiny)
+    notTxt = not timeframe.isdaily ? "UYARI: GUNLUK grafikte kullan (seviyeler gunluk veriden)" : fiyatMod == "Grafikteki gibi" ? "Not: grafikte 'adj' (temettu duzeltmesi) KAPALI olmali" : "Fiyat: temettu duzeltmesiz veri, tablo fiyati aylik HA"
+    table.cell(T, 0, 8, notTxt, text_color = color.white, bgcolor = not timeframe.isdaily ? color.new(#b71c1c, 0) : color.new(#131a2e, 0), text_size = size.tiny)
     table.merge_cells(T, 0, 8, 1, 8)
