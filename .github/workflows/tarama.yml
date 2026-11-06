@@ -55,6 +55,10 @@ jobs:
         if: steps.kontrol.outputs.atla != '1'
         run: python -m ikarus.scan
 
+      - name: M3 kaydi (TradingView + EVDS, gunluk)
+        if: steps.kontrol.outputs.atla != '1'
+        run: python -m ikarus.m3_kayit || true
+
       - name: Sonuclari uygulamaya gonder
         if: steps.kontrol.outputs.atla != '1'
         env:
@@ -87,6 +91,7 @@ jobs:
           git config user.name "ikarus-bot"
           git config user.email "ikarus-bot@users.noreply.github.com"
           git add data/son_bildirim.log
+          [ -f data/m3_kayit.csv ] && git add data/m3_kayit.csv
           [ -f data/telegram_chat.txt ] && git add data/telegram_chat.txt
           [ -f data/son_bildirilen.txt ] && git add data/son_bildirilen.txt
           git commit -m "Bildirim kaydi" || exit 0

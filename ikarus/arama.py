@@ -32,6 +32,20 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "m3_gecmis" in q:  # EVDS (TCMB) haftalik M3 tum gecmis -> arama/m3_evds_haftalik.csv
+            import requests
+            key = D.ayar("evds_key")
+            col = D.EVDS_SERI.replace(".", "_")
+            url = f"{D.EVDS_URL}series={D.EVDS_SERI}&startDate=01-01-2005&endDate=31-12-2099&type=json&frequency=3"
+            try:
+                it = requests.get(url, headers={"key": key}, timeout=60).json()["items"]
+                rows = [(pd.to_datetime(x["Tarih"], dayfirst=True).strftime("%Y-%m-%d"), float(str(x[col]).replace(",", "")) * 1000.0)
+                        for x in it if x.get(col) not in (None, "", "null")]
+                pd.DataFrame(rows, columns=["hafta", "m3_tl"]).to_csv(R / "m3_evds_haftalik.csv", index=False)
+                out.append(f"EVDS haftalik M3: {len(rows)} hafta, {rows[0][0]} .. {rows[-1][0]}")
+            except Exception as e:
+                out.append(f"EVDS hata {e}")
+            continue
         if "m3_kontrol" in q:  # EVDS haftalik son degerler + TradingView TRM3
             import requests
             key = D.ayar("evds_key")
