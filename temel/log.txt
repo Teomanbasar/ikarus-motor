@@ -1,1 +1,60 @@
-ODAS XI_29 147 kalem
+2024: F>=7 ort   +4.4 medyan   -3.7 (n=536) | F<=4 ort   +7.6 medyan   -6.9 (n=584)
+2025: F>=7 ort  +10.4 medyan   +0.7 (n=494) | F<=4 ort   +6.6 medyan   -5.4 (n=1047)
+2026: F>=7 ort  +16.8 medyan  -10.0 (n=90) | F<=4 ort   +4.7 medyan  -13.7 (n=417)
+M3 (EVDS): 2026-10 eklendi
+skorlu hisse 606
+0 A1CAP 29
+100 BIZIM 4894
+200 ENERY 10031
+300 ISKPL 15459
+400 MPARK 20402
+500 SISE 25806
+TEMEL (F-SKORU) GERIYE DONUK TEST — getiriler BIST100'e gore fazla getiri (%), 63g ~3 ay, 126g ~6 ay
+Donem 2021-04 - 2026-10 | ay sonu olusum | 565 hisse | bilanco yayin gecikmesi: Q4 +100 gun, diger +75 gun | gunluk ort. hacim > 5 mn TL
+kirpik = en iyi/en kotu %5 atilmis ortalama (piyango hisselerin etkisini ayiklar)
+
+== Sanayi/hizmet: F-skoru dilimleri (tum hisseler)
+hepsi                              | n=26824 | 63g: ort   +0.6 medyan   -5.7 kirpik   -2.9 kazanma %39.3 aylik-ort   +0.3 (ay 64, aylarin % 48'i +) | 126g: ort   +3.8 medyan  -10.1 kirpik   -4.1 kazanma %38.1 aylik-ort   +2.8 (ay 61, aylarin % 56'i +)
+F 0-3 (zayif)                      | n= 5320 | 63g: ort   +1.4 medyan   -7.5 kirpik   -4.0 kazanma %37.2 aylik-ort   +0.9 (ay 64, aylarin % 50'i +) | 126g: ort   +6.9 medyan  -12.5 kirpik   -5.9 kazanma %35.7 aylik-ort   +5.5 (ay 61, aylarin % 52'i +)
+F 4-5                              | n= 9309 | 63g: ort   -0.1 medyan   -6.6 kirpik   -3.7 kazanma %37.8 aylik-ort   -0.4 (ay 64, aylarin % 52'i +) | 126g: ort   +2.8 medyan  -11.3 kirpik   -5.0 kazanma %37.0 aylik-ort   +2.3 (ay 61, aylarin % 51'i +)
+F 6                                | n= 5090 | 63g: ort   +0.1 medyan   -5.2 kirpik   -2.7 kazanma %39.6 aylik-ort   -0.2 (ay 64, aylarin % 56'i +) | 126g: ort   +1.9 medyan   -9.4 kirpik   -4.2 kazanma %38.0 aylik-ort   +0.8 (ay 61, aylarin % 49'i +)
+F 7                                | n= 4041 | 63g: ort   +1.3 medyan   -3.8 kirpik   -1.3 kazanma %42.7 aylik-ort   +0.5 (ay 64, aylarin % 59'i +) | 126g: ort   +5.9 medyan   -7.1 kirpik   -0.9 kazanma %41.2 aylik-ort   +4.4 (ay 61, aylarin % 62'i +)
+F 8-9 (guclu)                      | n= 3064 | 63g: ort   +1.5 medyan   -3.8 kirpik   -1.0 kazanma %42.7 aylik-ort   +1.3 (ay 64, aylarin % 52'i +) | 126g: ort   +2.4 medyan   -7.2 kirpik   -2.2 kazanma %41.5 aylik-ort   +1.3 (ay 61, aylarin % 61'i +)
+
+== UCUZ (IKARUS Percentile <= 20) icinde F-skoru
+ucuz hepsi                         | n= 9990 | 63g: ort   +0.1 medyan   -4.9 kirpik   -3.0 kazanma %38.8 aylik-ort   -0.3 (ay 64, aylarin % 55'i +) | 126g: ort   +4.0 medyan   -8.0 kirpik   -3.4 kazanma %38.6 aylik-ort   +0.1 (ay 61, aylarin % 52'i +)
+ucuz + F 0-4 (zayif)               | n= 3941 | 63g: ort   -0.7 medyan   -6.4 kirpik   -4.2 kazanma %36.0 aylik-ort   -1.1 (ay 62, aylarin % 47'i +) | 126g: ort   +2.7 medyan   -9.6 kirpik   -5.6 kazanma %36.1 aylik-ort   -0.0 (ay 59, aylarin % 44'i +)
+ucuz + F 5-6                       | n= 3814 | 63g: ort   +0.5 medyan   -4.1 kirpik   -2.5 kazanma %39.9 aylik-ort   -0.4 (ay 63, aylarin % 51'i +) | 126g: ort   +4.9 medyan   -7.3 kirpik   -2.0 kazanma %39.8 aylik-ort   -0.1 (ay 60, aylarin % 47'i +)
+ucuz + F >= 7 (guclu)              | n= 2235 | 63g: ort   +0.9 medyan   -3.8 kirpik   -1.6 kazanma %41.9 aylik-ort   +1.3 (ay 63, aylarin % 51'i +) | 126g: ort   +4.7 medyan   -6.8 kirpik   -1.7 kazanma %40.8 aylik-ort   +3.3 (ay 60, aylarin % 55'i +)
+ucuz + F >= 8                      | n=  922 | 63g: ort   -0.5 medyan   -4.5 kirpik   -2.4 kazanma %40.7 aylik-ort   -1.0 (ay 60, aylarin % 50'i +) | 126g: ort   +1.3 medyan   -7.2 kirpik   -3.0 kazanma %40.8 aylik-ort   -1.5 (ay 57, aylarin % 54'i +)
+ucuz + zararda                     | n= 3672 | 63g: ort   -1.3 medyan   -5.6 kirpik   -3.9 kazanma %36.9 aylik-ort   -2.6 (ay 63, aylarin % 44'i +) | 126g: ort   +3.8 medyan   -8.0 kirpik   -3.8 kazanma %38.5 aylik-ort   -0.2 (ay 60, aylarin % 53'i +)
+
+== PAHALI (Percentile >= 80) icinde F-skoru
+pahali hepsi                       | n= 6083 | 63g: ort   +2.0 medyan   -6.6 kirpik   -2.4 kazanma %41.1 aylik-ort   +4.0 (ay 64, aylarin % 59'i +) | 126g: ort   +4.8 medyan  -12.4 kirpik   -4.8 kazanma %38.5 aylik-ort   +8.5 (ay 61, aylarin % 61'i +)
+pahali + F 0-4                     | n= 1999 | 63g: ort   +1.5 medyan   -9.8 kirpik   -4.2 kazanma %38.1 aylik-ort   +5.2 (ay 64, aylarin % 50'i +) | 126g: ort   +6.6 medyan  -16.4 kirpik   -8.0 kazanma %34.8 aylik-ort  +15.6 (ay 61, aylarin % 54'i +)
+pahali + F >= 7                    | n= 1850 | 63g: ort   +2.7 medyan   -3.2 kirpik   -0.2 kazanma %45.5 aylik-ort   +3.4 (ay 64, aylarin % 58'i +) | 126g: ort   +4.9 medyan   -6.7 kirpik   -1.1 kazanma %43.6 aylik-ort   +7.4 (ay 61, aylarin % 67'i +)
+
+== Tek kalemler (sanayi, tum hisseler)
+ozkaynak M3'ten hizli (reel > 0)   | n=13982 | 63g: ort   +2.0 medyan   -4.3 kirpik   -1.4 kazanma %41.8 aylik-ort   +0.6 (ay 64, aylarin % 53'i +) | 126g: ort   +6.9 medyan   -7.3 kirpik   -0.7 kazanma %41.2 aylik-ort   +2.2 (ay 61, aylarin % 59'i +)
+ozkaynak M3'ten yavas (reel <= 0)  | n=12842 | 63g: ort   -0.9 medyan   -7.2 kirpik   -4.6 kazanma %36.7 aylik-ort   +0.1 (ay 64, aylarin % 52'i +) | 126g: ort   +0.4 medyan  -13.2 kirpik   -7.8 kazanma %34.7 aylik-ort   +3.6 (ay 61, aylarin % 52'i +)
+ROE >= %25                         | n= 6675 | 63g: ort   +0.5 medyan   -5.6 kirpik   -2.5 kazanma %40.2 aylik-ort   +0.0 (ay 64, aylarin % 52'i +) | 126g: ort   +3.2 medyan   -9.5 kirpik   -3.4 kazanma %39.5 aylik-ort   +1.5 (ay 61, aylarin % 48'i +)
+ROE < %5                           | n=11403 | 63g: ort   +0.1 medyan   -6.7 kirpik   -3.9 kazanma %37.4 aylik-ort   +0.3 (ay 64, aylarin % 48'i +) | 126g: ort   +4.3 medyan  -11.2 kirpik   -5.3 kazanma %36.6 aylik-ort   +4.1 (ay 61, aylarin % 56'i +)
+zararda                            | n= 8524 | 63g: ort   +0.3 medyan   -6.9 kirpik   -3.9 kazanma %37.3 aylik-ort   -0.1 (ay 64, aylarin % 48'i +) | 126g: ort   +4.0 medyan  -11.6 kirpik   -5.8 kazanma %36.6 aylik-ort   +2.5 (ay 61, aylarin % 52'i +)
+
+== IKARUS sinyali x temel (2023-07 sonrasi; MTF icin yeterli gecmis)
+ALINABILIR/TOPLANIYOR hepsi        | n=  364 | 63g: ort   +1.8 medyan   -6.2 kirpik   -3.8 kazanma %37.0 aylik-ort   +2.8 (ay 34, aylarin % 38'i +) | 126g: ort   +8.8 medyan   -7.4 kirpik   -1.7 kazanma %38.4 aylik-ort   +7.2 (ay 31, aylarin % 42'i +)
+  + F >= 7                         | n=   73 | 63g: ort  +11.9 medyan   -5.2 kirpik   -1.5 kazanma %43.7 aylik-ort  +33.1 (ay 22, aylarin % 41'i +) | 126g: ort  +17.7 medyan   +0.2 kirpik   +9.2 kazanma %52.1 aylik-ort  +13.4 (ay 22, aylarin % 45'i +)
+  + F <= 4                         | n=  138 | 63g: ort   -0.3 medyan   -5.8 kirpik   -4.5 kazanma %38.2 aylik-ort   -0.9 (ay 27, aylarin % 44'i +) | 126g: ort   +6.2 medyan  -12.2 kirpik   -7.4 kazanma %33.6 aylik-ort   +6.8 (ay 24, aylarin % 33'i +)
+
+== Bankalar (5 madde)
+banka hepsi                        | n= 1016 | 63g: ort   +4.0 medyan   -0.8 kirpik   +1.1 kazanma %48.7 aylik-ort   +3.7 (ay 64, aylarin % 52'i +) | 126g: ort  +11.0 medyan   +1.6 kirpik   +3.7 kazanma %51.6 aylik-ort  +10.4 (ay 61, aylarin % 59'i +)
+banka puan >= 4                    | n=  351 | 63g: ort   +4.8 medyan   -0.7 kirpik   +0.8 kazanma %49.1 aylik-ort   +0.3 (ay 59, aylarin % 39'i +) | 126g: ort  +20.2 medyan   +4.3 kirpik   +7.2 kazanma %55.7 aylik-ort   +6.7 (ay 56, aylarin % 50'i +)
+banka puan <= 2                    | n=  412 | 63g: ort   +4.5 medyan   +0.8 kirpik   +2.2 kazanma %51.1 aylik-ort   +8.9 (ay 64, aylarin % 55'i +) | 126g: ort   +8.4 medyan   +2.5 kirpik   +4.4 kazanma %53.5 aylik-ort  +18.0 (ay 61, aylarin % 62'i +)
+
+== Yillara gore, ucuz icinde (126g fazla getiri, kirpiksiz ortalama / medyan)
+2021: F>=7 ort  -18.9 medyan  -25.0 (n=271) | F<=4 ort  -24.4 medyan  -34.3 (n=302)
+2022: F>=7 ort   +6.9 medyan   -3.6 (n=264) | F<=4 ort   +2.0 medyan  -12.5 (n=300)
+2023: F>=7 ort  +13.4 medyan   -6.5 (n=200) | F<=4 ort   +5.4 medyan  -12.0 (n=383)
+2024: F>=7 ort   +5.2 medyan   -2.9 (n=513) | F<=4 ort   +7.5 medyan   -6.7 (n=614)
+2025: F>=7 ort  +10.4 medyan   -0.5 (n=479) | F<=4 ort   +6.5 medyan   -4.9 (n=1075)
+2026: F>=7 ort  +16.9 medyan  -10.2 (n=91) | F<=4 ort   +3.6 medyan  -13.9 (n=437)
