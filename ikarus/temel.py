@@ -298,8 +298,39 @@ def ornek(hisseler):
                                                    ensure_ascii=False), encoding="utf-8")
 
 
+def etiket(hisseler, ceyrek: int = 8):
+    """Kalem kodlari + Turkce/Ingilizce adlariyla tum tablo -> temel/etiket_<HISSE>.tsv (son N ceyrek)."""
+    R.mkdir(exist_ok=True)
+    bugun = date.today()
+    son_ay = ((bugun.month - 1) // 3) * 3
+    son_yil = bugun.year
+    if son_ay == 0:
+        son_ay, son_yil = 12, son_yil - 1
+    dl = donemler(son_yil, son_ay, ceyrek)
+    for h in hisseler:
+        for grup in ("XI_29", "UFRS"):
+            satir = {}
+            for i in range(0, len(dl), 4):
+                parca = dl[i:i + 4]
+                for it in _cek4(h, grup, parca):
+                    r = satir.setdefault(it["itemCode"], {"tr": it.get("itemDescTr", ""), "en": it.get("itemDescEng", "")})
+                    for j, d in enumerate(parca, 1):
+                        r[f"{d[0]}/{d[1]}"] = it.get(f"value{j}")
+                time.sleep(0.3)
+            if any(v.get(f"{d[0]}/{d[1]}") not in (None, "") for v in satir.values() for d in dl):
+                kol = [f"{y}/{m}" for y, m in dl]
+                out = ["kod\tad\tad_en\t" + "\t".join(kol)]
+                for k, v in satir.items():
+                    out.append("\t".join([k, str(v["tr"]).strip(), str(v["en"]).strip()] + [str(v.get(c) or "") for c in kol]))
+                (R / f"etiket_{h}.tsv").write_text("\n".join(out), encoding="utf-8")
+                print(h, grup, len(satir), "kalem")
+                break
+
+
 if __name__ == "__main__":
-    if sys.argv[1] == "ornek":
+    if sys.argv[1] == "etiket":
+        etiket(sys.argv[2:])
+    elif sys.argv[1] == "ornek":
         ornek(sys.argv[2:])
     elif sys.argv[1] == "gecmis":
         gecmis()
