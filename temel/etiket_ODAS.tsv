@@ -1,0 +1,148 @@
+kod	ad	ad_en	2026/9	2026/6	2026/3	2025/12	2025/9	2025/6	2025/3	2024/12
+1A	Dönen Varlıklar	CURRENT ASSETS		9779950799	9560549302	8889293246	7278683336	8971417702	9507673041	10339871068
+1AA	Nakit ve Nakit Benzerleri	Cash and Cash Equivalents		3342739361	3340298638	1464522539	1292827142	2024462074	1672244512	2427075072
+1AB	Finansal Yatırımlar	Short-Term Financial Investments		0	0	0	0	0	0	0
+1AC	Ticari Alacaklar	Short-Term Trade Receivables		1886722340	1758421693	1962799263	1213025522	2774994109	2579689306	3358574567
+1AD	Finans Sektörü Faaliyetlerinden Alacaklar	Short-Term Receivables from Financial Operations		0	0	0	0	0	0	0
+1AE	Diğer Alacaklar	Short-Term Other Receivables		509509023	434567309	743013773	418609135	225957949	229091235	215069997
+1AEA	Müşteri Sözleşmelerinden Doğan Varlıklar	None		0	0	0	0	0	0	0
+1AF	Stoklar	Inventories		2099515848	2480106953	3142028826	2601509382	2458883605	3685122043	2293609683
+1AG	Canlı Varlıklar	Short-Term Live Assets		0	0	0	0	0	0	0
+1AH	Diğer Dönen Varlıklar	Other Current Assets		1941464227	1547154709	1576928844	1752712155	1487119965	1341525945	2045541749
+1AI	(Ara Toplam)	(Subtotal)		9779950799	9560549302	8889293246	7278683336	8971417702	9507673041	10339871068
+1AJ	Satış Amacıyla Elde Tutulan Duran Varlıklar	Assets to be Sold		0	0	0	0	0	0	0
+1AK	Duran Varlıklar	LONG TERM ASSETS		36060293457	36220771288	39856932557	33170567893	31350391778	29513560115	34370378515
+1B	Ticari Alacaklar	Trade Receivables		46798696	1681955721	2130042010	1753337426	1687056253	1606775369	1656476852
+1BA	Finans Sektörü Faaliyetlerinden Alacaklar	Long-Term Receivables from Financial Operations		0	0	0	0	0	0	0
+1BB	Diğer Alacaklar	Other Receivables		85330865	79641220	91994008	473426	473426	473426	599225
+1BBA	Müşteri Sözleşmelerinden Doğan Varlıklar	None		0	0	0	0	0	0	0
+1BC	Finansal Yatırımlar	Financial Investments		0	0	0	0	0	0	0
+1BD	Özkaynak Yöntemiyle Değerlenen Yatırımlar	Investments with Equity Method		3340958	3121863	3340772	2718570	2528799	2385508	2836969
+1BE	Canlı Varlıklar	Long-Term Live Assets		0	0	0	0	0	0	0
+1BF	Yatırım Amaçlı Gayrimenkuller	Real Estate Investments		0	0	0	0	0	0	0
+1BFA	Stoklar	Stoklar		0	0	0	0	0	0	0
+1BFAA	Kullanım Hakkı Varlıkları	None		3864080	5889608	9302805	10815687	11759289	17634902	16995205
+1BG	Maddi Duran Varlıklar	Tangible Fixed Assets		33946297553	32459179844	34614550174	29454946865	27523536157	26089594392	29320142724
+1BGA	Şerefiye	Goodwill		0	0	0	0	0	0	0
+1BH	Maddi Olmayan Duran Varlıklar	Intangible Fixed Assets		1318132810	1270193122	1471071611	1159201345	1199978812	1177060807	1360560351
+1BJ	Ertelenmiş Vergi Varlığı	Long Term Deffered Tax Assets		476356546	555907548	1384677798	365254357	518954099	426855617	1775547881
+1BK	Diğer Duran Varlıklar	Other Long-Term Assets		180171949	164882362	151953379	423820217	406104943	192780094	237219308
+1BL	TOPLAM VARLIKLAR	TOTAL ASSETS		45840244256	45781320590	48746225803	40449251229	40321809480	39021233156	44710249583
+1BM	KAYNAKLAR	LIABILITIES		0	0	0	0	0	0	0
+2A	Kısa Vadeli Yükümlülükler	SHORT TERM LIABILITIES		4256390633	4127280343	4585957705	3093206819	5667776861	4913882042	8171734879
+2AA	Finansal Borçlar	Short-Term Financial Loans		1698932908	1777210554	1943837495	789099583	1256232649	899810929	554842900
+2AAG	Diğer Finansal Yükümlülükler	Other Short-Term Financial Liabilities		10110511	11549266	15963511	14068119	15401936	14194299	7372679
+2AAGAA	Ticari Borçlar	Short-Term Trade Payables		1206698865	1067765772	1465367610	1304830385	1824640878	1383414774	2077231274
+2AAGAB	Diğer Borçlar	Other Short-Term Loans		694472314	746758871	623129857	489403451	537164975	633670024	792423965
+2AAGAC	Müşteri Söz. Doğan Yük.	None		0	0	0	0	0	0	0
+2AAGB	Finans Sektörü Faaliyetlerinden Borçlar	Short-Term Loans from Financial Operations		0	0	0	0	0	0	0
+2AAGC	Devlet Teşvik ve Yardımları	Short-Term Government Promotions and Aids		0	0	0	0	0	0	0
+2AAGCA	Ertelenmiş Gelirler (Müşteri Söz. Doğan Yük. Dış.Kal.)	None		94382101	18540821	737394	13885816	3682118	1584143	2241456382
+2AAGD	Dönem Karı Vergi Yükümlülüğü	Taxation Liabilities on Income (-)		260846999	193065782	198405043	188834979	144338379	135987494	158572102
+2AAGE	Borç Karşılıkları	Short-Term Provisions		54832103	53200964	50932968	41477670	44609983	35537922	36296541
+2AAGF	Diğer Kısa Vadeli Yükümlülükler	Other Short-Term Liabilities		236114832	259188313	287583826	251606816	1841705943	1809682457	2303539036
+2AAGG	(Ara Toplam)	(Subtotal)		4256390633	4127280343	4585957705	3093206819	5667776861	4913882042	8171734879
+2AAGH	Satış Amaçlı Elde Tutulan Duran Varlıklara İlişkin Yükümlülükler	Liabilities on Assets to be Sold		0	0	0	0	0	0	0
+2B	Uzun Vadeli Yükümlülükler	LONG TERM LIABILITIES		2135238809	2010992649	1808269173	3799574746	3462382501	3461903383	1683859242
+2BA	Finansal Borçlar	Long-Term Financial Loans		561054	11133441	37745874	52103212	51381382	66868814	105903225
+2BB	Diğer Finansal Yükümlülükler	Other Short-Term Financial Liabilities		0	0	0	0	0	0	0
+2BBA	Ticari Borçlar	Long-Term Trade Payables		0	0	0	0	0	0	0
+2BBB	Diğer Borçlar	Other Long-Term Loans		10233586	9735783	34980858	42353932	54530468	68867004	96509017
+2BBBA	Müşteri Söz.Doğan Yük.	None		0	0	0	0	0	0	0
+2BC	Finans Sektörü Faaliyetlerinden Borçlar	Long-Term Loans from Financial Operations		0	0	0	0	0	0	0
+2BD	Devlet Teşvik ve Yardımları	Long-Term Government Promotions and Aids		0	0	0	0	0	0	0
+2BDA	Ertelenmiş Gelirler (Müşteri Söz.Doğan Yük. Dış.Kal.)	None		1038136	1038136	1222492	2304405495	2202712275	2079731498	1358840
+2BE	Uzun vadeli karşılıklar	Long-Term Provisions		47458345	35046527	42721585	24087275	20528094	19245878	15402964
+2BF	Çalışanlara Sağlanan Faydalara İliş.Karş.	Provisions for Retirment Pay		0	0	0	0	0	0	0
+2BG	Ertelenmiş Vergi Yükümlülüğü	Deferred Tax Liabilities		2075947688	1950953282	1682368001	1364033539	1115886083	1205093083	1429540472
+2BH	Diğer Uzun Vadeli Yükümlülükler	Other Long-Term Liabilities		0	3085480	9230362	12591293	17344199	22097106	35144722
+2N	Özkaynaklar	SHAREHOLDERS EQUITY		39448614814	39643047598	42351998925	33556469664	31191650118	30645447731	34854655462
+2O	Ana Ortaklığa Ait Özkaynaklar	Parent Shareholders Capital		15854370761	15672179161	18301590337	15611454252	16471768783	15851589340	17170320873
+2OA	Ödenmiş Sermaye	Share Capital		1400000000	1400000000	1400000000	1400000000	1400000000	1400000000	1400000000
+2OC	Karşılıklı İştirak Sermayesi Düzeltmesi (-)	Adjustments to Share Capital		0	0	0	0	0	0	0
+2OCA	Hisse Senedi İhraç Primleri	Premium in Excess of Par		1177670348	1100440791	1155645093	940411916	874766124	825198734	981368972
+2OCB	Değer Artış Fonları	Market Value Surpluses		0	0	0	0	0	0	0
+2OCC	Yabancı Para Çevrim Farkları	FX Translation Differences		894992588	490767259	1087778013	1540198663	2001793457	1849796954	560236797
+2OCD	Kardan Ayrılan Kısıtlanmış Yedekler	Income Reserves		590921501	500544128	546942066	428013598	402041836	383307846	462530903
+2OCE	Geçmiş Yıllar Kar/Zararları	Retained Earnings /(Acc. Losses)		4804197150	4437739859	4465312561	3758874224	4965071096	4647668494	9421121181
+2OCF	Dönem Net Kar/Zararı	Current Year Income /(Losses)		-1723354912	-677306737	550075491	-255019070	-850678678	-380416805	-3898603230
+2OD	Diğer Özsermaye Kalemleri	Other Sholders Equity Items		8709944086	8419993861	8847218516	7798974921	7678774948	7126034117	7811173647
+2ODA	Azınlık Payları	Minority Interests		23594244053	23970868437	24050408589	17945015412	14719881335	14793858391	17684334589
+2ODB	TOPLAM KAYNAKLAR	TOTAL LIABILITIES AND S.HOLDERS EQUITY		45840244256	45781320590	48746225803	40449251229	40321809480	39021233156	44710249583
+3B	Sürdürülen Faaliyetler	Continuing Operations		0	0	0	0	0	0	0
+3C	Satış Gelirleri	Net Sales		4968334409	2336616862	10495233843	6566793190	4843841748	1802227318	10215595113
+3CA	Satışların Maliyeti (-)	Cost Of Sales		-4620568502	-2195454514	-8581105586	-5293807604	-3969817813	-1434824424	-7911040053
+3CAA	Ticari Faaliyetlerden Diğer Kar (Zarar)	Other Profit (Loss) from Trade Operations		0	0	0	0	0	0	0
+3CAB	Ticari Faaliyetlerden Brüt Kar (Zarar)	Gross Profit (Loss) from Trade Operations		347765907	141162348	1914128257	1272985586	874023935	367402894	2304555060
+3CAC	Faiz, Ücret, Prim, Komisyon ve Diğer Gelirler	Proceeds from Interest, Fee, Premium, Commission and Other		0	0	0	0	0	0	0
+3CAD	Faiz, Ücret, Prim, Komisyon ve Diğer Giderler (-)	Expenses from Interest, Fee, Premium, Commission and Other		0	0	0	0	0	0	0
+3CAE	Finans Sektörü Faaliyetlerinden Diğer Kar (Zarar)	Other Profit (Loss) from Financial Operations		0	0	0	0	0	0	0
+3CAF	Finans Sektörü Faaliyetlerinden Brüt Kar (Zarar)	Gross Profit (Loss) from Financial Operations		0	0	0	0	0	0	0
+3CB	Diğer Gelir ve Giderler	Other Income (Expenses)		0	0	0	0	0	0	0
+3D	BRÜT KAR (ZARAR)	GROSS PROFIT (LOSS)		347765907	141162348	1914128257	1272985586	874023935	367402894	2304555060
+3DA	Pazarlama, Satış ve Dağıtım Giderleri (-)	Marketing Selling & Distrib. Expenses (-)		-89529432	-39539721	-90706492	-56207277	-41696976	-10663443	-224303948
+3DB	Genel Yönetim Giderleri (-)	General Administrative Expenses (-)		-537343128	-239755750	-1073121564	-634987965	-489695257	-194027015	-653368717
+3DC	Araştırma ve Geliştirme Giderleri (-)	Research & Development Expenses (-)		0	0	0	0	0	0	-707205
+3DD	Diğer Faaliyet Gelirleri	Income from Other Operations		101221648	49061653	1582808295	1301145499	1662203433	102223229	348941533
+3DE	Diğer Faaliyet Giderleri (-)	Expenses from Other Operations (-)		-360437490	-201894442	-1728579721	-895000476	-837380661	-472767179	-1632198800
+3DEA	Faaliyet Karı Öncesi Diğer Gelir ve Giderler	Other Income (Expenses) Before Operating Profits		0	0	0	0	0	0	0
+3DF	FAALİYET KARI (ZARARI)	OPERATING PROFITS		-538322495	-290965912	604528775	987935367	1167454474	-207831514	142917924
+3H	Net Faaliyet Kar/Zararı	Net Operating Profits		-279106653	-138133123	750300201	581790344	342631702	162712436	1426175191
+3HA	Yatırım Faaliyetlerinden Gelirler	None		14579751	9960760	1748571364	1432343768	27991788	0	1973988992
+3HAA	Yatırım Faaliyetlerinden Giderler (-)	None		-2228949	-19591069	-525709	-97050142	-97256963	-93955470	-3481852134
+3HAB	Diğer Gelir ve Giderler	None		0	0	0	-0	0	0	0
+3HAC	Özkaynak Yöntemiyle Değerlenen Yatırımların Kar/Zararlarındaki Paylar	Profit (Loss) from Subsidiaries		0	0	0	0	0	0	193362316
+3HACA	Finansman Gideri Öncesi Faaliyet Karı/Zararı	None		-525971693	-300596221	2352574429	2323228993	1098189299	-301786984	-1171582902
+3HB	(Esas Faaliyet Dışı) Finansal Gelirler	Financial Income (from Other Operations)		768425638	557551455	4651601805	1476471369	891226620	318102140	1660277323
+3HC	(Esas Faaliyet Dışı) Finansal Giderler (-)	Financial Expenses (from Other Operations) (-)		-2903763159	-353062124	-6210523507	-4591773372	-3378203451	638784790	-4583129264
+3HCA	Vergi Öncesi Diğer Gelir ve Giderler	Other Income (Expenses) Before Tax		12350802	-9630309	1748045655	1335293626	-69265175	-93955470	-1507863142
+3I	SÜRDÜRÜLEN FAALİYETLER VERGİ ÖNCESİ KARI (ZARARI)	PROFIT BEFORE TAX FROM CONTINUING OPERATIONS		-2661309214	-96106890	793652727	-792073010	-1388787532	655099946	-4094434844
+3IA	Sürdürülen Faaliyetler Vergi Geliri (Gideri)	Taxation on Continuing Operations		-1393016753	-1156378635	-440293378	-1157992747	-969992604	-1217963803	-301135411
+3IB	Dönem Vergi Geliri (Gideri)	Taxation on Income (Expenses)		-45202225	-24746834	-49283217	-67129594	-30622603	-19404590	-50833858
+3IC	Ertelenmiş Vergi Geliri (Gideri)	Income (Expenses) of Deferred Tax		-1347814528	-1131631801	-391010162	-1090863153	-939370001	-1198559213	-250301553
+3ID	Diğer Vergi Geliri (Gideri)	Other Taxation Income (Expenses)		0	0	0	0	0	0	0
+3J	SÜRDÜRÜLEN FAALİYETLER DÖNEM KARI/ZARARI	PROFIT FROM CONTINUING OPERATIONS		-4054325967	-1252485525	353359348	-1950065757	-2358780136	-562863857	-4395570255
+3K	DURDURULAN FAALİYETLER	DISCONTINUED OPERATIONS		0	0		0	0	0	
+3KA	Durdurulan Faaliyetler Vergi Sonrası Dönem Karı (Zararı)	Profit After Taxes from Discontinued Operations		0	0	0	0	0	0	0
+3L	DÖNEM KARI (ZARARI)	NET PROFIT AFTER TAXES		-4054325967	-1252485525	353359348	-1950065757	-2358780136	-562863857	-4395570255
+3LA	Dönem Kar/Zararının Dağılımı	Distrubition of Profit (Loss)		0	0		0	0	0	
+3LB	Azınlık Payları	Minority Interests		-2330971055	-575178788	-196716143	-1695046687	-1234894157	-65020471	-496967025
+3Z	Ana Ortaklık Payları	Parent Shares		-1723354912	-677306737	550075491	-255019070	-1123885979	-497843386	-3898603230
+3ZD	Hisse Başına Kazanç	Earnings per Share		-1	-0	0	0	-1	-0	0
+3ZE	Seyreltilmiş Hisse Başına Kazanç	Diluted Earnings per Share		-1	0	0	0	-1	0	0
+3ZF	Sürdürülen Faaliyetlerden Hisse Başına Kazanç	Earnings per Share from Continuing Operations		-1	0	0	0	-1	0	0
+3ZG	Sürdürülen Faaliyetlerden Seyreltilmiş Hisse Başına Kazanç	Earnings per Share from Discontinued Operations		-1	0	0	0	-1	0	0
+4B	Amortisman Giderleri	Depreciation & Amortization		1953350557	1044902851	3036368925	1912434435	1620259282	919198256	2477768930
+4BA	Kıdem Tazminatı	Severance Payments		-4661201	-2788941	-7704919	-4694810	27366634	-614902	-26727975
+4BB	Finansman Giderleri	Financial Expenses		-2903763159	-353062124	-6210523507	-4591773372	-3378203451	638784790	-4583129264
+4BC	Yurtiçi Satışlar	Domestic Sales		4809531150	2282774859	10095743376	6264449440	4596700692	1802255047	9906649947
+4BD	Yurtdışı Satışlar	Export Sales		183559580	55897675	494979860	364020639	278686390	0	315558992
+4BE	Net Yabancı Para Pozisyonu	Net Fx Position		1340555677	2720729752	3298485153	2732448745	2848939686	2619837487	1124140524
+4BEA	Parasal net yabancı para varlık/(yükümlülük) pozisyonu	Parasal net yabancı para varlık/(yükümlülük) pozisyonu		1213308604	985076025	999005608	729571057	937462126	713813395	-878607621
+4BEB	Net YPP (Hedge Dahil)	Net YPP (Hedge Dahil)		1340555676	2720729752	3298485153	2732448745	2848939686	2619837487	1124140524
+4C	İşletme Faaliyetlerinden Kaynaklanan Net Nakit	Net Cash from Operations		3579579514	125801232	-5633445235	-2532121448	-2043376747	4031343612	1430407360
+4CA	Düzeltme Öncesi Kar	Earnings Before Adjustments		-1723354911	-677306737	550075491	-255019070	-1123885979	-497843387	-3898603230
+4CAA	Düzeltmeler:	Adjustments:		2126300909	-340360519	-1440684341	-1489365559	579150313	11509723692	7790263945
+4CAB	Amortisman & İtfa Payları	Depreciation & Amortisation		1953350557	1044902851	3036368925	1912434435	1620259282	919198256	2477768930
+4CAC	Karşılıklardaki Değişim	Change in Provisions		25330199	25330190	21663180	18079744	26061995	18934086	33830333
+4CAD	Diğer Gelir/ Gider	Other Income / Expense		-192606323	1464196219	1632880347	1169163399	3454778277	5394028538	8563524812
+4CAE	İşletme Sermayesinde Değişikler Öncesi Faaliyet Karı (+)	Operating Profit Before Changes in Working Capital (+)		402945998	-1017667256	-890608849	-1744384629	-544735666	11011880305	3891660715
+4CAF	İşletme Sermayesindeki Değişiklikler	Change in Working Capital		3173333363	1129576985	-4720941026	-781646620	-1492691324	-6976515475	-2461253355
+4CAG	Esas Faaliyet ile İlgili Oluşan Nakit (+)	Cash from Core Operations (+)		3576279361	111909729	-5611549875	-2526031249	-2037426990	4035364830	1430407360
+4CAH	Diğer İşletme Faaliyetlerinden Nakit	Cash from Other Operations		3300153	13891503	-21895360	-6090199	-5949757	-4021218	0
+4CAI	Sabit Sermaye Yatırımları	Capital Expenditures (CapEx)		-1587566798	1520808801	3103371594	1211607707	463257098	-5346526244	-3883409393
+4CAJ	Diğer Yatırım Faaliyetlerinden Nakit	Cash from Other Investment Operations		0	0	0	0	0	0	17957528
+4CAK	Yatırım Faaliyetlerinden Kaynaklanan Nakit	Cash from Investment Operations		-1587566798	1520808801	3103371594	1211607707	463257098	-5346526244	-3865451865
+4CB	Serbest Nakit Akım	Free Cash Flow		1992012716	1646610033	-2530073642	-1320513741	-1580119649	-1315182632	-2435044505
+4CBA	Finansal Borçlardaki Değişim	Change in Financial Debt		104048760	105681768	1371538572	315540070	973726533	653635450	138913111
+4CBB	Temettü Ödemeleri	Dividends Paid		0	0	0	0	0	0	0
+4CBC	Sermaye Artırımı	Rights Issue		20520747	20520747	0	0	0	0	3431252157
+4CBD	Diğer Finansman Faaliyetlerinden Nakit	Cash from Other Financial Operations		-114702351	-52960485	31173532	41985138	106568459	-6450857	-37091341
+4CBE	Finansman Faaliyetlerden Kaynaklanan Nakit	Cash from Financial Operations		9867156	73242030	1402712104	357525208	1080294992	647184593	3533073926
+4CBF	Yab. Para Çev. Fark. Etk. Önc.Nak.Ve Nak. Benz. Net Artış/Azalış	Cash Net Inc. / Dec. before For.Cur. Trans. Dif.		2001879872	1719852063	-1127361537	-962988533	-499824657	-667998039	1098029421
+4CBG	Yab.ı Para Çevrim Fark. Nakit Ve Nakit Benz. Üzerindeki Etkisi	Foreign Curr. Trans.Diff.Cash and Cash Benz. Imp.		-123744598	251888656	-266202413	-69966352	316225274	185621993	-9071371
+4CBH	Diğer Nakit Girişi/Çıkışı	Other Cash Inflow/Outflow		0	0	0	0	0	0	0
+4CBI	Nakit ve Benzerlerindeki Değişim	Change in Cash & Cash Equivalents		1878135274	1971740719	-1393563950	-1032954885	-183599383	-482376046	1088958050
+4CBJ	Diğer Nakit ve Nakit Benzerlerindeki Artış	Other Cash & Cash Equivalents Change		0	0	0	0	0	0	0
+4CBK	Dönem Başı Nakit Değerler	Cash at the beginning of the Quarter		1464604087	1368557919	2858086488	2325782027	2858245636	2670806896	1338117022
+4CBL	Dönem Sonu Nakit	Cash at the End of the Quarter		3342739361	3340298638	1464522538	1292827142	2674646253	2188430850	2427075072
