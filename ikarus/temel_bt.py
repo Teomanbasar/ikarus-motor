@@ -51,7 +51,9 @@ def skorlar(G, m3):
     return out
 
 
-def main():
+def main(surum=None):
+    if surum is not None:
+        T.SURUM = surum
     G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
     m3 = D.m3()
     S = skorlar(G, m3)
@@ -156,7 +158,7 @@ def main():
         g, z = Y[Y["puan"] >= 7]["a126"].dropna(), Y[Y["puan"] <= 4]["a126"].dropna()
         L.append(f"{y}: F>=7 ort {g.mean():+6.1f} medyan {g.median():+6.1f} (n={len(g)}) | F<=4 ort {z.mean():+6.1f} medyan {z.median():+6.1f} (n={len(z)})")
     txt = "\n".join(L)
-    (R / "bt_sonuc.txt").write_text(txt, encoding="utf-8")
+    (R / ("bt_sonuc.txt" if surum is None else f"bt_sonuc_v{surum}.txt")).write_text(txt, encoding="utf-8")
     print(txt)
 
 
