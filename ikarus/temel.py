@@ -59,7 +59,7 @@ def _cek4(hisse, grup, dl):
 
 # F-skoru kural surumu. 1 = yayindaki; 2 = aday (7 Kas 2026): ROE ve nakit>kar maddeleri negatifte gecmez,
 # bedelli maddesi ana ortakligin odenmis sermayesine bakar (konsolide "sermaye artirimi" bagli ortakliktan gelebilir).
-SURUM = 1
+SURUM = 2  # 8 Kas 2026: Teoman onayi ile 2'ye gecildi (bt: temel/bt_sonuc_v1/v2.txt)
 
 KODLAR = {"1A", "1AA", "1AB", "1BL", "1Z", "2A", "2AA", "2BA", "2N", "2O", "2OA", "3C", "3D", "3DF", "3Z", "4B", "4C", "4CB", "4CBC"}
 
@@ -193,7 +193,7 @@ def skor(grup, tab, m3, d=None):
         roe = _bol(nk, oz); roe1 = _bol(nk1, oz1)
         nfg, nfg1 = T("3C"), T("3C", d1)
         madde("Net kâr pozitif", nk, None if nk is None else nk > 0, "Son 4 çeyrekte banka para kazandı mı?")
-        madde("Özsermaye kârlılığı (ROE) arttı", roe, None if roe is None or roe1 is None else roe > roe1, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi?", "yuzde")
+        madde("Özsermaye kârlılığı (ROE) arttı", roe, None if roe is None or roe1 is None else roe > roe1, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi? Zarardaysa geçmez.", "yuzde")
         g = _bol(oz, oz1)
         madde("Özkaynak M3'ten hızlı büyüdü", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
               "Özkaynak bir yılda para arzından (M3) hızlı büyüdü mü? Değer, M3'e göre reel büyüme.", "yuzde")
@@ -225,10 +225,10 @@ def skor(grup, tab, m3, d=None):
         madde("Net kâr pozitif", nk, None if nk is None else nk > 0, "Son 4 çeyrekte şirket (ana ortaklık payı) para kazandı mı?")
         madde("Faaliyetlerden nakit pozitif", nak, None if nak is None else nak > 0, "Esas faaliyetlerden kasaya gerçekten nakit giriyor mu? (son 4 çeyrek)")
         roe_ok = None if roe is None or roe1 is None else (roe > roe1 and (SURUM < 2 or roe > 0))
-        madde("Özsermaye kârlılığı (ROE) arttı", roe, roe_ok, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi?", "yuzde")
+        madde("Özsermaye kârlılığı (ROE) arttı", roe, roe_ok, "Net kâr / özkaynak geçen yılın aynı dönemine göre yükseldi mi? Zarardaysa geçmez.", "yuzde")
         nak_ok = None if nak is None or nk is None else (nak > nk and (SURUM < 2 or nak > 0))
         madde("Nakit kârdan büyük (kâr kalitesi)", None if nak is None or nk is None else nak - nk, nak_ok,
-              "Faaliyet nakdi net kârdan büyük mü? Değilse kâr kâğıt üstünde kalıyor olabilir. Değer: nakit − kâr.")
+              "Faaliyet nakdi net kârdan büyük mü? Değilse kâr kâğıt üstünde kalıyor olabilir. Faaliyet nakdi negatifse geçmez. Değer: nakit − kâr.")
         if (favok or 0) <= 0:
             madde("Net borç / FAVÖK azaldı", None, False, "FAVÖK (faaliyet kârı + amortisman) negatif: şirket esas faaliyetinden zarar ediyor, borcu kârla ödeyemez.", "kat")
         elif nb is not None and nb1 is not None and nb <= 0 and nb1 <= 0:
@@ -244,7 +244,7 @@ def skor(grup, tab, m3, d=None):
             artti = None if s0 is None or s1 is None else s0 > s1 * 1.001
             onemli = (bedelli or 0) > 0.02 * (oz or 0) if oz else (bedelli or 0) > 0
             bed_ok = None if artti is None else not (artti and onemli)
-        madde("Bedelli sermaye artırımı yok", bedelli, bed_ok, "Son 4 çeyrekte ortaklardan para toplanıp hisse sulandırıldı mı? (Bedelsiz sayılmaz.) Değer: toplanan para.")
+        madde("Bedelli sermaye artırımı yok", bedelli, bed_ok, "Son 4 çeyrekte ortaklardan para toplanıp hisse sulandırıldı mı? Ana şirketin ödenmiş sermayesine bakılır; bedelsiz ve bağlı ortaklığın sermaye artırımı sayılmaz. Değer: konsolide nakit akışındaki sermaye artırımı.")
         madde("Özkaynak M3'ten hızlı büyüdü", None if g is None or not m3c else g / m3c - 1, None if g is None or not m3c else g > m3c,
               "Özkaynak bir yılda para arzından (M3) hızlı büyüdü mü? Değer, M3'e göre reel büyüme.", "yuzde")
         madde("Brüt kâr marjı arttı", marj, None if marj is None or marj1 is None else marj > marj1, "Brüt kâr / satışlar geçen yıldan yüksek mi? Fiyatlama gücünün işareti.", "yuzde")
