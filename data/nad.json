@@ -1,0 +1,23 @@
+{
+ "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle.",
+ "KCHOL": {
+  "ref_tarih": "2026-03-31",
+  "kaynak": "Deniz Yatirim, 1 Nisan 2026",
+  "piyasa_degeri_ref": 493993,
+  "uzun_vade_iskonto": -0.14,
+  "halka_acik": {"TOASO": 51492, "FROTO": 137119, "OTKAR": 20696, "TTRAK": 16680, "ARCLK": 35613,
+                 "YKBNK": 152933, "TUPRS": 199177, "AYGAZ": 20852, "AYCES": 6000, "MAALT": 4903},
+  "sabit": {"Otokoc (defter)": 50372, "Arcelik LG Klima": 134, "Koctas": 852, "Koc Finans": 1667, "Setur": 1502,
+            "Marina": 9911, "Koc Sistem": 2700, "Diger istirakler": 8492, "Net nakit": 44237, "Sabit kiymetler (%25 iskontolu)": 8705}
+ },
+ "SAHOL": {
+  "ref_tarih": "2026-03-31",
+  "kaynak": "Deniz Yatirim, 1 Nisan 2026",
+  "piyasa_degeri_ref": 187774,
+  "uzun_vade_iskonto": null,
+  "halka_acik": {"AKBNK": 139854, "AKGRT": 4190, "AGESA": 16582, "BRISA": 11056, "KORDS": 7740, "AKCNS": 15148,
+                 "CIMSA": 25116, "TKNSA": 2026, "ENJSA": 54093, "CRFSA": 9123},
+  "sabit": {"Cimsa Building Solutions": 8066, "DxBV": 2937, "Enerjisa Uretim (FD/FAVOK 9x)": 48661,
+            "Sabanci Iklim Teknolojileri": 20604, "TUA": 4695, "Diger (Tursa, TMA, SabanciDx)": 12460, "Net nakit": 12000}
+ }
+}
