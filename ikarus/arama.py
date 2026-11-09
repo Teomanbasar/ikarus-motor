@@ -207,7 +207,7 @@ def main():
                 continue
             d = px[t][px[t].index <= day].copy()
             if d.index[-1] == day:
-                oran = cl / float(d["close"].iloc[-1])  # temettu duzeltme oranini koru
+                oran = float(d["close"].iloc[-1]) / float(ib["Close"].iloc[-1])  # duzeltilmis / ham gun sonu
                 d.loc[day, ["open", "high", "low", "close"]] = [o * oran, h * oran, l * oran, cl * oran]
                 if "volume" in d.columns:
                     d.loc[day, "volume"] = vv
