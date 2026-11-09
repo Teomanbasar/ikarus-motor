@@ -7,7 +7,7 @@
    "W"
   ],
   "zippo": "W pct6.0 mem5.3 comp7.4 rec1.5dd rs8.7uu hacim.24 top39.4 YAKIN dip16.92 tepe56.44 stop17.61",
-  "m3": "tv"
+  "ham": true
  },
  {
   "anlik": "KCHOL",
@@ -17,7 +17,7 @@
    "W"
   ],
   "zippo": "W pct2.5 mem5.3 comp7.3 rec0.7dd rs9.5uu hacim.63 top39.5 DAGITIM dip191.4 tepe487.7 stop191.4",
-  "m3": "tv"
+  "ham": true
  },
  {
   "anlik": "CCOLA",
@@ -27,16 +27,6 @@
    "W"
   ],
   "zippo": "W pct30.5 mem0 comp6.0 rec2.9u rs9.8uu hacim.67 top32.7 DAGITIM dip55.98 tepe157.0 stop59.99",
-  "m3": "tv"
- },
- {
-  "anlik": "SARKY",
-  "tarih": "2026-10-13",
-  "saat": "12:00",
-  "tf": [
-   "W"
-  ],
-  "m3": "tv",
-  "zippo": "saat bilinmiyor; W pct19.5 dip15.03 tepe54.99 stop18.26"
+  "ham": true
  }
 ]

@@ -206,6 +206,13 @@ def main():
                 out.append(f"=== ANLIK {t} hata {e}")
                 continue
             d = px[t][px[t].index <= day].copy()
+            if q.get("ham"):  # temettu duzeltmesiz (TradingView adj kapali); bolunmeler duzeltilmis
+                raw = yf.download(t + ".IS", start="2010-01-01", end=(day + pd.Timedelta(days=1)).strftime("%Y-%m-%d"), auto_adjust=False, progress=False)
+                raw.columns = [c[0].lower() if isinstance(c, tuple) else c.lower() for c in raw.columns]
+                raw.index = pd.to_datetime(raw.index).tz_localize(None)
+                d = raw[["open", "high", "low", "close", "volume"]].dropna()
+                d = d[d.index <= day].copy()
+                out.append(f"  (fiyat = temettu duzeltmesiz, {len(d)} gun)")
             if d.index[-1] == day:
                 oran = float(d["close"].iloc[-1]) / float(ib["Close"].iloc[-1])  # duzeltilmis / ham gun sonu
                 d.loc[day, ["open", "high", "low", "close"]] = [o * oran, h * oran, l * oran, cl * oran]
