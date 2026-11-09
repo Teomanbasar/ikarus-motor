@@ -1,1 +1,9 @@
-[{"alarm_test2": [["PNSUT", "2026-10-09", "D", "YAKIN"], ["RUBNS", "2026-10-09", "D", "YAKIN"], ["KIMMR", "2026-10-09", "D", "YAKIN"], ["BTCIM", "2026-10-09", "D", "YAKIN"], ["GATEG", "2026-10-09", "D", "YAKIN"], ["BFREN", "2026-10-09", "D", "YAKIN"], ["IDGYO", "2026-10-12", "D", "ALINABILIR"], ["ERCB", "2026-10-12", "D", "ALINABILIR"], ["SKYLP", "2026-10-12", "D", "ALINABILIR"], ["AFYON", "2026-10-12", "D", "ALINABILIR"], ["HKTM", "2026-10-12", "D", "YAKIN"], ["ATEKS", "2026-10-12", "D", "YAKIN"], ["OTKAR", "2026-10-12", "D", "YAKIN"], ["VKING", "2026-10-12", "D", "YAKIN"], ["LRSHO", "2026-10-12", "D", "YAKIN"], ["KLRHO", "2026-10-12", "D", "YAKIN"], ["BRKO", "2026-10-13", "D", "YAKIN"], ["SEKUR", "2026-10-13", "D", "YAKIN"], ["BMSCH", "2026-10-13", "D", "YAKIN"], ["ALARK", "2026-10-13", "D", "YAKIN"], ["MRGYO", "2026-10-13", "D", "YAKIN"], ["TUREX", "2026-10-13", "D", "YAKIN"], ["SILVR", "2026-10-13", "D", "YAKIN"], ["MERCN", "2026-10-23", "W", "YAKIN"], ["SONME", "2026-10-23", "W", "YAKIN"], ["LIDFA", "2026-10-23", "W", "YAKIN"], ["TURGG", "2026-10-19", "D", "ALINABILIR"], ["LINK", "2026-10-19", "D", "YAKIN"], ["MEGAP", "2026-10-19", "D", "YAKIN"], ["SNGYO", "2026-10-19", "D", "YAKIN"], ["VKGYO", "2026-10-19", "D", "YAKIN"]]}]
+[
+ {"ad": "6Eki_V63", "tarih": "2026-10-06", "dip": 16.92, "tepe": 56.44, "pct": 6.0},
+ {"ad": "6Eki_V63_5Eki", "tarih": "2026-10-05", "dip": 16.92, "tepe": 56.44, "pct": 6.0},
+ {"aralik": 1, "tarih": "2026-10-06", "dip": 16.92, "tepe": 56.44},
+ {"hisse": "AEFES", "tf": "W", "tarih": "2026-10-06", "zippo": "pct6.0 rec1.5 dip16.92 tepe56.44 stop17.61 YAKIN"},
+ {"hisse": "AEFES", "tf": "W", "tarih": "2026-10-06", "ha": true, "zippo": "HA"},
+ {"hisse": "AEFES", "tf": "D", "tarih": "2026-10-06", "zippo": "D"},
+ {"hisse": "AEFES", "tf": "D", "tarih": "2026-10-06", "ha": true, "zippo": "D HA"}
+]
