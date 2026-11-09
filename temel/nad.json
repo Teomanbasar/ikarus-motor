@@ -1,0 +1,39 @@
+{
+ "olusturma": "2026-11-10 00:29",
+ "holdingler": {
+  "KCHOL": {
+   "tarih": "2026-11-06",
+   "nad_mn": 794992,
+   "piyasa_degeri_mn": 522649,
+   "iskonto": -0.3426,
+   "ort_3y": -0.3565,
+   "uzun_vade": -0.14,
+   "yuzdelik_3y": 72.7,
+   "yuzdelik_1y": 96.8,
+   "degisim_20g": 0.0211,
+   "degisim_60g": 0.0294,
+   "durum": "NORMAL",
+   "kaynak": "Deniz Yatirim, 1 Nisan 2026",
+   "fiyatsiz": [],
+   "teorik_fiyat_ort3y": 201.74
+  },
+  "SAHOL": {
+   "tarih": "2026-11-06",
+   "nad_mn": 398984,
+   "piyasa_degeri_mn": 186309,
+   "iskonto": -0.533,
+   "ort_3y": -0.4833,
+   "uzun_vade": null,
+   "yuzdelik_3y": 13.8,
+   "yuzdelik_1y": 25.0,
+   "degisim_20g": -0.0005,
+   "degisim_60g": 0.0148,
+   "durum": "DERIN ISKONTO",
+   "kaynak": "Deniz Yatirim, 1 Nisan 2026",
+   "fiyatsiz": [
+    "AKGRT"
+   ],
+   "teorik_fiyat_ort3y": 96.61
+  }
+ }
+}
