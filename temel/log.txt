@@ -1,17 +1,14 @@
-
-1 Failed download:
-['AKGRT.IS']: OperationalError('database is locked')
-== KCHOL  2026-11-06: NAD 794,992 mn TL | piyasa degeri 522,649 | iskonto %-34.3 | 3y ort %-35.6 | 3y yuzdelik 73 | 20g degisim +2.1 puan | NORMAL
-   yuzdelik <= 20 (derin)             gun    2 | sonraki 63g BIST100'e gore ort  -4.4 medyan  -4.4 kazanma %  0
-   yuzdelik 20-80                     gun  419 | sonraki 63g BIST100'e gore ort  +0.7 medyan  -1.5 kazanma % 40
-   yuzdelik >= 80 (dar)               gun  729 | sonraki 63g BIST100'e gore ort  +2.1 medyan  +2.3 kazanma % 57
-   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
-   derin + 20g aciliyor               gun    2 | sonraki 63g BIST100'e gore ort  -4.4 medyan  -4.4 kazanma %  0
-== SAHOL  2026-11-06: NAD 398,984 mn TL | piyasa degeri 186,309 | iskonto %-53.3 | 3y ort %-48.3 | 3y yuzdelik 14 | 20g degisim -0.0 puan | DERIN ISKONTO | fiyati olmayanlar ['AKGRT']
-   yuzdelik <= 20 (derin)             gun   19 | sonraki 63g BIST100'e gore ort +15.0 medyan +14.7 kazanma %100
-   yuzdelik 20-80                     gun  334 | sonraki 63g BIST100'e gore ort  -3.5 medyan  -4.5 kazanma % 31
-   yuzdelik >= 80 (dar)               gun  797 | sonraki 63g BIST100'e gore ort  +2.4 medyan  +2.5 kazanma % 62
-   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
-   derin + 20g aciliyor               gun   12 | sonraki 63g BIST100'e gore ort +15.9 medyan +16.6 kazanma %100
-
-Not: gecmis seri bugunku istirak paylariyla hesaplandi (yaklasik). Test gunleri birbiriyle ortusuyor (63 gunluk pencereler); bagimsiz gozlem sayisi gun sayisindan cok daha az, sonuclari kaba isaret olarak oku.
+M3 (EVDS): 2026-10 eklendi
+50/626 64 sn
+100/626 105 sn
+150/626 153 sn
+200/626 194 sn
+250/626 235 sn
+300/626 290 sn
+350/626 330 sn
+400/626 374 sn
+450/626 422 sn
+500/626 463 sn
+550/626 501 sn
+600/626 545 sn
+626/626 hisse islendi, dosyada 609 hisse (565 sn)
