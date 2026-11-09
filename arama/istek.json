@@ -1,32 +1,428 @@
 [
- {
-  "anlik": "AEFES",
-  "tarih": "2026-10-06",
-  "saat": "12:53",
-  "tf": [
-   "W"
-  ],
-  "zippo": "W pct6.0 mem5.3 comp7.4 rec1.5dd rs8.7uu hacim.24 top39.4 YAKIN dip16.92 tepe56.44 stop17.61",
-  "ham": true
- },
- {
-  "anlik": "KCHOL",
-  "tarih": "2026-10-22",
-  "saat": "12:57",
-  "tf": [
-   "W"
-  ],
-  "zippo": "W pct2.5 mem5.3 comp7.3 rec0.7dd rs9.5uu hacim.63 top39.5 DAGITIM dip191.4 tepe487.7 stop191.4",
-  "ham": true
- },
- {
-  "anlik": "CCOLA",
-  "tarih": "2026-10-22",
-  "saat": "12:57",
-  "tf": [
-   "W"
-  ],
-  "zippo": "W pct30.5 mem0 comp6.0 rec2.9u rs9.8uu hacim.67 top32.7 DAGITIM dip55.98 tepe157.0 stop59.99",
-  "ham": true
- }
+{
+"ad": "TLMAN_7Agu",
+"tarih": "2026-08-07",
+"dip": 80.73,
+"tepe": 293.06,
+"pct": 0.5
+},
+{
+"ad": "TLMAN_6Agu",
+"tarih": "2026-08-06",
+"dip": 80.73,
+"tepe": 293.06,
+"pct": 0.5
+},
+{
+"ad": "TEHOL_18Agu",
+"tarih": "2026-08-18",
+"dip": 0.85,
+"tepe": 51.3,
+"pct": 100
+},
+{
+"ad": "TEHOL_15Agu",
+"tarih": "2026-08-15",
+"dip": 0.85,
+"tepe": 51.3,
+"pct": 100
+},
+{
+"hisse": "TLMAN",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "pct.5 mem10 comp6.1 rec1.1dd rs0 top34.2 TOPLANIYOR dip80.73 tepe293.06"
+},
+{
+"hisse": "TEHOL",
+"tarih": "2026-08-18",
+"tf": "D",
+"zippo": "pct100 comp7 rec9.0d rs10 top32.9 PAHALI dip.85 tepe51.3"
+},
+{
+"hisse": "TLMAN",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "pct.5 mem10 comp6.1 rec1.1dd rs0 top34.2 TOPLANIYOR dip80.73 tepe293.06",
+"ha": true
+},
+{
+"hisse": "TEHOL",
+"tarih": "2026-08-18",
+"tf": "D",
+"zippo": "pct100 comp7 rec9.0d rs10 top32.9 PAHALI dip.85 tepe51.3",
+"ha": true
+},
+{
+"hisse": "TLMAN",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "pct.5 mem10 comp6.1 rec1.1dd rs0 top34.2 TOPLANIYOR dip80.73 tepe293.06"
+},
+{
+"hisse": "TEHOL",
+"tarih": "2026-08-18",
+"tf": "W",
+"zippo": "pct100 comp7 rec9.0d rs10 top32.9 PAHALI dip.85 tepe51.3"
+},
+{
+"hisse": "TLMAN",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "pct.5 mem10 comp6.1 rec1.1dd rs0 top34.2 TOPLANIYOR dip80.73 tepe293.06",
+"ha": true
+},
+{
+"hisse": "TEHOL",
+"tarih": "2026-08-18",
+"tf": "W",
+"zippo": "pct100 comp7 rec9.0d rs10 top32.9 PAHALI dip.85 tepe51.3",
+"ha": true
+},
+{
+"hisse": "ALARK",
+"tarih": "2026-08-03",
+"tf": "D",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "ALARK",
+"tarih": "2026-08-03",
+"tf": "W",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "FROTO",
+"tarih": "2026-08-03",
+"tf": "D",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "FROTO",
+"tarih": "2026-08-03",
+"tf": "W",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "SASA",
+"tarih": "2026-08-03",
+"tf": "D",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "SASA",
+"tarih": "2026-08-03",
+"tf": "W",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "THYAO",
+"tarih": "2026-08-03",
+"tf": "D",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "THYAO",
+"tarih": "2026-08-03",
+"tf": "W",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "TERA",
+"tarih": "2026-08-03",
+"tf": "D",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "TERA",
+"tarih": "2026-08-03",
+"tf": "W",
+"zippo": "3Agu: pct3.5 mem10 comp7.8 rec4.2uu rs.3 top39.0 HAZIRLANIYOR"
+},
+{
+"hisse": "ISGYO",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "ALINABILIR Total 43.63 Rec 6.26"
+},
+{
+"hisse": "ISGYO",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "ALINABILIR Total 43.63 Rec 6.26",
+"rec_mod": "close20"
+},
+{
+"hisse": "ISGYO",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "ALINABILIR Total 43.63 Rec 6.26"
+},
+{
+"hisse": "ISGYO",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "ALINABILIR Total 43.63 Rec 6.26",
+"rec_mod": "close20"
+},
+{
+"hisse": "RODRG",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "ALINABILIR Total 46.81 Rec 6.0"
+},
+{
+"hisse": "RODRG",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "ALINABILIR Total 46.81 Rec 6.0",
+"rec_mod": "close20"
+},
+{
+"hisse": "RODRG",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "ALINABILIR Total 46.81 Rec 6.0"
+},
+{
+"hisse": "RODRG",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "ALINABILIR Total 46.81 Rec 6.0",
+"rec_mod": "close20"
+},
+{
+"hisse": "VAKFA",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "rec 1 fiyat 11.23"
+},
+{
+"hisse": "VAKFA",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "rec 1 fiyat 11.23",
+"rec_mod": "close20"
+},
+{
+"hisse": "VAKFA",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "rec 1 fiyat 11.23"
+},
+{
+"hisse": "VAKFA",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "rec 1 fiyat 11.23",
+"rec_mod": "close20"
+},
+{
+"hisse": "PASEU",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "rec 10 fiyat 174.2"
+},
+{
+"hisse": "PASEU",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "rec 10 fiyat 174.2",
+"rec_mod": "close20"
+},
+{
+"hisse": "PASEU",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "rec 10 fiyat 174.2"
+},
+{
+"hisse": "PASEU",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "rec 10 fiyat 174.2",
+"rec_mod": "close20"
+},
+{
+"hisse": "OZRDN",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "rec 7.92 fiyat 29.90"
+},
+{
+"hisse": "OZRDN",
+"tarih": "2026-08-07",
+"tf": "D",
+"zippo": "rec 7.92 fiyat 29.90",
+"rec_mod": "close20"
+},
+{
+"hisse": "OZRDN",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "rec 7.92 fiyat 29.90"
+},
+{
+"hisse": "OZRDN",
+"tarih": "2026-08-07",
+"tf": "W",
+"zippo": "rec 7.92 fiyat 29.90",
+"rec_mod": "close20"
+},
+{
+"hisse": "MTRKS",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "MTRKS",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "BJKAS",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "BJKAS",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "KCAER",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "KCAER",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "DIRIT",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "DIRIT",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "CUSAN",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "CUSAN",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "TUREX",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "TUREX",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "PNLSN",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "PNLSN",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "QUAGR",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "QUAGR",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "TATGD",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "TATGD",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "GOZDE",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "GOZDE",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "ERCB",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "ERCB",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+},
+{
+"hisse": "PRDGS",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti"
+},
+{
+"hisse": "PRDGS",
+"tarih": "2026-07-24",
+"tf": "W",
+"zippo": "24Tem recovery esigi yukari kesti",
+"rec_mod": "close20"
+}
 ]

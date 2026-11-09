@@ -234,7 +234,7 @@ def main():
         if "hisse" in q:  # detay: bilinen hissenin o tarihteki tablosu ve ara degerler
             t, tf, day = q["hisse"], q.get("tf", "D"), pd.Timestamp(q["tarih"])
             d = px[t][px[t].index <= day]
-            r = E.compute(d, xu[xu.index <= day], m3, tf, ha=q.get("ha", False))
+            r = E.compute(d, xu[xu.index <= day], m3, tf, ha=q.get("ha", False), rec_mod=q.get("rec_mod"))
             k = ["close", "percentile", "memory", "compression", "recovery", "rec_pct3", "rs", "rs_pct5",
                  "mtf", "hacim", "macro_sc", "toplam", "eksik", "chg1", "d_stop", "sinyal", "dip", "tepe", "stop"]
             out.append(f"=== DETAY {t} {tf} {q['tarih']}  Zippo: {q.get('zippo', '')}")
