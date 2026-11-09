@@ -212,10 +212,14 @@ def main():
                 if "volume" in d.columns:
                     d.loc[day, "volume"] = vv
             k = ["close", "percentile", "memory", "compression", "recovery", "rs", "mtf", "hacim", "toplam", "eksik", "chg1", "sinyal", "dip", "tepe", "stop"]
+            m3q = m3
+            if q.get("m3") == "tv":  # TradingView'in 6 Kas 2026 M3 gecmisi
+                m3q = pd.read_csv(D.DATA / "m3_tv_20261106.csv", comment="#", parse_dates=["tarih"]).set_index("tarih")["m3"].astype(float)
+                out.append("  (M3 = TradingView 6 Kas gecmisi)")
             for tf in q.get("tf", ["W", "D"]):
                 for ha in (False, True):
                     for rm in (None, "close20"):
-                        r = E.compute(d, xu[xu.index <= day], m3, tf, ha=ha, rec_mod=rm)
+                        r = E.compute(d, xu[xu.index <= day], m3q, tf, ha=ha, rec_mod=rm)
                         out.append(f"  -- {tf} {'HA' if ha else 'normal'} rec={rm or 'v46'}")
                         out.append(r[k].tail(3).round(3).to_string())
             out.append("")
