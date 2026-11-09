@@ -8,10 +8,42 @@ $DMLKT.IS: possibly delisted; no timezone found
 
 1 Failed download:
 ['DMLKT.IS']: possibly delisted; no timezone found
-$DMLKT.IS: possibly delisted; no timezone found
 $ALTIN.IS: possibly delisted; no timezone found
+$DMLKT.IS: possibly delisted; no timezone found
 
 2 Failed downloads:
-['DMLKT.IS', 'ALTIN.IS']: possibly delisted; no timezone found
+['ALTIN.IS', 'DMLKT.IS']: possibly delisted; no timezone found
 M3 (EVDS): 2026-10 eklendi
-EVDS haftalik M3: 1000 hafta, 2007-09-07 .. 2026-10-30
+=== ALARM TESTI (hisse tf tarih | Zippo | bizim onceki -> o gun | eksik sart, toplam, kapanis/alarm fiyati)
+PNSUT D 2026-10-09 | YAKIN | YAKIN -> TOPLANIYOR XX | eksik[Rec,Hacim] pct 5.0 rec 2.22 top 43.62 mtf 0.5 hacim 0.61 | 10.52/10.52 (2026-10-09)
+RUBNS D 2026-10-09 | YAKIN | BEKLE -> TOPLANIYOR XX | eksik[Rec,Top] pct 3.5 rec 0.68 top 31.59 mtf 0.5 hacim 2.31 | 16.43/16.43 (2026-10-09)
+KIMMR D 2026-10-09 | YAKIN | BEKLE -> YAKIN OK | eksik[Rec,Hacim] pct 4.0 rec 1.13 top 36.80 mtf 0.0 hacim 1.08 | 11.07/11.07 (2026-10-09)
+BTCIM D 2026-10-09 | YAKIN | BEKLE -> YAKIN OK | eksik[Rec,Top] pct 3.5 rec 0.64 top 31.01 mtf 0.0 hacim 1.64 | 2.08/2.08 (2026-10-09)
+GATEG D 2026-10-09 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top,MTF,Hacim] pct 3.0 rec 1.68 top 33.92 mtf 60.5 hacim 0.47 | 151.50/151.5 (2026-10-09)
+BFREN D 2026-10-09 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top,Hacim] pct 2.0 rec 1.39 top 34.71 mtf 0.0 hacim 0.44 | 107.90/107.9 (2026-10-09)
+IDGYO D 2026-10-12 | ALINABILIR | BEKLE -> TOPLANIYOR XX | eksik[Rec,Top] pct 6.0 rec 1.41 top 35.49 mtf 1.0 hacim 2.15 | 2.33/None (2026-10-12)
+ERCB D 2026-10-12 | ALINABILIR | BEKLE -> TOPLANIYOR XX | eksik[Rec] pct 5.5 rec 2.15 top 38.15 mtf 1.0 hacim 4.49 | 37.68/None (2026-10-12)
+SKYLP D 2026-10-12 | ALINABILIR | BEKLE -> TOPLANIYOR XX | eksik[Rec] pct 6.5 rec 1.54 top 36.54 mtf 4.5 hacim 2.01 | 86.45/None (2026-10-12)
+AFYON D 2026-10-12 | ALINABILIR | YAKIN -> TOPLANIYOR XX | eksik[Rec] pct 9.0 rec 5.00 top 46.63 mtf 2.0 hacim 2.86 | 12.22/None (2026-10-12)
+HKTM D 2026-10-12 | YAKIN | DAGITIM -> DAGITIM XX | eksik[Rec,Hacim] pct 6.0 rec 3.16 top 36.02 mtf 1.0 hacim 0.64 | 11.21/None (2026-10-12)
+ATEKS D 2026-10-12 | YAKIN | TOPLANIYOR -> TOPLANIYOR XX | eksik[Rec,Hacim] pct 14.0 rec 4.38 top 44.11 mtf 4.5 hacim 1.18 | 96.95/None (2026-10-12)
+OTKAR D 2026-10-12 | YAKIN | ALINABILIR -> ALINABILIR XX | eksik[] pct 19.0 rec 7.68 top 40.17 mtf 4.0 hacim 1.42 | 336.50/None (2026-10-12)
+VKING D 2026-10-12 | YAKIN | DAGITIM -> TOPLANIYOR XX | eksik[Rec,Top] pct 2.0 rec 0.69 top 28.69 mtf 0.0 hacim 1.41 | 15.10/None (2026-10-12)
+LRSHO D 2026-10-12 | YAKIN | DAGITIM -> YAKIN OK | eksik[Rec,Top] pct 3.0 rec 0.68 top 33.38 mtf 0.5 hacim 1.42 | 1.86/None (2026-10-12)
+KLRHO D 2026-10-12 | YAKIN | TOPLANIYOR -> DAGITIM XX | eksik[Rec,Top] pct 3.0 rec 0.70 top 34.06 mtf 50.0 hacim 1.55 | 12.82/None (2026-10-12)
+BRKO D 2026-10-13 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top,Hacim] pct 7.0 rec 1.46 top 33.92 mtf 1.5 hacim 0.30 | 7.10/7.1 (2026-10-13)
+SEKUR D 2026-10-13 | YAKIN | TOPLANIYOR -> DAGITIM XX | eksik[Rec,Top] pct 21.0 rec 1.82 top 32.24 mtf 7.5 hacim 1.32 | 4.90/4.9 (2026-10-13)
+BMSCH D 2026-10-13 | YAKIN | YAKIN -> YAKIN XX | eksik[Rec] pct 5.0 rec 1.48 top 37.66 mtf 1.0 hacim 1.76 | 9.10/9.1 (2026-10-13)
+ALARK D 2026-10-13 | YAKIN | BEKLE -> DAGITIM XX | eksik[Rec,Hacim] pct 33.5 rec 4.56 top 38.36 mtf 11.0 hacim 0.78 | 108.40/108.4 (2026-10-13)
+MRGYO D 2026-10-13 | YAKIN | TOPLANIYOR -> YAKIN OK | eksik[Rec] pct 16.5 rec 3.17 top 36.58 mtf 7.0 hacim 1.59 | 1.45/1.45 (2026-10-13)
+TUREX D 2026-10-13 | YAKIN | DAGITIM -> TOPLANIYOR XX | eksik[Rec,Hacim] pct 7.5 rec 3.61 top 39.10 mtf 0.5 hacim 0.44 | 5.85/5.85 (2026-10-13)
+SILVR D 2026-10-13 | YAKIN | BEKLE -> YAKIN OK | eksik[Rec,Top] pct 3.0 rec 1.51 top 31.70 mtf 0.5 hacim 1.92 | 1.65/1.65 (2026-10-13)
+MERCN W 2026-10-23 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top] pct 0.0 rec 0.00 top 26.05 mtf 0.0 hacim 1.22 | 2.94/None (2026-10-19)
+SONME W 2026-10-23 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top] pct 1.5 rec 0.00 top 25.01 mtf 1.5 hacim 1.35 | 94.50/None (2026-10-19)
+LIDFA W 2026-10-23 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top,Hacim] pct 32.5 rec 1.37 top 29.94 mtf 32.5 hacim 1.09 | 1.71/None (2026-10-19)
+TURGG D 2026-10-19 | ALINABILIR | DAGITIM -> TOPLANIYOR XX | eksik[Rec] pct 9.0 rec 3.20 top 41.19 mtf 2.0 hacim 1.67 | 25.78/None (2026-10-19)
+LINK D 2026-10-19 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top] pct 0.0 rec 0.00 top 27.00 mtf 1.0 hacim 1.21 | 2.98/2.98 (2026-10-19)
+MEGAP D 2026-10-19 | YAKIN | BEKLE -> BEKLE XX | eksik[Rec,Top] pct 0.0 rec 0.00 top 28.38 mtf 0.0 hacim 1.83 | 0.96/0.96 (2026-10-19)
+SNGYO D 2026-10-19 | YAKIN | DAGITIM -> BEKLE XX | eksik[Rec,Top] pct 0.0 rec 0.00 top 30.39 mtf 0.0 hacim 2.03 | 2.39/2.39 (2026-10-19)
+VKGYO D 2026-10-19 | YAKIN | DAGITIM -> BEKLE XX | eksik[Rec,Top] pct 0.0 rec 0.00 top 32.21 mtf 0.0 hacim 2.11 | 1.49/1.49 (2026-10-19)
+TUTAN GECIS: 5/31
