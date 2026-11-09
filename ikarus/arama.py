@@ -32,6 +32,50 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "alarm_test2" in q:  # varyant taramasi: mum tipi x temettu x Recovery x sinyal tanimi
+            import itertools
+            import yfinance as yf
+            def tanim(r, ad):
+                if ad == "v46":
+                    return r["sinyal"].to_numpy()
+                n = r["eksik"].to_numpy(); c1 = r["c1"].to_numpy(); rl = r["rec_ok"].to_numpy(); rsl = r["rs_ok"].to_numpy()
+                if ad == "v44":
+                    return np.where(n == 0, "ALINABILIR", np.where((rl == -2) & ((n >= 3) | (rsl == 2)), "DAGITIM", np.where(c1 & (n <= 2), "YAKIN", "BEKLE")))
+                return np.where(n == 0, "ALINABILIR", np.where(c1 & (n <= 2), "YAKIN", "BEKLE"))  # basit
+            ham = {}
+            for t in {a[0] for a in q["alarm_test2"]}:
+                try:
+                    raw = yf.download(t + ".IS", start="2015-01-01", auto_adjust=False, progress=False)
+                    raw.columns = [c[0].lower() if isinstance(c, tuple) else c.lower() for c in raw.columns]
+                    ham[t] = raw[["open", "high", "low", "close", "volume"]].dropna()
+                except Exception:
+                    pass
+            skor = {}
+            detay = []
+            for t, tarih, tf, bek in q["alarm_test2"]:
+                day = pd.Timestamp(tarih)
+                for ha_, adj, rm in itertools.product((False, True), ("adj", "ham"), ("m3", "close20")):
+                    src = px.get(t) if adj == "adj" else ham.get(t)
+                    if src is None or len(src) == 0:
+                        continue
+                    d = src[src.index <= day]
+                    try:
+                        r = E.compute(d, xu, m3, tf=tf, ha=ha_, rec_mod=rm)
+                    except Exception:
+                        continue
+                    for ad in ("v46", "v44", "basit"):
+                        sg = tanim(r, ad)
+                        ok = len(sg) > 1 and sg[-1] == bek and sg[-2] != bek
+                        k = (("HA" if ha_ else "normal"), adj, rm, ad)
+                        skor.setdefault(k, [0, 0]); skor[k][1] += 1; skor[k][0] += int(ok)
+                        if k == ("normal", "adj", "close20", "basit") or k == ("HA", "adj", "close20", "basit"):
+                            b = r.iloc[-1]
+                            detay.append(f"{k[0]:6} {t} {tf} {tarih} {bek}: {sg[-2]}->{sg[-1]} {'OK' if ok else 'XX'} pct {b['percentile']:.1f} rec {b['recovery']:.2f} top {b['toplam']:.2f} mtf {b['mtf']:.1f} hacim {b['hacim']:.2f} eksik {int(b['eksik'])}")
+            out.append("=== ALARM VARYANT (mum, temettu, recovery, sinyal tanimi): tutan/toplam")
+            for k, (a, b) in sorted(skor.items(), key=lambda x: -x[1][0]):
+                out.append(f"{k}: {a}/{b}")
+            out.extend(detay)
+            continue
         if "alarm_test" in q:  # Zippo alarm listesi: [[hisse, tarih, tf, beklenen], ...] -> o bar ve onceki bar sinyali
             out.append("=== ALARM TESTI (hisse tf tarih | Zippo | bizim onceki -> o gun | eksik sart, toplam, kapanis/alarm fiyati)")
             tut = 0; top = 0

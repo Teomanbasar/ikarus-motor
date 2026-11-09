@@ -278,6 +278,8 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
     rec = stoch(adjC, P["rec_n"])
     rec45 = stoch(c, 20)
     rec = np.where(np.isnan(rec), rec45, rec)
+    if P.get("rec_mod") == "close20":  # deneme: v4.5 Recovery (kapanisin 20 barlik araliktaki yeri)
+        rec = rec45
     recPct = 100 * (c / shift(c, 3) - 1)
     recL = lvlP(recPct, 0.5, 2.0)
 
