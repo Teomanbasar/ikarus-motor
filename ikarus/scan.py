@@ -129,13 +129,13 @@ def _temel_v3(stocks):
             et.append("Zayif bilanco")
         pct = (s.get("D") or {}).get("percentile")
         if kotu:
-            yorum = "Dikkat: son bilanco beklenenden kotu. Testte bu grup ucuz ve kaliteli olsa bile sonraki 3-6 ayda endeksin gerisinde kaldi."
+            yorum = "Dikkat: son bilanço geçen yılın aynı çeyreğine göre belirgin kötü. Testte bu grup ucuz ve kaliteli olsa bile sonraki 3-6 ayda endeksin gerisinde kaldı."
         elif dilim[t] == 5 and pct is not None and pct <= 20:
-            yorum = "Temel ust %20'de ve IKARUS'ta ucuz bolgede: testte en iyi sonuc veren birlesim."
+            yorum = "Temel puanı en üst %20'de ve IKARUS'ta ucuz bölgede: testte en iyi sonuç veren birleşim."
         elif dilim[t] == 5:
-            yorum = "Temel puani ust %20'de."
+            yorum = "Temel puanı en üst %20'de."
         elif (k.get("puan") or 0) >= 6 and (hareket[t] if not pd.isna(hareket[t]) else 0) < 0.5:
-            yorum = "Kaliteli ama bilanco ivmesi yok: testte bu grup bekledi (getiri endeks civari)."
+            yorum = "Kaliteli ama bilanço ivmesi yok: testte bu grup bekledi (getiri endeks civarında kaldı)."
         else:
             yorum = None
         k["v3"] = {"toplam": f(toplam[t]), "dilim": None if pd.isna(dilim[t]) else int(dilim[t]), "hareket": f(hareket[t]), "kalite": f(kalite[t]), "deger": f(deger[t]),
