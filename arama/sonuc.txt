@@ -1,87 +1,133 @@
-=== ALARM VARYANT (mum, temettu, recovery, sinyal tanimi): tutan/toplam
-('normal', 'ham', 'close20', 'v44'): 16/31
-('normal', 'ham', 'close20', 'basit'): 16/31
-('normal', 'adj', 'close20', 'v44'): 15/31
-('normal', 'adj', 'close20', 'basit'): 15/31
-('HA', 'adj', 'close20', 'v44'): 13/31
-('HA', 'adj', 'close20', 'basit'): 13/31
-('normal', 'adj', 'm3', 'v44'): 12/31
-('normal', 'ham', 'm3', 'v44'): 12/31
-('HA', 'ham', 'close20', 'v44'): 12/31
-('HA', 'ham', 'close20', 'basit'): 12/31
-('normal', 'adj', 'm3', 'basit'): 11/31
-('normal', 'ham', 'm3', 'basit'): 11/31
-('HA', 'adj', 'm3', 'v44'): 11/31
-('HA', 'adj', 'm3', 'basit'): 10/31
-('HA', 'ham', 'm3', 'v44'): 10/31
-('HA', 'ham', 'm3', 'basit'): 9/31
-('HA', 'adj', 'close20', 'v46'): 8/31
-('normal', 'adj', 'close20', 'v46'): 7/31
-('normal', 'ham', 'close20', 'v46'): 7/31
-('HA', 'ham', 'close20', 'v46'): 7/31
-('HA', 'adj', 'm3', 'v46'): 6/31
-('normal', 'adj', 'm3', 'v46'): 5/31
-('HA', 'ham', 'm3', 'v46'): 5/31
-('normal', 'ham', 'm3', 'v46'): 4/31
-normal PNSUT D 2026-10-09 YAKIN: YAKIN->YAKIN XX pct 5.0 rec 3.65 top 45.05 mtf 0.5 hacim 0.61 eksik 2
-HA     PNSUT D 2026-10-09 YAKIN: YAKIN->YAKIN XX pct 4.0 rec 2.13 top 43.62 mtf 0.0 hacim 0.61 eksik 2
-normal RUBNS D 2026-10-09 YAKIN: BEKLE->YAKIN OK pct 3.5 rec 1.09 top 32.00 mtf 0.5 hacim 2.31 eksik 2
-HA     RUBNS D 2026-10-09 YAKIN: BEKLE->YAKIN OK pct 3.5 rec 0.77 top 31.46 mtf 0.0 hacim 2.31 eksik 2
-normal KIMMR D 2026-10-09 YAKIN: BEKLE->YAKIN OK pct 4.0 rec 2.20 top 37.87 mtf 0.0 hacim 1.08 eksik 2
-HA     KIMMR D 2026-10-09 YAKIN: BEKLE->YAKIN OK pct 2.5 rec 1.22 top 36.92 mtf 0.0 hacim 1.08 eksik 2
-normal BTCIM D 2026-10-09 YAKIN: BEKLE->YAKIN OK pct 3.5 rec 1.18 top 31.56 mtf 0.0 hacim 1.64 eksik 2
-HA     BTCIM D 2026-10-09 YAKIN: BEKLE->YAKIN OK pct 3.0 rec 0.61 top 30.55 mtf 0.0 hacim 1.64 eksik 2
-normal GATEG D 2026-10-09 YAKIN: BEKLE->BEKLE XX pct 3.0 rec 1.98 top 34.23 mtf 60.5 hacim 0.47 eksik 4
-HA     GATEG D 2026-10-09 YAKIN: BEKLE->BEKLE XX pct 3.0 rec 2.29 top 34.99 mtf 58.5 hacim 0.47 eksik 4
-normal BFREN D 2026-10-09 YAKIN: BEKLE->BEKLE XX pct 2.0 rec 2.36 top 35.68 mtf 0.0 hacim 0.44 eksik 3
-HA     BFREN D 2026-10-09 YAKIN: BEKLE->BEKLE XX pct 2.0 rec 1.64 top 32.67 mtf 0.5 hacim 0.44 eksik 3
-normal IDGYO D 2026-10-12 ALINABILIR: BEKLE->YAKIN XX pct 6.0 rec 3.97 top 38.05 mtf 1.0 hacim 2.15 eksik 1
-HA     IDGYO D 2026-10-12 ALINABILIR: BEKLE->YAKIN XX pct 4.5 rec 2.32 top 35.30 mtf 1.0 hacim 2.15 eksik 2
-normal ERCB D 2026-10-12 ALINABILIR: YAKIN->YAKIN XX pct 5.5 rec 4.32 top 40.32 mtf 1.0 hacim 4.49 eksik 1
-HA     ERCB D 2026-10-12 ALINABILIR: BEKLE->YAKIN XX pct 4.5 rec 3.30 top 38.44 mtf 0.5 hacim 4.49 eksik 1
-normal SKYLP D 2026-10-12 ALINABILIR: YAKIN->YAKIN XX pct 6.5 rec 3.43 top 38.43 mtf 4.5 hacim 2.01 eksik 1
-HA     SKYLP D 2026-10-12 ALINABILIR: BEKLE->YAKIN XX pct 6.0 rec 3.06 top 37.25 mtf 3.5 hacim 2.01 eksik 1
-normal AFYON D 2026-10-12 ALINABILIR: YAKIN->ALINABILIR OK pct 9.0 rec 9.94 top 51.56 mtf 2.0 hacim 2.86 eksik 0
-HA     AFYON D 2026-10-12 ALINABILIR: YAKIN->ALINABILIR OK pct 7.5 rec 6.09 top 47.75 mtf 1.5 hacim 2.86 eksik 0
-normal HKTM D 2026-10-12 YAKIN: ALINABILIR->YAKIN OK pct 6.0 rec 6.13 top 38.99 mtf 1.0 hacim 0.64 eksik 1
-HA     HKTM D 2026-10-12 YAKIN: ALINABILIR->YAKIN OK pct 9.5 rec 7.23 top 40.61 mtf 1.5 hacim 0.64 eksik 1
-normal ATEKS D 2026-10-12 YAKIN: ALINABILIR->YAKIN OK pct 14.0 rec 10.00 top 49.74 mtf 4.5 hacim 1.18 eksik 1
-HA     ATEKS D 2026-10-12 YAKIN: ALINABILIR->YAKIN OK pct 14.0 rec 9.86 top 49.34 mtf 4.0 hacim 1.18 eksik 1
-normal OTKAR D 2026-10-12 YAKIN: ALINABILIR->ALINABILIR XX pct 19.0 rec 8.40 top 40.90 mtf 4.0 hacim 1.42 eksik 0
-HA     OTKAR D 2026-10-12 YAKIN: ALINABILIR->ALINABILIR XX pct 21.0 rec 8.98 top 42.93 mtf 4.0 hacim 1.42 eksik 0
-normal VKING D 2026-10-12 YAKIN: YAKIN->YAKIN XX pct 2.0 rec 1.32 top 29.33 mtf 0.0 hacim 1.41 eksik 2
-HA     VKING D 2026-10-12 YAKIN: YAKIN->YAKIN XX pct 2.5 rec 1.65 top 30.55 mtf 0.0 hacim 1.41 eksik 2
-normal LRSHO D 2026-10-12 YAKIN: BEKLE->YAKIN OK pct 3.0 rec 1.69 top 34.39 mtf 0.5 hacim 1.42 eksik 2
-HA     LRSHO D 2026-10-12 YAKIN: BEKLE->YAKIN OK pct 3.5 rec 1.43 top 34.80 mtf 0.5 hacim 1.42 eksik 2
-normal KLRHO D 2026-10-12 YAKIN: YAKIN->YAKIN XX pct 3.0 rec 1.30 top 34.66 mtf 50.0 hacim 1.55 eksik 2
-HA     KLRHO D 2026-10-12 YAKIN: YAKIN->YAKIN XX pct 3.5 rec 1.81 top 35.69 mtf 50.0 hacim 1.55 eksik 2
-normal BRKO D 2026-10-13 YAKIN: BEKLE->BEKLE XX pct 7.0 rec 2.83 top 35.29 mtf 1.5 hacim 0.30 eksik 3
-HA     BRKO D 2026-10-13 YAKIN: BEKLE->BEKLE XX pct 6.5 rec 2.45 top 35.95 mtf 1.0 hacim 0.30 eksik 3
-normal SEKUR D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 21.0 rec 3.42 top 33.84 mtf 7.5 hacim 1.32 eksik 2
-HA     SEKUR D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 21.5 rec 3.17 top 34.21 mtf 5.0 hacim 1.32 eksik 2
-normal BMSCH D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 5.0 rec 2.65 top 38.83 mtf 1.0 hacim 1.76 eksik 1
-HA     BMSCH D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 4.5 rec 1.79 top 37.26 mtf 0.0 hacim 1.76 eksik 1
-normal ALARK D 2026-10-13 YAKIN: BEKLE->YAKIN OK pct 33.5 rec 8.52 top 42.31 mtf 11.0 hacim 0.78 eksik 1
-HA     ALARK D 2026-10-13 YAKIN: BEKLE->BEKLE XX pct 41.5 rec 9.75 top 42.42 mtf 15.0 hacim 0.78 eksik 2
-normal MRGYO D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 16.5 rec 3.93 top 37.34 mtf 7.0 hacim 1.59 eksik 1
-HA     MRGYO D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 15.0 rec 3.16 top 36.85 mtf 5.5 hacim 1.59 eksik 1
-normal TUREX D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 7.5 rec 7.83 top 43.31 mtf 0.5 hacim 0.44 eksik 1
-HA     TUREX D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 5.5 rec 7.95 top 43.39 mtf 1.0 hacim 0.44 eksik 1
-normal SILVR D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 3.0 rec 2.73 top 32.92 mtf 0.5 hacim 1.92 eksik 2
-HA     SILVR D 2026-10-13 YAKIN: YAKIN->YAKIN XX pct 0.5 rec 0.00 top 27.88 mtf 0.0 hacim 1.92 eksik 2
-normal MERCN W 2026-10-23 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 26.05 mtf 0.0 hacim 1.22 eksik 2
-HA     MERCN W 2026-10-23 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 26.09 mtf 0.0 hacim 1.22 eksik 2
-normal SONME W 2026-10-23 YAKIN: BEKLE->YAKIN OK pct 1.5 rec 0.00 top 25.01 mtf 1.5 hacim 1.35 eksik 2
-HA     SONME W 2026-10-23 YAKIN: YAKIN->YAKIN XX pct 3.0 rec 0.00 top 29.91 mtf 3.0 hacim 1.35 eksik 2
-normal LIDFA W 2026-10-23 YAKIN: BEKLE->BEKLE XX pct 32.5 rec 3.20 top 31.77 mtf 32.5 hacim 1.09 eksik 3
-HA     LIDFA W 2026-10-23 YAKIN: BEKLE->BEKLE XX pct 29.0 rec 2.69 top 32.47 mtf 29.0 hacim 1.09 eksik 3
-normal TURGG D 2026-10-19 ALINABILIR: YAKIN->ALINABILIR OK pct 9.0 rec 7.55 top 45.54 mtf 2.0 hacim 1.67 eksik 0
-HA     TURGG D 2026-10-19 ALINABILIR: YAKIN->ALINABILIR OK pct 6.5 rec 7.66 top 46.11 mtf 1.0 hacim 1.67 eksik 0
-normal LINK D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 27.00 mtf 1.0 hacim 1.21 eksik 2
-HA     LINK D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 27.90 mtf 1.5 hacim 1.21 eksik 2
-normal MEGAP D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 28.38 mtf 0.0 hacim 1.83 eksik 2
-HA     MEGAP D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 28.15 mtf 0.0 hacim 1.83 eksik 2
-normal SNGYO D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 30.39 mtf 0.0 hacim 2.03 eksik 2
-HA     SNGYO D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 34.54 mtf 1.0 hacim 2.03 eksik 2
-normal VKGYO D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 32.21 mtf 0.0 hacim 2.11 eksik 2
-HA     VKGYO D 2026-10-19 YAKIN: BEKLE->YAKIN OK pct 0.0 rec 0.00 top 32.96 mtf 0.0 hacim 2.11 eksik 2
+=== 6Eki_V63 2026-10-06 Dip 16.92 Tepe 56.44 Pct 6.0
+AEFES   M3-W-HA  hata   1.58%  dip 16.80 tepe 56.94 pct 4.5 kapanis 18.35
+VKFYO   ham-D    hata   6.25%  dip 16.60 tepe 58.90 pct None kapanis 18.52
+AEFES   M3-W     hata   7.25%  dip 15.84 tepe 56.91 pct 6.5 kapanis 18.67
+YEOTK   M3-D-HA  hata   9.73%  dip 18.49 tepe 56.71 pct 46.0 kapanis 27.69
+YEOTK   M3-D     hata  10.67%  dip 18.33 tepe 57.77 pct 47.0 kapanis 27.80
+RUBNS   M3-D-HA  hata  12.05%  dip 15.13 tepe 55.60 pct 2.0 kapanis 15.59
+RUBNS   M3-D     hata  12.83%  dip 14.92 tepe 55.87 pct 2.0 kapanis 15.60
+SARKY   M3-W     hata  13.65%  dip 15.03 tepe 55.02 pct 29.0 kapanis 21.00
+GEREL   M3-D     hata  14.37%  dip 17.90 tepe 51.60 pct 2.5 kapanis 19.69
+ESCAR   ham-D    hata  15.61%  dip 14.50 tepe 55.70 pct None kapanis 14.60
+SARKY   ham-D    hata  15.74%  dip 15.88 tepe 51.02 pct None kapanis 21.00
+SARKY   M3-W-HA  hata  16.68%  dip 15.05 tepe 53.27 pct 29.5 kapanis 21.07
+
+=== 6Eki_V63_5Eki 2026-10-05 Dip 16.92 Tepe 56.44 Pct 6.0
+AEFES   M3-W-HA  hata   1.58%  dip 16.80 tepe 56.94 pct 3.0 kapanis 18.07
+VKFYO   ham-D    hata   6.25%  dip 16.60 tepe 58.90 pct None kapanis 17.59
+AEFES   M3-W     hata   7.25%  dip 15.84 tepe 56.91 pct 3.0 kapanis 18.08
+YEOTK   M3-D-HA  hata   9.73%  dip 18.49 tepe 56.71 pct 48.5 kapanis 28.39
+YEOTK   M3-D     hata  10.67%  dip 18.33 tepe 57.77 pct 46.5 kapanis 27.50
+RUBNS   M3-D-HA  hata  12.05%  dip 15.13 tepe 55.60 pct 1.0 kapanis 15.58
+RUBNS   M3-D     hata  12.83%  dip 14.92 tepe 55.87 pct 1.5 kapanis 15.49
+SARKY   M3-W     hata  13.65%  dip 15.03 tepe 55.02 pct 29.5 kapanis 21.20
+GEREL   M3-D     hata  14.37%  dip 17.90 tepe 51.60 pct 0.0 kapanis 17.90
+ESCAR   ham-D    hata  15.61%  dip 14.50 tepe 55.70 pct None kapanis 14.70
+SARKY   ham-D    hata  15.74%  dip 15.88 tepe 51.02 pct None kapanis 21.20
+SARKY   M3-W-HA  hata  16.68%  dip 15.05 tepe 53.27 pct 29.5 kapanis 21.10
+
+=== ARALIK 2026-10-06 Dip 16.92 Tepe 56.44 fiyat~None
+VKFYO   M-M3-c-20          hata   2.08%  dip 16.75 tepe 57.04 kapanis 18.52 konum 4.4
+ISFIN   M-M3-c-99999       hata   2.16%  dip 17.00 tepe 55.50 kapanis 17.07 konum 0.2
+OYAKC   W-M3-hl-200        hata   2.47%  dip 16.82 tepe 57.50 kapanis 20.72 konum 9.6
+VAKBN   W-M3-c-250         hata   2.58%  dip 16.81 tepe 57.52 kapanis 33.72 konum 41.5
+VAKBN   W-M3-c-260         hata   2.58%  dip 16.81 tepe 57.52 kapanis 33.72 konum 41.5
+VAKBN   W-M3-c-300         hata   2.58%  dip 16.81 tepe 57.52 kapanis 33.72 konum 41.5
+AEFES   W-M3-c-150         hata   4.10%  dip 17.47 tepe 56.91 kapanis 18.67 konum 3.0
+SANKO   W-M3-hl-100        hata   4.19%  dip 17.23 tepe 57.77 kapanis 22.18 konum 12.2
+SANKO   W-M3-hl-104        hata   4.19%  dip 17.23 tepe 57.77 kapanis 22.18 konum 12.2
+BAKAB   D-ham-c-1000       hata   4.28%  dip 16.51 tepe 57.50 kapanis 30.96 konum 35.2
+MEDTR   M-ham-hl-52        hata   4.92%  dip 17.01 tepe 53.95 kapanis 19.03 konum 5.5
+SANKO   D-M3-hl-500        hata   5.09%  dip 17.38 tepe 57.77 kapanis 22.18 konum 11.9
+OZSUB   D-M3-c-99999       hata   5.22%  dip 16.97 tepe 53.65 kapanis 37.46 konum 55.9
+OZSUB   D-M3-hl-99999      hata   5.22%  dip 16.97 tepe 53.65 kapanis 37.46 konum 55.9
+OZSUB   M-M3-hl-99999      hata   5.22%  dip 16.97 tepe 53.65 kapanis 37.46 konum 55.9
+CUSAN   W-M3-hl-100        hata   5.46%  dip 17.24 tepe 54.43 kapanis 19.77 konum 6.8
+CUSAN   W-M3-hl-104        hata   5.46%  dip 17.24 tepe 54.43 kapanis 19.77 konum 6.8
+VESTL   D-M3-hl-260        hata   5.56%  dip 16.91 tepe 53.33 kapanis 18.00 konum 3.0
+SEGMN   D-ham-hl-50        hata   5.84%  dip 17.11 tepe 59.10 kapanis 21.78 konum 11.1
+SEGMN   D-ham-hl-52        hata   5.84%  dip 17.11 tepe 59.10 kapanis 21.78 konum 11.1
+BESTE   W-M3-hl-20         hata   5.96%  dip 17.45 tepe 54.84 kapanis 21.28 konum 10.2
+BESTE   W-M3-hl-99999      hata   5.96%  dip 17.45 tepe 54.84 kapanis 21.28 konum 10.2
+NTHOL   D-ham-hl-750       hata   6.04%  dip 17.27 tepe 54.20 kapanis 37.28 konum 54.2
+NTHOL   W-ham-hl-150       hata   6.04%  dip 17.27 tepe 54.20 kapanis 37.28 konum 54.2
+AEFES   D-M3-c-750         hata   6.07%  dip 17.11 tepe 59.22 kapanis 18.67 konum 3.7
+VKFYO   D-ham-c-200        hata   6.25%  dip 16.60 tepe 58.90 kapanis 18.52 konum 4.5
+VKFYO   D-ham-c-250        hata   6.25%  dip 16.60 tepe 58.90 kapanis 18.52 konum 4.5
+VKFYO   D-ham-c-260        hata   6.25%  dip 16.60 tepe 58.90 kapanis 18.52 konum 4.5
+VKFYO   D-ham-c-300        hata   6.25%  dip 16.60 tepe 58.90 kapanis 18.52 konum 4.5
+CUSAN   D-M3-hl-300        hata   6.36%  dip 17.39 tepe 54.43 kapanis 19.77 konum 6.4
+CUSAN   D-M3-hl-500        hata   6.36%  dip 17.39 tepe 54.43 kapanis 19.77 konum 6.4
+CUSAN   M-M3-hl-20         hata   6.36%  dip 17.39 tepe 54.43 kapanis 19.77 konum 6.4
+SEGMN   M-ham-c-99999      hata   6.43%  dip 17.93 tepe 56.70 kapanis 21.78 konum 9.9
+TURGG   D-ham-hl-750       hata   6.50%  dip 16.99 tepe 53.00 kapanis 25.16 konum 22.7
+SMART   W-M3-c-100         hata   6.51%  dip 16.10 tepe 55.50 kapanis 16.10 konum 0.0
+SMART   W-M3-c-104         hata   6.51%  dip 16.10 tepe 55.50 kapanis 16.10 konum 0.0
+BAKAB   W-ham-hl-200       hata   6.72%  dip 16.63 tepe 59.25 kapanis 30.96 konum 33.6
+VESTL   D-M3-c-300         hata   6.75%  dip 17.36 tepe 58.78 kapanis 18.00 konum 1.5
+BESTE   D-M3-hl-100        hata   6.87%  dip 17.60 tepe 54.84 kapanis 21.28 konum 9.9
+BESTE   D-M3-hl-104        hata   6.87%  dip 17.60 tepe 54.84 kapanis 21.28 konum 9.9
+
+=== DETAY AEFES W 2026-10-06  Zippo: pct6.0 rec1.5 dip16.92 tepe56.44 stop17.61 YAKIN
+             close  percentile  memory  compression  recovery  rec_pct3     rs  rs_pct5   mtf  hacim  macro_sc  toplam  eksik   chg1  d_stop      sinyal     dip    tepe    stop
+date                                                                                                                                                                            
+2026-08-17  19.059        19.0   1.333        7.106     3.266   -12.066  0.690  -10.901  19.0  1.118       7.0  27.495      3 -0.466  13.500       BEKLE  15.053  54.101  16.792
+2026-08-24  18.237        10.5   2.000        6.940     2.082   -14.690  0.000  -16.351  10.5  1.387       7.0  26.972      2 -4.314   8.604     DAGITIM  15.053  54.101  16.792
+2026-08-31  18.276        10.5   2.667        7.408     2.139    -4.553  1.610  -19.012  10.5  1.117       7.0  29.773      3  0.217   8.840       BEKLE  15.053  54.101  16.792
+2026-09-07  19.554        16.5   3.333        8.090     2.826     2.599  2.907  -12.876  16.5  1.171       7.0  32.505      3  2.608  11.679       BEKLE  15.696  56.412  17.509
+2026-09-14  18.613         8.0   4.000        7.191     1.525     2.064  4.263    3.703   8.0  0.920       7.0  33.179      3 -4.813   6.304     DAGITIM  15.696  56.412  17.509
+2026-09-21  18.653         8.5   4.667        7.452     1.378     2.060  5.493   10.125   8.5  0.890       7.0  35.140      3  0.213   6.531       BEKLE  15.696  56.412  17.509
+2026-09-28  17.870         2.5   5.333        7.103     0.271    -8.612  5.778   16.928   2.5  0.788       7.0  35.234      3 -4.195   2.061     DAGITIM  15.696  56.412  17.509
+2026-10-05  18.670         6.5   6.000        7.877     1.171     0.305  7.213   15.677   6.5  0.370       7.0  38.611      2  3.559   5.694  TOPLANIYOR  15.835  56.911  17.664
+  rec-rec[1]=0.90  rs-rs[1]=1.44
+  rec-rec[2]=-0.21  rs-rs[2]=1.72
+  rec-rec[3]=-0.35  rs-rs[3]=2.95
+  rec-rec[5]=-0.97  rs-rs[5]=5.60
+
+=== DETAY AEFES W 2026-10-06  Zippo: HA
+             close  percentile  memory  compression  recovery  rec_pct3     rs  rs_pct5   mtf  hacim  macro_sc  toplam  eksik   chg1  d_stop      sinyal     dip    tepe    stop
+date                                                                                                                                                                            
+2026-08-17  19.069        19.0   0.667        8.103     3.467   -10.298  1.392   -9.329  19.0  1.118       7.0  28.728      3 -6.201  12.946     DAGITIM  15.971  54.124  16.883
+2026-08-24  18.628        13.5   1.333        7.881     2.768   -13.837  0.000  -15.564  13.5  1.387       7.0  27.632      2 -2.312  10.335     DAGITIM  15.971  54.124  16.883
+2026-08-31  18.093         8.5   2.000        7.629     1.919   -11.000  0.617  -18.255   8.5  1.117       7.0  28.315      3 -2.872   7.167     DAGITIM  15.971  54.124  16.883
+2026-09-07  18.957        10.0   2.667        8.127     2.058    -0.584  1.240  -16.483  10.0  1.171       7.0  30.091      3  0.484   7.686       BEKLE  16.653  56.437  17.604
+2026-09-14  18.789         8.0   3.333        7.899     1.802     0.864  4.624   -1.400   8.0  0.920       7.0  33.858      3 -0.888   6.729     DAGITIM  16.653  56.437  17.604
+2026-09-21  18.635         6.5   4.000        8.105     1.461     2.998  5.610    9.966   6.5  0.890       7.0  35.527      3 -0.817   5.857     DAGITIM  16.653  56.437  17.604
+2026-09-28  18.128         4.0   4.667        8.018     0.664    -4.376  6.675   16.122   4.0  0.788       7.0  36.623      2 -2.724   2.973     DAGITIM  16.653  56.437  17.604
+2026-10-05  18.352         4.5   5.333        8.468     0.762    -2.323  6.861   14.861   4.5  0.370       7.0  37.974      2  0.352   3.336  TOPLANIYOR  16.801  56.936  17.760
+  rec-rec[1]=0.10  rs-rs[1]=0.19
+  rec-rec[2]=-0.70  rs-rs[2]=1.25
+  rec-rec[3]=-1.04  rs-rs[3]=2.24
+  rec-rec[5]=-1.16  rs-rs[5]=6.24
+
+=== DETAY AEFES D 2026-10-06  Zippo: D
+             close  percentile  memory  compression  recovery  rec_pct3     rs  rs_pct5  mtf  hacim  macro_sc  toplam  eksik   chg1  d_stop      sinyal     dip    tepe    stop
+date                                                                                                                                                                           
+2026-09-25  18.653         7.0   8.000        7.179     1.412     0.000  5.167    3.204  8.5  0.664       5.0  36.057      3  0.749   4.669       BEKLE  17.821  24.746  17.821
+2026-09-28  17.890         0.5   8.000        6.281     0.118    -4.038  4.552   -0.373  2.5  0.801       5.0  33.901      4 -4.089   0.389     DAGITIM  17.821  24.746  17.821
+2026-09-29  17.949         1.5   8.000        6.848     0.223    -3.050  5.516    3.340  3.0  0.609       5.0  35.437      4  0.332   0.723       BEKLE  17.821  24.746  17.821
+2026-09-30  17.514         0.0   8.000        6.439     0.000    -6.107  5.649    4.202  1.5  1.293       5.0  35.088      3 -2.428  -1.723     DAGITIM  17.514  24.746  17.514
+2026-10-01  17.642         0.0   8.667        6.742     0.000    -1.384  5.028    0.265  1.5  0.706       7.0  37.438      2 -0.148  -0.148       YAKIN  17.642  24.965  17.642
+2026-10-02  17.870         1.0   9.333        7.312     0.373    -0.441  5.418    0.717  2.5  0.574       7.0  39.337      2  1.291   1.291       YAKIN  17.642  24.965  17.642
+2026-10-05  18.080         3.0  10.000        7.790     0.716     3.234  5.334    2.271  3.0  0.608       7.0  40.541      2  1.174   2.480  TOPLANIYOR  17.642  24.965  17.642
+2026-10-06  18.670         6.5  10.000        7.954     1.682     5.825  6.688    3.311  6.5  1.327       7.0  42.674      1  3.263   5.825  TOPLANIYOR  17.642  24.965  17.642
+  rec-rec[1]=0.97  rs-rs[1]=1.35
+  rec-rec[2]=1.31  rs-rs[2]=1.27
+  rec-rec[3]=1.68  rs-rs[3]=1.66
+  rec-rec[5]=1.46  rs-rs[5]=1.17
+
+=== DETAY AEFES D 2026-10-06  Zippo: D HA
+             close  percentile  memory  compression  recovery  rec_pct3     rs  rs_pct5  mtf  hacim  macro_sc  toplam  eksik   chg1  d_stop   sinyal     dip    tepe    stop
+date                                                                                                                                                                        
+2026-09-25  18.588         5.5   8.000        7.890     1.371    -1.276  4.992    2.425  6.5  0.664       5.0  36.704      3 -0.372   4.555    BEKLE  17.779  25.080  17.779
+2026-09-28  18.239         2.0   8.000        7.596     0.780    -2.605  5.186    3.375  4.0  0.801       5.0  36.362      3 -1.879   2.591  DAGITIM  17.779  25.080  17.779
+2026-09-29  17.962         1.5   8.000        7.569     0.310    -3.730  5.529    2.446  4.0  0.609       5.0  36.258      3 -1.521   1.031  DAGITIM  17.779  25.080  17.779
+2026-09-30  17.734         0.0   8.000        7.347     0.000    -4.596  6.133    5.039  4.0  1.293       5.0  36.480      2 -1.268  -0.251  DAGITIM  17.734  25.080  17.734
+2026-10-01  17.709         0.0   8.667        7.614     0.000    -2.906  5.117   -0.130  4.0  0.706       7.0  38.398      2 -1.015  -1.015  DAGITIM  17.709  25.302  17.709
+2026-10-02  17.771         0.5   9.333        8.020     0.108    -1.062  5.184    0.506  4.0  0.574       7.0  39.596      2  0.350   0.350    YAKIN  17.709  25.302  17.709
+2026-10-05  18.068         2.0  10.000        8.394     0.625     1.880  5.279    0.244  4.5  0.608       7.0  41.098      2  1.667   2.023    YAKIN  17.709  25.302  17.709
+2026-10-06  18.412         5.5  10.000        8.363     1.227     3.971  6.227    1.815  4.5  1.327       7.0  42.267      1  1.910   3.971    YAKIN  17.709  25.302  17.709
+  rec-rec[1]=0.60  rs-rs[1]=0.95
+  rec-rec[2]=1.12  rs-rs[2]=1.04
+  rec-rec[3]=1.23  rs-rs[3]=1.11
+  rec-rec[5]=0.92  rs-rs[5]=0.70
