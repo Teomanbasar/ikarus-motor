@@ -1,129 +1,100 @@
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ALTIN.IS"}}}
 $ALTIN.IS: possibly delisted; no timezone found
 
-2 Failed downloads:
-['ALTNY.IS']: OperationalError('database is locked')
+1 Failed download:
 ['ALTIN.IS']: possibly delisted; no timezone found
 HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: DMLKT.IS"}}}
 $DMLKT.IS: possibly delisted; no timezone found
 
 1 Failed download:
 ['DMLKT.IS']: possibly delisted; no timezone found
-$DMLKT.IS: possibly delisted; no timezone found
 $ALTIN.IS: possibly delisted; no timezone found
+$DMLKT.IS: possibly delisted; no timezone found
 
 2 Failed downloads:
-['DMLKT.IS', 'ALTIN.IS']: possibly delisted; no timezone found
+['ALTIN.IS', 'DMLKT.IS']: possibly delisted; no timezone found
 M3 (EVDS): 2026-10 eklendi
 === ANLIK AEFES 2026-10-06 12:53  15dk bar: 13/33  Zippo: W pct6.0 mem5.3 comp7.4 rec1.5dd rs8.7uu hacim.24 top39.4 YAKIN dip16.92 tepe56.44 stop17.61
   o saatte: acilis 18.10 yuksek 18.77 dusuk 18.08 son 18.59 hacim 24377641 (gun sonu kapanis 18.68, gun hacmi 46743445)
-  (M3 = TradingView 6 Kas gecmisi)
+  (fiyat = temettu duzeltmesiz, 4300 gun)
   -- W normal rec=v46
-             close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip    tepe    stop
-date                                                                                                                                      
-2026-09-21  18.653         8.0   4.667        7.452     1.422  5.493  8.0  0.890  35.234      3  0.213       BEKLE  15.637  56.129  17.465
-2026-09-28  17.870         2.5   5.333        7.103     0.332  5.778  2.5  0.788  35.296      3 -4.195     DAGITIM  15.637  56.129  17.465
-2026-10-05  18.580         7.0   6.000        7.847     1.094  7.014  7.0  0.245  38.255      2  3.061  TOPLANIYOR  15.775  56.625  17.620
+            close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip    tepe    stop
+date                                                                                                                                     
+2026-09-21  18.83         5.5   4.667        7.441     1.160  5.493  5.5  0.890  35.210      3  0.213       BEKLE  16.767  57.907  17.823
+2026-09-28  18.04         1.5   5.333        7.092     0.061  5.778  1.5  0.788  35.115      3 -4.195     DAGITIM  16.767  57.907  17.823
+2026-10-05  18.58         3.5   6.000        7.773     0.586  6.626  3.5  0.245  37.635      2  2.091  TOPLANIYOR  16.915  58.420  17.981
   -- W normal rec=close20
-             close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip    tepe    stop
-date                                                                                                                                      
-2026-09-21  18.653         8.0   4.667        7.452     1.210  5.493  8.0  0.890  35.022      3  0.213       BEKLE  15.637  56.129  17.465
-2026-09-28  17.870         2.5   5.333        7.103     0.000  5.778  2.5  0.788  34.964      3 -4.195     DAGITIM  15.637  56.129  17.465
-2026-10-05  18.580         7.0   6.000        7.847     1.866  7.014  7.0  0.245  39.027      2  3.061  TOPLANIYOR  15.775  56.625  17.620
+            close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip    tepe    stop
+date                                                                                                                                     
+2026-09-21  18.83         5.5   4.667        7.441     1.210  5.493  5.5  0.890  35.261      3  0.213       BEKLE  16.767  57.907  17.823
+2026-09-28  18.04         1.5   5.333        7.092     0.000  5.778  1.5  0.788  35.053      3 -4.195     DAGITIM  16.767  57.907  17.823
+2026-10-05  18.58         3.5   6.000        7.773     1.406  6.626  3.5  0.245  38.456      2  2.091  TOPLANIYOR  16.915  58.420  17.981
   -- W HA rec=v46
-             close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip    tepe    stop
-date                                                                                                                                      
-2026-09-21  18.635         6.5   4.000        8.105     1.505  5.610  6.5  0.890  35.570      3 -0.817     DAGITIM  16.590  56.153  17.560
-2026-09-28  18.128         4.0   4.667        8.018     0.724  6.675  4.0  0.788  36.684      2 -2.724     DAGITIM  16.590  56.153  17.560
-2026-10-05  18.320         4.5   5.333        8.467     0.772  6.776  4.5  0.245  37.898      2  0.174  TOPLANIYOR  16.737  56.649  17.715
+             close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1   sinyal     dip    tepe    stop
+date                                                                                                                                   
+2026-09-21  18.813         5.0   4.000        8.110     1.224  5.610  5.0  0.890  35.444      3 -0.817  DAGITIM  17.789  57.932  17.920
+2026-09-28  18.300         2.5   4.667        8.024     0.432  6.675  2.5  0.788  36.547      2 -2.724  DAGITIM  17.789  57.932  17.920
+2026-10-05  18.320         2.0   5.333        8.392     0.219  6.322  2.0  0.245  37.067      2 -0.768  DAGITIM  17.946  58.445  18.078
   -- W HA rec=close20
-             close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip    tepe    stop
-date                                                                                                                                      
-2026-09-21  18.635         6.5   4.000        8.105     1.538  5.610  6.5  0.890  35.603      3 -0.817     DAGITIM  16.590  56.153  17.560
-2026-09-28  18.128         4.0   4.667        8.018     0.098  6.675  4.0  0.788  36.058      2 -2.724     DAGITIM  16.590  56.153  17.560
-2026-10-05  18.320         4.5   5.333        8.467     0.643  6.776  4.5  0.245  37.769      2  0.174  TOPLANIYOR  16.737  56.649  17.715
+             close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1   sinyal     dip    tepe    stop
+date                                                                                                                                   
+2026-09-21  18.813         5.0   4.000        8.110     1.538  5.610  5.0  0.890  35.758      3 -0.817  DAGITIM  17.789  57.932  17.920
+2026-09-28  18.300         2.5   4.667        8.024     0.098  6.675  2.5  0.788  36.214      2 -2.724  DAGITIM  17.789  57.932  17.920
+2026-10-05  18.320         2.0   5.333        8.392     0.154  6.322  2.0  0.245  37.002      2 -0.768  DAGITIM  17.946  58.445  18.078
 
 === ANLIK KCHOL 2026-10-22 12:57  15dk bar: 13/33  Zippo: W pct2.5 mem5.3 comp7.3 rec0.7dd rs9.5uu hacim.63 top39.5 DAGITIM dip191.4 tepe487.7 stop191.4
   o saatte: acilis 202.20 yuksek 203.30 dusuk 200.20 son 202.30 hacim 8148606 (gun sonu kapanis 196.40, gun hacmi 23072938)
-  (M3 = TradingView 6 Kas gecmisi)
+  (fiyat = temettu duzeltmesiz, 4311 gun)
   -- W normal rec=v46
-              close  percentile  memory  compression  recovery    rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip     tepe    stop
-date                                                                                                                                       
-2026-10-05  208.000         7.5   5.333        6.541     1.383  10.0  7.5  0.825  39.507      2 -0.301  TOPLANIYOR  191.03  487.973  191.03
-2026-10-12  204.000         4.0   5.333        6.503     0.575  10.0  4.0  0.675  39.011      2 -1.923     DAGITIM  191.03  487.973  191.03
-2026-10-19  201.991         2.0   5.333        6.642     0.169  10.0  2.0  0.634  38.944      2 -0.985     DAGITIM  191.03  487.973  191.03
+              close  percentile  memory  compression  recovery    rs  mtf  hacim  toplam  eksik   chg1      sinyal      dip     tepe     stop
+date                                                                                                                                         
+2026-10-05  208.000         1.5   7.333        6.968     0.209  10.0  1.5  0.825  41.360      2 -0.301  TOPLANIYOR  198.673  529.846  198.673
+2026-10-12  204.000         0.5   7.333        6.937     0.000  10.0  0.5  0.675  41.220      2 -1.923     DAGITIM  198.673  529.846  198.673
+2026-10-19  201.991         0.5   7.333        7.064     0.000  10.0  0.5  0.634  41.347      2 -0.985     DAGITIM  198.673  529.846  198.673
   -- W normal rec=close20
-              close  percentile  memory  compression  recovery    rs  mtf  hacim  toplam  eksik   chg1      sinyal     dip     tepe    stop
-date                                                                                                                                       
-2026-10-05  208.000         7.5   5.333        6.541     5.395  10.0  7.5  0.825  43.519      2 -0.301  TOPLANIYOR  191.03  487.973  191.03
-2026-10-12  204.000         4.0   5.333        6.503     4.342  10.0  4.0  0.675  42.779      2 -1.923     DAGITIM  191.03  487.973  191.03
-2026-10-19  201.991         2.0   5.333        6.642     3.813  10.0  2.0  0.634  42.588      2 -0.985     DAGITIM  191.03  487.973  191.03
+              close  percentile  memory  compression  recovery    rs  mtf  hacim  toplam  eksik   chg1      sinyal      dip     tepe     stop
+date                                                                                                                                         
+2026-10-05  208.000         1.5   7.333        6.968     5.395  10.0  1.5  0.825  46.546      2 -0.301  TOPLANIYOR  198.673  529.846  198.673
+2026-10-12  204.000         0.5   7.333        6.937     4.342  10.0  0.5  0.675  45.562      2 -1.923     DAGITIM  198.673  529.846  198.673
+2026-10-19  201.991         0.5   7.333        7.064     3.813  10.0  0.5  0.634  45.161      2 -0.985     DAGITIM  198.673  529.846  198.673
   -- W HA rec=v46
-              close  percentile  memory  compression  recovery     rs   mtf  hacim  toplam  eksik   chg1   sinyal      dip     tepe     stop
-date                                                                                                                                        
-2026-10-05  209.450        10.0   4.667        8.674     0.984   9.63  10.0  0.825  39.955      2 -1.756  DAGITIM  196.785  495.812  196.785
-2026-10-12  207.150         7.0   4.667        8.847     0.423  10.00   7.0  0.675  40.237      2 -1.098  DAGITIM  196.785  495.812  196.785
-2026-10-19  203.248         3.0   4.667        8.803     0.000  10.00   3.0  0.634  40.169      2 -1.884  DAGITIM  196.785  495.812  196.785
+              close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1   sinyal      dip     tepe     stop
+date                                                                                                                                       
+2026-10-05  209.450         3.0   7.333        8.917     0.784   9.63  3.0  0.825  43.364      2 -1.756  DAGITIM  204.658  538.358  204.658
+2026-10-12  207.150         1.5   7.333        9.058     0.318  10.00  1.5  0.675  43.560      2 -1.098  DAGITIM  204.658  538.358  204.658
+2026-10-19  203.248         0.0   7.333        9.022     0.000  10.00  0.0  0.634  43.355      2 -1.884  DAGITIM  203.248  538.358  203.248
   -- W HA rec=close20
-              close  percentile  memory  compression  recovery     rs   mtf  hacim  toplam  eksik   chg1   sinyal      dip     tepe     stop
-date                                                                                                                                        
-2026-10-05  209.450        10.0   4.667        8.674     6.431   9.63  10.0  0.825  45.401      1 -1.756  DAGITIM  196.785  495.812  196.785
-2026-10-12  207.150         7.0   4.667        8.847     5.792  10.00   7.0  0.675  45.605      2 -1.098  DAGITIM  196.785  495.812  196.785
-2026-10-19  203.248         3.0   4.667        8.803     4.708  10.00   3.0  0.634  44.877      2 -1.884  DAGITIM  196.785  495.812  196.785
+              close  percentile  memory  compression  recovery     rs  mtf  hacim  toplam  eksik   chg1   sinyal      dip     tepe     stop
+date                                                                                                                                       
+2026-10-05  209.450         3.0   7.333        8.917     6.431   9.63  3.0  0.825  49.011      1 -1.756  DAGITIM  204.658  538.358  204.658
+2026-10-12  207.150         1.5   7.333        9.058     5.792  10.00  1.5  0.675  49.033      2 -1.098  DAGITIM  204.658  538.358  204.658
+2026-10-19  203.248         0.0   7.333        9.022     4.708  10.00  0.0  0.634  48.063      2 -1.884  DAGITIM  203.248  538.358  203.248
 
 === ANLIK CCOLA 2026-10-22 12:57  15dk bar: 13/33  Zippo: W pct30.5 mem0 comp6.0 rec2.9u rs9.8uu hacim.67 top32.7 DAGITIM dip55.98 tepe157.0 stop59.99
   o saatte: acilis 75.55 yuksek 76.60 dusuk 74.15 son 74.85 hacim 1674165 (gun sonu kapanis 74.20, gun hacmi 6033668)
-  (M3 = TradingView 6 Kas gecmisi)
+  (fiyat = temettu duzeltmesiz, 4312 gun)
   -- W normal rec=v46
-            close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip     tepe    stop
-date                                                                                                                                     
-2026-10-05  83.75        47.5     0.0        7.969     5.762  10.000  47.5  0.911  35.982      4  4.884    BEKLE  53.177  157.781  59.875
-2026-10-12  76.85        32.5     0.0        6.502     3.846   8.218  32.5  0.868  32.317      3 -8.239  DAGITIM  53.177  157.781  59.875
-2026-10-19  74.85        30.0     0.0        6.477     3.291   8.971  30.0  0.658  32.738      3 -2.602  DAGITIM  53.177  157.781  59.875
+            close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1      sinyal     dip      tepe   stop
+date                                                                                                                                        
+2026-10-05  83.75        27.5   0.667        9.916     5.660  10.000  27.5  0.911  40.493      2  4.884  TOPLANIYOR  60.957  1793.885  61.02
+2026-10-12  76.85        18.0   1.333        9.855     3.695   8.218  18.0  0.868  38.302      2 -8.239     DAGITIM  60.957  1793.885  61.02
+2026-10-19  74.85        15.0   2.000        9.854     3.125   8.971  15.0  0.658  39.450      2 -2.602     DAGITIM  60.957  1793.885  61.02
   -- W normal rec=close20
-            close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip     tepe    stop
-date                                                                                                                                     
-2026-10-05  83.75        47.5     0.0        7.969     4.519  10.000  47.5  0.911  34.738      4  4.884    BEKLE  53.177  157.781  59.875
-2026-10-12  76.85        32.5     0.0        6.502     0.000   8.218  32.5  0.868  28.470      3 -8.239  DAGITIM  53.177  157.781  59.875
-2026-10-19  74.85        30.0     0.0        6.477     0.000   8.971  30.0  0.658  29.447      3 -2.602  DAGITIM  53.177  157.781  59.875
+            close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1      sinyal     dip      tepe   stop
+date                                                                                                                                        
+2026-10-05  83.75        27.5   0.667        9.916     4.519  10.000  27.5  0.911  39.351      2  4.884  TOPLANIYOR  60.957  1793.885  61.02
+2026-10-12  76.85        18.0   1.333        9.855     0.000   8.218  18.0  0.868  34.607      3 -8.239     DAGITIM  60.957  1793.885  61.02
+2026-10-19  74.85        15.0   2.000        9.854     0.000   8.971  15.0  0.658  36.325      2 -2.602     DAGITIM  60.957  1793.885  61.02
   -- W HA rec=v46
-             close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip     tepe    stop
-date                                                                                                                                      
-2026-10-05  81.587        45.0     0.0        8.463     5.080   9.183  45.0  0.911  35.225      4  3.467    BEKLE  57.456  155.899  60.111
-2026-10-12  80.337        41.0     0.0        8.103     4.724  10.000  41.0  0.868  35.727      4 -1.532    BEKLE  57.456  155.899  60.111
-2026-10-19  75.787        32.0     0.0        7.477     3.429   9.321  32.0  0.658  34.026      3 -5.664  DAGITIM  57.456  155.899  60.111
+             close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1      sinyal     dip      tepe    stop
+date                                                                                                                                          
+2026-10-05  81.587        23.5   2.000        9.949     4.955   9.183  23.5  0.911  40.737      2  3.467  TOPLANIYOR  61.261  1772.481  61.261
+2026-10-12  80.337        22.0   2.000        9.938     4.590  10.000  22.0  0.868  41.328      2 -1.532     DAGITIM  61.261  1772.481  61.261
+2026-10-19  75.787        16.5   2.667        9.919     3.261   9.321  16.5  0.658  40.517      2 -5.664     DAGITIM  61.261  1772.481  61.261
   -- W HA rec=close20
-             close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip     tepe    stop
-date                                                                                                                                      
-2026-10-05  81.587        45.0     0.0        8.463      2.83   9.183  45.0  0.911  32.976      4  3.467    BEKLE  57.456  155.899  60.111
-2026-10-12  80.337        41.0     0.0        8.103      1.88  10.000  41.0  0.868  32.884      4 -1.532    BEKLE  57.456  155.899  60.111
-2026-10-19  75.787        32.0     0.0        7.477      0.00   9.321  32.0  0.658  30.598      3 -5.664  DAGITIM  57.456  155.899  60.111
-
-=== ANLIK SARKY 2026-10-13 12:00  15dk bar: 9/33  Zippo: saat bilinmiyor; W pct19.5 dip15.03 tepe54.99 stop18.26
-  o saatte: acilis 19.02 yuksek 19.21 dusuk 18.92 son 19.17 hacim 1083033 (gun sonu kapanis 18.89, gun hacmi 2038359)
-  (M3 = TradingView 6 Kas gecmisi)
-  -- W normal rec=v46
-            close  percentile  memory  compression  recovery    rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip    tepe    stop
-date                                                                                                                                  
-2026-09-28  20.80        28.0   0.000        2.261     0.595  1.16  28.0  0.377  18.216      3 -1.328  DAGITIM  14.928  54.671  18.063
-2026-10-05  19.93        27.0   0.000        1.922     0.305  0.00  27.0  0.351  16.527      3 -5.023  DAGITIM  15.060  55.155  18.223
-2026-10-12  19.19        20.0   0.667        1.940     0.101  0.00  20.0  0.174  17.708      3 -3.712  DAGITIM  15.060  55.155  18.223
-  -- W normal rec=close20
-            close  percentile  memory  compression  recovery    rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip    tepe    stop
-date                                                                                                                                  
-2026-09-28  20.80        28.0   0.000        2.261       0.0  1.16  28.0  0.377  17.621      3 -1.328  DAGITIM  14.928  54.671  18.063
-2026-10-05  19.93        27.0   0.000        1.922       0.0  0.00  27.0  0.351  16.222      3 -5.023  DAGITIM  15.060  55.155  18.223
-2026-10-12  19.19        20.0   0.667        1.940       0.0  0.00  20.0  0.174  17.607      3 -3.712  DAGITIM  15.060  55.155  18.223
-  -- W HA rec=v46
-             close  percentile  memory  compression  recovery     rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip    tepe    stop
-date                                                                                                                                    
-2026-09-28  20.727        28.5     0.0        3.252     0.650  0.199  28.5  0.377  18.251      3 -4.305  DAGITIM  14.943  52.800  17.523
-2026-10-05  20.398        27.5     0.0        3.292     0.410  0.000  27.5  0.351  17.952      3 -2.455  DAGITIM  15.075  53.266  18.758
-2026-10-12  19.598        25.5     0.0        3.120     0.156  0.000  25.5  0.174  17.725      3 -3.922  DAGITIM  15.075  53.266  18.758
-  -- W HA rec=close20
-             close  percentile  memory  compression  recovery     rs   mtf  hacim  toplam  eksik   chg1   sinyal     dip    tepe    stop
-date                                                                                                                                    
-2026-09-28  20.727        28.5     0.0        3.252       0.0  0.199  28.5  0.377  17.601      3 -4.305  DAGITIM  14.943  52.800  17.523
-2026-10-05  20.398        27.5     0.0        3.292       0.0  0.000  27.5  0.351  17.542      3 -2.455  DAGITIM  15.075  53.266  18.758
-2026-10-12  19.598        25.5     0.0        3.120       0.0  0.000  25.5  0.174  17.570      3 -3.922  DAGITIM  15.075  53.266  18.758
+             close  percentile  memory  compression  recovery      rs   mtf  hacim  toplam  eksik   chg1      sinyal     dip      tepe    stop
+date                                                                                                                                          
+2026-10-05  81.587        23.5   2.000        9.949      2.83   9.183  23.5  0.911  38.612      2  3.467  TOPLANIYOR  61.261  1772.481  61.261
+2026-10-12  80.337        22.0   2.000        9.938      1.88  10.000  22.0  0.868  38.618      2 -1.532     DAGITIM  61.261  1772.481  61.261
+2026-10-19  75.787        16.5   2.667        9.919      0.00   9.321  16.5  0.658  37.256      2 -5.664     DAGITIM  61.261  1772.481  61.261
 
