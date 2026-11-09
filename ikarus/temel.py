@@ -166,6 +166,70 @@ def _bol(a, b):
         return None
 
 
+def ceyreklik(tab, d, kod):
+    """Yalniz o ceyregin akim degeri (tablolar yil ici kumulatif)."""
+    y, m = d
+    a = tab.get(d, {}).get(kod)
+    if a is None:
+        return None
+    if m == 3:
+        return a
+    p = tab.get((y, m - 3), {}).get(kod)
+    return None if p is None else a - p
+
+
+def isaretler(tab, m3, d):
+    """Hareket isaretleri (10 Kas 2026 testinde ise yarayanlar). temel_bt2 de bunu kullanir.
+    sue_nk / sue_faal: bu ceyregin net kari / esas faaliyet kari - gecen yilin ayni ceyregi x M3 buyumesi,
+      hissenin onceki 8 ceyrekteki ayni farklarin oynakligina bolunmus (en az 4 gecmis fark).
+    satis_reel: ceyreklik satislarin M3'e gore yillik buyumesi. roe_ivme: son 4 ceyrek ROE'sinin bir ceyrekte degisimi."""
+    out = {}
+    fark = {"3Z": [], "3DF": []}
+    for dd in sorted(k for k in tab if k <= d):
+        d1 = (dd[0] - 1, dd[1])
+        m3y = _m3_oran(m3, dd, d1)
+        for kod, ad in (("3Z", "sue_nk"), ("3DF", "sue_faal")):
+            q, q1 = ceyreklik(tab, dd, kod), ceyreklik(tab, d1, kod)
+            if q is None or q1 is None or not m3y:
+                continue
+            f = q - q1 * m3y
+            if dd == d:
+                ger = fark[kod][-8:]
+                if len(ger) >= 4:
+                    import numpy as np
+                    sd = float(np.std(ger))
+                    oz = tab.get(dd, {}).get("2O") or 0
+                    taban = 0.005 * abs(oz) if oz else 0
+                    if sd + taban > 0:
+                        out[ad] = f / (sd + taban)
+            fark[kod].append(f)
+    y, m = d
+    d1 = (y - 1, m)
+    dq = (y, m - 3) if m > 3 else (y - 1, 12)
+    m3y = _m3_oran(m3, d, d1)
+
+    def roe(dd):
+        nk = _ttm(tab, dd, "3Z")
+        oz = tab.get(_bilanco_donemi(tab, dd), {}).get("2O")
+        return None if nk is None or not oz or oz <= 0 else nk / oz
+    r0, rq, ry = roe(d), roe(dq), roe(d1)
+    if r0 is not None and rq is not None:
+        out["roe_ivme"] = r0 - rq
+    if r0 is not None and ry is not None:
+        out["roe_deg"] = r0 - ry
+    sq, sq1 = ceyreklik(tab, d, "3C"), ceyreklik(tab, d1, "3C")
+    if sq and sq1 and sq1 > 0 and m3y:
+        out["satis_reel"] = sq / sq1 / m3y - 1
+    nk0, nkq = _ttm(tab, d, "3Z"), _ttm(tab, dq, "3Z")
+    if nk0 is not None and nkq is not None:
+        out["kara_donus"] = int(nk0 > 0 and nkq <= 0)
+    c0, cq = _ttm(tab, d, "4C"), _ttm(tab, dq, "4C")
+    if c0 is not None and cq is not None:
+        out["nakit_donus"] = int(c0 > 0 and cq <= 0)
+    out["nk_ttm"] = nk0
+    return out
+
+
 def skor(grup, tab, m3, d=None):
     if not tab:
         return None
@@ -253,6 +317,10 @@ def skor(grup, tab, m3, d=None):
                           "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c_akim or nk1 <= 0 else (nk / nk1) / m3c_akim - 1,
                           "serbest_nakit": T("4CB")}
     out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA")}
+    try:
+        out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d).items() if k != "nk_ttm"}
+    except Exception:
+        out["isaretler"] = {}
     gec = [x["gecti"] for x in out["maddeler"]]
     out["puan"] = sum(1 for x in gec if x)
     out["olculen"] = sum(1 for x in gec if x is not None)

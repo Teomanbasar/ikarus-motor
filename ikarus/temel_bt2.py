@@ -70,7 +70,6 @@ def olaylar(G, m3):
             s = tab[d].get("2OA")
             if s and s > 0:
                 sermaye_son = s; break
-        fark_gecmis = {"3Z": [], "3DF": []}
         for d in donem:
             alt = {k: v for k, v in tab.items() if k <= d}
             try:
@@ -82,44 +81,8 @@ def olaylar(G, m3):
                 o = s.get("oranlar", {})
                 row.update({"F": s["puan"], "roe": o.get("roe"), "oz_reel1": o.get("ozkaynak_reel_buyume"),
                             "nk_reel": o.get("net_kar_reel_buyume")})
-            d1, dq = (d[0] - 1, d[1]), onceki(d)
-            m3y = T._m3_oran(m3, d, d1)
-            # kar surprizi: bu ceyrek - (gecen yilin ayni ceyregi x M3 buyumesi), kendi gecmis oynakligina bolunmus
-            for kod, ad in (("3Z", "sue_nk"), ("3DF", "sue_faal")):
-                q, q1 = ceyreklik(tab, d, kod), ceyreklik(tab, d1, kod)
-                if q is None or q1 is None or not m3y:
-                    continue
-                fark = q - q1 * m3y
-                ger = fark_gecmis[kod][-8:]
-                if len(ger) >= 4:
-                    sd = float(np.std(ger))
-                    oz = (tab.get(d, {}).get("2O") or 0)
-                    taban = 0.005 * abs(oz) if oz else 0  # cok sakin kar serilerinde patlamayi onle
-                    if sd + taban > 0:
-                        row[ad] = fark / (sd + taban)
-                fark_gecmis[kod].append(fark)
-            # ROE ivmesi (bir ceyrekte) ve yillik ROE degisimi
-            def roe(dd):
-                nk = T._ttm(tab, dd, "3Z"); oz = T._bilanco_donemi(tab, dd)
-                oz = tab.get(oz, {}).get("2O")
-                return None if nk is None or not oz or oz <= 0 else nk / oz
-            r0, rq, ry = roe(d), roe(dq), roe(d1)
-            if r0 is not None and rq is not None:
-                row["roe_ivme"] = r0 - rq
-            if r0 is not None and ry is not None:
-                row["roe_deg"] = r0 - ry
-            # satis reel buyume (ceyreklik, yillik)
-            sq, sq1 = ceyreklik(tab, d, "3C"), ceyreklik(tab, d1, "3C")
-            if sq and sq1 and sq1 > 0 and m3y:
-                row["satis_reel"] = sq / sq1 / m3y - 1
-            # donusler
-            nk0, nkq = T._ttm(tab, d, "3Z"), T._ttm(tab, dq, "3Z")
-            if nk0 is not None and nkq is not None:
-                row["kara_donus"] = int(nk0 > 0 and nkq <= 0)
-            c0, cq = T._ttm(tab, d, "4C"), T._ttm(tab, dq, "4C")
-            if c0 is not None and cq is not None:
-                row["nakit_donus"] = int(c0 > 0 and cq <= 0)
-            row["nk_ttm"] = nk0
+            d1 = (d[0] - 1, d[1])
+            row.update(T.isaretler(tab, m3, d))
             # ozkaynak 3 yillik reel buyume (yillik ortalama)
             d3 = (d[0] - 3, d[1])
             oz0 = tab.get(T._bilanco_donemi(tab, d), {}).get("2O")
