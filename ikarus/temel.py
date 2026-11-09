@@ -353,6 +353,9 @@ if __name__ == "__main__":
         gecmis()
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "bt2":
+        from . import temel_bt2
+        temel_bt2.main()
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
