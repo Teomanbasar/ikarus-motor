@@ -1,1 +1,9 @@
-[{"m3_gecmis": 1}]
+[{"alarm_test": [
+ ["PNSUT","2026-10-09","D","YAKIN",10.52],["RUBNS","2026-10-09","D","YAKIN",16.43],["KIMMR","2026-10-09","D","YAKIN",11.07],
+ ["BTCIM","2026-10-09","D","YAKIN",2.08],["GATEG","2026-10-09","D","YAKIN",151.5],["BFREN","2026-10-09","D","YAKIN",107.9],
+ ["IDGYO","2026-10-12","D","ALINABILIR",null],["ERCB","2026-10-12","D","ALINABILIR",null],["SKYLP","2026-10-12","D","ALINABILIR",null],["AFYON","2026-10-12","D","ALINABILIR",null],
+ ["HKTM","2026-10-12","D","YAKIN",null],["ATEKS","2026-10-12","D","YAKIN",null],["OTKAR","2026-10-12","D","YAKIN",null],["VKING","2026-10-12","D","YAKIN",null],["LRSHO","2026-10-12","D","YAKIN",null],["KLRHO","2026-10-12","D","YAKIN",null],
+ ["BRKO","2026-10-13","D","YAKIN",7.10],["SEKUR","2026-10-13","D","YAKIN",4.90],["BMSCH","2026-10-13","D","YAKIN",9.10],["ALARK","2026-10-13","D","YAKIN",108.4],["MRGYO","2026-10-13","D","YAKIN",1.45],["TUREX","2026-10-13","D","YAKIN",5.85],["SILVR","2026-10-13","D","YAKIN",1.65],
+ ["MERCN","2026-10-23","W","YAKIN",null],["SONME","2026-10-23","W","YAKIN",null],["LIDFA","2026-10-23","W","YAKIN",null],
+ ["TURGG","2026-10-19","D","ALINABILIR",null],["LINK","2026-10-19","D","YAKIN",2.98],["MEGAP","2026-10-19","D","YAKIN",0.96],["SNGYO","2026-10-19","D","YAKIN",2.39],["VKGYO","2026-10-19","D","YAKIN",1.49]
+]}]

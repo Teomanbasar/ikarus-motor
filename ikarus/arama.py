@@ -32,6 +32,27 @@ def main():
             xu.round(2).to_csv(vd / "XU100.csv")
             out.append(f"veri yazildi: {len(q['veri'])} hisse")
             continue
+        if "alarm_test" in q:  # Zippo alarm listesi: [[hisse, tarih, tf, beklenen], ...] -> o bar ve onceki bar sinyali
+            out.append("=== ALARM TESTI (hisse tf tarih | Zippo | bizim onceki -> o gun | eksik sart, toplam, kapanis/alarm fiyati)")
+            tut = 0; top = 0
+            for t, tarih, tf, bek, fy in q["alarm_test"]:
+                if t not in px:
+                    out.append(f"{t} {tf} {tarih} | {bek} | VERI YOK"); continue
+                day = pd.Timestamp(tarih)
+                d = px[t][px[t].index <= day]
+                try:
+                    r = E.compute(d, xu, m3, tf=tf)
+                except Exception as e:
+                    out.append(f"{t} {tf} {tarih} | {bek} | hata {e}"); continue
+                if len(r) < 2:
+                    continue
+                a, b = r.iloc[-2], r.iloc[-1]
+                gecis = b["sinyal"] == bek and a["sinyal"] != bek
+                top += 1; tut += int(gecis)
+                eks = ",".join(k for k, ok in (("Pct", b["c1"]), ("Rec", b["c2"]), ("Top", b["c3"]), ("MTF", b["c4"]), ("Hacim", b["c5"]), ("Makro", b["c6"])) if not ok)
+                out.append(f"{t} {tf} {tarih} | {bek} | {a['sinyal']} -> {b['sinyal']} {'OK' if gecis else 'XX'} | eksik[{eks}] pct {b['percentile']:.1f} rec {b['recovery']:.2f} top {b['toplam']:.2f} mtf {b['mtf']:.1f} hacim {b['hacim']:.2f} | {b['close']:.2f}/{fy} ({str(r.index[-1].date())})")
+            out.append(f"TUTAN GECIS: {tut}/{top}")
+            continue
         if "m3_gecmis" in q:  # EVDS (TCMB) haftalik M3 tum gecmis -> arama/m3_evds_haftalik.csv
             import requests
             key = D.ayar("evds_key")
