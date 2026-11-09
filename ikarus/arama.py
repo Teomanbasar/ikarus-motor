@@ -189,6 +189,37 @@ def main():
                 px[t].round(4).to_csv(vd / f"{t}.csv")
             out.append("")
             continue
+        if "anlik" in q:  # gun ici tablo: o saate kadarki 15dk barlarla son gunu kes, sonra hesapla
+            import yfinance as yf
+            t, day = q["anlik"], pd.Timestamp(q["tarih"])
+            hh, mm_ = (int(x) for x in q["saat"].split(":"))
+            try:
+                ib = yf.download(t + ".IS", start=day.strftime("%Y-%m-%d"), end=(day + pd.Timedelta(days=1)).strftime("%Y-%m-%d"),
+                                 interval="15m", auto_adjust=False, progress=False)
+                ib.columns = [c[0] if isinstance(c, tuple) else c for c in ib.columns]
+                ib.index = ib.index.tz_convert("Europe/Istanbul")
+                kes = ib[ib.index < ib.index[0].normalize() + pd.Timedelta(hours=hh, minutes=mm_)]
+                out.append(f"=== ANLIK {t} {q['tarih']} {q['saat']}  15dk bar: {len(kes)}/{len(ib)}  Zippo: {q.get('zippo', '')}")
+                o, h, l, cl, vv = float(kes["Open"].iloc[0]), float(kes["High"].max()), float(kes["Low"].min()), float(kes["Close"].iloc[-1]), float(kes["Volume"].sum())
+                out.append(f"  o saatte: acilis {o:.2f} yuksek {h:.2f} dusuk {l:.2f} son {cl:.2f} hacim {vv:.0f} (gun sonu kapanis {float(ib['Close'].iloc[-1]):.2f}, gun hacmi {float(ib['Volume'].sum()):.0f})")
+            except Exception as e:
+                out.append(f"=== ANLIK {t} hata {e}")
+                continue
+            d = px[t][px[t].index <= day].copy()
+            if d.index[-1] == day:
+                oran = cl / float(d["close"].iloc[-1])  # temettu duzeltme oranini koru
+                d.loc[day, ["open", "high", "low", "close"]] = [o * oran, h * oran, l * oran, cl * oran]
+                if "volume" in d.columns:
+                    d.loc[day, "volume"] = vv
+            k = ["close", "percentile", "memory", "compression", "recovery", "rs", "mtf", "hacim", "toplam", "eksik", "chg1", "sinyal", "dip", "tepe", "stop"]
+            for tf in q.get("tf", ["W", "D"]):
+                for ha in (False, True):
+                    for rm in (None, "close20"):
+                        r = E.compute(d, xu[xu.index <= day], m3, tf, ha=ha, rec_mod=rm)
+                        out.append(f"  -- {tf} {'HA' if ha else 'normal'} rec={rm or 'v46'}")
+                        out.append(r[k].tail(3).round(3).to_string())
+            out.append("")
+            continue
         if "hisse" in q:  # detay: bilinen hissenin o tarihteki tablosu ve ara degerler
             t, tf, day = q["hisse"], q.get("tf", "D"), pd.Timestamp(q["tarih"])
             d = px[t][px[t].index <= day]

@@ -1,9 +1,5 @@
 [
- {"ad": "6Eki_V63", "tarih": "2026-10-06", "dip": 16.92, "tepe": 56.44, "pct": 6.0},
- {"ad": "6Eki_V63_5Eki", "tarih": "2026-10-05", "dip": 16.92, "tepe": 56.44, "pct": 6.0},
- {"aralik": 1, "tarih": "2026-10-06", "dip": 16.92, "tepe": 56.44},
- {"hisse": "AEFES", "tf": "W", "tarih": "2026-10-06", "zippo": "pct6.0 rec1.5 dip16.92 tepe56.44 stop17.61 YAKIN"},
- {"hisse": "AEFES", "tf": "W", "tarih": "2026-10-06", "ha": true, "zippo": "HA"},
- {"hisse": "AEFES", "tf": "D", "tarih": "2026-10-06", "zippo": "D"},
- {"hisse": "AEFES", "tf": "D", "tarih": "2026-10-06", "ha": true, "zippo": "D HA"}
+ {"anlik": "AEFES", "tarih": "2026-10-06", "saat": "12:53", "tf": ["W"], "zippo": "W pct6.0 mem5.3 comp7.4 rec1.5dd rs8.7uu hacim.24 top39.4 YAKIN dip16.92 tepe56.44 stop17.61"},
+ {"anlik": "KCHOL", "tarih": "2026-10-22", "saat": "12:57", "tf": ["W"], "zippo": "W pct2.5 mem5.3 comp7.3 rec0.7dd rs9.5uu hacim.63 top39.5 DAGITIM dip191.4 tepe487.7 stop191.4"},
+ {"anlik": "CCOLA", "tarih": "2026-10-22", "saat": "12:57", "tf": ["W"], "zippo": "W pct30.5 mem0 comp6.0 rec2.9u rs9.8uu hacim.67 top32.7 DAGITIM dip55.98 tepe157.0 stop59.99"}
 ]
