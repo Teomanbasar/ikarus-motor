@@ -171,11 +171,17 @@ def _nad_ekle(stocks, px):
     except Exception as e:
         print("[uyari] nad:", e); return
     by = {s["t"]: s for s in stocks}
+    px = dict(px)
+    try:
+        px["USDTRY"] = N.usdtry()
+    except Exception as e:
+        print("[uyari] USDTRY:", e)
+    ser = N.sermayeler()
     for h, c in cfg.items():
         if h.startswith("_") or h not in px or h not in by:
             continue
         try:
-            S, eksik = N.seri(h, c, px)
+            S, eksik = N.seri(h, c, px, ser)
             S = S[S.index >= "2021-01-01"].dropna()
             isk = float(S["iskonto"].iloc[-1])
             p3 = S[S.index >= S.index[-1] - pd.DateOffset(years=3)]["iskonto"]

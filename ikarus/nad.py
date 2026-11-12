@@ -20,7 +20,9 @@ from . import data as D
 R = D.ROOT / "temel"
 
 
-def seri(h, cfg, px):
+def seri(h, cfg, px, sermaye=None):
+    """Iki bicim: 'halka_acik' (referans katkilar, mn TL) ya da 'paylar' + 'kalibre_nad_mn'.
+    px["USDTRY"] varsa ve cfg["usd"] ise borsada olmayan kisim dolar kuruyla tasinir."""
     ph = px[h]["close"]
     ref = pd.Timestamp(cfg["ref_tarih"])
     def oran(s):
@@ -28,28 +30,68 @@ def seri(h, cfg, px):
         r = s[s.index <= ref]
         return s / float(r.iloc[-1]) if len(r) else None
     idx = ph.index
-    nad = pd.Series(float(sum(cfg["sabit"].values())), index=idx)
     eksik = []
-    for t, k in cfg["halka_acik"].items():
-        if t not in px:
-            eksik.append(t); nad += k; continue   # fiyat yoksa referans degerde sabit tut
-        o = oran(px[t]["close"])
-        nad += k * o.reindex(idx).ffill().fillna(1.0)
+    if "paylar" in cfg:
+        sermaye = sermaye or {}
+        lis = pd.Series(0.0, index=idx)
+        lis_ref = 0.0
+        for t, w in cfg["paylar"].items():
+            if t not in px or not sermaye.get(t):
+                eksik.append(t); continue
+            c = px[t]["close"].sort_index()
+            r = c[c.index <= ref]
+            lis += w * c.reindex(idx).ffill() * sermaye[t] / 1e6
+            lis_ref += w * float(r.iloc[-1]) * sermaye[t] / 1e6
+        sabit = cfg["kalibre_nad_mn"] - lis_ref
+        if cfg.get("usd") and "USDTRY" in px:
+            sabit = sabit * oran(px["USDTRY"]["close"]).reindex(idx).ffill()
+        elif cfg.get("usd"):
+            eksik.append("USDTRY")
+        nad = lis + sabit
+    else:
+        nad = pd.Series(float(sum(cfg["sabit"].values())), index=idx)
+        for t, k in cfg["halka_acik"].items():
+            if t not in px:
+                eksik.append(t); nad += k; continue   # fiyat yoksa referans degerde sabit tut
+            o = oran(px[t]["close"])
+            nad += k * o.reindex(idx).ffill().fillna(1.0)
     mcap = cfg["piyasa_degeri_ref"] * oran(ph)
     return pd.DataFrame({"nad": nad, "pd": mcap, "iskonto": mcap / nad - 1}), eksik
+
+
+def usdtry():
+    """Dolar/TL gunluk kapanis (Yahoo TRY=X)."""
+    import yfinance as yf
+    u = yf.download("TRY=X", start="2020-01-01", auto_adjust=True, progress=False)
+    u.columns = [c[0].lower() if isinstance(c, tuple) else c.lower() for c in u.columns]
+    u.index = pd.to_datetime(u.index).tz_localize(None)
+    return u[["close"]].dropna()
+
+
+def sermayeler():
+    try:
+        T = json.loads((R / "temel.json").read_text(encoding="utf-8"))["hisseler"]
+        return {t: (v.get("ham") or {}).get("sermaye") for t, v in T.items()}
+    except Exception:
+        return {}
 
 
 def main():
     cfg = json.loads((D.DATA / "nad.json").read_text(encoding="utf-8"))
     hs = [h for h in cfg if not h.startswith("_")]
-    tick = sorted(set(hs) | {t for h in hs for t in cfg[h]["halka_acik"]})
+    tick = sorted(set(hs) | {t for h in hs for t in list(cfg[h].get("halka_acik", {})) + list(cfg[h].get("paylar", {}))})
     px = D.prices(tick)
+    try:
+        px["USDTRY"] = usdtry()
+    except Exception as e:
+        print("[uyari] USDTRY:", e)
+    ser = sermayeler()
     xu = D.xu100()
     ozet, L, tum = {}, [], []
     for h in hs:
         if h not in px:
             L.append(f"{h}: fiyat yok"); continue
-        S, eksik = seri(h, cfg[h], px)
+        S, eksik = seri(h, cfg[h], px, ser)
         S = S[S.index >= "2021-01-01"].dropna()
         son = S.iloc[-1]
         p3 = S[S.index >= S.index[-1] - pd.DateOffset(years=3)]["iskonto"]
