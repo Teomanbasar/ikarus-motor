@@ -168,6 +168,40 @@ def _fiyat_ivme(stocks, px, xu):
                            "tavan10": int((g >= 0.095).sum()), "taban10": int((g <= -0.095).sum())}
 
 
+def _bakim(m3, xu, stocks):
+    """Eskiyen veri ve ayar kontrolu. Uygulama bunlari 'Bakim gerekiyor' notu olarak gosterir."""
+    U = []
+    bugun = pd.Timestamp.now().normalize()
+    try:
+        cfg = json.loads((D.DATA / "nad.json").read_text(encoding="utf-8"))
+        for h, c in cfg.items():
+            if h.startswith("_"):
+                continue
+            yas = (bugun - pd.Timestamp(c["ref_tarih"])).days
+            if yas > 120:
+                U.append(f"NAD {h}: istirak paylari/kalibrasyon {yas} gun once ({c['ref_tarih']}); yeni NAD tablosuyla guncellenmeli.")
+    except Exception as e:
+        U.append(f"NAD ayar dosyasi okunamadi: {e}")
+    son_ay = m3.index.max()
+    if (bugun - son_ay).days > 75:
+        U.append(f"M3: son ay {son_ay:%Y-%m}; EVDS'ten yeni deger gelmiyor olabilir (evds_key?).")
+    if (bugun - xu.index[-1]).days > 5:
+        U.append(f"Fiyat verisi eski: son BIST100 gunu {xu.index[-1]:%Y-%m-%d}.")
+    try:
+        T = json.loads((D.ROOT / "temel" / "temel.json").read_text(encoding="utf-8"))
+        yas = (bugun - pd.Timestamp(T.get("olusturma", "2000-01-01")[:10])).days
+        if yas > 10:
+            U.append(f"Temel veri {yas} gun once guncellendi; haftalik is calismiyor olabilir.")
+    except Exception:
+        U.append("Temel veri dosyasi okunamadi.")
+    n_t = sum(1 for s in stocks if s.get("temel"))
+    if len(stocks) < 450:
+        U.append(f"Taramada yalniz {len(stocks)} hisse var (normalde ~600).")
+    if n_t < 0.8 * max(len(stocks), 1):
+        U.append(f"Temel verisi olan hisse az: {n_t}/{len(stocks)}.")
+    return {"uyarilar": U, "kontrol": bugun.strftime("%Y-%m-%d")}
+
+
 def _nad_ekle(stocks, px):
     """Holdinglerin NAD iskontosu (data/nad.json bilesimi, gunluk fiyatla)."""
     try:
@@ -268,6 +302,7 @@ def run(tickers: list[str] | None = None) -> dict:
                 "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
     result = {
+        "bakim": _bakim(m3, xu, stocks),
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "surum": "IKARUS QUANT v4.6 aday (Python)",
         "piyasa": piyasa,
