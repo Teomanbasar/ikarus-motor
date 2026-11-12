@@ -99,6 +99,7 @@ def main():
         try:
             r46 = E.compute(df, xu, m3, "D")
             rfz = E.compute(df, xu, m3, "D", sig_mod="faz")
+            rha = E.compute(df, xu, m3, "D", ha=True, sig_mod="faz")
         except Exception:
             continue
         idx = r46.index
@@ -120,9 +121,21 @@ def main():
         o5 = (100 * (cs / cs.shift(5) - 1)).values
         o20x = (100 * (cs / cs.shift(20) - 1) - 100 * (pd.Series(x) / pd.Series(x).shift(20) - 1)).values
         temel_ok = guncel & (v3r >= 0.8) & ~kotu
-        firsat = temel_ok & (pct <= 20) & (o20x <= 10) & (o5 <= 15) & (vol > 5e6)
+        o20 = (100 * (cs / cs.shift(20) - 1)).values
+        gun = cs.pct_change()
+        taban10 = (gun <= -0.095).rolling(10).sum().fillna(0).values
         tarih_ok = idx >= pd.Timestamp("2020-09-01")
-        firsat &= tarih_ok
+        kacmamis = (o20x <= 10) & (o5 <= 15)
+        cokus_ok = (o20 >= -25) & (taban10 < 2)                       # canlidaki filtre (12 Kas)
+        cokus_rel = (o20x >= -25) & ~((taban10 >= 4) & (o20x < -15))   # oneri: endekse gore
+        baz = temel_ok & (pct <= 20) & kacmamis & (vol > 5e6) & tarih_ok
+        firsat = baz & cokus_ok
+        firsat_rel = baz & cokus_rel
+        firsat_yok = baz
+        pct_ha = rha["percentile"].reindex(idx).values
+        sha = rha["sinyal"].reindex(idx).values
+        firsat_ha = temel_ok & (pct_ha <= 20) & kacmamis & (vol > 5e6) & tarih_ok & cokus_rel
+        ha_al = np.isin(sha, AL)
         fz_al = np.isin(sfz, AL)
         v46_al = np.isin(s46, AL)
         bozuldu = lambda i: (not guncel[i]) or v3r[i] < 0.6 or kotu[i]
@@ -138,6 +151,13 @@ def main():
             "E Firsat + faz alim, faz cikisi": (firsat & fz_al, lambda i, j0: sfz[i] if sfz[i] in ("DAGITIM", "BEKLE") else None, 126),
             "F Firsat + faz alim, temel bozulunca/126": (firsat & fz_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
             "G Firsat, gunluk v46 DAGITIM/BEKLE cikisi": (firsat, lambda i, j0: s46[i] if s46[i] in ("DAGITIM", "BEKLE") else None, 126),
+            "F-rel Firsat(cokus endekse gore) + faz alim, temel/126": (firsat_rel & fz_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "F-yok Firsat(cokus filtresiz) + faz alim, temel/126": (firsat_yok & fz_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "B-rel Firsat(cokus endekse gore), temel/126": (firsat_rel, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "HA1 Firsat(HA pct) + HA faz alim, temel/126": (firsat_ha & ha_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "HA2 Firsat(normal) + HA faz alim, temel/126": (firsat_rel & ha_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "HA3 Firsat(normal) + HA faz alim + normal faz alim, temel/126": (firsat_rel & ha_al & fz_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "HA4 Firsat(normal) + HA faz alim, HA DAGITIM cikisi": (firsat_rel & ha_al, lambda i, j0: "DAGITIM" if sha[i] == "DAGITIM" else None, 126),
             "H Temelsiz: faz alim, faz cikisi": (fz_al & tarih_ok & (vol > 5e6), lambda i, j0: sfz[i] if sfz[i] in ("DAGITIM", "BEKLE") else None, 126),
             "I Temelsiz: Percentile<=20 + fiyat kacmamis, 63 gun": ((pct <= 20) & (o20x <= 10) & (o5 <= 15) & tarih_ok & (vol > 5e6), lambda i, j0: None, 63),
             "J Temel ust %20 (ucuzluk sartsiz), 63 gun": (temel_ok & tarih_ok & (vol > 5e6) & (o20x <= 10) & (o5 <= 15), lambda i, j0: None, 63),
@@ -150,6 +170,9 @@ def main():
          "Sinyalin ertesi kapanisinda al, cikis sinyalinin ertesi kapanisinda sat; %0.3 maliyet dusuldu; fazla = BIST100'e gore.",
          "kirpik = en iyi/kotu %5 atilmis ortalama. 'gunluk' = islem basina fazla getiri / sure (islem gunu), yaklasik hiz.\n"]
     tum = []
+    XU20 = (100 * (xu / xu.shift(20) - 1))
+    kriz = XU20[XU20 <= -10]
+    L.append("Kriz gunleri (BIST100 20 gunde -%10+): " + ", ".join(f"{p}: {n} gun" for p, n in kriz.groupby(kriz.index.to_period("M")).size().items()) + "\n")
     for ad, I in ISL.items():
         T = pd.DataFrame(I, columns=["t", "giris", "gun", "getiri", "fazla", "cikis"])
         T["varyant"] = ad
@@ -162,6 +185,10 @@ def main():
                  f"| kazanan %{100 * (T.fazla > 0).mean():4.1f} | ham getiri medyan {T.getiri.median():+6.2f} | gunluk kirpik {kp / max(T.gun.mean(), 1):+.3f}")
         yl = T.groupby(T.giris.dt.year).fazla.agg(["count", "median", lambda s: s.clip(s.quantile(.05), s.quantile(.95)).mean()])
         L.append("    yillar: " + " | ".join(f"{y}: n={int(r_['count'])} kirpik {r_.iloc[2]:+.1f} med {r_['median']:+.1f}" for y, r_ in yl.iterrows()))
+        xr20 = T.giris.map(XU20)
+        L.append("    piyasa (giris oncesi 20g BIST100): " + " | ".join(
+            f"{nm} n={len(g_)} kirpik {g_.fazla.clip(g_.fazla.quantile(.05), g_.fazla.quantile(.95)).mean():+.1f} med {g_.fazla.median():+.1f} ham med {g_.getiri.median():+.1f}"
+            for nm, g_ in [("kriz <=-10%", T[xr20 <= -10]), ("dusus -10..-3", T[(xr20 > -10) & (xr20 <= -3)]), ("normal >-3", T[xr20 > -3])] if len(g_) >= 5))
         L.append("    cikis: " + " | ".join(f"{k_} n={len(g_)} ort {g_.fazla.mean():+.1f}" for k_, g_ in T.groupby("cikis")))
     pd.concat(tum).to_csv(R / "fbt_islemler.csv.gz", index=False, compression="gzip")
     txt = "\n".join(L)
