@@ -127,6 +127,9 @@ def _temel_v3(stocks):
         hizli = (fv.get("o5") or 0) > 15 or (fv.get("o20_x") or 0) > 30
         if hizli:
             et.append("Hizli yukseldi")
+        cokus = (fv.get("o20") or 0) < -25 or (fv.get("taban10") or 0) >= 2
+        if cokus:
+            et.append("Sert dusus")
         if (k.get("puan") or 0) >= 6:
             et.append("Kaliteli bilanco")
         elif k.get("puan") is not None and k["puan"] <= 3:
@@ -134,6 +137,8 @@ def _temel_v3(stocks):
         pct = (s.get("D") or {}).get("percentile")
         if kotu:
             yorum = "Dikkat: son bilanço geçen yılın aynı çeyreğine göre belirgin kötü. Testte bu grup ucuz ve kaliteli olsa bile sonraki 3-6 ayda endeksin gerisinde kaldı."
+        elif cokus:
+            yorum = "Dikkat: fiyat son 20 günde %25'ten fazla düştü ya da üst üste taban yaptı. Bilanço eski olabilir; şirkete özel kötü bir haber (soruşturma, işlem yasağı, yakın izleme) olup olmadığına bakın. Testte 20 günde %40+ düşen hisseler sonraki 3 ayda endeksin ortalama 18 puan gerisinde kaldı."
         elif hizli:
             yorum = "Fiyat son günlerde hızlı yükseldi; bilanço büyük ölçüde fiyatlanmış olabilir. Testte 20 günde endeksten %30+ fazla yükselen güçlü bilançolu hisseler sonraki 3 ayda ortalama endeksin 8 puan gerisinde kaldı."
         elif dilim[t] == 5 and pct is not None and pct <= 20:
@@ -160,7 +165,7 @@ def _fiyat_ivme(stocks, px, xu):
         s["fiyat_ivme"] = {"o5": round(float(100 * (c.iloc[-1] / c.iloc[-6] - 1)), 2),
                            "o20": round(float(100 * (c.iloc[-1] / c.iloc[-21] - 1)), 2),
                            "o20_x": round(float(100 * (c.iloc[-1] / c.iloc[-21] - x.iloc[-1] / x.iloc[-21])), 2),
-                           "tavan10": int((g >= 0.095).sum())}
+                           "tavan10": int((g >= 0.095).sum()), "taban10": int((g <= -0.095).sum())}
 
 
 def _nad_ekle(stocks, px):
@@ -257,7 +262,8 @@ def run(tickers: list[str] | None = None) -> dict:
         temel_ucuz = [s for s in temel if v3(s).get("dilim") == 5 and g(s)["percentile"] <= 20]
         fv = lambda s: s.get("fiyat_ivme") or {}
         firsat = [s for s in temel_ucuz if "Kotu bilanco surprizi" not in v3(s).get("etiketler", [])
-                  and (fv(s).get("o20_x") or 0) <= 10 and (fv(s).get("o5") or 0) <= 15]
+                  and (fv(s).get("o20_x") or 0) <= 10 and (fv(s).get("o5") or 0) <= 15
+                  and (fv(s).get("o20") or 0) >= -25 and (fv(s).get("taban10") or 0) < 2]
         return {"sinyal": T(sinyal), "yeni": T(yeni), "ucuz": T(ucuz), "pahali": T(pahali), "stop": T(kiran),
                 "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
