@@ -1,0 +1,173 @@
+"""Firsatlar + faz motoru islem simulasyonu (12 Kas 2026, Teoman: "faz motoru yeni firsatlar mantigiyla kar ettirir mi?").
+
+Her gun, her hisse icin o gun BILINEN son bilanco (yayin varsayimi: Q4 +100, digerleri +75 gun) ile:
+  firsat = temel puan (esit agirlik) donem kesitinin en ust %20'si + kotu surpriz degil
+           + IKARUS Percentile <= 20 + son 20 gunde endekse gore <= +%10 + son 5 gunde <= +%15
+Islem: sinyal gununun ertesi kapanisinda al, cikis sinyalinin ertesi kapanisinda sat. Hisse basina ayni anda tek islem.
+Maliyet: gidis-donus %0.3 dusulur. Getiri BIST100'e gore fazla getiri (%).
+Cikti: temel/fbt_sonuc.txt, temel/fbt_islemler.csv.gz
+"""
+from __future__ import annotations
+
+import gzip
+import json
+
+import numpy as np
+import pandas as pd
+
+from . import data as D
+from . import engine as E
+from . import temel_bt2 as B
+
+R = D.ROOT / "temel"
+MALIYET = 0.3
+AL = ("ALINABILIR", "TOPLANIYOR", "YAKIN")
+
+
+def puanlar(O, px):
+    """Her bilanco olayina giris gunu fiyatiyla deger olcutleri, sonra donem kesitinde siralama."""
+    rows = []
+    for _, e in O.iterrows():
+        df = px.get(e["t"])
+        if df is None or e["tip"] != "sanayi":
+            continue
+        j = df.index.searchsorted(e["yayin"], side="right")
+        if j >= len(df) or j < 1:
+            continue
+        mcap = float(df["close"].iloc[j - 1]) * (e["sermaye_son"] or np.nan)
+        r = e.to_dict()
+        r["giris"] = df.index[j]
+        r["pddd"] = mcap / e["oz"] if e.get("oz") and e["oz"] > 0 else np.nan
+        r["kaz_get"] = e["nk_ttm"] / mcap if e.get("nk_ttm") is not None and mcap > 0 else np.nan
+        rows.append(r)
+    A = pd.DataFrame(rows)
+    g = A.groupby("donem")
+    q = {}
+    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F"]:
+        q[f] = g[f].rank(pct=True)
+    q["pddd"] = 1 - g["pddd"].rank(pct=True)
+    H4 = pd.concat([q["sue_nk"], q["sue_faal"], q["satis_reel"], q["roe_ivme"]], axis=1)
+    h = H4.mean(axis=1).where(H4.notna().sum(axis=1) >= 2)
+    k = pd.concat([q["F"], q["roe"]], axis=1).mean(axis=1)
+    d = pd.concat([q["kaz_get"], q["pddd"]], axis=1).mean(axis=1)
+    A["v3"] = (h + k + d) / 3
+    A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)
+    A["kotu"] = (q["sue_nk"] <= 0.2) & (q["sue_faal"] <= 0.2)
+    return A[["t", "donem", "giris", "v3r", "kotu"]]
+
+
+def simule(t, idx, c, x, giris_m, cikis_f, maxb=126):
+    """giris_m: bool dizi (o gun giris sinyali). cikis_f(i, j0) -> neden ya da None."""
+    out = []
+    i = 1
+    n = len(c)
+    while i < n - 1:
+        if giris_m[i] and not giris_m[i - 1]:
+            j0 = i + 1                      # ertesi kapanista al
+            k = j0 + 1
+            neden = None
+            while k < n - 1:
+                neden = cikis_f(k, j0)
+                if neden or k - j0 >= maxb:
+                    neden = neden or "sure"
+                    break
+                k += 1
+            if k >= n - 1:
+                break                         # acik islem, sayma
+            s = k + 1                         # ertesi kapanista sat
+            r = 100 * (c[s] / c[j0] - 1) - MALIYET
+            xr = 100 * (x[s] / x[j0] - 1)
+            out.append((t, idx[j0], s - j0, r, r - xr, neden))
+            i = s
+        i += 1
+    return out
+
+
+def main():
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    m3 = D.m3()
+    O = B.olaylar(G, m3)
+    px = D.prices(sorted(O["t"].unique()))
+    xu = D.xu100()
+    P = puanlar(O, px)
+    print("puanli olay", len(P))
+    ISL = {}
+    for n_, (t, df) in enumerate(sorted(px.items())):
+        ev = P[P["t"] == t].sort_values("giris")
+        if ev.empty or len(df) < 300:
+            continue
+        try:
+            r46 = E.compute(df, xu, m3, "D")
+            rfz = E.compute(df, xu, m3, "D", sig_mod="faz")
+        except Exception:
+            continue
+        idx = r46.index
+        c = r46["close"].values.astype(float)
+        x = xu.reindex(idx).ffill().values
+        pct = r46["percentile"].values
+        s46 = r46["sinyal"].values
+        sfz = rfz["sinyal"].values
+        vol = (df["close"] * df["volume"]).reindex(idx).rolling(20).mean().values
+        # o gun bilinen son bilanco
+        gv = ev["giris"].values.astype("datetime64[ns]")
+        k = np.searchsorted(gv, idx.values.astype("datetime64[ns]"), side="right") - 1
+        kk = np.clip(k, 0, None)
+        v3r = np.where(k >= 0, ev["v3r"].values[kk].astype(float), np.nan)
+        kotu = np.where(k >= 0, ev["kotu"].values[kk].astype(bool), False)
+        yas = np.where(k >= 0, (idx.values.astype("datetime64[ns]") - gv[kk]) / np.timedelta64(1, "D"), 9999)
+        guncel = yas <= 200
+        cs = pd.Series(c)
+        o5 = (100 * (cs / cs.shift(5) - 1)).values
+        o20x = (100 * (cs / cs.shift(20) - 1) - 100 * (pd.Series(x) / pd.Series(x).shift(20) - 1)).values
+        temel_ok = guncel & (v3r >= 0.8) & ~kotu
+        firsat = temel_ok & (pct <= 20) & (o20x <= 10) & (o5 <= 15) & (vol > 5e6)
+        tarih_ok = idx >= pd.Timestamp("2020-09-01")
+        firsat &= tarih_ok
+        fz_al = np.isin(sfz, AL)
+        v46_al = np.isin(s46, AL)
+        bozuldu = lambda i: (not guncel[i]) or v3r[i] < 0.6 or kotu[i]
+        var = {
+            "A Firsat, 63 gun tut": (firsat, lambda i, j0: None, 63),
+            "B Firsat, temel bozulunca ya da 126 gun": (firsat, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "C Firsat, -%15 stop + temel bozulma, 126 gun": (firsat, lambda i, j0: "stop" if c[i] < c[j0] * 0.85 else ("temel" if bozuldu(i) else None), 126),
+            "D Firsat, faz DAGITIM/BEKLE cikisi": (firsat, lambda i, j0: sfz[i] if sfz[i] in ("DAGITIM", "BEKLE") else None, 126),
+            "D2 Firsat, yalniz faz DAGITIM cikisi": (firsat, lambda i, j0: "DAGITIM" if sfz[i] == "DAGITIM" else None, 126),
+            "D3 Firsat, faz DAGITIM ya da -%15 stop": (firsat, lambda i, j0: "stop" if c[i] < c[j0] * 0.85 else ("DAGITIM" if sfz[i] == "DAGITIM" else None), 126),
+            "E2 Firsat + faz alim, yalniz faz DAGITIM cikisi": (firsat & fz_al, lambda i, j0: "DAGITIM" if sfz[i] == "DAGITIM" else None, 126),
+            "G2 Firsat, yalniz gunluk v46 DAGITIM cikisi": (firsat, lambda i, j0: "DAGITIM" if s46[i] == "DAGITIM" else None, 126),
+            "E Firsat + faz alim, faz cikisi": (firsat & fz_al, lambda i, j0: sfz[i] if sfz[i] in ("DAGITIM", "BEKLE") else None, 126),
+            "F Firsat + faz alim, temel bozulunca/126": (firsat & fz_al, lambda i, j0: "temel" if bozuldu(i) else None, 126),
+            "G Firsat, gunluk v46 DAGITIM/BEKLE cikisi": (firsat, lambda i, j0: s46[i] if s46[i] in ("DAGITIM", "BEKLE") else None, 126),
+            "H Temelsiz: faz alim, faz cikisi": (fz_al & tarih_ok & (vol > 5e6), lambda i, j0: sfz[i] if sfz[i] in ("DAGITIM", "BEKLE") else None, 126),
+            "I Temelsiz: Percentile<=20 + fiyat kacmamis, 63 gun": ((pct <= 20) & (o20x <= 10) & (o5 <= 15) & tarih_ok & (vol > 5e6), lambda i, j0: None, 63),
+            "J Temel ust %20 (ucuzluk sartsiz), 63 gun": (temel_ok & tarih_ok & (vol > 5e6) & (o20x <= 10) & (o5 <= 15), lambda i, j0: None, 63),
+        }
+        for ad, (m, f, mb) in var.items():
+            ISL.setdefault(ad, []).extend(simule(t, idx, c, x, np.asarray(m, bool), f, mb))
+        if n_ % 100 == 0:
+            print(n_, t, {k_[:1]: len(v) for k_, v in ISL.items()})
+    L = ["FIRSATLAR + FAZ MOTORU ISLEM SIMULASYONU (12 Kas 2026)",
+         "Sinyalin ertesi kapanisinda al, cikis sinyalinin ertesi kapanisinda sat; %0.3 maliyet dusuldu; fazla = BIST100'e gore.",
+         "kirpik = en iyi/kotu %5 atilmis ortalama. 'gunluk' = islem basina fazla getiri / sure (islem gunu), yaklasik hiz.\n"]
+    tum = []
+    for ad, I in ISL.items():
+        T = pd.DataFrame(I, columns=["t", "giris", "gun", "getiri", "fazla", "cikis"])
+        T["varyant"] = ad
+        tum.append(T)
+        if len(T) < 10:
+            L.append(f"{ad}: n={len(T)}"); continue
+        lo, hi = T.fazla.quantile([.05, .95])
+        kp = T.fazla[(T.fazla >= lo) & (T.fazla <= hi)].mean()
+        L.append(f"{ad:48s} n={len(T):5d} sure {T.gun.mean():5.1f}g | fazla ort {T.fazla.mean():+6.2f} kirpik {kp:+6.2f} medyan {T.fazla.median():+6.2f} "
+                 f"| kazanan %{100 * (T.fazla > 0).mean():4.1f} | ham getiri medyan {T.getiri.median():+6.2f} | gunluk kirpik {kp / max(T.gun.mean(), 1):+.3f}")
+        yl = T.groupby(T.giris.dt.year).fazla.agg(["count", "median", lambda s: s.clip(s.quantile(.05), s.quantile(.95)).mean()])
+        L.append("    yillar: " + " | ".join(f"{y}: n={int(r_['count'])} kirpik {r_.iloc[2]:+.1f} med {r_['median']:+.1f}" for y, r_ in yl.iterrows()))
+        L.append("    cikis: " + " | ".join(f"{k_} n={len(g_)} ort {g_.fazla.mean():+.1f}" for k_, g_ in T.groupby("cikis")))
+    pd.concat(tum).to_csv(R / "fbt_islemler.csv.gz", index=False, compression="gzip")
+    txt = "\n".join(L)
+    (R / "fbt_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+if __name__ == "__main__":
+    main()

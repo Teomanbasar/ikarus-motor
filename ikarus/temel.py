@@ -421,6 +421,9 @@ if __name__ == "__main__":
         gecmis()
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "fbt":
+        from . import firsat_bt
+        firsat_bt.main()
     elif sys.argv[1] == "nad":
         from . import nad
         nad.main()
