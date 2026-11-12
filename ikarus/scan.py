@@ -54,6 +54,19 @@ def scan_one(df: pd.DataFrame, xu: pd.Series, m3: pd.Series) -> dict | None:
         row["yeni_sinyal"] = bool(last["sinyal"] != prev["sinyal"])
         row["kirdi"] = bool(last["d_stop"] <= -3.5)  # onceki Stop'un %3.5'ten fazla altinda
         res[tf] = row
+    # faz motoru (12 Kas testi: Firsatlar'da faz alim tarafina gecis = giris zamani; DAGITIM'da satmak zararli)
+    try:
+        fz = {}
+        for ad, kw in (("normal", {}), ("ha", {"ha": True})):
+            r = E.compute(df, xu, m3, "D", sig_mod="faz", **kw)
+            sg = r["sinyal"].values
+            k = len(sg) - 1
+            while k > 0 and sg[k - 1] == sg[-1]:
+                k -= 1
+            fz[ad] = {"sinyal": sg[-1], "gun": int(len(sg) - k), "alim": bool(sg[-1] in ("ALINABILIR", "TOPLANIYOR", "YAKIN"))}
+        res["faz"] = fz
+    except Exception:
+        pass
     return res
 
 
@@ -127,7 +140,8 @@ def _temel_v3(stocks):
         hizli = (fv.get("o5") or 0) > 15 or (fv.get("o20_x") or 0) > 30
         if hizli:
             et.append("Hizli yukseldi")
-        cokus = (fv.get("o20") or 0) < -25 or (fv.get("taban10") or 0) >= 2
+        # 12 Kas (Teoman): siyasi kriz gibi piyasa geneli dususleri eleme; yalniz hisseye ozel cokus
+        cokus = (fv.get("o20_x") or 0) < -25 or ((fv.get("taban10") or 0) >= 4 and (fv.get("o20_x") or 0) < -15)
         if cokus:
             et.append("Sert dusus")
         if (k.get("puan") or 0) >= 6:
@@ -138,7 +152,7 @@ def _temel_v3(stocks):
         if kotu:
             yorum = "Dikkat: son bilanço geçen yılın aynı çeyreğine göre belirgin kötü. Testte bu grup ucuz ve kaliteli olsa bile sonraki 3-6 ayda endeksin gerisinde kaldı."
         elif cokus:
-            yorum = "Dikkat: fiyat son 20 günde %25'ten fazla düştü ya da üst üste taban yaptı. Bilanço eski olabilir; şirkete özel kötü bir haber (soruşturma, işlem yasağı, yakın izleme) olup olmadığına bakın. Testte 20 günde %40+ düşen hisseler sonraki 3 ayda endeksin ortalama 18 puan gerisinde kaldı."
+            yorum = "Dikkat: fiyat son 20 günde endeksten %25'ten fazla düştü ya da üst üste taban serisi yaptı (piyasa geneli düşüş değil, hisseye özel). Bilanço eski olabilir; şirkete özel kötü bir haber (soruşturma, işlem yasağı, yakın izleme) olup olmadığına bakın. Testte 20 günde %40+ düşen hisseler sonraki 3 ayda endeksin ortalama 18 puan gerisinde kaldı."
         elif hizli:
             yorum = "Fiyat son günlerde hızlı yükseldi; bilanço büyük ölçüde fiyatlanmış olabilir. Testte 20 günde endeksten %30+ fazla yükselen güçlü bilançolu hisseler sonraki 3 ayda ortalama endeksin 8 puan gerisinde kaldı."
         elif dilim[t] == 5 and pct is not None and pct <= 20:
@@ -297,7 +311,10 @@ def run(tickers: list[str] | None = None) -> dict:
         fv = lambda s: s.get("fiyat_ivme") or {}
         firsat = [s for s in temel_ucuz if "Kotu bilanco surprizi" not in v3(s).get("etiketler", [])
                   and (fv(s).get("o20_x") or 0) <= 10 and (fv(s).get("o5") or 0) <= 15
-                  and (fv(s).get("o20") or 0) >= -25 and (fv(s).get("taban10") or 0) < 2]
+                  and "Sert dusus" not in v3(s).get("etiketler", [])]
+        fz = lambda s: s.get("faz") or {}
+        guc = lambda s: int((fz(s).get("normal") or {}).get("alim", False)) + int((fz(s).get("ha") or {}).get("alim", False))
+        firsat.sort(key=lambda s: (-guc(s), -v3(s)["toplam"]))
         return {"sinyal": T(sinyal), "yeni": T(yeni), "ucuz": T(ucuz), "pahali": T(pahali), "stop": T(kiran),
                 "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
