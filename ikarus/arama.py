@@ -189,6 +189,15 @@ def main():
                 px[t].round(4).to_csv(vd / f"{t}.csv")
             out.append("")
             continue
+        if "fiyat_gecmis" in q:  # son N gun kapanis, gunluk %, hacim
+            for t in q["fiyat_gecmis"]:
+                if t not in px:
+                    out.append(f"{t}: veri yok"); continue
+                d = px[t].tail(q.get("n", 25)).copy()
+                d["gun%"] = (d["close"].pct_change() * 100).round(2)
+                out.append(f"=== FIYAT {t}")
+                out.append(d[["close", "volume", "gun%"]].round(2).to_string())
+            continue
         if "anlik" in q:  # gun ici tablo: o saate kadarki 15dk barlarla son gunu kes, sonra hesapla
             import yfinance as yf
             t, day = q["anlik"], pd.Timestamp(q["tarih"])

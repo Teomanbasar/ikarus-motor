@@ -124,6 +124,12 @@ def main():
             row = e.to_dict()
             row["giris"] = idx[j]
             row["hacim_tl"] = tl[j - 1]
+            # giristen onceki yukselis: "zaten fiyatlandi mi?"
+            row["o5"] = 100 * (c[j - 1] / c[j - 6] - 1)
+            row["o20"] = 100 * (c[j - 1] / c[j - 21] - 1)
+            row["o20_x"] = row["o20"] - 100 * (x[j - 1] / x[j - 21] - 1)
+            gun = c[j - 10:j] / c[j - 11:j - 1] - 1
+            row["tavan10"] = int((gun >= 0.095).sum())
             mcap = c[j - 1] * (e["sermaye_son"] or np.nan)
             if e.get("oz") and e["oz"] > 0:
                 row["pddd"] = mcap / e["oz"]
@@ -249,6 +255,37 @@ def rapor(A):
         Y = sn[sn["giris"].dt.year == y]
         L.append(f"{y}: hepsi {kirp(Y['a63']):+5.1f} (n={Y['a63'].notna().sum()}) | hareket+kalite {kirp(Y[hareket & kalite]['a63']):+5.1f} "
                  f"(n={Y[hareket & kalite]['a63'].notna().sum()}) | kotu surpriz {kirp(Y[(Y['r_sue'] <= 0.2) & (Y['r_suen'] <= 0.2)]['a63']):+5.1f}")
+    # ---- 12 Kas: zaten fiyatlandi mi? Firsatlar testi, agirlik karsilastirmasi
+    g = sn.groupby("donem")
+    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F"]:
+        sn["q_" + f] = g[f].rank(pct=True)
+    sn["q_pddd"] = 1 - g["pddd"].rank(pct=True)
+    H4 = sn[["q_sue_nk", "q_sue_faal", "q_satis_reel", "q_roe_ivme"]]
+    sn["v_h"] = H4.mean(axis=1).where(H4.notna().sum(axis=1) >= 2)
+    sn["v_k"] = sn[["q_F", "q_roe"]].mean(axis=1)
+    sn["v_d"] = sn[["q_kaz_get", "q_pddd"]].mean(axis=1)
+    def dil(v):
+        return v.groupby(sn["donem"]).rank(pct=True)
+    L.append("\n== Agirlik karsilastirmasi (ivme/kalite/deger): toplamin en ust %20'si")
+    for ad, w in [("50/25/25 (su anki)", (.5, .25, .25)), ("33/33/33", (1 / 3, 1 / 3, 1 / 3)), ("25/25/50", (.25, .25, .5)),
+                  ("25/50/25", (.25, .5, .25)), ("0/50/50 (ivmesiz)", (0, .5, .5))]:
+        t = w[0] * sn["v_h"].fillna(0.5 if w[0] == 0 else np.nan) + w[1] * sn["v_k"] + w[2] * sn["v_d"]
+        r = dil(t)
+        grup(ad + " ust %20", sn[r >= 0.8])
+    sn["v3"] = 0.5 * sn["v_h"] + 0.25 * sn["v_k"] + 0.25 * sn["v_d"]
+    sn["v3r"] = dil(sn["v3"])
+    kotu2 = (sn["r_sue"] <= 0.2) & (sn["r_suen"] <= 0.2)
+    firsat = (sn["v3r"] >= 0.8) & al & ~kotu2
+    L.append("\n== Firsatlar (temel ust %20 + IKARUS ALINABILIR/TOPLANIYOR/YAKIN + kotu surpriz degil)")
+    grup("Firsatlar", sn[firsat])
+    grup("Temel ust %20 + IKARUS DAGITIM/BEKLE", sn[(sn["v3r"] >= 0.8) & ~al & ~kotu2])
+    L.append("\n== Zaten fiyatlandi mi? Giristen onceki 20 gunluk getiri (BIST100'e gore) dilimleri")
+    for ad, m in [("Temel ust %20", sn["v3r"] >= 0.8), ("Ivme ust %20", sn["v_h"].groupby(sn["donem"]).rank(pct=True) >= 0.8), ("Firsatlar", firsat), ("hepsi", sn["v3r"].notna())]:
+        X = sn[m]
+        for a2, m2 in [("onceden dusmus (<-10)", X["o20_x"] < -10), ("yatay (-10..+10)", X["o20_x"].between(-10, 10)),
+                       ("yukselmis (+10..+30)", X["o20_x"].between(10, 30, inclusive="right")), ("cok yukselmis (>+30)", X["o20_x"] > 30),
+                       ("son 10 gunde 2+ tavan", X["tavan10"] >= 2)]:
+            grup(f"{ad}: {a2}", X[m2])
     bk = A[A["tip"] == "banka"]
     L.append("\n== Bankalar")
     for ad, f in [("Kar surprizi (net kar)", "sue_nk"), ("ROE ivmesi", "roe_ivme"), ("PD/DD", "pddd")]:
