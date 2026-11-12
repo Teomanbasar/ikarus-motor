@@ -89,12 +89,12 @@ def _temel_ekle(stocks):
 # 10 Kas 2026 testi (temel/bt2_sonuc.txt): bilanco yayimlandiktan sonraki 63 gunde BIST100'e gore fazla getiri,
 # donemin en iyi %20'si ile en kotu %20'si arasindaki fark (kirpik ortalama) ve farkin pozitif oldugu donem orani.
 V3_TEST = {"hareket": "+8.4 puan, donemlerin %86'sinda", "kalite": "+2.6 puan, %68", "deger": "+3.1 puan, %68",
-           "toplam": "+7.7 puan, %89", "en_iyi": "Toplam en ust %20 + IKARUS Percentile <= 20: 63g kirpik +5.7, medyan +2.3",
+           "firsat": "Temel ust %20 (esit agirlik) + kotu surpriz degil + 20 gunde endekse gore <= +%10 + 5 gunde <= +%15 + Percentile <= 20: 63g kirpik +5.7, medyan +2.3, %55 kazanma; 126g +9.8",
            "kotu": "Iki kar surprizi de en alt %20: 63g kirpik -3.8, 126g -7.7 (kaliteli+ucuz olsa bile -11.4)"}
 
 
 def _temel_v3(stocks):
-    """Temel puan v3: Hareket (bilanco ivmesi) %50, Kalite %25, Deger %25; hepsi sanayi hisseleri icinde siralama (0-1).
+    """Temel puan v3: Hareket (bilanco ivmesi), Kalite, Deger esit agirlik (12 Kas; 10 Kas-12 Kas arasi 50/25/25); hepsi sanayi hisseleri icinde siralama (0-1).
     Bankalar ayri muhasebe yapisinda oldugu icin siralamaya girmez (F-skoru karti kalir)."""
     S = [s for s in stocks if s.get("temel") and s["temel"].get("tip") == "sanayi"]
     if len(S) < 50:
@@ -110,7 +110,7 @@ def _temel_v3(stocks):
     hareket = har.mean(axis=1).where(har.notna().sum(axis=1) >= 2)
     kalite = r[["F", "roe"]].mean(axis=1)
     deger = r[["kaz_get", "pddd"]].mean(axis=1)
-    toplam = 0.5 * hareket + 0.25 * kalite + 0.25 * deger
+    toplam = (hareket + kalite + deger) / 3   # 12 Kas: esit agirlik (50/25/25 ile ayni getiri, medyan daha iyi; Teoman: ivmeye fazla agirlik verme)
     dilim = toplam.rank(pct=True).apply(lambda v: None if pd.isna(v) else int(max(1, np.ceil(v * 5))))
     for s in S:
         t = s["t"]; k = s["temel"]; i = k.get("isaretler") or {}
@@ -123,6 +123,10 @@ def _temel_v3(stocks):
             et.append("Kotu bilanco surprizi")
         if i.get("kara_donus"):
             et.append("Zarardan kara dondu")
+        fv = s.get("fiyat_ivme") or {}
+        hizli = (fv.get("o5") or 0) > 15 or (fv.get("o20_x") or 0) > 30
+        if hizli:
+            et.append("Hizli yukseldi")
         if (k.get("puan") or 0) >= 6:
             et.append("Kaliteli bilanco")
         elif k.get("puan") is not None and k["puan"] <= 3:
@@ -130,6 +134,8 @@ def _temel_v3(stocks):
         pct = (s.get("D") or {}).get("percentile")
         if kotu:
             yorum = "Dikkat: son bilanço geçen yılın aynı çeyreğine göre belirgin kötü. Testte bu grup ucuz ve kaliteli olsa bile sonraki 3-6 ayda endeksin gerisinde kaldı."
+        elif hizli:
+            yorum = "Fiyat son günlerde hızlı yükseldi; bilanço büyük ölçüde fiyatlanmış olabilir. Testte 20 günde endeksten %30+ fazla yükselen güçlü bilançolu hisseler sonraki 3 ayda ortalama endeksin 8 puan gerisinde kaldı."
         elif dilim[t] == 5 and pct is not None and pct <= 20:
             yorum = "Temel puanı en üst %20'de ve IKARUS'ta ucuz bölgede: testte en iyi sonuç veren birleşim."
         elif dilim[t] == 5:
@@ -140,6 +146,21 @@ def _temel_v3(stocks):
             yorum = None
         k["v3"] = {"toplam": f(toplam[t]), "dilim": None if pd.isna(dilim[t]) else int(dilim[t]), "hareket": f(hareket[t]), "kalite": f(kalite[t]), "deger": f(deger[t]),
                    "siralar": {c: f(r.at[t, c]) for c in r.columns}, "etiketler": et, "yorum": yorum, "n": int(toplam.notna().sum())}
+
+
+def _fiyat_ivme(stocks, px, xu):
+    """Son 5/20 gunluk yukselis (zaten fiyatlandi mi? 12 Kas testi)."""
+    for s in stocks:
+        df = px.get(s["t"])
+        if df is None or len(df) < 25:
+            continue
+        c = df["close"]
+        x = xu.reindex(c.index).ffill()
+        g = c.pct_change().tail(10)
+        s["fiyat_ivme"] = {"o5": round(float(100 * (c.iloc[-1] / c.iloc[-6] - 1)), 2),
+                           "o20": round(float(100 * (c.iloc[-1] / c.iloc[-21] - 1)), 2),
+                           "o20_x": round(float(100 * (c.iloc[-1] / c.iloc[-21] - x.iloc[-1] / x.iloc[-21])), 2),
+                           "tavan10": int((g >= 0.095).sum())}
 
 
 def _nad_ekle(stocks, px):
@@ -199,6 +220,7 @@ def run(tickers: list[str] | None = None) -> dict:
         stocks.append({"t": t, "ad": info.at[t, "ad"] if t in info.index else t,
                        "sektor": info.at[t, "sektor"] if t in info.index else "", **r})
 
+    _fiyat_ivme(stocks, px, xu)
     _temel_ekle(stocks)
     _nad_ekle(stocks, px)
 
@@ -227,8 +249,11 @@ def run(tickers: list[str] | None = None) -> dict:
         v3 = lambda s: ((s.get("temel") or {}).get("v3") or {})
         temel = sorted([s for s in S if v3(s).get("toplam") is not None], key=lambda s: -v3(s)["toplam"])
         temel_ucuz = [s for s in temel if v3(s).get("dilim") == 5 and g(s)["percentile"] <= 20]
+        fv = lambda s: s.get("fiyat_ivme") or {}
+        firsat = [s for s in temel_ucuz if "Kotu bilanco surprizi" not in v3(s).get("etiketler", [])
+                  and (fv(s).get("o20_x") or 0) <= 10 and (fv(s).get("o5") or 0) <= 15]
         return {"sinyal": T(sinyal), "yeni": T(yeni), "ucuz": T(ucuz), "pahali": T(pahali), "stop": T(kiran),
-                "temel": T(temel), "temel_ucuz": T(temel_ucuz)}
+                "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
     result = {
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
