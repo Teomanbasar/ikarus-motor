@@ -373,12 +373,7 @@ def run(tickers: list[str] | None = None) -> dict:
                 "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
     L_D = lists("D")
-    try:
-        takip = _takip(stocks, L_D.get("firsat", []), xu)
-    except Exception as e:
-        print("[uyari] takip:", e); takip = None
     result = {
-        "takip": takip,
         "bakim": _bakim(m3, xu, stocks),
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "surum": "IKARUS QUANT v4.6 aday (Python)",
