@@ -408,6 +408,45 @@ def etiket(hisseler, ceyrek: int = 8):
                 break
 
 
+def birim_test(adet: int = 120):
+    """Is Yatirim bir donemin degerini sonraki raporlardaki duzeltilmis (enflasyon) haliyle mi veriyor?
+    6 Kas gecmis.json.gz ile bugunku canli cekimi kalem kalem karsilastirir -> temel/birim_test.txt."""
+    import gzip, random
+    import numpy as np
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    T = json.loads((R / "temel.json").read_text(encoding="utf-8"))["hisseler"]
+    aday = sorted(h for h, v in T.items() if v.get("donem") == "2026/09" and h in G and G[h]["grup"] == "XI_29")
+    random.seed(1); orn = random.sample(aday, min(adet, len(aday)))
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(4) as ex:
+        canli = dict(zip(orn, ex.map(lambda h: cek(h, 12), orn)))
+    sat = []
+    for h, (grup, tab) in canli.items():
+        g = G[h]["tab"]; L = max(g)
+        for (y, m), val in tab.items():
+            k = f"{y}/{m}"
+            if k not in g:
+                continue
+            for kod, v in val.items():
+                e = g[k].get(kod)
+                if kod not in KODLAR or e in (None, 0) or not v:
+                    continue
+                tur = "gelir" if kod[0] in "34" else ("bilanco_yilsonu" if m == 12 else "bilanco_ceyrek")
+                sat.append((h, k, kod, tur, v / e, L))
+    df = pd.DataFrame(sat, columns=["h", "d", "kod", "tur", "oran", "L"])
+    df["ayni"] = (df.oran - 1).abs() < 0.003
+    out = [f"{len(canli)} hisse, {len(df)} kalem karsilastirildi (oran = bugun / 6 Kas)"]
+    for (d, tur), g_ in df.groupby(["d", "tur"]):
+        q = g_.oran[~g_.ayni]
+        out.append(f"{d:8s} {tur:16s} n={len(g_):4d} ayni=%{100*g_.ayni.mean():5.1f}  degisenlerin medyan orani={q.median() if len(q) else float('nan'):.3f}")
+    hs = df[df.d.isin(["2025/9", "2025/12"])].groupby(["h", "d", "tur"]).ayni.mean().unstack(["d", "tur"])
+    out.append("\nHisse bazinda 2025/9 ve 2025/12 ayni kalma payi:")
+    out.append(hs.round(2).to_string())
+    (R / "birim_test.txt").write_text("\n".join(out), encoding="utf-8")
+    df.to_csv(R / "birim_test.csv.gz", index=False)
+    print("\n".join(out[:60]))
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "bt_karsilastir":
         from . import temel_bt
@@ -433,5 +472,7 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "birim_test":
+        birim_test()
     elif sys.argv[1] == "hesapla":
         hesapla(sys.argv[2:] or None)
