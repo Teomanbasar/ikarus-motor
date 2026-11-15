@@ -1,0 +1,181 @@
+{
+ "acik": {
+  "KIMMR": {
+   "giris": "2026-11-12",
+   "fiyat": 10.72,
+   "xu": 11811.19,
+   "temel": 0.795,
+   "faz": "normal+HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "ARSAN": {
+   "giris": "2026-11-12",
+   "fiyat": 3.27,
+   "xu": 11811.19,
+   "temel": 0.773,
+   "faz": "normal+HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "KBORU": {
+   "giris": "2026-11-12",
+   "fiyat": 10.54,
+   "xu": 11811.19,
+   "temel": 0.734,
+   "faz": "normal+HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "BRKO": {
+   "giris": "2026-11-12",
+   "fiyat": 7.27,
+   "xu": 11811.19,
+   "temel": 0.692,
+   "faz": "normal+HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "MARBL": {
+   "giris": "2026-11-12",
+   "fiyat": 8.7,
+   "xu": 11811.19,
+   "temel": 0.681,
+   "faz": "normal+HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "FONET": {
+   "giris": "2026-11-12",
+   "fiyat": 4.03,
+   "xu": 11811.19,
+   "temel": 0.68,
+   "faz": "normal+HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "KCHOL": {
+   "giris": "2026-11-12",
+   "fiyat": 208.2,
+   "xu": 11811.19,
+   "temel": 0.827,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "TRCAS": {
+   "giris": "2026-11-12",
+   "fiyat": 43.9,
+   "xu": 11811.19,
+   "temel": 0.792,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "DOHOL": {
+   "giris": "2026-11-12",
+   "fiyat": 16.99,
+   "xu": 11811.19,
+   "temel": 0.781,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "VBTYZ": {
+   "giris": "2026-11-12",
+   "fiyat": 21.26,
+   "xu": 11811.19,
+   "temel": 0.781,
+   "faz": "HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "BNTAS": {
+   "giris": "2026-11-12",
+   "fiyat": 5.17,
+   "xu": 11811.19,
+   "temel": 0.778,
+   "faz": "HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "ASGYO": {
+   "giris": "2026-11-12",
+   "fiyat": 9.41,
+   "xu": 11811.19,
+   "temel": 0.764,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "MHRGY": {
+   "giris": "2026-11-12",
+   "fiyat": 1.71,
+   "xu": 11811.19,
+   "temel": 0.747,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "ULUUN": {
+   "giris": "2026-11-12",
+   "fiyat": 6.08,
+   "xu": 11811.19,
+   "temel": 0.741,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "HLGYO": {
+   "giris": "2026-11-12",
+   "fiyat": 3.69,
+   "xu": 11811.19,
+   "temel": 0.732,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "GSDHO": {
+   "giris": "2026-11-12",
+   "fiyat": 3.87,
+   "xu": 11811.19,
+   "temel": 0.715,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "CONSE": {
+   "giris": "2026-11-12",
+   "fiyat": 1.41,
+   "xu": 11811.19,
+   "temel": 0.71,
+   "faz": "HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "DZGYO": {
+   "giris": "2026-11-12",
+   "fiyat": 7.0,
+   "xu": 11811.19,
+   "temel": 0.699,
+   "faz": "HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "GOLTS": {
+   "giris": "2026-11-12",
+   "fiyat": 235.4,
+   "xu": 11811.19,
+   "temel": 0.693,
+   "faz": "HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "AYEN": {
+   "giris": "2026-11-12",
+   "fiyat": 24.78,
+   "xu": 11811.19,
+   "temel": 0.687,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "FMIZP": {
+   "giris": "2026-11-12",
+   "fiyat": 221.7,
+   "xu": 11811.19,
+   "temel": 0.671,
+   "faz": "HA",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  },
+  "TRGYO": {
+   "giris": "2026-11-12",
+   "fiyat": 86.7,
+   "xu": 11811.19,
+   "temel": 0.668,
+   "faz": "normal",
+   "kaynak": "Kasim 12-13 kapanis taramalarindan geri dolduruldu"
+  }
+ },
+ "kapanan": []
+}

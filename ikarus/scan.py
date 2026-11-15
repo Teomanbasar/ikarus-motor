@@ -124,6 +124,7 @@ def _temel_v3(stocks):
     kalite = r[["F", "roe"]].mean(axis=1)
     deger = r[["kaz_get", "pddd"]].mean(axis=1)
     toplam = (hareket + kalite + deger) / 3   # 12 Kas: esit agirlik (50/25/25 ile ayni getiri, medyan daha iyi; Teoman: ivmeye fazla agirlik verme)
+    sira = toplam.rank(pct=True)
     dilim = toplam.rank(pct=True).apply(lambda v: None if pd.isna(v) else int(max(1, np.ceil(v * 5))))
     for s in S:
         t = s["t"]; k = s["temel"]; i = k.get("isaretler") or {}
@@ -163,7 +164,7 @@ def _temel_v3(stocks):
             yorum = "Kaliteli ama bilanço ivmesi yok: testte bu grup bekledi (getiri endeks civarında kaldı)."
         else:
             yorum = None
-        k["v3"] = {"toplam": f(toplam[t]), "dilim": None if pd.isna(dilim[t]) else int(dilim[t]), "hareket": f(hareket[t]), "kalite": f(kalite[t]), "deger": f(deger[t]),
+        k["v3"] = {"toplam": f(toplam[t]), "sira": f(sira[t]), "dilim": None if pd.isna(dilim[t]) else int(dilim[t]), "hareket": f(hareket[t]), "kalite": f(kalite[t]), "deger": f(deger[t]),
                    "siralar": {c: f(r.at[t, c]) for c in r.columns}, "etiketler": et, "yorum": yorum, "n": int(toplam.notna().sum())}
 
 
@@ -180,6 +181,57 @@ def _fiyat_ivme(stocks, px, xu):
                            "o20": round(float(100 * (c.iloc[-1] / c.iloc[-21] - 1)), 2),
                            "o20_x": round(float(100 * (c.iloc[-1] / c.iloc[-21] - x.iloc[-1] / x.iloc[-21])), 2),
                            "tavan10": int((g >= 0.095).sum()), "taban10": int((g <= -0.095).sum())}
+
+
+TAKIP_F = D.DATA / "takip.json"
+TAKIP_GUN = 126   # 12 Kas testi: en fazla ~6 ay tut
+
+
+def _takip(stocks, firsat_d, xu):
+    """Elde tut listesi (12 Kas firsat_bt F/HA kurali): Firsatlar'da (gunluk) ve faz motoru alim tarafinda (normal ya da HA)
+    olan hisse ilk gorundugu gun 'giris' alir; listeden cikmasi onemli degil. Cikis: temel puan sirasi %60'in altina duserse,
+    kotu bilanco surprizi gelirse ya da 126 islem gunu dolarsa. Kapanan islemler 10 gun daha gosterilir, sonra arsive gider."""
+    try:
+        K = json.loads(TAKIP_F.read_text(encoding="utf-8")) if TAKIP_F.exists() else {"acik": {}, "kapanan": []}
+    except Exception:
+        K = {"acik": {}, "kapanan": []}
+    by = {s["t"]: s for s in stocks}
+    gun = f"{xu.index[-1]:%Y-%m-%d}"
+    xs = float(xu.iloc[-1])
+    v3 = lambda s: ((s.get("temel") or {}).get("v3") or {})
+    fz = lambda s: s.get("faz") or {}
+    for t in firsat_d:
+        s = by[t]
+        n, h = fz(s).get("normal", {}).get("alim"), fz(s).get("ha", {}).get("alim")
+        if (n or h) and t not in K["acik"]:
+            K["acik"][t] = {"giris": gun, "fiyat": s["D"]["fiyat"], "xu": xs, "temel": v3(s).get("toplam"),
+                            "faz": "+".join(x for x, y in (("normal", n), ("HA", h)) if y)}
+    for t, p in list(K["acik"].items()):
+        s = by.get(t)
+        if s is None:
+            continue
+        g = int(np.busday_count(p["giris"], gun))
+        v = v3(s)
+        neden = None
+        if v.get("sira") is not None and v["sira"] < 0.6:
+            neden = "Temel puan sirasi %60'in altina dustu"
+        elif "Kotu bilanco surprizi" in v.get("etiketler", []):
+            neden = "Kotu bilanco surprizi"
+        elif g >= TAKIP_GUN:
+            neden = "6 ay doldu"
+        f = s["D"]["fiyat"]
+        p.update({"son": f, "getiri": round(100 * (f / p["fiyat"] - 1), 2),
+                  "fazla": round(100 * (f / p["fiyat"] - xs / p["xu"]), 2), "gun": g, "kalan": max(0, TAKIP_GUN - g),
+                  "firsatta": t in firsat_d, "temel_simdi": v.get("toplam")})
+        if neden:
+            p.update({"cikis": gun, "neden": neden})
+            K["kapanan"].append({"t": t, **p})
+            del K["acik"][t]
+    K["kapanan"] = K["kapanan"][-300:]
+    TAKIP_F.write_text(json.dumps(K, ensure_ascii=False, indent=1), encoding="utf-8")
+    yakin = [k for k in K["kapanan"] if np.busday_count(k["cikis"], gun) <= 10]
+    acik = sorted(({"t": t, **p} for t, p in K["acik"].items()), key=lambda x: x["giris"], reverse=True)
+    return {"acik": acik, "kapanan": yakin, "kural": "Giris: Firsatlar + faz alim (normal ya da HA). Cikis: temel sirasi < %60, kotu bilanco surprizi ya da 126 islem gunu."}
 
 
 def _bakim(m3, xu, stocks):
@@ -263,6 +315,8 @@ def run(tickers: list[str] | None = None) -> dict:
     px = D.prices(lst["ticker"].tolist())
     xu = D.xu100()
     px, xu, _ = D.tv_tamamla(px, xu)
+    # TradingView'den eklenen son gun bolunmeli olabilir (or. DUNYH 13 Kas: %512 bedelsiz + %68 bedelli); tekrar duzelt
+    px = {t: D.fix_splits(df) for t, df in px.items()}
     m3 = D.m3()
     print(f"{len(px)} hissenin verisi geldi ({time.time() - t0:.0f} sn). Hesaplaniyor...")
 
@@ -318,12 +372,18 @@ def run(tickers: list[str] | None = None) -> dict:
         return {"sinyal": T(sinyal), "yeni": T(yeni), "ucuz": T(ucuz), "pahali": T(pahali), "stop": T(kiran),
                 "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
+    L_D = lists("D")
+    try:
+        takip = _takip(stocks, L_D.get("firsat", []), xu)
+    except Exception as e:
+        print("[uyari] takip:", e); takip = None
     result = {
+        "takip": takip,
         "bakim": _bakim(m3, xu, stocks),
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "surum": "IKARUS QUANT v4.6 aday (Python)",
         "piyasa": piyasa,
-        "listeler": {"D": lists("D"), "W": lists("W")},
+        "listeler": {"D": L_D, "W": lists("W")},
         "hisseler": stocks,
         "not": "Yatirim tavsiyesi degildir. Sinyal kurali 19 Zippo tablosundan cikarilmis adaydir.",
     }
