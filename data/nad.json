@@ -1,10 +1,10 @@
 {
- "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle. | 12 Kas: ikinci bicim 'paylar' (hisse -> holdingin payi) + 'kalibre_nad_mn': referans gunde NAD bu degere esitlenir, borsada olmayan kisim + net borc sabit kabul edilir (usd=true ise dolar kuruyla tasinir).",
+ "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle. | 12 Kas: ikinci bicim 'paylar' (hisse -> holdingin payi) + 'kalibre_nad_mn': referans gunde NAD bu degere esitlenir, borsada olmayan kisim + net borc sabit kabul edilir (usd=true ise dolar kuruyla tasinir). | 15 Kas: 'halka_acik' bicimi de 'kalibre_nad_mn' alabilir: katkilar katki_tarih fiyatlarina gore tasinir, sabit kisim ref_tarih'te NAD kalibre degerine esit olacak sekilde yeniden hesaplanir. Uzun vade ortalamalari PhillipCapital 2 Kas (KCHOL ~%33, SAHOL ~%49, DOHOL ~%52).",
  "KCHOL": {
-  "ref_tarih": "2026-03-31",
-  "kaynak": "Deniz Yatirim, 1 Nisan 2026",
-  "piyasa_degeri_ref": 493993,
-  "uzun_vade_iskonto": -0.14,
+  "ref_tarih": "2026-10-30",
+  "kaynak": "Istirak katkilari Deniz Yatirim 1 Nis 2026; toplam NAD PhillipCapital 2 Kas 2026 (777 982 mn TL) degerine kalibre",
+  "piyasa_degeri_ref": 488921,
+  "uzun_vade_iskonto": -0.33,
   "halka_acik": {
    "TOASO": 51492,
    "FROTO": 137119,
@@ -28,13 +28,15 @@
    "Diger istirakler": 8492,
    "Net nakit": 44237,
    "Sabit kiymetler (%25 iskontolu)": 8705
-  }
+  },
+  "katki_tarih": "2026-03-31",
+  "kalibre_nad_mn": 777982
  },
  "SAHOL": {
-  "ref_tarih": "2026-03-31",
-  "kaynak": "Deniz Yatirim, 1 Nisan 2026",
-  "piyasa_degeri_ref": 187774,
-  "uzun_vade_iskonto": null,
+  "ref_tarih": "2026-10-30",
+  "kaynak": "Istirak katkilari Deniz Yatirim 1 Nis 2026; toplam NAD PhillipCapital 2 Kas 2026 (409 362 mn TL) degerine kalibre",
+  "piyasa_degeri_ref": 170340,
+  "uzun_vade_iskonto": -0.49,
   "halka_acik": {
    "AKBNK": 139854,
    "AKGRT": 4190,
@@ -44,8 +46,7 @@
    "AKCNS": 15148,
    "CIMSA": 25116,
    "TKNSA": 2026,
-   "ENJSA": 54093,
-   "CRFSA": 9123
+   "ENJSA": 54093
   },
   "sabit": {
    "Cimsa Building Solutions": 8066,
@@ -55,7 +56,10 @@
    "TUA": 4695,
    "Diger (Tursa, TMA, SabanciDx)": 12460,
    "Net nakit": 12000
-  }
+  },
+  "katki_tarih": "2026-03-31",
+  "kalibre_nad_mn": 409362,
+  "not": "Carrefoursa Temmuz 2026'da A101'e satildi; tablodan cikarildi (satis geliri kalibrasyonla nakde girdi)."
  },
  "AGHOL": {
   "ref_tarih": "2026-10-02",
@@ -75,7 +79,7 @@
   "kaynak": "Marbas Holding Bulteni 5 Ekim 2026 (guncel NAD 146.304 mn TL); NAD'in ~%90'i borsada degil ve dolar bazli degerleniyor (Dogan yatirimci sunumu), bu yuzden dolar kuruyla tasindi",
   "piyasa_degeri_ref": 49540,
   "kalibre_nad_mn": 146304,
-  "uzun_vade_iskonto": -0.55,
+  "uzun_vade_iskonto": -0.52,
   "usd": true,
   "paylar": {}
  }

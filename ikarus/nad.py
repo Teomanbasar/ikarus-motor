@@ -49,12 +49,21 @@ def seri(h, cfg, px, sermaye=None):
             eksik.append("USDTRY")
         nad = lis + sabit
     else:
-        nad = pd.Series(float(sum(cfg["sabit"].values())), index=idx)
+        kref = pd.Timestamp(cfg.get("katki_tarih", cfg["ref_tarih"]))
+        def oran_k(s):
+            s = s.sort_index(); r = s[s.index <= kref]
+            return s / float(r.iloc[-1]) if len(r) else None
+        lis = pd.Series(0.0, index=idx)
         for t, k in cfg["halka_acik"].items():
             if t not in px:
-                eksik.append(t); nad += k; continue   # fiyat yoksa referans degerde sabit tut
-            o = oran(px[t]["close"])
-            nad += k * o.reindex(idx).ffill().fillna(1.0)
+                eksik.append(t); lis += k; continue   # fiyat yoksa referans degerde sabit tut
+            o = oran_k(px[t]["close"])
+            lis += k * o.reindex(idx).ffill().fillna(1.0)
+        sabit = float(sum(cfg["sabit"].values()))
+        if cfg.get("kalibre_nad_mn"):
+            l_ref = lis[lis.index <= ref]
+            sabit = cfg["kalibre_nad_mn"] - (float(l_ref.iloc[-1]) if len(l_ref) else 0.0)
+        nad = lis + sabit
     mcap = cfg["piyasa_degeri_ref"] * oran(ph)
     return pd.DataFrame({"nad": nad, "pd": mcap, "iskonto": mcap / nad - 1}), eksik
 
