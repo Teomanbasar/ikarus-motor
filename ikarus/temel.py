@@ -124,6 +124,59 @@ def cek(hisse: str, ceyrek: int = 12):
     return None, {}
 
 
+# --- Ilk gorulen degerler arsivi (15 Kas 2026) ---
+# Is Yatirim bir donemin degerini o donemi iceren EN SON rapordan verir. Yeni ceyrek yayinlaninca gecen yilin
+# ayni donemi enflasyona gore duzeltilmis (bugunku TL) gelir; bazi hisselerde de gelmez (birim_test: 120 hissenin
+# ~%60'inda 2025/9 gelir kalemleri x1.30 degisti, digerlerinde ayni kaldi). Biz zaten M3'e boldugumuz icin
+# duzeltilmis deger iki kez enflasyondan arindirilir. Cozum: her donemin ILK gorulen degerini sakla (temel/ilk.json.gz,
+# tum BIST tek dosya), canli deger ile ilk deger arasindaki orani (yeniden_oran) M3 carpanindan dus.
+ILK = None
+
+
+def ilk_yukle():
+    global ILK
+    import gzip
+    if ILK is None:
+        f = R / "ilk.json.gz"
+        if f.exists():
+            ILK = json.loads(gzip.decompress(f.read_bytes()))
+        else:  # ilk kurulum: 6 Kas 2026 gecmis cekimi
+            g = R / "gecmis.json.gz"
+            ILK = {h: v["tab"] for h, v in json.loads(gzip.decompress(g.read_bytes())).items()} if g.exists() else {}
+    return ILK
+
+
+def ilk_kaydet():
+    import gzip
+    if ILK is not None:
+        (R / "ilk.json.gz").write_bytes(gzip.compress(json.dumps(ILK, separators=(",", ":")).encode()))
+
+
+def yeniden_oran(h, tab, guncelle=True):
+    """{(donem, 'g'|'b'): canli/ilk orani} (yalniz farkli olanlar). 'g' gelir/nakit, 'b' bilanco kalemleri.
+    guncelle: arsivde olmayan donem/kalemleri ilk gorulen deger olarak ekler."""
+    import numpy as np
+    A = ilk_yukle().setdefault(h, {})
+    out = {}
+    for (y, m), val in tab.items():
+        k = f"{y}/{m}"
+        e = A.get(k)
+        if e is not None:
+            for tur in ("g", "b"):
+                r = [v / e[kod] for kod, v in val.items()
+                     if kod in KODLAR and (kod[0] in "34") == (tur == "g") and e.get(kod) and v and v * e[kod] > 0 and abs(e[kod]) > 1e3]
+                if len(r) >= 3:
+                    md = float(np.median(r))
+                    if abs(md - 1) > 0.003 and np.mean([abs(x / md - 1) < 0.01 for x in r]) >= 0.6:  # kalemlerin cogu ayni oranla degismis
+                        out[((y, m), tur)] = md
+        if guncelle:
+            hedef = A.setdefault(k, {})
+            for kod, v in val.items():
+                if kod in KODLAR and kod not in hedef:
+                    hedef[kod] = v
+    return out
+
+
 def _ttm(tab, d, kod):
     """Son 4 ceyrek toplami (gelir/nakit kalemleri yil ici kumulatif gelir)."""
     y, m = d
@@ -178,16 +231,19 @@ def ceyreklik(tab, d, kod):
     return None if p is None else a - p
 
 
-def isaretler(tab, m3, d):
+def isaretler(tab, m3, d, yo=None):
     """Hareket isaretleri (10 Kas 2026 testinde ise yarayanlar). temel_bt2 de bunu kullanir.
     sue_nk / sue_faal: bu ceyregin net kari / esas faaliyet kari - gecen yilin ayni ceyregi x M3 buyumesi,
       hissenin onceki 8 ceyrekteki ayni farklarin oynakligina bolunmus (en az 4 gecmis fark).
     satis_reel: ceyreklik satislarin M3'e gore yillik buyumesi. roe_ivme: son 4 ceyrek ROE'sinin bir ceyrekte degisimi."""
     out = {}
+    yo = yo or {}
     fark = {"3Z": [], "3DF": []}
     for dd in sorted(k for k in tab if k <= d):
         d1 = (dd[0] - 1, dd[1])
         m3y = _m3_oran(m3, dd, d1)
+        if m3y:
+            m3y *= yo.get((dd, "g"), 1.0) / yo.get((d1, "g"), 1.0)
         for kod, ad in (("3Z", "sue_nk"), ("3DF", "sue_faal")):
             q, q1 = ceyreklik(tab, dd, kod), ceyreklik(tab, d1, kod)
             if q is None or q1 is None or not m3y:
@@ -207,6 +263,8 @@ def isaretler(tab, m3, d):
     d1 = (y - 1, m)
     dq = (y, m - 3) if m > 3 else (y - 1, 12)
     m3y = _m3_oran(m3, d, d1)
+    if m3y:
+        m3y *= yo.get((d, "g"), 1.0) / yo.get((d1, "g"), 1.0)
 
     def roe(dd):
         nk = _ttm(tab, dd, "3Z")
@@ -230,7 +288,7 @@ def isaretler(tab, m3, d):
     return out
 
 
-def skor(grup, tab, m3, d=None):
+def skor(grup, tab, m3, d=None, yo=None):
     if not tab:
         return None
     if d is None:
@@ -244,8 +302,13 @@ def skor(grup, tab, m3, d=None):
     T = lambda kod, dd=d: _ttm(tab, dd, kod)
     bd, bd1 = _bilanco_donemi(tab, d), _bilanco_donemi(tab, d1)
     B = lambda kod, dd=d: tab.get(bd if dd == d else bd1 if dd == d1 else dd, {}).get(kod)
+    yo = yo or {}
     m3c = _m3_oran(m3, bd, bd1)  # bilanco kalemleri (ozkaynak) icin
     m3c_akim = _m3_oran(m3, d, d1)  # gelir kalemleri (son 4 ceyrek) icin
+    if m3c:
+        m3c *= yo.get((bd, "b"), 1.0) / yo.get((bd1, "b"), 1.0)
+    if m3c_akim:
+        m3c_akim *= yo.get((d, "g"), 1.0) / yo.get((d1, "g"), 1.0)
     out = {"donem": f"{y}/{m:02d}", "bilanco_karsilastirma": f"{bd1[0]}/{bd1[1]:02d}", "tip": "banka" if grup == "UFRS" else "sanayi", "maddeler": []}
 
     def madde(ad, deger, gecti, aciklama, bicim="tl"):
@@ -318,7 +381,9 @@ def skor(grup, tab, m3, d=None):
                           "serbest_nakit": T("4CB")}
     out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA")}
     try:
-        out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d).items() if k != "nk_ttm"}
+        out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d, yo).items() if k != "nk_ttm"}
+        if yo:
+            out["yeniden_duzeltme"] = {f"{p[0]}/{p[1]}{t}": round(r, 4) for (p, t), r in yo.items()}
     except Exception:
         out["isaretler"] = {}
     gec = [x["gecti"] for x in out["maddeler"]]
@@ -341,6 +406,9 @@ def hesapla(hisseler=None, butce_dk: float = 95, isci: int = 4):
     m3 = D.m3()
     t0 = time.time()
     bitti = 0
+    import threading
+    kilit = threading.Lock()
+    ilk_yukle()
 
     def yaz():
         out = {"olusturma": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"), "hisseler": sonuc}
@@ -350,7 +418,9 @@ def hesapla(hisseler=None, butce_dk: float = 95, isci: int = 4):
         if time.time() - t0 > butce_dk * 60:
             return h, "atla"
         grup, tab = cek(h)
-        return h, skor(grup, tab, m3)
+        with kilit:
+            yo = yeniden_oran(h, tab) if tab else {}
+        return h, skor(grup, tab, m3, yo=yo)
 
     with ThreadPoolExecutor(isci) as ex:
         for fut in as_completed([ex.submit(is_, h) for h in hisseler]):
@@ -366,7 +436,10 @@ def hesapla(hisseler=None, butce_dk: float = 95, isci: int = 4):
                 sonuc[h] = s
             if bitti % 50 == 0:
                 print(f"{bitti}/{len(hisseler)} {time.time() - t0:.0f} sn"); yaz()
+                with kilit:
+                    ilk_kaydet()
     yaz()
+    ilk_kaydet()
     print(f"{bitti}/{len(hisseler)} hisse islendi, dosyada {len(sonuc)} hisse ({time.time() - t0:.0f} sn)")
 
 
