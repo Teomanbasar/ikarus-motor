@@ -84,6 +84,14 @@ def mesaj(res: dict, tf: str = "D") -> str | None:
     n = {k: sum(1 for t in L["sinyal"] if g(t)["sinyal"] == k) for k in ("ALINABILIR", "TOPLANIYOR", "YAKIN", "DAGITIM")}
     lines.append(f"Toplam: {n['ALINABILIR']} ALINABILIR · {n['TOPLANIYOR']} TOPLANIYOR · {n['YAKIN']} YAKIN · "
                  f"{len(L['ucuz'])} ucuz hisse")
+    if tf == "D":
+        try:
+            from . import elde
+            e = elde.ozet(res)
+            if e:
+                lines += e + [""]
+        except Exception as ex:
+            print("eldekiler ozeti hatasi", ex)
     url = D.ayar("app_url")
     if url:
         lines.append(f'<a href="{html.escape(url)}">Uygulamada aç</a>')

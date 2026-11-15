@@ -3,6 +3,7 @@ name: Telegram komut dinle
 on:
   schedule:
     - cron: "*/15 15-20 * * 1-5"   # hafta ici 18:00-23:45 TR, 15 dakikada bir (Actions dakika kotasi icin)
+    - cron: "7 6-20/2 * * *"       # her gun 09:07-23:07 TR iki saatte bir (hafta sonu da eldekiler komutlari icin)
   workflow_dispatch: {}
 
 concurrency:
@@ -34,11 +35,24 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST repos/${{ github.repository }}/actions/workflows/tarama.yml/dispatches -f ref=main
+      - name: Eldekileri uygulamaya gonder
+        if: steps.d.outputs.elde == '1'
+        env:
+          APP_TOKEN: ${{ secrets.APP_TOKEN }}
+          APP_REPO: ${{ vars.APP_REPO }}
+        run: |
+          git clone --depth 1 "https://x-access-token:${APP_TOKEN}@github.com/${APP_REPO}.git" app
+          mkdir -p app/data && cp data/elde.json app/data/elde.json
+          cd app
+          git config user.name "ikarus-bot"
+          git config user.email "ikarus-bot@users.noreply.github.com"
+          git add data/elde.json && git commit -qm "Eldekiler" && git push || true
       - name: Offset kaydet
         run: |
           git config user.name "ikarus-bot"
           git config user.email "ikarus-bot@users.noreply.github.com"
+          [ -f data/elde.json ] && git add data/elde.json
           git add data/telegram_offset.txt 2>/dev/null || exit 0
-          git commit -qm "Telegram offset" || exit 0
+          git commit -qm "Telegram offset / eldekiler" || exit 0
           git pull --rebase -q || true
           git push || true
