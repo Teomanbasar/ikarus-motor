@@ -1,14 +1,60 @@
-M3 (EVDS): 2026-11 eklendi
-50/625 235 sn
-100/625 316 sn
-150/625 532 sn
-200/625 594 sn
-250/625 633 sn
-300/625 683 sn
-350/625 881 sn
-400/625 1159 sn
-450/625 1342 sn
-500/625 1419 sn
-550/625 1493 sn
-600/625 1565 sn
-625/625 hisse islendi, dosyada 609 hisse (1601 sn)
+HA4 Firsat(normal) + HA faz alim, HA DAGITIM cikisi n=  488 sure  27.1g | fazla ort  +5.06 kirpik  -0.52 medyan  -1.65 | kazanan %36.7 | ham getiri medyan  -2.00 | gunluk kirpik -0.019
+    yillar: 2022: n=29 kirpik +5.2 med -2.9 | 2023: n=25 kirpik -1.0 med -4.6 | 2024: n=128 kirpik +1.7 med -1.4 | 2025: n=197 kirpik +1.9 med -0.9 | 2026: n=109 kirpik -3.9 med -3.4
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=43 kirpik +7.7 med -1.3 ham med -2.2 | dusus -10..-3 n=69 kirpik -2.3 med -3.2 ham med -3.5 | normal >-3 n=376 kirpik +1.2 med -1.3 ham med -1.7
+    cikis: DAGITIM n=445 ort -2.2 | sure n=43 ort +80.2
+H Temelsiz: faz alim, faz cikisi                 n= 3708 sure   9.4g | fazla ort  -0.43 kirpik  -0.79 medyan  -1.51 | kazanan %40.8 | ham getiri medyan  -0.77 | gunluk kirpik -0.084
+    yillar: 2020: n=30 kirpik -1.6 med -1.7 | 2021: n=334 kirpik -2.0 med -2.3 | 2022: n=481 kirpik -0.7 med -1.5 | 2023: n=202 kirpik -0.3 med -1.5 | 2024: n=911 kirpik +0.7 med -0.7 | 2025: n=1108 kirpik -0.0 med -1.1 | 2026: n=642 kirpik -2.7 med -2.9
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=219 kirpik -2.3 med -3.4 ham med -2.9 | dusus -10..-3 n=469 kirpik -1.2 med -2.2 ham med -1.7 | normal >-3 n=3018 kirpik -0.4 med -1.3 ham med -0.4
+    cikis: BEKLE n=2165 ort +2.6 | DAGITIM n=1543 ort -4.6
+I Temelsiz: Percentile<=20 + fiyat kacmamis, 63 gun n= 4298 sure  64.0g | fazla ort  +0.79 kirpik  -2.40 medyan  -5.77 | kazanan %38.6 | ham getiri medyan  +3.58 | gunluk kirpik -0.038
+    yillar: 2020: n=66 kirpik +10.5 med +9.3 | 2021: n=518 kirpik -10.6 med -10.6 | 2022: n=505 kirpik +1.0 med -4.5 | 2023: n=690 kirpik +5.5 med -1.8 | 2024: n=889 kirpik -2.3 med -6.1 | 2025: n=981 kirpik +0.8 med -4.8 | 2026: n=649 kirpik -4.8 med -8.3
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=167 kirpik +2.0 med -3.0 ham med +9.3 | dusus -10..-3 n=1127 kirpik -3.0 med -6.2 ham med +4.1 | normal >-3 n=2989 kirpik -0.6 med -5.6 ham med +3.2
+    cikis: sure n=4298 ort +0.8
+J Temel ust %20 (ucuzluk sartsiz), 63 gun        n= 1413 sure  64.0g | fazla ort  +4.63 kirpik  +1.80 medyan  -2.22 | kazanan %46.2 | ham getiri medyan  +6.61 | gunluk kirpik +0.028
+    yillar: 2022: n=225 kirpik +6.9 med -0.2 | 2023: n=290 kirpik +6.2 med -1.2 | 2024: n=339 kirpik +1.1 med -3.5 | 2025: n=360 kirpik +2.0 med -3.1 | 2026: n=199 kirpik +0.1 med -2.6
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=73 kirpik +3.9 med -3.3 ham med +11.8 | dusus -10..-3 n=148 kirpik +2.0 med -3.4 ham med +4.8 | normal >-3 n=1190 kirpik +3.0 med -2.0 ham med +6.4
+    cikis: sure n=1413 ort +4.6
+K1 Firsat+faz gir, Firsatlar'dan cikinca sat     n=  416 sure  13.1g | fazla ort  +0.46 kirpik  +0.72 medyan  +0.55 | kazanan %56.2 | ham getiri medyan  +1.61 | gunluk kirpik +0.055
+    yillar: 2022: n=30 kirpik +1.5 med +1.6 | 2023: n=22 kirpik -0.8 med -1.5 | 2024: n=127 kirpik +1.3 med +1.0 | 2025: n=157 kirpik +0.7 med +0.4 | 2026: n=80 kirpik -0.7 med -0.3
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=27 kirpik +0.5 med +1.1 ham med -0.8 | dusus -10..-3 n=54 kirpik +0.6 med +0.5 ham med +1.5 | normal >-3 n=335 kirpik +0.6 med +0.5 ham med +1.7
+    cikis: listeden cikti n=416 ort +0.5
+K2 Firsat gir (fazsiz), Firsatlar'dan cikinca sat n= 1960 sure  11.0g | fazla ort  +0.24 kirpik  +0.45 medyan  +0.49 | kazanan %54.9 | ham getiri medyan  +1.82 | gunluk kirpik +0.040
+    yillar: 2022: n=132 kirpik +1.0 med +1.1 | 2023: n=284 kirpik +0.5 med +0.2 | 2024: n=487 kirpik +0.9 med +0.8 | 2025: n=596 kirpik -0.1 med +0.1 | 2026: n=461 kirpik -0.1 med +0.5
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=163 kirpik +1.3 med +1.4 ham med +1.5 | dusus -10..-3 n=468 kirpik +0.4 med +0.5 ham med +2.7 | normal >-3 n=1327 kirpik +0.2 med +0.4 ham med +1.5
+    cikis: listeden cikti n=1960 ort +0.2
+K3 Firsat+faz gir, listeden 5 gun ust uste cikinca sat n=  303 sure  25.3g | fazla ort  +2.48 kirpik  +2.05 medyan  +1.95 | kazanan %57.8 | ham getiri medyan  +4.61 | gunluk kirpik +0.081
+    yillar: 2022: n=22 kirpik +1.0 med -0.8 | 2023: n=15 kirpik -1.2 med +0.5 | 2024: n=102 kirpik +3.3 med +3.5 | 2025: n=113 kirpik +2.3 med +2.1 | 2026: n=51 kirpik +1.3 med -2.0
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=17 kirpik +3.5 med +5.6 ham med +6.4 | dusus -10..-3 n=39 kirpik +3.7 med +2.5 ham med +6.2 | normal >-3 n=247 kirpik +1.8 med +1.8 ham med +4.2
+    cikis: listeden 5g n=303 ort +2.5
+T1 F + Stop kirilinca (-%3.5) ya da temel        n=  290 sure  81.7g | fazla ort  +5.00 kirpik  -0.77 medyan  -4.57 | kazanan %32.4 | ham getiri medyan  -3.87 | gunluk kirpik -0.009
+    yillar: 2022: n=20 kirpik -0.5 med -6.1 | 2023: n=12 kirpik -12.0 med -4.4 | 2024: n=91 kirpik +11.7 med -2.7 | 2025: n=104 kirpik -0.4 med -4.7 | 2026: n=63 kirpik -5.9 med -5.7
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=20 kirpik +14.4 med -0.7 ham med +5.5 | dusus -10..-3 n=40 kirpik -10.5 med -9.2 ham med -2.5 | normal >-3 n=230 kirpik +3.4 med -4.4 ham med -4.5
+    cikis: stop n=163 ort -10.7 | sure n=16 ort +37.7 | temel n=111 ort +23.4
+T2 F + pahali bolge (Percentile>=80, kar al) ya da temel n=  217 sure  83.8g | fazla ort  +7.69 kirpik  +7.94 medyan  +4.89 | kazanan %59.4 | ham getiri medyan +20.79 | gunluk kirpik +0.095
+    yillar: 2022: n=17 kirpik +5.8 med +3.7 | 2023: n=12 kirpik -6.9 med +1.2 | 2024: n=79 kirpik +10.9 med +8.7 | 2025: n=80 kirpik +9.0 med +7.6 | 2026: n=29 kirpik +2.9 med -0.4
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=10 kirpik +12.3 med +6.2 ham med +11.9 | dusus -10..-3 n=23 kirpik +4.0 med +2.3 ham med +20.0 | normal >-3 n=184 kirpik +8.1 med +5.3 ham med +21.4
+    cikis: pahali n=115 ort +22.7 | sure n=9 ort -21.9 | temel n=93 ort -8.1
+T3 F + faz DAGITIM 10 gun surerse ya da temel    n=  306 sure  69.9g | fazla ort  +6.71 kirpik  +1.07 medyan  -2.09 | kazanan %42.5 | ham getiri medyan  -0.07 | gunluk kirpik +0.015
+    yillar: 2022: n=18 kirpik +5.5 med -6.6 | 2023: n=13 kirpik -6.8 med -0.3 | 2024: n=101 kirpik +8.2 med -0.4 | 2025: n=115 kirpik +2.4 med -3.1 | 2026: n=59 kirpik -1.3 med -2.1
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=21 kirpik -0.5 med -2.2 ham med +1.6 | dusus -10..-3 n=35 kirpik -4.0 med -4.1 ham med +1.8 | normal >-3 n=250 kirpik +4.6 med -1.6 ham med -0.3
+    cikis: faz10 n=185 ort -3.9 | sure n=19 ort +30.5 | temel n=102 ort +21.6
+T4 F + HA faz DAGITIM 10 gun surerse ya da temel n=  331 sure  60.3g | fazla ort  +5.62 kirpik  +0.52 medyan  -1.56 | kazanan %40.2 | ham getiri medyan  -0.30 | gunluk kirpik +0.009
+    yillar: 2022: n=19 kirpik +2.5 med -1.7 | 2023: n=13 kirpik -12.1 med -1.3 | 2024: n=102 kirpik +7.0 med -1.0 | 2025: n=125 kirpik +3.0 med -2.2 | 2026: n=72 kirpik -1.5 med -1.9
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=23 kirpik +9.7 med -2.4 ham med -0.3 | dusus -10..-3 n=41 kirpik -6.1 med -1.5 ham med -0.8 | normal >-3 n=267 kirpik +3.0 med -1.4 ham med -0.2
+    cikis: ha10 n=223 ort -3.9 | sure n=17 ort +27.1 | temel n=91 ort +24.9
+T5 F + faz DAGITIM 20 gun ya da temel            n=  245 sure 104.7g | fazla ort +10.28 kirpik  +3.16 medyan  -2.08 | kazanan %43.7 | ham getiri medyan  +1.79 | gunluk kirpik +0.030
+    yillar: 2022: n=17 kirpik -1.0 med -6.0 | 2023: n=12 kirpik -6.0 med -3.4 | 2024: n=87 kirpik +19.6 med -0.1 | 2025: n=92 kirpik +0.2 med -4.3 | 2026: n=37 kirpik -1.1 med -4.8
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=10 kirpik +3.7 med -5.8 ham med -0.2 | dusus -10..-3 n=25 kirpik -11.5 med -6.9 ham med +4.7 | normal >-3 n=210 kirpik +8.0 med -1.4 ham med +1.7
+    cikis: faz20 n=80 ort -8.3 | sure n=27 ort +32.7 | temel n=138 ort +16.7
+T6 F + stop ya da pahali ya da temel             n=  302 sure  47.0g | fazla ort  +4.04 kirpik  +2.91 medyan  -2.05 | kazanan %43.0 | ham getiri medyan  -3.27 | gunluk kirpik +0.062
+    yillar: 2022: n=20 kirpik +2.9 med +3.4 | 2023: n=12 kirpik -5.6 med +0.4 | 2024: n=93 kirpik +5.7 med -1.9 | 2025: n=110 kirpik +7.6 med -0.3 | 2026: n=67 kirpik -3.0 med -4.7
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=21 kirpik +12.9 med -0.2 ham med +11.1 | dusus -10..-3 n=41 kirpik +1.2 med -4.2 ham med +1.0 | normal >-3 n=240 kirpik +3.6 med -1.9 ham med -3.9
+    cikis: pahali n=103 ort +24.7 | stop n=143 ort -9.2 | sure n=2 ort -8.5 | temel n=54 ort +0.1
+T7 F + pahali ya da faz DAGITIM 10g ya da temel  n=  310 sure  41.6g | fazla ort  +4.55 kirpik  +3.43 medyan  +0.34 | kazanan %51.3 | ham getiri medyan  +0.83 | gunluk kirpik +0.082
+    yillar: 2022: n=18 kirpik +3.2 med +2.6 | 2023: n=13 kirpik +0.9 med +2.5 | 2024: n=101 kirpik +4.8 med +0.6 | 2025: n=117 kirpik +7.0 med +0.3 | 2026: n=61 kirpik -0.3 med -1.6
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=21 kirpik +5.7 med +0.1 ham med +3.2 | dusus -10..-3 n=35 kirpik +0.5 med -2.9 ham med +3.9 | normal >-3 n=254 kirpik +5.0 med +0.8 ham med +0.6
+    cikis: faz10 n=162 ort -4.8 | pahali n=88 ort +25.3 | temel n=60 ort -0.7
+T8 F + temel ya da 252 gun (6 ay yerine 1 yil)   n=  203 sure 140.1g | fazla ort +13.16 kirpik  +5.81 medyan  -1.51 | kazanan %45.3 | ham getiri medyan +10.63 | gunluk kirpik +0.042
+    yillar: 2022: n=17 kirpik -5.9 med -6.0 | 2023: n=10 kirpik -6.3 med +1.0 | 2024: n=78 kirpik +24.4 med +3.6 | 2025: n=73 kirpik -0.4 med -4.2 | 2026: n=25 kirpik -1.0 med -4.8
+    piyasa (giris oncesi 20g BIST100): kriz <=-10% n=9 kirpik +4.3 med -12.1 ham med +7.1 | dusus -10..-3 n=21 kirpik -14.5 med -11.9 ham med +10.5 | normal >-3 n=173 kirpik +12.6 med -0.6 ham med +11.1
+    cikis: sure n=40 ort +22.2 | temel n=163 ort +10.9
