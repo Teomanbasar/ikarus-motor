@@ -92,6 +92,7 @@ def main():
     P = puanlar(O, px)
     print("puanli olay", len(P))
     ISL = {}
+    SURE = []
     for n_, (t, df) in enumerate(sorted(px.items())):
         ev = P[P["t"] == t].sort_values("giris")
         if ev.empty or len(df) < 300:
@@ -162,6 +163,36 @@ def main():
             "I Temelsiz: Percentile<=20 + fiyat kacmamis, 63 gun": ((pct <= 20) & (o20x <= 10) & (o5 <= 15) & tarih_ok & (vol > 5e6), lambda i, j0: None, 63),
             "J Temel ust %20 (ucuzluk sartsiz), 63 gun": (temel_ok & tarih_ok & (vol > 5e6) & (o20x <= 10) & (o5 <= 15), lambda i, j0: None, 63),
         }
+        # --- 15 Kas: listede kalma suresi ve teknik cikislar
+        dstop = r46["d_stop"].values if "d_stop" in r46 else np.zeros(len(idx))
+        def kosu(arr):
+            o = np.zeros(len(arr)); c_ = 0
+            for i_, v_ in enumerate(arr):
+                c_ = c_ + 1 if v_ else 0; o[i_] = c_
+            return o
+        fz_dag = kosu(sfz == "DAGITIM"); ha_dag = kosu(sha == "DAGITIM")
+        fa = np.asarray(firsat_rel & fz_al, bool)
+        fr = np.asarray(firsat_rel, bool)
+        # listede kesintisiz kalma suresi (gun)
+        k_ = kosu(fr)
+        for i_ in range(1, len(fr)):
+            if fr[i_ - 1] and not fr[i_]:
+                SURE.append(k_[i_ - 1])
+        stop_k = lambda i: dstop[i] <= -3.5
+        tem = lambda i: bozuldu(i)
+        var.update({
+            "K1 Firsat+faz gir, Firsatlar'dan cikinca sat": (fa, lambda i, j0: "listeden cikti" if not fr[i] else None, 252),
+            "K2 Firsat gir (fazsiz), Firsatlar'dan cikinca sat": (fr, lambda i, j0: "listeden cikti" if not fr[i] else None, 252),
+            "K3 Firsat+faz gir, listeden 5 gun ust uste cikinca sat": (fa, lambda i, j0: "listeden 5g" if (i >= 5 and not fr[i - 4:i + 1].any()) else None, 252),
+            "T1 F + Stop kirilinca (-%3.5) ya da temel": (fa, lambda i, j0: "stop" if stop_k(i) else ("temel" if tem(i) else None), 252),
+            "T2 F + pahali bolge (Percentile>=80, kar al) ya da temel": (fa, lambda i, j0: "pahali" if pct[i] >= 80 else ("temel" if tem(i) else None), 252),
+            "T3 F + faz DAGITIM 10 gun surerse ya da temel": (fa, lambda i, j0: "faz10" if fz_dag[i] >= 10 else ("temel" if tem(i) else None), 252),
+            "T4 F + HA faz DAGITIM 10 gun surerse ya da temel": (fa, lambda i, j0: "ha10" if ha_dag[i] >= 10 else ("temel" if tem(i) else None), 252),
+            "T5 F + faz DAGITIM 20 gun ya da temel": (fa, lambda i, j0: "faz20" if fz_dag[i] >= 20 else ("temel" if tem(i) else None), 252),
+            "T6 F + stop ya da pahali ya da temel": (fa, lambda i, j0: "stop" if stop_k(i) else ("pahali" if pct[i] >= 80 else ("temel" if tem(i) else None)), 252),
+            "T7 F + pahali ya da faz DAGITIM 10g ya da temel": (fa, lambda i, j0: "pahali" if pct[i] >= 80 else ("faz10" if fz_dag[i] >= 10 else ("temel" if tem(i) else None)), 252),
+            "T8 F + temel ya da 252 gun (6 ay yerine 1 yil)": (fa, lambda i, j0: "temel" if tem(i) else None, 252),
+        })
         for ad, (m, f, mb) in var.items():
             ISL.setdefault(ad, []).extend(simule(t, idx, c, x, np.asarray(m, bool), f, mb))
         if n_ % 100 == 0:
@@ -169,6 +200,9 @@ def main():
     L = ["FIRSATLAR + FAZ MOTORU ISLEM SIMULASYONU (12 Kas 2026)",
          "Sinyalin ertesi kapanisinda al, cikis sinyalinin ertesi kapanisinda sat; %0.3 maliyet dusuldu; fazla = BIST100'e gore.",
          "kirpik = en iyi/kotu %5 atilmis ortalama. 'gunluk' = islem basina fazla getiri / sure (islem gunu), yaklasik hiz.\n"]
+    if SURE:
+        sr = pd.Series(SURE)
+        L.append(f"Firsatlar listesinde kesintisiz kalma suresi (islem gunu): n={len(sr)} medyan {sr.median():.0f} ort {sr.mean():.1f} | 1 gun %{100*(sr<=1).mean():.0f} | <=5 gun %{100*(sr<=5).mean():.0f} | >20 gun %{100*(sr>20).mean():.0f}\n")
     tum = []
     XU20 = (100 * (xu / xu.shift(20) - 1))
     kriz = XU20[XU20 <= -10]
