@@ -1,0 +1,65 @@
+PORTFOY SIMULASYONU: sitenin karar kutusu kurallari (16 Kas 2026)
+Donem 01.09.2020 - 16.11.2026 (6.2 yil). Baslangic 100.000 TL. Maliyet her islemde %0.2.
+Al: kutu AL (✓✓ once). Sat: Percentile >= 80 (kar al) ya da bilanco bozuldu. Sinyalin ertesi gunu kapanistan islem.
+Karsilastirma (ayni donem): BIST100 x10.95 (yillik %47.1) | mevduat~ (politika faizi) x5.93 (yillik %33.2) | M3 x9.76 (yillik %44.3)
+Not: BIST100 fiyat endeksi (temettusuz); hisse fiyatlari veri kaynagina gore temettu duzeltmeli olabilir. Mevduat stopajsiz, yaklasik.
+
+== A. 10 hisse, bos nakit faizde ==
+Toplam: 100.000 -> 906,707 TL (x9.07, yillik %42.6) | en buyuk dusus %-43.5 | ortalama dolu hisse 6.1
+Islem: 99 kapandi, kazanan %76, medyan %+25.6, ortalama %+25.2, ort sure 123 gun | cikis: pahali (kar al) 61, bilanco bozuldu 38
+  2020: sistem %  +4.1 | BIST100 % +36.1 | mevduat~ %  +4.1
+  2021: sistem % +19.4 | BIST100 % +25.8 | mevduat~ % +19.4
+  2022: sistem % +86.7 | BIST100 %+196.6 | mevduat~ % +13.7
+  2023: sistem % +61.1 | BIST100 % +35.6 | mevduat~ % +20.3
+  2024: sistem % +95.3 | BIST100 % +31.6 | mevduat~ % +63.2
+  2025: sistem % +39.7 | BIST100 % +14.6 | mevduat~ % +54.4
+  2026: sistem % -11.1 | BIST100 %  +5.5 | mevduat~ % +38.3
+  su an acik: BLCYT, BRYAT, HDFGS, KIMMR, MERCN, MHRGY, OSMEN, SRVGY, TDGYO, YATAS
+
+== B. 10 hisse, bos nakit faizsiz ==
+Toplam: 100.000 -> 540,782 TL (x5.41, yillik %31.3) | en buyuk dusus %-44.5 | ortalama dolu hisse 6.1
+Islem: 99 kapandi, kazanan %76, medyan %+25.6, ortalama %+25.2, ort sure 123 gun | cikis: pahali (kar al) 61, bilanco bozuldu 38
+  2020: sistem %  +0.0 | BIST100 % +36.1 | mevduat~ %  +4.1
+  2021: sistem %  +0.0 | BIST100 % +25.8 | mevduat~ % +19.4
+  2022: sistem % +75.2 | BIST100 %+196.6 | mevduat~ % +13.7
+  2023: sistem % +47.3 | BIST100 % +35.6 | mevduat~ % +20.3
+  2024: sistem % +81.2 | BIST100 % +31.6 | mevduat~ % +63.2
+  2025: sistem % +35.7 | BIST100 % +14.6 | mevduat~ % +54.4
+  2026: sistem % -14.7 | BIST100 %  +5.5 | mevduat~ % +38.3
+  su an acik: BLCYT, BRYAT, HDFGS, KIMMR, MERCN, MHRGY, OSMEN, SRVGY, TDGYO, YATAS
+
+== C. 5 hisse, bos nakit faizde ==
+Toplam: 100.000 -> 1,103,730 TL (x11.04, yillik %47.2) | en buyuk dusus %-28.2 | ortalama dolu hisse 3.3
+Islem: 53 kapandi, kazanan %77, medyan %+25.6, ortalama %+25.6, ort sure 124 gun | cikis: pahali (kar al) 33, bilanco bozuldu 20
+  2020: sistem %  +4.1 | BIST100 % +36.1 | mevduat~ %  +4.1
+  2021: sistem % +19.4 | BIST100 % +25.8 | mevduat~ % +19.4
+  2022: sistem %+119.0 | BIST100 %+196.6 | mevduat~ % +13.7
+  2023: sistem % +40.0 | BIST100 % +35.6 | mevduat~ % +20.3
+  2024: sistem % +87.5 | BIST100 % +31.6 | mevduat~ % +63.2
+  2025: sistem % +44.2 | BIST100 % +14.6 | mevduat~ % +54.4
+  2026: sistem %  +7.1 | BIST100 %  +5.5 | mevduat~ % +38.3
+  su an acik: BLCYT, BRYAT, MHRGY, SRVGY, YATAS
+
+== D. 10 hisse, yalniz ✓✓, nakit faizde ==
+Toplam: 100.000 -> 769,686 TL (x7.70, yillik %38.9) | en buyuk dusus %-39.5 | ortalama dolu hisse 5.5
+Islem: 83 kapandi, kazanan %80, medyan %+29.9, ortalama %+26.0, ort sure 129 gun | cikis: pahali (kar al) 58, bilanco bozuldu 25
+  2020: sistem %  +4.1 | BIST100 % +36.1 | mevduat~ %  +4.1
+  2021: sistem % +19.4 | BIST100 % +25.8 | mevduat~ % +19.4
+  2022: sistem % +69.1 | BIST100 %+196.6 | mevduat~ % +13.7
+  2023: sistem % +39.2 | BIST100 % +35.6 | mevduat~ % +20.3
+  2024: sistem % +98.7 | BIST100 % +31.6 | mevduat~ % +63.2
+  2025: sistem % +50.0 | BIST100 % +14.6 | mevduat~ % +54.4
+  2026: sistem % -11.8 | BIST100 %  +5.5 | mevduat~ % +38.3
+  su an acik: AKFGY, BLCYT, BRYAT, EDIP, IHGZT, MERCN, OSMEN, SRVGY, TDGYO, YATAS
+
+== E. 20 hisse, bos nakit faizde ==
+Toplam: 100.000 -> 665,547 TL (x6.66, yillik %35.7) | en buyuk dusus %-36.8 | ortalama dolu hisse 10.2
+Islem: 168 kapandi, kazanan %69, medyan %+24.3, ortalama %+21.6, ort sure 120 gun | cikis: pahali (kar al) 97, bilanco bozuldu 71
+  2020: sistem %  +4.1 | BIST100 % +36.1 | mevduat~ %  +4.1
+  2021: sistem % +19.4 | BIST100 % +25.8 | mevduat~ % +19.4
+  2022: sistem % +55.5 | BIST100 %+196.6 | mevduat~ % +13.7
+  2023: sistem % +60.0 | BIST100 % +35.6 | mevduat~ % +20.3
+  2024: sistem % +64.2 | BIST100 % +31.6 | mevduat~ % +63.2
+  2025: sistem % +45.0 | BIST100 % +14.6 | mevduat~ % +54.4
+  2026: sistem %  -9.6 | BIST100 %  +5.5 | mevduat~ % +38.3
+  su an acik: AKFGY, BLCYT, BNTAS, BRYAT, EDIP, FMIZP, HDFGS, IHGZT, KIMMR, MERCN, MERIT, MHRGY, OSMEN, PKENT, SRVGY, TDGYO, TTKOM, VKGYO, YATAS, YYLGD
