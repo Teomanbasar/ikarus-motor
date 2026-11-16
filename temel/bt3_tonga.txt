@@ -1,0 +1,53 @@
+TTKOM TONGASI TESTI (16 Kas 2026): net kar dusuk ama faaliyet iyi olan sirketler
+Ceyreklik isaretler gecen yilin ayni ceyregine gore (mevsimsellik yok), M3'e gore arindirilmis, ceyrek satisina bolunmus.
+Getiri: BIST100'e gore fazla (%), kirpik ortalama / medyan. Sanayi.
+
+== Tek tek (63g ust dilim - alt dilim)
+favok_q              D1..D5 63g:  -3.5  -2.9  -0.3  +0.8  +1.2 | 21g:  -2.1  -1.5  -1.0  -0.0  -0.4
+nk_q                 D1..D5 63g:  -3.0  -2.4  -0.7  +0.6  +0.8 | 21g:  -2.0  -1.6  -0.7  -0.5  -0.3
+faaliyet_disi_q      D1..D5 63g:  -1.0  -1.2  -2.1  +0.2  -0.6 | 21g:  -1.7  -0.6  -1.3  -0.7  -0.7
+
+== Faaliyet (FAVOK + esas faaliyet + satis, ceyreklik) ile net kar ayri ayri
+hepsi                                                          n= 9963 | 21g  -0.7/ -2.2 | 63g  -0.1/ -4.1 | 126g  -1.5/ -8.6 | kazanan % 43
+faaliyet iyi (ust %40) + net kar iyi                           n= 1795 | 21g  -0.0/ -1.7 | 63g  +2.2/ -2.1 | 126g  +4.8/ -3.0 | kazanan % 47
+faaliyet iyi (ust %40) + net kar kotu                          n=  711 | 21g  -1.8/ -3.1 | 63g  +0.0/ -4.0 | 126g  -1.0/ -9.1 | kazanan % 43
+faaliyet orta + net kar iyi                                    n=  570 | 21g  +0.5/ -1.5 | 63g  +2.1/ -2.0 | 126g  +1.4/ -6.5 | kazanan % 48
+faaliyet orta + net kar kotu                                   n=  568 | 21g  -0.9/ -2.1 | 63g  -2.3/ -6.5 | 126g  -1.6/ -8.1 | kazanan % 37
+faaliyet kotu (alt %40) + net kar iyi                          n=  716 | 21g  -1.6/ -2.9 | 63g  -1.3/ -4.7 | 126g  -2.0/ -9.6 | kazanan % 41
+faaliyet kotu (alt %40) + net kar kotu                         n= 1784 | 21g  -1.9/ -3.0 | 63g  -3.2/ -6.9 | 126g  -5.9/-12.1 | kazanan % 37
+
+== Ayni grup, kalite + deger de iyi (ikisinin ortalamasi donemin ust yarisinda)
+faaliyet iyi + net kar iyi + kalite/deger iyi                  n= 1116 | 21g  +1.2/ -0.5 | 63g  +4.1/ +0.0 | 126g  +5.7/ -0.6 | kazanan % 50
+faaliyet iyi + net kar kotu + kalite/deger iyi                 n=  288 | 21g  +0.2/ -1.4 | 63g  +3.4/ -0.7 | 126g  +0.9/ -5.7 | kazanan % 49
+faaliyet kotu + net kar iyi + kalite/deger iyi                 n=  379 | 21g  -0.7/ -2.6 | 63g  +0.3/ -2.5 | 126g  -0.5/ -6.5 | kazanan % 46
+faaliyet kotu + net kar kotu + kalite/deger iyi                n=  707 | 21g  -1.3/ -2.3 | 63g  -2.5/ -6.3 | 126g  -3.9/ -9.3 | kazanan % 39
+
+== Net kar faaliyet disi kalemlerden mi dustu? (faaliyet iyi + net kar kotu icinde)
+faaliyet disi kayip buyuk (alt yarim)                          n=  343 | 21g  -1.4/ -2.3 | 63g  -0.8/ -4.0 | 126g  +2.8/ -7.7 | kazanan % 42
+faaliyet disi kayip kucuk                                      n=  342 | 21g  -2.1/ -3.4 | 63g  +0.8/ -3.3 | 126g  -4.2/-10.5 | kazanan % 44
+
+== Temel puan adaylari: (hareket + kalite + deger)/3, donemin en ust %20'si
+P0 su anki: sue_nk, sue_faal, satis_reel, roe_ivme             n= 1604 | 21g  +1.2/ -0.3 | 63g  +3.6/ +0.2 | 126g  +5.6/ -0.3 | kazanan % 50
+                                                                 yillar 63g 2022:+6.0 2023:+10.1 2024:+0.9 2025:+1.1 2026:+1.0
+P1 faaliyet ceyreklik: favok_q, sue_faal, satis_reel           n= 1563 | 21g  +1.2/ -0.6 | 63g  +3.4/ +0.4 | 126g  +4.6/ -1.2 | kazanan % 51
+                                                                 yillar 63g 2022:+7.5 2023:+9.4 2024:+1.2 2025:+0.3 2026:+0.1
+P2 P1 + yillik: + satis_g12, favok_g12                         n= 1573 | 21g  +0.8/ -0.7 | 63g  +3.0/ -0.4 | 126g  +3.7/ -1.9 | kazanan % 49
+                                                                 yillar 63g 2022:+5.7 2023:+10.3 2024:+0.9 2025:-0.0 2026:-1.4
+P3 P2 + roe6                                                   n= 1607 | 21g  +1.1/ -0.4 | 63g  +3.3/ -0.4 | 126g  +4.2/ -1.6 | kazanan % 49
+                                                                 yillar 63g 2022:+6.9 2023:+10.2 2024:+1.2 2025:-0.2 2026:-0.3
+P4 P3 + net kar yarim agirlik                                  n= 1607 | 21g  +1.1/ -0.4 | 63g  +3.3/ -0.3 | 126g  +4.4/ -1.5 | kazanan % 49
+                                                                 yillar 63g 2022:+6.0 2023:+10.7 2024:+0.9 2025:+0.3 2026:-0.6
+P5 ceyreklik+yillik+3ay: favok_q, sue_faal, satis_reel, favo   n= 1607 | 21g  +1.1/ -0.3 | 63g  +3.2/ -0.4 | 126g  +4.5/ -1.5 | kazanan % 49
+                                                                 yillar 63g 2022:+6.3 2023:+9.6 2024:+0.6 2025:+0.3 2026:-0.1
+
+== Kotu surpriz etiketi: eski (net kar ve esas faaliyet ikisi alt %20) vs yeni (faaliyet ortalamasi alt %20)
+eski kotu surpriz                                              n=  696 | 21g  -1.9/ -3.1 | 63g  -3.8/ -7.9 | 126g  -7.7/-12.9 | kazanan % 36
+yeni kotu surpriz                                              n= 1747 | 21g  -2.2/ -3.2 | 63g  -4.0/ -6.9 | 126g  -8.3/-13.4 | kazanan % 37
+eskiye gore kotu ama yeniye gore degil                         n=  208 | 21g  -2.7/ -3.9 | 63g  -3.8/ -8.2 | 126g  -3.4/-13.0 | kazanan % 34
+yeniye gore kotu ama eskiye gore degil                         n= 1259 | 21g  -2.4/ -3.5 | 63g  -4.0/ -6.6 | 126g  -8.0/-13.8 | kazanan % 37
+
+== Liste degisimi: P0'da ust %20 degil ama P3'te ust %20 olanlar (ve tersi)
+P3'e giren, P0'da yok                                          n=  240 | 21g  +0.0/ -2.1 | 63g  +1.5/ -3.2 | 126g  -1.1/ -6.2 | kazanan % 44
+P0'da var, P3'ten cikan                                        n=  240 | 21g  +0.4/ -1.4 | 63g  +3.3/ +0.6 | 126g  +7.6/ +0.7 | kazanan % 51
+faaliyet iyi + net kar kotu: P0'da ust %20                     n=   71 | 21g  +0.7/ -0.8 | 63g  +2.6/ -0.8 | 126g  +4.8/ -0.5 | kazanan % 48
+faaliyet iyi + net kar kotu: P3'te ust %20                     n=  143 | 21g  +0.9/ -1.0 | 63g  +3.5/ -0.8 | 126g  +1.0/ -3.1 | kazanan % 49

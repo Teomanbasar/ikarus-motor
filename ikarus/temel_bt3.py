@@ -185,3 +185,129 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ---------------------------------------------------------------------------------------------
+# 16 Kas aksam: "TTKOM tongasi" testi. Ceyreklik (gecen yilin ayni ceyregi, mevsimsellik yok) + yillik (TTM).
+def ceyrek_isaret(tab, m3, d):
+    """Ceyreklik faaliyet isaretleri, ceyrek satisina bolunmus (negatif tabanda da calisir)."""
+    out = {}
+    d1 = geri(d, 12)
+    m3y = T._m3_oran(m3, d, d1)
+    s0, s1 = T.ceyreklik(tab, d, "3C"), T.ceyreklik(tab, d1, "3C")
+    if not m3y or not s0 or s0 <= 0:
+        return out
+    def fq(dd):
+        a, b = T.ceyreklik(tab, dd, "3DF"), T.ceyreklik(tab, dd, "4B")
+        return None if a is None or b is None else a + b
+    f0, f1 = fq(d), fq(d1)
+    n0, n1 = T.ceyreklik(tab, d, "3Z"), T.ceyreklik(tab, d1, "3Z")
+    if f0 is not None and f1 is not None:
+        out["favok_q"] = (f0 - f1 * m3y) / s0
+    if n0 is not None and n1 is not None:
+        out["nk_q"] = (n0 - n1 * m3y) / s0
+        if f0 is not None and f1 is not None:
+            # faaliyet disi kalemlerin (finansman, kur, parasal kayip, vergi) degisimi: net kar - FAVOK farkinin degisimi
+            out["faaliyet_disi_q"] = ((n0 - f0) - (n1 - f1) * m3y) / s0
+    return out
+
+
+def tonga():
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    m3 = D.m3()
+    rows = []
+    for h, g in G.items():
+        if g["grup"] != "XI_29":
+            continue
+        tab = {tuple(map(int, k.split("/"))): v for k, v in g["tab"].items()}
+        for d in sorted(tab):
+            alt = {k: v for k, v in tab.items() if k <= d}
+            r = ceyrek_isaret(alt, m3, d)
+            if r:
+                r.update({"t": h, "donem": f"{d[0]}/{d[1]:02d}"})
+                rows.append(r)
+    A = pd.read_csv(R / "bt3_olaylar.csv.gz", parse_dates=["giris"]).merge(pd.DataFrame(rows), on=["t", "donem"], how="left")
+    g = A.groupby("donem")
+    rk = lambda f: g[f].rank(pct=True)
+    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "favok_q", "nk_q", "satis_g12", "favok_g12", "roe6", "satis_g3", "favok_g3",
+              "F", "roe", "kaz_get", "favok_marj"]:
+        A["r_" + f] = rk(f)
+    A["r_pddd"] = 1 - rk("pddd")
+    L = ["TTKOM TONGASI TESTI (16 Kas 2026): net kar dusuk ama faaliyet iyi olan sirketler",
+         "Ceyreklik isaretler gecen yilin ayni ceyregine gore (mevsimsellik yok), M3'e gore arindirilmis, ceyrek satisina bolunmus.",
+         "Getiri: BIST100'e gore fazla (%), kirpik ortalama / medyan. Sanayi.\n"]
+
+    def grup(ad, X):
+        s = f"{ad:62s} n={len(X):5d}"
+        for hh in (21, 63, 126):
+            a = X[f"a{hh}"].dropna()
+            s += f" | {hh}g {kirp(a):+5.1f}/{a.median():+5.1f}" if len(a) >= 15 else f" | {hh}g -"
+        a = X["a63"].dropna()
+        s += f" | kazanan %{100 * (a > 0).mean():3.0f}" if len(a) else ""
+        L.append(s)
+
+    L.append("== Tek tek (63g ust dilim - alt dilim)")
+    for f in ["favok_q", "nk_q", "faaliyet_disi_q"]:
+        X = A.dropna(subset=[f]).copy()
+        X["q"] = X.groupby("donem")[f].transform(lambda s: pd.qcut(s.rank(method="first"), 5, labels=False) + 1 if len(s) >= 25 else np.nan)
+        p = [kirp(X[X.q == q].a63) for q in range(1, 6)]
+        L.append(f"{f:20s} D1..D5 63g: " + " ".join(f"{x:+5.1f}" for x in p) + f" | 21g: " + " ".join(f"{kirp(X[X.q == q].a21):+5.1f}" for q in range(1, 6)))
+    op = A[["r_favok_q", "r_sue_faal", "r_satis_reel"]].mean(axis=1)
+    A["r_op"] = op.groupby(A.donem).rank(pct=True)
+    L.append("\n== Faaliyet (FAVOK + esas faaliyet + satis, ceyreklik) ile net kar ayri ayri")
+    grup("hepsi", A)
+    for a_, ma in [("faaliyet iyi (ust %40)", A.r_op >= 0.6), ("faaliyet orta", A.r_op.between(0.4, 0.6, inclusive="neither")), ("faaliyet kotu (alt %40)", A.r_op <= 0.4)]:
+        for b_, mb in [("net kar iyi", A.r_sue_nk >= 0.6), ("net kar kotu", A.r_sue_nk <= 0.4)]:
+            grup(f"{a_} + {b_}", A[ma & mb])
+    L.append("\n== Ayni grup, kalite + deger de iyi (ikisinin ortalamasi donemin ust yarisinda)")
+    kd = (A[["r_F", "r_roe"]].mean(axis=1) + A[["r_kaz_get", "r_pddd"]].mean(axis=1)) / 2
+    A["r_kd"] = kd.groupby(A.donem).rank(pct=True)
+    for a_, ma in [("faaliyet iyi", A.r_op >= 0.6), ("faaliyet kotu", A.r_op <= 0.4)]:
+        for b_, mb in [("net kar iyi", A.r_sue_nk >= 0.6), ("net kar kotu", A.r_sue_nk <= 0.4)]:
+            grup(f"{a_} + {b_} + kalite/deger iyi", A[ma & mb & (A.r_kd >= 0.5)])
+    L.append("\n== Net kar faaliyet disi kalemlerden mi dustu? (faaliyet iyi + net kar kotu icinde)")
+    Y = A[(A.r_op >= 0.6) & (A.r_sue_nk <= 0.4)]
+    grup("faaliyet disi kayip buyuk (alt yarim)", Y[Y.faaliyet_disi_q <= Y.faaliyet_disi_q.median()])
+    grup("faaliyet disi kayip kucuk", Y[Y.faaliyet_disi_q > Y.faaliyet_disi_q.median()])
+
+    # ---- birlesik puan adaylari (hareket + kalite + deger)/3, en ust %20 -- kotu surpriz etiketi de ayri
+    def puan(hcols, w=None):
+        Hm = A[["r_" + c for c in hcols]]
+        w = np.array(w if w else [1] * len(hcols), float)
+        Wm = Hm.notna() * w
+        h = (Hm.fillna(0) * w).sum(axis=1) / Wm.sum(axis=1)
+        h = h.where(Hm.notna().sum(axis=1) >= 2)
+        k = A[["r_F", "r_roe"]].mean(axis=1)
+        dg = A[["r_kaz_get", "r_pddd"]].mean(axis=1)
+        return ((h + k + dg) / 3).groupby(A.donem).rank(pct=True)
+    adaylar = {
+        "P0 su anki: sue_nk, sue_faal, satis_reel, roe_ivme": (["sue_nk", "sue_faal", "satis_reel", "roe_ivme"], None),
+        "P1 faaliyet ceyreklik: favok_q, sue_faal, satis_reel": (["favok_q", "sue_faal", "satis_reel"], None),
+        "P2 P1 + yillik: + satis_g12, favok_g12": (["favok_q", "sue_faal", "satis_reel", "satis_g12", "favok_g12"], None),
+        "P3 P2 + roe6": (["favok_q", "sue_faal", "satis_reel", "satis_g12", "favok_g12", "roe6"], None),
+        "P4 P3 + net kar yarim agirlik": (["favok_q", "sue_faal", "satis_reel", "satis_g12", "favok_g12", "roe6", "sue_nk"], [1, 1, 1, 1, 1, 1, .5]),
+        "P5 ceyreklik+yillik+3ay: favok_q, sue_faal, satis_reel, favok_g3, satis_g3, favok_g12, satis_g12, roe6":
+            (["favok_q", "sue_faal", "satis_reel", "favok_g3", "satis_g3", "favok_g12", "satis_g12", "roe6"], None),
+    }
+    L.append("\n== Temel puan adaylari: (hareket + kalite + deger)/3, donemin en ust %20'si")
+    kotu_eski = (A.r_sue_nk <= 0.2) & (A.r_sue_faal <= 0.2)
+    kotu_yeni = (A.r_op <= 0.2)
+    for ad, (c, w) in adaylar.items():
+        r = puan(c, w)
+        X = A[r >= 0.8]
+        grup(ad[:60], X)
+        yl = " ".join(f"{y}:{kirp(X[X.giris.dt.year == y].a63):+.1f}" for y in range(2022, 2027))
+        L.append(f"{'':62s}   yillar 63g {yl}")
+        A["_p_" + ad[:2]] = r
+    L.append("\n== Kotu surpriz etiketi: eski (net kar ve esas faaliyet ikisi alt %20) vs yeni (faaliyet ortalamasi alt %20)")
+    grup("eski kotu surpriz", A[kotu_eski]); grup("yeni kotu surpriz", A[kotu_yeni])
+    grup("eskiye gore kotu ama yeniye gore degil", A[kotu_eski & ~kotu_yeni])
+    grup("yeniye gore kotu ama eskiye gore degil", A[kotu_yeni & ~kotu_eski])
+    L.append("\n== Liste degisimi: P0'da ust %20 degil ama P3'te ust %20 olanlar (ve tersi)")
+    grup("P3'e giren, P0'da yok", A[(A["_p_P3"] >= 0.8) & (A["_p_P0"] < 0.8)])
+    grup("P0'da var, P3'ten cikan", A[(A["_p_P0"] >= 0.8) & (A["_p_P3"] < 0.8)])
+    grup("faaliyet iyi + net kar kotu: P0'da ust %20", A[(A.r_op >= 0.6) & (A.r_sue_nk <= 0.4) & (A["_p_P0"] >= 0.8)])
+    grup("faaliyet iyi + net kar kotu: P3'te ust %20", A[(A.r_op >= 0.6) & (A.r_sue_nk <= 0.4) & (A["_p_P3"] >= 0.8)])
+    txt = "\n".join(L)
+    (R / "bt3_tonga.txt").write_text(txt, encoding="utf-8")
+    print(txt)
