@@ -381,7 +381,7 @@ def run(tickers: list[str] | None = None) -> dict:
     result = {
         "bakim": _bakim(m3, xu, stocks),
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "surum": "IKARUS QUANT v4.6 aday (Python)",
+        "surum": "IKARUS QUANT v4.7 (Python)",
         "piyasa": piyasa,
         "listeler": {"D": L_D, "W": lists("W")},
         "hisseler": stocks,
