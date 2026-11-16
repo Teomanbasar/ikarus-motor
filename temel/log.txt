@@ -1,60 +1,60 @@
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
   puan = 100 * (c / mm - mn) / (mx - mn)
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:53: RuntimeWarning: invalid value encountered in divide
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
   puan = 100 * (c / mm - mn) / (mx - mn)
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:53: RuntimeWarning: invalid value encountered in divide
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
   puan = 100 * (c / mm - mn) / (mx - mn)
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:53: RuntimeWarning: invalid value encountered in divide
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
   puan = 100 * (c / mm - mn) / (mx - mn)
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:53: RuntimeWarning: invalid value encountered in divide
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
   puan = 100 * (c / mm - mn) / (mx - mn)
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:53: RuntimeWarning: invalid value encountered in divide
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
+  puan = 100 * (c / mm - mn) / (mx - mn)
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
+  puan = 100 * (c / mm - mn) / (mx - mn)
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
+  puan = 100 * (c / mm - mn) / (mx - mn)
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
+  puan = 100 * (c / mm - mn) / (mx - mn)
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
+  puan = 100 * (c / mm - mn) / (mx - mn)
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/m3bant_bt.py:146: RuntimeWarning: invalid value encountered in divide
   puan = 100 * (c / mm - mn) / (mx - mn)
 M3 (EVDS): 2026-11 eklendi
-0 A1CAP 155 39
-100 BIZIM 22270 2940
-200 ELITE 44890 4887
-500 SANKO 114169 12919
-600 VKING 138948 15582
-M3 BANDI ON DENEMESI (17 Kas 2026) - yalniz cozulen Ucuz<->Pahali puani; Para Girisi / Baz-Kirilim Zippo tanimi DEGIL
-2018+ , gunluk islem > 5 mn TL. Getiri: BIST100'e gore fazla (%), kirpik ortalama / medyan / kazanan.
+M3 (EVDS): 2026-11 eklendi
+DIPTEN IVMELENME TESTI (17 Kas 2026). Getiri: ayni gun tum likit hisselerin ESIT agirlikli ortalamasina gore fazla (%).
+Her hucre: kirpik ortalama / medyan / kazanan orani. Olaylar: kosul tetiklenince 20 gun bekleme. 2018+, islem > 5 mn TL.
+Ayni olcu ile tum hisselerin ortalamasi 0'dir (medyan genelde biraz eksi: tek tuk buyuk kazananlar ortalamayi tasir).
 
-== 1) Puan dilimleri (5 gunde bir orneklem; ayni hisse tekrar sayilir)
-puan   0-5                                                     n= 14398 | 21g  -0.9/ -2.0 | 63g  -2.0/ -4.4 | 126g  -1.0/ -6.8 | %40
-puan   5-10                                                    n= 10734 | 21g  -0.5/ -1.9 | 63g  -1.5/ -4.9 | 126g  -1.6/ -9.1 | %40
-puan  10-20                                                    n= 19619 | 21g  -0.7/ -2.0 | 63g  -1.5/ -5.0 | 126g  -0.5/ -7.8 | %40
-puan  20-40                                                    n= 36165 | 21g  -0.4/ -1.7 | 63g  -0.9/ -4.3 | 126g  -0.4/ -7.6 | %42
-puan  40-60                                                    n= 27123 | 21g  -0.6/ -1.9 | 63g  -0.8/ -4.3 | 126g  -1.0/ -8.3 | %42
-puan  60-80                                                    n= 19908 | 21g  -0.2/ -1.6 | 63g  +1.4/ -2.6 | 126g  +3.1/ -5.0 | %46
-puan  80-100.1                                                 n= 15443 | 21g  +2.4/ +0.6 | 63g  +4.4/ +0.9 | 126g  +6.7/ +1.0 | %51
-puan < 0 (Ucuzluk kirildi; tanim geregi yalniz gun ici)        n=     0 | 21g - | 63g - | 126g -
+I1 dip(20g icinde puan<=10) + puan<=25 + kapanis>MA20 + 10g >= +%5 n= 5553 | 21g  -2.0/ -3.5 % 37 | 63g  -4.7/ -8.3 % 33 | 126g  -7.1/-14.4 % 33
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 5321 | 21g  -1.9/ -3.5 % 37 | 63g  -4.8/ -8.3 % 33 | 126g  -7.3/-14.4 % 33
+   bilanco iyi (taban serisi haric)                                n=  643 | 21g  +0.1/ -1.8 % 43 | 63g  -2.1/ -5.9 % 38 | 126g  -2.2/ -9.5 % 38
+   bilanco orta (taban serisi haric)                               n=  719 | 21g  -1.7/ -3.1 % 38 | 63g  -4.3/ -7.1 % 33 | 126g  -7.4/-12.7 % 31
+   bilanco zayif (taban serisi haric)                              n= 2874 | 21g  -2.3/ -3.9 % 36 | 63g  -5.8/ -9.7 % 31 | 126g  -8.8/-16.3 % 31
+   bilanco yok (taban serisi haric)                                n= 1085 | 21g  -2.2/ -3.2 % 37 | 63g  -4.2/ -7.3 % 37 | 126g  -6.9/-13.5 % 36
+   yillar 63g: 2019:-10.8/41 2020:-12.9/127 2021:-4.3/194 2022:-2.2/752 2023:-4.8/541 2024:-3.7/917 2025:-4.9/1420 2026:-6.3/1329
 
-== 2) Dip (puan <= 10) bilanco grubuna gore
-puan <= 10, bilanco iyi                                        n=  2741 | 21g  +0.8/ -0.8 | 63g  +2.4/ -1.1 | 126g  +4.0/ -3.8 | %48
-puan 40-60, bilanco iyi (karsilastirma)                        n=  3950 | 21g  -0.8/ -1.7 | 63g  -1.0/ -4.1 | 126g  -1.0/ -5.7 | %42
-puan <= 10, bilanco orta                                       n=  3212 | 21g  -0.3/ -1.5 | 63g  -1.0/ -3.6 | 126g  -0.5/ -6.6 | %41
-puan 40-60, bilanco orta (karsilastirma)                       n=  3596 | 21g  -0.9/ -2.1 | 63g  -0.7/ -3.6 | 126g  -1.8/ -7.3 | %44
-puan <= 10, bilanco zayif                                      n= 14153 | 21g  -1.2/ -2.3 | 63g  -2.7/ -5.5 | 126g  -2.9/ -8.7 | %38
-puan 40-60, bilanco zayif (karsilastirma)                      n=  8361 | 21g  -1.3/ -3.0 | 63g  -3.6/ -7.1 | 126g  -5.4/-12.5 | %38
-puan <= 10, bilanco yok                                        n=  5026 | 21g  -0.8/ -2.0 | 63g  -2.1/ -4.9 | 126g  -0.9/ -7.9 | %41
-puan 40-60, bilanco yok (karsilastirma)                        n= 11216 | 21g  +0.1/ -1.3 | 63g  +1.2/ -2.8 | 126g  +2.6/ -6.1 | %45
+I2 dip(20g icinde puan<=10) + puan<=30 + 20g >= +%15               n= 2671 | 21g  -2.2/ -4.4 % 37 | 63g  -5.0/ -9.4 % 34 | 126g  -7.1/-15.0 % 34
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 2621 | 21g  -2.1/ -4.3 % 38 | 63g  -4.9/ -9.3 % 34 | 126g  -7.0/-14.9 % 34
+   bilanco iyi (taban serisi haric)                                n=  326 | 21g  +0.0/ -1.7 % 44 | 63g  -3.4/ -8.3 % 37 | 126g  -3.1/-10.9 % 37
+   bilanco orta (taban serisi haric)                               n=  362 | 21g  -3.0/ -5.6 % 34 | 63g  -5.7/ -9.7 % 32 | 126g  -9.1/-15.3 % 30
+   bilanco zayif (taban serisi haric)                              n= 1409 | 21g  -2.5/ -5.0 % 36 | 63g  -5.5/-10.4 % 32 | 126g  -7.7/-16.6 % 32
+   bilanco yok (taban serisi haric)                                n=  524 | 21g  -2.1/ -3.5 % 40 | 63g  -3.7/ -7.7 % 39 | 126g  -6.6/-12.0 % 37
+   yillar 63g: 2019:+nan/5 2020:+1.2/98 2021:-7.6/77 2022:-4.3/447 2023:-3.8/390 2024:-4.8/447 2025:-4.2/641 2026:-8.1/516
 
-== 3) Dip + kisa baz / kirilim olaylari (tetiklenince 20 gun bekleme)
-dip(<=10) + 10g baz (aralik <=%12)                             n=  5059 | 21g  -0.8/ -2.0 | 63g  -1.8/ -4.1 | 126g  -2.0/ -7.5 | %41
-   bilanco iyi                                                 n=   541 | 21g  +0.8/ -1.1 | 63g  +2.9/ -0.6 | 126g  +3.7/ -2.7 | %48
-   bilanco zayif                                               n=  2695 | 21g  -1.0/ -2.4 | 63g  -2.7/ -4.9 | 126g  -3.6/ -8.6 | %39
-   bilanco yok                                                 n=  1160 | 21g  -1.5/ -2.1 | 63g  -2.8/ -5.1 | 126g  -2.9/ -8.1 | %40
-dip(<=15) + 10g baz kirilimi (kapanis > onceki 10g tepe)       n=  3515 | 21g  -0.9/ -2.0 | 63g  -1.7/ -4.6 | 126g  -2.4/ -8.7 | %40
-   bilanco iyi                                                 n=   424 | 21g  +0.8/ -0.7 | 63g  +0.4/ -2.3 | 126g  +1.9/ -5.2 | %45
-   bilanco zayif                                               n=  1851 | 21g  -1.0/ -2.4 | 63g  -2.5/ -5.8 | 126g  -4.4/-10.2 | %38
-   bilanco yok                                                 n=   760 | 21g  -1.9/ -2.7 | 63g  -1.7/ -3.9 | 126g  -1.4/ -6.4 | %44
-dip(<=10) + 15g baz (aralik <=%15)                             n=  4647 | 21g  -0.8/ -1.8 | 63g  -1.6/ -4.0 | 126g  -1.4/ -6.8 | %40
-   bilanco iyi                                                 n=   504 | 21g  +1.3/ -0.6 | 63g  +2.8/ -1.4 | 126g  +5.7/ -2.6 | %47
-   bilanco zayif                                               n=  2455 | 21g  -1.1/ -2.1 | 63g  -2.3/ -4.5 | 126g  -2.8/ -8.3 | %39
-   bilanco yok                                                 n=  1060 | 21g  -1.5/ -2.2 | 63g  -2.9/ -4.5 | 126g  -3.4/ -7.4 | %39
-dip(<=15) + 15g baz kirilimi (kapanis > onceki 15g tepe)       n=  2911 | 21g  -0.6/ -1.8 | 63g  -1.3/ -4.4 | 126g  -2.4/ -9.4 | %41
-   bilanco iyi                                                 n=   367 | 21g  +1.8/ -0.3 | 63g  +1.5/ -2.4 | 126g  +2.9/ -5.4 | %45
-   bilanco zayif                                               n=  1527 | 21g  -0.6/ -2.1 | 63g  -2.1/ -5.8 | 126g  -3.7/-11.1 | %39
-   bilanco yok                                                 n=   612 | 21g  -2.1/ -2.1 | 63g  -1.8/ -4.2 | 126g  -1.8/ -6.8 | %44
+I3 dip(20g icinde puan<=15) + puan<=30 + MA20 > MA50 (yeni)        n= 2617 | 21g  -1.2/ -2.8 % 40 | 63g  -3.8/ -7.2 % 36 | 126g  -6.1/-12.8 % 34
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 2599 | 21g  -1.1/ -2.8 % 40 | 63g  -3.8/ -7.1 % 36 | 126g  -6.1/-12.8 % 34
+   bilanco iyi (taban serisi haric)                                n=  295 | 21g  -0.1/ -1.5 % 45 | 63g  -2.2/ -4.7 % 38 | 126g  -1.6/ -8.7 % 39
+   bilanco orta (taban serisi haric)                               n=  356 | 21g  -0.7/ -2.9 % 41 | 63g  -2.0/ -6.8 % 39 | 126g  -5.9/-10.2 % 33
+   bilanco zayif (taban serisi haric)                              n= 1375 | 21g  -1.5/ -3.4 % 38 | 63g  -4.6/ -8.5 % 35 | 126g  -7.4/-14.4 % 32
+   bilanco yok (taban serisi haric)                                n=  573 | 21g  -1.1/ -2.2 % 40 | 63g  -3.8/ -6.2 % 38 | 126g  -6.2/-11.8 % 36
+   yillar 63g: 2019:-13.7/15 2020:-12.1/67 2021:-4.8/118 2022:-1.6/382 2023:-3.1/245 2024:-4.1/546 2025:-3.1/637 2026:-5.2/589
 
-== Yillar (puan <= 10, 63g kirpik / n)
-  2019:+10.4/153 2020:+12.6/488 2021:-12.4/1137 2022:+0.1/3051 2023:+4.2/2367 2024:-1.3/4644 2025:-0.3/7896 2026:-7.0/5396
+K  karsilastirma: puan<=10, ivme sarti yok                         n= 8851 | 21g  -1.4/ -2.6 % 38 | 63g  -4.1/ -6.9 % 35 | 126g  -7.1/-13.2 % 33
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 8355 | 21g  -1.3/ -2.5 % 38 | 63g  -4.1/ -6.9 % 35 | 126g  -7.3/-13.1 % 33
+   bilanco iyi (taban serisi haric)                                n=  944 | 21g  +0.5/ -0.8 % 45 | 63g  -1.0/ -4.4 % 42 | 126g  -2.0/ -9.1 % 39
+   bilanco orta (taban serisi haric)                               n= 1104 | 21g  -0.6/ -2.0 % 41 | 63g  -2.7/ -5.0 % 37 | 126g  -5.7/-10.3 % 32
+   bilanco zayif (taban serisi haric)                              n= 4561 | 21g  -1.7/ -2.9 % 36 | 63g  -4.7/ -7.7 % 32 | 126g  -8.2/-14.3 % 32
+   bilanco yok (taban serisi haric)                                n= 1746 | 21g  -1.7/ -2.8 % 39 | 63g  -5.4/ -7.6 % 35 | 126g  -8.9/-15.4 % 35
+   yillar 63g: 2019:-6.8/119 2020:-18.9/201 2021:-4.1/368 2022:-2.7/926 2023:-4.1/772 2024:-2.4/1400 2025:-4.4/2226 2026:-4.3/2343
+

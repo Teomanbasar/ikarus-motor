@@ -1,0 +1,35 @@
+DIPTEN IVMELENME TESTI (17 Kas 2026). Getiri: ayni gun tum likit hisselerin ESIT agirlikli ortalamasina gore fazla (%).
+Her hucre: kirpik ortalama / medyan / kazanan orani. Olaylar: kosul tetiklenince 20 gun bekleme. 2018+, islem > 5 mn TL.
+Ayni olcu ile tum hisselerin ortalamasi 0'dir (medyan genelde biraz eksi: tek tuk buyuk kazananlar ortalamayi tasir).
+
+I1 dip(20g icinde puan<=10) + puan<=25 + kapanis>MA20 + 10g >= +%5 n= 5553 | 21g  -2.0/ -3.5 % 37 | 63g  -4.7/ -8.3 % 33 | 126g  -7.1/-14.4 % 33
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 5321 | 21g  -1.9/ -3.5 % 37 | 63g  -4.8/ -8.3 % 33 | 126g  -7.3/-14.4 % 33
+   bilanco iyi (taban serisi haric)                                n=  643 | 21g  +0.1/ -1.8 % 43 | 63g  -2.1/ -5.9 % 38 | 126g  -2.2/ -9.5 % 38
+   bilanco orta (taban serisi haric)                               n=  719 | 21g  -1.7/ -3.1 % 38 | 63g  -4.3/ -7.1 % 33 | 126g  -7.4/-12.7 % 31
+   bilanco zayif (taban serisi haric)                              n= 2874 | 21g  -2.3/ -3.9 % 36 | 63g  -5.8/ -9.7 % 31 | 126g  -8.8/-16.3 % 31
+   bilanco yok (taban serisi haric)                                n= 1085 | 21g  -2.2/ -3.2 % 37 | 63g  -4.2/ -7.3 % 37 | 126g  -6.9/-13.5 % 36
+   yillar 63g: 2019:-10.8/41 2020:-12.9/127 2021:-4.3/194 2022:-2.2/752 2023:-4.8/541 2024:-3.7/917 2025:-4.9/1420 2026:-6.3/1329
+
+I2 dip(20g icinde puan<=10) + puan<=30 + 20g >= +%15               n= 2671 | 21g  -2.2/ -4.4 % 37 | 63g  -5.0/ -9.4 % 34 | 126g  -7.1/-15.0 % 34
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 2621 | 21g  -2.1/ -4.3 % 38 | 63g  -4.9/ -9.3 % 34 | 126g  -7.0/-14.9 % 34
+   bilanco iyi (taban serisi haric)                                n=  326 | 21g  +0.0/ -1.7 % 44 | 63g  -3.4/ -8.3 % 37 | 126g  -3.1/-10.9 % 37
+   bilanco orta (taban serisi haric)                               n=  362 | 21g  -3.0/ -5.6 % 34 | 63g  -5.7/ -9.7 % 32 | 126g  -9.1/-15.3 % 30
+   bilanco zayif (taban serisi haric)                              n= 1409 | 21g  -2.5/ -5.0 % 36 | 63g  -5.5/-10.4 % 32 | 126g  -7.7/-16.6 % 32
+   bilanco yok (taban serisi haric)                                n=  524 | 21g  -2.1/ -3.5 % 40 | 63g  -3.7/ -7.7 % 39 | 126g  -6.6/-12.0 % 37
+   yillar 63g: 2019:+nan/5 2020:+1.2/98 2021:-7.6/77 2022:-4.3/447 2023:-3.8/390 2024:-4.8/447 2025:-4.2/641 2026:-8.1/516
+
+I3 dip(20g icinde puan<=15) + puan<=30 + MA20 > MA50 (yeni)        n= 2617 | 21g  -1.2/ -2.8 % 40 | 63g  -3.8/ -7.2 % 36 | 126g  -6.1/-12.8 % 34
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 2599 | 21g  -1.1/ -2.8 % 40 | 63g  -3.8/ -7.1 % 36 | 126g  -6.1/-12.8 % 34
+   bilanco iyi (taban serisi haric)                                n=  295 | 21g  -0.1/ -1.5 % 45 | 63g  -2.2/ -4.7 % 38 | 126g  -1.6/ -8.7 % 39
+   bilanco orta (taban serisi haric)                               n=  356 | 21g  -0.7/ -2.9 % 41 | 63g  -2.0/ -6.8 % 39 | 126g  -5.9/-10.2 % 33
+   bilanco zayif (taban serisi haric)                              n= 1375 | 21g  -1.5/ -3.4 % 38 | 63g  -4.6/ -8.5 % 35 | 126g  -7.4/-14.4 % 32
+   bilanco yok (taban serisi haric)                                n=  573 | 21g  -1.1/ -2.2 % 40 | 63g  -3.8/ -6.2 % 38 | 126g  -6.2/-11.8 % 36
+   yillar 63g: 2019:-13.7/15 2020:-12.1/67 2021:-4.8/118 2022:-1.6/382 2023:-3.1/245 2024:-4.1/546 2025:-3.1/637 2026:-5.2/589
+
+K  karsilastirma: puan<=10, ivme sarti yok                         n= 8851 | 21g  -1.4/ -2.6 % 38 | 63g  -4.1/ -6.9 % 35 | 126g  -7.1/-13.2 % 33
+   taban serisi (20 gunde 2+ taban) olanlar haric                  n= 8355 | 21g  -1.3/ -2.5 % 38 | 63g  -4.1/ -6.9 % 35 | 126g  -7.3/-13.1 % 33
+   bilanco iyi (taban serisi haric)                                n=  944 | 21g  +0.5/ -0.8 % 45 | 63g  -1.0/ -4.4 % 42 | 126g  -2.0/ -9.1 % 39
+   bilanco orta (taban serisi haric)                               n= 1104 | 21g  -0.6/ -2.0 % 41 | 63g  -2.7/ -5.0 % 37 | 126g  -5.7/-10.3 % 32
+   bilanco zayif (taban serisi haric)                              n= 4561 | 21g  -1.7/ -2.9 % 36 | 63g  -4.7/ -7.7 % 32 | 126g  -8.2/-14.3 % 32
+   bilanco yok (taban serisi haric)                                n= 1746 | 21g  -1.7/ -2.8 % 39 | 63g  -5.4/ -7.6 % 35 | 126g  -8.9/-15.4 % 35
+   yillar 63g: 2019:-6.8/119 2020:-18.9/201 2021:-4.1/368 2022:-2.7/926 2023:-4.1/772 2024:-2.4/1400 2025:-4.4/2226 2026:-4.3/2343
