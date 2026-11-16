@@ -94,6 +94,7 @@ jobs:
           git config user.email "ikarus-bot@users.noreply.github.com"
           git add data/son_bildirim.log
           [ -f data/m3_kayit.csv ] && git add data/m3_kayit.csv
+          [ -f data/defter.json ] && git add data/defter.json
           [ -f data/takip.json ] && git add data/takip.json
           [ -f data/telegram_chat.txt ] && git add data/telegram_chat.txt
           [ -f data/son_bildirilen.txt ] && git add data/son_bildirilen.txt

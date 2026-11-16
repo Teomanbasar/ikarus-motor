@@ -373,6 +373,11 @@ def run(tickers: list[str] | None = None) -> dict:
                 "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
 
     L_D = lists("D")
+    try:
+        from . import defter
+        defter_ozet = defter.guncelle(stocks, px, xu)
+    except Exception as e:
+        print("[uyari] defter", e); defter_ozet = {}
     result = {
         "bakim": _bakim(m3, xu, stocks),
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
@@ -380,6 +385,7 @@ def run(tickers: list[str] | None = None) -> dict:
         "piyasa": piyasa,
         "listeler": {"D": L_D, "W": lists("W")},
         "hisseler": stocks,
+        "defter": defter_ozet,
         "not": "Yatirim tavsiyesi degildir. Sinyal kurali 19 Zippo tablosundan cikarilmis adaydir.",
     }
     OUT.mkdir(exist_ok=True)
