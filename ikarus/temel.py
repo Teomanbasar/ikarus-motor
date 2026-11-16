@@ -545,6 +545,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "portfoy":
+        from . import portfoy_bt
+        portfoy_bt.main()
     elif sys.argv[1] == "karar":
         from . import karar_bt
         karar_bt.main()
