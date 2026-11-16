@@ -545,6 +545,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "m3ivme":
+        from . import m3bant_bt
+        m3bant_bt.ivme()
     elif sys.argv[1] == "m3bant":
         from . import m3bant_bt
         m3bant_bt.main()

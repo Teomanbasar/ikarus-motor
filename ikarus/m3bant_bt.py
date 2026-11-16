@@ -120,3 +120,97 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def ivme():
+    """Teoman (17 Kas): 'En ucuz kalmis, yukari ivmelenmeye baslamis hisseleri almak basli basina dogru mantik.'
+    Olcum duzeltmesi: getiri BIST100 yerine ayni gun tum likit hisselerin ESIT AGIRLIKLI ortalamasina gore
+    (BIST100 buyuk sirket agirlikli; tipik hisse geride kaldigi icin her sey eksi gorunuyordu)."""
+    lst = D.bist_list()
+    px = D.prices(lst["ticker"].tolist())
+    m3e = E.m3_effective(D.m3())
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = B.olaylar(G, D.m3())
+    P = puanlar(O, {t: px[t] for t in O["t"].unique() if t in px})
+    H = (21, 63, 126)
+    seri, toplam = {}, {h: {} for h in H}
+    for t, df in sorted(px.items()):
+        df = df[df.index >= pd.Timestamp("2016-01-01")]
+        if len(df) < 300 or not {"high", "low", "close", "volume"} <= set(df.columns):
+            continue
+        ix = df.index
+        mm = E.align_m3(ix, m3e)
+        c = df["close"].values.astype(float)
+        mn = pd.Series(df["low"].values / mm).cummin().values
+        mx = pd.Series(df["high"].values / mm).rolling(PEN, min_periods=1).max().values
+        puan = 100 * (c / mm - mn) / (mx - mn)
+        cs = pd.Series(c)
+        vol = (df["close"] * df["volume"]).rolling(20).mean().values
+        f = {h: (100 * (cs.shift(-h) / cs - 1)).values for h in H}
+        ok = (ix >= pd.Timestamp("2018-01-01")) & (vol > 5e6)
+        for h in H:   # esit agirlikli piyasa ortalamasi (uc degerler %99'da kirpilir)
+            for d, v in zip(ix[ok], np.clip(f[h][ok], -90, 400)):
+                if not np.isnan(v):
+                    s = toplam[h].setdefault(d, [0.0, 0])
+                    s[0] += v; s[1] += 1
+        ev = P[P["t"] == t].sort_values("giris")
+        bil = np.array(["yok"] * len(ix), dtype=object)
+        if not ev.empty:
+            gv = ev["giris"].values.astype("datetime64[ns]")
+            k = np.searchsorted(gv, ix.values.astype("datetime64[ns]"), side="right") - 1
+            kk = np.clip(k, 0, None)
+            v3r = np.where(k >= 0, ev["v3r"].values[kk].astype(float), np.nan)
+            yas = np.where(k >= 0, (ix.values.astype("datetime64[ns]") - gv[kk]) / np.timedelta64(1, "D"), 9999)
+            g = (yas <= 200) & ~np.isnan(v3r)
+            bil = np.where(g & (v3r >= 0.8), "iyi", np.where(g & (v3r >= 0.6), "orta", np.where(g, "zayif", "yok")))
+        seri[t] = dict(ix=ix, c=c, puan=puan, f=f, ok=ok, bil=bil,
+                       taban=(cs.pct_change() <= -0.095).rolling(20).sum().fillna(0).values,
+                       ma20=cs.rolling(20).mean().values, ma50=cs.rolling(50).mean().values,
+                       r10=(100 * (cs / cs.shift(10) - 1)).values, r20=(100 * (cs / cs.shift(20) - 1)).values,
+                       pmin20=pd.Series(puan).rolling(20).min().values)
+    ort = {h: {d: s[0] / s[1] for d, s in toplam[h].items() if s[1] >= 30} for h in H}
+    kurallar = {
+        "I1 dip(20g icinde puan<=10) + puan<=25 + kapanis>MA20 + 10g >= +%5":
+            lambda S: (S["pmin20"] <= 10) & (S["puan"] <= 25) & (S["c"] > S["ma20"]) & (S["r10"] >= 5),
+        "I2 dip(20g icinde puan<=10) + puan<=30 + 20g >= +%15":
+            lambda S: (S["pmin20"] <= 10) & (S["puan"] <= 30) & (S["r20"] >= 15),
+        "I3 dip(20g icinde puan<=15) + puan<=30 + MA20 > MA50 (yeni)":
+            lambda S: (S["pmin20"] <= 15) & (S["puan"] <= 30) & (S["ma20"] > S["ma50"]) & (pd.Series(S["ma20"]).shift(1).values <= pd.Series(S["ma50"]).shift(1).values),
+        "K  karsilastirma: puan<=10, ivme sarti yok":
+            lambda S: (S["puan"] <= 10),
+    }
+    rows = []
+    for ad, kos in kurallar.items():
+        for t, S in seri.items():
+            m = kos(S) & S["ok"]
+            son = -999
+            for i in np.flatnonzero(m):
+                if i - son < 20:
+                    continue
+                son = i
+                d = S["ix"][i]
+                r = [S["f"][h][i] - ort[h].get(d, np.nan) for h in H]
+                rows.append((ad, t, d, S["bil"][i], S["taban"][i] >= 2, *r))
+    T = pd.DataFrame(rows, columns=["ad", "t", "tarih", "bil", "taban", "x21", "x63", "x126"])
+
+    def satir(ad, X):
+        s = f"{ad:66s} n={len(X):5d}"
+        for h in H:
+            a = X[f"x{h}"].dropna()
+            s += f" | {h}g {kirp(a):+5.1f}/{a.median():+5.1f} %{100 * (a > 0).mean():3.0f}" if len(a) >= 10 else f" | {h}g -"
+        return s
+    L = ["DIPTEN IVMELENME TESTI (17 Kas 2026). Getiri: ayni gun tum likit hisselerin ESIT agirlikli ortalamasina gore fazla (%).",
+         "Her hucre: kirpik ortalama / medyan / kazanan orani. Olaylar: kosul tetiklenince 20 gun bekleme. 2018+, islem > 5 mn TL.",
+         "Ayni olcu ile tum hisselerin ortalamasi 0'dir (medyan genelde biraz eksi: tek tuk buyuk kazananlar ortalamayi tasir).\n"]
+    for ad in kurallar:
+        X = T[T.ad == ad]
+        L.append(satir(ad, X))
+        L.append(satir("   taban serisi (20 gunde 2+ taban) olanlar haric", X[~X.taban]))
+        for b in ("iyi", "orta", "zayif", "yok"):
+            L.append(satir(f"   bilanco {b} (taban serisi haric)", X[(X.bil == b) & ~X.taban]))
+        yl = X[~X.taban]
+        L.append("   yillar 63g: " + " ".join(f"{y}:{kirp(g.x63):+.1f}/{len(g)}" for y, g in yl.groupby(yl.tarih.dt.year)))
+        L.append("")
+    txt = "\n".join(L)
+    (R / "m3bant_ivme.txt").write_text(txt, encoding="utf-8")
+    print(txt)
