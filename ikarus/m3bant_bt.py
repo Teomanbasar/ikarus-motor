@@ -148,11 +148,10 @@ def ivme():
         vol = (df["close"] * df["volume"]).rolling(20).mean().values
         f = {h: (100 * (cs.shift(-h) / cs - 1)).values for h in H}
         ok = (ix >= pd.Timestamp("2018-01-01")) & (vol > 5e6)
-        for h in H:   # esit agirlikli piyasa ortalamasi (uc degerler %99'da kirpilir)
-            for d, v in zip(ix[ok], np.clip(f[h][ok], -90, 400)):
+        for h in H:   # ayni gun tum likit hisselerin getirileri (medyan icin)
+            for d, v in zip(ix[ok], f[h][ok]):
                 if not np.isnan(v):
-                    s = toplam[h].setdefault(d, [0.0, 0])
-                    s[0] += v; s[1] += 1
+                    toplam[h].setdefault(d, []).append(v)
         ev = P[P["t"] == t].sort_values("giris")
         bil = np.array(["yok"] * len(ix), dtype=object)
         if not ev.empty:
@@ -168,7 +167,7 @@ def ivme():
                        ma20=cs.rolling(20).mean().values, ma50=cs.rolling(50).mean().values,
                        r10=(100 * (cs / cs.shift(10) - 1)).values, r20=(100 * (cs / cs.shift(20) - 1)).values,
                        pmin20=pd.Series(puan).rolling(20).min().values)
-    ort = {h: {d: s[0] / s[1] for d, s in toplam[h].items() if s[1] >= 30} for h in H}
+    ort = {h: {d: float(np.median(v)) for d, v in toplam[h].items() if len(v) >= 30} for h in H}
     kurallar = {
         "I1 dip(20g icinde puan<=10) + puan<=25 + kapanis>MA20 + 10g >= +%5":
             lambda S: (S["pmin20"] <= 10) & (S["puan"] <= 25) & (S["c"] > S["ma20"]) & (S["r10"] >= 5),
@@ -178,6 +177,8 @@ def ivme():
             lambda S: (S["pmin20"] <= 15) & (S["puan"] <= 30) & (S["ma20"] > S["ma50"]) & (pd.Series(S["ma20"]).shift(1).values <= pd.Series(S["ma50"]).shift(1).values),
         "K  karsilastirma: puan<=10, ivme sarti yok":
             lambda S: (S["puan"] <= 10),
+        "Z  TABAN CIZGISI: tum hisseler (her gun aday, 20 gunde bir)":
+            lambda S: np.ones(len(S["c"]), bool),
     }
     rows = []
     for ad, kos in kurallar.items():
@@ -199,9 +200,9 @@ def ivme():
             a = X[f"x{h}"].dropna()
             s += f" | {h}g {kirp(a):+5.1f}/{a.median():+5.1f} %{100 * (a > 0).mean():3.0f}" if len(a) >= 10 else f" | {h}g -"
         return s
-    L = ["DIPTEN IVMELENME TESTI (17 Kas 2026). Getiri: ayni gun tum likit hisselerin ESIT agirlikli ortalamasina gore fazla (%).",
+    L = ["DIPTEN IVMELENME TESTI (17 Kas 2026). Getiri: ayni gun tum likit hisselerin MEDYAN getirisine gore fazla (%) (tipik hisse = 0).",
          "Her hucre: kirpik ortalama / medyan / kazanan orani. Olaylar: kosul tetiklenince 20 gun bekleme. 2018+, islem > 5 mn TL.",
-         "Ayni olcu ile tum hisselerin ortalamasi 0'dir (medyan genelde biraz eksi: tek tuk buyuk kazananlar ortalamayi tasir).\n"]
+         "Z satiri taban cizgisi: rastgele hisse almanin ayni olcudeki sonucu. Kurallar buna gore okunmali.\n"]
     for ad in kurallar:
         X = T[T.ad == ad]
         L.append(satir(ad, X))
