@@ -91,7 +91,7 @@ def panel():
     return idx, pd.DataFrame(C), pd.DataFrame(S), pd.DataFrame(PC), pd.DataFrame(VR), pd.DataFrame(TK), xu.reindex(idx).ffill(), m3
 
 
-def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80):
+def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False):
     """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
     kapanisin 'geri' kadar altina inerse sat (takip eden stop). karal: kar al Percentile esigi."""
     r = faiz_serisi(idx)
@@ -100,6 +100,9 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
     bek_al, bek_sat = [], []
     egri, isl = [], []
     Cv = C.values; Sv = S.values; PCv = PC.values; VRv = VR.values; TKv = TK.values
+    # iz_vol=(aktif, k): geri payi = k x (60 gunluk gunluk getiri oynakligi x kok 20), %8-%35 arasi
+    if iz_vol:
+        sig = (C.pct_change().rolling(60, min_periods=20).std() * np.sqrt(20)).values
     col = {t: j for j, t in enumerate(C.columns)}
     son_fiyat = {}
     tepe = {}
@@ -147,7 +150,23 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                 bek_sat.append((t, "bilanco bozuldu"))
             elif iz and not np.isnan(p) and tepe[t] >= gf * (1 + iz[0]) and p <= tepe[t] * (1 - iz[1]):
                 bek_sat.append((t, "takip eden stop"))
-        bos = N - len(poz) + len(bek_sat)
+            elif iz_vol and not np.isnan(p) and not np.isnan(sig[i, j]) and tepe[t] >= gf * (1 + iz_vol[0]) \
+                    and p <= tepe[t] * (1 - min(0.35, max(0.08, iz_vol[1] * sig[i, j]))):
+                bek_sat.append((t, "takip eden stop"))
+        # agirlik: o gun hisseye ayrilacak en fazla pay (borsa/mevduat kurali). sert=True ise fazlasi satilir.
+        w = 1.0 if agirlik is None else float(agirlik[i])
+        if sert and w < 1.0 and poz:
+            hisse_deger = sum(a * son_fiyat.get(t, gf) for t, (a, gf, _) in poz.items())
+            fazla = hisse_deger - w * (cash + hisse_deger)
+            if fazla > 0:
+                satilacak = {x for x, _ in bek_sat}
+                for t in sorted(poz, key=lambda t: (PCv[i, col[t]] if not np.isnan(PCv[i, col[t]]) else 0), reverse=True):
+                    if fazla <= 0:
+                        break
+                    if t not in satilacak:
+                        bek_sat.append((t, "borsa agirligi azaldi"))
+                        fazla -= poz[t][0] * son_fiyat.get(t, poz[t][1])
+        bos = int(np.floor(N * w + 1e-9)) - len(poz) + len(bek_sat)
         if bos > 0:
             ad = []
             for t, j in col.items():
@@ -341,4 +360,82 @@ def iz_test():
              f"2025 {100 * (mev[mev.index.year == 2025].iloc[-1] / mev[mev.index.year == 2024].iloc[-1] - 1):+.0f} 2026 {100 * (mev.iloc[-1] / mev[mev.index.year == 2025].iloc[-1] - 1):+.0f}")
     txt = "\n".join(L)
     (R / cikti).write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def piyasa_kar_verimi(idx):
+    """Gunluk piyasa kar verimi = toplam TTM net kar / toplam piyasa degeri (o gun bilinen son bilancolarla).
+    Sanayi + banka; piyasa degeri = kapanis x son odenmis sermaye (bolunme duzeltmeli fiyatla yaklasik)."""
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    m3 = D.m3()
+    O = B.olaylar(G, m3)
+    px = D.prices(sorted(O["t"].unique()))
+    nk = {}; mc = {}
+    for t, g in O.groupby("t"):
+        df = px.get(t)
+        if df is None or g["sermaye_son"].isna().all() or "nk_ttm" not in g:
+            continue
+        g = g.dropna(subset=["nk_ttm"]).sort_values("yayin")
+        if g.empty:
+            continue
+        s_nk = pd.Series(g["nk_ttm"].values, index=pd.DatetimeIndex(g["yayin"])).groupby(level=0).last()
+        nk[t] = s_nk.reindex(idx.union(s_nk.index)).ffill().reindex(idx)
+        mc[t] = df["close"].reindex(idx).ffill() * float(g["sermaye_son"].dropna().iloc[-1])
+    nk = pd.DataFrame(nk); mc = pd.DataFrame(mc)
+    ok = nk.notna() & mc.notna() & (mc > 0)
+    ep = nk.where(ok).sum(axis=1) / mc.where(ok).sum(axis=1)
+    return ep.rolling(5, min_periods=1).mean()
+
+
+def iz_test2():
+    """17 Kas aksam (Teoman: 'once baska ayarlar da dene') + borsa/mevduat agirlik kurali."""
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    r = faiz_serisi(idx)
+    mev = pd.Series(BAS * np.cumprod(np.r_[1.0, 1 + r[1:] * np.diff(idx.values).astype("timedelta64[D]").astype(float) / 365.0]), index=idx)
+    m23 = mev.iloc[-1] / mev[mev.index >= "2023-01-01"].iloc[0]
+
+    def ozet(ad, E_, T):
+        v = E_["deger"]; dd = (v / v.cummax() - 1).min()
+        def yg(y):
+            g = v[v.index.year == y]; p = v[v.index.year == y - 1]
+            return 100 * (g.iloc[-1] / (p.iloc[-1] if len(p) else g.iloc[0]) - 1)
+        x23 = v.iloc[-1] / v[v.index >= "2023-01-01"].iloc[0]
+        cik = ", ".join(f"{k} {n}" for k, n in T.neden.value_counts().items())
+        return (f"{ad:52s} x{v.iloc[-1] / BAS:5.2f} | 2023'ten x{x23:4.2f} | dusus %{100 * dd:5.1f} | "
+                f"22 {yg(2022):+4.0f} 23 {yg(2023):+4.0f} 24 {yg(2024):+4.0f} 25 {yg(2025):+4.0f} 26 {yg(2026):+4.0f} | ort.hisse {E_['hisse'].mean():.1f} | islem {len(T)} med %{T.getiri.median():+.1f} | {cik}")
+    L = ["SATIS KURALI ve BORSA/MEVDUAT TESTI (17 Kas 2026 aksam). 10 hisse (aksi yazilmadikca), bos nakit faizde.",
+         f"Mevduat 2023'ten x{m23:.2f}. Yillar: " + " ".join(f"{y} {100 * (mev[mev.index.year == y].iloc[-1] / mev[mev.index.year == y - 1].iloc[-1] - 1):+.0f}" for y in (2022, 2023, 2024, 2025)) + f" 2026 {100 * (mev.iloc[-1] / mev[mev.index.year == 2025].iloc[-1] - 1):+.0f}", ""]
+    L.append("== A. Takip eden stop ayarlari (yuzde)")
+    for ka in (90, 95):
+        for iz in ((0.20, 0.15), (0.20, 0.10), (0.20, 0.12), (0.15, 0.10), (0.25, 0.15), (0.30, 0.15), (0.25, 0.20), (0.30, 0.25)):
+            E_, T, _ = sim(idx, C, S, PC, VR, TK, iz=iz, karal=ka)
+            L.append(ozet(f"kar al {ka} | aktif %{int(iz[0] * 100)} geri %{int(iz[1] * 100)}", E_, T))
+    L.append("\n== B. Oynakliga gore takip eden stop (geri = k x 20 gunluk oynaklik, %8-%35)")
+    for ka in (90, 95):
+        for iv in ((0.20, 2.0), (0.20, 2.5), (0.20, 3.0), (0.15, 2.5), (0.30, 2.5)):
+            E_, T, _ = sim(idx, C, S, PC, VR, TK, iz_vol=iv, karal=ka)
+            L.append(ozet(f"kar al {ka} | aktif %{int(iv[0] * 100)} k={iv[1]}", E_, T))
+    L.append("\n== C. Hisse sayisi (kar al 90, aktif %20 geri %15)")
+    for N in (5, 8, 12, 15):
+        E_, T, _ = sim(idx, C, S, PC, VR, TK, N=N, iz=(0.20, 0.15), karal=90)
+        L.append(ozet(f"{N} hisse", E_, T))
+    ep = piyasa_kar_verimi(idx)
+    oran = ep.values / r
+    yo = pd.Series(oran, index=idx)
+    L.append("\n== D. Borsa/mevduat: oran = piyasa kar verimi (TTM net kar / piyasa degeri) / politika faizi")
+    L.append("   yil sonlari (kar verimi / faiz = oran): " + " ".join(
+        f"{y}: %{100 * ep[ep.index.year == y].iloc[-1]:.1f}/%{100 * r[np.flatnonzero(idx.year == y)[-1]]:.0f}={yo[yo.index.year == y].iloc[-1]:.2f}" for y in range(2021, 2027)))
+    for ad, f in [("oran<0.5 ise %50 borsa", lambda o: np.where(o < 0.5, 0.5, 1.0)),
+                  ("oran<0.5 ise %0 borsa", lambda o: np.where(o < 0.5, 0.0, 1.0)),
+                  ("oran<0.35 ise %50 borsa", lambda o: np.where(o < 0.35, 0.5, 1.0)),
+                  ("kademeli: borsa payi = oran (0.3-1)", lambda o: np.clip(o, 0.3, 1.0)),
+                  ("kademeli: borsa payi = 1.5 x oran (0.3-1)", lambda o: np.clip(1.5 * o, 0.3, 1.0))]:
+        w = f(np.nan_to_num(oran, nan=1.0))
+        for sert in (False, True):
+            E_, T, _ = sim(idx, C, S, PC, VR, TK, iz=(0.20, 0.15), karal=90, agirlik=w, sert=sert)
+            L.append(ozet(f"{ad}{' (fazla satilir)' if sert else ' (yeni alim durur)'}", E_, T) + f" | ort. borsa payi %{100 * w[idx >= pd.Timestamp('2022-01-01')].mean():.0f}")
+    E_, T, _ = sim(idx, C, S, PC, VR, TK, iz=(0.20, 0.15), karal=90)
+    L.append(ozet("karsilastirma: agirlik kurali yok", E_, T))
+    txt = "\n".join(L)
+    (R / "iz2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)

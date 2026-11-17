@@ -545,6 +545,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "iz2":
+        from . import portfoy_bt
+        portfoy_bt.iz_test2()
     elif sys.argv[1] == "iz_izgara":
         import os
         os.environ["IZ_IZGARA"] = "1"
