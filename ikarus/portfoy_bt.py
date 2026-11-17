@@ -91,7 +91,9 @@ def panel():
     return idx, pd.DataFrame(C), pd.DataFrame(S), pd.DataFrame(PC), pd.DataFrame(VR), pd.DataFrame(TK), xu.reindex(idx).ffill(), m3
 
 
-def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False):
+def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80):
+    """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
+    kapanisin 'geri' kadar altina inerse sat (takip eden stop). karal: kar al Percentile esigi."""
     r = faiz_serisi(idx)
     cash = BAS
     poz = {}   # t -> (adet, giris_fiyat, giris_tarih)
@@ -100,6 +102,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False):
     Cv = C.values; Sv = S.values; PCv = PC.values; VRv = VR.values; TKv = TK.values
     col = {t: j for j, t in enumerate(C.columns)}
     son_fiyat = {}
+    tepe = {}
     for i, gun in enumerate(idx):
         if i > 0 and faizli:
             cash *= 1 + r[i] * (gun - idx[i - 1]).days / 365.0
@@ -107,7 +110,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False):
         for t, neden in bek_sat:
             p = Cv[i, col[t]]
             if t in poz and not np.isnan(p):
-                a, gf, gt = poz.pop(t)
+                a, gf, gt = poz.pop(t); tepe.pop(t, None)
                 cash += a * p * (1 - MAL)
                 isl.append((t, gt, gun, gf, p, 100 * (p * (1 - MAL) / (gf * (1 + MAL)) - 1), neden))
         bek_sat = []
@@ -123,7 +126,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False):
                 break
             a = tutar / (p * (1 + MAL))
             cash -= a * p * (1 + MAL)
-            poz[t] = (a, p, gun)
+            poz[t] = (a, p, gun); tepe[t] = p
         bek_al = []
         for t, j in col.items():
             p = Cv[i, j]
@@ -134,10 +137,16 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False):
         # bugunun kapanisina gore yarin icin karar
         for t in list(poz):
             j = col[t]
-            if PCv[i, j] >= 80:
+            p = Cv[i, j]
+            if not np.isnan(p):
+                tepe[t] = max(tepe.get(t, p), p)
+            gf = poz[t][1]
+            if PCv[i, j] >= karal:
                 bek_sat.append((t, "pahali (kar al)"))
             elif VRv[i, j] < 0:
                 bek_sat.append((t, "bilanco bozuldu"))
+            elif iz and not np.isnan(p) and tepe[t] >= gf * (1 + iz[0]) and p <= tepe[t] * (1 - iz[1]):
+                bek_sat.append((t, "takip eden stop"))
         bos = N - len(poz) + len(bek_sat)
         if bos > 0:
             ad = []
@@ -295,4 +304,35 @@ def zar(kosu: int = 2000, seed: int = 7):
         L.append("")
     txt = "\n".join(L)
     (R / "zar_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def iz_test():
+    """17 Kas (Teoman): 'Kar al olmali ama takip eden stop sistemi de sart.' Varyantlar ayni panel uzerinde."""
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    r = faiz_serisi(idx)
+    mev = pd.Series(BAS * np.cumprod(np.r_[1.0, 1 + r[1:] * np.diff(idx.values).astype("timedelta64[D]").astype(float) / 365.0]), index=idx)
+    L = ["TAKIP EDEN STOP TESTI (17 Kas 2026). 10 hisse, bos nakit faizde, sitenin AL kurallari. Satis: kar al (Percentile esigi) / bilanco bozuldu / takip eden stop.",
+         "iz=(aktif, geri): fiyat girisin 'aktif' kadar ustune ciktiktan sonra, gorulen en yuksek kapanisin 'geri' kadar altina inerse ertesi gun sat.\n"]
+    var = [("Mevcut (stop yok, kar al P>=80)", None, 80),
+           ("Iz %0 aktif / %15 geri (klasik)", (0.0, 0.15), 80), ("Iz %0 / %20", (0.0, 0.20), 80), ("Iz %0 / %25", (0.0, 0.25), 80),
+           ("Iz %10 aktif / %12 geri", (0.10, 0.12), 80), ("Iz %15 / %15", (0.15, 0.15), 80), ("Iz %20 / %15", (0.20, 0.15), 80),
+           ("Iz %20 / %20", (0.20, 0.20), 80), ("Iz %30 / %20", (0.30, 0.20), 80),
+           ("Iz %15 / %15 + kar al P>=90", (0.15, 0.15), 90), ("Iz %20 / %20 + kar al yok (P>=101)", (0.20, 0.20), 101)]
+    for ad, iz, ka in var:
+        E_, T, acik = sim(idx, C, S, PC, VR, TK, N=10, faizli=True, iz=iz, karal=ka)
+        v = E_["deger"]
+        dd = (v / v.cummax() - 1).min()
+        def yg(y):
+            g = v[v.index.year == y]; p = v[v.index.year == y - 1]
+            return 100 * (g.iloc[-1] / (p.iloc[-1] if len(p) else g.iloc[0]) - 1)
+        x23 = v.iloc[-1] / v[v.index >= "2023-01-01"].iloc[0]
+        m23 = mev.iloc[-1] / mev[mev.index >= "2023-01-01"].iloc[0]
+        cik = ", ".join(f"{k} {n}" for k, n in T.neden.value_counts().items())
+        L.append(f"{ad:38s} toplam x{v.iloc[-1] / BAS:5.2f} | 2023'ten x{x23:4.2f} (mevduat x{m23:4.2f}) | en buyuk dusus %{100 * dd:5.1f} | "
+                 f"2023 {yg(2023):+5.0f} 2024 {yg(2024):+5.0f} 2025 {yg(2025):+5.0f} 2026 {yg(2026):+5.0f} | islem {len(T)}, kazanan %{100 * (T.getiri > 0).mean():.0f}, medyan %{T.getiri.median():+.1f} | {cik}")
+    L.append(f"\nMevduat yillari: 2023 {100 * (mev[mev.index.year == 2023].iloc[-1] / mev[mev.index.year == 2022].iloc[-1] - 1):+.0f} 2024 {100 * (mev[mev.index.year == 2024].iloc[-1] / mev[mev.index.year == 2023].iloc[-1] - 1):+.0f} "
+             f"2025 {100 * (mev[mev.index.year == 2025].iloc[-1] / mev[mev.index.year == 2024].iloc[-1] - 1):+.0f} 2026 {100 * (mev.iloc[-1] / mev[mev.index.year == 2025].iloc[-1] - 1):+.0f}")
+    txt = "\n".join(L)
+    (R / "iz_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
