@@ -1,95 +1,208 @@
 {
  "baslangic": "2026-11-16",
- "son_gun": "2026-11-16",
- "acik": {},
+ "son_gun": "2026-11-17",
+ "acik": {
+  "ACSEL": {
+   "t": "ACSEL",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "AKSEN": {
+   "t": "AKSEN",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓✓"
+  },
+  "ARSAN": {
+   "t": "ARSAN",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "ASGYO": {
+   "t": "ASGYO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "AYEN": {
+   "t": "AYEN",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "BERA": {
+   "t": "BERA",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "BNTAS": {
+   "t": "BNTAS",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓✓"
+  },
+  "BRKO": {
+   "t": "BRKO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "BEKLE teknik"
+  },
+  "CONSE": {
+   "t": "CONSE",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "DOHOL": {
+   "t": "DOHOL",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "DZGYO": {
+   "t": "DZGYO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "FORTE": {
+   "t": "FORTE",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "GOLTS": {
+   "t": "GOLTS",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "GSDHO": {
+   "t": "GSDHO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓✓"
+  },
+  "HLGYO": {
+   "t": "HLGYO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "KBORU": {
+   "t": "KBORU",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "BEKLE kacti"
+  },
+  "KCHOL": {
+   "t": "KCHOL",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "MARBL": {
+   "t": "MARBL",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "BEKLE kacti"
+  },
+  "MHRGY": {
+   "t": "MHRGY",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "BEKLE kacti"
+  },
+  "TOASO": {
+   "t": "TOASO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓✓"
+  },
+  "TRGYO": {
+   "t": "TRGYO",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  },
+  "VBTYZ": {
+   "t": "VBTYZ",
+   "giris": "2026-11-17",
+   "karar": "AL ✓",
+   "getiri": -0.4,
+   "fazla": -0.4,
+   "kutu_bugun": "AL ✓"
+  }
+ },
  "kapali": [],
  "bekleyen_al": [
   [
-   "ACSEL",
+   "ALBRK",
    "AL ✓"
   ],
   [
-   "AKSEN",
+   "MOPAS",
+   "AL ✓"
+  ],
+  [
+   "MRGYO",
+   "AL ✓"
+  ],
+  [
+   "PSGYO",
+   "AL ✓"
+  ],
+  [
+   "SKBNK",
    "AL ✓✓"
   ],
   [
-   "ARSAN",
-   "AL ✓✓"
-  ],
-  [
-   "ASGYO",
-   "AL ✓"
-  ],
-  [
-   "AYEN",
-   "AL ✓"
-  ],
-  [
-   "BERA",
-   "AL ✓"
-  ],
-  [
-   "BNTAS",
-   "AL ✓✓"
-  ],
-  [
-   "BRKO",
-   "AL ✓✓"
-  ],
-  [
-   "CONSE",
-   "AL ✓"
-  ],
-  [
-   "DOHOL",
-   "AL ✓"
-  ],
-  [
-   "DZGYO",
-   "AL ✓"
-  ],
-  [
-   "FORTE",
-   "AL ✓"
-  ],
-  [
-   "GOLTS",
-   "AL ✓"
-  ],
-  [
-   "GSDHO",
-   "AL ✓"
-  ],
-  [
-   "HLGYO",
-   "AL ✓"
-  ],
-  [
-   "KBORU",
-   "AL ✓✓"
-  ],
-  [
-   "KCHOL",
-   "AL ✓"
-  ],
-  [
-   "MARBL",
-   "AL ✓✓"
-  ],
-  [
-   "MHRGY",
-   "AL ✓"
-  ],
-  [
-   "TOASO",
-   "AL ✓✓"
-  ],
-  [
-   "TRGYO",
-   "AL ✓"
-  ],
-  [
-   "VBTYZ",
+   "TRCAS",
    "AL ✓"
   ]
  ],
