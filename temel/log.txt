@@ -1,60 +1,14 @@
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
 M3 (EVDS): 2026-11 eklendi
-SATIS KURALI ve BORSA/MEVDUAT TESTI (17 Kas 2026 aksam). 10 hisse (aksi yazilmadikca), bos nakit faizde.
-Mevduat 2023'ten x4.19. Yillar: 2022 +14 2023 +20 2024 +63 2025 +54 2026 +38
-
-== A. Takip eden stop ayarlari (yuzde)
-kar al 90 | aktif %20 geri %15                       x16.15 | 2023'ten x6.43 | dusus %-35.3 | 22 +102 23  +82 24  +97 25  +75 26   +3 | ort.hisse 5.9 | islem 127 med %+23.3 | pahali (kar al) 57, bilanco bozuldu 41, takip eden stop 29
-kar al 90 | aktif %20 geri %10                       x10.95 | 2023'ten x5.25 | dusus %-33.3 | 22  +68 23  +70 24  +93 25  +56 26   +3 | ort.hisse 5.6 | islem 131 med %+16.9 | takip eden stop 52, pahali (kar al) 41, bilanco bozuldu 38
-kar al 90 | aktif %20 geri %12                       x11.27 | 2023'ten x4.99 | dusus %-33.4 | 22  +82 23  +81 24  +80 25  +53 26   +1 | ort.hisse 5.8 | islem 126 med %+18.4 | takip eden stop 45, pahali (kar al) 44, bilanco bozuldu 37
-kar al 90 | aktif %15 geri %10                       x 9.76 | 2023'ten x4.89 | dusus %-32.9 | 22  +60 23  +72 24  +79 25  +47 26   +9 | ort.hisse 5.5 | islem 142 med %+13.3 | takip eden stop 63, bilanco bozuldu 41, pahali (kar al) 38
-kar al 90 | aktif %25 geri %15                       x15.54 | 2023'ten x6.19 | dusus %-37.8 | 22 +102 23  +83 24  +97 25  +77 26   -3 | ort.hisse 5.9 | islem 122 med %+25.6 | pahali (kar al) 58, bilanco bozuldu 40, takip eden stop 24
-kar al 90 | aktif %30 geri %15                       x12.76 | 2023'ten x5.08 | dusus %-41.0 | 22 +102 23  +83 24  +97 25  +64 26  -14 | ort.hisse 5.9 | islem 112 med %+26.0 | pahali (kar al) 54, bilanco bozuldu 41, takip eden stop 17
-kar al 90 | aktif %25 geri %20                       x13.04 | 2023'ten x5.19 | dusus %-38.7 | 22 +102 23  +75 24 +100 25  +66 26  -10 | ort.hisse 6.0 | islem 115 med %+27.0 | pahali (kar al) 56, bilanco bozuldu 37, takip eden stop 22
-kar al 90 | aktif %30 geri %25                       x12.92 | 2023'ten x5.14 | dusus %-41.3 | 22 +102 23  +79 24  +83 25  +75 26  -10 | ort.hisse 6.1 | islem 101 med %+31.6 | pahali (kar al) 58, bilanco bozuldu 35, takip eden stop 8
-kar al 95 | aktif %20 geri %15                       x16.48 | 2023'ten x6.48 | dusus %-34.3 | 22 +105 23  +82 24 +111 25  +58 26   +7 | ort.hisse 5.9 | islem 124 med %+27.4 | pahali (kar al) 54, bilanco bozuldu 40, takip eden stop 30
-kar al 95 | aktif %20 geri %10                       x11.45 | 2023'ten x5.49 | dusus %-31.9 | 22  +68 23  +72 24 +108 25  +47 26   +5 | ort.hisse 5.6 | islem 124 med %+19.6 | takip eden stop 53, pahali (kar al) 36, bilanco bozuldu 35
-kar al 95 | aktif %20 geri %12                       x13.51 | 2023'ten x5.93 | dusus %-32.8 | 22  +83 23  +80 24  +96 25  +56 26   +7 | ort.hisse 5.8 | islem 122 med %+19.8 | pahali (kar al) 42, takip eden stop 42, bilanco bozuldu 38
-kar al 95 | aktif %15 geri %10                       x10.57 | 2023'ten x5.37 | dusus %-31.5 | 22  +58 23  +74 24  +85 25  +46 26  +15 | ort.hisse 5.5 | islem 140 med %+13.1 | takip eden stop 68, bilanco bozuldu 38, pahali (kar al) 34
-kar al 95 | aktif %25 geri %15                       x16.45 | 2023'ten x6.46 | dusus %-33.1 | 22 +105 23  +82 24 +111 25  +60 26   +5 | ort.hisse 5.9 | islem 120 med %+28.2 | pahali (kar al) 55, bilanco bozuldu 39, takip eden stop 26
-kar al 95 | aktif %30 geri %15                       x16.40 | 2023'ten x6.45 | dusus %-35.2 | 22 +105 23  +82 24 +113 25  +68 26   -1 | ort.hisse 5.9 | islem 112 med %+29.7 | pahali (kar al) 53, bilanco bozuldu 41, takip eden stop 18
-kar al 95 | aktif %25 geri %20                       x14.36 | 2023'ten x5.64 | dusus %-35.7 | 22 +105 23  +75 24 +106 25  +64 26   -4 | ort.hisse 6.0 | islem 112 med %+29.6 | pahali (kar al) 52, bilanco bozuldu 36, takip eden stop 24
-kar al 95 | aktif %30 geri %25                       x15.45 | 2023'ten x6.07 | dusus %-31.5 | 22 +105 23  +75 24 +104 25  +62 26   +5 | ort.hisse 6.2 | islem 100 med %+32.6 | pahali (kar al) 54, bilanco bozuldu 36, takip eden stop 10
-
-== B. Oynakliga gore takip eden stop (geri = k x 20 gunluk oynaklik, %8-%35)
-kar al 90 | aktif %20 k=2.0                          x14.23 | 2023'ten x5.66 | dusus %-38.0 | 22 +102 23  +73 24 +109 25  +72 26   -9 | ort.hisse 6.1 | islem 113 med %+29.5 | pahali (kar al) 60, bilanco bozuldu 38, takip eden stop 15
-kar al 90 | aktif %20 k=2.5                          x12.08 | 2023'ten x4.81 | dusus %-42.2 | 22 +102 23  +71 24  +77 25  +73 26   -8 | ort.hisse 6.2 | islem 109 med %+29.8 | pahali (kar al) 58, bilanco bozuldu 42, takip eden stop 9
-kar al 90 | aktif %20 k=3.0                          x10.09 | 2023'ten x4.01 | dusus %-43.7 | 22 +102 23  +71 24  +68 25  +62 26  -14 | ort.hisse 6.2 | islem 104 med %+29.7 | pahali (kar al) 54, bilanco bozuldu 42, takip eden stop 8
-kar al 90 | aktif %15 k=2.5                          x11.69 | 2023'ten x4.65 | dusus %-44.7 | 22 +102 23  +71 24  +79 25  +69 26  -10 | ort.hisse 6.2 | islem 112 med %+29.1 | pahali (kar al) 57, bilanco bozuldu 42, takip eden stop 13
-kar al 90 | aktif %30 k=2.5                          x11.61 | 2023'ten x4.62 | dusus %-42.5 | 22 +102 23  +73 24  +71 25  +73 26   -9 | ort.hisse 6.3 | islem 102 med %+29.9 | pahali (kar al) 56, bilanco bozuldu 41, takip eden stop 5
-kar al 95 | aktif %20 k=2.0                          x14.14 | 2023'ten x5.56 | dusus %-34.9 | 22 +105 23  +67 24 +113 25  +60 26   -3 | ort.hisse 6.2 | islem 110 med %+29.8 | pahali (kar al) 54, bilanco bozuldu 40, takip eden stop 16
-kar al 95 | aktif %20 k=2.5                          x12.95 | 2023'ten x5.09 | dusus %-36.8 | 22 +105 23  +64 24  +94 25  +67 26   -4 | ort.hisse 6.3 | islem 104 med %+31.8 | pahali (kar al) 54, bilanco bozuldu 41, takip eden stop 9
-kar al 95 | aktif %20 k=3.0                          x12.42 | 2023'ten x4.88 | dusus %-38.7 | 22 +105 23  +64 24  +97 25  +58 26   -5 | ort.hisse 6.3 | islem 100 med %+32.5 | pahali (kar al) 51, bilanco bozuldu 39, takip eden stop 10
-kar al 95 | aktif %15 k=2.5                          x12.05 | 2023'ten x4.74 | dusus %-38.0 | 22 +105 23  +64 24 +101 25  +54 26   -7 | ort.hisse 6.3 | islem 109 med %+29.7 | pahali (kar al) 52, bilanco bozuldu 44, takip eden stop 13
-kar al 95 | aktif %30 k=2.5                          x13.66 | 2023'ten x5.37 | dusus %-37.3 | 22 +105 23  +65 24 +106 25  +66 26   -5 | ort.hisse 6.3 | islem 95 med %+34.7 | pahali (kar al) 52, bilanco bozuldu 38, takip eden stop 5
-
-== C. Hisse sayisi (kar al 90, aktif %20 geri %15)
-5 hisse                                              x12.49 | 2023'ten x4.35 | dusus %-42.8 | 22 +131 23  +61 24  +89 25  +71 26  -16 | ort.hisse 3.1 | islem 63 med %+28.7 | pahali (kar al) 29, bilanco bozuldu 20, takip eden stop 14
-8 hisse                                              x15.58 | 2023'ten x6.03 | dusus %-31.3 | 22 +108 23  +91 24  +87 25  +66 26   +2 | ort.hisse 4.8 | islem 102 med %+26.0 | pahali (kar al) 46, bilanco bozuldu 31, takip eden stop 25
-12 hisse                                             x14.56 | 2023'ten x5.73 | dusus %-33.9 | 22 +104 23  +87 24  +90 25  +57 26   +3 | ort.hisse 6.8 | islem 148 med %+20.0 | pahali (kar al) 65, bilanco bozuldu 49, takip eden stop 34
-15 hisse                                             x11.62 | 2023'ten x5.05 | dusus %-35.5 | 22  +85 23  +90 24  +86 25  +53 26   -6 | ort.hisse 8.0 | islem 168 med %+18.6 | pahali (kar al) 69, bilanco bozuldu 58, takip eden stop 41
-
-== D. Borsa/mevduat: oran = piyasa kar verimi (TTM net kar / piyasa degeri) / politika faizi
-   yil sonlari (kar verimi / faiz = oran): 2021: %10.3/%14=0.73 2022: %11.8/%9=1.31 2023: %14.6/%42=0.34 2024: %13.2/%48=0.28 2025: %5.8/%38=0.15 2026: %8.1/%36=0.23
-oran<0.5 ise %50 borsa (yeni alim durur)             x15.14 | 2023'ten x6.03 | dusus %-14.6 | 22 +102 23  +82 24  +78 25  +66 26  +12 | ort.hisse 3.8 | islem 77 med %+33.2 | pahali (kar al) 37, bilanco bozuldu 24, takip eden stop 16 | ort. borsa payi %67
-oran<0.5 ise %50 borsa (fazla satilir)               x11.76 | 2023'ten x4.68 | dusus %-15.4 | 22 +102 23  +78 24  +86 25  +41 26   +1 | ort.hisse 3.7 | islem 83 med %+17.0 | pahali (kar al) 24, bilanco bozuldu 22, borsa agirligi azaldi 20, takip eden stop 17 | ort. borsa payi %67
-oran<0.5 ise %0 borsa (yeni alim durur)              x16.27 | 2023'ten x6.48 | dusus %-10.2 | 22 +102 23  +81 24  +68 25  +54 26  +38 | ort.hisse 1.5 | islem 30 med %+45.7 | pahali (kar al) 19, takip eden stop 7, bilanco bozuldu 4 | ort. borsa payi %34
-oran<0.5 ise %0 borsa (fazla satilir)                x15.83 | 2023'ten x6.30 | dusus %-10.2 | 22 +102 23  +81 24  +63 25  +54 26  +38 | ort.hisse 1.4 | islem 30 med %+48.0 | pahali (kar al) 16, borsa agirligi azaldi 9, takip eden stop 3, bilanco bozuldu 2 | ort. borsa payi %34
-oran<0.35 ise %50 borsa (yeni alim durur)            x15.14 | 2023'ten x6.03 | dusus %-14.6 | 22 +102 23  +82 24  +78 25  +66 26  +12 | ort.hisse 3.8 | islem 77 med %+33.2 | pahali (kar al) 37, bilanco bozuldu 24, takip eden stop 16 | ort. borsa payi %69
-oran<0.35 ise %50 borsa (fazla satilir)              x12.08 | 2023'ten x4.81 | dusus %-15.4 | 22 +102 23  +82 24  +86 25  +41 26   +1 | ort.hisse 3.7 | islem 83 med %+17.0 | pahali (kar al) 26, bilanco bozuldu 24, takip eden stop 17, borsa agirligi azaldi 16 | ort. borsa payi %69
-kademeli: borsa payi = oran (0.3-1) (yeni alim durur) x18.02 | 2023'ten x7.27 | dusus %-10.2 | 22  +99 23  +82 24  +92 25  +70 26  +22 | ort.hisse 2.8 | islem 59 med %+36.8 | pahali (kar al) 31, bilanco bozuldu 16, takip eden stop 12 | ort. borsa payi %51
-kademeli: borsa payi = oran (0.3-1) (fazla satilir)  x14.36 | 2023'ten x5.67 | dusus %-10.2 | 22 +103 23  +75 24  +84 25  +48 26  +19 | ort.hisse 2.6 | islem 73 med %+16.9 | borsa agirligi azaldi 36, pahali (kar al) 18, bilanco bozuldu 11, takip eden stop 8 | ort. borsa payi %51
-kademeli: borsa payi = 1.5 x oran (0.3-1) (yeni alim durur) x16.69 | 2023'ten x6.64 | dusus %-10.2 | 22 +102 23  +82 24  +80 25  +66 26  +22 | ort.hisse 3.0 | islem 64 med %+36.0 | pahali (kar al) 32, bilanco bozuldu 18, takip eden stop 14 | ort. borsa payi %59
-kademeli: borsa payi = 1.5 x oran (0.3-1) (fazla satilir) x13.39 | 2023'ten x5.33 | dusus %-10.2 | 22 +102 23  +76 24  +78 25  +43 26  +19 | ort.hisse 3.0 | islem 71 med %+16.9 | borsa agirligi azaldi 24, pahali (kar al) 22, bilanco bozuldu 14, takip eden stop 11 | ort. borsa payi %59
-karsilastirma: agirlik kurali yok                    x16.15 | 2023'ten x6.43 | dusus %-35.3 | 22 +102 23  +82 24  +97 25  +75 26   +3 | ort.hisse 5.9 | islem 127 med %+23.3 | pahali (kar al) 57, bilanco bozuldu 41, takip eden stop 29
+50/625 83 sn
+100/625 139 sn
+150/625 205 sn
+200/625 276 sn
+250/625 351 sn
+300/625 420 sn
+350/625 496 sn
+400/625 569 sn
+450/625 649 sn
+500/625 731 sn
+550/625 821 sn
+600/625 921 sn
+625/625 hisse islendi, dosyada 609 hisse (970 sn)
