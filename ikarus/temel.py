@@ -278,6 +278,14 @@ def isaretler(tab, m3, d, yo=None):
     sq, sq1 = ceyreklik(tab, d, "3C"), ceyreklik(tab, d1, "3C")
     if sq and sq1 and sq1 > 0 and m3y:
         out["satis_reel"] = sq / sq1 / m3y - 1
+    # 17 Kas: ceyreklik FAVOK (esas faaliyet kari + amortisman) yillik degisimi / ceyrek satisi (temel_bt3 favok_q)
+    if sq and sq > 0 and m3y:
+        def _fq(dd):
+            a_, b_ = ceyreklik(tab, dd, "3DF"), ceyreklik(tab, dd, "4B")
+            return None if a_ is None or b_ is None else a_ + b_
+        f0, f1 = _fq(d), _fq(d1)
+        if f0 is not None and f1 is not None:
+            out["favok_q"] = (f0 - f1 * m3y) / sq
     nk0, nkq = _ttm(tab, d, "3Z"), _ttm(tab, dq, "3Z")
     if nk0 is not None and nkq is not None:
         out["kara_donus"] = int(nk0 > 0 and nkq <= 0)

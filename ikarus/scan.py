@@ -126,10 +126,14 @@ def _temel_v3(stocks, tip="sanayi"):
     def rows(s):
         k = s["temel"]; i = k.get("isaretler") or {}; o = k.get("oranlar") or {}
         return {"t": s["t"], "F": k.get("puan"), "roe": o.get("roe"), "sue_nk": i.get("sue_nk"), "sue_faal": i.get("sue_faal"),
-                "satis_reel": i.get("satis_reel"), "roe_ivme": i.get("roe_ivme"), "kaz_get": k.get("kaz_get"), "pddd": k.get("pddd")}
+                "satis_reel": i.get("satis_reel"), "roe_ivme": i.get("roe_ivme"), "kaz_get": k.get("kaz_get"), "pddd": k.get("pddd"),
+                "favok_q": i.get("favok_q")}
     X = pd.DataFrame([rows(s) for s in S]).set_index("t").astype(float)
     r = X.rank(pct=True)
     r["pddd"] = 1 - r["pddd"]
+    # 17 Kas (TTKOM): faaliyet = FAVOK + esas faaliyet + satis ceyreklik siralarinin ortalamasi (puana girmez, yalniz not)
+    fcols = [c for c in (["favok_q", "satis_reel"] if fin else ["favok_q", "sue_faal", "satis_reel"]) if c in r.columns]
+    faal = r[fcols].mean(axis=1).where(r[fcols].notna().sum(axis=1) >= 2).rank(pct=True)
     har = r[hcols]
     hareket = har.mean(axis=1).where(har.notna().sum(axis=1) >= 2)
     kalite = r[["F", "roe"]].mean(axis=1)
@@ -148,6 +152,9 @@ def _temel_v3(stocks, tip="sanayi"):
             et.append("Kotu bilanco surprizi")
         if i.get("kara_donus"):
             et.append("Zarardan kara dondu")
+        # temel_bt3 tonga: faaliyet ust %40 + net kar surprizi alt %40 -> 63g +3.4 (kalite/deger iyiyse), 126g +0.9 / medyan -5.7
+        if not fin and not pd.isna(faal.get(t)) and faal[t] >= 0.6 and not pd.isna(r.at[t, "sue_nk"]) and r.at[t, "sue_nk"] <= 0.4:
+            et.append("Faaliyet iyi, net kar dustu")
         fv = s.get("fiyat_ivme") or {}
         hizli = (fv.get("o5") or 0) > 15 or (fv.get("o20_x") or 0) > 30
         if hizli:
