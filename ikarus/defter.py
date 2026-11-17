@@ -69,7 +69,12 @@ def guncelle(stocks: list, px: dict, xu: pd.Series) -> dict:
         K = {"baslangic": BASLANGIC, "son_gun": "", "acik": {}, "kapali": [], "bekleyen_al": [], "bekleyen_sat": {}}
     H = {s["t"]: s for s in stocks}
     xv = lambda g: float(xu[xu.index <= pd.Timestamp(g)].iloc[-1])
-    if V > K["son_gun"] and V >= K["baslangic"]:
+    # Seans bitmeden (TR 18:10 oncesi) bugunun barini isleme: giris/cikis yalniz kesin kapanis fiyatiyla
+    simdi = pd.Timestamp.now(tz="Europe/Istanbul")
+    seans_acik = V == simdi.strftime("%Y-%m-%d") and (simdi.hour, simdi.minute) < (18, 10)
+    if seans_acik:
+        print(f"defter: {V} seansi bitmedi, islenmedi")
+    if V > K["son_gun"] and V >= K["baslangic"] and not seans_acik:
         # 1) dunku kararlari bugunun kapanisindan uygula
         for t, neden in list(K["bekleyen_sat"].items()):
             a = K["acik"].pop(t, None)
