@@ -1,0 +1,11 @@
+M3 (EVDS): 2026-11 eklendi
+FAZ_GRUP=0
+yilda grup degisimi (medyan): normal 9.7, HA 11.4
+bugun alim tarafinda: normal 115, HA 135 hisse
+ornekler: ALARK normal=BEKLE, ALARK ha=TOPLANIYOR, KCHOL normal=TOPLANIYOR, KCHOL ha=BEKLE, THYAO normal=ALINABILIR, THYAO ha=ALINABILIR, TTKOM normal=BEKLE, TTKOM ha=TOPLANIYOR, TUPRS normal=BEKLE, TUPRS ha=BEKLE
+
+M3 (EVDS): 2026-11 eklendi
+FAZ_GRUP=1
+yilda grup degisimi (medyan): normal 10.7, HA 12.6
+bugun alim tarafinda: normal 181, HA 192 hisse
+ornekler: ALARK normal=BEKLE, ALARK ha=TOPLANIYOR, KCHOL normal=YAKIN, KCHOL ha=TOPLANIYOR, THYAO normal=YAKIN, THYAO ha=YAKIN, TTKOM normal=TOPLANIYOR, TTKOM ha=TOPLANIYOR, TUPRS normal=BEKLE, TUPRS ha=BEKLE
