@@ -439,3 +439,28 @@ def iz_test2():
     txt = "\n".join(L)
     (R / "iz2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def az_hisse():
+    """17 Kas aksam (Teoman: 'genelde 2-5 hisse tutuyorum; 3 yil mevduatta kalamam'). Az hisse + borsa payi kurali,
+    yeni satis kuraliyla (kar al 90 + iz 20/15). Borsa payi: en az %30 -> az hissede de her zaman en az 1 hisse."""
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    r = faiz_serisi(idx)
+    ep = piyasa_kar_verimi(idx)
+    oran = np.nan_to_num(ep.values / r, nan=1.0)
+    L = ["AZ HISSE TESTI (17 Kas 2026 aksam). Satis: kar al P>=90 + iz %20/%15 (aksi yazilmadikca). Bos nakit faizde. ✓✓ once secilir.", ""]
+    for N in (2, 3, 4, 5, 8):
+        for ad, w, iz, ka in (("eski satis kurali (P>=80, stop yok)", None, None, 80), ("yeni satis kurali", None, (0.20, 0.15), 90),
+                              ("yeni satis + borsa payi (en az %30, en az 1 hisse)", np.maximum(np.clip(oran, 0.3, 1.0), 1.0 / N), (0.20, 0.15), 90)):
+            E_, T, _ = sim(idx, C, S, PC, VR, TK, N=N, iz=iz, karal=ka, agirlik=w)
+            v = E_["deger"]; dd = (v / v.cummax() - 1).min()
+            yg = lambda y: 100 * (v[v.index.year == y].iloc[-1] / v[v.index.year == y - 1].iloc[-1] - 1) if y > idx[0].year else np.nan
+            x23 = v.iloc[-1] / v[v.index >= "2023-01-01"].iloc[0]
+            L.append(f"{N} hisse | {ad:52s} 2023'ten x{x23:4.2f} | dusus %{100 * dd:5.1f} | 23 {yg(2023):+4.0f} 24 {yg(2024):+4.0f} 25 {yg(2025):+4.0f} 26 {100 * (v.iloc[-1] / v[v.index.year == 2025].iloc[-1] - 1):+4.0f} | ort.dolu {E_['hisse'].mean():.1f} | islem {len(T)}, kazanan %{100 * (T.getiri > 0).mean():.0f}")
+        L.append("")
+    mev = np.cumprod(np.r_[1.0, 1 + r[1:] * np.diff(idx.values).astype("timedelta64[D]").astype(float) / 365.0])
+    i23 = np.flatnonzero(idx >= pd.Timestamp("2023-01-01"))[0]
+    L.append(f"Mevduat 2023'ten x{mev[-1] / mev[i23]:.2f}")
+    txt = "\n".join(L)
+    (R / "az_hisse.txt").write_text(txt, encoding="utf-8")
+    print(txt)

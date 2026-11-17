@@ -553,6 +553,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "az_hisse":
+        from . import portfoy_bt
+        portfoy_bt.az_hisse()
     elif sys.argv[1] == "iz2":
         from . import portfoy_bt
         portfoy_bt.iz_test2()
