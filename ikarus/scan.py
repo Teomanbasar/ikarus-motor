@@ -104,7 +104,7 @@ def _temel_ekle(stocks):
             k["kaz_get"] = nk / pd_ if nk is not None else None
         s["temel"] = k
     _temel_v3(stocks)
-    _temel_v3(stocks, tip="banka")   # 17 Kas: banka + sigorta kendi icinde (finans_bt: ust 1/3 126g +19.9 / alt 1/3 +7.1)
+    _temel_v3(stocks, tip="banka")   # 17 Kas: bankalar kendi icinde (finans_bt: ust 1/3 126g +19.9 / alt 1/3 +7.1); sigorta henuz test edilmedi
 
 
 # 10 Kas 2026 testi (temel/bt2_sonuc.txt): bilanco yayimlandiktan sonraki 63 gunde BIST100'e gore fazla getiri,
@@ -117,7 +117,8 @@ V3_TEST = {"hareket": "+8.4 puan, donemlerin %86'sinda", "kalite": "+2.6 puan, %
 def _temel_v3(stocks, tip="sanayi"):
     """Temel puan v3: Hareket (bilanco ivmesi), Kalite, Deger esit agirlik (12 Kas; 10 Kas-12 Kas arasi 50/25/25); hepsi sanayi hisseleri icinde siralama (0-1).
     Bankalar ayri muhasebe yapisinda oldugu icin siralamaya girmez (F-skoru karti kalir)."""
-    S = [s for s in stocks if s.get("temel") and s["temel"].get("tip") == tip]
+    SIGORTA = {"AGESA", "AKGRT", "ANHYT", "ANSGR", "RAYSG", "TURSG", "GUSGR"}   # 17 Kas: finans_bt yalniz bankalari dogruladi
+    S = [s for s in stocks if s.get("temel") and s["temel"].get("tip") == tip and not (tip == "banka" and s["t"] in SIGORTA)]
     if len(S) < (50 if tip == "sanayi" else 8):
         return
     fin = tip == "banka"
