@@ -188,6 +188,7 @@ DEFAULTS = dict(
     sig_kv=1, sig_kd=1, sig_thr=0.5, sig_m=1,
     sig_mod="v46",  # "faz": faz motoru (deneme)
     faz_m=3, faz_kr=1,
+    faz_grup=__import__("os").environ.get("FAZ_GRUP") == "1",  # 17 Kas: 3 bar kalicilik kuralini durum yerine GRUBA uygula (alim: ALINABILIR/TOPLANIYOR/YAKIN)
     m3_gecikme_gun=0,
     macro_mod="m3",  # v4.7: taban etiket M3'un son macro_k bardaki degisiminden (eski: "xu100")
     macro_k=15, macro_ok=False,  # macro_ok: ok kurali (RISK-ON 10 / ucuz+RS yukari 10 / TOPARLANMA 6)  # backtest icin: M3'u TCMB'nin gercek yayim tarihinden sonra kullan (or. 25 gun)
@@ -389,7 +390,21 @@ def compute(daily: pd.DataFrame, xu100: pd.Series, m3: pd.Series, tf: str = "D",
                 base[i] = "BEKLE"
         sig = base.copy()
         fm = P["faz_m"]
-        for i in range(1, len(c)):
+        if P["faz_grup"]:
+            # Grup kaliciligi: alim grubu (ALINABILIR/TOPLANIYOR/YAKIN), DAGITIM, BEKLE. Yeni gruba gecis icin fm bar
+            # ust uste o grupta olmak gerekir; grup ayniysa etiket gunluk guncellenir (YAKIN <-> TOPLANIYOR serbest).
+            AL_ = ("ALINABILIR", "TOPLANIYOR", "YAKIN")
+            grp = np.array(["AL" if b in AL_ else b for b in base], dtype=object)
+            for i in range(1, len(c)):
+                if base[i] == "ALINABILIR" or not c1[i] or dStop[i] <= -P["kir_esik"]:
+                    continue
+                onceki = "AL" if sig[i - 1] in AL_ else sig[i - 1]
+                if grp[i] == onceki:
+                    continue
+                if not all(grp[j] == grp[i] for j in range(max(0, i - fm + 1), i + 1)):
+                    sig[i] = sig[i - 1]
+        else:
+          for i in range(1, len(c)):
             if base[i] == "ALINABILIR" or not c1[i] or dStop[i] <= -P["kir_esik"]:
                 continue
             if not all(base[j] == base[i] for j in range(max(0, i - fm + 1), i + 1)):

@@ -67,3 +67,32 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def istikrar():
+    """Faz grubu degisim sikligi (yilda kac kez alim<->dagitim<->bekle) ve bugunku durum; FAZ_GRUP ortamina gore."""
+    import os
+    lst = D.bist_list(); px = D.prices(lst["ticker"].tolist()); xu = D.xu100(); m3 = D.m3()
+    AL_ = ("ALINABILIR", "TOPLANIYOR", "YAKIN")
+    deg, alim_bugun, ornek = {"normal": [], "ha": []}, {"normal": 0, "ha": 0}, {}
+    for t, df in sorted(px.items()):
+        if len(df) < 400:
+            continue
+        for ad, kw in (("normal", {}), ("ha", {"ha": True})):
+            try:
+                r = E.compute(df, xu, m3, "D", sig_mod="faz", **kw)
+            except Exception:
+                continue
+            g = pd.Series(["AL" if x in AL_ else x for x in r["sinyal"].values], index=r.index)
+            g = g[g.index >= pd.Timestamp("2021-01-01")]
+            yil = max((g.index[-1] - g.index[0]).days / 365.25, 0.5)
+            deg[ad].append((g != g.shift()).sum() / yil)
+            alim_bugun[ad] += int(g.iloc[-1] == "AL")
+            if t in ("KCHOL", "TUPRS", "THYAO", "ALARK", "TTKOM"):
+                ornek[f"{t} {ad}"] = r["sinyal"].iloc[-1]
+    L = [f"FAZ_GRUP={os.environ.get('FAZ_GRUP', '0')}",
+         f"yilda grup degisimi (medyan): normal {np.median(deg['normal']):.1f}, HA {np.median(deg['ha']):.1f}",
+         f"bugun alim tarafinda: normal {alim_bugun['normal']}, HA {alim_bugun['ha']} hisse",
+         "ornekler: " + ", ".join(f"{k}={v}" for k, v in ornek.items())]
+    print("\n".join(L))
+    return L

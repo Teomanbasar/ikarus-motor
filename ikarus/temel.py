@@ -545,6 +545,21 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "faz_test":
+        # 17 Kas: faz motoru grup kaliciligi testi. Eski ve yeni ayarla karar_bt + portfoy_bt + istikrar.
+        import os, shutil, subprocess
+        ozet = []
+        for deger, ek in (("0", "eski"), ("1", "grup")):
+            env = dict(os.environ, FAZ_GRUP=deger)
+            for mod, dosyalar in (("karar_bt", ["karar_sonuc.txt"]), ("portfoy_bt", ["portfoy_sonuc.txt", "portfoy.png", "portfoy_islemler.csv", "portfoy_egri.csv"])):
+                subprocess.run([sys.executable, "-m", f"ikarus.{mod}"], env=env, check=True)
+                for f in dosyalar:
+                    a = R / f
+                    if a.exists():
+                        shutil.copy(a, R / f.replace(".", f"_{ek}.", 1))
+            out = subprocess.run([sys.executable, "-c", "from ikarus import faz_tani as F; F.istikrar()"], env=env, capture_output=True, text=True)
+            ozet.append(out.stdout)
+        (R / "faz_test_ozet.txt").write_text("\n".join(ozet), encoding="utf-8")
     elif sys.argv[1] == "faz_tani":
         from . import faz_tani
         faz_tani.main()
