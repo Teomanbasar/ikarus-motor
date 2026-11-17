@@ -1,41 +1,60 @@
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: DMLKT.IS"}}}
+$DMLKT.IS: possibly delisted; no timezone found
+
+1 Failed download:
+['DMLKT.IS']: possibly delisted; no timezone found
+$ALTIN.IS: possibly delisted; no timezone found
+$DMLKT.IS: possibly delisted; no timezone found
+
+2 Failed downloads:
+['ALTIN.IS', 'DMLKT.IS']: possibly delisted; no timezone found
 M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-ZAR ATIMI SIMULASYONU (17 Kas 2026): sistemin AL dediklerinden rastgele secim
-Her yil 1.000.000 TL ile ayri baslar. Bos yer acildikca o gun AL (✓ ya da ✓✓) olan hisselerden RASTGELE secilir.
-Satis: Percentile >= 80 (kar al) ya da bilanco bozuldu. Islem ertesi gun kapanistan, %0.2 maliyet. Bos nakit politika faizinde.
-Yil sonunda acik hisseler o gunku fiyatla degerlenir.
+FINANS (banka + sigorta) TEMEL PUANI TESTI (17 Kas 2026)
+Olay 493, hisse 20 (AGESA, AKBNK, AKGRT, ALBRK, ANHYT, ANSGR, ENPRA, GARAN, HALKB, ICBCT, ISBTR, ISCTR, KLNMA, QNBTR, RAYSG, SKBNK, TSKB, TURSG, VAKBN, YKBNK), donem 2020/03..2026/06
+Getiri: ayni gun tum likit hisselerin medyanina gore fazla (%). kirpik / medyan / kazanan. Ucte bir dilimler (her donemde).
 
-===== 2025 (02.01 - 31.12.2025) | BIST100 %+14.6 -> 1,145,562 | mevduat~ -> 1,544,038
-  10 hisse, her bos yere rastgele AL:
-     en kotu 1,174,993 | %5 1,313,551 | %25 1,408,744 | ORTANCA 1,475,847 | %75 1,548,928 | %95 1,657,424 | en iyi 1,830,670
-     BIST100'u gecen kosu %100 | mevduati gecen %26 | zarar eden %0
-  5 hisse, her bos yere rastgele AL:
-     en kotu 866,753 | %5 1,033,532 | %25 1,174,318 | ORTANCA 1,297,962 | %75 1,427,356 | %95 1,626,022 | en iyi 2,290,384
-     BIST100'u gecen kosu %80 | mevduati gecen %12 | zarar eden %3
-  10 hisse, AL'lerin yalniz %30'una bakar (secici kullanici):
-     en kotu 1,100,687 | %5 1,328,851 | %25 1,443,695 | ORTANCA 1,528,024 | %75 1,614,246 | %95 1,737,846 | en iyi 1,924,784
-     BIST100'u gecen kosu %100 | mevduati gecen %45 | zarar eden %0
-  10 hisse, yalniz ✓✓ arasindan rastgele:
-     en kotu 1,440,434 | %5 1,523,371 | %25 1,583,858 | ORTANCA 1,624,196 | %75 1,664,060 | %95 1,730,086 | en iyi 1,839,713
-     BIST100'u gecen kosu %100 | mevduati gecen %91 | zarar eden %0
+tum finans olaylari                            n= 493 | 21g  +1.3/ +0.8 % 53 | 63g  +2.9/ +0.9 % 52 | 126g  +7.3/ +3.2 % 55
+== TOPLAM puan
+   ust 1/3                                     n=  76 | 21g  +2.7/ +3.1 % 63 | 63g  +6.0/ +5.0 % 64 | 126g +19.9/+19.1 % 82
+   orta                                        n=  75 | 21g  +2.4/ +2.6 % 60 | 63g  +5.2/ +2.2 % 62 | 126g  +6.4/ +3.9 % 57
+   alt 1/3                                     n=  77 | 21g  -0.3/ -0.1 % 48 | 63g  +2.6/ -3.4 % 43 | 126g  +7.1/ -1.4 % 47
+== hareket
+   ust 1/3                                     n= 133 | 21g  +3.8/ +2.3 % 62 | 63g  +7.9/ +5.2 % 63 | 126g +16.5/+12.5 % 71
+   orta                                        n= 128 | 21g  +1.3/ +0.9 % 55 | 63g  +2.6/ +0.7 % 52 | 126g  +9.4/ +5.9 % 59
+   alt 1/3                                     n= 143 | 21g  +1.3/ +1.2 % 54 | 63g  +3.7/ +0.5 % 51 | 126g +11.2/ +2.7 % 53
+== kalite
+   ust 1/3                                     n= 120 | 21g  +2.6/ +1.0 % 54 | 63g  +4.4/ +5.4 % 58 | 126g +12.1/ +6.6 % 62
+   orta                                        n= 119 | 21g  +2.8/ +3.6 % 63 | 63g  +5.8/ +1.3 % 55 | 126g +16.0/+11.2 % 64
+   alt 1/3                                     n= 129 | 21g  +1.2/ +0.8 % 53 | 63g  +5.6/ +2.6 % 57 | 126g +11.6/ +7.3 % 63
+== deger
+   ust 1/3                                     n= 104 | 21g  +1.8/ +2.9 % 62 | 63g  +5.7/ +5.0 % 64 | 126g +15.7/+17.8 % 72
+   orta                                        n= 104 | 21g  +0.1/ -0.2 % 49 | 63g  +2.1/ +0.7 % 54 | 126g  +1.9/ +2.3 % 55
+   alt 1/3                                     n= 106 | 21g  -0.9/ -1.6 % 42 | 63g  -1.7/ -4.9 % 40 | 126g  +0.4/ -8.1 % 34
+== net kar surprizi
+   ust 1/3                                     n= 108 | 21g  +4.5/ +3.4 % 63 | 63g  +8.3/ +5.1 % 63 | 126g +17.9/+14.6 % 70
+   orta                                        n= 108 | 21g  +2.3/ +2.9 % 62 | 63g  +3.9/ +2.4 % 58 | 126g  +8.9/ +6.1 % 59
+   alt 1/3                                     n= 120 | 21g  +1.4/ +1.4 % 53 | 63g  +5.7/ +2.6 % 55 | 126g +18.3/ +7.0 % 63
+== net faiz geliri reel buyume
+   ust 1/3                                     n= 123 | 21g  +3.1/ +2.4 % 61 | 63g  +6.3/ +2.9 % 62 | 126g +16.9/+10.4 % 68
+   orta                                        n= 113 | 21g  +2.7/ +2.1 % 59 | 63g  +4.3/ +3.7 % 57 | 126g  +8.9/ +6.6 % 57
+   alt 1/3                                     n= 128 | 21g  +0.2/ +0.8 % 52 | 63g  +2.0/ -0.9 % 47 | 126g  +9.2/ +3.3 % 55
+== ROE ivmesi
+   ust 1/3                                     n= 134 | 21g  +3.4/ +2.4 % 61 | 63g  +6.3/ +2.9 % 58 | 126g +14.0/+10.7 % 69
+   orta                                        n= 132 | 21g  +1.0/ +0.8 % 54 | 63g  +3.8/ +1.8 % 55 | 126g +10.9/ +5.1 % 57
+   alt 1/3                                     n= 145 | 21g  +1.8/ +1.8 % 56 | 63g  +3.5/ +0.8 % 52 | 126g +10.6/ +3.7 % 55
+== ROE seviye
+   ust 1/3                                     n= 120 | 21g  +3.6/ +1.9 % 55 | 63g  +3.8/ +3.4 % 55 | 126g +12.2/ +6.8 % 61
+   orta                                        n= 119 | 21g  +1.7/ +3.0 % 64 | 63g  +6.2/ +1.6 % 58 | 126g +16.0/ +7.6 % 65
+   alt 1/3                                     n= 129 | 21g  +1.2/ +0.1 % 51 | 63g  +6.0/ +2.8 % 57 | 126g +11.5/ +8.6 % 62
+== kar getirisi (1/FK)
+   ust 1/3                                     n=  92 | 21g  +3.0/ +3.5 % 70 | 63g  +8.9/ +9.6 % 72 | 126g +19.6/+20.7 % 81
+   orta                                        n=  92 | 21g  +0.4/ +0.1 % 50 | 63g  +3.1/ +0.2 % 51 | 126g  +8.3/ +7.3 % 63
+   alt 1/3                                     n=  94 | 21g  +0.5/ -0.8 % 48 | 63g  +1.0/ -3.0 % 46 | 126g  +3.5/ -7.3 % 37
 
-===== 2026 (02.01 - 17.11.2026) | BIST100 %+3.9 -> 1,039,026 | mevduat~ -> 1,383,897
-  10 hisse, her bos yere rastgele AL:
-     en kotu 758,186 | %5 841,763 | %25 922,855 | ORTANCA 963,531 | %75 1,000,079 | %95 1,045,613 | en iyi 1,160,474
-     BIST100'u gecen kosu %7 | mevduati gecen %0 | zarar eden %75
-  5 hisse, her bos yere rastgele AL:
-     en kotu 739,734 | %5 836,749 | %25 933,813 | ORTANCA 1,087,956 | %75 1,160,158 | %95 1,245,857 | en iyi 1,397,398
-     BIST100'u gecen kosu %61 | mevduati gecen %0 | zarar eden %34
-  10 hisse, AL'lerin yalniz %30'una bakar (secici kullanici):
-     en kotu 754,314 | %5 842,674 | %25 915,146 | ORTANCA 972,411 | %75 1,024,228 | %95 1,092,170 | en iyi 1,230,583
-     BIST100'u gecen kosu %20 | mevduati gecen %0 | zarar eden %64
-  10 hisse, yalniz ✓✓ arasindan rastgele:
-     en kotu 881,519 | %5 896,888 | %25 917,236 | ORTANCA 930,064 | %75 946,787 | %95 968,751 | en iyi 976,261
-     BIST100'u gecen kosu %0 | mevduati gecen %0 | zarar eden %100
+== Yalniz bankalar, TOPLAM puan
+   ust 1/3                                     n=  76 | 21g  +3.0/ +3.4 % 64 | 63g  +6.0/ +5.0 % 64 | 126g +19.9/+19.1 % 82
+   orta                                        n=  75 | 21g  +2.2/ +2.6 % 60 | 63g  +5.2/ +2.2 % 62 | 126g  +6.4/ +3.9 % 57
+   alt 1/3                                     n=  76 | 21g  -0.4/ -0.4 % 47 | 63g  +2.6/ -3.4 % 43 | 126g  +7.1/ -1.4 % 47
 
+Toplam ust 1/3, yillar 63g: 2022:-2.8/19 2023:+6.0/20 2024:+9.4/20 2025:+11.2/20 2026:-3.0/15
+Toplam alt 1/3, yillar 63g: 2022:-17.5/12 2023:+33.3/12 2024:+2.4/12 2025:+6.5/12 2026:+nan/10
