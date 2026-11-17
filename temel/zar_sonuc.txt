@@ -1,0 +1,32 @@
+ZAR ATIMI SIMULASYONU (17 Kas 2026): sistemin AL dediklerinden rastgele secim
+Her yil 1.000.000 TL ile ayri baslar. Bos yer acildikca o gun AL (✓ ya da ✓✓) olan hisselerden RASTGELE secilir.
+Satis: Percentile >= 80 (kar al) ya da bilanco bozuldu. Islem ertesi gun kapanistan, %0.2 maliyet. Bos nakit politika faizinde.
+Yil sonunda acik hisseler o gunku fiyatla degerlenir.
+
+===== 2025 (02.01 - 31.12.2025) | BIST100 %+14.6 -> 1,145,562 | mevduat~ -> 1,544,038
+  10 hisse, her bos yere rastgele AL:
+     en kotu 1,174,993 | %5 1,313,551 | %25 1,408,744 | ORTANCA 1,475,847 | %75 1,548,928 | %95 1,657,424 | en iyi 1,830,670
+     BIST100'u gecen kosu %100 | mevduati gecen %26 | zarar eden %0
+  5 hisse, her bos yere rastgele AL:
+     en kotu 866,753 | %5 1,033,532 | %25 1,174,318 | ORTANCA 1,297,962 | %75 1,427,356 | %95 1,626,022 | en iyi 2,290,384
+     BIST100'u gecen kosu %80 | mevduati gecen %12 | zarar eden %3
+  10 hisse, AL'lerin yalniz %30'una bakar (secici kullanici):
+     en kotu 1,100,687 | %5 1,328,851 | %25 1,443,695 | ORTANCA 1,528,024 | %75 1,614,246 | %95 1,737,846 | en iyi 1,924,784
+     BIST100'u gecen kosu %100 | mevduati gecen %45 | zarar eden %0
+  10 hisse, yalniz ✓✓ arasindan rastgele:
+     en kotu 1,440,434 | %5 1,523,371 | %25 1,583,858 | ORTANCA 1,624,196 | %75 1,664,060 | %95 1,730,086 | en iyi 1,839,713
+     BIST100'u gecen kosu %100 | mevduati gecen %91 | zarar eden %0
+
+===== 2026 (02.01 - 17.11.2026) | BIST100 %+3.9 -> 1,039,026 | mevduat~ -> 1,383,897
+  10 hisse, her bos yere rastgele AL:
+     en kotu 758,186 | %5 841,763 | %25 922,855 | ORTANCA 963,531 | %75 1,000,079 | %95 1,045,613 | en iyi 1,160,474
+     BIST100'u gecen kosu %7 | mevduati gecen %0 | zarar eden %75
+  5 hisse, her bos yere rastgele AL:
+     en kotu 739,734 | %5 836,749 | %25 933,813 | ORTANCA 1,087,956 | %75 1,160,158 | %95 1,245,857 | en iyi 1,397,398
+     BIST100'u gecen kosu %61 | mevduati gecen %0 | zarar eden %34
+  10 hisse, AL'lerin yalniz %30'una bakar (secici kullanici):
+     en kotu 754,314 | %5 842,674 | %25 915,146 | ORTANCA 972,411 | %75 1,024,228 | %95 1,092,170 | en iyi 1,230,583
+     BIST100'u gecen kosu %20 | mevduati gecen %0 | zarar eden %64
+  10 hisse, yalniz ✓✓ arasindan rastgele:
+     en kotu 881,519 | %5 896,888 | %25 917,236 | ORTANCA 930,064 | %75 946,787 | %95 968,751 | en iyi 976,261
+     BIST100'u gecen kosu %0 | mevduati gecen %0 | zarar eden %100
