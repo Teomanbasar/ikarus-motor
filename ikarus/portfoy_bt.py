@@ -230,3 +230,69 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def zar(kosu: int = 2000, seed: int = 7):
+    """17 Kas (Teoman): 2025 ve 2026'ya ayri ayri 1 milyon TL ile basla; sistemin AL dediklerinden RASTGELE sec
+    (kullanici her AL'i almiyor). Binlerce kosu: en kotu / en iyi / ortanca sonuc."""
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    r = faiz_serisi(idx)
+    Cv = C.values; Sv = S.values
+    ALm = (Sv == "AL cift tik") | (Sv == "AL tek tik")
+    CIFT = (Sv == "AL cift tik")
+    CIK = (PC.values >= 80) | (VR.values < 0)
+    rng = np.random.default_rng(seed)
+    L = ["ZAR ATIMI SIMULASYONU (17 Kas 2026): sistemin AL dediklerinden rastgele secim",
+         "Her yil 1.000.000 TL ile ayri baslar. Bos yer acildikca o gun AL (✓ ya da ✓✓) olan hisselerden RASTGELE secilir.",
+         "Satis: Percentile >= 80 (kar al) ya da bilanco bozuldu. Islem ertesi gun kapanistan, %0.2 maliyet. Bos nakit politika faizinde.",
+         "Yil sonunda acik hisseler o gunku fiyatla degerlenir.\n"]
+    for yil in (2025, 2026):
+        ii = np.flatnonzero((idx.year == yil))
+        i0, i1 = ii[0], ii[-1]
+        xu_g = 100 * (xu.iloc[i1] / xu.iloc[i0 - 1] - 1)
+        mev = 1e6 * np.prod(1 + r[i0:i1 + 1] * np.diff(idx.values[i0 - 1:i1 + 1]).astype("timedelta64[D]").astype(float) / 365.0)
+        L.append(f"===== {yil} ({idx[i0]:%d.%m} - {idx[i1]:%d.%m.%Y}) | BIST100 %{xu_g:+.1f} -> {1e6 * (1 + xu_g / 100):,.0f} | mevduat~ -> {mev:,.0f}")
+        for N, secici, ad in ((10, 1.0, "10 hisse, her bos yere rastgele AL"), (5, 1.0, "5 hisse, her bos yere rastgele AL"),
+                              (10, 0.3, "10 hisse, AL'lerin yalniz %30'una bakar (secici kullanici)"),
+                              (10, 1.0, "10 hisse, yalniz ✓✓ arasindan rastgele")):
+            yalniz_cift = ad.endswith("✓✓ arasindan rastgele")
+            son = []
+            for _ in range(kosu):
+                cash, poz, bek_al, bek_sat = 1e6, {}, [], []
+                for i in range(i0, i1 + 1):
+                    cash *= 1 + r[i] * (idx[i] - idx[i - 1]).days / 365.0
+                    for j in bek_sat:
+                        p = Cv[i, j]
+                        if j in poz and not np.isnan(p):
+                            cash += poz.pop(j) * p * (1 - MAL)
+                    eq = cash + sum(a * (Cv[i, j] if not np.isnan(Cv[i, j]) else 0) for j, a in poz.items())
+                    for j in bek_al:
+                        p = Cv[i, j]
+                        if len(poz) >= N or j in poz or np.isnan(p) or p <= 0:
+                            continue
+                        tutar = min(eq / N, cash)
+                        if tutar < 1000:
+                            break
+                        poz[j] = tutar / (p * (1 + MAL)); cash -= tutar
+                    bek_sat = [j for j in poz if CIK[i, j]]
+                    bos = N - len(poz) + len(bek_sat)
+                    bek_al = []
+                    if bos > 0 and i < i1:
+                        ad_ = np.flatnonzero((CIFT[i] if yalniz_cift else ALm[i]))
+                        ad_ = [j for j in ad_ if j not in poz]
+                        if secici < 1.0:
+                            ad_ = [j for j in ad_ if rng.random() < secici]
+                        if ad_:
+                            bek_al = list(rng.permutation(ad_)[:bos])
+                fiyat = lambda j: Cv[i1, j] if not np.isnan(Cv[i1, j]) else np.nan
+                deger = cash + sum(a * np.nan_to_num(fiyat(j), nan=0.0) for j, a in poz.items())
+                son.append(deger)
+            s = np.array(son)
+            q = np.percentile(s, [0, 5, 25, 50, 75, 95, 100])
+            L.append(f"  {ad}:")
+            L.append(f"     en kotu {q[0]:,.0f} | %5 {q[1]:,.0f} | %25 {q[2]:,.0f} | ORTANCA {q[3]:,.0f} | %75 {q[4]:,.0f} | %95 {q[5]:,.0f} | en iyi {q[6]:,.0f}")
+            L.append(f"     BIST100'u gecen kosu %{100 * (s > 1e6 * (1 + xu_g / 100)).mean():.0f} | mevduati gecen %{100 * (s > mev).mean():.0f} | zarar eden %{100 * (s < 1e6).mean():.0f}")
+        L.append("")
+    txt = "\n".join(L)
+    (R / "zar_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

@@ -545,6 +545,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "bt":
         from . import temel_bt
         temel_bt.main()
+    elif sys.argv[1] == "zar":
+        from . import portfoy_bt
+        portfoy_bt.zar()
     elif sys.argv[1] == "faz_test":
         # 17 Kas: faz motoru grup kaliciligi testi. Eski ve yeni ayarla karar_bt + portfoy_bt + istikrar.
         import os, shutil, subprocess
