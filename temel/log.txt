@@ -1,14 +1,32 @@
 M3 (EVDS): 2026-11 eklendi
-50/625 83 sn
-100/625 139 sn
-150/625 205 sn
-200/625 276 sn
-250/625 351 sn
-300/625 420 sn
-350/625 496 sn
-400/625 569 sn
-450/625 649 sn
-500/625 731 sn
-550/625 821 sn
-600/625 921 sn
-625/625 hisse islendi, dosyada 609 hisse (970 sn)
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+M3 (EVDS): 2026-11 eklendi
+AZ HISSE TESTI (17 Kas 2026 aksam). Satis: kar al P>=90 + iz %20/%15 (aksi yazilmadikca). Bos nakit faizde. ✓✓ once secilir.
+
+2 hisse | eski satis kurali (P>=80, stop yok)                  2023'ten x2.77 | dusus %-37.5 | 23  +21 24  +89 25  +55 26  -22 | ort.dolu 1.3 | islem 18, kazanan %78
+2 hisse | yeni satis kurali                                    2023'ten x6.54 | dusus %-42.5 | 23  +48 24 +233 25  +55 26  -14 | ort.dolu 1.3 | islem 28, kazanan %86
+2 hisse | yeni satis + borsa payi (en az %30, en az 1 hisse)   2023'ten x9.10 | dusus %-27.5 | 23  +51 24 +218 25  +61 26  +17 | ort.dolu 0.7 | islem 18, kazanan %89
+
+3 hisse | eski satis kurali (P>=80, stop yok)                  2023'ten x4.46 | dusus %-38.2 | 23  +49 24 +133 25  +50 26  -15 | ort.dolu 2.0 | islem 33, kazanan %82
+3 hisse | yeni satis kurali                                    2023'ten x7.64 | dusus %-40.2 | 23  +76 24 +168 25 +101 26  -20 | ort.dolu 1.9 | islem 42, kazanan %83
+3 hisse | yeni satis + borsa payi (en az %30, en az 1 hisse)   2023'ten x9.27 | dusus %-23.1 | 23  +78 24 +159 25  +61 26  +25 | ort.dolu 0.9 | islem 21, kazanan %90
+
+4 hisse | eski satis kurali (P>=80, stop yok)                  2023'ten x5.17 | dusus %-26.1 | 23  +50 24 +111 25  +46 26  +12 | ort.dolu 2.6 | islem 46, kazanan %80
+4 hisse | yeni satis kurali                                    2023'ten x5.38 | dusus %-44.0 | 23  +69 24 +116 25  +89 26  -22 | ort.dolu 2.5 | islem 52, kazanan %85
+4 hisse | yeni satis + borsa payi (en az %30, en az 1 hisse)   2023'ten x6.01 | dusus %-15.6 | 23  +66 24  +70 25  +66 26  +29 | ort.dolu 1.1 | islem 23, kazanan %91
+
+5 hisse | eski satis kurali (P>=80, stop yok)                  2023'ten x4.09 | dusus %-28.2 | 23  +40 24  +87 25  +44 26   +8 | ort.dolu 3.3 | islem 53, kazanan %77
+5 hisse | yeni satis kurali                                    2023'ten x4.35 | dusus %-42.8 | 23  +61 24  +89 25  +71 26  -16 | ort.dolu 3.1 | islem 63, kazanan %81
+5 hisse | yeni satis + borsa payi (en az %30, en az 1 hisse)   2023'ten x5.74 | dusus %-15.4 | 23  +59 24  +69 25  +64 26  +31 | ort.dolu 1.2 | islem 25, kazanan %92
+
+8 hisse | eski satis kurali (P>=80, stop yok)                  2023'ten x3.75 | dusus %-35.5 | 23  +46 24  +86 25  +38 26   +0 | ort.dolu 5.0 | islem 79, kazanan %76
+8 hisse | yeni satis kurali                                    2023'ten x6.03 | dusus %-31.3 | 23  +91 24  +87 25  +66 26   +2 | ort.dolu 4.8 | islem 102, kazanan %79
+8 hisse | yeni satis + borsa payi (en az %30, en az 1 hisse)   2023'ten x7.55 | dusus %-13.0 | 23  +91 24  +99 25  +58 26  +25 | ort.dolu 2.1 | islem 44, kazanan %91
+
+Mevduat 2023'ten x4.19
