@@ -1,60 +1,24 @@
-HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: DMLKT.IS"}}}
-$DMLKT.IS: possibly delisted; no timezone found
-
-1 Failed download:
-['DMLKT.IS']: possibly delisted; no timezone found
-$ALTIN.IS: possibly delisted; no timezone found
-$DMLKT.IS: possibly delisted; no timezone found
-
-2 Failed downloads:
-['ALTIN.IS', 'DMLKT.IS']: possibly delisted; no timezone found
 M3 (EVDS): 2026-11 eklendi
-FINANS (banka + sigorta) TEMEL PUANI TESTI (17 Kas 2026)
-Olay 493, hisse 20 (AGESA, AKBNK, AKGRT, ALBRK, ANHYT, ANSGR, ENPRA, GARAN, HALKB, ICBCT, ISBTR, ISCTR, KLNMA, QNBTR, RAYSG, SKBNK, TSKB, TURSG, VAKBN, YKBNK), donem 2020/03..2026/06
-Getiri: ayni gun tum likit hisselerin medyanina gore fazla (%). kirpik / medyan / kazanan. Ucte bir dilimler (her donemde).
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+TAKIP EDEN STOP TESTI (17 Kas 2026). 10 hisse, bos nakit faizde, sitenin AL kurallari. Satis: kar al (Percentile esigi) / bilanco bozuldu / takip eden stop.
+iz=(aktif, geri): fiyat girisin 'aktif' kadar ustune ciktiktan sonra, gorulen en yuksek kapanisin 'geri' kadar altina inerse ertesi gun sat.
 
-tum finans olaylari                            n= 493 | 21g  +1.3/ +0.8 % 53 | 63g  +2.9/ +0.9 % 52 | 126g  +7.3/ +3.2 % 55
-== TOPLAM puan
-   ust 1/3                                     n=  76 | 21g  +2.7/ +3.1 % 63 | 63g  +6.0/ +5.0 % 64 | 126g +19.9/+19.1 % 82
-   orta                                        n=  75 | 21g  +2.4/ +2.6 % 60 | 63g  +5.2/ +2.2 % 62 | 126g  +6.4/ +3.9 % 57
-   alt 1/3                                     n=  77 | 21g  -0.3/ -0.1 % 48 | 63g  +2.6/ -3.4 % 43 | 126g  +7.1/ -1.4 % 47
-== hareket
-   ust 1/3                                     n= 133 | 21g  +3.8/ +2.3 % 62 | 63g  +7.9/ +5.2 % 63 | 126g +16.5/+12.5 % 71
-   orta                                        n= 128 | 21g  +1.3/ +0.9 % 55 | 63g  +2.6/ +0.7 % 52 | 126g  +9.4/ +5.9 % 59
-   alt 1/3                                     n= 143 | 21g  +1.3/ +1.2 % 54 | 63g  +3.7/ +0.5 % 51 | 126g +11.2/ +2.7 % 53
-== kalite
-   ust 1/3                                     n= 120 | 21g  +2.6/ +1.0 % 54 | 63g  +4.4/ +5.4 % 58 | 126g +12.1/ +6.6 % 62
-   orta                                        n= 119 | 21g  +2.8/ +3.6 % 63 | 63g  +5.8/ +1.3 % 55 | 126g +16.0/+11.2 % 64
-   alt 1/3                                     n= 129 | 21g  +1.2/ +0.8 % 53 | 63g  +5.6/ +2.6 % 57 | 126g +11.6/ +7.3 % 63
-== deger
-   ust 1/3                                     n= 104 | 21g  +1.8/ +2.9 % 62 | 63g  +5.7/ +5.0 % 64 | 126g +15.7/+17.8 % 72
-   orta                                        n= 104 | 21g  +0.1/ -0.2 % 49 | 63g  +2.1/ +0.7 % 54 | 126g  +1.9/ +2.3 % 55
-   alt 1/3                                     n= 106 | 21g  -0.9/ -1.6 % 42 | 63g  -1.7/ -4.9 % 40 | 126g  +0.4/ -8.1 % 34
-== net kar surprizi
-   ust 1/3                                     n= 108 | 21g  +4.5/ +3.4 % 63 | 63g  +8.3/ +5.1 % 63 | 126g +17.9/+14.6 % 70
-   orta                                        n= 108 | 21g  +2.3/ +2.9 % 62 | 63g  +3.9/ +2.4 % 58 | 126g  +8.9/ +6.1 % 59
-   alt 1/3                                     n= 120 | 21g  +1.4/ +1.4 % 53 | 63g  +5.7/ +2.6 % 55 | 126g +18.3/ +7.0 % 63
-== net faiz geliri reel buyume
-   ust 1/3                                     n= 123 | 21g  +3.1/ +2.4 % 61 | 63g  +6.3/ +2.9 % 62 | 126g +16.9/+10.4 % 68
-   orta                                        n= 113 | 21g  +2.7/ +2.1 % 59 | 63g  +4.3/ +3.7 % 57 | 126g  +8.9/ +6.6 % 57
-   alt 1/3                                     n= 128 | 21g  +0.2/ +0.8 % 52 | 63g  +2.0/ -0.9 % 47 | 126g  +9.2/ +3.3 % 55
-== ROE ivmesi
-   ust 1/3                                     n= 134 | 21g  +3.4/ +2.4 % 61 | 63g  +6.3/ +2.9 % 58 | 126g +14.0/+10.7 % 69
-   orta                                        n= 132 | 21g  +1.0/ +0.8 % 54 | 63g  +3.8/ +1.8 % 55 | 126g +10.9/ +5.1 % 57
-   alt 1/3                                     n= 145 | 21g  +1.8/ +1.8 % 56 | 63g  +3.5/ +0.8 % 52 | 126g +10.6/ +3.7 % 55
-== ROE seviye
-   ust 1/3                                     n= 120 | 21g  +3.6/ +1.9 % 55 | 63g  +3.8/ +3.4 % 55 | 126g +12.2/ +6.8 % 61
-   orta                                        n= 119 | 21g  +1.7/ +3.0 % 64 | 63g  +6.2/ +1.6 % 58 | 126g +16.0/ +7.6 % 65
-   alt 1/3                                     n= 129 | 21g  +1.2/ +0.1 % 51 | 63g  +6.0/ +2.8 % 57 | 126g +11.5/ +8.6 % 62
-== kar getirisi (1/FK)
-   ust 1/3                                     n=  92 | 21g  +3.0/ +3.5 % 70 | 63g  +8.9/ +9.6 % 72 | 126g +19.6/+20.7 % 81
-   orta                                        n=  92 | 21g  +0.4/ +0.1 % 50 | 63g  +3.1/ +0.2 % 51 | 126g  +8.3/ +7.3 % 63
-   alt 1/3                                     n=  94 | 21g  +0.5/ -0.8 % 48 | 63g  +1.0/ -3.0 % 46 | 126g  +3.5/ -7.3 % 37
+Mevcut (stop yok, kar al P>=80)        toplam x 9.19 | 2023'ten x3.96 (mevduat x4.19) | en buyuk dusus %-43.5 | 2023   +61 2024   +95 2025   +40 2026   -10 | islem 99, kazanan %76, medyan %+25.6 | pahali (kar al) 61, bilanco bozuldu 38
+Iz %0 aktif / %15 geri (klasik)        toplam x 7.06 | 2023'ten x3.20 (mevduat x4.19) | en buyuk dusus %-38.4 | 2023   +66 2024   +57 2025   +48 2026   -17 | islem 207, kazanan %52, medyan %+1.4 | takip eden stop 124, pahali (kar al) 56, bilanco bozuldu 27
+Iz %0 / %20                            toplam x 8.63 | 2023'ten x3.77 (mevduat x4.19) | en buyuk dusus %-34.9 | 2023   +59 2024   +81 2025   +46 2026   -10 | islem 171, kazanan %58, medyan %+4.6 | takip eden stop 76, pahali (kar al) 62, bilanco bozuldu 33
+Iz %0 / %25                            toplam x 9.92 | 2023'ten x4.27 (mevduat x4.19) | en buyuk dusus %-36.0 | 2023   +68 2024   +95 2025   +41 2026    -7 | islem 137, kazanan %61, medyan %+17.2 | pahali (kar al) 64, takip eden stop 43, bilanco bozuldu 30
+Iz %10 aktif / %12 geri                toplam x 7.29 | 2023'ten x3.53 (mevduat x4.19) | en buyuk dusus %-37.2 | 2023   +75 2024   +61 2025   +42 2026   -12 | islem 151, kazanan %64, medyan %+8.5 | takip eden stop 68, pahali (kar al) 47, bilanco bozuldu 36
+Iz %15 / %15                           toplam x 9.42 | 2023'ten x4.11 (mevduat x4.19) | en buyuk dusus %-34.9 | 2023   +75 2024   +78 2025   +45 2026   -10 | islem 137, kazanan %69, medyan %+13.7 | pahali (kar al) 53, bilanco bozuldu 43, takip eden stop 41
+Iz %20 / %15                           toplam x 9.44 | 2023'ten x4.07 (mevduat x4.19) | en buyuk dusus %-35.1 | 2023   +75 2024   +83 2025   +37 2026    -8 | islem 123, kazanan %77, medyan %+18.4 | pahali (kar al) 56, bilanco bozuldu 40, takip eden stop 27
+Iz %20 / %20                           toplam x 8.67 | 2023'ten x3.74 (mevduat x4.19) | en buyuk dusus %-37.9 | 2023   +67 2024   +82 2025   +36 2026    -9 | islem 116, kazanan %72, medyan %+21.4 | pahali (kar al) 56, bilanco bozuldu 36, takip eden stop 24
+Iz %30 / %20                           toplam x 8.16 | 2023'ten x3.52 (mevduat x4.19) | en buyuk dusus %-41.1 | 2023   +67 2024   +80 2025   +37 2026   -15 | islem 108, kazanan %74, medyan %+23.6 | pahali (kar al) 56, bilanco bozuldu 38, takip eden stop 14
+Iz %15 / %15 + kar al P>=90            toplam x13.37 | 2023'ten x5.28 (mevduat x4.19) | en buyuk dusus %-34.8 | 2023   +83 2024   +96 2025   +43 2026    +3 | islem 139, kazanan %71, medyan %+13.7 | pahali (kar al) 53, bilanco bozuldu 44, takip eden stop 42
+Iz %20 / %20 + kar al yok (P>=101)     toplam x17.84 | 2023'ten x5.41 (mevduat x4.19) | en buyuk dusus %-41.3 | 2023   +66 2024  +159 2025   +41 2026    -9 | islem 94, kazanan %80, medyan %+22.2 | takip eden stop 58, bilanco bozuldu 36
 
-== Yalniz bankalar, TOPLAM puan
-   ust 1/3                                     n=  76 | 21g  +3.0/ +3.4 % 64 | 63g  +6.0/ +5.0 % 64 | 126g +19.9/+19.1 % 82
-   orta                                        n=  75 | 21g  +2.2/ +2.6 % 60 | 63g  +5.2/ +2.2 % 62 | 126g  +6.4/ +3.9 % 57
-   alt 1/3                                     n=  76 | 21g  -0.4/ -0.4 % 47 | 63g  +2.6/ -3.4 % 43 | 126g  +7.1/ -1.4 % 47
-
-Toplam ust 1/3, yillar 63g: 2022:-2.8/19 2023:+6.0/20 2024:+9.4/20 2025:+11.2/20 2026:-3.0/15
-Toplam alt 1/3, yillar 63g: 2022:-17.5/12 2023:+33.3/12 2024:+2.4/12 2025:+6.5/12 2026:+nan/10
+Mevduat yillari: 2023 +20 2024 +63 2025 +54 2026 +38

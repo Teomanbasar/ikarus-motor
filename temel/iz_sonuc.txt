@@ -1,0 +1,16 @@
+TAKIP EDEN STOP TESTI (17 Kas 2026). 10 hisse, bos nakit faizde, sitenin AL kurallari. Satis: kar al (Percentile esigi) / bilanco bozuldu / takip eden stop.
+iz=(aktif, geri): fiyat girisin 'aktif' kadar ustune ciktiktan sonra, gorulen en yuksek kapanisin 'geri' kadar altina inerse ertesi gun sat.
+
+Mevcut (stop yok, kar al P>=80)        toplam x 9.19 | 2023'ten x3.96 (mevduat x4.19) | en buyuk dusus %-43.5 | 2023   +61 2024   +95 2025   +40 2026   -10 | islem 99, kazanan %76, medyan %+25.6 | pahali (kar al) 61, bilanco bozuldu 38
+Iz %0 aktif / %15 geri (klasik)        toplam x 7.06 | 2023'ten x3.20 (mevduat x4.19) | en buyuk dusus %-38.4 | 2023   +66 2024   +57 2025   +48 2026   -17 | islem 207, kazanan %52, medyan %+1.4 | takip eden stop 124, pahali (kar al) 56, bilanco bozuldu 27
+Iz %0 / %20                            toplam x 8.63 | 2023'ten x3.77 (mevduat x4.19) | en buyuk dusus %-34.9 | 2023   +59 2024   +81 2025   +46 2026   -10 | islem 171, kazanan %58, medyan %+4.6 | takip eden stop 76, pahali (kar al) 62, bilanco bozuldu 33
+Iz %0 / %25                            toplam x 9.92 | 2023'ten x4.27 (mevduat x4.19) | en buyuk dusus %-36.0 | 2023   +68 2024   +95 2025   +41 2026    -7 | islem 137, kazanan %61, medyan %+17.2 | pahali (kar al) 64, takip eden stop 43, bilanco bozuldu 30
+Iz %10 aktif / %12 geri                toplam x 7.29 | 2023'ten x3.53 (mevduat x4.19) | en buyuk dusus %-37.2 | 2023   +75 2024   +61 2025   +42 2026   -12 | islem 151, kazanan %64, medyan %+8.5 | takip eden stop 68, pahali (kar al) 47, bilanco bozuldu 36
+Iz %15 / %15                           toplam x 9.42 | 2023'ten x4.11 (mevduat x4.19) | en buyuk dusus %-34.9 | 2023   +75 2024   +78 2025   +45 2026   -10 | islem 137, kazanan %69, medyan %+13.7 | pahali (kar al) 53, bilanco bozuldu 43, takip eden stop 41
+Iz %20 / %15                           toplam x 9.44 | 2023'ten x4.07 (mevduat x4.19) | en buyuk dusus %-35.1 | 2023   +75 2024   +83 2025   +37 2026    -8 | islem 123, kazanan %77, medyan %+18.4 | pahali (kar al) 56, bilanco bozuldu 40, takip eden stop 27
+Iz %20 / %20                           toplam x 8.67 | 2023'ten x3.74 (mevduat x4.19) | en buyuk dusus %-37.9 | 2023   +67 2024   +82 2025   +36 2026    -9 | islem 116, kazanan %72, medyan %+21.4 | pahali (kar al) 56, bilanco bozuldu 36, takip eden stop 24
+Iz %30 / %20                           toplam x 8.16 | 2023'ten x3.52 (mevduat x4.19) | en buyuk dusus %-41.1 | 2023   +67 2024   +80 2025   +37 2026   -15 | islem 108, kazanan %74, medyan %+23.6 | pahali (kar al) 56, bilanco bozuldu 38, takip eden stop 14
+Iz %15 / %15 + kar al P>=90            toplam x13.37 | 2023'ten x5.28 (mevduat x4.19) | en buyuk dusus %-34.8 | 2023   +83 2024   +96 2025   +43 2026    +3 | islem 139, kazanan %71, medyan %+13.7 | pahali (kar al) 53, bilanco bozuldu 44, takip eden stop 42
+Iz %20 / %20 + kar al yok (P>=101)     toplam x17.84 | 2023'ten x5.41 (mevduat x4.19) | en buyuk dusus %-41.3 | 2023   +66 2024  +159 2025   +41 2026    -9 | islem 94, kazanan %80, medyan %+22.2 | takip eden stop 58, bilanco bozuldu 36
+
+Mevduat yillari: 2023 +20 2024 +63 2025 +54 2026 +38
