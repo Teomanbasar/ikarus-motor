@@ -314,11 +314,17 @@ def iz_test():
     mev = pd.Series(BAS * np.cumprod(np.r_[1.0, 1 + r[1:] * np.diff(idx.values).astype("timedelta64[D]").astype(float) / 365.0]), index=idx)
     L = ["TAKIP EDEN STOP TESTI (17 Kas 2026). 10 hisse, bos nakit faizde, sitenin AL kurallari. Satis: kar al (Percentile esigi) / bilanco bozuldu / takip eden stop.",
          "iz=(aktif, geri): fiyat girisin 'aktif' kadar ustune ciktiktan sonra, gorulen en yuksek kapanisin 'geri' kadar altina inerse ertesi gun sat.\n"]
-    var = [("Mevcut (stop yok, kar al P>=80)", None, 80),
+    import os
+    if os.environ.get("IZ_IZGARA") == "1":
+        var = [(f"kar al P>={ka if ka < 101 else 'yok'} | iz {iz}", iz, ka) for ka in (80, 85, 90, 95, 101)
+               for iz in (None, (0.15, 0.15), (0.20, 0.15), (0.20, 0.20), (0.10, 0.20), (0.0, 0.25))]
+    else:
+      var = [("Mevcut (stop yok, kar al P>=80)", None, 80),
            ("Iz %0 aktif / %15 geri (klasik)", (0.0, 0.15), 80), ("Iz %0 / %20", (0.0, 0.20), 80), ("Iz %0 / %25", (0.0, 0.25), 80),
            ("Iz %10 aktif / %12 geri", (0.10, 0.12), 80), ("Iz %15 / %15", (0.15, 0.15), 80), ("Iz %20 / %15", (0.20, 0.15), 80),
            ("Iz %20 / %20", (0.20, 0.20), 80), ("Iz %30 / %20", (0.30, 0.20), 80),
            ("Iz %15 / %15 + kar al P>=90", (0.15, 0.15), 90), ("Iz %20 / %20 + kar al yok (P>=101)", (0.20, 0.20), 101)]
+    cikti = "iz_izgara.txt" if os.environ.get("IZ_IZGARA") == "1" else "iz_sonuc.txt"
     for ad, iz, ka in var:
         E_, T, acik = sim(idx, C, S, PC, VR, TK, N=10, faizli=True, iz=iz, karal=ka)
         v = E_["deger"]
@@ -334,5 +340,5 @@ def iz_test():
     L.append(f"\nMevduat yillari: 2023 {100 * (mev[mev.index.year == 2023].iloc[-1] / mev[mev.index.year == 2022].iloc[-1] - 1):+.0f} 2024 {100 * (mev[mev.index.year == 2024].iloc[-1] / mev[mev.index.year == 2023].iloc[-1] - 1):+.0f} "
              f"2025 {100 * (mev[mev.index.year == 2025].iloc[-1] / mev[mev.index.year == 2024].iloc[-1] - 1):+.0f} 2026 {100 * (mev.iloc[-1] / mev[mev.index.year == 2025].iloc[-1] - 1):+.0f}")
     txt = "\n".join(L)
-    (R / "iz_sonuc.txt").write_text(txt, encoding="utf-8")
+    (R / cikti).write_text(txt, encoding="utf-8")
     print(txt)
