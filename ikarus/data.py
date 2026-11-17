@@ -50,8 +50,16 @@ def bist_list(use_cache_hours: float = 24.0) -> pd.DataFrame:
             rows.append({"ticker": name, "ad": desc, "sektor": sector, "mcap": mcap})
         df = pd.DataFrame(rows).drop_duplicates("ticker").sort_values("ticker").reset_index(drop=True)
         df.to_pickle(cf)
+        try:   # 17 Kas: TradingView taramasi kapanirsa diye son basarili liste depoda saklanir (piyasa degeriyle)
+            df.to_csv(DATA / "bist_liste.csv", index=False)
+        except Exception:
+            pass
         return df
-    except Exception as e:  # internet/servis sorunu: yerel liste
+    except Exception as e:  # internet/servis sorunu: once son basarili liste, yoksa yerel duz liste
+        yedek = DATA / "bist_liste.csv"
+        if yedek.exists():
+            print(f"[uyari] TradingView hisse listesi alinamadi ({e}); depodaki son liste kullaniliyor")
+            return pd.read_csv(yedek)
         f = DATA / "bist_listesi.txt"
         if not f.exists():
             raise RuntimeError(f"Hisse listesi alinamadi ({e}) ve {f} yok.") from e
