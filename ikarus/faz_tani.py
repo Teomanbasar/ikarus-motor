@@ -54,6 +54,12 @@ def main():
             X = pd.DataFrame({"ha_close": r["close"], "ha_pct": r["percentile"], "ha_dstop": r["d_stop"], "ha_stop": r["stop"],
                               "ha_sig": r["sinyal"], "n_close": n["close"], "n_pct": n["percentile"], "n_dstop": n["d_stop"], "n_sig": n["sinyal"]})
             L.append(f"\n{t} son 260 gun, 10 gunde bir:\n" + X.iloc[-260::10].round(2).to_string())
+    for t in ("KCHOL", "AYGAZ", "EBEBK"):
+        if t in px:
+            r = E.compute(px[t], xu, m3, "D", sig_mod="faz", ha=True)
+            X = r[["close", "percentile", "d_stop", "eksik", "chg1", "rs", "sinyal"]].copy()
+            X["rs_fark"] = X["rs"].diff()
+            L.append(f"\n{t} HA son 30 gun (gunluk):\n" + X.iloc[-30:].round(2).to_string())
     txt = "\n".join(L)
     (R / "faz_tani.txt").write_text(txt, encoding="utf-8")
     print(txt[:3000])
