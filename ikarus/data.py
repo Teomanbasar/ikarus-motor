@@ -29,23 +29,25 @@ def bist_list(use_cache_hours: float = 24.0) -> pd.DataFrame:
     CACHE.mkdir(parents=True, exist_ok=True)
     cf = CACHE / "bist_list.pkl"
     if cf.exists() and time.time() - cf.stat().st_mtime < use_cache_hours * 3600:
-        return pd.read_pickle(cf)
+        df = pd.read_pickle(cf)
+        if "mcap" in df.columns:
+            return df
     try:
         import requests
         body = {
             "filter": [{"left": "type", "operation": "equal", "right": "stock"},
                        {"left": "exchange", "operation": "equal", "right": "BIST"}],
-            "columns": ["name", "description", "sector", "typespecs"],
+            "columns": ["name", "description", "sector", "typespecs", "market_cap_basic"],
             "range": [0, 2000],
         }
         r = requests.post("https://scanner.tradingview.com/turkey/scan", json=body, timeout=30)
         r.raise_for_status()
         rows = []
         for it in r.json()["data"]:
-            name, desc, sector, specs = it["d"]
+            name, desc, sector, specs, mcap = it["d"]
             if specs and any(s in ("preferred", "etf", "fund") for s in specs):
                 continue
-            rows.append({"ticker": name, "ad": desc, "sektor": sector})
+            rows.append({"ticker": name, "ad": desc, "sektor": sector, "mcap": mcap})
         df = pd.DataFrame(rows).drop_duplicates("ticker").sort_values("ticker").reset_index(drop=True)
         df.to_pickle(cf)
         return df

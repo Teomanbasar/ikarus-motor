@@ -81,6 +81,11 @@ def _temel_ekle(stocks):
     except Exception as e:
         print("[uyari] temel.json okunamadi:", e)
         return
+    try:   # 17 Kas: Is Yatirim'da odenmis sermayesi (2OA) olmayan sigorta/katilim bankalari icin TradingView piyasa degeri
+        _lst = D.bist_list()
+        MC = dict(zip(_lst["ticker"], _lst["mcap"])) if "mcap" in _lst.columns else {}
+    except Exception:
+        MC = {}
     for s in stocks:
         k = T.get(s["t"])
         if not k or "maddeler" not in k:
@@ -89,6 +94,8 @@ def _temel_ekle(stocks):
         ham = k.pop("ham", {}) or {}
         fiyat = (s.get("D") or {}).get("fiyat")
         sermaye, nk, oz = ham.get("sermaye"), ham.get("net_kar"), ham.get("ozkaynak")
+        if not sermaye and fiyat and MC.get(s["t"]) and MC[s["t"]] == MC[s["t"]]:
+            sermaye = float(MC[s["t"]]) / fiyat
         if fiyat and sermaye and sermaye > 0:
             pd_ = fiyat * sermaye
             k["piyasa_degeri"] = pd_
@@ -97,6 +104,7 @@ def _temel_ekle(stocks):
             k["kaz_get"] = nk / pd_ if nk is not None else None
         s["temel"] = k
     _temel_v3(stocks)
+    _temel_v3(stocks, tip="banka")   # 17 Kas: banka + sigorta kendi icinde (finans_bt: ust 1/3 126g +19.9 / alt 1/3 +7.1)
 
 
 # 10 Kas 2026 testi (temel/bt2_sonuc.txt): bilanco yayimlandiktan sonraki 63 gunde BIST100'e gore fazla getiri,
@@ -106,12 +114,14 @@ V3_TEST = {"hareket": "+8.4 puan, donemlerin %86'sinda", "kalite": "+2.6 puan, %
            "kotu": "Iki kar surprizi de en alt %20: 63g kirpik -3.8, 126g -7.7 (kaliteli+ucuz olsa bile -11.4)"}
 
 
-def _temel_v3(stocks):
+def _temel_v3(stocks, tip="sanayi"):
     """Temel puan v3: Hareket (bilanco ivmesi), Kalite, Deger esit agirlik (12 Kas; 10 Kas-12 Kas arasi 50/25/25); hepsi sanayi hisseleri icinde siralama (0-1).
     Bankalar ayri muhasebe yapisinda oldugu icin siralamaya girmez (F-skoru karti kalir)."""
-    S = [s for s in stocks if s.get("temel") and s["temel"].get("tip") == "sanayi"]
-    if len(S) < 50:
+    S = [s for s in stocks if s.get("temel") and s["temel"].get("tip") == tip]
+    if len(S) < (50 if tip == "sanayi" else 8):
         return
+    fin = tip == "banka"
+    hcols = ["sue_nk", "satis_reel", "roe_ivme"] if fin else ["sue_nk", "sue_faal", "satis_reel", "roe_ivme"]
     def rows(s):
         k = s["temel"]; i = k.get("isaretler") or {}; o = k.get("oranlar") or {}
         return {"t": s["t"], "F": k.get("puan"), "roe": o.get("roe"), "sue_nk": i.get("sue_nk"), "sue_faal": i.get("sue_faal"),
@@ -119,7 +129,7 @@ def _temel_v3(stocks):
     X = pd.DataFrame([rows(s) for s in S]).set_index("t").astype(float)
     r = X.rank(pct=True)
     r["pddd"] = 1 - r["pddd"]
-    har = r[["sue_nk", "sue_faal", "satis_reel", "roe_ivme"]]
+    har = r[hcols]
     hareket = har.mean(axis=1).where(har.notna().sum(axis=1) >= 2)
     kalite = r[["F", "roe"]].mean(axis=1)
     deger = r[["kaz_get", "pddd"]].mean(axis=1)
@@ -132,7 +142,7 @@ def _temel_v3(stocks):
         et = []
         if f(hareket[t]) is not None and hareket[t] >= 0.8:
             et.append("Bilanco ivmesi guclu")
-        kotu = (r.at[t, "sue_nk"] <= 0.2) and (r.at[t, "sue_faal"] <= 0.2)
+        kotu = (r.at[t, "sue_nk"] <= 0.2) and (r.at[t, "satis_reel" if fin else "sue_faal"] <= 0.2)
         if kotu:
             et.append("Kotu bilanco surprizi")
         if i.get("kara_donus"):
@@ -145,9 +155,9 @@ def _temel_v3(stocks):
         cokus = (fv.get("o20_x") or 0) < -25 or ((fv.get("taban10") or 0) >= 4 and (fv.get("o20_x") or 0) < -15)
         if cokus:
             et.append("Sert dusus")
-        if (k.get("puan") or 0) >= 6:
+        if (k.get("puan") or 0) >= (4 if fin else 6):
             et.append("Kaliteli bilanco")
-        elif k.get("puan") is not None and k["puan"] <= 3:
+        elif k.get("puan") is not None and k["puan"] <= (2 if fin else 3):
             et.append("Zayif bilanco")
         pct = (s.get("D") or {}).get("percentile")
         if kotu:
@@ -160,12 +170,13 @@ def _temel_v3(stocks):
             yorum = "Temel puanı en üst %20'de ve IKARUS'ta ucuz bölgede: testte en iyi sonuç veren birleşim."
         elif dilim[t] == 5:
             yorum = "Temel puanı en üst %20'de."
-        elif (k.get("puan") or 0) >= 6 and (hareket[t] if not pd.isna(hareket[t]) else 0) < 0.5:
+        elif (k.get("puan") or 0) >= (4 if fin else 6) and (hareket[t] if not pd.isna(hareket[t]) else 0) < 0.5:
             yorum = "Kaliteli ama bilanço ivmesi yok: testte bu grup bekledi (getiri endeks civarında kaldı)."
         else:
             yorum = None
         k["v3"] = {"toplam": f(toplam[t]), "sira": f(sira[t]), "dilim": None if pd.isna(dilim[t]) else int(dilim[t]), "hareket": f(hareket[t]), "kalite": f(kalite[t]), "deger": f(deger[t]),
-                   "siralar": {c: f(r.at[t, c]) for c in r.columns}, "etiketler": et, "yorum": yorum, "n": int(toplam.notna().sum())}
+                   "siralar": {c: f(r.at[t, c]) for c in r.columns}, "etiketler": et, "yorum": yorum, "n": int(toplam.notna().sum()),
+                   "grup": "finans" if fin else "sanayi"}
 
 
 def _fiyat_ivme(stocks, px, xu):
