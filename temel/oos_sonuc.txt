@@ -1,0 +1,55 @@
+ORNEKLEM DISI TEST (18 Kas 2026)
+Egitim: 2021-01 .. 2024-12 (ayar burada secilir). Test: 2025-01 .. bugun (hic bakilmadan, sifirdan 100.000 TL).
+Egitim: mevduat x2.66, BIST100 x6.57 | Test: mevduat x2.13, BIST100 x1.15
+Not: temel puanin formulu (v3) tum veriye bakilarak kuruldu; bu test onu sinamaz, yalniz esikleri ve cikis ayarlarini sinar.
+
+1) CIKIS AYARLARI (10 hisse, giris kurallari sitedeki gibi). Egitimde en iyiye gore siralı:
+  kar al yok | iz (0.2, 0.15)        egitim x14.13 (dusus %-19.7) | TEST x 1.40 (dusus %-41.7, islem 62) | test sirasi 19/30
+  kar al yok | iz (0.2, 0.2)         egitim x13.30 (dusus %-21.7) | TEST x 1.40 (dusus %-42.4, islem 49) | test sirasi 20/30
+  kar al yok | iz (0.15, 0.15)       egitim x12.82 (dusus %-18.8) | TEST x 1.60 (dusus %-35.0, islem 64) | test sirasi 10/30
+  kar al yok | iz (0.1, 0.2)         egitim x12.54 (dusus %-22.9) | TEST x 1.35 (dusus %-43.3, islem 56) | test sirasi 27/30
+  kar al P>=95 | iz (0.2, 0.15)      egitim x 9.38 (dusus %-13.3) | TEST x 1.89 (dusus %-34.3, islem 71) | test sirasi 2/30
+  kar al P>=95 | iz (0.15, 0.15)     egitim x 9.26 (dusus %-15.8) | TEST x 1.89 (dusus %-34.3, islem 75) | test sirasi 1/30
+  kar al P>=95 | iz (0.0, 0.25)      egitim x 9.24 (dusus %-12.6) | TEST x 1.41 (dusus %-38.0, islem 68) | test sirasi 17/30
+  kar al yok | iz (0.0, 0.25)        egitim x 9.19 (dusus %-28.3) | TEST x 1.25 (dusus %-43.0, islem 50) | test sirasi 29/30
+  kar al P>=90 | iz (0.0, 0.25)      egitim x 8.92 (dusus %-10.0) | TEST x 1.50 (dusus %-38.9, islem 70) | test sirasi 14/30
+  kar al P>=95 | iz (0.1, 0.2)       egitim x 8.83 (dusus %-13.1) | TEST x 1.82 (dusus %-35.9, islem 71) | test sirasi 4/30
+  kar al P>=95 | iz (0.2, 0.2)       egitim x 8.76 (dusus %-11.4) | TEST x 1.73 (dusus %-35.7, islem 64) | test sirasi 6/30
+  kar al P>=90 | iz (0.15, 0.15)     egitim x 8.67 (dusus %-13.6) | TEST x 1.83 (dusus %-34.8, islem 76) | test sirasi 3/30
+  kar al P>=90 | iz (0.2, 0.15)      egitim x 8.65 (dusus %-11.7) | TEST x 1.81 (dusus %-35.3, islem 72) | test sirasi 5/30
+  kar al P>=90 | iz (0.2, 0.2)       egitim x 8.42 (dusus %-10.2) | TEST x 1.71 (dusus %-38.4, islem 68) | test sirasi 8/30
+  kar al P>=90 | iz (0.1, 0.2)       egitim x 8.25 (dusus %-11.6) | TEST x 1.72 (dusus %-39.2, islem 72) | test sirasi 7/30
+  kar al P>=95 | iz None             egitim x 8.07 (dusus %-14.1) | TEST x 1.69 (dusus %-37.2, islem 48) | test sirasi 9/30
+  kar al P>=85 | iz (0.0, 0.25)      egitim x 7.50 (dusus %-11.8) | TEST x 1.36 (dusus %-35.2, islem 71) | test sirasi 24/30
+  kar al P>=85 | iz (0.15, 0.15)     egitim x 7.28 (dusus %-16.4) | TEST x 1.56 (dusus %-34.9, islem 73) | test sirasi 11/30
+  kar al P>=80 | iz (0.0, 0.25)      egitim x 7.25 (dusus %-11.8) | TEST x 1.33 (dusus %-36.0, islem 71) | test sirasi 28/30
+  kar al P>=85 | iz (0.2, 0.15)      egitim x 7.21 (dusus %-15.0) | TEST x 1.46 (dusus %-38.3, islem 68) | test sirasi 15/30
+  kar al P>=80 | iz (0.2, 0.15)      egitim x 7.14 (dusus %-15.0) | TEST x 1.39 (dusus %-35.0, islem 67) | test sirasi 21/30
+  kar al P>=80 | iz None             egitim x 7.00 (dusus %-11.7) | TEST x 1.35 (dusus %-39.6, islem 53) | test sirasi 26/30
+  kar al P>=90 | iz None             egitim x 6.99 (dusus %-14.8) | TEST x 1.42 (dusus %-46.8, islem 52) | test sirasi 16/30
+  kar al P>=85 | iz (0.2, 0.2)       egitim x 6.90 (dusus %-13.3) | TEST x 1.52 (dusus %-37.7, islem 64) | test sirasi 13/30
+  kar al P>=80 | iz (0.15, 0.15)     egitim x 6.88 (dusus %-16.5) | TEST x 1.38 (dusus %-34.9, islem 72) | test sirasi 22/30
+  kar al P>=85 | iz (0.1, 0.2)       egitim x 6.86 (dusus %-15.0) | TEST x 1.55 (dusus %-37.2, islem 69) | test sirasi 12/30
+  kar al P>=80 | iz (0.1, 0.2)       egitim x 6.82 (dusus %-14.0) | TEST x 1.40 (dusus %-39.3, islem 69) | test sirasi 18/30
+  kar al P>=80 | iz (0.2, 0.2)       egitim x 6.77 (dusus %-10.9) | TEST x 1.35 (dusus %-37.8, islem 61) | test sirasi 25/30
+  kar al P>=85 | iz None             egitim x 6.58 (dusus %-14.2) | TEST x 1.37 (dusus %-42.5, islem 49) | test sirasi 23/30
+  kar al yok | iz None               egitim x 6.57 (dusus %-39.8) | TEST x 1.14 (dusus %-45.4, islem 24) | test sirasi 30/30
+  -> Egitimde SECILEN: kar al yok | iz (0.2, 0.15) | testte x1.40, sira 19/30; test ortancasi x1.44; mevduat x2.13 | mevduati gecen ayar 0/30
+
+2) GIRIS ESIKLERI (cikis: kar al yok | iz (0.2, 0.15)):
+  temel ust %20 | Percentile <= 30 egitim x16.24 (dusus %-17.7) | TEST x 1.61 (dusus %-31.3, islem 51) | test sirasi 1/9
+  temel ust %30 | Percentile <= 30 egitim x14.94 (dusus %-19.4) | TEST x 1.56 (dusus %-30.2, islem 51) | test sirasi 2/9
+  temel ust %30 | Percentile <= 20 egitim x14.52 (dusus %-19.7) | TEST x 1.34 (dusus %-39.6, islem 54) | test sirasi 4/9
+  temel ust %20 | Percentile <= 20 egitim x14.13 (dusus %-19.7) | TEST x 1.40 (dusus %-41.7, islem 62) | test sirasi 3/9
+  temel ust %30 | Percentile <= 10 egitim x11.75 (dusus %-19.5) | TEST x 1.07 (dusus %-39.9, islem 58) | test sirasi 9/9
+  temel ust %10 | Percentile <= 30 egitim x10.71 (dusus %-13.2) | TEST x 1.13 (dusus %-41.5, islem 43) | test sirasi 6/9
+  temel ust %20 | Percentile <= 10 egitim x10.59 (dusus %-16.7) | TEST x 1.08 (dusus %-41.1, islem 56) | test sirasi 8/9
+  temel ust %10 | Percentile <= 20 egitim x 8.20 (dusus %-11.3) | TEST x 1.13 (dusus %-42.1, islem 44) | test sirasi 7/9
+  temel ust %10 | Percentile <= 10 egitim x 5.53 (dusus % -9.1) | TEST x 1.28 (dusus %-39.8, islem 42) | test sirasi 5/9
+  -> Egitimde SECILEN: temel ust %20 | Percentile <= 30 | testte x1.61, sira 1/9; mevduati gecen 0/9
+
+3) HISSE SAYISI, test donemi (secilen cikis, sitedeki giris):
+   3 hisse: TEST x1.62 (dusus %-47.6) | mevduat x2.13
+   5 hisse: TEST x1.24 (dusus %-43.7) | mevduat x2.13
+   8 hisse: TEST x1.54 (dusus %-36.3) | mevduat x2.13
+  10 hisse: TEST x1.40 (dusus %-41.7) | mevduat x2.13
