@@ -27,14 +27,35 @@ def kaydet(L: list):
     F.write_text(json.dumps({"guncelleme": date.today().isoformat(), "liste": L}, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def karar(s: dict) -> dict:
+def iz_hesap(L: list, px: dict) -> dict:
+    """18 Kas: Eldekiler icin takip eden stop (alistan %20 yukari ciktiktan sonra zirveden %15). Alis tarihi gerekir.
+    Fiyatlar duzeltmeli kapanis; seviye bugunku fiyat cinsinden."""
+    from .defter import iz_durum, _fiyat
+    out = {}
+    for h in L:
+        t, tarih = h.get("t"), h.get("tarih")
+        if not t or not tarih or t not in px:
+            continue
+        son = px[t]["close"].index[-1]
+        ak, tepe, sev, tet = iz_durum(px, t, tarih, son, (0.20, 0.15))
+        g0 = _fiyat(px, t, tarih)
+        out[t] = {"aktif": ak, "tepe": round(tepe, 2) if tepe else None, "stop": round(sev, 2) if sev else None,
+                  "tetik": tet, "aktiflesme": round(g0 * 1.2, 2) if g0 else None}
+    return out
+
+
+def karar(s: dict, iz: dict | None = None) -> dict:
     r = s.get("D") or {}
     v = (s.get("temel") or {}).get("v3") or {}
     f = s.get("faz") or {}
     sat, dikkat = [], []
     p = r.get("percentile")
-    if p is not None and p >= 80:
-        sat.append(f"Kâr al: pahalı bölgede (Percentile {p:.0f} ≥ 80)")
+    if p is not None and p >= 90:
+        sat.append(f"Kâr al: pahalı bölgede (Percentile {p:.0f} ≥ 90)")
+    elif p is not None and p >= 80:
+        dikkat.append(f"Pahalı bölgeye girdi (Percentile {p:.0f}); kâr al 90'da")
+    if iz and iz.get("tetik"):
+        sat.append(f"Takip eden stop: zirve {iz['tepe']:.2f}, stop {iz['stop']:.2f} altına indi")
     if v.get("sira") is not None and v["sira"] < 0.6:
         sat.append(f"Temel bozuldu: temel sırası %{100 * v['sira']:.0f} (< %60)")
     if "Kotu bilanco surprizi" in (v.get("etiketler") or []):
@@ -60,10 +81,15 @@ def ozet(res: dict, L: list | None = None) -> list[str]:
         s = H.get(h["t"])
         if not s or not s.get("D"):
             out.append(f"<b>{h['t']}</b> taramada yok"); continue
-        k = karar(s)
+        iz = (res.get("elde_iz") or {}).get(h["t"])
+        k = karar(s, iz)
         ik = {"SAT": "🔴", "DİKKAT": "🟠", "TUT": "🟢"}[k["karar"]]
         get = f" ({100 * (k['fiyat'] / h['fiyat'] - 1):+.1f}%)" if h.get("fiyat") and k["fiyat"] else ""
-        out.append(f"{ik} <b>{h['t']}</b> {k['karar']} · {k['fiyat']:.2f}{get} · P {k['percentile']:.0f}"
+        if iz:
+            st_ = f" · stop {iz['stop']:.2f}" if iz.get("aktif") else f" · stop {iz['aktiflesme']:.2f} üstünde başlar"
+        else:
+            st_ = " · stop için alış tarihi gerekli" if not h.get("tarih") else ""
+        out.append(f"{ik} <b>{h['t']}</b> {k['karar']} · {k['fiyat']:.2f}{get} · P {k['percentile']:.0f}{st_}"
                    + (f" · {'; '.join(k['neden'])}" if k["neden"] else ""))
     return out
 
