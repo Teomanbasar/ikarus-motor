@@ -44,7 +44,7 @@ def faiz_serisi(idx):
     return s.reindex(idx.union(s.index)).ffill().reindex(idx).fillna(10.25).values / 100.0
 
 
-def panel():
+def panel(ham: dict | None = None):
     G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
     m3 = D.m3()
     O = B.olaylar(G, m3)
@@ -79,6 +79,8 @@ def panel():
         o5 = (100 * (cs / cs.shift(5) - 1)).values
         o20x = (100 * (cs / cs.shift(20) - 1) - 100 * (xs / xs.shift(20) - 1)).values
         taban10 = (cs.pct_change() <= -0.095).rolling(10).sum().fillna(0).values
+        if ham is not None:
+            ham[t] = (ix, v3r, kotu, yas <= 200, pct, o5, o20x, taban10, fz, ha, vol)
         d = durumlar(v3r, kotu, yas <= 200, pct, o5, o20x, taban10, fz, ha)
         d = np.where(vol > 5e6, d, np.where(np.char.startswith(d.astype(str), "AL"), "AL likit degil", d))
         boz = (yas > 200) | np.isnan(v3r) | (v3r < 0.6) | kotu
@@ -463,4 +465,87 @@ def az_hisse():
     L.append(f"Mevduat 2023'ten x{mev[-1] / mev[i23]:.2f}")
     txt = "\n".join(L)
     (R / "az_hisse.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def _durum2(v3r, kotu, guncel, pct, o5, o20x, taban10, fz, ha, ust=0.8, ucuz=20.0):
+    """karar_bt.durumlar ile ayni; yalniz 'temel ust esigi' ve 'ucuz esigi' degistirilebilir (orneklem disi test)."""
+    ok = guncel & ~np.isnan(v3r) & (v3r >= max(0.6, ust)) & ~kotu & ~((o20x < -25) | ((taban10 >= 4) & (o20x < -15)))
+    ok &= (pct < 80) & ~((o20x > 10) | (o5 > 15)) & (pct <= ucuz)
+    d = np.full(len(pct), "X", dtype=object)
+    d[ok & fz & ha] = "AL cift tik"
+    d[ok & (fz ^ ha)] = "AL tek tik"
+    return d
+
+
+def oos():
+    """18 Kas (Teoman: 'sistem hazir diyemeyiz'). ORNEKLEM DISI TEST: ayarlar yalniz 2021-2024'e bakarak secilir,
+    sonra hic bakilmamis 2025-2026'da (sifirdan baslayarak) denenir. Ezber mi, gercek mi?"""
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    egit = (idx >= "2021-01-01") & (idx <= "2024-12-31")
+    test = idx >= "2025-01-01"
+    r = faiz_serisi(idx)
+
+    def mev(m):
+        ii = np.flatnonzero(m)
+        return float(np.prod(1 + r[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+
+    def kos(m, S_=S, karal=80, iz=None, N=10):
+        E_, T, _ = sim(idx[m], C[m], S_[m], PC[m], VR[m], TK[m], N=N, faizli=True, iz=iz, karal=karal)
+        v = E_["deger"]
+        return v.iloc[-1] / BAS, (v / v.cummax() - 1).min(), len(T)
+
+    xg = lambda m: xu[m].iloc[-1] / xu[m].iloc[0]
+    L = ["ORNEKLEM DISI TEST (18 Kas 2026)",
+         "Egitim: 2021-01 .. 2024-12 (ayar burada secilir). Test: 2025-01 .. bugun (hic bakilmadan, sifirdan 100.000 TL).",
+         f"Egitim: mevduat x{mev(egit):.2f}, BIST100 x{xg(egit):.2f} | Test: mevduat x{mev(test):.2f}, BIST100 x{xg(test):.2f}",
+         "Not: temel puanin formulu (v3) tum veriye bakilarak kuruldu; bu test onu sinamaz, yalniz esikleri ve cikis ayarlarini sinar.\n"]
+
+    # 1) CIKIS AYARLARI
+    izler = [None, (0.15, 0.15), (0.20, 0.15), (0.20, 0.20), (0.10, 0.20), (0.0, 0.25)]
+    sat = []
+    for ka in (80, 85, 90, 95, 101):
+        for iz in izler:
+            e = kos(egit, karal=ka, iz=iz); t_ = kos(test, karal=ka, iz=iz)
+            sat.append((f"kar al {'P>=' + str(ka) if ka < 101 else 'yok'} | iz {iz}", ka, iz, e, t_))
+            print("cikis", sat[-1][0], e[0], t_[0])
+    sec = max(sat, key=lambda x: x[3][0])
+    tsira = sorted(sat, key=lambda x: -x[4][0])
+    L.append("1) CIKIS AYARLARI (10 hisse, giris kurallari sitedeki gibi). Egitimde en iyiye gore siralı:")
+    for ad, ka, iz, e, t_ in sorted(sat, key=lambda x: -x[3][0]):
+        L.append(f"  {ad:34s} egitim x{e[0]:5.2f} (dusus %{100 * e[1]:5.1f}) | TEST x{t_[0]:5.2f} (dusus %{100 * t_[1]:5.1f}, islem {t_[2]}) | test sirasi {tsira.index((ad, ka, iz, e, t_)) + 1}/{len(sat)}")
+    tv = np.array([x[4][0] for x in sat])
+    L.append(f"  -> Egitimde SECILEN: {sec[0]} | testte x{sec[4][0]:.2f}, sira {tsira.index(sec) + 1}/{len(sat)}; test ortancasi x{np.median(tv):.2f}; "
+             f"mevduat x{mev(test):.2f} | mevduati gecen ayar {int((tv > mev(test)).sum())}/{len(sat)}\n")
+
+    # 2) GIRIS ESIKLERI (cikis = egitimde secilen)
+    def S_yap(ust, ucuz):
+        out = {}
+        for t, (ix, v3r, kotu, gun, pct, o5, o20x, tb, fz, ha, vol) in ham.items():
+            d = _durum2(v3r, kotu, gun, pct, o5, o20x, tb, fz, ha, ust=ust, ucuz=ucuz)
+            d = np.where(vol > 5e6, d, "X")
+            out[t] = pd.Series(d, index=ix).reindex(idx)
+        return pd.DataFrame(out)[S.columns]
+    gr = []
+    for ust in (0.7, 0.8, 0.9):
+        for ucuz in (10.0, 20.0, 30.0):
+            S2 = S_yap(ust, ucuz)
+            e = kos(egit, S2, sec[1], sec[2]); t_ = kos(test, S2, sec[1], sec[2])
+            gr.append((f"temel ust %{100 - 100 * ust:.0f} | Percentile <= {ucuz:.0f}", e, t_))
+            print("giris", gr[-1][0], e[0], t_[0])
+    gsec = max(gr, key=lambda x: x[1][0]); gts = sorted(gr, key=lambda x: -x[2][0])
+    L.append(f"2) GIRIS ESIKLERI (cikis: {sec[0]}):")
+    for ad, e, t_ in sorted(gr, key=lambda x: -x[1][0]):
+        L.append(f"  {ad:32s} egitim x{e[0]:5.2f} (dusus %{100 * e[1]:5.1f}) | TEST x{t_[0]:5.2f} (dusus %{100 * t_[1]:5.1f}, islem {t_[2]}) | test sirasi {gts.index((ad, e, t_)) + 1}/{len(gr)}")
+    gv = np.array([x[2][0] for x in gr])
+    L.append(f"  -> Egitimde SECILEN: {gsec[0]} | testte x{gsec[2][0]:.2f}, sira {gts.index(gsec) + 1}/{len(gr)}; mevduati gecen {int((gv > mev(test)).sum())}/{len(gr)}\n")
+
+    # 3) AZ HISSE (Teoman 2-5 hisse tutuyor) - secilen ayarlar, test donemi
+    L.append("3) HISSE SAYISI, test donemi (secilen cikis, sitedeki giris):")
+    for N in (3, 5, 8, 10):
+        t_ = kos(test, karal=sec[1], iz=sec[2], N=N)
+        L.append(f"  {N:2d} hisse: TEST x{t_[0]:.2f} (dusus %{100 * t_[1]:.1f}) | mevduat x{mev(test):.2f}")
+    txt = "\n".join(L)
+    (R / "oos_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
