@@ -549,3 +549,62 @@ def oos():
     txt = "\n".join(L)
     (R / "oos_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def oos2():
+    """18 Kas aksam (Teoman: 'mevduati gecemedikce anlami yok'). (A) Ucuzluk esigi canli cikis kuraliyla;
+    (B) borsa payi kurali (piyasa kar verimi / faiz) orneklem disi donemde."""
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    egit = (idx >= "2021-01-01") & (idx <= "2024-12-31")
+    test = idx >= "2025-01-01"
+    r = faiz_serisi(idx)
+
+    def mev(m):
+        ii = np.flatnonzero(m)
+        return float(np.prod(1 + r[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+
+    def kos(m, S_=S, karal=90, iz=(0.20, 0.15), N=10, w=None):
+        E_, T, _ = sim(idx[m], C[m], S_[m], PC[m], VR[m], TK[m], N=N, faizli=True, iz=iz, karal=karal,
+                       agirlik=None if w is None else w[m])
+        v = E_["deger"]
+        yil = {y: 100 * (v[v.index.year == y].iloc[-1] / (v[v.index.year == y - 1].iloc[-1] if (v.index.year == y - 1).any() else BAS) - 1)
+               for y in sorted(set(v.index.year))}
+        return v.iloc[-1] / BAS, (v / v.cummax() - 1).min(), len(T), yil
+
+    def S_yap(ust, ucuz):
+        out = {}
+        for t, (ix, v3r, kotu, gun, pct, o5, o20x, tb, fz, ha, vol) in ham.items():
+            d = _durum2(v3r, kotu, gun, pct, o5, o20x, tb, fz, ha, ust=ust, ucuz=ucuz)
+            out[t] = pd.Series(np.where(vol > 5e6, d, "X"), index=ix).reindex(idx)
+        return pd.DataFrame(out)[S.columns]
+
+    xg = lambda m: xu[m].iloc[-1] / xu[m].iloc[0]
+    L = ["ORNEKLEM DISI TEST 2 (18 Kas 2026 aksam)",
+         f"Egitim 2021-24: mevduat x{mev(egit):.2f}, BIST100 x{xg(egit):.2f} | Test 2025-bugun: mevduat x{mev(test):.2f}, BIST100 x{xg(test):.2f}",
+         "Mevduat = politika faizi, gunluk bilesik, stopajsiz (gercek mevduat daha dusuk).\n",
+         "A) UCUZLUK ESIGI, canli cikis kuraliyla (kar al 90 / 95 + takip eden stop %20/%15), temel ust %20:"]
+    for ka in (90, 95):
+        for N in (10, 5):
+            for ucuz in (20.0, 25.0, 30.0, 40.0):
+                S2 = S_yap(0.8, ucuz)
+                e = kos(egit, S2, ka, N=N); t_ = kos(test, S2, ka, N=N)
+                L.append(f"  kar al {ka} | {N:2d} hisse | Percentile <= {ucuz:.0f}: egitim x{e[0]:5.2f} (dusus %{100 * e[1]:5.1f}) | TEST x{t_[0]:4.2f} (dusus %{100 * t_[1]:5.1f}, islem {t_[2]}) | test yillar " + " ".join(f"{y} {g:+.0f}" for y, g in t_[3].items()))
+                print(L[-1])
+    ep = piyasa_kar_verimi(idx)
+    oran = np.nan_to_num(ep.values / r, nan=1.0)
+    yo = pd.Series(oran, index=idx)
+    L.append("\nB) BORSA PAYI: oran = piyasa kar verimi / politika faizi. Ayar 2021-24'te degil, 17 Kas'ta secildi (yani bu da tam orneklem disi degil).")
+    L.append("   oran ortalamalari: " + " ".join(f"{y} {yo[yo.index.year == y].mean():.2f}" for y in range(2021, 2027)))
+    S30 = S_yap(0.8, 30.0)
+    for ad, w in [("kural yok", None), ("borsa payi = oran (en az %30)", np.clip(oran, 0.3, 1.0)),
+                  ("borsa payi = oran (en az %50)", np.clip(oran, 0.5, 1.0)), ("borsa payi = 2 x oran (en az %30)", np.clip(2 * oran, 0.3, 1.0))]:
+        for ad2, S_ in (("P<=20", S), ("P<=30", S30)):
+            for N in (10, 5):
+                e = kos(egit, S_, N=N, w=w); t_ = kos(test, S_, N=N, w=w)
+                L.append(f"  {ad:36s} {ad2} {N:2d} hisse: egitim x{e[0]:5.2f} (dusus %{100 * e[1]:5.1f}) | TEST x{t_[0]:4.2f} (dusus %{100 * t_[1]:5.1f}) | test yillar " + " ".join(f"{y} {g:+.0f}" for y, g in t_[3].items())
+                         + ("" if w is None else f" | test ort. borsa payi %{100 * w[test].mean():.0f}"))
+                print(L[-1])
+    txt = "\n".join(L)
+    (R / "oos2_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
