@@ -1,0 +1,36 @@
+HISSE SECIM YONTEMI TESTI (20 Kas 2026). AL (✓ ya da ✓✓) listesinden hangi hisseler alinsin?
+Her yil 100.000 TL ile AYRI baslar (yil sonunda acik hisseler o gunku fiyatla). Cikis: kar al 90 + takip eden stop %20/%15 + bilanco bozulursa.
+Bos para faizde. Piyasa degeri = fiyat x son sermaye (yaklasik). Rastgele = 30 kosunun ortancasi.
+
+== 3 hisse ==
+                                              2021    2022    2023    2024    2025    2026   2021-26 tek parca
+  BIST100                                      +24    +186     +32     +29     +13      -3   x7.45
+  mevduat (stopajsiz)                          +19     +14     +20     +62     +54     +39   x5.71
+  site sirasi (✓✓ once, sonra temel)           +19    +186     +76    +108     +62     -16   x24.44 (dusus %-44)
+  en buyuk sirket (piyasa degeri)              +19    +186     +76    +154     +11      -7   x15.16 (dusus %-28)
+  en yuksek hacim (20g TL)                     +19    +186     +76    +153     +22      -9   x18.67 (dusus %-40)
+  en yuksek temel puan                         +19    +186     +76    +111     +49     -18   x16.02 (dusus %-43)
+  RASTGELE (ortanca)                           +19    +193     +76    +120     +41      -4   x20.97
+  Firsatlar TUMU (faz sartsiz), en buyuk       +19    +108     +39     +94      +2     +14   x6.67
+
+== 5 hisse ==
+                                              2021    2022    2023    2024    2025    2026   2021-26 tek parca
+  BIST100                                      +24    +186     +32     +29     +13      -3   x7.45
+  mevduat (stopajsiz)                          +19     +14     +20     +62     +54     +39   x5.71
+  site sirasi (✓✓ once, sonra temel)           +19    +131     +61     +78     +60     -24   x11.46 (dusus %-44)
+  en buyuk sirket (piyasa degeri)              +19    +131     +61     +99     +16      -8   x10.85 (dusus %-30)
+  en yuksek hacim (20g TL)                     +19    +131     +61     +97     +27     -10   x12.39 (dusus %-30)
+  en yuksek temel puan                         +19    +131     +61     +84     +37     -10   x13.76 (dusus %-40)
+  RASTGELE (ortanca)                           +19    +134     +72     +92     +30      -5   x14.55
+  Firsatlar TUMU (faz sartsiz), en buyuk       +19    +153     +62     +50     +24     +12   x9.72
+
+== 10 hisse ==
+                                              2021    2022    2023    2024    2025    2026   2021-26 tek parca
+  BIST100                                      +24    +186     +32     +29     +13      -3   x7.45
+  mevduat (stopajsiz)                          +19     +14     +20     +62     +54     +39   x5.71
+  site sirasi (✓✓ once, sonra temel)           +19    +102     +82     +94     +80      -7   x14.95 (dusus %-35)
+  en buyuk sirket (piyasa degeri)              +19    +102     +85     +94     +43      -3   x11.69 (dusus %-32)
+  en yuksek hacim (20g TL)                     +19    +102     +82     +88     +40      -9   x10.00 (dusus %-34)
+  en yuksek temel puan                         +19    +102     +85     +80     +84      -5   x11.44 (dusus %-35)
+  RASTGELE (ortanca)                           +19    +102     +87     +91     +56      -5   x13.10
+  Firsatlar TUMU (faz sartsiz), en buyuk       +19    +121     +75     +44     +18      +5   x9.77

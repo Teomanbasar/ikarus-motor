@@ -1,60 +1,60 @@
-  kar al 95 |  5 hisse | Percentile <= 25: egitim x10.93 (dusus %-16.6) | TEST x1.92 (dusus %-30.2, islem 33) | test yillar 2025 +68 2026 +14
-  kar al 95 |  5 hisse | Percentile <= 30: egitim x12.16 (dusus %-16.4) | TEST x1.91 (dusus %-31.8, islem 32) | test yillar 2025 +69 2026 +13
-  kar al 95 |  5 hisse | Percentile <= 40: egitim x13.63 (dusus %-16.4) | TEST x1.87 (dusus %-31.8, islem 33) | test yillar 2025 +66 2026 +13
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
 M3 (EVDS): 2026-11 eklendi
-  kural yok                            P<=20 10 hisse: egitim x 8.65 (dusus %-11.7) | TEST x1.81 (dusus %-35.3) | test yillar 2025 +80 2026 +1
-  kural yok                            P<=20  5 hisse: egitim x 8.37 (dusus %-15.4) | TEST x1.21 (dusus %-44.0) | test yillar 2025 +60 2026 -24
-  kural yok                            P<=30 10 hisse: egitim x 9.55 (dusus %-13.5) | TEST x1.40 (dusus %-34.4) | test yillar 2025 +44 2026 -3
-  kural yok                            P<=30  5 hisse: egitim x10.46 (dusus %-16.8) | TEST x1.75 (dusus %-32.8) | test yillar 2025 +67 2026 +5
-  borsa payi = oran (en az %30)        P<=20 10 hisse: egitim x 8.34 (dusus %-10.2) | TEST x1.97 (dusus % -4.9) | test yillar 2025 +59 2026 +23 | test ort. borsa payi %30
-  borsa payi = oran (en az %30)        P<=20  5 hisse: egitim x 7.41 (dusus %-15.4) | TEST x2.07 (dusus % -5.4) | test yillar 2025 +59 2026 +30 | test ort. borsa payi %30
-  borsa payi = oran (en az %30)        P<=30 10 hisse: egitim x 8.25 (dusus %-10.2) | TEST x2.08 (dusus % -6.9) | test yillar 2025 +55 2026 +35 | test ort. borsa payi %30
-  borsa payi = oran (en az %30)        P<=30  5 hisse: egitim x 8.95 (dusus %-15.4) | TEST x2.07 (dusus % -5.4) | test yillar 2025 +59 2026 +30 | test ort. borsa payi %30
-  borsa payi = oran (en az %50)        P<=20 10 hisse: egitim x 7.71 (dusus %-10.2) | TEST x1.71 (dusus %-14.8) | test yillar 2025 +61 2026 +6 | test ort. borsa payi %50
-  borsa payi = oran (en az %50)        P<=20  5 hisse: egitim x 9.91 (dusus %-15.4) | TEST x1.95 (dusus % -9.3) | test yillar 2025 +63 2026 +19 | test ort. borsa payi %50
-  borsa payi = oran (en az %50)        P<=30 10 hisse: egitim x 8.48 (dusus %-10.2) | TEST x2.01 (dusus %-12.1) | test yillar 2025 +62 2026 +24 | test ort. borsa payi %50
-  borsa payi = oran (en az %50)        P<=30  5 hisse: egitim x 9.53 (dusus %-15.4) | TEST x2.27 (dusus %-13.9) | test yillar 2025 +58 2026 +44 | test ort. borsa payi %50
-  borsa payi = 2 x oran (en az %30)    P<=20 10 hisse: egitim x 7.89 (dusus %-10.2) | TEST x1.82 (dusus % -9.2) | test yillar 2025 +49 2026 +22 | test ort. borsa payi %36
-  borsa payi = 2 x oran (en az %30)    P<=20  5 hisse: egitim x10.01 (dusus %-15.4) | TEST x2.06 (dusus % -9.3) | test yillar 2025 +62 2026 +27 | test ort. borsa payi %36
-  borsa payi = 2 x oran (en az %30)    P<=30 10 hisse: egitim x 9.65 (dusus %-10.2) | TEST x1.96 (dusus % -8.8) | test yillar 2025 +48 2026 +33 | test ort. borsa payi %36
-  borsa payi = 2 x oran (en az %30)    P<=30  5 hisse: egitim x10.64 (dusus %-15.4) | TEST x2.06 (dusus % -9.3) | test yillar 2025 +62 2026 +27 | test ort. borsa payi %36
-ORNEKLEM DISI TEST 2 (18 Kas 2026 aksam)
-Egitim 2021-24: mevduat x2.66, BIST100 x6.57 | Test 2025-bugun: mevduat x2.13, BIST100 x1.15
-Mevduat = politika faizi, gunluk bilesik, stopajsiz (gercek mevduat daha dusuk).
+  site sirasi (✓✓ once, sonra temel)           +19    +186     +76    +108     +62     -16   x24.44 (dusus %-44)
+  en buyuk sirket (piyasa degeri)              +19    +186     +76    +154     +11      -7   x15.16 (dusus %-28)
+  en yuksek hacim (20g TL)                     +19    +186     +76    +153     +22      -9   x18.67 (dusus %-40)
+  en yuksek temel puan                         +19    +186     +76    +111     +49     -18   x16.02 (dusus %-43)
+  RASTGELE (ortanca)                           +19    +193     +76    +120     +41      -4   x20.97
+  site sirasi (✓✓ once, sonra temel)           +19    +131     +61     +78     +60     -24   x11.46 (dusus %-44)
+  en buyuk sirket (piyasa degeri)              +19    +131     +61     +99     +16      -8   x10.85 (dusus %-30)
+  en yuksek hacim (20g TL)                     +19    +131     +61     +97     +27     -10   x12.39 (dusus %-30)
+  en yuksek temel puan                         +19    +131     +61     +84     +37     -10   x13.76 (dusus %-40)
+  RASTGELE (ortanca)                           +19    +134     +72     +92     +30      -5   x14.55
+  site sirasi (✓✓ once, sonra temel)           +19    +102     +82     +94     +80      -7   x14.95 (dusus %-35)
+  en buyuk sirket (piyasa degeri)              +19    +102     +85     +94     +43      -3   x11.69 (dusus %-32)
+  en yuksek hacim (20g TL)                     +19    +102     +82     +88     +40      -9   x10.00 (dusus %-34)
+  en yuksek temel puan                         +19    +102     +85     +80     +84      -5   x11.44 (dusus %-35)
+  RASTGELE (ortanca)                           +19    +102     +87     +91     +56      -5   x13.10
+HISSE SECIM YONTEMI TESTI (20 Kas 2026). AL (✓ ya da ✓✓) listesinden hangi hisseler alinsin?
+Her yil 100.000 TL ile AYRI baslar (yil sonunda acik hisseler o gunku fiyatla). Cikis: kar al 90 + takip eden stop %20/%15 + bilanco bozulursa.
+Bos para faizde. Piyasa degeri = fiyat x son sermaye (yaklasik). Rastgele = 30 kosunun ortancasi.
 
-A) UCUZLUK ESIGI, canli cikis kuraliyla (kar al 90 / 95 + takip eden stop %20/%15), temel ust %20:
-  kar al 90 | 10 hisse | Percentile <= 20: egitim x 8.65 (dusus %-11.7) | TEST x1.81 (dusus %-35.3, islem 72) | test yillar 2025 +80 2026 +1
-  kar al 90 | 10 hisse | Percentile <= 25: egitim x 8.00 (dusus %-13.4) | TEST x1.74 (dusus %-36.3, islem 71) | test yillar 2025 +80 2026 -3
-  kar al 90 | 10 hisse | Percentile <= 30: egitim x 9.55 (dusus %-13.5) | TEST x1.40 (dusus %-34.4, islem 62) | test yillar 2025 +44 2026 -3
-  kar al 90 | 10 hisse | Percentile <= 40: egitim x 9.46 (dusus %-14.3) | TEST x1.35 (dusus %-36.2, islem 60) | test yillar 2025 +47 2026 -9
-  kar al 90 |  5 hisse | Percentile <= 20: egitim x 8.37 (dusus %-15.4) | TEST x1.21 (dusus %-44.0, islem 36) | test yillar 2025 +60 2026 -24
-  kar al 90 |  5 hisse | Percentile <= 25: egitim x10.03 (dusus %-17.0) | TEST x1.65 (dusus %-30.8, islem 35) | test yillar 2025 +55 2026 +7
-  kar al 90 |  5 hisse | Percentile <= 30: egitim x10.46 (dusus %-16.8) | TEST x1.75 (dusus %-32.8, islem 33) | test yillar 2025 +67 2026 +5
-  kar al 90 |  5 hisse | Percentile <= 40: egitim x12.17 (dusus %-16.9) | TEST x1.53 (dusus %-38.0, islem 32) | test yillar 2025 +62 2026 -6
-  kar al 95 | 10 hisse | Percentile <= 20: egitim x 9.38 (dusus %-13.3) | TEST x1.89 (dusus %-34.3, islem 71) | test yillar 2025 +81 2026 +5
-  kar al 95 | 10 hisse | Percentile <= 25: egitim x 9.26 (dusus %-11.6) | TEST x1.78 (dusus %-36.2, islem 71) | test yillar 2025 +82 2026 -2
-  kar al 95 | 10 hisse | Percentile <= 30: egitim x11.06 (dusus %-13.5) | TEST x1.52 (dusus %-35.1, islem 64) | test yillar 2025 +44 2026 +6
-  kar al 95 | 10 hisse | Percentile <= 40: egitim x10.64 (dusus %-14.5) | TEST x1.46 (dusus %-34.9, islem 62) | test yillar 2025 +48 2026 -1
-  kar al 95 |  5 hisse | Percentile <= 20: egitim x 9.35 (dusus %-16.0) | TEST x1.09 (dusus %-42.7, islem 34) | test yillar 2025 +46 2026 -25
-  kar al 95 |  5 hisse | Percentile <= 25: egitim x10.93 (dusus %-16.6) | TEST x1.92 (dusus %-30.2, islem 33) | test yillar 2025 +68 2026 +14
-  kar al 95 |  5 hisse | Percentile <= 30: egitim x12.16 (dusus %-16.4) | TEST x1.91 (dusus %-31.8, islem 32) | test yillar 2025 +69 2026 +13
-  kar al 95 |  5 hisse | Percentile <= 40: egitim x13.63 (dusus %-16.4) | TEST x1.87 (dusus %-31.8, islem 33) | test yillar 2025 +66 2026 +13
+== 3 hisse ==
+                                              2021    2022    2023    2024    2025    2026   2021-26 tek parca
+  BIST100                                      +24    +186     +32     +29     +13      -3   x7.45
+  mevduat (stopajsiz)                          +19     +14     +20     +62     +54     +39   x5.71
+  site sirasi (✓✓ once, sonra temel)           +19    +186     +76    +108     +62     -16   x24.44 (dusus %-44)
+  en buyuk sirket (piyasa degeri)              +19    +186     +76    +154     +11      -7   x15.16 (dusus %-28)
+  en yuksek hacim (20g TL)                     +19    +186     +76    +153     +22      -9   x18.67 (dusus %-40)
+  en yuksek temel puan                         +19    +186     +76    +111     +49     -18   x16.02 (dusus %-43)
+  RASTGELE (ortanca)                           +19    +193     +76    +120     +41      -4   x20.97
+  Firsatlar TUMU (faz sartsiz), en buyuk       +19    +108     +39     +94      +2     +14   x6.67
 
-B) BORSA PAYI: oran = piyasa kar verimi / politika faizi. Ayar 2021-24'te degil, 17 Kas'ta secildi (yani bu da tam orneklem disi degil).
-   oran ortalamalari: 2021 0.44 2022 0.89 2023 1.17 2024 0.28 2025 0.19 2026 0.16
-  kural yok                            P<=20 10 hisse: egitim x 8.65 (dusus %-11.7) | TEST x1.81 (dusus %-35.3) | test yillar 2025 +80 2026 +1
-  kural yok                            P<=20  5 hisse: egitim x 8.37 (dusus %-15.4) | TEST x1.21 (dusus %-44.0) | test yillar 2025 +60 2026 -24
-  kural yok                            P<=30 10 hisse: egitim x 9.55 (dusus %-13.5) | TEST x1.40 (dusus %-34.4) | test yillar 2025 +44 2026 -3
-  kural yok                            P<=30  5 hisse: egitim x10.46 (dusus %-16.8) | TEST x1.75 (dusus %-32.8) | test yillar 2025 +67 2026 +5
-  borsa payi = oran (en az %30)        P<=20 10 hisse: egitim x 8.34 (dusus %-10.2) | TEST x1.97 (dusus % -4.9) | test yillar 2025 +59 2026 +23 | test ort. borsa payi %30
-  borsa payi = oran (en az %30)        P<=20  5 hisse: egitim x 7.41 (dusus %-15.4) | TEST x2.07 (dusus % -5.4) | test yillar 2025 +59 2026 +30 | test ort. borsa payi %30
-  borsa payi = oran (en az %30)        P<=30 10 hisse: egitim x 8.25 (dusus %-10.2) | TEST x2.08 (dusus % -6.9) | test yillar 2025 +55 2026 +35 | test ort. borsa payi %30
-  borsa payi = oran (en az %30)        P<=30  5 hisse: egitim x 8.95 (dusus %-15.4) | TEST x2.07 (dusus % -5.4) | test yillar 2025 +59 2026 +30 | test ort. borsa payi %30
-  borsa payi = oran (en az %50)        P<=20 10 hisse: egitim x 7.71 (dusus %-10.2) | TEST x1.71 (dusus %-14.8) | test yillar 2025 +61 2026 +6 | test ort. borsa payi %50
-  borsa payi = oran (en az %50)        P<=20  5 hisse: egitim x 9.91 (dusus %-15.4) | TEST x1.95 (dusus % -9.3) | test yillar 2025 +63 2026 +19 | test ort. borsa payi %50
-  borsa payi = oran (en az %50)        P<=30 10 hisse: egitim x 8.48 (dusus %-10.2) | TEST x2.01 (dusus %-12.1) | test yillar 2025 +62 2026 +24 | test ort. borsa payi %50
-  borsa payi = oran (en az %50)        P<=30  5 hisse: egitim x 9.53 (dusus %-15.4) | TEST x2.27 (dusus %-13.9) | test yillar 2025 +58 2026 +44 | test ort. borsa payi %50
-  borsa payi = 2 x oran (en az %30)    P<=20 10 hisse: egitim x 7.89 (dusus %-10.2) | TEST x1.82 (dusus % -9.2) | test yillar 2025 +49 2026 +22 | test ort. borsa payi %36
-  borsa payi = 2 x oran (en az %30)    P<=20  5 hisse: egitim x10.01 (dusus %-15.4) | TEST x2.06 (dusus % -9.3) | test yillar 2025 +62 2026 +27 | test ort. borsa payi %36
-  borsa payi = 2 x oran (en az %30)    P<=30 10 hisse: egitim x 9.65 (dusus %-10.2) | TEST x1.96 (dusus % -8.8) | test yillar 2025 +48 2026 +33 | test ort. borsa payi %36
-  borsa payi = 2 x oran (en az %30)    P<=30  5 hisse: egitim x10.64 (dusus %-15.4) | TEST x2.06 (dusus % -9.3) | test yillar 2025 +62 2026 +27 | test ort. borsa payi %36
+== 5 hisse ==
+                                              2021    2022    2023    2024    2025    2026   2021-26 tek parca
+  BIST100                                      +24    +186     +32     +29     +13      -3   x7.45
+  mevduat (stopajsiz)                          +19     +14     +20     +62     +54     +39   x5.71
+  site sirasi (✓✓ once, sonra temel)           +19    +131     +61     +78     +60     -24   x11.46 (dusus %-44)
+  en buyuk sirket (piyasa degeri)              +19    +131     +61     +99     +16      -8   x10.85 (dusus %-30)
+  en yuksek hacim (20g TL)                     +19    +131     +61     +97     +27     -10   x12.39 (dusus %-30)
+  en yuksek temel puan                         +19    +131     +61     +84     +37     -10   x13.76 (dusus %-40)
+  RASTGELE (ortanca)                           +19    +134     +72     +92     +30      -5   x14.55
+  Firsatlar TUMU (faz sartsiz), en buyuk       +19    +153     +62     +50     +24     +12   x9.72
+
+== 10 hisse ==
+                                              2021    2022    2023    2024    2025    2026   2021-26 tek parca
+  BIST100                                      +24    +186     +32     +29     +13      -3   x7.45
+  mevduat (stopajsiz)                          +19     +14     +20     +62     +54     +39   x5.71
+  site sirasi (✓✓ once, sonra temel)           +19    +102     +82     +94     +80      -7   x14.95 (dusus %-35)
+  en buyuk sirket (piyasa degeri)              +19    +102     +85     +94     +43      -3   x11.69 (dusus %-32)
+  en yuksek hacim (20g TL)                     +19    +102     +82     +88     +40      -9   x10.00 (dusus %-34)
+  en yuksek temel puan                         +19    +102     +85     +80     +84      -5   x11.44 (dusus %-35)
+  RASTGELE (ortanca)                           +19    +102     +87     +91     +56      -5   x13.10
+  Firsatlar TUMU (faz sartsiz), en buyuk       +19    +121     +75     +44     +18      +5   x9.77
+
