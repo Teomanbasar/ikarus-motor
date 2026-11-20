@@ -93,7 +93,7 @@ def panel(ham: dict | None = None):
     return idx, pd.DataFrame(C), pd.DataFrame(S), pd.DataFrame(PC), pd.DataFrame(VR), pd.DataFrame(TK), xu.reindex(idx).ffill(), m3
 
 
-def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False):
+def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False, sira=None, al_set=None):
     """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
     kapanisin 'geri' kadar altina inerse sat (takip eden stop). karal: kar al Percentile esigi."""
     r = faiz_serisi(idx)
@@ -175,8 +175,12 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                 if t in poz:
                     continue
                 s_ = Sv[i, j]
-                if s_ == "AL cift tik" or (s_ == "AL tek tik" and not sadece_cift):
-                    ad.append((-TKv[i, j], -VRv[i, j], t))
+                if (s_ in al_set) if al_set else (s_ == "AL cift tik" or (s_ == "AL tek tik" and not sadece_cift)):
+                    if sira is not None:
+                        k_ = sira[i, j]
+                        ad.append((-(k_ if not np.isnan(k_) else -1e18), 0, t))
+                    else:
+                        ad.append((-TKv[i, j], -VRv[i, j], t))
             bek_al = [t for *_, t in sorted(ad)][:bos]
     E_ = pd.DataFrame(egri, columns=["tarih", "deger", "hisse", "nakit"]).set_index("tarih")
     T = pd.DataFrame(isl, columns=["t", "giris", "cikis", "gf", "cf", "getiri", "neden"])
@@ -607,4 +611,63 @@ def oos2():
                 print(L[-1])
     txt = "\n".join(L)
     (R / "oos2_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def secim_test():
+    """20 Kas (Teoman): 'Firsatlar listesinden en yuksek hacimli / en buyuk sirketleri 3-4-5 tane alsin, guvenli liman
+    olarak. Yillari ayri ayri test et.' Siralama yontemleri karsilastirmasi; cikis canli kural (kar al 90 + iz 20/15)."""
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    r = faiz_serisi(idx)
+    # piyasa degeri ~ duzeltmeli kapanis x son odenmis sermaye
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = B.olaylar(G, D.m3())
+    ser = O.dropna(subset=["sermaye_son"]).groupby("t")["sermaye_son"].last()
+    MC = C.copy() * np.nan
+    for t in C.columns:
+        if t in ser.index:
+            MC[t] = C[t] * float(ser[t])
+    VOL = pd.DataFrame({t: pd.Series(ham[t][10], index=ham[t][0]).reindex(idx) for t in C.columns if t in ham})[C.columns]
+    yontem = {"site sirasi (✓✓ once, sonra temel)": None,
+              "en buyuk sirket (piyasa degeri)": MC.values,
+              "en yuksek hacim (20g TL)": VOL.values,
+              "en yuksek temel puan": VR.values}
+    yillar = [y for y in range(2021, 2027)]
+    def mev(m):
+        ii = np.flatnonzero(m)
+        return float(np.prod(1 + r[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+    def kos(m, sira, N, al_set=None):
+        si = None if sira is None else sira[m]
+        E_, T, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, faizli=True, iz=(0.20, 0.15), karal=90, sira=si, al_set=al_set)
+        v = E_["deger"]
+        return v.iloc[-1] / BAS, (v / v.cummax() - 1).min()
+    rng = np.random.default_rng(11)
+    L = ["HISSE SECIM YONTEMI TESTI (20 Kas 2026). AL (✓ ya da ✓✓) listesinden hangi hisseler alinsin?",
+         "Her yil 100.000 TL ile AYRI baslar (yil sonunda acik hisseler o gunku fiyatla). Cikis: kar al 90 + takip eden stop %20/%15 + bilanco bozulursa.",
+         "Bos para faizde. Piyasa degeri = fiyat x son sermaye (yaklasik). Rastgele = 30 kosunun ortancasi.\n"]
+    bas = "  " + f"{'':40s}" + "".join(f"{y:>8d}" for y in yillar) + "   2021-26 tek parca"
+    for N in (3, 5, 10):
+        L.append(f"== {N} hisse ==")
+        L.append(bas)
+        tum = idx >= "2021-01-01"
+        L.append("  " + f"{'BIST100':40s}" + "".join(f"{100 * (xu[idx.year == y].iloc[-1] / xu[idx.year == y].iloc[0] - 1):+8.0f}" for y in yillar) + f"   x{xu[tum].iloc[-1] / xu[tum].iloc[0]:.2f}")
+        L.append("  " + f"{'mevduat (stopajsiz)':40s}" + "".join(f"{100 * (mev(idx.year == y) - 1):+8.0f}" for y in yillar) + f"   x{mev(tum):.2f}")
+        for ad, sira in list(yontem.items()) + [("RASTGELE (ortanca)", "rnd")]:
+            satir = []
+            for m in [idx.year == y for y in yillar] + [tum]:
+                if isinstance(sira, str):
+                    v = np.median([kos(m, rng.random(C.shape), N)[0] for _ in range(30)])
+                else:
+                    v = kos(m, sira, N)[0]
+                satir.append(v)
+            dd = "" if isinstance(sira, str) else f" (dusus %{100 * kos(tum, sira, N)[1]:.0f})"
+            L.append("  " + f"{ad:40s}" + "".join(f"{100 * (v - 1):+8.0f}" for v in satir[:-1]) + f"   x{satir[-1]:.2f}{dd}")
+            print(L[-1])
+        # Firsatlarin tumu (teknik donmemis dahil), en buyuk sirket
+        satir = [kos(m, MC.values, N, al_set={"AL cift tik", "AL tek tik", "BEKLE TEKNIK"})[0] for m in [idx.year == y for y in yillar] + [tum]]
+        L.append("  " + f"{'Firsatlar TUMU (faz sartsiz), en buyuk':40s}" + "".join(f"{100 * (v - 1):+8.0f}" for v in satir[:-1]) + f"   x{satir[-1]:.2f}")
+        L.append("")
+    txt = "\n".join(L)
+    (R / "secim_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)

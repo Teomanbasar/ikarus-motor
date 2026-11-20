@@ -570,6 +570,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "secim":
+        from . import portfoy_bt
+        portfoy_bt.secim_test()
     elif sys.argv[1] == "oos2":
         from . import portfoy_bt
         portfoy_bt.oos2()
