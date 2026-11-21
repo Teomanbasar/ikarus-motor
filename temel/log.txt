@@ -1,60 +1,60 @@
-2AAGH	  Satış Amaçlı Elde Tutulan Duran Varlıklara İlişkin Yükümlülükler	13442543000	0	0	0
-2B	Uzun Vadeli Yükümlülükler	126707850000	117807078000	157846550905	132757586354
-2BA	  Finansal Borçlar	95820410000	79286229000	109336436389	99185350647
-2BB	  Diğer Finansal Yükümlülükler	0	0	0	0
-2BBA	  Ticari Borçlar	0	0	0	0
-2BBB	  Diğer Borçlar	0	0	0	0
-2BBBA	  Müşteri Söz.Doğan Yük.	0	0	0	0
-2BC	  Finans Sektörü Faaliyetlerinden Borçlar	0	0	0	0
-2BD	  Devlet Teşvik ve Yardımları	0	0	0	0
-2BDA	  Ertelenmiş Gelirler (Müşteri Söz.Doğan Yük. Dış.Kal.)	0	0	0	0
-2BE	    Uzun vadeli karşılıklar	13317299000	14953273000	18152788794	13526020579
-2BF	  Çalışanlara Sağlanan Faydalara İliş.Karş.	0	0	0	0
-2BG	  Ertelenmiş Vergi Yükümlülüğü	5736722000	6297061000	8009412670	6129768910
-2BH	  Diğer Uzun Vadeli Yükümlülükler	11833419000	17270515000	22347913053	13916446218
-2N	Özkaynaklar	75983348000	74071270000	94363173541	98252484946
-2O	  Ana Ortaklığa Ait Özkaynaklar	72556220000	68119912000	87507684465	87921453179
-2OA	  Ödenmiş Sermaye	675728000	675728000	675728000	675728000
-2OC	  Karşılıklı İştirak Sermayesi Düzeltmesi (-)	0	0	0	0
-2OCA	  Hisse Senedi İhraç Primleri	0	0	0	0
-2OCB	  Değer Artış Fonları	0	0	0	0
-2OCC	  Yabancı Para Çevrim Farkları	0	12755127000	17570784069	15083939035
-2OCD	  Kardan Ayrılan Kısıtlanmış Yedekler	10925643000	22624092000	16818765605	23870653369
-2OCE	  Geçmiş Yıllar Kar/Zararları	71589568000	59316071000	83391388509	55888275652
-2OCF	  Dönem Net Kar/Zararı	-4628699000	-6435806000	-10387558758	2210878765
-2OD	  Diğer Özsermaye Kalemleri	-6006020000	-20815300000	-20725741203	-10016769757
-2ODA	  Azınlık Payları	3427128000	5951358000	6855489076	10331031767
-2ODB	TOPLAM KAYNAKLAR	617225499000	518181285000	675703371917	520592920438
-3B	Sürdürülen Faaliyetler	0	0	0	0
-3C	Satış Gelirleri	435341896000	492032262000	651339322025	560936749045
-3CA	Satışların Maliyeti (-)	-307434430000	-350779558000	-463877329521	-406350243784
-3CAA	Ticari Faaliyetlerden Diğer Kar (Zarar)	0	0	0	0
-3CAB	Ticari Faaliyetlerden Brüt Kar (Zarar)	127907466000	141252704000	187461992504	154586505261
-3CAC	Faiz, Ücret, Prim, Komisyon ve Diğer Gelirler	0	0	0	0
-3CAD	Faiz, Ücret, Prim, Komisyon ve Diğer Giderler (-)	0	0	0	0
-3CAE	Finans Sektörü Faaliyetlerinden Diğer Kar (Zarar)	0	0	0	0
-3CAF	Finans Sektörü Faaliyetlerinden Brüt Kar (Zarar)	0	0	0	0
-3CB	Diğer Gelir ve Giderler	0	0	0	0
-3D	BRÜT KAR (ZARAR)	127907466000	141252704000	187461992504	154586505261
-3DA	Pazarlama, Satış ve Dağıtım Giderleri (-)	-91748662000	-97217845000	-129199508103	-108281558583
-3DB	Genel Yönetim Giderleri (-)	-27550935000	-30487197000	-41496805977	-32435619081
-3DC	Araştırma ve Geliştirme Giderleri (-)	-5033663000	-6083222000	-8069287571	-6346497810
-3DD	Diğer Faaliyet Gelirleri	17210218000	20794894000	28143099345	37523146043
-3DE	Diğer Faaliyet Giderleri (-)	-15126124000	-17979686000	-23793509701	-35723266573
-3DEA	Faaliyet Karı Öncesi Diğer Gelir ve Giderler	0	0	0	0
-3DF	FAALİYET KARI (ZARARI)	5658300000	10279648000	13045980497	9322709257
-3H	Net Faaliyet Kar/Zararı	3574206000	7464440000	8696390853	7522829787
-3HA	  Yatırım Faaliyetlerinden Gelirler	2042569000	129715000	183350490	1596267290
-3HAA	  Yatırım Faaliyetlerinden Giderler (-)	-200102000	-77121000	-132753383	-442535183
-3HAB	  Diğer Gelir ve Giderler	0	0	-0	-0
-3HAC	Özkaynak Yöntemiyle Değerlenen Yatırımların Kar/Zararlarındaki Paylar	-216875000	-194519000	-285130239	-230462123
-3HACA	Finansman Gideri Öncesi Faaliyet Karı/Zararı	7283892000	10137723000	12811447365	10245979241
-3HB	(Esas Faaliyet Dışı) Finansal Gelirler	12511772000	18254167000	21901134380	28862415576
-3HC	(Esas Faaliyet Dışı) Finansal Giderler (-)	-20661781000	-33891625000	-40600956223	-41216300587
-3HCA	Vergi Öncesi Diğer Gelir ve Giderler	1842467000	52594000	50597107	1153732107
-3I	SÜRDÜRÜLEN FAALİYETLER VERGİ ÖNCESİ KARI (ZARARI)	-866117000	-5499735000	-5888374477	-2107905770
-3IA	Sürdürülen Faaliyetler Vergi Geliri (Gideri)	-4907872000	-4539496000	-6293858700	-781264896
-3IB	  Dönem Vergi Geliri (Gideri)	-1273795000	-1598335000	-2478482513	-1845276857
-3IC	  Ertelenmiş Vergi Geliri (Gideri)	-3634077000	-2941161000	-3815376187	1064011960
-3ID	  Diğer Vergi Geliri (Gideri)	0	0	0	0
-3J	SÜRDÜRÜLEN FAALİYETLER DÖNEM KARI/ZARARI	-5773989000	-10039231000	-12182233177	-2889170666
+M3 (EVDS): 2026-11 eklendi
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+faal      10 hisse | egitim x11.40 (dusus % -10) | TEST x1.34 (dusus % -42, islem 59, medyan %+8.8) | tum x16.16 | yillar 2022 +125 2023 +103 2024 +105 2025 +80 2026 -18 | gunluk ort. AL 3
+faal       5 hisse | egitim x 9.63 (dusus % -15) | TEST x1.21 (dusus % -44, islem 33, medyan %+8.2) | tum x14.02 | yillar 2022 +170 2023 +61 2024 +75 2025 +69 2026 -28 | gunluk ort. AL 3
+M3 (EVDS): 2026-11 eklendi
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+kar+faal  10 hisse | egitim x 9.30 (dusus % -10) | TEST x1.42 (dusus % -46, islem 64, medyan %+9.2) | tum x13.51 | yillar 2022 +106 2023 +95 2024 +91 2025 +82 2026 -18 | gunluk ort. AL 3
+kar+faal   5 hisse | egitim x11.42 (dusus % -15) | TEST x1.23 (dusus % -45, islem 34, medyan %+6.5) | tum x19.39 | yillar 2022 +156 2023 +81 2024 +92 2025 +69 2026 -29 | gunluk ort. AL 3
+M3 (EVDS): 2026-11 eklendi
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+favok     10 hisse | egitim x11.63 (dusus % -10) | TEST x1.65 (dusus % -43, islem 55, medyan %+17.6) | tum x18.91 | yillar 2022 +127 2023 +106 2024 +105 2025 +90 2026 -7 | gunluk ort. AL 3
+favok      5 hisse | egitim x 9.59 (dusus % -15) | TEST x1.87 (dusus % -37, islem 32, medyan %+11.7) | tum x16.34 | yillar 2022 +169 2023 +61 2024 +75 2025 +120 2026 -16 | gunluk ort. AL 3
+M3 (EVDS): 2026-11 eklendi
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+faal_tek  10 hisse | egitim x10.44 (dusus % -11) | TEST x1.13 (dusus % -43, islem 47, medyan %+8.5) | tum x12.96 | yillar 2022 +124 2023 +118 2024 +75 2025 +55 2026 -21 | gunluk ort. AL 3
+faal_tek   5 hisse | egitim x 8.55 (dusus % -20) | TEST x1.01 (dusus % -55, islem 30, medyan %+8.0) | tum x 8.74 | yillar 2022 +172 2023 +99 2024 +41 2025 +69 2026 -29 | gunluk ort. AL 3
+DEGER OLCUSU TESTI (22 Kas 2026): net kar mi, faaliyet kari mi?
+kar      = (net kar / PD) + PD/DD   [CANLI]
+faal     = (esas faaliyet kari / FD) + PD/DD       FD = piyasa degeri + net borc
+kar+faal = ucu birlikte
+favok    = (FAVOK / FD) + PD/DD
+faal_tek = yalniz faaliyet kari / FD
+Cikis canli kural (kar al 90 + takip eden stop %20/%15 + bilanco bozulursa). Egitim 2021-24, test 2025-bugun (sifirdan).
+
+mevduat: egitim x2.66, test x2.14, tum x5.71 | BIST100 test x1.12
+
+kar       10 hisse | egitim x 8.65 (dusus % -12) | TEST x1.70 (dusus % -38, islem 72, medyan %+10.6) | tum x14.28 | yillar 2022 +102 2023 +82 2024 +94 2025 +80 2026 -10 | gunluk ort. AL 3
+kar        5 hisse | egitim x 8.37 (dusus % -15) | TEST x1.21 (dusus % -44, islem 36, medyan %+7.5) | tum x11.60 | yillar 2022 +131 2023 +61 2024 +78 2025 +60 2026 -23 | gunluk ort. AL 3
+faal      10 hisse | egitim x11.40 (dusus % -10) | TEST x1.34 (dusus % -42, islem 59, medyan %+8.8) | tum x16.16 | yillar 2022 +125 2023 +103 2024 +105 2025 +80 2026 -18 | gunluk ort. AL 3
+faal       5 hisse | egitim x 9.63 (dusus % -15) | TEST x1.21 (dusus % -44, islem 33, medyan %+8.2) | tum x14.02 | yillar 2022 +170 2023 +61 2024 +75 2025 +69 2026 -28 | gunluk ort. AL 3
+kar+faal  10 hisse | egitim x 9.30 (dusus % -10) | TEST x1.42 (dusus % -46, islem 64, medyan %+9.2) | tum x13.51 | yillar 2022 +106 2023 +95 2024 +91 2025 +82 2026 -18 | gunluk ort. AL 3
+kar+faal   5 hisse | egitim x11.42 (dusus % -15) | TEST x1.23 (dusus % -45, islem 34, medyan %+6.5) | tum x19.39 | yillar 2022 +156 2023 +81 2024 +92 2025 +69 2026 -29 | gunluk ort. AL 3
+favok     10 hisse | egitim x11.63 (dusus % -10) | TEST x1.65 (dusus % -43, islem 55, medyan %+17.6) | tum x18.91 | yillar 2022 +127 2023 +106 2024 +105 2025 +90 2026 -7 | gunluk ort. AL 3
+favok      5 hisse | egitim x 9.59 (dusus % -15) | TEST x1.87 (dusus % -37, islem 32, medyan %+11.7) | tum x16.34 | yillar 2022 +169 2023 +61 2024 +75 2025 +120 2026 -16 | gunluk ort. AL 3
+faal_tek  10 hisse | egitim x10.44 (dusus % -11) | TEST x1.13 (dusus % -43, islem 47, medyan %+8.5) | tum x12.96 | yillar 2022 +124 2023 +118 2024 +75 2025 +55 2026 -21 | gunluk ort. AL 3
+faal_tek   5 hisse | egitim x 8.55 (dusus % -20) | TEST x1.01 (dusus % -55, islem 30, medyan %+8.0) | tum x 8.74 | yillar 2022 +172 2023 +99 2024 +41 2025 +69 2026 -29 | gunluk ort. AL 3
