@@ -24,6 +24,12 @@ MALIYET = 0.3
 AL = ("ALINABILIR", "TOPLANIYOR", "YAKIN")
 
 
+# 22 Kas: deger bileseni secenekleri (test icin). "kar" = canli (net kar / PD ve PD/DD).
+DEGERLER = {"kar": ["kaz_get", "pddd"], "faal": ["fv_get", "pddd"], "kar+faal": ["kaz_get", "fv_get", "pddd"],
+            "favok": ["fav_get", "pddd"], "faal_tek": ["fv_get"]}
+DEGER = "kar"
+
+
 def puanlar(O, px):
     """Her bilanco olayina giris gunu fiyatiyla deger olcutleri, sonra donem kesitinde siralama."""
     rows = []
@@ -39,17 +45,21 @@ def puanlar(O, px):
         r["giris"] = df.index[j]
         r["pddd"] = mcap / e["oz"] if e.get("oz") and e["oz"] > 0 else np.nan
         r["kaz_get"] = e["nk_ttm"] / mcap if e.get("nk_ttm") is not None and mcap > 0 else np.nan
+        nb = e.get("netborc")
+        ev = mcap + nb if nb is not None and not pd.isna(nb) else np.nan
+        r["fv_get"] = e["fk_ttm"] / ev if e.get("fk_ttm") is not None and not pd.isna(e.get("fk_ttm")) and ev > 0 else np.nan
+        r["fav_get"] = e["favok_ttm"] / ev if e.get("favok_ttm") is not None and not pd.isna(e.get("favok_ttm")) and ev > 0 else np.nan
         rows.append(r)
     A = pd.DataFrame(rows)
     g = A.groupby("donem")
     q = {}
-    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F"]:
+    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F", "fv_get", "fav_get"]:
         q[f] = g[f].rank(pct=True)
     q["pddd"] = 1 - g["pddd"].rank(pct=True)
     H4 = pd.concat([q["sue_nk"], q["sue_faal"], q["satis_reel"], q["roe_ivme"]], axis=1)
     h = H4.mean(axis=1).where(H4.notna().sum(axis=1) >= 2)
     k = pd.concat([q["F"], q["roe"]], axis=1).mean(axis=1)
-    d = pd.concat([q["kaz_get"], q["pddd"]], axis=1).mean(axis=1)
+    d = pd.concat([q[k] for k in DEGERLER[DEGER]], axis=1).mean(axis=1)
     A["v3"] = (h + k + d) / 3
     A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)
     A["kotu"] = (q["sue_nk"] <= 0.2) & (q["sue_faal"] <= 0.2)

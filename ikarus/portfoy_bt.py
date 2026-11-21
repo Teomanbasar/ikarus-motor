@@ -671,3 +671,44 @@ def secim_test():
     txt = "\n".join(L)
     (R / "secim_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def deger_test():
+    """22 Kas (Teoman: 'net parasal pozisyon net kari bozuyor, asil F/K'). Temel puandaki deger bileseninde net kar/PD
+    yerine faaliyet kari / firma degeri (FD = PD + net borc). Parasal kazanc, kur farki ve faiz faaliyet karinin altinda."""
+    from . import firsat_bt as FB
+    L = ["DEGER OLCUSU TESTI (22 Kas 2026): net kar mi, faaliyet kari mi?",
+         "kar      = (net kar / PD) + PD/DD   [CANLI]",
+         "faal     = (esas faaliyet kari / FD) + PD/DD       FD = piyasa degeri + net borc",
+         "kar+faal = ucu birlikte",
+         "favok    = (FAVOK / FD) + PD/DD",
+         "faal_tek = yalniz faaliyet kari / FD",
+         "Cikis canli kural (kar al 90 + takip eden stop %20/%15 + bilanco bozulursa). Egitim 2021-24, test 2025-bugun (sifirdan).\n"]
+    for ad in ("kar", "faal", "kar+faal", "favok", "faal_tek"):
+        FB.DEGER = ad
+        idx, C, S, PC, VR, TK, xu, m3 = panel()
+        r = faiz_serisi(idx)
+        egit = (idx >= "2021-01-01") & (idx <= "2024-12-31"); test = idx >= "2025-01-01"; tum = idx >= "2021-01-01"
+        def mev(m):
+            ii = np.flatnonzero(m)
+            return float(np.prod(1 + r[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        if ad == "kar":
+            L.append(f"mevduat: egitim x{mev(egit):.2f}, test x{mev(test):.2f}, tum x{mev(tum):.2f} | BIST100 test x{xu[test].iloc[-1] / xu[test].iloc[0]:.2f}\n")
+        al_gun = ((S.values == "AL cift tik") | (S.values == "AL tek tik")).sum(axis=1)
+        for N in (10, 5):
+            o = []
+            for m in (egit, test, tum):
+                E_, T, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90)
+                v = E_["deger"]
+                o.append((v.iloc[-1] / BAS, (v / v.cummax() - 1).min(), len(T), T.getiri.median() if len(T) else np.nan))
+            yil = []
+            for y in range(2022, 2027):
+                m = idx.year == y
+                E_, T, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90)
+                yil.append(100 * (E_["deger"].iloc[-1] / BAS - 1))
+            L.append(f"{ad:9s} {N:2d} hisse | egitim x{o[0][0]:5.2f} (dusus %{100 * o[0][1]:4.0f}) | TEST x{o[1][0]:4.2f} (dusus %{100 * o[1][1]:4.0f}, islem {o[1][2]}, medyan %{o[1][3]:+.1f}) | "
+                     f"tum x{o[2][0]:5.2f} | yillar " + " ".join(f"{y} {g:+.0f}" for y, g in zip(range(2022, 2027), yil)) + f" | gunluk ort. AL {al_gun[tum].mean():.0f}")
+            print(L[-1])
+    txt = "\n".join(L)
+    (R / "deger_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

@@ -92,6 +92,13 @@ def olaylar(G, m3):
                 row["oz_reel3"] = (oz0 / oz3 / m3_3) ** (1 / 3) - 1
             row["oz"] = oz0
             row["sermaye_son"] = sermaye_son
+            # 22 Kas: "asil F/K" icin faaliyet kari ve net borc (parasal kazanc/kur/faiz faaliyet karinin altinda kalir)
+            b = tab.get(T._bilanco_donemi(tab, d), {})
+            if any(b.get(k) is not None for k in ("2AA", "2BA", "1AA")):
+                row["netborc"] = (b.get("2AA") or 0) + (b.get("2BA") or 0) - (b.get("1AA") or 0) - (b.get("1AB") or 0)
+            fk = T._ttm(tab, d, "3DF"); am = T._ttm(tab, d, "4B")
+            row["fk_ttm"] = fk
+            row["favok_ttm"] = fk + am if fk is not None and am is not None else None
             rows.append(row)
     return pd.DataFrame(rows)
 

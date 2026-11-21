@@ -570,6 +570,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "deger":
+        from . import portfoy_bt
+        portfoy_bt.deger_test()
     elif sys.argv[1] == "kalemler":
         # 22 Kas: Is Yatirim kalem kodlari ve adlari (net parasal pozisyon kalemini bulmak icin)
         out = []
