@@ -570,6 +570,16 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "kalemler":
+        # 22 Kas: Is Yatirim kalem kodlari ve adlari (net parasal pozisyon kalemini bulmak icin)
+        out = []
+        for h, g in (("TTKOM", "XI_29"), ("KCHOL", "XI_29"), ("ARCLK", "XI_29"), ("BIMAS", "XI_29"), ("AKBNK", "UFRS")):
+            v = _cek4(h, g, [(2026, 9), (2025, 9), (2025, 12), (2024, 12)])
+            out.append(f"===== {h} {g} (2026/9, 2025/9, 2025/12, 2024/12)")
+            for x in v:
+                out.append(f"{x.get('itemCode')}\t{x.get('itemDescTr')}\t{x.get('value1')}\t{x.get('value2')}\t{x.get('value3')}\t{x.get('value4')}")
+        (R / "kalemler.txt").write_text("\n".join(out), encoding="utf-8")
+        print("\n".join(out[:400]))
     elif sys.argv[1] == "secim":
         from . import portfoy_bt
         portfoy_bt.secim_test()
