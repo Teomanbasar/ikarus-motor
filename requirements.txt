@@ -4,3 +4,4 @@ yfinance>=0.2.50
 requests>=2.31
 matplotlib
 pypdf>=4.0
+cryptography>=41

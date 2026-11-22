@@ -1186,7 +1186,7 @@ def potansiyel_test():
 def icerden2_test():
     """22 Kas: MKK 'Pay Alim Satim Bildirimi' PDF'lerinden ayristirilan gercek alim/satimlar (kim, ne kadar)."""
     from . import kap
-    kalan = kap.pas_detay_topla(butce_dk=150)
+    kalan = kap.pas_detay_topla(butce_dk=160)
     if kalan > 0:
         print(f"KALAN {kalan}: test sonraki calistirmada"); return
     P = pd.read_csv(D.DATA / "kap_pas.csv", dtype=str)

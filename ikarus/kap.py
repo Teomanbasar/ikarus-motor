@@ -244,7 +244,10 @@ def pas_ayristir(metin: str) -> dict:
             "oran_bas": _sayi(sat[0][6]), "oran_son": _sayi(sat[-1][8])}
 
 
-def pas_detay_topla(butce_dk: float = 150, isci: int = 2, en_fazla: int | None = None):
+BEKLE = 1.2  # KAP 429 (cok istek) veriyor: tek is parcacigi, istekler arasi bekleme
+
+
+def pas_detay_topla(butce_dk: float = 160, isci: int = 1, en_fazla: int | None = None):
     """DKB (MKK) bildirimlerinin PDF ekini ayristirir -> data/kap_pas_detay.csv (artimli; PDF saklanmaz)."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
     d = pd.read_csv(DATA / "kap_pas.csv", dtype=str)
@@ -262,16 +265,17 @@ def pas_detay_topla(butce_dk: float = 150, isci: int = 2, en_fazla: int | None =
         if time.time() - t0 > butce_dk * 60:
             return None
         hata = ""
-        for k in range(3):
+        for k in range(6):
             try:
                 _, m = ek_metin(s, idx)
                 r = pas_ayristir(m); r["index"] = idx
                 if not m:
                     r["hata"] = "ek yok"
-                time.sleep(0.3)
+                time.sleep(BEKLE)
                 return r
             except Exception as e:
-                time.sleep(3 * (k + 1)); hata = str(e)
+                hata = str(e)
+                time.sleep(60 if "429" in hata else 3 * (k + 1))
         return {"index": idx, "hata": hata[:100]}
     yeni = []
     with ThreadPoolExecutor(isci) as ex:
