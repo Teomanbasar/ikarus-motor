@@ -387,7 +387,9 @@ def skor(grup, tab, m3, d=None, yo=None):
                           "ozkaynak_reel_buyume": None if g is None or not m3c else g / m3c - 1,
                           "net_kar_reel_buyume": None if nk is None or nk1 in (None, 0) or not m3c_akim or nk1 <= 0 else (nk / nk1) / m3c_akim - 1,
                           "serbest_nakit": T("4CB")}
-    out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA")}
+    # 22 Kas: "asil F/K" (FD/FAVOK) icin; bankalarda yok
+    out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA"), "favok": locals().get("favok"), "net_borc": locals().get("nb"),
+                  "faaliyet_kari": None if grup == "UFRS" else T("3DF")}
     try:
         out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d, yo).items() if k != "nk_ttm"}
         if yo:

@@ -27,7 +27,7 @@ AL = ("ALINABILIR", "TOPLANIYOR", "YAKIN")
 # 22 Kas: deger bileseni secenekleri (test icin). "kar" = canli (net kar / PD ve PD/DD).
 DEGERLER = {"kar": ["kaz_get", "pddd"], "faal": ["fv_get", "pddd"], "kar+faal": ["kaz_get", "fv_get", "pddd"],
             "favok": ["fav_get", "pddd"], "faal_tek": ["fv_get"]}
-DEGER = "kar"
+DEGER = "favok"   # 22 Kas: canli da bu
 
 
 def puanlar(O, px):

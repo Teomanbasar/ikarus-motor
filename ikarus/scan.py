@@ -102,6 +102,15 @@ def _temel_ekle(stocks):
             k["fk"] = pd_ / nk if nk and nk > 0 else None
             k["pddd"] = pd_ / oz if oz and oz > 0 else None
             k["kaz_get"] = nk / pd_ if nk is not None else None
+            # 22 Kas: asil F/K = firma degeri / FAVOK (parasal kazanc, kur farki, faiz ve TMS 29 amortismani disarida)
+            fav, nbr, faal = ham.get("favok"), ham.get("net_borc"), ham.get("faaliyet_kari")
+            if nbr is not None:
+                fd = pd_ + nbr
+                k["firma_degeri"] = fd
+                if fd > 0 and fav is not None:
+                    k["fav_get"] = fav / fd
+                    k["fd_favok"] = fd / fav if fav > 0 else None
+                k["fd_fk"] = fd / faal if faal and faal > 0 and fd > 0 else None
         s["temel"] = k
     _temel_v3(stocks)
     _temel_v3(stocks, tip="banka")   # 17 Kas: bankalar kendi icinde (finans_bt: ust 1/3 126g +19.9 / alt 1/3 +7.1); sigorta henuz test edilmedi
@@ -126,7 +135,7 @@ def _temel_v3(stocks, tip="sanayi"):
     def rows(s):
         k = s["temel"]; i = k.get("isaretler") or {}; o = k.get("oranlar") or {}
         return {"t": s["t"], "F": k.get("puan"), "roe": o.get("roe"), "sue_nk": i.get("sue_nk"), "sue_faal": i.get("sue_faal"),
-                "satis_reel": i.get("satis_reel"), "roe_ivme": i.get("roe_ivme"), "kaz_get": k.get("kaz_get"), "pddd": k.get("pddd"),
+                "satis_reel": i.get("satis_reel"), "roe_ivme": i.get("roe_ivme"), "kaz_get": k.get("kaz_get"), "fav_get": k.get("fav_get"), "pddd": k.get("pddd"),
                 "favok_q": i.get("favok_q")}
     X = pd.DataFrame([rows(s) for s in S]).set_index("t").astype(float)
     r = X.rank(pct=True)
@@ -137,7 +146,8 @@ def _temel_v3(stocks, tip="sanayi"):
     har = r[hcols]
     hareket = har.mean(axis=1).where(har.notna().sum(axis=1) >= 2)
     kalite = r[["F", "roe"]].mean(axis=1)
-    deger = r[["kaz_get", "pddd"]].mean(axis=1)
+    # 22 Kas: sanayide deger = FAVOK/FD + PD/DD (temel/deger_sonuc.txt: test 5 hisse x1.87 / net kar x1.21); bankada net kar/PD
+    deger = r[["kaz_get" if fin else "fav_get", "pddd"]].mean(axis=1)
     toplam = (hareket + kalite + deger) / 3   # 12 Kas: esit agirlik (50/25/25 ile ayni getiri, medyan daha iyi; Teoman: ivmeye fazla agirlik verme)
     sira = toplam.rank(pct=True)
     dilim = toplam.rank(pct=True).apply(lambda v: None if pd.isna(v) else int(max(1, np.ceil(v * 5))))
