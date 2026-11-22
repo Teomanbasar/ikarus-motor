@@ -572,6 +572,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "denetim":
+        from . import portfoy_bt
+        portfoy_bt.denetim()
     elif sys.argv[1] == "nakit":
         from . import portfoy_bt
         portfoy_bt.nakit_test()

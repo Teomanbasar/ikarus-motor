@@ -31,6 +31,7 @@ DEGER = "favok"   # 22 Kas: canli da bu
 DEGERLER["favok+sna"] = ["fav_get", "sna_get", "pddd"]
 KALITELER = {"canli": ["F", "roe"], "roic": ["F", "roic"], "nakit": ["F", "roe", "nakit_kal"], "roic+nakit": ["F", "roic", "nakit_kal"]}
 KALITE = "canli"
+HAM_DONDUR = False
 
 
 def _ok(v):
@@ -75,6 +76,8 @@ def puanlar(O, px):
     A["v3"] = (h + k + d) / 3
     A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)
     A["kotu"] = (q["sue_nk"] <= 0.2) & (q["sue_faal"] <= 0.2)
+    if HAM_DONDUR:
+        return A
     return A[["t", "donem", "giris", "v3r", "kotu"]]
 
 

@@ -749,3 +749,83 @@ def nakit_test():
     txt = "\n".join(L)
     (R / "nakit_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def denetim():
+    """22 Kas (Teoman: 'testlerde hata yapmis olabilirsin, emin ol'). Bagimsiz denetim:
+    1) her olcunun kapsami ve ornek degerler (elle kontrol icin),
+    2) TEK OLCU olay testi: her bilanco aciklamasindan sonra 63/126 islem gunu, piyasa ortancasina gore fazla getiri;
+       olcunun donem ici dilimine (5'li) gore. Binlerce olay -> portfoy simulasyonundan cok daha az gurultulu.
+    3) portfoy: AL listesinden RASTGELE secimle 25 kosu (tek bir secim sirasinin sansini ortadan kaldirir)."""
+    from . import firsat_bt as FB
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = B.olaylar(G, D.m3())
+    px = D.prices(sorted(O["t"].unique()))
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    L = ["DENETIM (22 Kas 2026)\n", "1) KAPSAM (dolu oran, sanayi olaylari):"]
+    olc = ["kaz_get", "fav_get", "fv_get", "sna_get", "roic", "roe", "nakit_kal", "pddd", "F"]
+    A["yil"] = pd.to_datetime(A["giris"]).dt.year
+    for f in olc:
+        L.append(f"  {f:10s} " + " ".join(f"{y}:%{100 * A.loc[A.yil == y, f].notna().mean():.0f}" for y in sorted(A.yil.unique())))
+    L.append("\n   ornek (son donem):")
+    for t in ("TTKOM", "BIMAS", "ARCLK", "THYAO", "TUPRS", "ASELS"):
+        x = A[A.t == t].sort_values("giris").tail(1)
+        if len(x):
+            x = x.iloc[0]
+            L.append(f"  {t} {x['donem']} giris {str(x['giris'])[:10]} | F/K={1 / x['kaz_get'] if x['kaz_get'] else np.nan:.1f} FD/FAVOK={1 / x['fav_get'] if x['fav_get'] else np.nan:.1f} "
+                     f"PD/DD={x['pddd']:.2f} ROIC={x['roic']:.2f} ROE={x['roe']:.2f} SNA/FD={x['sna_get']:.3f} nakit_kal={x['nakit_kal']:.3f} netborc={(x.get('netborc') or np.nan) / 1e9:.1f}mr")
+    # 2) olay testi
+    hepsi = {t: df["close"] for t, df in px.items()}
+    Cx = pd.DataFrame(hepsi).sort_index()
+    def ileri(h):
+        r = Cx.shift(-h) / Cx - 1
+        return r.sub(r.median(axis=1), axis=0)
+    F63, F126 = ileri(63), ileri(126)
+    def fg(F, t, g):
+        try:
+            return F.at[pd.Timestamp(g), t]
+        except KeyError:
+            return np.nan
+    A["f63"] = [fg(F63, t, g) for t, g in zip(A.t, A.giris)]
+    A["f126"] = [fg(F126, t, g) for t, g in zip(A.t, A.giris)]
+    L.append("\n2) TEK OLCU OLAY TESTI: donem ici 5 dilim (5 = en ucuz/en iyi). Deger: 126 gun fazla getiri ortalamasi % (kirpik %5) | ortanca. Egitim <2025, test >=2025 (test 126g icin 2025 ortasina kadar olaylar).")
+    yon = {"pddd": -1}
+    for f in olc:
+        for ad, m in (("egitim", A.yil < 2025), ("TEST", A.yil >= 2025)):
+            a = A[m & A[f].notna() & A.f126.notna()].copy()
+            if len(a) < 100:
+                continue
+            a["dl"] = (yon.get(f, 1) * a[f]).groupby(a["donem"]).rank(pct=True).mul(5).clip(upper=4.999).astype(int) + 1
+            def km(v):
+                v = v.clip(v.quantile(0.05), v.quantile(0.95)); return 100 * v.mean()
+            st = a.groupby("dl")["f126"].agg([km, "median", "count"])
+            fark = st.loc[5, "km"] - st.loc[1, "km"]
+            # t istatistigi (5. dilim - 1. dilim, kirpik)
+            v5, v1 = a.loc[a.dl == 5, "f126"], a.loc[a.dl == 1, "f126"]
+            v5 = v5.clip(v5.quantile(.05), v5.quantile(.95)); v1 = v1.clip(v1.quantile(.05), v1.quantile(.95))
+            tst = (v5.mean() - v1.mean()) / np.sqrt(v5.var() / len(v5) + v1.var() / len(v1))
+            L.append(f"  {f:10s} {ad:6s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}" for i in range(1, 6))
+                     + f" | D5-D1 {fark:+5.1f} (t={tst:+.1f}) | ortanca D1 {100 * st.loc[1, 'median']:+.1f} D5 {100 * st.loc[5, 'median']:+.1f}")
+        print(L[-1])
+    # 3) rastgele secimli portfoy
+    L.append("\n3) PORTFOY, AL listesinden RASTGELE secim, 25 kosu ortancasi (cikis canli). Test 2025-bugun, 10 ve 5 hisse:")
+    rng = np.random.default_rng(5)
+    for ad, dg, kl in (("kar (eski canli)", "kar", "canli"), ("favok (YENI canli)", "favok", "canli"), ("faal", "faal", "canli"),
+                       ("favok+sna", "favok+sna", "canli"), ("roic", "favok", "roic"), ("nakit", "favok", "nakit")):
+        FB.DEGER, FB.KALITE = dg, kl
+        idx, C, S, PC, VR, TK, xu, m3 = panel()
+        for per, m in (("egitim", (idx >= "2021-01-01") & (idx <= "2024-12-31")), ("TEST", idx >= "2025-01-01")):
+            for N in (10, 5):
+                v = []
+                for _ in range(25):
+                    E_, T, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))
+                    v.append(E_["deger"].iloc[-1] / BAS)
+                v = np.array(v)
+                L.append(f"  {ad:20s} {per:6s} {N:2d} hisse: ortanca x{np.median(v):.2f} (alt %25 x{np.quantile(v, .25):.2f}, ust %25 x{np.quantile(v, .75):.2f})")
+                print(L[-1])
+    FB.DEGER, FB.KALITE = "favok", "canli"
+    txt = "\n".join(L)
+    (R / "denetim_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
