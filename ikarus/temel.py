@@ -650,6 +650,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "potansiyel":
         from . import portfoy_bt
         portfoy_bt.potansiyel_test()
+    elif sys.argv[1] == "pas_yokla":
+        from . import kap
+        kap.pas_yokla()
     elif sys.argv[1] == "icerden":
         from . import portfoy_bt
         portfoy_bt.icerden_test()

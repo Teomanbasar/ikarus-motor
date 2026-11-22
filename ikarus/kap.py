@@ -146,3 +146,31 @@ def pas_topla(bas: str = "2021-01-01", gun: int = 3, butce_dk: float = 110):
     tum.to_csv(f, index=False)
     print(f"KAP pay alim satim: {len(yeni)} yeni, dosyada {len(tum)}; son {a:%Y-%m-%d}")
     return tum
+
+
+def detay_metin(s, idx: str) -> str:
+    """Bildirim sayfasinin duz metni (Next.js sayfasindaki kacisli HTML dahil)."""
+    import html as _h
+    import re
+    h = s.get(f"https://www.kap.org.tr/tr/Bildirim/{idx}", headers={k: v for k, v in BASLIK.items() if k != "Content-Type"}, timeout=60).text
+    h = h.replace('\\\\u003c', '<').replace('\\\\u003e', '>').replace('\\u003c', '<').replace('\\u003e', '>').replace('\\"', '"').replace('\\n', ' ')
+    h = re.sub(r"<script[^>]*src=[^>]*>\\s*</script>|<style.*?</style>", " ", h, flags=re.S)
+    t = re.sub(r"<[^>]+>", " ", h)
+    t = _h.unescape(t)
+    return re.sub(r"\\s+", " ", t)
+
+
+def pas_yokla():
+    import pandas as pd_
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    d = pd_.read_csv(DATA / "kap_pas.csv", dtype=str)
+    out = []
+    for sinif in ("DKB", "ODA"):
+        for idx in d[d.sinif == sinif]["index"].sample(3, random_state=2).tolist() + d[d.sinif == sinif]["index"].tail(1).tolist():
+            t = detay_metin(s, idx)
+            i = max(t.find("Alım"), 0)
+            k = [m for m in ("İşlem Tür", "Alım", "Satım", "Nominal", "Fiyat", "Oran", "Bildirim Konusu", "Adı Soyadı", "Ünvan", "Görev") if m in t]
+            out.append(f"===== {sinif} {idx} uzunluk {len(t)} anahtarlar {k}\n{t[max(0, i - 2500):i + 2500]}")
+    (DATA.parent / "temel" / "pas_yokla.txt").write_text("\n\n".join(out), encoding="utf-8")
+    print("\n\n".join(out)[:4000])
