@@ -1049,3 +1049,80 @@ def geri_alim_test():
     txt = "\n".join(L)
     (R / "geri_alim_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def _pas_yon(ozet: str) -> str:
+    """Ozetten alim/satim: 'al' / 'sat' / '?'."""
+    o = ozet.lower().replace("İ", "i").replace("ı", "i")
+    sat = any(k in o for k in ("satis", "satiş", "satış", "satim", "satım", "sattı", "satti", "elden cikar"))
+    sat = sat and "alım satım" not in o.replace("i", "ı") or ("satış" in o) or ("satis" in o)
+    al = any(k in o for k in ("alim", "alım", "alımı", "alimi", "aldı", "aldi", "edinim", "satın al", "satin al", "pay alım işlem", "pay alimi"))
+    genel = o.strip().startswith("pay alım satım bildirimi") or o.strip().startswith("pay alim satim bildirimi")
+    if genel or (al and sat and "alım satım" in o):
+        return "?"
+    if sat and not al:
+        return "sat"
+    if al and not sat:
+        return "al"
+    return "?"
+
+
+def icerden_test():
+    """22 Kas: iceriden / ortak pay alimlari (KAP 'Pay Alim Satim Bildirimi'), geri alimla ayni olay testi."""
+    from . import kap
+    P = kap.pas_topla()
+    P["t"] = pd.to_datetime(P["tarih"].str[:10], format="%d.%m.%Y", errors="coerce")
+    P["hisse"] = np.where(P["ilgili"].fillna("").str.len() > 1, P["ilgili"].fillna(""), P["gonderen"].fillna(""))
+    P["hisse"] = P["hisse"].str.split(",").str[0].str.strip()
+    P["yon"] = P["ozet"].fillna("").map(_pas_yon)
+    P = P.dropna(subset=["t"])
+    L = ["ICERIDEN / ORTAK PAY ALIMI TESTI (22 Kas 2026)",
+         f"KAP 'Pay Alim Satim Bildirimi': {len(P)} adet, {P.hisse.nunique()} hisse. Yon (ozetten): " + " ".join(f"{k}:{v}" for k, v in P.yon.value_counts().items()),
+         "gonderen sinifi: " + " ".join(f"{k}:{v}" for k, v in P.sinif.value_counts().items()),
+         "ozet ornekleri (al): " + " | ".join(P[P.yon == "al"].ozet.head(8).tolist()),
+         "ozet ornekleri (sat): " + " | ".join(P[P.yon == "sat"].ozet.head(8).tolist()),
+         "ozet ornekleri (?): " + " | ".join(P[P.yon == "?"].ozet.sample(min(10, (P.yon == "?").sum()), random_state=1).tolist()), ""]
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    hep = D.prices(sorted(G.keys()))
+    Cx = pd.DataFrame({t: df["close"] for t, df in hep.items()}).sort_index()
+    gun = Cx.index
+    F = {}
+    for h in (5, 21, 63, 126):
+        r = Cx.shift(-h) / Cx - 1
+        F[h] = r.sub(r.median(axis=1), axis=0)
+    def olaylar(x):
+        x = x.sort_values("t"); ilk, son = [], {}
+        for _, r in x.iterrows():
+            if r.hisse not in son or (r.t - son[r.hisse]).days > 90:
+                ilk.append(r)
+            son[r.hisse] = r.t
+        E = pd.DataFrame(ilk)
+        if E.empty:
+            return E
+        E["giris"] = [gun[j] if (j := gun.searchsorted(t, side="right")) < len(gun) else pd.NaT for t in E.t]
+        E = E.dropna(subset=["giris"])
+        for h in F:
+            E[f"f{h}"] = [F[h].at[gi, t] if t in F[h].columns else np.nan for t, gi in zip(E.hisse, E.giris)]
+        return E
+    def ozet(x, ad):
+        o = []
+        for h in (5, 21, 63, 126):
+            v = x[f"f{h}"].dropna() if len(x) else pd.Series(dtype=float)
+            if len(v) < 10:
+                o.append(f"{h}g n<10"); continue
+            k = v.clip(v.quantile(.05), v.quantile(.95))
+            o.append(f"{h}g ort %{100 * k.mean():+.1f} ortanca %{100 * v.median():+.1f} kaz %{100 * (v > 0).mean():.0f} (n={len(v)}, t={k.mean() / (k.std() / np.sqrt(len(k))):+.1f})")
+        L.append(f"  {ad:30s} " + " | ".join(o))
+    L.append("YENI DALGA (90 gun sessizlikten sonra ilk bildirim), ertesi gun kapanistan piyasa ortancasina gore fazla getiri:")
+    for yon in ("al", "sat", "?"):
+        E = olaylar(P[P.yon == yon])
+        ozet(E, f"yon={yon}")
+        if yon == "al" and len(E):
+            for y, x in E.groupby(E.giris.dt.year):
+                ozet(x, f"  al {y}")
+            yk = E.ozet.str.lower().str.contains("yönetim kurulu|genel müdür|ceo|başkan|yonetim kurulu|genel mudur|baskan", regex=True)
+            ozet(E[yk], "  al: yonetici (YK/GM)")
+            ozet(E[~yk], "  al: diger (ortak/sirket)")
+    txt = "\n".join(L)
+    (R / "icerden_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

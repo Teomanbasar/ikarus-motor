@@ -113,3 +113,36 @@ def icerden_yokla():
                 out.append(f"== {u} HATA {e}")
     (DATA.parent / "temel" / "icerden_yokla.txt").write_text("\n".join(out), encoding="utf-8")
     print("\n".join(out)[:5000])
+
+
+def pas_topla(bas: str = "2021-01-01", gun: int = 3, butce_dk: float = 110):
+    """22 Kas: 'Pay Alim Satim Bildirimi' (iceriden / ortak / sirket pay alim-satimlari) -> data/kap_pas.csv."""
+    f = DATA / "kap_pas.csv"
+    eski = pd.read_csv(f, dtype=str) if f.exists() else pd.DataFrame()
+    t0 = time.time()
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    a = pd.Timestamp(bas) if eski.empty else pd.to_datetime(eski["tarih"].str[:10], format="%d.%m.%Y").max() - pd.Timedelta(days=3)
+    son = pd.Timestamp.today().normalize()
+    satir = []
+    while a <= son and time.time() - t0 < butce_dk * 60:
+        b = min(a + pd.Timedelta(days=gun - 1), son)
+        rows = _cek(s, a.strftime("%Y-%m-%d"), b.strftime("%Y-%m-%d"))
+        if rows is not None and len(rows) >= 2000 and b > a:
+            rows = []
+            for g in pd.date_range(a, b):
+                rows += _cek(s, g.strftime("%Y-%m-%d"), g.strftime("%Y-%m-%d")) or []
+                time.sleep(0.4)
+        for r in rows or []:
+            if "Pay Alım Satım" in str(r.get("subject")):
+                satir.append({"tarih": str(r.get("publishDate") or ""), "gonderen": str(r.get("stockCodes") or ""),
+                              "ilgili": str(r.get("relatedStocks") or ""), "sinif": str(r.get("disclosureClass") or ""),
+                              "unvan": str(r.get("kapTitle") or ""), "ozet": str(r.get("summary") or "").replace("\n", " ")[:300],
+                              "index": str(r.get("disclosureIndex") or "")})
+        a = b + pd.Timedelta(days=1)
+        time.sleep(0.5)
+    yeni = pd.DataFrame(satir)
+    tum = pd.concat([eski, yeni]).drop_duplicates(subset=["index"]) if len(yeni) else eski
+    tum.to_csv(f, index=False)
+    print(f"KAP pay alim satim: {len(yeni)} yeni, dosyada {len(tum)}; son {a:%Y-%m-%d}")
+    return tum
