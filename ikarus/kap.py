@@ -181,7 +181,9 @@ def ek_metin(s, idx: str):
     import io
     H = {k: v for k, v in BASLIK.items() if k != "Content-Type"}
     r = s.get(f"https://www.kap.org.tr/tr/api/notification/attachment-detail/{idx}", headers=H, timeout=60)
-    j = r.json() if r.status_code == 200 else []
+    if r.status_code != 200:
+        raise RuntimeError(f"ek-detay {r.status_code}")
+    j = r.json()
     metin = ""
     for item in j or []:
         for att in item.get("attachments") or []:
@@ -189,7 +191,11 @@ def ek_metin(s, idx: str):
             if not oid:
                 continue
             f = s.get(f"https://www.kap.org.tr/tr/api/file/download/{oid}", headers=H, timeout=60)
+            if f.status_code != 200:
+                raise RuntimeError(f"indirme {f.status_code}")
             i = f.content.find(b"%PDF")
+            if i < 0:
+                raise RuntimeError(f"pdf degil {f.content[:60]!r}")
             if i >= 0:
                 from pypdf import PdfReader
                 metin = " ".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(f.content[i:])).pages)
@@ -238,26 +244,34 @@ def pas_ayristir(metin: str) -> dict:
             "oran_bas": _sayi(sat[0][6]), "oran_son": _sayi(sat[-1][8])}
 
 
-def pas_detay_topla(butce_dk: float = 150, isci: int = 4):
+def pas_detay_topla(butce_dk: float = 150, isci: int = 2, en_fazla: int | None = None):
     """DKB (MKK) bildirimlerinin PDF ekini ayristirir -> data/kap_pas_detay.csv (artimli; PDF saklanmaz)."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
     d = pd.read_csv(DATA / "kap_pas.csv", dtype=str)
     f = DATA / "kap_pas_detay.csv"
     eski = pd.read_csv(f, dtype=str) if f.exists() else pd.DataFrame(columns=["index"])
+    if "satir" in eski:  # okunamamis/hatali satirlari yeniden dene
+        eski = eski[pd.to_numeric(eski["satir"], errors="coerce").fillna(0) > 0]
     yap = [i for i in d[d.sinif == "DKB"]["index"].tolist() if i not in set(eski["index"])]
+    if en_fazla:
+        yap = yap[:en_fazla]
     t0 = time.time()
     s = requests.Session()
     s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
     def is_(idx):
         if time.time() - t0 > butce_dk * 60:
             return None
+        hata = ""
         for k in range(3):
             try:
                 _, m = ek_metin(s, idx)
                 r = pas_ayristir(m); r["index"] = idx
+                if not m:
+                    r["hata"] = "ek yok"
+                time.sleep(0.3)
                 return r
             except Exception as e:
-                time.sleep(2 * (k + 1)); hata = str(e)
+                time.sleep(3 * (k + 1)); hata = str(e)
         return {"index": idx, "hata": hata[:100]}
     yeni = []
     with ThreadPoolExecutor(isci) as ex:
@@ -271,5 +285,8 @@ def pas_detay_topla(butce_dk: float = 150, isci: int = 4):
     tum = pd.concat([eski, pd.DataFrame(yeni)])
     tum.to_csv(f, index=False)
     kalan = len(yap) - len(yeni)
-    print(f"pas detay: {len(yeni)} yeni, toplam {len(tum)}, kalan {kalan}")
+    Y = pd.DataFrame(yeni)
+    print(f"pas detay: {len(yeni)} yeni, toplam {len(tum)}, kalan {kalan}; okunan {int((pd.to_numeric(Y.get('satir'), errors='coerce') > 0).sum()) if len(Y) else 0}")
+    if "hata" in Y:
+        print("hatalar:", Y["hata"].value_counts().head(8).to_dict())
     return kalan
