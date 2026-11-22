@@ -32,6 +32,8 @@ DEGERLER["favok+sna"] = ["fav_get", "sna_get", "pddd"]
 KALITELER = {"canli": ["F", "roe"], "roic": ["F", "roic"], "nakit": ["F", "roe", "nakit_kal"], "roic+nakit": ["F", "roic", "nakit_kal"]}
 KALITE = "canli"
 HAM_DONDUR = False
+DEGER_AGIRLIK = 1.0
+DEGERLER.update({"kar_pk": ["kaz_pk", "pddd"], "kar_pk2": ["kaz_pk2", "pddd"], "yok": [], "pddd": ["pddd"]})
 
 
 def _ok(v):
@@ -62,18 +64,21 @@ def puanlar(O, px):
         r["nakit_kal"] = (fn_ - nk_) / va_ if _ok(nk_) and _ok(fn_) and _ok(va_) and va_ > 0 else np.nan
         ic = (e.get("oz") or np.nan) + (nb if _ok(nb) else np.nan)
         r["roic"] = e["favok_ttm"] / ic if _ok(e.get("favok_ttm")) and ic > 0 else np.nan
+        for k_ in ("pk_ttm", "pk2_ttm"):
+            pk = e.get(k_)
+            r["kaz_" + k_[:-4]] = (e["nk_ttm"] - 0.75 * (pk if _ok(pk) else 0.0)) / mcap if _ok(e.get("nk_ttm")) and mcap > 0 else np.nan
         rows.append(r)
     A = pd.DataFrame(rows)
     g = A.groupby("donem")
     q = {}
-    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F", "fv_get", "fav_get", "sna_get", "nakit_kal", "roic"]:
+    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F", "fv_get", "fav_get", "sna_get", "nakit_kal", "roic", "kaz_pk", "kaz_pk2"]:
         q[f] = g[f].rank(pct=True)
     q["pddd"] = 1 - g["pddd"].rank(pct=True)
     H4 = pd.concat([q["sue_nk"], q["sue_faal"], q["satis_reel"], q["roe_ivme"]], axis=1)
     h = H4.mean(axis=1).where(H4.notna().sum(axis=1) >= 2)
     k = pd.concat([q[x] for x in KALITELER[KALITE]], axis=1).mean(axis=1)
-    d = pd.concat([q[k] for k in DEGERLER[DEGER]], axis=1).mean(axis=1)
-    A["v3"] = (h + k + d) / 3
+    d = pd.concat([q[k] for k in DEGERLER[DEGER]], axis=1).mean(axis=1) if DEGERLER[DEGER] else None
+    A["v3"] = (h + k) / 2 if d is None or DEGER_AGIRLIK == 0 else (h + k + DEGER_AGIRLIK * d) / (2 + DEGER_AGIRLIK)
     A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)
     A["kotu"] = (q["sue_nk"] <= 0.2) & (q["sue_faal"] <= 0.2)
     if HAM_DONDUR:

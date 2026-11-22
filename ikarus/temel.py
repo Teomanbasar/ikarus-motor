@@ -64,6 +64,42 @@ SURUM = 2  # 8 Kas 2026: Teoman onayi ile 2'ye gecildi (bt: temel/bt_sonuc_v1/v2
 KODLAR = {"1A", "1AA", "1AB", "1BL", "1Z", "2A", "2AA", "2BA", "2N", "2O", "2OA", "3C", "3D", "3DF", "3Z", "4B", "4C", "4CB", "4CBC"}
 
 
+PK_KOD = {"1AA", "1AB", "1AC", "1AD", "1AE", "1B", "1BA", "1BB", "1BC", "2A", "2B", "2AA", "2BA", "2AAGAC", "2BBBA", "2BG",
+          "2AAGCA", "2BDA", "1BL", "3Z"}
+
+
+def gecmis_pk(ceyrek: int = 16, butce_dk: float = 100, isci: int = 4):
+    """22 Kas: net parasal pozisyon tahmini icin bilanco kalemleri (parasal varlik/yukumluluk) -> temel/gecmis_pk.json.gz."""
+    import gzip
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    f = R / "gecmis_pk.json.gz"
+    G = json.loads(gzip.decompress(f.read_bytes())) if f.exists() else {}
+    hisseler = [h for h in D.bist_list()["ticker"].tolist() if h not in G]
+    t0 = time.time()
+
+    def is_(h):
+        if time.time() - t0 > butce_dk * 60:
+            return h, None, None
+        grup, tab = cek(h, ceyrek)
+        return h, grup, tab
+    n = 0
+    with ThreadPoolExecutor(isci) as ex:
+        for fut in as_completed([ex.submit(is_, h) for h in hisseler]):
+            try:
+                h, grup, tab = fut.result()
+            except Exception as e:
+                print("hata", e); continue
+            if grup is None:
+                continue
+            G[h] = {"grup": grup, "tab": {f"{y}/{m}": {k: v for k, v in val.items() if k in PK_KOD} for (y, m), val in tab.items()}}
+            n += 1
+            if n % 100 == 0:
+                print(f"pk {n}/{len(hisseler)} {time.time() - t0:.0f} sn")
+                f.write_bytes(gzip.compress(json.dumps(G, separators=(",", ":")).encode()))
+    f.write_bytes(gzip.compress(json.dumps(G, separators=(",", ":")).encode()))
+    print(f"gecmis_pk: {n} yeni, dosyada {len(G)} hisse ({time.time() - t0:.0f} sn)")
+
+
 def gecmis(ceyrek: int = 28, butce_dk: float = 120, isci: int = 4):
     """Geriye donuk test icin tum BIST'in uzun ceyrek gecmisi -> temel/gecmis.json.gz (yalniz gereken kalemler)."""
     import gzip
@@ -572,6 +608,10 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "parasal":
+        gecmis_pk()
+        from . import portfoy_bt
+        portfoy_bt.parasal_test()
     elif sys.argv[1] == "denetim":
         from . import portfoy_bt
         portfoy_bt.denetim()

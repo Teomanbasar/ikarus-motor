@@ -39,6 +39,9 @@ FAIZ = [("2020-09-24", 10.25), ("2020-11-19", 15.0), ("2020-12-24", 17.0), ("202
         ("2026-10-22", 36.0)]
 
 
+OLAY_EK = None  # 22 Kas: olaylara ek alan (parasal kazanc tahmini)
+
+
 def faiz_serisi(idx):
     s = pd.Series({pd.Timestamp(d): v for d, v in FAIZ}).sort_index()
     return s.reindex(idx.union(s.index)).ffill().reindex(idx).fillna(10.25).values / 100.0
@@ -48,6 +51,8 @@ def panel(ham: dict | None = None):
     G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
     m3 = D.m3()
     O = B.olaylar(G, m3)
+    if OLAY_EK is not None:
+        O = OLAY_EK(O, G)
     px = D.prices(sorted(O["t"].unique()))
     xu = D.xu100()
     P = puanlar(O, px)
@@ -828,4 +833,130 @@ def denetim():
     FB.DEGER, FB.KALITE = "favok", "canli"
     txt = "\n".join(L)
     (R / "denetim_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def _pk_tablo():
+    """Her (hisse, ceyrek) icin tahmini net parasal pozisyon kazanci / toplam varlik.
+    Kazanc ~ ortalama net parasal yukumluluk x ceyrek TUFE. Net parasal yukumluluk = parasal yukumlulukler - parasal varliklar.
+    pk  = tum parasal kalemler (arkadasin yontemi: net kardan tamamen cikar)
+    pk2 = finansal borclar haric (dengeli: finansal borcun eriyen kismi zaten sisen faiz giderini karsiliyor)."""
+    P = json.loads(gzip.decompress((R / "gecmis_pk.json.gz").read_bytes()))
+    tf = D.tufe()
+    def pi(y, m):
+        a = tf.get(pd.Timestamp(y, m, 1)); y0, m0 = (y, m - 3) if m > 3 else (y - 1, m + 9)
+        b = tf.get(pd.Timestamp(y0, m0, 1))
+        return a / b - 1 if a and b else None
+    out = {}
+    for t, g in P.items():
+        if g["grup"] != "XI_29":
+            continue
+        rat = {}
+        for k, v in g["tab"].items():
+            y, m = map(int, k.split("/"))
+            z = lambda c: v.get(c) or 0.0
+            va = v.get("1BL")
+            if not va or va <= 0 or v.get("2A") is None:
+                continue
+            pv = sum(z(c) for c in ("1AA", "1AB", "1AC", "1AD", "1AE", "1B", "1BA", "1BB", "1BC"))
+            py = z("2A") + z("2B") - z("2AAGAC") - z("2BBBA") - z("2BG") - z("2AAGCA") - z("2BDA")
+            fb = z("2AA") + z("2BA")
+            rat[(y, m)] = ((py - pv) / va, (py - fb - pv) / va, va)
+        for (y, m), (r1, r2, va) in rat.items():
+            onc = (y, m - 3) if m > 3 else (y - 1, 12)
+            p = pi(y, m)
+            if p is None:
+                continue
+            a1, a2 = (r1, r2) if onc not in rat else ((r1 + rat[onc][0]) / 2, (r2 + rat[onc][1]) / 2)
+            out[(t, y, m)] = (a1 * p, a2 * p, va)
+    return out
+
+
+def parasal_test():
+    """22 Kas (Teoman): 'parasal kazanci cikarip test edelim; F/K'ya ne kadar agirlik veriyoruz, sonucu ne kadar etkiliyor?'"""
+    from . import firsat_bt as FB
+    global OLAY_EK
+    PK = _pk_tablo()
+    L = ["PARASAL KAZANC VE DEGER AGIRLIGI TESTI (22 Kas 2026)\n",
+         "1) TAHMIN KONTROLU: tahmini parasal kazanc (yil ici kumulatif, milyar TL, Is Yatirim'in o donem birimiyle) vs aciklanan:"]
+    gercek = {("TTKOM", 2025, 3): 7.75, ("TTKOM", 2025, 6): 12.40, ("TTKOM", 2025, 9): 16.91, ("TTKOM", 2025, 12): 19.65,
+              ("TTKOM", 2026, 3): 13.99, ("TTKOM", 2026, 9): 46.8, ("BIMAS", 2024, 12): 28.3, ("BIMAS", 2025, 12): 18.2}
+    for (t, y, m), gv in gercek.items():
+        tah = sum(PK[(t, y, mm)][0] * PK[(t, y, mm)][2] for mm in range(3, m + 1, 3) if (t, y, mm) in PK)
+        tah2 = sum(PK[(t, y, mm)][1] * PK[(t, y, mm)][2] for mm in range(3, m + 1, 3) if (t, y, mm) in PK)
+        L.append(f"  {t} {y}/{m}: aciklanan {gv:6.1f} | tahmin (tum) {tah / 1e9:6.1f} | tahmin (fin. borc haric) {tah2 / 1e9:6.1f}")
+    print("\n".join(L))
+
+    def ek(O, G):
+        O = O.copy()
+        p1, p2 = [], []
+        for t, d in zip(O["t"], O["donem"]):
+            y, m = map(int, str(d).split("/"))
+            if (y, m) < (2023, 12):
+                p1.append(0.0); p2.append(0.0); continue
+            s1 = s2 = 0.0; ok = True
+            for i in range(4):
+                yy, mm = (y, m - 3 * i) if m - 3 * i > 0 else (y - 1, m - 3 * i + 12)
+                x = PK.get((t, yy, mm))
+                va_eski = (G.get(t, {}).get("tab", {}).get(f"{yy}/{mm}", {}) or {}).get("1BL")
+                if x is None or not va_eski:
+                    ok = False; break
+                s1 += x[0] * va_eski; s2 += x[1] * va_eski
+            p1.append(s1 if ok else np.nan); p2.append(s2 if ok else np.nan)
+        O["pk_ttm"], O["pk2_ttm"] = p1, p2
+        return O
+    OLAY_EK = ek
+    # 2) tek olcu olay testi (kar / kar_pk / kar_pk2 / favok) - yalniz 2024+ olaylari (parasal kazanc o zaman var)
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = ek(B.olaylar(G, D.m3()), G)
+    L.append(f"\n   olaylarda parasal kazanc tahmini dolu: %{100 * O.loc[O.donem >= '2023/12', 'pk_ttm'].notna().mean():.0f} (2023/12 sonrasi)")
+    sa = O[(O.donem >= "2024/03") & O.pk_ttm.notna() & O.nk_ttm.notna()]
+    oran = (0.75 * sa.pk_ttm / sa.nk_ttm.abs()).clip(-5, 5)
+    L.append(f"   parasal kazanc (vergi sonrasi) / |net kar| ortancasi: %{100 * oran.median():.0f}; net kari parasal kazanctan buyuk olmayan (yani kazanc cikinca zarara donen) olay orani %{100 * ((sa.nk_ttm - 0.75 * sa.pk_ttm) < 0).mean():.0f} (ham net kar < 0 orani %{100 * (sa.nk_ttm < 0).mean():.0f})")
+    px = D.prices(sorted(O["t"].unique()))
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    r = Cx.shift(-126) / Cx - 1
+    F126 = r.sub(r.median(axis=1), axis=0)
+    A["f126"] = [F126.at[pd.Timestamp(g), t] if pd.Timestamp(g) in F126.index and t in F126.columns else np.nan for t, g in zip(A.t, A.giris)]
+    A["yil"] = pd.to_datetime(A["giris"]).dt.year
+    L.append("\n2) TEK OLCU OLAY TESTI, 2024 ve sonrasi bilancolar (126 gun, piyasa ortancasina gore fazla getiri %, kirpik):")
+    for f in ("kaz_get", "kaz_pk", "kaz_pk2", "fav_get"):
+        a = A[(A.yil >= 2024) & A[f].notna() & A.f126.notna()].copy()
+        a["dl"] = a[f].groupby(a["donem"]).rank(pct=True).mul(5).clip(upper=4.999).astype(int) + 1
+        def km(v):
+            v = v.clip(v.quantile(0.05), v.quantile(0.95)); return 100 * v.mean()
+        st = a.groupby("dl")["f126"].agg(km)
+        v5, v1 = a.loc[a.dl == 5, "f126"], a.loc[a.dl == 1, "f126"]
+        v5 = v5.clip(v5.quantile(.05), v5.quantile(.95)); v1 = v1.clip(v1.quantile(.05), v1.quantile(.95))
+        tst = (v5.mean() - v1.mean()) / np.sqrt(v5.var() / len(v5) + v1.var() / len(v1))
+        ad = {"kaz_get": "net kar/PD (klasik F/K)", "kaz_pk": "parasal kazanc cikmis", "kaz_pk2": "dengeli (fin. borc haric)", "fav_get": "FAVOK/FD (asil F/K)"}[f]
+        L.append(f"  {ad:28s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i]:+5.1f}" for i in range(1, 6)) + f" | D5-D1 {st.loc[5] - st.loc[1]:+5.1f} (t={tst:+.1f})")
+    print("\n".join(L[-5:]))
+    # 3) portfoy: rastgele secim, 25 kosu; yil yil
+    L.append("\n3) PORTFOY (AL listesinden rastgele secim, ortanca; cikis canli). Egitim 2021-24 / TEST 2025-bugun / yillar (her yil sifirdan, 5 hisse):")
+    rng = np.random.default_rng(7)
+    for ad, dg, w in (("klasik F/K (eski canli)", "kar", 1.0), ("parasal kazanc cikmis F/K", "kar_pk", 1.0), ("dengeli parasal F/K", "kar_pk2", 1.0),
+                      ("asil F/K FAVOK/FD (CANLI)", "favok", 1.0), ("deger YOK (yalniz hareket+kalite)", "yok", 0.0),
+                      ("deger = yalniz PD/DD", "pddd", 1.0), ("asil F/K, deger agirligi 2 kat", "favok", 2.0)):
+        FB.DEGER, FB.DEGER_AGIRLIK = dg, w
+        idx, C, S, PC, VR, TK, xu, m3 = panel()
+        sat = []
+        for per, m in (("egitim", (idx >= "2021-01-01") & (idx <= "2024-12-31")), ("TEST", idx >= "2025-01-01")):
+            for N in (10, 5):
+                v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+                sat.append(f"{per} {N}h x{np.median(v):.2f}")
+        yil = []
+        for y in (2022, 2023, 2024, 2025, 2026):
+            m = idx.year == y
+            v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(15)]
+            yil.append(f"{y} {100 * (np.median(v) - 1):+.0f}")
+        L.append(f"  {ad:36s} " + " | ".join(sat) + " || " + " ".join(yil))
+        print(L[-1])
+    FB.DEGER, FB.DEGER_AGIRLIK = "favok", 1.0
+    OLAY_EK = None
+    txt = "\n".join(L)
+    (R / "parasal_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)

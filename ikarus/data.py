@@ -278,3 +278,31 @@ def _evds_m3(key: str) -> pd.Series:
     # Ekim damgasi = 23 Ekim haftasi; ayin son cumasini beklemiyor). Ayni sekilde: her ayin son mevcut haftasi.
     out = {ay.to_timestamp(): g.iloc[-1] for ay, g in w.groupby(w.index.to_period("M"))}
     return pd.Series(out, dtype=float).sort_index()
+
+
+
+def tufe(update: bool = True) -> pd.Series:
+    """Aylik TUFE endeksi (EVDS TP.FG.J0, 2003=100). index = ayin 1'i. data/tufe.csv onbellek."""
+    f = DATA / "tufe.csv"
+    eski = pd.read_csv(f, parse_dates=["tarih"]).set_index("tarih")["tufe"] if f.exists() else pd.Series(dtype=float)
+    key = ayar("evds_key")
+    if update and key:
+        try:
+            import requests
+            url = f"{EVDS_URL}series=TP.FG.J0&startDate=01-01-2018&endDate=31-12-2099&type=json&frequency=5"
+            r = requests.get(url, headers={"key": key}, timeout=30)
+            r.raise_for_status()
+            w = {}
+            for it in r.json()["items"]:
+                v = it.get("TP_FG_J0")
+                if v in (None, "", "null"):
+                    continue
+                y, m = str(it["Tarih"]).split("-")[:2]
+                w[pd.Timestamp(int(y), int(m), 1)] = float(str(v).replace(",", ""))
+            s2 = pd.Series(w, dtype=float).sort_index()
+            if len(s2) > len(eski):
+                eski = s2
+                pd.DataFrame({"tarih": s2.index, "tufe": s2.values}).to_csv(f, index=False)
+        except Exception as e:
+            print(f"[uyari] EVDS TUFE alinamadi: {e}")
+    return eski.sort_index()
