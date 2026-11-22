@@ -81,3 +81,35 @@ def geri_alim_topla(bas: str = "2021-01-01", gun: int = 7, butce_dk: float = 100
     if len(rows or []):
         print("ornek ham satir:", str(rows[0])[:800])
     return tum
+
+
+def icerden_yokla():
+    """22 Kas: 'Pay Alim Satim Bildirimi' satirlari ve detay sayfasi bicimi (alim/satim ayrimi yapilabilir mi?)."""
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    rows = _cek(s, "2026-11-17", "2026-11-20") or []
+    pas = [r for r in rows if "Pay Alım Satım" in str((r.get("basic", r) if isinstance(r, dict) else {}).get("subject"))]
+    out = [f"toplam {len(rows)}, pay alim satim {len(pas)}"]
+    for r in pas[:3]:
+        out.append("HAM: " + str(r)[:1500])
+    import re
+    for r in pas[:4]:
+        b_ = r.get("basic", r)
+        idx = b_.get("disclosureIndex")
+        for u in (f"https://www.kap.org.tr/tr/Bildirim/{idx}", f"https://www.kap.org.tr/tr/api/notification/attachment-detail/{idx}",
+                  f"https://www.kap.org.tr/tr/api/BildirimPdf/{idx}"):
+            try:
+                h = s.get(u, headers={k: v for k, v in BASLIK.items() if k != "Content-Type"}, timeout=60)
+                txt = h.text
+                if "html" in h.headers.get("content-type", ""):
+                    m = re.sub(r"<script.*?</script>|<style.*?</style>", " ", txt, flags=re.S)
+                    m = re.sub(r"<[^>]+>", " ", m); m = re.sub(r"\s+", " ", m)
+                    # Next.js verisi script icinde olabilir
+                    j = [x[:600] for x in re.findall(r"(?:Alım|Satım|ALIM|SATIM|İşlem)[^<]{0,300}", txt)][:8]
+                    out.append(f"== {u} {h.status_code} html metin: {m[:1500]}\n   eslesme: {j}")
+                else:
+                    out.append(f"== {u} {h.status_code} {h.headers.get('content-type')} {txt[:800]}")
+            except Exception as e:
+                out.append(f"== {u} HATA {e}")
+    (DATA.parent / "temel" / "icerden_yokla.txt").write_text("\n".join(out), encoding="utf-8")
+    print("\n".join(out)[:5000])

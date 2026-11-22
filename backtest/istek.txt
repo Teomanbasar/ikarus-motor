@@ -1,1 +1,1 @@
-temel geri_alim
+temel icerden_yokla
