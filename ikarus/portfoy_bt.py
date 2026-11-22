@@ -872,6 +872,11 @@ def _pk_tablo():
     return out
 
 
+DENEMELER = (("klasik F/K (eski canli)", "kar", 1.0), ("parasal kazanc cikmis F/K", "kar_pk", 1.0), ("dengeli parasal F/K", "kar_pk2", 1.0),
+             ("asil F/K FAVOK/FD (CANLI)", "favok", 1.0), ("deger YOK (yalniz hareket+kalite)", "yok", 0.0),
+             ("deger = yalniz PD/DD", "pddd", 1.0), ("asil F/K, deger agirligi 2 kat", "favok", 2.0))
+
+
 def parasal_test():
     """22 Kas (Teoman): 'parasal kazanci cikarip test edelim; F/K'ya ne kadar agirlik veriyoruz, sonucu ne kadar etkiliyor?'"""
     from . import firsat_bt as FB
@@ -923,7 +928,8 @@ def parasal_test():
     A["f126"] = [F126.at[pd.Timestamp(g), t] if pd.Timestamp(g) in F126.index and t in F126.columns else np.nan for t, g in zip(A.t, A.giris)]
     A["yil"] = pd.to_datetime(A["giris"]).dt.year
     L.append("\n2) TEK OLCU OLAY TESTI, 2024 ve sonrasi bilancolar (126 gun, piyasa ortancasina gore fazla getiri %, kirpik):")
-    for f in ("kaz_get", "kaz_pk", "kaz_pk2", "fav_get"):
+    A["birlesik"] = pd.concat([A[c].groupby(A["donem"]).rank(pct=True) for c in ("fav_get", "kaz_pk")], axis=1).mean(axis=1)
+    for f in ("kaz_get", "kaz_pk", "kaz_pk2", "fav_get", "birlesik"):
         a = A[(A.yil >= 2024) & A[f].notna() & A.f126.notna()].copy()
         a["dl"] = a[f].groupby(a["donem"]).rank(pct=True).mul(5).clip(upper=4.999).astype(int) + 1
         def km(v):
@@ -932,15 +938,13 @@ def parasal_test():
         v5, v1 = a.loc[a.dl == 5, "f126"], a.loc[a.dl == 1, "f126"]
         v5 = v5.clip(v5.quantile(.05), v5.quantile(.95)); v1 = v1.clip(v1.quantile(.05), v1.quantile(.95))
         tst = (v5.mean() - v1.mean()) / np.sqrt(v5.var() / len(v5) + v1.var() / len(v1))
-        ad = {"kaz_get": "net kar/PD (klasik F/K)", "kaz_pk": "parasal kazanc cikmis", "kaz_pk2": "dengeli (fin. borc haric)", "fav_get": "FAVOK/FD (asil F/K)"}[f]
+        ad = {"kaz_get": "net kar/PD (klasik F/K)", "kaz_pk": "parasal kazanc cikmis", "kaz_pk2": "dengeli (fin. borc haric)", "fav_get": "FAVOK/FD (asil F/K)", "birlesik": "FAVOK/FD + parasalsiz F/K"}[f]
         L.append(f"  {ad:28s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i]:+5.1f}" for i in range(1, 6)) + f" | D5-D1 {st.loc[5] - st.loc[1]:+5.1f} (t={tst:+.1f})")
     print("\n".join(L[-5:]))
     # 3) portfoy: rastgele secim, 25 kosu; yil yil
     L.append("\n3) PORTFOY (AL listesinden rastgele secim, ortanca; cikis canli). Egitim 2021-24 / TEST 2025-bugun / yillar (her yil sifirdan, 5 hisse):")
     rng = np.random.default_rng(7)
-    for ad, dg, w in (("klasik F/K (eski canli)", "kar", 1.0), ("parasal kazanc cikmis F/K", "kar_pk", 1.0), ("dengeli parasal F/K", "kar_pk2", 1.0),
-                      ("asil F/K FAVOK/FD (CANLI)", "favok", 1.0), ("deger YOK (yalniz hareket+kalite)", "yok", 0.0),
-                      ("deger = yalniz PD/DD", "pddd", 1.0), ("asil F/K, deger agirligi 2 kat", "favok", 2.0)):
+    for ad, dg, w in DENEMELER:
         FB.DEGER, FB.DEGER_AGIRLIK = dg, w
         idx, C, S, PC, VR, TK, xu, m3 = panel()
         sat = []

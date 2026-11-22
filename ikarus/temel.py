@@ -608,6 +608,11 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "parasal2":
+        from . import portfoy_bt
+        portfoy_bt.DENEMELER = (("asil F/K FAVOK/FD (CANLI)", "favok", 1.0), ("FAVOK/FD + parasalsiz F/K", "favok+pk", 1.0),
+                                ("parasal kazanc cikmis F/K", "kar_pk", 1.0))
+        portfoy_bt.parasal_test()
     elif sys.argv[1] == "parasal":
         gecmis_pk()
         from . import portfoy_bt

@@ -33,7 +33,7 @@ KALITELER = {"canli": ["F", "roe"], "roic": ["F", "roic"], "nakit": ["F", "roe",
 KALITE = "canli"
 HAM_DONDUR = False
 DEGER_AGIRLIK = 1.0
-DEGERLER.update({"kar_pk": ["kaz_pk", "pddd"], "kar_pk2": ["kaz_pk2", "pddd"], "yok": [], "pddd": ["pddd"]})
+DEGERLER.update({"kar_pk": ["kaz_pk", "pddd"], "kar_pk2": ["kaz_pk2", "pddd"], "yok": [], "pddd": ["pddd"], "favok+pk": ["fav_get", "kaz_pk", "pddd"]})
 
 
 def _ok(v):
