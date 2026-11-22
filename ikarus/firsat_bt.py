@@ -33,6 +33,9 @@ KALITELER = {"canli": ["F", "roe"], "roic": ["F", "roic"], "nakit": ["F", "roe",
 KALITE = "canli"
 HAM_DONDUR = False
 DEGER_AGIRLIK = 1.0
+SEKTOR = False
+POTANSIYEL = False
+SEKTOR_MAP = {}
 DEGERLER.update({"kar_pk": ["kaz_pk", "pddd"], "kar_pk2": ["kaz_pk2", "pddd"], "yok": [], "pddd": ["pddd"], "favok+pk": ["fav_get", "kaz_pk", "pddd"]})
 
 
@@ -64,21 +67,41 @@ def puanlar(O, px):
         r["nakit_kal"] = (fn_ - nk_) / va_ if _ok(nk_) and _ok(fn_) and _ok(va_) and va_ > 0 else np.nan
         ic = (e.get("oz") or np.nan) + (nb if _ok(nb) else np.nan)
         r["roic"] = e["favok_ttm"] / ic if _ok(e.get("favok_ttm")) and ic > 0 else np.nan
+        s0, s1, s3, t3 = e.get("satis_ttm"), e.get("satis1_ttm"), e.get("satis3_ttm"), e.get("tufe3")
+        r["buyume3"] = (s0 / s3 / t3) ** (1 / 3) - 1 if _ok(s0) and _ok(s3) and _ok(t3) and s0 > 0 and s3 > 0 else np.nan
+        f0, f1 = e.get("favok_ttm"), e.get("favok1_ttm")
+        r["marj_deg"] = f0 / s0 - f1 / s1 if _ok(f0) and _ok(f1) and _ok(s0) and _ok(s1) and s0 > 0 and s1 > 0 else np.nan
+        am = (f0 - e["fk_ttm"]) if _ok(f0) and _ok(e.get("fk_ttm")) else np.nan
+        cx = e.get("capex_ttm")
+        r["capex_amort"] = cx / am if _ok(cx) and _ok(am) and am > 0 else np.nan
+        r["sektor"] = SEKTOR_MAP.get(e["t"], "?")
         for k_ in ("pk_ttm", "pk2_ttm"):
             pk = e.get(k_)
             r["kaz_" + k_[:-4]] = (e["nk_ttm"] - 0.75 * (pk if _ok(pk) else 0.0)) / mcap if _ok(e.get("nk_ttm")) and mcap > 0 else np.nan
         rows.append(r)
     A = pd.DataFrame(rows)
     g = A.groupby("donem")
+    if SEKTOR:  # deger olcutleri sektor icinde siralanir (sektorde 5'ten az sirket varsa tum piyasa)
+        gs = A.groupby(["donem", "sektor"])
+        n = gs["t"].transform("count")
     q = {}
     for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F", "fv_get", "fav_get", "sna_get", "nakit_kal", "roic", "kaz_pk", "kaz_pk2"]:
         q[f] = g[f].rank(pct=True)
+    for f in ["buyume3", "marj_deg", "capex_amort"]:
+        q[f] = g[f].rank(pct=True)
     q["pddd"] = 1 - g["pddd"].rank(pct=True)
+    if SEKTOR:
+        for f in ["fav_get", "kaz_get", "kaz_pk"]:
+            q[f] = gs[f].rank(pct=True).where(n >= 5, q[f])
+        q["pddd"] = (1 - gs["pddd"].rank(pct=True)).where(n >= 5, q["pddd"])
     H4 = pd.concat([q["sue_nk"], q["sue_faal"], q["satis_reel"], q["roe_ivme"]], axis=1)
     h = H4.mean(axis=1).where(H4.notna().sum(axis=1) >= 2)
     k = pd.concat([q[x] for x in KALITELER[KALITE]], axis=1).mean(axis=1)
     d = pd.concat([q[k] for k in DEGERLER[DEGER]], axis=1).mean(axis=1) if DEGERLER[DEGER] else None
     A["v3"] = (h + k) / 2 if d is None or DEGER_AGIRLIK == 0 else (h + k + DEGER_AGIRLIK * d) / (2 + DEGER_AGIRLIK)
+    if POTANSIYEL:
+        p = pd.concat([q["buyume3"], q["marj_deg"], q["capex_amort"]], axis=1).mean(axis=1)
+        A["v3"] = (A["v3"] * 3 + p.fillna(0.5)) / 4
     A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)
     A["kotu"] = (q["sue_nk"] <= 0.2) & (q["sue_faal"] <= 0.2)
     if HAM_DONDUR:

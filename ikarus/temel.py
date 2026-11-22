@@ -647,6 +647,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "potansiyel":
+        from . import portfoy_bt
+        portfoy_bt.potansiyel_test()
     elif sys.argv[1] == "icerden":
         from . import portfoy_bt
         portfoy_bt.icerden_test()

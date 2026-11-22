@@ -1126,3 +1126,58 @@ def icerden_test():
     txt = "\n".join(L)
     (R / "icerden_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def potansiyel_test():
+    """22 Kas (Teoman: 'sistem amator; kucuk firmanin potansiyelini/buyumesini nasil olcecek; PD/DD basit').
+    (1) tek olcu olay testi: 3 yillik reel satis buyumesi, FAVOK marji degisimi, yatirim/amortisman;
+    (2) portfoy: deger olcutlerini SEKTOR ICINDE siralamak; temel puana POTANSIYEL bileseni eklemek."""
+    from . import firsat_bt as FB
+    FB.SEKTOR_MAP = dict(zip(D.bist_list()["ticker"], D.bist_list()["sektor"]))
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = B.olaylar(G, D.m3())
+    px = D.prices(sorted(O["t"].unique()))
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    r = Cx.shift(-126) / Cx - 1
+    F126 = r.sub(r.median(axis=1), axis=0)
+    A["f126"] = [F126.at[pd.Timestamp(g), t] if pd.Timestamp(g) in F126.index and t in F126.columns else np.nan for t, g in zip(A.t, A.giris)]
+    A["yil"] = pd.to_datetime(A["giris"]).dt.year
+    L = ["POTANSIYEL / SEKTOR TESTI (22 Kas 2026)\n", "1) TEK OLCU OLAY TESTI (126 gun, piyasa ortancasina gore fazla %, 5 dilim; 5 = en yuksek):"]
+    for f in ("buyume3", "marj_deg", "capex_amort"):
+        L.append(f"  {f}: dolu %{100 * A[f].notna().mean():.0f}, ortanca {A[f].median():.3f}")
+        for ad, m in (("2021-24", A.yil < 2025), ("2025+", A.yil >= 2025)):
+            a = A[m & A[f].notna() & A.f126.notna()].copy()
+            if len(a) < 200:
+                continue
+            a["dl"] = a[f].groupby(a["donem"]).rank(pct=True).mul(5).clip(upper=4.999).astype(int) + 1
+            km = lambda v: 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
+            st = a.groupby("dl")["f126"].agg(km)
+            v5, v1 = a.loc[a.dl == 5, "f126"], a.loc[a.dl == 1, "f126"]
+            v5 = v5.clip(v5.quantile(.05), v5.quantile(.95)); v1 = v1.clip(v1.quantile(.05), v1.quantile(.95))
+            tst = (v5.mean() - v1.mean()) / np.sqrt(v5.var() / len(v5) + v1.var() / len(v1))
+            L.append(f"    {ad:8s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i]:+5.1f}" for i in range(1, 6)) + f" | D5-D1 {st.loc[5] - st.loc[1]:+5.1f} (t={tst:+.1f})")
+        print("\n".join(L[-3:]))
+    L.append("\n2) PORTFOY (AL'dan rastgele secim, 25 kosu ortancasi, cikis canli): egitim 2021-24 / TEST 2025-bugun / yillar (5 hisse)")
+    rng = np.random.default_rng(9)
+    for ad, sek, pot in (("CANLI", False, False), ("deger SEKTOR ICINDE", True, False), ("+ POTANSIYEL bileseni", False, True), ("sektor ici + potansiyel", True, True)):
+        FB.SEKTOR, FB.POTANSIYEL = sek, pot
+        idx, C, S, PC, VR, TK, xu, m3 = panel()
+        sat = []
+        for per, m in (("egitim", (idx >= "2021-01-01") & (idx <= "2024-12-31")), ("TEST", idx >= "2025-01-01")):
+            for N in (10, 5):
+                v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+                sat.append(f"{per} {N}h x{np.median(v):.2f}")
+        yil = []
+        for y in (2022, 2023, 2024, 2025, 2026):
+            m = idx.year == y
+            v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(15)]
+            yil.append(f"{y} {100 * (np.median(v) - 1):+.0f}")
+        L.append(f"  {ad:26s} " + " | ".join(sat) + " || " + " ".join(yil))
+        print(L[-1])
+    FB.SEKTOR, FB.POTANSIYEL = False, False
+    txt = "\n".join(L)
+    (R / "potansiyel_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

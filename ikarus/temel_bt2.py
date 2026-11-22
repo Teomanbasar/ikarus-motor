@@ -58,6 +58,17 @@ def ceyreklik(tab, d, kod):
     return None if p is None else a - p
 
 
+_TF = None
+
+
+def _tufe_oran(d1, d0):
+    global _TF
+    if _TF is None:
+        _TF = D.tufe(update=False)
+    a = _TF.get(pd.Timestamp(d1[0], d1[1], 1)); b = _TF.get(pd.Timestamp(d0[0], d0[1], 1))
+    return a / b if a and b else None
+
+
 def olaylar(G, m3):
     rows = []
     for h, g in G.items():
@@ -103,6 +114,16 @@ def olaylar(G, m3):
             row["sna_ttm"] = T._ttm(tab, d, "4CB")
             row["fnakit_ttm"] = T._ttm(tab, d, "4C")
             row["varlik"] = b.get("1BL")
+            # 22 Kas: potansiyel/buyume olcutleri
+            s0 = T._ttm(tab, d, "3C"); s1 = T._ttm(tab, (d[0] - 1, d[1]), "3C"); s3 = T._ttm(tab, (d[0] - 3, d[1]), "3C")
+            f1 = None
+            f1a, a1 = T._ttm(tab, (d[0] - 1, d[1]), "3DF"), T._ttm(tab, (d[0] - 1, d[1]), "4B")
+            if f1a is not None and a1 is not None:
+                f1 = f1a + a1
+            row["satis_ttm"], row["satis1_ttm"], row["satis3_ttm"], row["favok1_ttm"] = s0, s1, s3, f1
+            row["tufe3"] = _tufe_oran(d, (d[0] - 3, d[1]))
+            c4, c4b = T._ttm(tab, d, "4C"), T._ttm(tab, d, "4CB")
+            row["capex_ttm"] = (c4 - c4b) if c4 is not None and c4b is not None else None
             rows.append(row)
     return pd.DataFrame(rows)
 
