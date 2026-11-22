@@ -964,3 +964,88 @@ def parasal_test():
     txt = "\n".join(L)
     (R / "parasal_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def geri_alim_test():
+    """22 Kas (Teoman: 'pay geri alimi yapan sirket degerlenecegini dusunuyordur; onemli bir yer etmeli').
+    KAP 'Paylarin Geri Alinmasina Iliskin Bildirim' (gerceklesen alimlar) 2021-bugun."""
+    from . import kap
+    from . import firsat_bt as FB
+    g = kap.geri_alim_topla(bas="2021-01-01", gun=3, butce_dk=110)
+    g = g[g["konu"].str.contains("Geri Alınmasına", na=False)].copy()
+    g["t"] = pd.to_datetime(g["tarih"].str[:10], format="%d.%m.%Y", errors="coerce")
+    g["hisse"] = g["hisse"].fillna("").str.split(",").str[0].str.strip()
+    g = g.dropna(subset=["t"])
+    g = g[g.hisse != ""]
+    L = ["PAY GERI ALIMI TESTI (22 Kas 2026)", f"KAP gerceklesen geri alim bildirimi: {len(g)} adet, {g.hisse.nunique()} sirket, {g.t.min():%Y-%m} .. {g.t.max():%Y-%m}",
+         "yillara gore bildirim / sirket: " + " ".join(f"{y}:{len(x)}/{x.hisse.nunique()}" for y, x in g.groupby(g.t.dt.year)), ""]
+    px = D.prices(sorted(g.hisse.unique().tolist() + ["THYAO"]))
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    hep = D.prices(sorted(G.keys()))
+    Cx = pd.DataFrame({t: df["close"] for t, df in hep.items()}).sort_index()
+    gun = Cx.index
+    def fazla(h):
+        r = Cx.shift(-h) / Cx - 1
+        return r.sub(r.median(axis=1), axis=0)
+    F = {h: fazla(h) for h in (5, 21, 63, 126)}
+    # yeni geri alim dalgasi: sirketin 90 gun once bildirimi yoksa
+    g = g.sort_values("t")
+    ilk = []
+    son = {}
+    for _, r in g.iterrows():
+        if r.hisse not in son or (r.t - son[r.hisse]).days > 90:
+            ilk.append(r)
+        son[r.hisse] = r.t
+    E = pd.DataFrame(ilk)
+    def giris(t):
+        j = gun.searchsorted(t, side="right")  # bildirim aksam: ertesi gun kapanis
+        return gun[j] if j < len(gun) else None
+    E["giris"] = E.t.map(giris)
+    E = E.dropna(subset=["giris"])
+    for h in (5, 21, 63, 126):
+        E[f"f{h}"] = [F[h].at[gi, t] if t in F[h].columns else np.nan for t, gi in zip(E.hisse, E.giris)]
+    def ozet(x, ad):
+        o = []
+        for h in (5, 21, 63, 126):
+            v = x[f"f{h}"].dropna()
+            if len(v) < 10:
+                o.append(f"{h}g n<10"); continue
+            k = v.clip(v.quantile(.05), v.quantile(.95))
+            o.append(f"{h}g ort %{100 * k.mean():+.1f} ortanca %{100 * v.median():+.1f} kazanan %{100 * (v > 0).mean():.0f} (n={len(v)}, t={k.mean() / (k.std() / np.sqrt(len(k))):+.1f})")
+        L.append(f"  {ad:28s} " + " | ".join(o))
+    L.append("1) YENI GERI ALIM DALGASI (90 gun sessizlikten sonra ilk bildirim), ertesi gun kapanistan, piyasa ortancasina gore fazla getiri:")
+    ozet(E, "tum")
+    for y, x in E.groupby(E.giris.dt.year):
+        ozet(x, str(y))
+    sub = E[(E.giris >= "2023-02-06") & (E.giris <= "2023-03-31")]
+    ozet(sub, "Subat-Mart 2023 (deprem)")
+    ozet(E[~E.index.isin(sub.index)], "deprem donemi haric")
+    # 2) devam eden geri alim (son 30 gunde bildirimi olan) - gunluk portfoy, 21 gun ileri
+    L.append("\n2) SURDUREN ALICI: bildirim sayisi (bir dalgadaki toplam) yuksek olanlar vs tek-iki kez alanlar (126g):")
+    cnt = []
+    for _, r in E.iterrows():
+        cnt.append(((g.hisse == r.hisse) & (g.t >= r.t) & (g.t <= r.t + pd.Timedelta(days=60))).sum())
+    E["n60"] = cnt
+    ozet(E[E.n60 >= 10], "60 gunde 10+ bildirim")
+    ozet(E[(E.n60 >= 3) & (E.n60 < 10)], "60 gunde 3-9")
+    ozet(E[E.n60 < 3], "60 gunde 1-2")
+    # 3) sistemle birlikte: AL listesinde, son 30 gunde geri alim yapanlari one alan rastgele portfoy
+    L.append("\n3) PORTFOY: AL listesinden secimde son 30 gunde geri alim yapani ONE AL (yoksa rastgele). 25 kosu ortancasi, cikis canli:")
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    GA = pd.DataFrame(0.0, index=idx, columns=C.columns)
+    for _, r in g.iterrows():
+        if r.hisse in GA.columns:
+            m = (idx > r.t) & (idx <= r.t + pd.Timedelta(days=30))
+            GA.loc[m, r.hisse] = 1.0
+    al = (S.values == "AL cift tik") | (S.values == "AL tek tik")
+    L.append(f"   AL gunlerinde geri alim yapan orani: %{100 * (GA.values[al] > 0).mean():.1f}")
+    rng = np.random.default_rng(3)
+    for per, m in (("2021-24", (idx >= "2021-01-01") & (idx <= "2024-12-31")), ("2025-bugun", idx >= "2025-01-01"), ("2024", idx.year == 2024), ("2025", idx.year == 2025), ("2026", idx.year == 2026)):
+        for N in (5, 10):
+            a = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+            b = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=GA.values[m] + 0.5 * rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+            L.append(f"   {per:10s} {N:2d} hisse: rastgele x{np.median(a):.2f} | geri alim yapani one al x{np.median(b):.2f}")
+            print(L[-1])
+    txt = "\n".join(L)
+    (R / "geri_alim_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

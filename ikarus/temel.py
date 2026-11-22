@@ -647,6 +647,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "geri_alim":
+        from . import portfoy_bt
+        portfoy_bt.geri_alim_test()
     elif sys.argv[1] == "kapdene":
         from . import kap
         kap.geri_alim_topla(bas="2026-11-01", gun=7, butce_dk=5)

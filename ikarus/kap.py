@@ -52,6 +52,14 @@ def geri_alim_topla(bas: str = "2021-01-01", gun: int = 7, butce_dk: float = 100
     while a <= son and time.time() - t0 < butce_dk * 60:
         b = min(a + pd.Timedelta(days=gun - 1), son)
         rows = _cek(s, a.strftime("%Y-%m-%d"), b.strftime("%Y-%m-%d"))
+        if rows is not None and len(rows) >= 2000 and b > a:
+            rows = []  # pencere dolu: gun gun cek
+            for g in pd.date_range(a, b):
+                r1 = _cek(s, g.strftime("%Y-%m-%d"), g.strftime("%Y-%m-%d")) or []
+                if len(r1) >= 2000:
+                    print("uyari: tek gun dolu", g.date())
+                rows += r1
+                time.sleep(0.4)
         if rows is None:
             a = b + pd.Timedelta(days=1); continue
         n_top += len(rows)
@@ -63,8 +71,6 @@ def geri_alim_topla(bas: str = "2021-01-01", gun: int = 7, butce_dk: float = 100
             if "geri al" in (konu + " " + ozet).lower().replace("İ", "i").replace("ı", "i"):
                 satir.append({"tarih": str(b_.get("publishDate") or b_.get("publishDateTime") or ""), "hisse": str(b_.get("stockCodes") or b_.get("stockCode") or ""),
                               "konu": konu, "ozet": ozet[:300], "index": str(b_.get("disclosureIndex") or "")})
-        if len(rows) >= 2000:
-            print("uyari: pencere dolu olabilir", a, len(rows))
         a = b + pd.Timedelta(days=1)
         time.sleep(0.5)
     yeni = pd.DataFrame(satir)
