@@ -1,14 +1,2 @@
 M3 (EVDS): 2026-11 eklendi
-50/625 54 sn
-100/625 90 sn
-150/625 126 sn
-200/625 161 sn
-250/625 196 sn
-300/625 236 sn
-350/625 272 sn
-400/625 307 sn
-450/625 341 sn
-500/625 378 sn
-550/625 413 sn
-600/625 450 sn
-625/625 hisse islendi, dosyada 609 hisse (470 sn)
+2/2 hisse islendi, dosyada 609 hisse (9 sn)
