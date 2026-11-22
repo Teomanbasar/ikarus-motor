@@ -1,60 +1,55 @@
-  BIMAS 2025/12: aciklanan   18.2 | tahmin (tum)   25.6 | tahmin (fin. borc haric)   12.0
-M3 (EVDS): 2026-11 eklendi
-  net kar/PD (klasik F/K)      n= 4794 | D1  +4.8 D2  +8.0 D3  +6.3 D4 +11.0 D5 +10.2 | D5-D1  +5.4 (t=+4.1)
-  parasal kazanc cikmis        n= 4794 | D1  +3.4 D2 +10.1 D3  +5.7 D4  +9.6 D5 +11.2 | D5-D1  +7.7 (t=+6.2)
-  dengeli (fin. borc haric)    n= 4794 | D1  +4.5 D2  +8.2 D3  +6.9 D4 +10.7 D5 +10.0 | D5-D1  +5.6 (t=+4.3)
-  FAVOK/FD (asil F/K)          n= 4763 | D1  +6.2 D2  +7.6 D3  +7.7 D4  +8.5 D5  +9.9 | D5-D1  +3.7 (t=+2.5)
-  FAVOK/FD + parasalsiz F/K    n= 4794 | D1  +6.1 D2  +5.4 D3  +8.5 D4 +11.6 D5  +9.6 | D5-D1  +3.5 (t=+2.5)
-M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  asil F/K FAVOK/FD (CANLI)            egitim 10h x11.84 | egitim 5h x13.73 | TEST 10h x1.39 | TEST 5h x1.45 || 2022 +182 2023 +61 2024 +98 2025 +46 2026 -1
-M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  FAVOK/FD + parasalsiz F/K            egitim 10h x10.16 | egitim 5h x12.21 | TEST 10h x1.43 | TEST 5h x1.32 || 2022 +151 2023 +107 2024 +88 2025 +31 2026 -14
-M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  parasal kazanc cikmis F/K            egitim 10h x8.73 | egitim 5h x9.95 | TEST 10h x1.43 | TEST 5h x1.22 || 2022 +134 2023 +72 2024 +85 2025 +28 2026 -10
-PARASAL KAZANC VE DEGER AGIRLIGI TESTI (22 Kas 2026)
+== tcmb: 200 text/html; charset=UTF-8
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   
+   
+        <title>TCMB - Tüketici Fiyatları</title>
+        <meta content="TCMB - Tüketici Fiyatları" property="og:title">
+   
+ 
+    <meta name="description" content="Türkiye Cumhuriyet Merkez Bankası, ülkemizde para ve kur politikalarının yönetilmesinden sorumlu kurumdur. Merkez Bankasının temel amacı fiyat istikrarını sağlamaktır."/>
+ 
+ 
+  <meta name="google-site-verification" content="f0v11LQTztdDxwL6nrzxd1Tl5ZHxCMHWkiTaKRwefZQ" />
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="stylesheet" title="" href="/wps/wcm/connect/b6e9c44a-8071-4fe8-8606-484239a71ba6/normalize.css?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-b6e9c44a-8071-4fe8-8606-484239a71ba6-m0tZu6S" type="text/css" />
+<link rel="stylesheet" title="" href="/wps/wcm/connect/a2bf45de-6b52-421d-bbce-04cebdd7b329/components.css?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-a2bf45de-6b52-421d-bbce-04cebdd7b329-m1ERchx" type="text/css" />
+<link rel="stylesheet" title="" href="/wps/wcm/connect/d5629c5c-e90b-4e9c-ae2b-733f285edfdc/bootstrap_table.css?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-d5629c5c-e90b-4e9c-ae2b-733f285edfdc-m2i0ycj" type="text/css" />
+<style>
+    .graphics-conteiner-no-radius {
+      border-radius: 0px !important;
+    }
+    .filterHeaders {
+      color: #006387;
+    }
+    .highlight{background-color: #a3953b; color:white;}
+  </style>
+<link rel="StyleSheet" h
 
-1) TAHMIN KONTROLU: tahmini parasal kazanc (yil ici kumulatif, milyar TL, Is Yatirim'in o donem birimiyle) vs aciklanan:
-  TTKOM 2025/3: aciklanan    7.8 | tahmin (tum)    7.3 | tahmin (fin. borc haric)    0.3
-  TTKOM 2025/6: aciklanan   12.4 | tahmin (tum)   11.9 | tahmin (fin. borc haric)    0.8
-  TTKOM 2025/9: aciklanan   16.9 | tahmin (tum)   18.2 | tahmin (fin. borc haric)    1.6
-  TTKOM 2025/12: aciklanan   19.6 | tahmin (tum)   23.2 | tahmin (fin. borc haric)    0.9
-  TTKOM 2026/3: aciklanan   14.0 | tahmin (tum)   19.2 | tahmin (fin. borc haric)    3.2
-  TTKOM 2026/9: aciklanan   46.8 | tahmin (tum)   54.7 | tahmin (fin. borc haric)   19.7
-  BIMAS 2024/12: aciklanan   28.3 | tahmin (tum)   26.4 | tahmin (fin. borc haric)   13.7
-  BIMAS 2025/12: aciklanan   18.2 | tahmin (tum)   25.6 | tahmin (fin. borc haric)   12.0
+== evds serieList/type=json&code=bie_tukfiy4: 200 application/json;charset=UTF-8
+[{"SERIE_CODE":"TP.FG.J0","DATAGROUP_CODE":"bie_tukfiy4","SERIE_NAME":"GENEL (Tüketici) (Arşiv) (Arşiv)","SERIE_NAME_ENG":"GENERAL (Archive) (Archive)","FREQUENCY_STR":"AYLIK","DEFAULT_AGG_METHOD_STR":"ORTALAMA","DEFAULT_AGG_METHOD":"avg","TAG":"Tüketici, Fiyat, Endeksi, TÜFE","TAG_ENG":"Consumer, Price, Index, CPI,","DATASOURCE":"TÜİK","DATASOURCE_ENG":"TURKSTAT","METADATA_LINK":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","METADATA_LINK_ENG":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","REV_POL_LINK":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","REV_POL_LINK_ENG":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","APP_CHA_LINK":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","APP_CHA_LINK_ENG":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","SCREEN_ORDER":10,"AVGABLE":1,"FIRSTABLE":1,"LASTABLE":1,"MAXABLE":1,"MINABLE":1,"SUMABLE":0,"START_DATE":"01-01-2003","END_DATE":"01-01-2026","SEVIYE":1,"UST_SERIE_CODE":"-1"},{"SERIE_CODE":"TP.FG.J01","DATAGROUP_CODE":"bie_tukfiy4","SERIE_NAME":"1.GIDA VE ALKOLSÜZ İÇECEKLER (Arşiv) (Arşiv)","SERIE_NAME_ENG":"1.FOOD AND Non-ALCOHOLIC BEVERAGES (Archive) (Archive)","FREQUENCY_STR":"AYLIK","DEFAULT_AGG_METHOD_STR":"ORTALAMA","DEFAULT_AGG_METHOD":"avg","TAG":"Tüketici, Fiyat, Endeksi, TÜFE","TAG_ENG":"Consumer, Price, Index, CPI,","DATASOURCE":"TÜİK",
 
-   olaylarda parasal kazanc tahmini dolu: %87 (2023/12 sonrasi)
-   parasal kazanc (vergi sonrasi) / |net kar| ortancasi: %10; net kari parasal kazanctan buyuk olmayan (yani kazanc cikinca zarara donen) olay orani %47 (ham net kar < 0 orani %41)
+== evds datagroups/mode=2&code=bie_tukfiy4&type=json: 400 application/json;charset=UTF-8
+{"status":"400","message":"Bad Request. Check parameters."}
 
-2) TEK OLCU OLAY TESTI, 2024 ve sonrasi bilancolar (126 gun, piyasa ortancasina gore fazla getiri %, kirpik):
-  net kar/PD (klasik F/K)      n= 4794 | D1  +4.8 D2  +8.0 D3  +6.3 D4 +11.0 D5 +10.2 | D5-D1  +5.4 (t=+4.1)
-  parasal kazanc cikmis        n= 4794 | D1  +3.4 D2 +10.1 D3  +5.7 D4  +9.6 D5 +11.2 | D5-D1  +7.7 (t=+6.2)
-  dengeli (fin. borc haric)    n= 4794 | D1  +4.5 D2  +8.2 D3  +6.9 D4 +10.7 D5 +10.0 | D5-D1  +5.6 (t=+4.3)
-  FAVOK/FD (asil F/K)          n= 4763 | D1  +6.2 D2  +7.6 D3  +7.7 D4  +8.5 D5  +9.9 | D5-D1  +3.7 (t=+2.5)
-  FAVOK/FD + parasalsiz F/K    n= 4794 | D1  +6.1 D2  +5.4 D3  +8.5 D4 +11.6 D5  +9.6 | D5-D1  +3.5 (t=+2.5)
+== evds datagroups/mode=1&code=TP.FG&type=json: 200 application/json;charset=UTF-8
+[null]
 
-3) PORTFOY (AL listesinden rastgele secim, ortanca; cikis canli). Egitim 2021-24 / TEST 2025-bugun / yillar (her yil sifirdan, 5 hisse):
-  asil F/K FAVOK/FD (CANLI)            egitim 10h x11.84 | egitim 5h x13.73 | TEST 10h x1.39 | TEST 5h x1.45 || 2022 +182 2023 +61 2024 +98 2025 +46 2026 -1
-  FAVOK/FD + parasalsiz F/K            egitim 10h x10.16 | egitim 5h x12.21 | TEST 10h x1.43 | TEST 5h x1.32 || 2022 +151 2023 +107 2024 +88 2025 +31 2026 -14
-  parasal kazanc cikmis F/K            egitim 10h x8.73 | egitim 5h x9.95 | TEST 10h x1.43 | TEST 5h x1.22 || 2022 +134 2023 +72 2024 +85 2025 +28 2026 -10
+== evds series=TP.FE.OKTG01&startDate=01-01-2026&endDate=31-12-2026&type=json&frequency=5: 200 application/json;charset=UTF-8
+{"totalCount":0,"items":[]}
+
+== evds series=TP.FG.J0&startDate=01-01-2026&endDate=31-12-2026&type=json&frequency=5: 200 application/json;charset=UTF-8
+{"totalCount":1,"items":[{"Tarih":"2026-1","TP_FG_J0":"3683.83000000","UNIXTIME":{"$numberLong":"1767214800"}}]}
+
+== kap ana: 200 text/html; charset=utf-8
+<!DOCTYPE html><html lang="tr" class="overflow-x-hidden scroll-smooth show:overflow-y-hidden show:pr-1.5"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/images/header-logo-tr.svg"/><link rel="preload" as="image" href="/images/e-yatirimci-logo-dikey.svg"/><link rel="preload" as="image" href="/images/mkk-logo-dikey-tr.svg"/><link rel="preload" as="image" href="/images/gifload.gif"/><link rel="preload" as="image" href="/images/search-icon.svg"/><link rel="stylesheet" href="/_next/static/chunks/0enw6vkhn2ywg.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/1zgmbervt4bfj.js"/><script src="/_next/static/chunks/1gkur241q1z2p.js" async=""></script><script src="/_next/static/chunks/2ji76n9s-yrv0.js" async=""></script><script src="/_next/static/chunks/0ygd6hqsmgbjb.js" async=""></script><script src="/_next/static/chunks/turbopack-2u1d16houkiyo.js" async=""></script><script src="/_next/static/chunks/20w31xr8yt_tu.js" async=""></script><script src="/_next/static/chunks/36athpmpb_lke.js" async=""></script><script src="/_next/static/chunks/3nbvejcqvok52.js" async=""></script><script src="/_next/static/chunks/35b3odi9gb-ri.js" async=""></script><script src="/_next/static/chunks/0gdrb24723et7.js" async=""></script><script src="/_next/static/chunks/2ovgyyf0lngzf.js" async=""></script><script src="/_next/static/chunks/3q7obpg98l89j.js" async=""></s
+
+== kap api disclosure: HATA HTTPSConnectionPool(host='www.kap.org.tr', port=443): Read timed out. (read timeout=30)
+
+== kap api disc2: HATA HTTPSConnectionPool(host='www.kap.org.tr', port=443): Read timed out. (read timeout=30)
+
+== kap bildirim: 200 text/html; charset=utf-8
+<!DOCTYPE html><html lang="tr" class="overflow-x-hidden scroll-smooth show:overflow-y-hidden show:pr-1.5"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0enw6vkhn2ywg.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/chunks/1xbvy3wllt0x-.css" data-precedence="next"/><link rel="preload" as="script" fetch

@@ -1,0 +1,55 @@
+== tcmb: 200 text/html; charset=UTF-8
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   
+   
+        <title>TCMB - Tüketici Fiyatları</title>
+        <meta content="TCMB - Tüketici Fiyatları" property="og:title">
+   
+ 
+    <meta name="description" content="Türkiye Cumhuriyet Merkez Bankası, ülkemizde para ve kur politikalarının yönetilmesinden sorumlu kurumdur. Merkez Bankasının temel amacı fiyat istikrarını sağlamaktır."/>
+ 
+ 
+  <meta name="google-site-verification" content="f0v11LQTztdDxwL6nrzxd1Tl5ZHxCMHWkiTaKRwefZQ" />
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="stylesheet" title="" href="/wps/wcm/connect/b6e9c44a-8071-4fe8-8606-484239a71ba6/normalize.css?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-b6e9c44a-8071-4fe8-8606-484239a71ba6-m0tZu6S" type="text/css" />
+<link rel="stylesheet" title="" href="/wps/wcm/connect/a2bf45de-6b52-421d-bbce-04cebdd7b329/components.css?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-a2bf45de-6b52-421d-bbce-04cebdd7b329-m1ERchx" type="text/css" />
+<link rel="stylesheet" title="" href="/wps/wcm/connect/d5629c5c-e90b-4e9c-ae2b-733f285edfdc/bootstrap_table.css?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-d5629c5c-e90b-4e9c-ae2b-733f285edfdc-m2i0ycj" type="text/css" />
+<style>
+    .graphics-conteiner-no-radius {
+      border-radius: 0px !important;
+    }
+    .filterHeaders {
+      color: #006387;
+    }
+    .highlight{background-color: #a3953b; color:white;}
+  </style>
+<link rel="StyleSheet" h
+
+== evds serieList/type=json&code=bie_tukfiy4: 200 application/json;charset=UTF-8
+[{"SERIE_CODE":"TP.FG.J0","DATAGROUP_CODE":"bie_tukfiy4","SERIE_NAME":"GENEL (Tüketici) (Arşiv) (Arşiv)","SERIE_NAME_ENG":"GENERAL (Archive) (Archive)","FREQUENCY_STR":"AYLIK","DEFAULT_AGG_METHOD_STR":"ORTALAMA","DEFAULT_AGG_METHOD":"avg","TAG":"Tüketici, Fiyat, Endeksi, TÜFE","TAG_ENG":"Consumer, Price, Index, CPI,","DATASOURCE":"TÜİK","DATASOURCE_ENG":"TURKSTAT","METADATA_LINK":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","METADATA_LINK_ENG":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","REV_POL_LINK":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","REV_POL_LINK_ENG":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","APP_CHA_LINK":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","APP_CHA_LINK_ENG":"https://data.tuik.gov.tr/Kategori/GetKategori?p=enflasyon-ve-fiyat-106&dil=1","SCREEN_ORDER":10,"AVGABLE":1,"FIRSTABLE":1,"LASTABLE":1,"MAXABLE":1,"MINABLE":1,"SUMABLE":0,"START_DATE":"01-01-2003","END_DATE":"01-01-2026","SEVIYE":1,"UST_SERIE_CODE":"-1"},{"SERIE_CODE":"TP.FG.J01","DATAGROUP_CODE":"bie_tukfiy4","SERIE_NAME":"1.GIDA VE ALKOLSÜZ İÇECEKLER (Arşiv) (Arşiv)","SERIE_NAME_ENG":"1.FOOD AND Non-ALCOHOLIC BEVERAGES (Archive) (Archive)","FREQUENCY_STR":"AYLIK","DEFAULT_AGG_METHOD_STR":"ORTALAMA","DEFAULT_AGG_METHOD":"avg","TAG":"Tüketici, Fiyat, Endeksi, TÜFE","TAG_ENG":"Consumer, Price, Index, CPI,","DATASOURCE":"TÜİK",
+
+== evds datagroups/mode=2&code=bie_tukfiy4&type=json: 400 application/json;charset=UTF-8
+{"status":"400","message":"Bad Request. Check parameters."}
+
+== evds datagroups/mode=1&code=TP.FG&type=json: 200 application/json;charset=UTF-8
+[null]
+
+== evds series=TP.FE.OKTG01&startDate=01-01-2026&endDate=31-12-2026&type=json&frequency=5: 200 application/json;charset=UTF-8
+{"totalCount":0,"items":[]}
+
+== evds series=TP.FG.J0&startDate=01-01-2026&endDate=31-12-2026&type=json&frequency=5: 200 application/json;charset=UTF-8
+{"totalCount":1,"items":[{"Tarih":"2026-1","TP_FG_J0":"3683.83000000","UNIXTIME":{"$numberLong":"1767214800"}}]}
+
+== kap ana: 200 text/html; charset=utf-8
+<!DOCTYPE html><html lang="tr" class="overflow-x-hidden scroll-smooth show:overflow-y-hidden show:pr-1.5"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/images/header-logo-tr.svg"/><link rel="preload" as="image" href="/images/e-yatirimci-logo-dikey.svg"/><link rel="preload" as="image" href="/images/mkk-logo-dikey-tr.svg"/><link rel="preload" as="image" href="/images/gifload.gif"/><link rel="preload" as="image" href="/images/search-icon.svg"/><link rel="stylesheet" href="/_next/static/chunks/0enw6vkhn2ywg.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/1zgmbervt4bfj.js"/><script src="/_next/static/chunks/1gkur241q1z2p.js" async=""></script><script src="/_next/static/chunks/2ji76n9s-yrv0.js" async=""></script><script src="/_next/static/chunks/0ygd6hqsmgbjb.js" async=""></script><script src="/_next/static/chunks/turbopack-2u1d16houkiyo.js" async=""></script><script src="/_next/static/chunks/20w31xr8yt_tu.js" async=""></script><script src="/_next/static/chunks/36athpmpb_lke.js" async=""></script><script src="/_next/static/chunks/3nbvejcqvok52.js" async=""></script><script src="/_next/static/chunks/35b3odi9gb-ri.js" async=""></script><script src="/_next/static/chunks/0gdrb24723et7.js" async=""></script><script src="/_next/static/chunks/2ovgyyf0lngzf.js" async=""></script><script src="/_next/static/chunks/3q7obpg98l89j.js" async=""></s
+
+== kap api disclosure: HATA HTTPSConnectionPool(host='www.kap.org.tr', port=443): Read timed out. (read timeout=30)
+
+== kap api disc2: HATA HTTPSConnectionPool(host='www.kap.org.tr', port=443): Read timed out. (read timeout=30)
+
+== kap bildirim: 200 text/html; charset=utf-8
+<!DOCTYPE html><html lang="tr" class="overflow-x-hidden scroll-smooth show:overflow-y-hidden show:pr-1.5"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0enw6vkhn2ywg.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/chunks/1xbvy3wllt0x-.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/1zgmbervt4bfj.js"/><script src="/_next/static/chunks/1gkur241q1z2p.js" async=""></script><script src="/_next/static/chunks/2ji76n9s-yrv0.js" async=""></script><script src="/_next/static/chunks/0ygd6hqsmgbjb.js" async=""></script><script src="/_next/static/chunks/turbopack-2u1d16houkiyo.js" async=""></script><script src="/_next/static/chunks/20w31xr8yt_tu.js" async=""></script><script src="/_next/static/chunks/36athpmpb_lke.js" async=""></script><script src="/_next/static/chunks/3nbvejcqvok52.js" async=""></script><script src="/_next/static/chunks/35b3odi9gb-ri.js" async=""></script><script src="/_next/static/chunks/0vsxh8g6v9bx7.js" async=""></script><script src="/_next/static/chunks/1kr9fm2xx29_j.js" async=""></script><script src="/_next/static/chunks/3-7_dsck617dz.js" async=""></script><script src="/_next/static/chunks/2qmjm483ggzm9.js" async=""></script><script src="/_next/static/chunks/3gmj53pb5m_8l.js" async=""></script><script src="/_next/static/chunks/0fftttahouow9.js" async=""></script><script src="/_next/st
