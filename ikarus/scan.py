@@ -338,6 +338,39 @@ def _nad_ekle(stocks, px):
             print("[uyari] nad", h, e)
 
 
+def _geri_alim_ekle(stocks):
+    """22 Kas: KAP pay geri alimi (temel/geri_alim_sonuc.txt: yeni dalga sonrasi 6 ay piyasa ortancasina gore +%12 ort.,
+    ortanca +%5.6, t=6.8, her yil pozitif; AL icinde one almak 2025-26'da x1.33 -> x1.61 (5 hisse))."""
+    try:
+        from . import kap
+        kap.geri_alim_topla(butce_dk=4)
+    except Exception as e:
+        print("[uyari] KAP geri alim guncellenemedi", e)
+    f = D.DATA / "geri_alim.csv"
+    if not f.exists():
+        return
+    g = pd.read_csv(f, dtype=str)
+    g = g[g["konu"].str.contains("Geri Alınmasına", na=False)].copy()
+    g["t"] = pd.to_datetime(g["tarih"].str[:10], format="%d.%m.%Y", errors="coerce")
+    g["hisse"] = g["hisse"].fillna("").str.split(",").str[0].str.strip()
+    g = g.dropna(subset=["t"]).sort_values("t")
+    bugun = pd.Timestamp.today().normalize()
+    by = {h: x["t"].tolist() for h, x in g.groupby("hisse")}
+    for s in stocks:
+        tl = by.get(s["t"])
+        if not tl:
+            continue
+        son = tl[-1]
+        bas = tl[-1]
+        for a, b in zip(reversed(tl[:-1]), reversed(tl[1:])):  # 90 gunluk bosluga kadar geri git: dalga baslangici
+            if (b - a).days > 90:
+                break
+            bas = a
+        n30 = sum(1 for t in tl if (bugun - t).days <= 30)
+        s["geri_alim"] = {"son": f"{son:%Y-%m-%d}", "dalga_bas": f"{bas:%Y-%m-%d}", "n30": n30,
+                          "aktif": (bugun - son).days <= 30, "yeni_dalga": (bugun - bas).days <= 60}
+
+
 def run(tickers: list[str] | None = None) -> dict:
     t0 = time.time()
     lst = D.bist_list()
@@ -372,6 +405,7 @@ def run(tickers: list[str] | None = None) -> dict:
     _fiyat_ivme(stocks, px, xu)
     _temel_ekle(stocks)
     _nad_ekle(stocks, px)
+    _geri_alim_ekle(stocks)
 
     # piyasa ozeti (makro etiketi BIST100'den, tum hisselerde ayni)
     m3e = E.m3_effective(m3)
@@ -404,9 +438,12 @@ def run(tickers: list[str] | None = None) -> dict:
                   and "Sert dusus" not in v3(s).get("etiketler", [])]
         fz = lambda s: s.get("faz") or {}
         guc = lambda s: int((fz(s).get("normal") or {}).get("alim", False)) + int((fz(s).get("ha") or {}).get("alim", False))
-        firsat.sort(key=lambda s: (-guc(s), -v3(s)["toplam"]))
+        ga = lambda s: int(bool((s.get("geri_alim") or {}).get("aktif")))
+        firsat.sort(key=lambda s: (-int(guc(s) > 0), -ga(s), -guc(s), -v3(s)["toplam"]))  # 22 Kas: AL icinde geri alim yapan once
+        geri = sorted([s for s in S if (s.get("geri_alim") or {}).get("aktif")],
+                      key=lambda s: (-int((s.get("geri_alim") or {}).get("yeni_dalga", False)), -(v3(s).get("toplam") or 0)))
         return {"sinyal": T(sinyal), "yeni": T(yeni), "ucuz": T(ucuz), "pahali": T(pahali), "stop": T(kiran),
-                "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat)}
+                "temel": T(temel), "temel_ucuz": T(temel_ucuz), "firsat": T(firsat), "geri_alim": T(geri)}
 
     L_D = lists("D")
     try:

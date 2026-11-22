@@ -99,6 +99,7 @@ jobs:
           [ -f data/takip.json ] && git add data/takip.json
           [ -f data/telegram_chat.txt ] && git add data/telegram_chat.txt
           [ -f data/son_bildirilen.txt ] && git add data/son_bildirilen.txt
+          [ -f data/geri_alim.csv ] && git add data/geri_alim.csv
           git commit -m "Bildirim kaydi" || exit 0
           git pull --rebase -q || true
           git push
