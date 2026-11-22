@@ -712,3 +712,40 @@ def deger_test():
     txt = "\n".join(L)
     (R / "deger_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def nakit_test():
+    """22 Kas: serbest nakit verimi (SNA/FD), kar nakit kalitesi ((faaliyet nakdi - net kar) / varlik), ROIC (FAVOK / (ozkaynak + net borc))."""
+    from . import firsat_bt as FB
+    L = ["NAKIT / ROIC TESTI (22 Kas 2026). Taban = canli (deger: FAVOK/FD + PD/DD; kalite: F-skoru + ROE).",
+         "Cikis canli kural. Egitim 2021-24, test 2025-bugun (sifirdan). 10 ve 5 hisse.\n"]
+    for ad, dg, kl in (("TABAN (canli)", "favok", "canli"), ("+ serbest nakit verimi (deger)", "favok+sna", "canli"),
+                       ("ROE yerine ROIC (kalite)", "favok", "roic"), ("+ nakit kalitesi (kalite)", "favok", "nakit"),
+                       ("ROIC + nakit kalitesi", "favok", "roic+nakit"), ("hepsi", "favok+sna", "roic+nakit")):
+        FB.DEGER, FB.KALITE = dg, kl
+        idx, C, S, PC, VR, TK, xu, m3 = panel()
+        r = faiz_serisi(idx)
+        egit = (idx >= "2021-01-01") & (idx <= "2024-12-31"); test = idx >= "2025-01-01"; tum = idx >= "2021-01-01"
+        if ad.startswith("TABAN"):
+            def mev(m):
+                ii = np.flatnonzero(m)
+                return float(np.prod(1 + r[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+            L.append(f"mevduat: egitim x{mev(egit):.2f}, test x{mev(test):.2f} | BIST100 test x{xu[test].iloc[-1] / xu[test].iloc[0]:.2f}\n")
+        for N in (10, 5):
+            o = []
+            for m in (egit, test, tum):
+                E_, T, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90)
+                v = E_["deger"]
+                o.append((v.iloc[-1] / BAS, (v / v.cummax() - 1).min(), len(T), T.getiri.median() if len(T) else np.nan))
+            yil = []
+            for y in range(2022, 2027):
+                m = idx.year == y
+                E_, T, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90)
+                yil.append(100 * (E_["deger"].iloc[-1] / BAS - 1))
+            L.append(f"{ad:32s} {N:2d} hisse | egitim x{o[0][0]:5.2f} (dusus %{100 * o[0][1]:4.0f}) | TEST x{o[1][0]:4.2f} (dusus %{100 * o[1][1]:4.0f}, islem {o[1][2]}, medyan %{o[1][3]:+.1f}) | "
+                     f"tum x{o[2][0]:5.2f} | yillar " + " ".join(f"{y} {g:+.0f}" for y, g in zip(range(2022, 2027), yil)))
+            print(L[-1])
+    FB.DEGER, FB.KALITE = "favok", "canli"
+    txt = "\n".join(L)
+    (R / "nakit_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

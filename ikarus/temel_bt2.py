@@ -99,6 +99,10 @@ def olaylar(G, m3):
             fk = T._ttm(tab, d, "3DF"); am = T._ttm(tab, d, "4B")
             row["fk_ttm"] = fk
             row["favok_ttm"] = fk + am if fk is not None and am is not None else None
+            # 22 Kas: nakit olcutleri
+            row["sna_ttm"] = T._ttm(tab, d, "4CB")
+            row["fnakit_ttm"] = T._ttm(tab, d, "4C")
+            row["varlik"] = b.get("1BL")
             rows.append(row)
     return pd.DataFrame(rows)
 

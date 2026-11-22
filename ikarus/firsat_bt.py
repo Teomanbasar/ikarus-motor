@@ -28,6 +28,13 @@ AL = ("ALINABILIR", "TOPLANIYOR", "YAKIN")
 DEGERLER = {"kar": ["kaz_get", "pddd"], "faal": ["fv_get", "pddd"], "kar+faal": ["kaz_get", "fv_get", "pddd"],
             "favok": ["fav_get", "pddd"], "faal_tek": ["fv_get"]}
 DEGER = "favok"   # 22 Kas: canli da bu
+DEGERLER["favok+sna"] = ["fav_get", "sna_get", "pddd"]
+KALITELER = {"canli": ["F", "roe"], "roic": ["F", "roic"], "nakit": ["F", "roe", "nakit_kal"], "roic+nakit": ["F", "roic", "nakit_kal"]}
+KALITE = "canli"
+
+
+def _ok(v):
+    return v is not None and not (isinstance(v, float) and np.isnan(v))
 
 
 def puanlar(O, px):
@@ -49,16 +56,21 @@ def puanlar(O, px):
         ev = mcap + nb if nb is not None and not pd.isna(nb) else np.nan
         r["fv_get"] = e["fk_ttm"] / ev if e.get("fk_ttm") is not None and not pd.isna(e.get("fk_ttm")) and ev > 0 else np.nan
         r["fav_get"] = e["favok_ttm"] / ev if e.get("favok_ttm") is not None and not pd.isna(e.get("favok_ttm")) and ev > 0 else np.nan
+        r["sna_get"] = e["sna_ttm"] / ev if _ok(e.get("sna_ttm")) and ev > 0 else np.nan
+        nk_, fn_, va_ = e.get("nk_ttm"), e.get("fnakit_ttm"), e.get("varlik")
+        r["nakit_kal"] = (fn_ - nk_) / va_ if _ok(nk_) and _ok(fn_) and _ok(va_) and va_ > 0 else np.nan
+        ic = (e.get("oz") or np.nan) + (nb if _ok(nb) else np.nan)
+        r["roic"] = e["favok_ttm"] / ic if _ok(e.get("favok_ttm")) and ic > 0 else np.nan
         rows.append(r)
     A = pd.DataFrame(rows)
     g = A.groupby("donem")
     q = {}
-    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F", "fv_get", "fav_get"]:
+    for f in ["sue_nk", "sue_faal", "satis_reel", "roe_ivme", "kaz_get", "roe", "F", "fv_get", "fav_get", "sna_get", "nakit_kal", "roic"]:
         q[f] = g[f].rank(pct=True)
     q["pddd"] = 1 - g["pddd"].rank(pct=True)
     H4 = pd.concat([q["sue_nk"], q["sue_faal"], q["satis_reel"], q["roe_ivme"]], axis=1)
     h = H4.mean(axis=1).where(H4.notna().sum(axis=1) >= 2)
-    k = pd.concat([q["F"], q["roe"]], axis=1).mean(axis=1)
+    k = pd.concat([q[x] for x in KALITELER[KALITE]], axis=1).mean(axis=1)
     d = pd.concat([q[k] for k in DEGERLER[DEGER]], axis=1).mean(axis=1)
     A["v3"] = (h + k + d) / 3
     A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)

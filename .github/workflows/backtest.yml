@@ -23,10 +23,11 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: |
-          if grep -q skor backtest/istek.txt; then python -m ikarus.skor_bt 2>&1 | tail -60 | tee backtest/log.txt || true; else python -m ikarus.backtest 2>&1 | tail -80 | tee backtest/log.txt || true; fi
+          if grep -q "^temel " backtest/istek.txt; then python -m ikarus.temel $(sed 's/^temel //' backtest/istek.txt) 2>&1 | tail -60 | tee backtest/log.txt || true;
+          elif grep -q skor backtest/istek.txt; then python -m ikarus.skor_bt 2>&1 | tail -60 | tee backtest/log.txt || true; else python -m ikarus.backtest 2>&1 | tail -80 | tee backtest/log.txt || true; fi
       - run: |
           git config user.name "ikarus-bot"
           git config user.email "ikarus-bot@users.noreply.github.com"
-          git add backtest/*.txt; git add backtest/*.csv || true
+          git add backtest/*.txt temel/*.txt; git add backtest/*.csv || true
           git commit -m "Backtest sonucu" || exit 0
           for k in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep 5; done

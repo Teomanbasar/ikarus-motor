@@ -1,3 +1,1 @@
-[{"sig_mod":"faz","macro_mod":"m3","macro_ok":true,"tf":"W","ha":true,"etiket":"WHA_fazm3"},
- {"sig_mod":"faz","macro_mod":"m3","macro_ok":true,"tf":"W","ha":true,"cikis":"adil","etiket":"WHA_fazm3_adil"},
- {"sig_mod":"faz","macro_mod":"m3","macro_ok":true,"etiket":"D_fazm3"}]
+temel nakit
