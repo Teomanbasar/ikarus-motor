@@ -5,13 +5,13 @@ PARASAL KAZANC VE DEGER AGIRLIGI TESTI (22 Kas 2026)
   TTKOM 2025/6: aciklanan   12.4 | tahmin (tum)   11.9 | tahmin (fin. borc haric)    0.8
   TTKOM 2025/9: aciklanan   16.9 | tahmin (tum)   18.2 | tahmin (fin. borc haric)    1.6
   TTKOM 2025/12: aciklanan   19.6 | tahmin (tum)   23.2 | tahmin (fin. borc haric)    0.9
-  TTKOM 2026/3: aciklanan   14.0 | tahmin (tum)    0.0 | tahmin (fin. borc haric)    0.0
-  TTKOM 2026/9: aciklanan   46.8 | tahmin (tum)    0.0 | tahmin (fin. borc haric)    0.0
+  TTKOM 2026/3: aciklanan   14.0 | tahmin (tum)   19.2 | tahmin (fin. borc haric)    3.2
+  TTKOM 2026/9: aciklanan   46.8 | tahmin (tum)   54.7 | tahmin (fin. borc haric)   19.7
   BIMAS 2024/12: aciklanan   28.3 | tahmin (tum)   26.4 | tahmin (fin. borc haric)   13.7
   BIMAS 2025/12: aciklanan   18.2 | tahmin (tum)   25.6 | tahmin (fin. borc haric)   12.0
 
-   olaylarda parasal kazanc tahmini dolu: %69 (2023/12 sonrasi)
-   parasal kazanc (vergi sonrasi) / |net kar| ortancasi: %9; net kari parasal kazanctan buyuk olmayan (yani kazanc cikinca zarara donen) olay orani %45 (ham net kar < 0 orani %38)
+   olaylarda parasal kazanc tahmini dolu: %87 (2023/12 sonrasi)
+   parasal kazanc (vergi sonrasi) / |net kar| ortancasi: %10; net kari parasal kazanctan buyuk olmayan (yani kazanc cikinca zarara donen) olay orani %47 (ham net kar < 0 orani %41)
 
 2) TEK OLCU OLAY TESTI, 2024 ve sonrasi bilancolar (126 gun, piyasa ortancasina gore fazla getiri %, kirpik):
   net kar/PD (klasik F/K)      n= 4794 | D1  +4.8 D2  +8.0 D3  +6.3 D4 +11.0 D5 +10.2 | D5-D1  +5.4 (t=+4.1)
@@ -21,8 +21,8 @@ PARASAL KAZANC VE DEGER AGIRLIGI TESTI (22 Kas 2026)
 
 3) PORTFOY (AL listesinden rastgele secim, ortanca; cikis canli). Egitim 2021-24 / TEST 2025-bugun / yillar (her yil sifirdan, 5 hisse):
   klasik F/K (eski canli)              egitim 10h x8.95 | egitim 5h x10.28 | TEST 10h x1.45 | TEST 5h x1.27 || 2022 +131 2023 +72 2024 +98 2025 +26 2026 -5
-  parasal kazanc cikmis F/K            egitim 10h x8.68 | egitim 5h x10.35 | TEST 10h x1.43 | TEST 5h x1.30 || 2022 +131 2023 +72 2024 +88 2025 +29 2026 -15
-  dengeli parasal F/K                  egitim 10h x9.11 | egitim 5h x10.45 | TEST 10h x1.34 | TEST 5h x1.09 || 2022 +134 2023 +72 2024 +99 2025 +21 2026 -15
+  parasal kazanc cikmis F/K            egitim 10h x8.68 | egitim 5h x10.35 | TEST 10h x1.49 | TEST 5h x1.28 || 2022 +131 2023 +72 2024 +88 2025 +29 2026 -12
+  dengeli parasal F/K                  egitim 10h x9.11 | egitim 5h x10.45 | TEST 10h x1.34 | TEST 5h x1.06 || 2022 +134 2023 +72 2024 +99 2025 +21 2026 -16
   asil F/K FAVOK/FD (CANLI)            egitim 10h x11.95 | egitim 5h x13.26 | TEST 10h x1.36 | TEST 5h x1.48 || 2022 +187 2023 +85 2024 +101 2025 +47 2026 -3
   deger YOK (yalniz hareket+kalite)    egitim 10h x8.08 | egitim 5h x8.34 | TEST 10h x1.35 | TEST 5h x1.40 || 2022 +151 2023 +56 2024 +76 2025 +43 2026 -12
   deger = yalniz PD/DD                 egitim 10h x8.59 | egitim 5h x11.07 | TEST 10h x1.26 | TEST 5h x1.20 || 2022 +134 2023 +76 2024 +114 2025 +23 2026 -14
