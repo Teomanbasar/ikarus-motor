@@ -214,3 +214,62 @@ def pas_yokla2():
             out.append(f"===== {sinif} {idx}\nJSON: {j}\nMETIN: {m[:2500]}")
     (DATA.parent / "temel" / "pas_yokla.txt").write_text("\n\n".join(out), encoding="utf-8")
     print("\n\n".join(out)[:5000])
+
+
+def _sayi(x: str) -> float:
+    x = x.strip()
+    if not x or x in ("-",):
+        return 0.0
+    return float(x.replace(".", "").replace(",", "."))
+
+
+def pas_ayristir(metin: str) -> dict:
+    """MKK 'Pay Alim Satim Bildirimi' PDF metni -> konu, kisi, gorev, toplam alim/satim nominal, oran gun basi/sonu."""
+    import re
+    def alan(ad):
+        m = re.search(ad + r"\s+(.*?):", metin)
+        return m.group(1).strip() if m else ""
+    sat = re.findall(r"(\d{2}/\d{2}/\d{4})\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)\s+(-?[\d.,]+)", metin)
+    if not sat:
+        return {"konu": alan("Konu"), "kisi": alan(r"Ad Soyad / Ticaret Ünvanı"), "gorev": alan("Görevi"), "satir": 0}
+    al = sum(_sayi(r[1]) for r in sat); st = sum(_sayi(r[2]) for r in sat)
+    return {"konu": alan("Konu"), "kisi": alan(r"Ad Soyad / Ticaret Ünvanı"), "gorev": alan("Görevi"), "satir": len(sat),
+            "islem_ilk": sat[0][0], "islem_son": sat[-1][0], "alim_nom": al, "satim_nom": st, "net_nom": al - st,
+            "oran_bas": _sayi(sat[0][6]), "oran_son": _sayi(sat[-1][8])}
+
+
+def pas_detay_topla(butce_dk: float = 150, isci: int = 4):
+    """DKB (MKK) bildirimlerinin PDF ekini ayristirir -> data/kap_pas_detay.csv (artimli; PDF saklanmaz)."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    d = pd.read_csv(DATA / "kap_pas.csv", dtype=str)
+    f = DATA / "kap_pas_detay.csv"
+    eski = pd.read_csv(f, dtype=str) if f.exists() else pd.DataFrame(columns=["index"])
+    yap = [i for i in d[d.sinif == "DKB"]["index"].tolist() if i not in set(eski["index"])]
+    t0 = time.time()
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    def is_(idx):
+        if time.time() - t0 > butce_dk * 60:
+            return None
+        for k in range(3):
+            try:
+                _, m = ek_metin(s, idx)
+                r = pas_ayristir(m); r["index"] = idx
+                return r
+            except Exception as e:
+                time.sleep(2 * (k + 1)); hata = str(e)
+        return {"index": idx, "hata": hata[:100]}
+    yeni = []
+    with ThreadPoolExecutor(isci) as ex:
+        for n, fut in enumerate(as_completed([ex.submit(is_, i) for i in yap])):
+            r = fut.result()
+            if r is not None:
+                yeni.append(r)
+            if n % 500 == 0:
+                print(f"pas detay {n}/{len(yap)} {time.time() - t0:.0f} sn")
+                pd.concat([eski, pd.DataFrame(yeni)]).to_csv(f, index=False)
+    tum = pd.concat([eski, pd.DataFrame(yeni)])
+    tum.to_csv(f, index=False)
+    kalan = len(yap) - len(yeni)
+    print(f"pas detay: {len(yeni)} yeni, toplam {len(tum)}, kalan {kalan}")
+    return kalan

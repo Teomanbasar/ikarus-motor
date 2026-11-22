@@ -1181,3 +1181,85 @@ def potansiyel_test():
     txt = "\n".join(L)
     (R / "potansiyel_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def icerden2_test():
+    """22 Kas: MKK 'Pay Alim Satim Bildirimi' PDF'lerinden ayristirilan gercek alim/satimlar (kim, ne kadar)."""
+    from . import kap
+    kalan = kap.pas_detay_topla(butce_dk=150)
+    if kalan > 0:
+        print(f"KALAN {kalan}: test sonraki calistirmada"); return
+    P = pd.read_csv(D.DATA / "kap_pas.csv", dtype=str)
+    X = pd.read_csv(D.DATA / "kap_pas_detay.csv", dtype=str).merge(P[["index", "tarih", "ilgili", "gonderen"]], on="index", how="left")
+    for c in ("alim_nom", "satim_nom", "net_nom", "oran_bas", "oran_son", "satir"):
+        X[c] = pd.to_numeric(X[c], errors="coerce")
+    X["t"] = pd.to_datetime(X["tarih"].str[:10], format="%d.%m.%Y", errors="coerce")
+    X["hisse"] = X["ilgili"].fillna(X["gonderen"]).fillna("").str.split(",").str[0].str.strip()
+    konu = X["konu"].fillna("").str.lower()
+    X["devir"] = konu.str.contains("devir|devri|hediye|miras|teminat|bağış|bagis|intikal|birleşme|bedelsiz", regex=True)
+    g = X["gorev"].fillna("").str.lower()
+    X["yonetici"] = g.str.contains("yönetim|yonetim|müdür|mudur|başkan|baskan|üye|uye|ceo|cfo|direkt", regex=True)
+    X["d_oran"] = X["oran_son"] - X["oran_bas"]
+    ok = X[(X.satir > 0) & X.t.notna() & (X.hisse != "")]
+    L = ["ICERIDEN ALIM-SATIM (PDF'ten ayristirilmis), 22 Kas 2026",
+         f"ayristirilan DKB bildirimi {len(X)}, islem tablosu okunan {len(ok)} (%{100 * len(ok) / max(len(X), 1):.0f}); devir/hediye vb. {int(ok.devir.sum())} cikarildi",
+         f"yonetici (gorevi yazan) {int(ok.yonetici.sum())}, diger (ortak/sirket/kisi) {int((~ok.yonetici).sum())}",
+         "en sik konular: " + " | ".join(f"{k}:{v}" for k, v in ok.konu.value_counts().head(8).items()),
+         "en sik gorevler: " + " | ".join(f"{k}:{v}" for k, v in ok[ok.yonetici].gorev.value_counts().head(8).items()), ""]
+    ok = ok[~ok.devir]
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    hep = D.prices(sorted(G.keys()))
+    Cx = pd.DataFrame({t: df["close"] for t, df in hep.items()}).sort_index()
+    gun = Cx.index
+    F = {}
+    for h in (5, 21, 63, 126):
+        r = Cx.shift(-h) / Cx - 1
+        F[h] = r.sub(r.median(axis=1), axis=0)
+    def olay(x):
+        x = x.sort_values("t"); ilk, son = [], {}
+        for _, r in x.iterrows():
+            if r.hisse not in son or (r.t - son[r.hisse]).days > 90:
+                ilk.append(r)
+            son[r.hisse] = r.t
+        E = pd.DataFrame(ilk)
+        if E.empty:
+            return E
+        E["giris"] = [gun[j] if (j := gun.searchsorted(t, side="right")) < len(gun) else pd.NaT for t in E.t]
+        E = E.dropna(subset=["giris"])
+        for h in F:
+            E[f"f{h}"] = [F[h].at[gi, t] if t in F[h].columns else np.nan for t, gi in zip(E.hisse, E.giris)]
+        return E
+    def oz(E, ad):
+        o = []
+        for h in (5, 21, 63, 126):
+            v = E[f"f{h}"].dropna() if len(E) else pd.Series(dtype=float)
+            if len(v) < 15:
+                o.append(f"{h}g n<15"); continue
+            k = v.clip(v.quantile(.05), v.quantile(.95))
+            o.append(f"{h}g ort %{100 * k.mean():+.1f} ortanca %{100 * v.median():+.1f} kaz %{100 * (v > 0).mean():.0f} (n={len(v)}, t={k.mean() / (k.std() / np.sqrt(len(k))):+.1f})")
+        L.append(f"  {ad:38s} " + " | ".join(o))
+        print(L[-1])
+    L.append("YENI DALGA (hisse bazinda 90 gun sessizlikten sonra ilk bildirim), ertesi gun kapanistan piyasa ortancasina gore fazla getiri (kirpik ort.):")
+    al, sat = ok[ok.net_nom > 0], ok[ok.net_nom < 0]
+    Ea, Es = olay(al), olay(sat)
+    oz(Ea, "NET ALIM (hepsi)")
+    oz(Es, "NET SATIM (hepsi)")
+    oz(olay(al[al.yonetici]), "alim: YONETICI")
+    oz(olay(al[~al.yonetici]), "alim: ortak / diger")
+    oz(olay(sat[sat.yonetici]), "satim: YONETICI")
+    oz(olay(al[al.d_oran >= 0.5]), "alim: paya etkisi >= 0.5 puan")
+    oz(olay(al[(al.d_oran > 0) & (al.d_oran < 0.5)]), "alim: paya etkisi < 0.5 puan")
+    # kume: 30 gunde 2+ farkli alici
+    kume = []
+    for h, x in al.groupby("hisse"):
+        x = x.sort_values("t")
+        for i, r in x.iterrows():
+            w = x[(x.t >= r.t - pd.Timedelta(days=30)) & (x.t <= r.t)]
+            if w.kisi.nunique() >= 2:
+                kume.append(r)
+    oz(olay(pd.DataFrame(kume)) if kume else pd.DataFrame(), "alim: 30 gunde 2+ farkli alici")
+    for y, x in Ea.groupby(Ea.giris.dt.year):
+        oz(x, f"  net alim {y}")
+    txt = "\n".join(L)
+    (R / "icerden2_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
