@@ -1,0 +1,17 @@
+NAKIT / ROIC TESTI (22 Kas 2026). Taban = canli (deger: FAVOK/FD + PD/DD; kalite: F-skoru + ROE).
+Cikis canli kural. Egitim 2021-24, test 2025-bugun (sifirdan). 10 ve 5 hisse.
+
+mevduat: egitim x2.66, test x2.14 | BIST100 test x1.12
+
+TABAN (canli)                    10 hisse | egitim x11.63 (dusus % -10) | TEST x1.65 (dusus % -43, islem 55, medyan %+17.6) | tum x18.91 | yillar 2022 +127 2023 +106 2024 +105 2025 +90 2026 -7
+TABAN (canli)                     5 hisse | egitim x 9.59 (dusus % -15) | TEST x1.87 (dusus % -37, islem 32, medyan %+11.7) | tum x16.34 | yillar 2022 +169 2023 +61 2024 +75 2025 +120 2026 -16
++ serbest nakit verimi (deger)   10 hisse | egitim x10.04 (dusus % -17) | TEST x1.29 (dusus % -38, islem 61, medyan %+8.1) | tum x15.89 | yillar 2022 +119 2023 +102 2024 +84 2025 +41 2026 -9
++ serbest nakit verimi (deger)    5 hisse | egitim x 9.20 (dusus % -14) | TEST x1.04 (dusus % -43, islem 34, medyan %+8.0) | tum x11.79 | yillar 2022 +121 2023 +99 2024 +85 2025 +40 2026 -23
+ROE yerine ROIC (kalite)         10 hisse | egitim x15.30 (dusus % -15) | TEST x1.09 (dusus % -46, islem 49, medyan %+8.8) | tum x15.86 | yillar 2022 +169 2023 +110 2024 +62 2025 +55 2026 -24
+ROE yerine ROIC (kalite)          5 hisse | egitim x17.31 (dusus % -17) | TEST x1.12 (dusus % -48, islem 31, medyan %+8.8) | tum x23.71 | yillar 2022 +171 2023 +94 2024 +61 2025 +48 2026 -19
++ nakit kalitesi (kalite)        10 hisse | egitim x12.01 (dusus % -18) | TEST x1.23 (dusus % -45, islem 54, medyan %+12.4) | tum x16.26 | yillar 2022 +125 2023 +86 2024 +63 2025 +46 2026 -9
++ nakit kalitesi (kalite)         5 hisse | egitim x13.89 (dusus % -19) | TEST x1.39 (dusus % -41, islem 31, medyan %+12.8) | tum x22.61 | yillar 2022 +130 2023 +75 2024 +52 2025 +38 2026 -9
+ROIC + nakit kalitesi            10 hisse | egitim x12.65 (dusus % -14) | TEST x1.16 (dusus % -43, islem 51, medyan %+10.5) | tum x16.23 | yillar 2022 +153 2023 +109 2024 +64 2025 +27 2026 -2
+ROIC + nakit kalitesi             5 hisse | egitim x13.36 (dusus % -19) | TEST x1.62 (dusus % -39, islem 33, medyan %+12.6) | tum x17.27 | yillar 2022 +117 2023 +69 2024 +63 2025 +42 2026 -5
+hepsi                            10 hisse | egitim x12.30 (dusus % -19) | TEST x0.96 (dusus % -46, islem 47, medyan %+9.6) | tum x14.10 | yillar 2022 +123 2023 +108 2024 +61 2025 +37 2026 -24
+hepsi                             5 hisse | egitim x13.64 (dusus % -15) | TEST x1.02 (dusus % -47, islem 29, medyan %+12.0) | tum x13.65 | yillar 2022 +106 2023 +92 2024 +95 2025 +44 2026 -27
