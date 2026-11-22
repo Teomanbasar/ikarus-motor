@@ -282,7 +282,9 @@ def _evds_m3(key: str) -> pd.Series:
 
 
 def tufe(update: bool = True) -> pd.Series:
-    """Aylik TUFE endeksi (EVDS TP.FG.J0, 2003=100). index = ayin 1'i. data/tufe.csv onbellek."""
+    """Aylik TUFE endeksi (EVDS TP.FG.J0, 2003=100). index = ayin 1'i. data/tufe.csv onbellek.
+    Ocak 2026'da TUIK temel yili 2025=100'e gecti; eski seri Ocak 2026'da bitti. Subat 2026 sonrasi csv'de
+    TCMB'nin yayimladigi aylik % degisimlerle zincirlendi (22 Kas). EVDS daha kisa donerse csv korunur."""
     f = DATA / "tufe.csv"
     eski = pd.read_csv(f, parse_dates=["tarih"]).set_index("tarih")["tufe"] if f.exists() else pd.Series(dtype=float)
     key = ayar("evds_key")
