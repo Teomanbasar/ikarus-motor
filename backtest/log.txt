@@ -1,19 +1,17 @@
-pas detay 0/7877 3 sn
-pas detay 500/7877 3274 sn
-pas detay 1000/7877 6526 sn
-pas detay 1500/7877 9797 sn
-pas detay 2000/7877 9797 sn
-pas detay 2500/7877 9797 sn
-pas detay 3000/7877 9797 sn
-pas detay 3500/7877 9797 sn
-pas detay 4000/7877 9797 sn
-pas detay 4500/7877 9797 sn
-pas detay 5000/7877 9797 sn
-pas detay 5500/7877 9797 sn
-pas detay 6000/7877 9797 sn
-pas detay 6500/7877 9797 sn
-pas detay 7000/7877 9797 sn
-pas detay 7500/7877 9797 sn
-pas detay: 1501 yeni, toplam 1598, kalan 6376; okunan 1141
-hatalar: {'ek yok': 31}
-KALAN 6376: test sonraki calistirmada
+pas detay 0/6736 3 sn
+pas detay 500/6736 3252 sn
+pas detay 1000/6736 6466 sn
+pas detay 1500/6736 9680 sn
+pas detay 2000/6736 9680 sn
+pas detay 2500/6736 9680 sn
+pas detay 3000/6736 9680 sn
+pas detay 3500/6736 9680 sn
+pas detay 4000/6736 9680 sn
+pas detay 4500/6736 9680 sn
+pas detay 5000/6736 9680 sn
+pas detay 5500/6736 9680 sn
+pas detay 6000/6736 9680 sn
+pas detay 6500/6736 9680 sn
+pas detay: 1501 yeni, toplam 2739, kalan 5235; okunan 880
+hatalar: {'ek yok': 36}
+KALAN 5235: test sonraki calistirmada
