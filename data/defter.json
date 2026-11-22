@@ -19,7 +19,7 @@
      "karar": "AL ✓✓",
      "getiri": -7.37,
      "fazla": -2.83,
-     "kutu_bugun": "BEKLE teknik"
+     "kutu_bugun": "ORTA"
     },
     "ARSAN": {
      "t": "ARSAN",
@@ -35,7 +35,7 @@
      "karar": "AL ✓",
      "getiri": -5.14,
      "fazla": -0.6,
-     "kutu_bugun": "AL ✓"
+     "kutu_bugun": "ORTA"
     },
     "AYEN": {
      "t": "AYEN",
@@ -91,7 +91,7 @@
      "karar": "AL ✓",
      "getiri": 0.31,
      "fazla": 4.85,
-     "kutu_bugun": "AL ✓"
+     "kutu_bugun": "ORTA"
     },
     "FORTE": {
      "t": "FORTE",
@@ -107,7 +107,7 @@
      "karar": "AL ✓",
      "getiri": -6.07,
      "fazla": -1.52,
-     "kutu_bugun": "BEKLE teknik"
+     "kutu_bugun": "ORTA"
     },
     "GSDHO": {
      "t": "GSDHO",
@@ -163,7 +163,7 @@
      "karar": "AL ✓✓",
      "getiri": 0.05,
      "fazla": 4.59,
-     "kutu_bugun": "BEKLE kacti"
+     "kutu_bugun": "ORTA"
     },
     "TRGYO": {
      "t": "TRGYO",
@@ -211,7 +211,7 @@
      "karar": "AL ✓",
      "getiri": -7.32,
      "fazla": -4.3,
-     "kutu_bugun": "BEKLE teknik"
+     "kutu_bugun": "UZAK DUR"
     },
     "SKBNK": {
      "t": "SKBNK",
@@ -251,7 +251,7 @@
      "karar": "AL ✓",
      "getiri": 0.72,
      "fazla": 3.08,
-     "kutu_bugun": "ORTA"
+     "kutu_bugun": "UZAK DUR"
     },
     "MERCN": {
      "t": "MERCN",
@@ -292,7 +292,7 @@
      "karar": "AL ✓✓",
      "getiri": -7.37,
      "fazla": -2.83,
-     "kutu_bugun": "BEKLE teknik",
+     "kutu_bugun": "ORTA",
      "stop_aktif": false,
      "stop": 58.31,
      "stop_aktiflesme": 82.32
@@ -314,7 +314,7 @@
      "karar": "AL ✓",
      "getiri": -5.14,
      "fazla": -0.6,
-     "kutu_bugun": "AL ✓",
+     "kutu_bugun": "ORTA",
      "stop_aktif": false,
      "stop": 7.85,
      "stop_aktiflesme": 11.09
@@ -391,7 +391,7 @@
      "karar": "AL ✓",
      "getiri": 0.31,
      "fazla": 4.85,
-     "kutu_bugun": "AL ✓",
+     "kutu_bugun": "ORTA",
      "stop_aktif": false,
      "stop": 6.0,
      "stop_aktiflesme": 8.41
@@ -413,7 +413,7 @@
      "karar": "AL ✓",
      "getiri": -6.07,
      "fazla": -1.52,
-     "kutu_bugun": "BEKLE teknik",
+     "kutu_bugun": "ORTA",
      "stop_aktif": false,
      "stop": 197.2,
      "stop_aktiflesme": 278.4
@@ -490,7 +490,7 @@
      "karar": "AL ✓✓",
      "getiri": 0.05,
      "fazla": 4.59,
-     "kutu_bugun": "BEKLE kacti",
+     "kutu_bugun": "ORTA",
      "stop_aktif": false,
      "stop": 211.91,
      "stop_aktiflesme": 294.48
@@ -556,7 +556,7 @@
      "karar": "AL ✓",
      "getiri": -7.32,
      "fazla": -4.3,
-     "kutu_bugun": "BEKLE teknik",
+     "kutu_bugun": "UZAK DUR",
      "stop_aktif": false,
      "stop": 1.22,
      "stop_aktiflesme": 1.73
@@ -611,9 +611,9 @@
      "karar": "AL ✓",
      "getiri": 0.72,
      "fazla": 3.08,
-     "kutu_bugun": "ORTA",
+     "kutu_bugun": "UZAK DUR",
      "stop_aktif": false,
-     "stop": 0.77,
+     "stop": 0.76,
      "stop_aktiflesme": 1.07
     },
     "MERCN": {
