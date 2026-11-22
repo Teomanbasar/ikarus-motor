@@ -8,6 +8,7 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
+  actions: write
 jobs:
   bt:
     runs-on: ubuntu-latest
@@ -31,3 +32,9 @@ jobs:
           git add backtest/*.txt temel/*.txt; for f in temel/gecmis_pk.json.gz data/tufe.csv data/geri_alim.csv data/kap_pas.csv data/kap_pas_detay.csv; do [ -f $f ] && git add $f; done; git add backtest/*.csv || true
           git commit -m "Backtest sonucu" || exit 0
           for k in 1 2 3 4 5; do git pull --rebase --autostash -q && git push && break; sleep 5; done
+      - name: Devam (KAP PDF okuma bitmediyse kendini yeniden baslat)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if grep -q "^KALAN" backtest/log.txt 2>/dev/null; then gh workflow run backtest.yml --ref main -R ${{ github.repository }} && echo "yeniden baslatildi"; fi
