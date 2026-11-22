@@ -189,9 +189,10 @@ def ek_metin(s, idx: str):
             if not oid:
                 continue
             f = s.get(f"https://www.kap.org.tr/tr/api/file/download/{oid}", headers=H, timeout=60)
-            if f.content[:4] == b"%PDF":
+            i = f.content.find(b"%PDF")
+            if i >= 0:
                 from pypdf import PdfReader
-                metin = " ".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(f.content)).pages)
+                metin = " ".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(f.content[i:])).pages)
             else:
                 metin = f.content[:3000].decode("utf-8", "ignore")
             return str(j)[:600], metin
