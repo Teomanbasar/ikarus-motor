@@ -332,6 +332,42 @@ def isaretler(tab, m3, d, yo=None):
     return out
 
 
+_TUFE = None
+
+
+def parasal_kazanc_ttm(tab, d):
+    """22 Kas: son 4 ceyrek tahmini net parasal pozisyon kazanci (tab birimi). Kazanc ~ ortalama net parasal yukumluluk x ceyrek TUFE.
+    Kontrol (temel/parasal_sonuc.txt): TTKOM 2025 9 ay aciklanan 16.9 / tahmin 18.2; BIM 2024 28.3 / 26.4. 2023/12 oncesi 0."""
+    global _TUFE
+    if _TUFE is None:
+        _TUFE = D.tufe(update=False)
+    def oran(dd):
+        v = tab.get(dd) or {}
+        va = v.get("1BL")
+        if not va or va <= 0 or v.get("2A") is None:
+            return None
+        z = lambda c: v.get(c) or 0.0
+        pv = sum(z(c) for c in ("1AA", "1AB", "1AC", "1AD", "1AE", "1B", "1BA", "1BB", "1BC"))
+        py = z("2A") + z("2B") - z("2AAGAC") - z("2BBBA") - z("2BG") - z("2AAGCA") - z("2BDA")
+        return (py - pv) / va, va
+    def pi(y, m):
+        a = _TUFE.get(pd.Timestamp(y, m, 1)); y0, m0 = (y, m - 3) if m > 3 else (y - 1, m + 9)
+        b = _TUFE.get(pd.Timestamp(y0, m0, 1))
+        return a / b - 1 if a and b else None
+    y, m = d
+    if (y, m) < (2023, 12):
+        return 0.0
+    top = 0.0
+    for i in range(4):
+        yy, mm = (y, m - 3 * i) if m - 3 * i > 0 else (y - 1, m - 3 * i + 12)
+        o = oran((yy, mm)); oo = oran((yy, mm - 3) if mm > 3 else (yy - 1, 12)); p = pi(yy, mm)
+        if o is None or p is None:
+            return None
+        r = (o[0] + oo[0]) / 2 if oo else o[0]
+        top += r * p * o[1]
+    return top
+
+
 def skor(grup, tab, m3, d=None, yo=None):
     if not tab:
         return None
@@ -425,7 +461,8 @@ def skor(grup, tab, m3, d=None, yo=None):
                           "serbest_nakit": T("4CB")}
     # 22 Kas: "asil F/K" (FD/FAVOK) icin; bankalarda yok
     out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA"), "favok": locals().get("favok"), "net_borc": locals().get("nb"),
-                  "faaliyet_kari": None if grup == "UFRS" else T("3DF")}
+                  "faaliyet_kari": None if grup == "UFRS" else T("3DF"),
+                  "parasal_kazanc": None if grup == "UFRS" else parasal_kazanc_ttm(tab, d)}
     try:
         out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d, yo).items() if k != "nk_ttm"}
         if yo:
@@ -450,6 +487,8 @@ def hesapla(hisseler=None, butce_dk: float = 95, isci: int = 4):
         hisseler = D.bist_list()["ticker"].tolist()
         hisseler.sort(key=lambda h: sonuc.get(h, {}).get("guncelleme", ""))  # once hic/eski cekilenler
     m3 = D.m3()
+    global _TUFE
+    _TUFE = D.tufe()  # 22 Kas: parasal kazanc tahmini icin (TCMB'den yeni ay eklenir)
     t0 = time.time()
     bitti = 0
     import threading

@@ -111,6 +111,13 @@ def _temel_ekle(stocks):
                     k["fav_get"] = fav / fd
                     k["fd_favok"] = fd / fav if fav > 0 else None
                 k["fd_fk"] = fd / faal if faal and faal > 0 and fd > 0 else None
+            # 22 Kas: parasal kazancsiz F/K (bilgi; kural degil). Vergi sonrasi %75 varsayimi.
+            pk = ham.get("parasal_kazanc")
+            if pk is not None and nk is not None:
+                nk2 = nk - 0.75 * pk
+                k["parasal_kazanc"] = pk
+                k["fk_parasalsiz"] = pd_ / nk2 if nk2 > 0 else None
+                k["parasal_pay"] = 0.75 * pk / nk if nk > 0 else None
         s["temel"] = k
     _temel_v3(stocks)
     _temel_v3(stocks, tip="banka")   # 17 Kas: bankalar kendi icinde (finans_bt: ust 1/3 126g +19.9 / alt 1/3 +7.1); sigorta henuz test edilmedi

@@ -307,4 +307,27 @@ def tufe(update: bool = True) -> pd.Series:
                 pd.DataFrame({"tarih": s2.index, "tufe": s2.values}).to_csv(f, index=False)
         except Exception as e:
             print(f"[uyari] EVDS TUFE alinamadi: {e}")
+    if update:
+        # EVDS'te 2003=100 serisi Ocak 2026'da bitti (TUIK 2025=100). Sonraki aylar TCMB'nin tablosundaki aylik % degisimle zincirlenir.
+        try:
+            import re
+            import requests
+            h = requests.get("https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Istatistikler/Enflasyon+Verileri/Tuketici+Fiyatlari",
+                             headers={"User-Agent": "Mozilla/5.0"}, timeout=30).text
+            metin = re.sub(r"<[^>]+>", " ", h)
+            ay = {}
+            for mm, yy, _yil, aylik in re.findall(r"(\d{2})-(\d{4})\s+(-?[\d.,]+)\s+(-?[\d.,]+)", metin):
+                ay[pd.Timestamp(int(yy), int(mm), 1)] = float(aylik.replace(",", "."))
+            s = eski.sort_index().copy()
+            eklendi = []
+            for t in sorted(ay):
+                if t > s.index.max() and t - pd.DateOffset(months=1) == s.index.max():
+                    s.loc[t] = round(float(s.iloc[-1]) * (1 + ay[t] / 100), 2)
+                    eklendi.append(f"{t:%Y-%m}")
+            if eklendi:
+                print("TUFE (TCMB aylik degisim): " + ", ".join(eklendi) + " eklendi")
+                pd.DataFrame({"tarih": s.index, "tufe": s.values}).to_csv(f, index=False, date_format="%Y-%m-%d")
+                eski = s
+        except Exception as e:
+            print(f"[uyari] TCMB TUFE tablosu alinamadi: {e}")
     return eski.sort_index()
