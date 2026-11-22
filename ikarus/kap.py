@@ -174,3 +174,42 @@ def pas_yokla():
             out.append(f"===== {sinif} {idx} uzunluk {len(t)} anahtarlar {k}\n{t[max(0, i - 2500):i + 2500]}")
     (DATA.parent / "temel" / "pas_yokla.txt").write_text("\n\n".join(out), encoding="utf-8")
     print("\n\n".join(out)[:4000])
+
+
+def ek_metin(s, idx: str):
+    """Bildirimin ekleri (attachment-detail) ve ilk PDF ekinin metni. -> (ham_json_kisa, metin)"""
+    import io
+    H = {k: v for k, v in BASLIK.items() if k != "Content-Type"}
+    r = s.get(f"https://www.kap.org.tr/tr/api/notification/attachment-detail/{idx}", headers=H, timeout=60)
+    j = r.json() if r.status_code == 200 else []
+    metin = ""
+    for item in j or []:
+        for att in item.get("attachments") or []:
+            oid = att.get("objId")
+            if not oid:
+                continue
+            f = s.get(f"https://www.kap.org.tr/tr/api/file/download/{oid}", headers=H, timeout=60)
+            if f.content[:4] == b"%PDF":
+                from pypdf import PdfReader
+                metin = " ".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(f.content)).pages)
+            else:
+                metin = f.content[:3000].decode("utf-8", "ignore")
+            return str(j)[:600], metin
+    return str(j)[:600], metin
+
+
+def pas_yokla2():
+    import pandas as pd_
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    d = pd_.read_csv(DATA / "kap_pas.csv", dtype=str)
+    out = []
+    for sinif in ("DKB", "ODA"):
+        for idx in d[d.sinif == sinif]["index"].sample(3, random_state=5).tolist():
+            try:
+                j, m = ek_metin(s, idx)
+            except Exception as e:
+                j, m = f"HATA {e}", ""
+            out.append(f"===== {sinif} {idx}\nJSON: {j}\nMETIN: {m[:2500]}")
+    (DATA.parent / "temel" / "pas_yokla.txt").write_text("\n\n".join(out), encoding="utf-8")
+    print("\n\n".join(out)[:5000])
