@@ -608,6 +608,28 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "yoklama":
+        # 22 Kas: TCMB enflasyon tablosu, EVDS yeni TUFE kodu, KAP pay geri alimi erisimi
+        import requests, re as _re
+        H = {"User-Agent": "Mozilla/5.0"}
+        out = []
+        def dene(ad, f):
+            try:
+                r = f(); out.append(f"== {ad}: {r.status_code} {r.headers.get('content-type')}\n{r.text[:1500]}")
+            except Exception as e:
+                out.append(f"== {ad}: HATA {e}")
+        dene("tcmb", lambda: requests.get("https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Istatistikler/Enflasyon+Verileri/Tuketici+Fiyatlari", headers=H, timeout=30))
+        key = D.ayar("evds_key")
+        for u in ("serieList/type=json&code=bie_tukfiy4", "datagroups/mode=2&code=bie_tukfiy4&type=json",
+                  "datagroups/mode=1&code=TP.FG&type=json", "series=TP.FE.OKTG01&startDate=01-01-2026&endDate=31-12-2026&type=json&frequency=5",
+                  "series=TP.FG.J0&startDate=01-01-2026&endDate=31-12-2026&type=json&frequency=5"):
+            dene("evds " + u, lambda u=u: requests.get(D.EVDS_URL + u, headers={"key": key}, timeout=30))
+        dene("kap ana", lambda: requests.get("https://www.kap.org.tr/tr/", headers=H, timeout=30))
+        dene("kap api disclosure", lambda: requests.post("https://www.kap.org.tr/tr/api/memberDisclosureQuery", json={"fromDate": "2026-11-01", "toDate": "2026-11-20", "subjectList": [], "memberType": "IGS"}, headers=H, timeout=30))
+        dene("kap api disc2", lambda: requests.get("https://www.kap.org.tr/tr/api/disclosures?fromDate=2026-11-01&toDate=2026-11-20", headers=H, timeout=30))
+        dene("kap bildirim", lambda: requests.get("https://www.kap.org.tr/tr/Bildirim/1602031", headers=H, timeout=30))
+        (R / "yoklama.txt").write_text("\n\n".join(out), encoding="utf-8")
+        print("\n\n".join(out)[:6000])
     elif sys.argv[1] == "parasal2":
         from . import portfoy_bt
         portfoy_bt.DENEMELER = (("asil F/K FAVOK/FD (CANLI)", "favok", 1.0), ("FAVOK/FD + parasalsiz F/K", "favok+pk", 1.0),
