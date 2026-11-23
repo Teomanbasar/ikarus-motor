@@ -1394,6 +1394,23 @@ def uzun_test():
             tst = (v5.mean() - v1.mean()) / np.sqrt(v5.var() / len(v5) + v1.var() / len(v1))
             L.append(f"  {f:10s} {ad:7s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}" for i in range(1, 6)) + f" | D5-D1 {st.loc[5, 'km'] - st.loc[1, 'km']:+5.1f} (t={tst:+.1f}) ortanca D5 {100 * st.loc[5, 'med']:+.1f} D1 {100 * st.loc[1, 'med']:+.1f}")
         print("\n".join(L[-4:]))
+    # 23 Kas: sektor gruplari icinde v3 (GYO / HOLDING / digerleri), uc dilim, kirpik ort + ortanca
+    GR = grup_listesi()
+    L.append("\n1b) GRUP ICINDE v3 (ayni donemde grup icinde 3 dilim; 126g piyasa ortancasina gore). D3 = en iyi.")
+    for gad, gm in (("GYO", A.t.isin(GR["GYO"])), ("HOLDING", A.t.isin(GR["HOLDING"])), ("DIGER", ~A.t.isin(GR["GYO"] | GR["HOLDING"]))):
+        for ad, m in (("2014-17", A.yil.between(2014, 2017)), ("2018-20", A.yil.between(2018, 2020)), ("2021-24", A.yil.between(2021, 2024)), ("2025+", A.yil >= 2025), ("hepsi", A.yil >= 2014)):
+            a = A[gm & m & A.v3.notna() & A.f126.notna()].copy()
+            if len(a) < 60:
+                L.append(f"  {gad:8s} {ad:7s} n={len(a)} (az)"); continue
+            a["dl"] = a["v3"].groupby(a["donem"]).rank(pct=True).mul(3).clip(upper=2.999).astype(int) + 1
+            km = lambda v: 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
+            st = a.groupby("dl")["f126"].agg(km=km, med="median")
+            x3, x1 = a.loc[a.dl == 3, "f126"], a.loc[a.dl == 1, "f126"]
+            x3 = x3.clip(x3.quantile(.05), x3.quantile(.95)); x1 = x1.clip(x1.quantile(.05), x1.quantile(.95))
+            t = (x3.mean() - x1.mean()) / np.sqrt(x3.var() / len(x3) + x1.var() / len(x1))
+            L.append(f"  {gad:8s} {ad:7s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}/{100 * st.loc[i, 'med']:+5.1f}" for i in (1, 2, 3))
+                     + f" | D3-D1 {st.loc[3, 'km'] - st.loc[1, 'km']:+5.1f} (t={t:+.1f})")
+    (R / "uzun_sonuc.txt").write_text("\n".join(L), encoding="utf-8")
     L.append("\n2) PORTFOY (canli kurallar; AL listesinden rastgele secim 25 kosu ortancasi; her yil 100.000 TL ile sifirdan). Yillik getiri %:")
     idx, C, S, PC, VR, TK, xu, m3 = panel()
     rr = faiz_serisi(idx)
