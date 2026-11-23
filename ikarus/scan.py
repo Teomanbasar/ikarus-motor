@@ -386,6 +386,41 @@ def _icerden_ekle(stocks):
             s["icerden"] = d
 
 
+def _istirak_puani(stocks):
+    """23 Kas (temel/icinden_sonuc.txt, 12 gercek holding, 2014-2026): borsadaki istiraklerin v3 sirasi, pay x piyasa degeri
+    agirlikli. Istirak puani >= 0.7: 126g ortanca +4.8 (kaz %54); <= 0.4: -4.9 (%45). Bankalar (ayri siralama) dahil edilmez."""
+    try:
+        J = json.loads((D.ROOT / "temel" / "istirak_paylar.json").read_text(encoding="utf-8"))
+    except Exception:
+        return
+    by = {s["t"]: s for s in stocks}
+    v3 = lambda s: ((s.get("temel") or {}).get("v3") or {})
+    for h in J.get("holdingler", []):
+        if h not in by:
+            continue
+        top = ag = 0.0
+        det = []
+        for t, w in (J["paylar"].get(h) or {}).items():
+            s = by.get(t)
+            if not s:
+                continue
+            pdv = (s.get("temel") or {}).get("piyasa_degeri")
+            if not pdv:
+                continue
+            deger = w * pdv
+            top += deger
+            r = v3(s).get("sira")
+            if r is not None and (s.get("temel") or {}).get("tip") == "sanayi":
+                ag += deger
+                det.append((t, round(w, 3), round(r, 2), deger))
+        if top <= 0 or ag / top < 0.5:
+            continue
+        sk = sum(d[2] * d[3] for d in det) / ag
+        by[h].setdefault("temel", {})["istirak_puani"] = {
+            "puan": round(sk, 3), "kapsam": round(ag / top, 2),
+            "istirakler": [{"t": t, "pay": w, "sira": r, "agirlik": round(d / ag, 3)} for t, w, r, d in sorted(det, key=lambda x: -x[3])]}
+
+
 def _geri_alim_ekle(stocks):
     """22 Kas: KAP pay geri alimi (temel/geri_alim_sonuc.txt: yeni dalga sonrasi 6 ay piyasa ortancasina gore +%12 ort.,
     ortanca +%5.6, t=6.8, her yil pozitif; AL icinde one almak 2025-26'da x1.33 -> x1.61 (5 hisse))."""
@@ -453,6 +488,7 @@ def run(tickers: list[str] | None = None) -> dict:
     _fiyat_ivme(stocks, px, xu)
     _temel_ekle(stocks)
     _nad_ekle(stocks, px)
+    _istirak_puani(stocks)
     _geri_alim_ekle(stocks)
     _icerden_ekle(stocks)
 
