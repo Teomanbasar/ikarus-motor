@@ -334,6 +334,16 @@ def _nad_ekle(stocks, px):
                 "tarih": f"{S.index[-1]:%Y-%m-%d}", "nad_mn": round(float(S["nad"].iloc[-1])), "pd_mn": round(float(S["pd"].iloc[-1])),
                 "iskonto": round(isk, 4), "ort_3y": round(float(p3.mean()), 4), "yuzdelik_3y": round(yuz3, 1), "degisim_20g": round(d20, 4),
                 "uzun_vade": c.get("uzun_vade_iskonto"), "durum": durum, "kaynak": c["kaynak"], "fiyatsiz": eksik}
+            # 23 Kas (temel/nad_sonuc.txt havuz testi): borsadaki istirakleri NAD'in cogu olan holdinglerde (dis kaynakli
+            # NAD'a kalibre: KCHOL, SAHOL, AGHOL, DOHOL) karar kutusundaki bilanco sirasi yerine NAD kullanilir.
+            # Konsolide bilanco puani holdingde test edildi ve calismadi. NAD iskontosu 3y en derin %20'de -> 'iyi'
+            # (126g endekse gore ort +20, t 2.9, n 27); diger durumlar ORTA (dar iskonto kotu cikmadi, UZAK DUR yok).
+            v = (by[h].get("temel") or {}).get("v3")
+            if c.get("kalibre_nad_mn") and v is not None:
+                et = v.get("etiketler") or []
+                v.update({"bilanco_sira": v.get("sira"), "bilanco_dilim": v.get("dilim"), "nad_karar": True, "nad_yuzdelik": round(yuz3, 1),
+                          "sira": 0.9 if yuz3 <= 20 else 0.7, "dilim": 5 if yuz3 <= 20 else 4,
+                          "etiketler_bilanco": et, "etiketler": [x for x in et if x != "Kotu bilanco surprizi"]})
         except Exception as e:
             print("[uyari] nad", h, e)
 
