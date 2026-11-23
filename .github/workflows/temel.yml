@@ -30,4 +30,4 @@ jobs:
           git config user.email "ikarus-bot@users.noreply.github.com"
           git add temel/ data/tufe.csv data/m3.csv
           git commit -m "Temel veri" || exit 0
-          for k in 1 2 3 4 5; do git pull --rebase --autostash -q && git push && break; sleep 5; done
+          for k in 1 2 3 4 5; do (git pull --rebase -X theirs --autostash -q || git rebase --abort) && git push && break; sleep 5; done

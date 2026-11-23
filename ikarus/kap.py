@@ -307,7 +307,7 @@ def _norm(x: str) -> str:
     return re.sub(r"[^A-Z0-9 ]", " ", re.sub(r"\s+", " ", x)).strip()
 
 
-def genel_form_topla(hisseler, bas: str = "2025-01-01", gun: int = 4, butce_dk: float = 25):
+def genel_form_topla(hisseler, bas: str = "2024-01-01", gun: int = 4, butce_dk: float = 40):
     """Verilen hisselerin en son 'Sirket Genel Bilgi Formu' bildirimleri (index). Tarih pencereleriyle tarar."""
     hs = set(hisseler)
     t0 = time.time()
@@ -329,7 +329,10 @@ def genel_form_topla(hisseler, bas: str = "2025-01-01", gun: int = 4, butce_dk: 
             kod = [k.strip() for k in str(r.get("stockCodes") or "").split(",")]
             for k in kod:
                 if k in hs:
-                    bul[k] = {"tarih": str(r.get("publishDate") or ""), "index": str(r.get("disclosureIndex") or "")}
+                    bul.setdefault(k, []).append({"tarih": str(r.get("publishDate") or ""), "index": str(r.get("disclosureIndex") or ""),
+                                                  "ozet": str(r.get("summary") or "")[:120]})
+                    if len(bul) == 1 and len(bul[k]) == 1:
+                        print("ornek form satiri:", str(r)[:900])
         a = b + pd.Timedelta(days=1)
         time.sleep(0.4)
     print(f"genel bilgi formu: {len(bul)}/{len(hs)} bulundu, son tarama {a:%Y-%m-%d}, {time.time() - t0:.0f} sn")
@@ -367,15 +370,23 @@ def holding_paylari(holdingler, bist: pd.DataFrame):
         if len(w) >= 2:
             anah.append((t, " ".join(w[:3]) if len(w) >= 3 else " ".join(w[:2])))
     sonuc, ham = {}, []
-    for h, v in bul.items():
-        try:
-            m = detay_metin(s, v["index"])
-        except Exception as e:
-            ham.append(f"== {h} {v} HATA {e}"); continue
-        rows = bagli_ortakliklar(m)
+    for h, lst in bul.items():
+        rows, v, denenen = [], lst[-1], 0
+        for v in reversed(lst):          # en yeniden eskiye: tabloyu iceren ilk form
+            if denenen >= 10:
+                break
+            denenen += 1
+            try:
+                m = detay_metin(s, v["index"])
+            except Exception as e:
+                ham.append(f"== {h} {v} HATA {e}"); time.sleep(2); continue
+            rows = bagli_ortakliklar(m)
+            time.sleep(0.8)
+            if rows:
+                break
         if not rows:
             j = m.find("Bağlı Ortaklık")
-            ham.append(f"== {h} {v} SATIR YOK, metin {len(m)}: " + m[max(0, j - 200):j + 1500])
+            ham.append(f"== {h} {len(lst)} form, {denenen} denendi, SATIR YOK; son metin {len(m)}: " + m[max(0, j - 200):j + 1200])
         bul_h = {}
         for r in rows:
             n = _norm(r["ad"])
@@ -385,5 +396,4 @@ def holding_paylari(holdingler, bist: pd.DataFrame):
         sonuc[h] = {"tarih": v["tarih"], "index": v["index"], "borsada": bul_h, "satir": len(rows)}
         ham.append(f"== {h} {v['tarih']} idx {v['index']} satir {len(rows)} borsada {bul_h}\n" +
                    "\n".join(f"   {r['oran']:6.2f} {r['pb']} {r['tur'][:12]:12s} {r['ad'][-90:]}" for r in rows[:80]))
-        time.sleep(1.0)
     return sonuc, ham

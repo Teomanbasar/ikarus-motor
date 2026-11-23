@@ -68,6 +68,43 @@ def seri(h, cfg, px, sermaye=None):
     return pd.DataFrame({"nad": nad, "pd": mcap, "iskonto": mcap / nad - 1}), eksik
 
 
+def havuz_test(cfg, hs, px, ser, xu):
+    """23 Kas: tum holdingler birlikte. Iskontonun kendi 3y yuzdeligi -> sonraki 63/126 gun BIST100'e gore fazla getiri.
+    Ortusmeyi azaltmak icin 21 gunde bir gozlem; t = ortalama / (ss / kok n)."""
+    T = []
+    for h in hs:
+        if h not in px:
+            continue
+        try:
+            S, _ = seri(h, cfg[h], px, ser)
+        except Exception:
+            continue
+        S = S[S.index >= "2021-01-01"].dropna()
+        if len(S) < 400:
+            continue
+        c = px[h]["close"].reindex(S.index)
+        x = xu.reindex(S.index).ffill()
+        d = pd.DataFrame({"y": S["iskonto"].rolling(756, min_periods=250).apply(lambda a: 100 * (a[:-1] < a[-1]).mean(), raw=True),
+                          "f63": 100 * (c.shift(-63) / c - x.shift(-63) / x), "f126": 100 * (c.shift(-126) / c - x.shift(-126) / x)})
+        d = d.iloc[::21].dropna(subset=["y"]).assign(h=h)
+        T.append(d)
+    if not T:
+        return []
+    T = pd.concat(T)
+    L = [f"\n== HAVUZ ({T.h.nunique()} holding, 21 gunde bir gozlem): iskonto 3y yuzdeligi -> BIST100'e gore fazla getiri"]
+    for a, b in [(0, 20), (20, 40), (40, 60), (60, 80), (80, 101)]:
+        X = T[(T.y >= a) & (T.y < b)]
+        for k in ("f63", "f126"):
+            v = X[k].dropna()
+            t = v.mean() / (v.std() / np.sqrt(len(v))) if len(v) > 2 else float("nan")
+            L.append(f"   yuzdelik {a:3d}-{min(b, 100):3d} {k:4s} n {len(v):4d} ort {v.mean():+6.1f} medyan {v.median():+6.1f} kazanma %{100 * (v > 0).mean():3.0f} t {t:+.1f}")
+    for k in ("f63", "f126"):
+        v1, v2 = T[T.y <= 30][k].dropna(), T[T.y >= 70][k].dropna()
+        L.append(f"   derin(<=30) - dar(>=70) {k}: {v1.mean() - v2.mean():+.1f} puan (n {len(v1)}/{len(v2)})")
+    L.append("   holding basina gozlem: " + ", ".join(f"{h} {n}" for h, n in T.h.value_counts().items()))
+    return L
+
+
 def usdtry():
     """Dolar/TL gunluk kapanis (Yahoo TRY=X)."""
     import yfinance as yf
@@ -143,6 +180,7 @@ def main():
                 L.append(f"   {ad:34s} gun {len(X):4d} | sonraki 63g BIST100'e gore ort {X.mean():+5.1f} medyan {X.median():+5.1f} kazanma %{100 * (X > 0).mean():3.0f}")
         w = S.resample("W-FRI").last().assign(hisse=h)
         tum.append(w)
+    L += havuz_test(cfg, hs, px, ser, xu)
     L.append("\nNot: gecmis seri bugunku istirak paylariyla hesaplandi (yaklasik). Test gunleri birbiriyle ortusuyor (63 gunluk pencereler); "
              "bagimsiz gozlem sayisi gun sayisindan cok daha az, sonuclari kaba isaret olarak oku.")
     (R / "nad.json").write_text(json.dumps({"olusturma": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"), "holdingler": ozet},
