@@ -1,14 +1,60 @@
-M3 (EVDS): 2026-11 eklendi
-50/625 61 sn
-100/625 107 sn
-150/625 146 sn
-200/625 187 sn
-250/625 232 sn
-300/625 275 sn
-350/625 321 sn
-400/625 365 sn
-450/625 405 sn
-500/625 449 sn
-550/625 489 sn
-600/625 530 sn
-625/625 hisse islendi, dosyada 609 hisse (555 sn)
+2AE	   5- Çıkarılmış Tahviller(Bonolar) Anapara, Taksit ve Faizleri	0	0	0	0
+2AF	   6- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2AG	   7- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2AH	   8- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0
+2B	  B- Esas Faaliyetlerden Borçlar 	5483958716	5769632301	5821966063	5036718360
+2BA	   1- Sigortacılık Faaliyetlerinden Borçlar 	5483958716	5769632301	5821966063	5036718360
+2BB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2BC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	0	0	0	0
+2BD	   4- Emeklilik Faaliyetlerinden Borçlar	0	0	0	0
+2BE	   5- Diğer Esas Faaliyetlerden Borçlar	0	0	0	0
+2BF	   6- Diğer Esas Faaliyetlerden Borçlar Borç Senetleri Reeskontu(-)	0	0	0	0
+2C	  C-İlişkili Taraflara Borçlar 	241143775	206354018	415263714	166938
+2CA	   1- Ortaklara Borçlar	0	0	0	0
+2CB	   2- İştiraklere Borçlar	0	0	0	0
+2CC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2CD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar	0	0	0	0
+2CE	   5- Personele Borçlar	972321	1563055	360420	166938
+2CF	   6- Diğer İlişkili Taraflara Borçlar	240171454	204790963	414903294	0
+2D	  D- Diğer Borçlar 	883617466	928686715	767913717	652967501
+2DA	   1- Alınan Depozito ve Teminatlar	167171611	155095624	135451675	128656630
+2DB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	150137463	167902824	142561638	59193226
+2DC	   3- Diğer Çeşitli Borçlar	566308392	605688267	489900404	465117645
+2DCA	   4- Diğer Çeşitli Borçlar Reeskontu (-)	0	0	0	0
+2E	  E-Sigortacılık Teknik Karşılıkları 	22203489912	21077222331	16872435015	14291304484
+2EA	   1- Kazanılmamış Primler Karşılığı - Net 	10878597129	10793694901	8883432883	6882673780
+2EB	   2- Devam Eden Riskler Karşılığı - Net 	1491321024	1394710270	974943993	700710040
+2EC	   3- Hayat Matematik Karşılığı - Net 	0	0	0	0
+2ED	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	9833549865	8888797258	7014039884	6707904068
+2EE	   5- İkramiye Ve İndirimler Karşılığı - Net	21894	19902	18255	16596
+2EF	   6- Yatırım Riski Hayat Sigortası Poliçe Sa. Ait Pol. Ayr. Karş. Net	0	0	0	0
+2EG	   7- Diğer Teknik Karşılıklar - Net	0	0	0	0
+2F	  F- Ödenecek Vergi Ve Benzeri Diğer Yükümlülükler İle Karşılıkları  	334405205	273568865	314346945	283309194
+2FA	   1- Ödenecek Vergi Ve Fonlar 	263945153	249731848	311899764	244862271
+2FB	   2- Ödenecek Sosyal Güvenlik Kesintileri 	3316846	3541568	2441667	2424883
+2FC	   3- Vadesi Geçmiş, Ertelenmiş Veya Taks. Vergi Diğ.Yük.	0	0	0	0
+2FD	   4- Ödenecek Diğer Vergi Ve Benzeri Yükümlülükler	5514	5514	5514	5512
+2FE	   5- Dönem Karı Vergi Ve Diğer Yasal Yükümlülük Karşılıkları 	67137692	20289935	225467622	275249447
+2FF	   6- Dönem Karının Peşin Ödenen Vergi Ve Diğer Yükümlülükleri (-)	0	0	-225467622	-239232919
+2FG	   7- Diğer Vergi Ve Benzeri Yükümlülük Karşılıkları 	0	0	0	0
+2FH	  G- Diğer Risklere İlişkin Karşılıklar	693274508	532841141	449863007	514700344
+2FI	   1- Kıdem Tazminatı Karşılığı	0	0	0	0
+2FJ	   2- Sosyal Yardım Sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2FK	   3- Maliyet Giderleri Karşılığı	693274508	532841141	449863007	514700344
+2G	  H- Gelecek Aylara Ait Gelirler Ve Gider Tahakkukları 	2050016895	2047665856	1649146481	1428461402
+2GA	   1- Gelecek Aylara Ait Gelirler 	1879686359	1901745366	1649146481	1428461402
+2GB	   2- Gider Tahakkukları	170330536	145920490	0	0
+2GC	   3- Gelecek Aylara Ait Diğer Gelirler Ve Gider Tahakkukları	0	0	0	0
+2H	  I- Diğer Kısa Vadeli Yükümlülükler 	0	0	0	0
+2HA	   1- Ertelenmiş Vergi Yükümlüğü	0	0	0	0
+2HB	   2- Sayım Ve Tesellüm Fazlalıkları 	0	0	0	0
+2HC	   3- Diğer Çeşitli Kısa Vadeli Yükümlülükler 	0	0	0	0
+2I	 III - Kısa Vadeli Yükümlülükler Toplamı	31935164100	30882257067	26329737751	22242716473
+2J	  A- Finansal Borçlar 	177507419	185774023	170548798	166319783
+2JA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2JB	   2- Finansal Kiralama İşlemlerinden Borçlar	366428602	393766238	360719006	371928650
+2JC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	-188921183	-207992215	-190170208	-205608867
+2JD	   4- Çıkarılmış Tahviller	0	0	0	0
+2JE	   5- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2JF	   6- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2JG	   7- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0

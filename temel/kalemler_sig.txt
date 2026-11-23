@@ -1,0 +1,1218 @@
+===== AKGRT UFRS (2026/9, 2026/6, 2025/12, 2025/9)
+1A	  A- Nakit Ve Nakit Benzeri Varlıklar 	11494395707	11948980204	8735326350	7617074300
+1AA	   1- Kasa	0	0	0	0
+1AB	   2- Alınan Çekler	0	0	0	0
+1AC	   3- Bankalar	7543824907	7706215336	5691769370	5386025708
+1AD	   4- Verilen Çekler Ve Ödeme Emirleri (-)	0	0	0	0
+1AE	   5- Banka Garantili ve Üç Aydan Kısa Vadeli Kredi Kartı Alacakları	3950570800	4242764868	3043556980	2231048592
+1AEA	   6- Diğer Nakit Ve Nakit Benzeri Varlıklar	0	0	0	0
+1B	  B- Finansal Varlıklar ile Riski Sigortalılara Ait Finansal Yatırımlar	14580770002	13858727344	12376005318	11125210050
+1BA	   1- Satılmaya Hazır Finansal Varlıklar	2583712760	2741306109	2822448144	2771538884
+1BB	   2- Vadeye Kadar Elde Tutulacak Finansal Varlıklar 	773619381	749624339	706497694	761127628
+1BC	   3- Alım Satım Amaçlı Finansal Varlıklar 	11220027306	10364375961	8843603515	7589645423
+1BD	   4- Krediler	0	0	0	0
+1BE	   5- Krediler Karşılığı (-)	0	0	0	0
+1BF	   6- Riski Hayat Poliçesi Sahiplerine Ait  Finansal Yatırımlar	3410555	3420935	3455965	2898115
+1BG	   7- Şirket Hissesi	0	0	0	0
+1BH	   8- Finansal Varlıklar Değer Düşüklüğü Karşılığı (-) 	0	0	0	0
+1C	  C- Esas Faaliyetlerden Alacaklar	7632222987	6173014824	7131553896	6359307984
+1CA	   1- Sigortacılık Faaliyetlerinden Alacaklar 	7598863417	6145342617	7106441417	6298469804
+1CB	   2- Sigortacılık Faaliyetlerinden Alacaklar Karşılığı (-)	-62244190	-57362388	-24421190	-12792467
+1CC	   3- Reasürans Faaliyetlerinden Alacaklar 	0	0	0	0
+1CD	   4- Reasürans Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1CE	   5- Sigorta Ve Reasürans Şirketleri Nezdindeki Depolar	0	0	0	0
+1CF	   6- Sigortalılara Krediler (İkrazlar)	0	0	0	0
+1CG	   7- Sigortalılara Krediler (İkrazlar) Karşılığı (-)	0	0	0	0
+1CH	   8- Emeklilik Faaliyetlerinden Alacaklar	0	0	0	0
+1CI	   9- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar	1136970506	1101597898	992885029	1018309375
+1CJ	   10- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar Karşılığı (-)	-1041366746	-1016563303	-943351360	-944678728
+1D	  D- İlişkili Taraflardan Alacaklar 	0	0	0	0
+1DA	   1- Ortaklardan Alacaklar 	0	0	0	0
+1DB	   2- İştiraklerden Alacaklar	0	0	0	0
+1DC	   3- Bağlı Ortaklıklardan Alacaklar	0	0	0	0
+1DD	   4- Müşterek Yönetime Tabi Teşebbüslerden Alacaklar 	0	0	0	0
+1DE	   5- Personelden Alacaklar	0	0	0	0
+1DF	   6- Diğer İlişkili Taraflardan Alacaklar	0	0	0	0
+1DG	   7- İlişkili Taraflardan Alacaklar Reeskontu (-)	0	0	0	0
+1DH	   8- İlişkili Taraflardan Şüpheli Alacaklar	0	0	0	0
+1DI	   9- İlişkili Taraflardan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1E	  E- Diğer Alacaklar	38370312	58302554	34115340	74379383
+1EA	   1- Finansal Kiralama Alacakları	0	0	0	0
+1EB	   2- Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)	0	0	0	0
+1EC	   3- Verilen Depozito ve Teminatlar	3962137	3855137	3854103	2679409
+1ED	   4- Diğer Çeşitli Alacaklar	34408175	54447417	30261237	71699974
+1EE	   5- Diğer Çeşitli Alacaklar Reeskontu(-)	0	0	0	0
+1EF	   6- Şüpheli Diğer Alacaklar	0	0	0	0
+1EG	   7- Şüpheli Diğer Alacaklar Karşılığı (-)	0	0	0	0
+1F	  F- Gelecek Aylara Ait Giderler Ve Gelir Tahakkukları 	4995722430	5104735320	3747662939	2641379307
+1FA	   1- Gelecek Aylara Ait Giderler 	4622230828	4487423094	3632964091	2580589777
+1FB	   2- Tahakkuk Etmiş Faiz Ve Kira Gelirleri	0	0	0	0
+1FC	   3- Gelir Tahakkukları	0	3249114	3249114	0
+1FD	   4- Gelecek Aylara Ait Diğer Giderler Ve Gelir Tahakkukları 	373491602	614063112	111449734	60789530
+1G	  G- Diğer Cari  Varlıklar	433382735	322243766	106271071	32648327
+1GA	   1- Gelecek Aylar İhtiyacı Stoklar	0	0	0	0
+1GB	   2- Peşin Ödenen Vergiler Ve Fonlar 	432436215	320633351	106160462	32438318
+1GC	   3- Ertelenmiş Vergi Varlıkları	0	0	0	0
+1GD	   4- İş Avansları 	140806	13986	5609	82509
+1GE	   5- Personele Verilen Avanslar 	805714	1596429	105000	127500
+1GF	   6- Sayım Ve Tesellüm Noksanları 	0	0	0	0
+1GG	   7- Diğer Çeşitli Cari Varlıklar 	0	0	0	0
+1GH	   8- Diğer Cari  Varlıklar Karşılığı (-)	0	0	0	0
+1H	 I- Cari Varlıklar Toplamı	39174864173	37466004012	32130934914	27849999351
+1J	  A- Esas Faaliyetlerden Alacaklar 	0	0	0	0
+1JA	   1- Sigortacılık Faaliyetlerinden Alacaklar 	0	0	0	0
+1JB	   2- Sigortacılık Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1JC	   3- Reasürans Faaliyetlerinden Alacaklar	0	0	0	0
+1JD	   4- Reasürans Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1JE	   5- Sigorta ve Reasürans Şirketleri Nezdindeki Depolar 	0	0	0	0
+1JF	   6- Sigortalılara Krediler (İkrazlar)	0	0	0	0
+1JG	   7- Sigortalılara Krediler (İkrazlar) Karşılığı (-)	0	0	0	0
+1JH	   8- Emeklilik Faaliyetlerinden Alacaklar	0	0	0	0
+1JJ	   9-Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar 	0	0	0	0
+1JK	   10- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1K	  B- İlişkili Taraflardan Alacaklar 	0	0	0	0
+1KA	   1- Ortaklardan Alacaklar 	0	0	0	0
+1KB	   2- İştiraklerden Alacaklar	0	0	0	0
+1KC	   3- Bağlı Ortaklıklardan Alacaklar 	0	0	0	0
+1KD	   4- Müşterek Yönetime Tabi Teşebbüslerden Alacaklar 	0	0	0	0
+1KE	   5- Personelden Alacaklar 	0	0	0	0
+1KF	   6- Diğer İlişkili Taraflardan Alacaklar	0	0	0	0
+1KG	   7- İlişkili Taraflardan Alacaklar Reeskontu (-)	0	0	0	0
+1KH	   8- İlişkili Taraflardan Şüpheli Alacaklar	0	0	0	0
+1KI	   9- İlişkili Taraflardan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1L	  C- Diğer Alacaklar	0	0	0	0
+1LA	   1- Finansal Kiralama Alacakları	0	0	0	0
+1LB	   2- Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)	0	0	0	0
+1LC	   3- Verilen Depozito ve Teminatlar	0	0	0	0
+1LD	   4- Diğer Çeşitli Alacaklar	0	0	0	0
+1LE	   5- Diğer Çeşitli Alacaklar Reeskontu(-)	0	0	0	0
+1LF	   6- Şüpheli Diğer Alacaklar	0	0	0	0
+1LG	   7- Şüpheli Diğer Alacaklar Karşılığı (-)	0	0	0	0
+1M	  D- Finansal Varlıklar 	17094836	17094836	9112816	8679757
+1MA	   1- Bağlı Menkul Kıymetler 	0	0	0	0
+1MB	   2- İştirakler 	17094836	17094836	9112816	8679757
+1MC	   3- İştirakler Sermaye Taahhütleri (-)	0	0	0	0
+1MD	   4- Bağlı Ortaklıklar	0	0	0	0
+1ME	   5- Bağlı Ortaklıklar Sermaye Taahhütleri (-)	0	0	0	0
+1MF	   6- Müşterek Yönetime Tabi Teşebbüsler	0	0	0	0
+1MG	   7- Müşterek Yönetime Tabi Teşebbüsler Sermaye Taahhütleri (-)	0	0	0	0
+1MH	   8- Finansal Varlıklar Ve Riski Sigortalılara Ait Finansal Yatırımlar	0	0	0	0
+1MI	   9- Diğer Finansal Varlıklar 	0	0	0	0
+1MJ	   10- Finansal Varlıklar Değer Düşüklüğü Karşılığı (-) 	0	0	0	0
+1N	  E- Maddi Varlıklar	576525905	604306243	578990247	347310705
+1NA	   1- Yatırım Amaçlı Gayrımenkuller	0	0	0	0
+1NB	   2- Yatırım Amaçlı  Gayrımenkuller Değer Düşüklüğü Karşılığı (-)	0	0	0	0
+1NC	   3- Kullanım Amaçlı Gayrımenkuller	5329	5329	5329	5329
+1ND	   4- Makine Ve Teçhizatlar 	0	0	0	0
+1NE	   5- Demirbaş Ve Tesisatlar 	197537266	202953146	203350819	144390100
+1NF	   6- Motorlu Taşıtlar 	10222	794892	794892	794892
+1NG	   7- Diğer Maddi Varlıklar (Özel Maliyet Bedelleri Dahil)	347496053	343874028	322987303	136511191
+1NH	   8- Kiralama Yoluyla Edinilmiş Maddi Varlıklar	272076278	265172072	273002082	257829170
+1NI	   9- Birikmiş Amortismanlar (-)	-240599243	-208493224	-221150178	-192219977
+1NJ	   10- Maddi Var. İlişkin Avanslar (Yap. Olan Yat. Dahil)	0	0	0	0
+1O	  F- Maddi Olmayan Varlıklar	1286679758	1171666998	1025469170	912512685
+1OA	   1- Haklar 	1573461152	1381544679	1119536423	1039625080
+1OB	   2- Şerefiye 	0	0	0	0
+1OC	   3- Faaliyet Öncesi Döneme Ait Giderler 	0	0	0	0
+1OD	   4- Araştırma Ve Geliştirme Giderleri  	0	0	0	0
+1OE	   6- Diğer Maddi Olmayan Varlıklar 	0	0	0	0
+1OF	   7- Birikmiş İtfalar (Amortismanlar) (-) 	-718251210	-635769085	-518037833	-469314248
+1OG	   8- Maddi Olmayan Varlıklara İlişkin Avanslar 	431469816	425891404	423970580	342201853
+1P	  G-Gelecek Yıllara Ait Giderler Ve Gelir Tahakkukları 	6592954	17851674	71228639	59676988
+1PA	   1- Gelecek Yıllara Ait Giderler	0	0	0	0
+1PB	   2- Gelir Tahakkukları  	0	0	0	0
+1PC	   3- Gelecek Yıllara Ait Diğer Giderler Ve Gelir   Tahakkukları 	6592954	17851674	71228639	59676988
+1R	  H-Diğer Cari Olmayan Varlıklar	946891597	836914865	673672818	704514134
+1RA	   1- Efektif Yabancı Para Hesapları	0	0	0	0
+1RB	   2- Döviz Hesapları	0	0	0	0
+1RC	   3- Gelecek Yıllar İhtiyacı Stoklar 	0	0	0	0
+1RD	   4- Peşin Ödenen Vergiler Ve Fonlar	0	0	0	0
+1RE	   5- Ertelenmiş Vergi Varlıkları	946891597	836914865	673672818	704514134
+1RF	   6- Diğer Çeşitli Cari Olmayan Varlıklar 	0	0	0	0
+1RG	   7- Diğer Cari Olmayan Varlıklar Amortismanı (-)	0	0	0	0
+1RH	   8- Diğer Cari Olmayan Varlıklar Karşılığı (-)	0	0	0	0
+1S	 II- Cari Olmayan Varlıklar Toplamı	2833785050	2647834616	2358473690	2032694269
+1Z	 AKTİF TOPLAMI	42008649223	40113838628	34489408604	29882693620
+2A	  A- Finansal Borçlar 	45257623	46285840	38802809	35088250
+2AA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2AB	   2- Finansal Kiralama İşlemelerinden Borçlar	136153984	135878811	116674627	109015587
+2AC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	-90896361	-89592971	-77871818	-73927337
+2AD	   4- Uzun Vadeli Kredilerin Ana Para Taksitleri Ve Faizleri 	0	0	0	0
+2AE	   5- Çıkarılmış Tahviller(Bonolar) Anapara, Taksit ve Faizleri	0	0	0	0
+2AF	   6- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2AG	   7- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2AH	   8- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0
+2B	  B- Esas Faaliyetlerden Borçlar 	5483958716	5769632301	5821966063	5036718360
+2BA	   1- Sigortacılık Faaliyetlerinden Borçlar 	5483958716	5769632301	5821966063	5036718360
+2BB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2BC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	0	0	0	0
+2BD	   4- Emeklilik Faaliyetlerinden Borçlar	0	0	0	0
+2BE	   5- Diğer Esas Faaliyetlerden Borçlar	0	0	0	0
+2BF	   6- Diğer Esas Faaliyetlerden Borçlar Borç Senetleri Reeskontu(-)	0	0	0	0
+2C	  C-İlişkili Taraflara Borçlar 	241143775	206354018	415263714	166938
+2CA	   1- Ortaklara Borçlar	0	0	0	0
+2CB	   2- İştiraklere Borçlar	0	0	0	0
+2CC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2CD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar	0	0	0	0
+2CE	   5- Personele Borçlar	972321	1563055	360420	166938
+2CF	   6- Diğer İlişkili Taraflara Borçlar	240171454	204790963	414903294	0
+2D	  D- Diğer Borçlar 	883617466	928686715	767913717	652967501
+2DA	   1- Alınan Depozito ve Teminatlar	167171611	155095624	135451675	128656630
+2DB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	150137463	167902824	142561638	59193226
+2DC	   3- Diğer Çeşitli Borçlar	566308392	605688267	489900404	465117645
+2DCA	   4- Diğer Çeşitli Borçlar Reeskontu (-)	0	0	0	0
+2E	  E-Sigortacılık Teknik Karşılıkları 	22203489912	21077222331	16872435015	14291304484
+2EA	   1- Kazanılmamış Primler Karşılığı - Net 	10878597129	10793694901	8883432883	6882673780
+2EB	   2- Devam Eden Riskler Karşılığı - Net 	1491321024	1394710270	974943993	700710040
+2EC	   3- Hayat Matematik Karşılığı - Net 	0	0	0	0
+2ED	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	9833549865	8888797258	7014039884	6707904068
+2EE	   5- İkramiye Ve İndirimler Karşılığı - Net	21894	19902	18255	16596
+2EF	   6- Yatırım Riski Hayat Sigortası Poliçe Sa. Ait Pol. Ayr. Karş. Net	0	0	0	0
+2EG	   7- Diğer Teknik Karşılıklar - Net	0	0	0	0
+2F	  F- Ödenecek Vergi Ve Benzeri Diğer Yükümlülükler İle Karşılıkları  	334405205	273568865	314346945	283309194
+2FA	   1- Ödenecek Vergi Ve Fonlar 	263945153	249731848	311899764	244862271
+2FB	   2- Ödenecek Sosyal Güvenlik Kesintileri 	3316846	3541568	2441667	2424883
+2FC	   3- Vadesi Geçmiş, Ertelenmiş Veya Taks. Vergi Diğ.Yük.	0	0	0	0
+2FD	   4- Ödenecek Diğer Vergi Ve Benzeri Yükümlülükler	5514	5514	5514	5512
+2FE	   5- Dönem Karı Vergi Ve Diğer Yasal Yükümlülük Karşılıkları 	67137692	20289935	225467622	275249447
+2FF	   6- Dönem Karının Peşin Ödenen Vergi Ve Diğer Yükümlülükleri (-)	0	0	-225467622	-239232919
+2FG	   7- Diğer Vergi Ve Benzeri Yükümlülük Karşılıkları 	0	0	0	0
+2FH	  G- Diğer Risklere İlişkin Karşılıklar	693274508	532841141	449863007	514700344
+2FI	   1- Kıdem Tazminatı Karşılığı	0	0	0	0
+2FJ	   2- Sosyal Yardım Sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2FK	   3- Maliyet Giderleri Karşılığı	693274508	532841141	449863007	514700344
+2G	  H- Gelecek Aylara Ait Gelirler Ve Gider Tahakkukları 	2050016895	2047665856	1649146481	1428461402
+2GA	   1- Gelecek Aylara Ait Gelirler 	1879686359	1901745366	1649146481	1428461402
+2GB	   2- Gider Tahakkukları	170330536	145920490	0	0
+2GC	   3- Gelecek Aylara Ait Diğer Gelirler Ve Gider Tahakkukları	0	0	0	0
+2H	  I- Diğer Kısa Vadeli Yükümlülükler 	0	0	0	0
+2HA	   1- Ertelenmiş Vergi Yükümlüğü	0	0	0	0
+2HB	   2- Sayım Ve Tesellüm Fazlalıkları 	0	0	0	0
+2HC	   3- Diğer Çeşitli Kısa Vadeli Yükümlülükler 	0	0	0	0
+2I	 III - Kısa Vadeli Yükümlülükler Toplamı	31935164100	30882257067	26329737751	22242716473
+2J	  A- Finansal Borçlar 	177507419	185774023	170548798	166319783
+2JA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2JB	   2- Finansal Kiralama İşlemlerinden Borçlar	366428602	393766238	360719006	371928650
+2JC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	-188921183	-207992215	-190170208	-205608867
+2JD	   4- Çıkarılmış Tahviller	0	0	0	0
+2JE	   5- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2JF	   6- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2JG	   7- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0
+2K	  B- Esas Faaliyetlerden Borçlar 	0	0	0	0
+2KA	   1- Sigortacılık Faaliyetlerinden Borçlar 	0	0	0	0
+2KB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2KC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	0	0	0	0
+2KD	   4- Emeklilik Faaliyetlerinden Borçlar	0	0	0	0
+2KE	   5- Diğer Esas Faaliyetlerden  Borçlar	0	0	0	0
+2KF	   6- Diğer Esas Faaliyetlerden  Borçlar Borç Senetleri Reeskontu (-)	0	0	0	0
+2L	  C- İlişkili Taraflara Borçlar 	0	0	0	0
+2LA	   1- Ortaklara Borçlar	0	0	0	0
+2LB	   2- İştiraklere Borçlar	0	0	0	0
+2LC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2LD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar 	0	0	0	0
+2LE	   5- Personele Borçlar 	0	0	0	0
+2LF	   6- Diğer İlişkili Taraflara Borçlar 	0	0	0	0
+2M	  D- Diğer Borçlar 	0	0	0	0
+2MA	   1- Alınan Depozito Ve Teminatlar 	0	0	0	0
+2MB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	0	0	0	0
+2MC	   2- Diğer Çeşitli Borçlar 	0	0	0	0
+2MCA	   3- Diğer Çeşitli Borçlar Reeskontu	0	0	0	0
+2MD	  E- Sigortacılık Teknik Karşılıkları 	457310519	406713106	300573111	252407546
+2MDA	   1- Kazanılmamış Primler Karşılığı – Net 	0	0	0	0
+2MDB	   2- Devam Eden Riskler Karşılığı - Net 	0	0	0	0
+2MDC	   3- Hayat Matematik Karşılığı - Net 	5115397	4739760	3988488	3731127
+2MDD	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	0	0	0	0
+2MDE	   5- İkramiye Ve İndirimler Karşılığı - Net	0	0	0	0
+2MDF	   6-Yatırım Riski Hayat Sigortası Poliçe Sah. Pol. Ayr.Kar. Net	0	0	0	0
+2MDG	   7- Diğer Teknik Karşılıklar - Net	452195122	401973346	296584623	248676419
+2MDH	  G-Diğer Yükümlülükler Ve Karşılıkları 	0	0	0	0
+2MDI	   1- Ödenecek Diğer Yükümlülükler  	0	0	0	0
+2MDJ	   2- Vadesi Geçmiş, Ert.ş Veya Tak. Vergi Ve Yük.	0	0	0	0
+2MDK	   3-Diğer Borç Ve Gider Karşılıkları 	0	0	0	0
+2MDM	  F- Diğer Risklere İlişkin Karşılıklar 	50775338	52267149	42393261	39652288
+2MDN	   1- Kıdem Tazminatı Karşılığı	50775338	52267149	42393261	39652288
+2MDO	   2- Sosyal yardım sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2MDP	  H-Gelecek Yıllara Ait Gelirler Ve Gider Tahakkukları 	0	0	0	0
+2MDR	   1- Gelecek Yıllara Ait Gelirler 	0	0	0	0
+2MDS	   2- Gider Tahakkukları	0	0	0	0
+2MDT	   3- Gelecek Yıllara Ait Diğer Gelirler Ve Gider Tahakkukları	0	0	0	0
+2MDU	  I- Diğer Uzun Vadeli Yükümlülükler	0	0	0	0
+2MDV	   1- Ertelenmiş Vergi Yükümlülüğü	0	0	0	0
+2MDY	   2- Diğer Uzun Vadeli Yükümlülükler 	0	0	0	0
+2MDZ	 IV- Uzun Vadeli Yükümlülükler Toplamı	685593276	644754278	513515170	458379617
+2MEA	  A- Ödenmiş Sermaye 	1612000000	1612000000	1612000000	1612000000
+2MEB	   1- (Nominal) Sermaye 	1612000000	1612000000	1612000000	1612000000
+2MEC	   2- Ödenmemiş Sermaye (-)	0	0	0	0
+2MED	   3- Sermaye Düzeltmesi Olumlu Farkları	0	0	0	0
+2MEE	   4- Sermaye Düzeltmesi Olumsuz Farkları (-)	0	0	0	0
+2MEEA	   5- Tescili Beklenen Sermaye	0	0	0	0
+2MEF	  B- Sermaye Yedekleri 	3463617	3463617	3463617	3463617
+2MEG	   1- Hisse Senedi İhraç Primleri 	3463617	3463617	3463617	3463617
+2MEH	   2- Hisse Senedi İptal Karları	0	0	0	0
+2MEI	   3- Sermayeye Eklenecek Satış Karları	0	0	0	0
+2MEJ	   4- Yabancı Para Çevirim Farkları	0	0	0	0
+2MEK	   5- Diğer Sermaye Yedekleri	0	0	0	0
+2MEL	  C- Kar Yedekleri 	4444647395	4518643567	468060943	577644694
+2MEM	   1- Yasal Yedekler 	360974513	360974513	242742052	242742052
+2MEN	   2- Statü Yedekleri	62	62	62	62
+2MEO	   3- Olağanüstü Yedekler	4210261314	4210261314	200091508	200091508
+2MEP	   4- Özel Fonlar (Yedekler)	-76887934	-75640269	-38123475	-29894695
+2MER	   5- Finansal Varlıkların Değerlemesi	-49700560	23047947	63350796	164705767
+2MES	   6- Diğer Kar Yedekleri 	0	0	0	0
+2MET	  D- Geçmiş Yıllar Karları 	1434228855	1434228855	3197981900	3074867835
+2MEU	   1- Geçmiş Yıllar Karları 	0	0	0	0
+2MEV	  E-Geçmiş Yıllar Zararları (-)	0	0	-121148616	-121148616
+2MEY	   1- Geçmiş Yıllar Zararları 	0	0	0	0
+2MEZ	  F-Dönem Net Karı 	1893551980	1018491244	2485797839	2034770000
+2MEZA	   1- Dönem Net Karı	1893551980	1018491244	2485797839	2034770000
+2MEZB	   2- Dönem Net Zararı (-)	0	0	0	0
+2MEZC	   3- Dağıtıma Konu Olmayan Kar	0	0	0	0
+2MEZD	  G-Azınlık Payları	0	0	0	0
+2O	 Özsermaye Toplamı	9387891847	8586827283	7646155683	7181597530
+2Z	PASİF TOPLAMI	42008649223	40113838628	34489408604	29882693620
+3A	 A- Hayat Dışı Teknik Gelir 	17458888033	10893379774	16823273117	12218439439
+3AA	  1- Kazanılmış Primler (Reasürör Payı Düşülmüş Olarak)	12312147359	7684828505	11269641918	8298142623
+3AAA	   1.1- Yazılan Primler (Reasürör Payı Düşülmüş Olarak)	14823688637	10014856801	14055886012	8809393663
+3AAAA	    1.1.1- Brüt Yazılan Primler (+)	32607367177	22096932144	35101021882	23625367466
+3AAAB	    1.1.2 -Reasüröre Devredilen Primler (-)	-17303747804	-11753298210	-20714734038	-14628890911
+3AAAC	    1.1.3- SGK'ya Aktarılan Primler (-)	-479930736	-328777133	-330401832	-187082892
+3AAB	   1.2- Kaz.Prim. Karş. Değ.(Reas. Payı ve Dev. K.Düşülmüş )(+/-) 	-1995164247	-1910262018	-2755027420	-754268319
+3AABA	    1.2.1- Kazanılmamış Primler Karşılığı (-)	-3856633205	-3844874400	-1695390783	1329807192
+3AABB	    1.2.2- Kazanılmamış Primler Karşılığında Reasürör Payı (+)	1308786661	1389209594	-443480557	-1602064471
+3AABC	    1.2.3- Kazanılmamış Primler Karşılığında SGK Payı (+)	552682297	545402788	-616156080	-482011040
+3AABD	   1.3- Dev.Eden Risk.Karş. (Reas.ürör Payı ve Dev. Kısım Düş.	-516377031	-419766278	-31216674	243017279
+3AACA	    1.3.1- Devam Eden Riskler Karşılığı (-)	-341864092	-260362433	887547039	1220899154
+3AACB	    1.3.2- Devam Eden Riskler Karşılığında Reasürör Payı (+)	-174512939	-159403845	-918763713	-977881875
+3AB	  2- Teknik Olmayan Bölümden Aktarılan Yatırım Gelirleri	5039317585	3151833580	5525820225	3959671333
+3AC	  3- Diğer Teknik Gelirler (Reasürör Payı Düşülmüş Olarak)	13125774	9002774	89062828	49671529
+3ACA	   3.1- Brüt Diğer Teknik Gelirler (+)	13125774	9002774	89062828	49671529
+3ACB	   3.2- Brüt Diğer Teknik Gelirlerde Reasürör Payı (-)	0	0	0	0
+3ACC	  4- Tahakkuk Eden Rücu ve Sovtaj Gelirleri (+)	94297315	47714915	-61251854	-89046046
+3B	 B- Hayat Dışı Teknik Gider(-)	-15299750585	-9769674697	-13551640694	-9635681598
+3BA	  1- Gerçekleşen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-8784715448	-5520756571	-8219431792	-6135456154
+3BAA	   1.1- Ödenen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-5965146195	-3645967186	-6545794585	-4767954763
+3BAAA	    1.1.1- Brüt Ödenen Hasarlar (-)	-14385315702	-9134209168	-19597375825	-14456814996
+3BAAB	    1.1.2- Ödenen Hasarlarda Reasürör Payı (+)	8420169507	5488241982	13051581240	9688860233
+3BAB	   1.2- Muallak Hasarlar Karş.Değ. (Reas.Pay Dev. Kıs.Düş. (+/-)	-2819569253	-1874789385	-1673637207	-1367501391
+3BABA	    1.2.1- Muallak Hasarlar Karşılığı (-)	-3812484934	-2783914473	-1851370013	-2854328597
+3BABB	    1.2.2- Muallak Hasarlar Karşılığında Reasürör Payı (+)	992915681	909125088	177732806	1486827206
+3BABC	  2- İkramiye ve İndirimler Karşılığında Değişim	-3639	-1647	-2612	-954
+3BABD	   2.1- İkramiye ve İndirimler Karşılığı (-)	-73158	-34199	-55446	-23139
+3BABE	   2.2- İkramiye ve İndirimler Karşılığında Reasürör Payı (+)	69519	32552	52834	22185
+3BC	  3- Diğer Teknik Karşılıklarda Değişim 	-155610498	-105388722	-118140398	-70232194
+3BD	  4- Faaliyet Giderleri (-)	-4323174830	-2842769322	-3865177346	-2676685253
+3BDA	  5- Matematik Karşılıklarda Değişim 	0	0	0	0
+3BDB	   5.1- Matematik Karşılıklar (-)	0	0	0	0
+3BDC	   5.2- Matematik Karşılıklarda Reasürör Payı (+)	0	0	0	0
+3BDD	  6- Diğer Teknik Giderler (-)	-2036246170	-1300758435	-1348888546	-753307043
+3BDE	   6.1- Brüt Diğer Teknik Giderler (-)	-2036246170	-1300758435	-1348888546	-753307043
+3BDF	   6.2- Brüt Diğer Teknik Giderlerde Reasürör Payı (+)	0	0	0	0
+3C	 C- Teknik Bölüm Dengesi- Hayat Dışı (A - B)	2159137448	1123705077	3271632423	2582757841
+3D	 D- Hayat Teknik Gelir 	311482	199203	316499	228689
+3DAA	  1- Kazanılmış Primler (Reasürör Payı Düşülmüş Olarak)	0	0	0	0
+3DAAA	   1.1- Yazılan Primler (Reasürör payı Düşülmüş Olarak) 	0	0	0	0
+3DAAB	    1.1.1- Brüt Yazılan Primler (+)	0	0	0	0
+3DAAC	    1.1.2- Reasüröre Devredilen Primler (-)	0	0	0	0
+3DAB	   1.2- Kazanılmamış Primler Karşılığında Değişim 	0	0	0	0
+3DABA	    1.2.1- Kazanılmamış Primler Karşılığı (-)	0	0	0	0
+3DABB	    1.2.2- Kazanılmamış Primler Karşılığında Reasürör Payı (+)	0	0	0	0
+3DABC	   1.3- Devam Eden Riskler Karşılığında Değişim 	0	0	0	0
+3DABD	    1.3.1- Devam Eden Riskler Karşılığı (-)	0	0	0	0
+3DABE	    1.3.2- Devam Eden Riskler Karşılığında Reasürör Payı (+)	0	0	0	0
+3DB	  2- Hayat Branşı Yatırım Geliri 	311482	199203	316499	228689
+3DC	  3- Yatırımlardaki Gerçekleşmemiş Karlar	0	0	0	0
+3DD	  4- Diğer Teknik Gelirler (Reasürör Payı Düşülmüş Olarak)	0	0	0	0
+3DDA	   4.1- Brüt Diğer Teknik Gelirler (+/-)	0	0	0	0
+3DDB	   4.2- Brüt Diğer Teknik Gelirlerde Reasürör Payı (+/-)	0	0	0	0
+3DDC	  5- Tahakkuk Eden Rücu Gelirleri (+)	0	0	0	0
+3E	 E- Hayat Teknik Gider 	-1462539	-976151	-1450033	-1031343
+3EA	  1- Gerçekleşen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-335630	-224879	-430025	-268696
+3EAA	   1.1- Ödenen Tazminatlar (Reasürör Payı Düşülmüş Olarak) 	-394902	-256890	-447838	-286509
+3EAAA	    1.1.1- Brüt Ödenen Tazminatlar (-)	-394902	-256890	-447838	-286509
+3EAAB	    1.1.2- Ödenen Tazminatlarda Reasürör Payı (+)	0	0	0	0
+3EAB	   1.2- Muallak Tazminatlar Karşılığında Değişim 	59272	32011	17813	17813
+3EABA	    1.2.1- Muallak Tazminatlar Karşılığı (-)	59272	32011	17813	17813
+3EABB	    1.2.2- Muallak Hasarlar Karşılığında Reasürör Payı (+)	0	0	0	0
+3EABC	  2- İkramiye ve İndirimler Karşılığında Değişim	0	0	0	0
+3EABD	   2.1- İkramiye ve İndirimler Karşılığı (-)	0	0	0	0
+3EABE	   2.2- İkramiye ve İndirimler Karşılığında Reasürör Payı (+)	0	0	0	0
+3EBA	  3- Matematik Karşılıklarda Değişim 	-1126909	-751272	-1020008	-762647
+3EBAA	   3.1- Matematik Karşılıklar (-)	-1126909	-751272	-1020008	-762647
+3EBAB	    3.1.1- Aktüeryal Matematik Karşılık (-)	-1014218	-676145	-918007	-686382
+3EBAC	    3.1.2- Kar Payı Karşılığı (Yat.Riski Pol. Sah. Ait Pol.Ayr.Krş (-))	-112691	-75127	-102001	-76265
+3EBAD	   3.2- Matematik Karşılığında Reasürör Payı (+)	0	0	0	0
+3EBAE	    3.2.1- Aktüeryal Matematik Karşılıklar Reasürör Payı (+)	0	0	0	0
+3EBAF	    3.2.2- Kar P. Karş.Reas. Payı (Yat.Ris.Pol. Sah. Ait Pol.Ayr.Krş (-))	0	0	0	0
+3EBB	  4- Diğer Teknik Karş. Değ. (Reas.Pay Dev. Kıs.Düş.(+/-)	0	0	0	0
+3EBC	  5- Faaliyet Giderleri (-) 	0	0	0	0
+3EBD	  6- Yatırım Giderler (-)	0	0	0	0
+3EBE	  7- Yatırımlardaki Gerçekleşmemiş Zararlar (-)	0	0	0	0
+3EBF	  8- Teknik Olmayan Bölüme Aktarılan Yatırım Gelirleri (-)	0	0	0	0
+3F	 F- Teknik Bölüm Dengesi- Hayat  (D – E)	-1151057	-776948	-1133534	-802654
+3FA	 G- Emeklilik Teknik Gelir	0	0	0	0
+3FB	  1- Fon İşletim Gelirleri 	0	0	0	0
+3FC	  2- Yönetim Gideri Kesintisi 	0	0	0	0
+3FD	  3- Giriş Aidatı Gelirleri 	0	0	0	0
+3FE	  4- Ara Verme Halinde Yönetim Gideri Kesintisi	0	0	0	0
+3FG	  5- Özel Hizmet Gideri Kesintisi	0	0	0	0
+3FH	  6- Sermaye Tahsis Avansı Değer Artış Gelirleri	0	0	0	0
+3FI	  7- Diğer Teknik Gelirler	0	0	0	0
+3FJ	 H- Emeklilik Teknik Gideri	0	0	0	0
+3FJA	  1- Fon İşletim Giderleri (-)  	0	0	0	0
+3FJB	  2- Sermaye Tahsis Avansları Değer Azalış Giderleri(-)	0	0	0	0
+3FJC	  3- Faaliyet Giderleri (-)	0	0	0	0
+3FJD	  4- Diğer Teknik Giderler (-) 	0	0	0	0
+3FK	 I- Teknik Bölüm Dengesi- Emeklilik	0	0	0	0
+3FKA	II-TEKNİK OLMAYAN BÖLÜM 	0	0	0	0
+3H	 C- Teknik Bölüm Dengesi- Hayat Dışı	2159137448	1123705077	3271632423	2582757841
+3I	 F- Teknik Bölüm Dengesi- Hayat 	-1151057	-776948	-1133534	-802654
+3J	 I - Teknik Bölüm Dengesi- Emeklilik	0	0	0	0
+3K	 J- Genel Teknik Bölüm Dengesi	2157986391	1122928129	3270498889	2581955187
+3L	 K- Yatırım Gelirleri	7719647469	5281415133	7424815780	5810671573
+3LA	  1- Finansal Yatırımlardan Elde Edilen Gelirler	2051347532	1119101845	2006162981	1647454478
+3LB	  2-Finansal Yatırımların Nakde Çevrilmesinden Elde Edilen Karlar	139018413	42420784	119221605	77563896
+3LC	  3- Finansal Yatırımların Değerlemesi	2628063016	1790869260	2833185507	1923503827
+3LD	  4- Kambiyo Karları	2901218508	2329023244	2466245687	2162149372
+3LE	  5- iştiraklerden Gelirler	0	0	0	0
+3LF	  6- Bağlı Ortaklıklar ve Müşterek Yönetime Tabi Teşebbüslerden Gelirler	0	0	0	0
+3LG	  7- Arazi, Arsa ile Binalardan Elde Edilen Gelirler	0	0	0	0
+3LH	  8- Türev Ürünlerden Elde Edilen Gelirler	0	0	0	0
+3LI	  9- Diğer Yatırımlar	0	0	0	0
+3LJ	  10- Hayat Teknik Bölümünden Aktarılan Yatırım Gelirleri	0	0	0	0
+3M	 L- Yatırım Giderleri (-)	-8096245107	-5517750107	-7794512782	-6083142230
+3MA	  1- Yatırım Yönetim Giderleri – Faiz Dahil (-)	-65166383	-44625800	-84934954	-65596052
+3MB	  2- Yatırımlar Değer Azalışları (-)	-167078043	-25834139	-66676490	-229951731
+3MC	  3- Yatırımların Nakte Çevrilmesi Sonucunda Oluşan Zararlar (-)	-2104132	-1512924	-6073056	-4360776
+3MD	  4- Hayat Dışı Teknik Bölümüne Aktarılan Yatırım Gelirleri (-)	-5039317585	-3151833580	-5525820225	-3959671333
+3ME	  5- Türev Ürünler Sonucunda Oluşan Zararlar (-)	0	0	0	0
+3MF	  6- Kambiyo Zararları (-)  	-2511147708	-2102234491	-1826246011	-1616693459
+3MG	  7- Amortisman Giderleri (-)	-311431256	-191709173	-284762046	-206868879
+3MH	  8- Diğer Yatırım Giderleri (-) 	0	0	0	0
+3N	 M- Diğer Faaliyetlerden ve Olağandışı Faal. Gelir ve Karlar(+/-)	105737896	78625001	-189536426	534916
+3NA	  1- Karşılıklar Hesabı (+/-)	-89424872	-56129135	-62815000	-167967073
+3NB	  2- Reeskont Hesabı (+/-)	0	0	0	0
+3NC	  3- Özellikli Sigortalar Hesabı (+/-)	12125976	15210040	7999704	7743052
+3ND	  4- Enflasyon Düzeltmesi Hesabı (+/-)	0	0	0	0
+3NE	  5- Ertelenmiş Vergi Varlığı Hesabı (+/-)	210902316	141900402	135726836	141183815
+3NF	  6- Ertelenmiş Vergi Yükümlülüğü Gideri (-)	0	0	0	0
+3NG	  7- Diğer Gelir ve Karlar	28151687	15157516	57061617	51726970
+3NH	  8- Diğer Gider ve Zararlar (-)	-56017211	-37513822	-327509583	-32151848
+3NI	  9- Önceki Yıl Gelir ve Karları	0	0	0	0
+3NJ	  10- Önceki Yıl Gider ve Zararları(-)	0	0	0	0
+3Z	 N- Dönem Net Karı veya Zararı	1893551980	1018491244	2485797839	2034770000
+3ZA	  1- Dönem Karı Ve Zararı	1887126649	965218156	2711265461	2310019446
+3ZB	  2- Dönem Karı Vergi ve Diğer Yasal Yükümlülük Karşılıkları(-)	6425331	53273088	-225467622	-275249446
+3ZC	  3- Dönem Net Kar veya Zararı	1893551980	1018491244	2485797839	2034770000
+3ZD	  4- Enflasyon Düzeltme Hesabı	0	0	0	0
+===== ANHYT UFRS (2026/9, 2026/6, 2025/12, 2025/9)
+1A	  A- Nakit Ve Nakit Benzeri Varlıklar 	8645708635	6732468491	8218245096	7393319459
+1AA	   1- Kasa	8683	9385	7565	8758
+1AB	   2- Alınan Çekler	0	0	0	0
+1AC	   3- Bankalar	4642919015	2897637404	4232461792	4231023380
+1AD	   4- Verilen Çekler Ve Ödeme Emirleri (-)	0	0	0	0
+1AE	   5- Banka Garantili ve Üç Aydan Kısa Vadeli Kredi Kartı Alacakları	4002780937	3834821702	3985775739	3162287321
+1AEA	   6- Diğer Nakit Ve Nakit Benzeri Varlıklar	0	0	0	0
+1B	  B- Finansal Varlıklar ile Riski Sigortalılara Ait Finansal Yatırımlar	60714844993	58039948903	51579907282	45183871159
+1BA	   1- Satılmaya Hazır Finansal Varlıklar	13192065256	12068694522	7842739618	7167041459
+1BB	   2- Vadeye Kadar Elde Tutulacak Finansal Varlıklar 	0	0	0	0
+1BC	   3- Alım Satım Amaçlı Finansal Varlıklar 	3145018438	4030210360	5572259333	3451149617
+1BD	   4- Krediler	11509408	0	927218567	827525843
+1BE	   5- Krediler Karşılığı (-)	0	0	0	0
+1BF	   6- Riski Hayat Poliçesi Sahiplerine Ait  Finansal Yatırımlar	44366251891	41941044021	37237689764	33738154240
+1BG	   7- Şirket Hissesi	0	0	0	0
+1BH	   8- Finansal Varlıklar Değer Düşüklüğü Karşılığı (-) 	0	0	0	0
+1C	  C- Esas Faaliyetlerden Alacaklar	5565217351	5021656671	3785397827	3297931555
+1CA	   1- Sigortacılık Faaliyetlerinden Alacaklar 	834868294	845083352	717362320	592928912
+1CB	   2- Sigortacılık Faaliyetlerinden Alacaklar Karşılığı (-)	-2574	-2574	-2574	-2574
+1CC	   3- Reasürans Faaliyetlerinden Alacaklar 	0	0	0	0
+1CD	   4- Reasürans Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1CE	   5- Sigorta Ve Reasürans Şirketleri Nezdindeki Depolar	0	0	0	0
+1CF	   6- Sigortalılara Krediler (İkrazlar)	4276827695	3744000281	2691707129	2383757839
+1CG	   7- Sigortalılara Krediler (İkrazlar) Karşılığı (-)	0	0	0	0
+1CH	   8- Emeklilik Faaliyetlerinden Alacaklar	453523936	432575612	376330952	321247378
+1CI	   9- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar	115055	115055	115055	115055
+1CJ	   10- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar Karşılığı (-)	-115055	-115055	-115055	-115055
+1D	  D- İlişkili Taraflardan Alacaklar 	75989	53204	-24952	15236
+1DA	   1- Ortaklardan Alacaklar 	0	0	0	0
+1DB	   2- İştiraklerden Alacaklar	0	0	0	0
+1DC	   3- Bağlı Ortaklıklardan Alacaklar	0	0	0	0
+1DD	   4- Müşterek Yönetime Tabi Teşebbüslerden Alacaklar 	0	0	0	0
+1DE	   5- Personelden Alacaklar	75989	53204	-24952	15236
+1DF	   6- Diğer İlişkili Taraflardan Alacaklar	0	0	0	0
+1DG	   7- İlişkili Taraflardan Alacaklar Reeskontu (-)	0	0	0	0
+1DH	   8- İlişkili Taraflardan Şüpheli Alacaklar	0	0	0	0
+1DI	   9- İlişkili Taraflardan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1E	  E- Diğer Alacaklar	1452721892	1254352574	1656240496	1506412908
+1EA	   1- Finansal Kiralama Alacakları	0	0	0	0
+1EB	   2- Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)	0	0	0	0
+1EC	   3- Verilen Depozito ve Teminatlar	645939	620001	579380	564377
+1ED	   4- Diğer Çeşitli Alacaklar	1452075953	1253732573	1655661116	1505848531
+1EE	   5- Diğer Çeşitli Alacaklar Reeskontu(-)	0	0	0	0
+1EF	   6- Şüpheli Diğer Alacaklar	0	0	0	0
+1EG	   7- Şüpheli Diğer Alacaklar Karşılığı (-)	0	0	0	0
+1F	  F- Gelecek Aylara Ait Giderler Ve Gelir Tahakkukları 	3423794425	3168096140	2871725429	2699389591
+1FA	   1- Gelecek Aylara Ait Giderler 	3158194489	2937701631	2697554427	2503921538
+1FB	   2- Tahakkuk Etmiş Faiz Ve Kira Gelirleri	1266572	1829583	1310669	1797491
+1FC	   3- Gelir Tahakkukları	0	0	0	0
+1FD	   4- Gelecek Aylara Ait Diğer Giderler Ve Gelir Tahakkukları 	264333364	228564926	172860333	193670562
+1G	  G- Diğer Cari  Varlıklar	15944	15944	15944	30944
+1GA	   1- Gelecek Aylar İhtiyacı Stoklar	0	0	0	0
+1GB	   2- Peşin Ödenen Vergiler Ve Fonlar 	8444	8444	8444	8444
+1GC	   3- Ertelenmiş Vergi Varlıkları	0	0	0	0
+1GD	   4- İş Avansları 	7500	7500	7500	22500
+1GE	   5- Personele Verilen Avanslar 	0	0	0	0
+1GF	   6- Sayım Ve Tesellüm Noksanları 	0	0	0	0
+1GG	   7- Diğer Çeşitli Cari Varlıklar 	0	0	0	0
+1GH	   8- Diğer Cari  Varlıklar Karşılığı (-)	0	0	0	0
+1H	 I- Cari Varlıklar Toplamı	79802379229	74216591927	68111507122	60080970852
+1J	  A- Esas Faaliyetlerden Alacaklar 	426714509019	406163386603	373395340727	314782243499
+1JA	   1- Sigortacılık Faaliyetlerinden Alacaklar 	0	0	0	0
+1JB	   2- Sigortacılık Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1JC	   3- Reasürans Faaliyetlerinden Alacaklar	0	0	0	0
+1JD	   4- Reasürans Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1JE	   5- Sigorta ve Reasürans Şirketleri Nezdindeki Depolar 	0	0	0	0
+1JF	   6- Sigortalılara Krediler (İkrazlar)	0	0	0	0
+1JG	   7- Sigortalılara Krediler (İkrazlar) Karşılığı (-)	0	0	0	0
+1JH	   8- Emeklilik Faaliyetlerinden Alacaklar	426714509019	406163386603	373395340727	314782243499
+1JJ	   9-Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar 	0	0	0	0
+1JK	   10- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1K	  B- İlişkili Taraflardan Alacaklar 	0	0	0	0
+1KA	   1- Ortaklardan Alacaklar 	0	0	0	0
+1KB	   2- İştiraklerden Alacaklar	0	0	0	0
+1KC	   3- Bağlı Ortaklıklardan Alacaklar 	0	0	0	0
+1KD	   4- Müşterek Yönetime Tabi Teşebbüslerden Alacaklar 	0	0	0	0
+1KE	   5- Personelden Alacaklar 	0	0	0	0
+1KF	   6- Diğer İlişkili Taraflardan Alacaklar	0	0	0	0
+1KG	   7- İlişkili Taraflardan Alacaklar Reeskontu (-)	0	0	0	0
+1KH	   8- İlişkili Taraflardan Şüpheli Alacaklar	0	0	0	0
+1KI	   9- İlişkili Taraflardan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1L	  C- Diğer Alacaklar	0	0	0	0
+1LA	   1- Finansal Kiralama Alacakları	0	0	0	0
+1LB	   2- Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)	0	0	0	0
+1LC	   3- Verilen Depozito ve Teminatlar	0	0	0	0
+1LD	   4- Diğer Çeşitli Alacaklar	0	0	0	0
+1LE	   5- Diğer Çeşitli Alacaklar Reeskontu(-)	0	0	0	0
+1LF	   6- Şüpheli Diğer Alacaklar	0	0	0	0
+1LG	   7- Şüpheli Diğer Alacaklar Karşılığı (-)	0	0	0	0
+1M	  D- Finansal Varlıklar 	19447648	19447648	19447648	19447648
+1MA	   1- Bağlı Menkul Kıymetler 	12901876	12901876	12901876	12901876
+1MB	   2- İştirakler 	12762193	12762193	12762193	12762193
+1MC	   3- İştirakler Sermaye Taahhütleri (-)	0	0	0	0
+1MD	   4- Bağlı Ortaklıklar	0	0	0	0
+1ME	   5- Bağlı Ortaklıklar Sermaye Taahhütleri (-)	0	0	0	0
+1MF	   6- Müşterek Yönetime Tabi Teşebbüsler	0	0	0	0
+1MG	   7- Müşterek Yönetime Tabi Teşebbüsler Sermaye Taahhütleri (-)	0	0	0	0
+1MH	   8- Finansal Varlıklar Ve Riski Sigortalılara Ait Finansal Yatırımlar	0	0	0	0
+1MI	   9- Diğer Finansal Varlıklar 	0	0	0	0
+1MJ	   10- Finansal Varlıklar Değer Düşüklüğü Karşılığı (-) 	-6216421	-6216421	-6216421	-6216421
+1N	  E- Maddi Varlıklar	927986931	861624530	767635108	572240403
+1NA	   1- Yatırım Amaçlı Gayrımenkuller	286795000	286795000	247252500	220742500
+1NB	   2- Yatırım Amaçlı  Gayrımenkuller Değer Düşüklüğü Karşılığı (-)	0	0	0	0
+1NC	   3- Kullanım Amaçlı Gayrımenkuller	62100000	62100000	52945000	48000000
+1ND	   4- Makine Ve Teçhizatlar 	177215204	177015716	150625260	128615084
+1NE	   5- Demirbaş Ve Tesisatlar 	23483136	22883371	15237707	7532682
+1NF	   6- Motorlu Taşıtlar 	14427409	14427409	10637659	856385
+1NG	   7- Diğer Maddi Varlıklar (Özel Maliyet Bedelleri Dahil)	201445150	168361378	154165277	26233650
+1NH	   8- Kiralama Yoluyla Edinilmiş Maddi Varlıklar	659935045	575413207	493916686	458385456
+1NI	   9- Birikmiş Amortismanlar (-)	-497414013	-445371551	-357144981	-318125354
+1NJ	   10- Maddi Var. İlişkin Avanslar (Yap. Olan Yat. Dahil)	0	0	0	0
+1O	  F- Maddi Olmayan Varlıklar	198325377	204545711	172999329	63990318
+1OA	   1- Haklar 	192337929	192337929	114741932	114741932
+1OB	   2- Şerefiye 	0	0	0	0
+1OC	   3- Faaliyet Öncesi Döneme Ait Giderler 	0	0	0	0
+1OD	   4- Araştırma Ve Geliştirme Giderleri  	0	0	0	0
+1OE	   6- Diğer Maddi Olmayan Varlıklar 	0	0	0	0
+1OF	   7- Birikmiş İtfalar (Amortismanlar) (-) 	-122903674	-116279808	-113777473	-113600858
+1OG	   8- Maddi Olmayan Varlıklara İlişkin Avanslar 	128891122	128487590	172034870	62849244
+1P	  G-Gelecek Yıllara Ait Giderler Ve Gelir Tahakkukları 	17183326	20843971	15491693	8307364
+1PA	   1- Gelecek Yıllara Ait Giderler	0	0	0	0
+1PB	   2- Gelir Tahakkukları  	0	0	0	0
+1PC	   3- Gelecek Yıllara Ait Diğer Giderler Ve Gelir   Tahakkukları 	17183326	20843971	15491693	8307364
+1R	  H-Diğer Cari Olmayan Varlıklar	281772727	437364610	397827691	429290127
+1RA	   1- Efektif Yabancı Para Hesapları	0	0	0	0
+1RB	   2- Döviz Hesapları	0	0	0	0
+1RC	   3- Gelecek Yıllar İhtiyacı Stoklar 	0	0	0	0
+1RD	   4- Peşin Ödenen Vergiler Ve Fonlar	0	0	0	0
+1RE	   5- Ertelenmiş Vergi Varlıkları	281772727	437364610	397827691	429290127
+1RF	   6- Diğer Çeşitli Cari Olmayan Varlıklar 	0	0	0	0
+1RG	   7- Diğer Cari Olmayan Varlıklar Amortismanı (-)	0	0	0	0
+1RH	   8- Diğer Cari Olmayan Varlıklar Karşılığı (-)	0	0	0	0
+1S	 II- Cari Olmayan Varlıklar Toplamı	428159225028	407707213073	374768742196	315875519359
+1Z	 AKTİF TOPLAMI	507961604257	481923805000	442880249318	375956490211
+2A	  A- Finansal Borçlar 	132901461	120485913	103257556	93947402
+2AA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2AB	   2- Finansal Kiralama İşlemelerinden Borçlar	213801211	187079481	159306036	145468216
+2AC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	-80899750	-66593568	-56048480	-51520814
+2AD	   4- Uzun Vadeli Kredilerin Ana Para Taksitleri Ve Faizleri 	0	0	0	0
+2AE	   5- Çıkarılmış Tahviller(Bonolar) Anapara, Taksit ve Faizleri	0	0	0	0
+2AF	   6- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2AG	   7- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2AH	   8- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0
+2B	  B- Esas Faaliyetlerden Borçlar 	5995567139	6157358943	7212717894	5783564002
+2BA	   1- Sigortacılık Faaliyetlerinden Borçlar 	860788730	1168500172	982322118	1164823338
+2BB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2BC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	127785630	132789937	114475100	106999361
+2BD	   4- Emeklilik Faaliyetlerinden Borçlar	4949916335	4791950680	6070705843	4474875099
+2BE	   5- Diğer Esas Faaliyetlerden Borçlar	57076444	64118154	45214833	36866204
+2BF	   6- Diğer Esas Faaliyetlerden Borçlar Borç Senetleri Reeskontu(-)	0	0	0	0
+2C	  C-İlişkili Taraflara Borçlar 	638910	626199	1135579	490186
+2CA	   1- Ortaklara Borçlar	117003	173576	147265	125210
+2CB	   2- İştiraklere Borçlar	0	0	0	0
+2CC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2CD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar	0	0	0	0
+2CE	   5- Personele Borçlar	519725	450441	986822	363484
+2CF	   6- Diğer İlişkili Taraflara Borçlar	2182	2182	1492	1492
+2D	  D- Diğer Borçlar 	20000842	96079049	216245412	60227705
+2DA	   1- Alınan Depozito ve Teminatlar	2253908	2379656	1077129	1001387
+2DB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	0	0	0	0
+2DC	   3- Diğer Çeşitli Borçlar	17746934	93699393	215168283	59226318
+2DCA	   4- Diğer Çeşitli Borçlar Reeskontu (-)	0	0	0	0
+2E	  E-Sigortacılık Teknik Karşılıkları 	57326264552	53793707274	46754147697	42117092391
+2EA	   1- Kazanılmamış Primler Karşılığı - Net 	3462647438	3231008899	2915887445	2414541972
+2EB	   2- Devam Eden Riskler Karşılığı - Net 	193032	0	0	0
+2EC	   3- Hayat Matematik Karşılığı - Net 	53031566288	49778963917	43114497129	39015283339
+2ED	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	831358063	783217627	722973484	686434912
+2EE	   5- İkramiye Ve İndirimler Karşılığı - Net	499731	516831	789639	832168
+2EF	   6- Yatırım Riski Hayat Sigortası Poliçe Sa. Ait Pol. Ayr. Karş. Net	0	0	0	0
+2EG	   7- Diğer Teknik Karşılıklar - Net	0	0	0	0
+2F	  F- Ödenecek Vergi Ve Benzeri Diğer Yükümlülükler İle Karşılıkları  	1207830526	1078287073	1109891291	767715423
+2FA	   1- Ödenecek Vergi Ve Fonlar 	563906805	534651568	402928645	332584810
+2FB	   2- Ödenecek Sosyal Güvenlik Kesintileri 	89289216	87760406	51707622	52598378
+2FC	   3- Vadesi Geçmiş, Ertelenmiş Veya Taks. Vergi Diğ.Yük.	0	0	0	0
+2FD	   4- Ödenecek Diğer Vergi Ve Benzeri Yükümlülükler	9480	3108	2961	2961
+2FE	   5- Dönem Karı Vergi Ve Diğer Yasal Yükümlülük Karşılıkları 	2198068182	1339642637	2189763849	1309621868
+2FF	   6- Dönem Karının Peşin Ödenen Vergi Ve Diğer Yükümlülükleri (-)	-1643443157	-883770646	-1534511786	-927092594
+2FG	   7- Diğer Vergi Ve Benzeri Yükümlülük Karşılıkları 	0	0	0	0
+2FH	  G- Diğer Risklere İlişkin Karşılıklar	716893468	363045964	377912916	483253886
+2FI	   1- Kıdem Tazminatı Karşılığı	0	0	0	0
+2FJ	   2- Sosyal Yardım Sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2FK	   3- Maliyet Giderleri Karşılığı	716893468	363045964	377912916	483253886
+2G	  H- Gelecek Aylara Ait Gelirler Ve Gider Tahakkukları 	363703593	310526119	145500256	178001038
+2GA	   1- Gelecek Aylara Ait Gelirler 	6481535	7895351	2243405	4058398
+2GB	   2- Gider Tahakkukları	357221375	302630085	143256168	173941957
+2GC	   3- Gelecek Aylara Ait Diğer Gelirler Ve Gider Tahakkukları	683	683	683	683
+2H	  I- Diğer Kısa Vadeli Yükümlülükler 	0	0	0	0
+2HA	   1- Ertelenmiş Vergi Yükümlüğü	0	0	0	0
+2HB	   2- Sayım Ve Tesellüm Fazlalıkları 	0	0	0	0
+2HC	   3- Diğer Çeşitli Kısa Vadeli Yükümlülükler 	0	0	0	0
+2I	 III - Kısa Vadeli Yükümlülükler Toplamı	65763800491	61920116534	55920808601	49484292033
+2J	  A- Finansal Borçlar 	240523639	207211474	202337866	202033851
+2JA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2JB	   2- Finansal Kiralama İşlemlerinden Borçlar	322416601	274027180	251005090	252605480
+2JC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	-81892962	-66815706	-48667224	-50571629
+2JD	   4- Çıkarılmış Tahviller	0	0	0	0
+2JE	   5- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2JF	   6- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2JG	   7- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0
+2K	  B- Esas Faaliyetlerden Borçlar 	426714509019	406163386603	373395340727	314782243499
+2KA	   1- Sigortacılık Faaliyetlerinden Borçlar 	0	0	0	0
+2KB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2KC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	0	0	0	0
+2KD	   4- Emeklilik Faaliyetlerinden Borçlar	426714509019	406163386603	373395340727	314782243499
+2KE	   5- Diğer Esas Faaliyetlerden  Borçlar	0	0	0	0
+2KF	   6- Diğer Esas Faaliyetlerden  Borçlar Borç Senetleri Reeskontu (-)	0	0	0	0
+2L	  C- İlişkili Taraflara Borçlar 	0	0	0	0
+2LA	   1- Ortaklara Borçlar	0	0	0	0
+2LB	   2- İştiraklere Borçlar	0	0	0	0
+2LC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2LD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar 	0	0	0	0
+2LE	   5- Personele Borçlar 	0	0	0	0
+2LF	   6- Diğer İlişkili Taraflara Borçlar 	0	0	0	0
+2M	  D- Diğer Borçlar 	0	0	0	0
+2MA	   1- Alınan Depozito Ve Teminatlar 	0	0	0	0
+2MB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	0	0	0	0
+2MC	   2- Diğer Çeşitli Borçlar 	0	0	0	0
+2MCA	   3- Diğer Çeşitli Borçlar Reeskontu	0	0	0	0
+2MD	  E- Sigortacılık Teknik Karşılıkları 	349809769	321993200	269008665	238918917
+2MDA	   1- Kazanılmamış Primler Karşılığı – Net 	0	0	0	0
+2MDB	   2- Devam Eden Riskler Karşılığı - Net 	0	0	0	0
+2MDC	   3- Hayat Matematik Karşılığı - Net 	0	0	0	0
+2MDD	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	0	0	0	0
+2MDE	   5- İkramiye Ve İndirimler Karşılığı - Net	0	0	0	0
+2MDF	   6-Yatırım Riski Hayat Sigortası Poliçe Sah. Pol. Ayr.Kar. Net	0	0	0	0
+2MDG	   7- Diğer Teknik Karşılıklar - Net	349809769	321993200	269008665	238918917
+2MDH	  G-Diğer Yükümlülükler Ve Karşılıkları 	0	0	0	0
+2MDI	   1- Ödenecek Diğer Yükümlülükler  	0	0	0	0
+2MDJ	   2- Vadesi Geçmiş, Ert.ş Veya Tak. Vergi Ve Yük.	0	0	0	0
+2MDK	   3-Diğer Borç Ve Gider Karşılıkları 	0	0	0	0
+2MDM	  F- Diğer Risklere İlişkin Karşılıklar 	331705743	291524104	228566079	196782572
+2MDN	   1- Kıdem Tazminatı Karşılığı	331705743	291524104	228566079	196782572
+2MDO	   2- Sosyal yardım sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2MDP	  H-Gelecek Yıllara Ait Gelirler Ve Gider Tahakkukları 	0	0	0	0
+2MDR	   1- Gelecek Yıllara Ait Gelirler 	0	0	0	0
+2MDS	   2- Gider Tahakkukları	0	0	0	0
+2MDT	   3- Gelecek Yıllara Ait Diğer Gelirler Ve Gider Tahakkukları	0	0	0	0
+2MDU	  I- Diğer Uzun Vadeli Yükümlülükler	0	0	0	0
+2MDV	   1- Ertelenmiş Vergi Yükümlülüğü	0	0	0	0
+2MDY	   2- Diğer Uzun Vadeli Yükümlülükler 	0	0	0	0
+2MDZ	 IV- Uzun Vadeli Yükümlülükler Toplamı	427636548170	406984115381	374095253337	315419978839
+2MEA	  A- Ödenmiş Sermaye 	430000000	430000000	430000000	430000000
+2MEB	   1- (Nominal) Sermaye 	430000000	430000000	430000000	430000000
+2MEC	   2- Ödenmemiş Sermaye (-)	0	0	0	0
+2MED	   3- Sermaye Düzeltmesi Olumlu Farkları	0	0	0	0
+2MEE	   4- Sermaye Düzeltmesi Olumsuz Farkları (-)	0	0	0	0
+2MEEA	   5- Tescili Beklenen Sermaye	0	0	0	0
+2MEF	  B- Sermaye Yedekleri 	152751617	152751617	152751617	152751617
+2MEG	   1- Hisse Senedi İhraç Primleri 	0	0	0	0
+2MEH	   2- Hisse Senedi İptal Karları	0	0	0	0
+2MEI	   3- Sermayeye Eklenecek Satış Karları	152751617	152751617	152751617	152751617
+2MEJ	   4- Yabancı Para Çevirim Farkları	0	0	0	0
+2MEK	   5- Diğer Sermaye Yedekleri	0	0	0	0
+2MEL	  C- Kar Yedekleri 	8143330840	8754851699	6697106460	6539992541
+2MEM	   1- Yasal Yedekler 	1041970688	1041970688	681885001	681885001
+2MEN	   2- Statü Yedekleri	1129854945	1129854945	734347389	734347389
+2MEO	   3- Olağanüstü Yedekler	4138920071	4138914839	3101350038	3157057106
+2MEP	   4- Özel Fonlar (Yedekler)	432903492	432903492	282903492	282903492
+2MER	   5- Finansal Varlıkların Değerlemesi	1455824724	2051261680	1914377645	1748269741
+2MES	   6- Diğer Kar Yedekleri 	-56143080	-40053945	-17757105	-64470188
+2MET	  D- Geçmiş Yıllar Karları 	144010441	144010441	0	120095932
+2MEU	   1- Geçmiş Yıllar Karları 	0	0	0	0
+2MEV	  E-Geçmiş Yıllar Zararları (-)	0	0	-14747543	0
+2MEY	   1- Geçmiş Yıllar Zararları 	0	0	0	0
+2MEZ	  F-Dönem Net Karı 	5691162698	3537959328	5599076846	3809379249
+2MEZA	   1- Dönem Net Karı	5691162698	3537959328	5599076846	3809379249
+2MEZB	   2- Dönem Net Zararı (-)	0	0	0	0
+2MEZC	   3- Dağıtıma Konu Olmayan Kar	0	0	0	0
+2MEZD	  G-Azınlık Payları	0	0	0	0
+2O	 Özsermaye Toplamı	14561255596	13019573085	12864187380	11052219339
+2Z	PASİF TOPLAMI	507961604257	481923805000	442880249318	375956490211
+3A	 A- Hayat Dışı Teknik Gelir 	1810427	1313167	1655085	1191673
+3AA	  1- Kazanılmış Primler (Reasürör Payı Düşülmüş Olarak)	1810427	1313167	1655085	1191673
+3AAA	   1.1- Yazılan Primler (Reasürör Payı Düşülmüş Olarak)	1376628	1429896	2558058	1442375
+3AAAA	    1.1.1- Brüt Yazılan Primler (+)	1401916	1437822	2662586	1545265
+3AAAB	    1.1.2 -Reasüröre Devredilen Primler (-)	-25288	-7926	-104528	-102890
+3AAAC	    1.1.3- SGK'ya Aktarılan Primler (-)	0	0	0	0
+3AAB	   1.2- Kaz.Prim. Karş. Değ.(Reas. Payı ve Dev. K.Düşülmüş )(+/-) 	626831	-116729	-902973	-250702
+3AABA	    1.2.1- Kazanılmamış Primler Karşılığı (-)	612562	-120243	-355692	160845
+3AABB	    1.2.2- Kazanılmamış Primler Karşılığında Reasürör Payı (+)	14269	3514	-547281	-411547
+3AABC	    1.2.3- Kazanılmamış Primler Karşılığında SGK Payı (+)	0	0	0	0
+3AABD	   1.3- Dev.Eden Risk.Karş. (Reas.ürör Payı ve Dev. Kısım Düş.	-193032	0	0	0
+3AACA	    1.3.1- Devam Eden Riskler Karşılığı (-)	-586895	0	0	0
+3AACB	    1.3.2- Devam Eden Riskler Karşılığında Reasürör Payı (+)	393863	0	0	0
+3AB	  2- Teknik Olmayan Bölümden Aktarılan Yatırım Gelirleri	0	0	0	0
+3AC	  3- Diğer Teknik Gelirler (Reasürör Payı Düşülmüş Olarak)	0	0	0	0
+3ACA	   3.1- Brüt Diğer Teknik Gelirler (+)	0	0	0	0
+3ACB	   3.2- Brüt Diğer Teknik Gelirlerde Reasürör Payı (-)	0	0	0	0
+3ACC	  4- Tahakkuk Eden Rücu ve Sovtaj Gelirleri (+)	0	0	0	0
+3B	 B- Hayat Dışı Teknik Gider(-)	-7293550	-4326276	-2195900	167646
+3BA	  1- Gerçekleşen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-2138374	-1033760	1738348	2657571
+3BAA	   1.1- Ödenen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-120333	-47183	-69050	-2500
+3BAAA	    1.1.1- Brüt Ödenen Hasarlar (-)	-120333	-47183	-819050	-752500
+3BAAB	    1.1.2- Ödenen Hasarlarda Reasürör Payı (+)	0	0	750000	750000
+3BAB	   1.2- Muallak Hasarlar Karş.Değ. (Reas.Pay Dev. Kıs.Düş. (+/-)	-2018041	-986577	1807398	2660071
+3BABA	    1.2.1- Muallak Hasarlar Karşılığı (-)	-4199156	-2232781	4415631	5649118
+3BABB	    1.2.2- Muallak Hasarlar Karşılığında Reasürör Payı (+)	2181115	1246204	-2608233	-2989047
+3BABC	  2- İkramiye ve İndirimler Karşılığında Değişim	0	0	0	0
+3BABD	   2.1- İkramiye ve İndirimler Karşılığı (-)	-4123	-2680	-289	905
+3BABE	   2.2- İkramiye ve İndirimler Karşılığında Reasürör Payı (+)	4123	2680	289	-905
+3BC	  3- Diğer Teknik Karşılıklarda Değişim 	-108406	-86070	-42666	-30302
+3BD	  4- Faaliyet Giderleri (-)	-5046770	-3206446	-3891582	-2459623
+3BDA	  5- Matematik Karşılıklarda Değişim 	0	0	0	0
+3BDB	   5.1- Matematik Karşılıklar (-)	0	0	0	0
+3BDC	   5.2- Matematik Karşılıklarda Reasürör Payı (+)	0	0	0	0
+3BDD	  6- Diğer Teknik Giderler (-)	0	0	0	0
+3BDE	   6.1- Brüt Diğer Teknik Giderler (-)	0	0	0	0
+3BDF	   6.2- Brüt Diğer Teknik Giderlerde Reasürör Payı (+)	0	0	0	0
+3C	 C- Teknik Bölüm Dengesi- Hayat Dışı (A - B)	-5483123	-3013109	-540815	1359319
+3D	 D- Hayat Teknik Gelir 	26032684888	16427149939	27898227547	20372387324
+3DAA	  1- Kazanılmış Primler (Reasürör Payı Düşülmüş Olarak)	17095747862	11087610852	18883364292	13397043615
+3DAAA	   1.1- Yazılan Primler (Reasürör payı Düşülmüş Olarak) 	17643134686	11402615577	19987679686	14000665807
+3DAAB	    1.1.1- Brüt Yazılan Primler (+)	18316507710	11859679498	20673820942	14557916031
+3DAAC	    1.1.2- Reasüröre Devredilen Primler (-)	-673373024	-457063921	-686141256	-557250224
+3DAB	   1.2- Kazanılmamış Primler Karşılığında Değişim 	-547386824	-315004725	-1104315394	-603622192
+3DABA	    1.2.1- Kazanılmamış Primler Karşılığı (-)	-597672019	-358687730	-1206618506	-679576887
+3DABB	    1.2.2- Kazanılmamış Primler Karşılığında Reasürör Payı (+)	50285195	43683005	102303112	75954695
+3DABC	   1.3- Devam Eden Riskler Karşılığında Değişim 	0	0	0	0
+3DABD	    1.3.1- Devam Eden Riskler Karşılığı (-)	0	0	0	0
+3DABE	    1.3.2- Devam Eden Riskler Karşılığında Reasürör Payı (+)	0	0	0	0
+3DB	  2- Hayat Branşı Yatırım Geliri 	8117800951	4850140815	8245409455	6414730772
+3DC	  3- Yatırımlardaki Gerçekleşmemiş Karlar	0	0	0	0
+3DD	  4- Diğer Teknik Gelirler (Reasürör Payı Düşülmüş Olarak)	819136075	489398272	769453800	560612937
+3DDA	   4.1- Brüt Diğer Teknik Gelirler (+/-)	819136075	489398272	769453800	560612937
+3DDB	   4.2- Brüt Diğer Teknik Gelirlerde Reasürör Payı (+/-)	0	0	0	0
+3DDC	  5- Tahakkuk Eden Rücu Gelirleri (+)	0	0	0	0
+3E	 E- Hayat Teknik Gider 	-21956390256	-14081699788	-24985326714	-18690325537
+3EA	  1- Gerçekleşen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-4557366067	-2950927745	-4374869147	-3053641192
+3EAA	   1.1- Ödenen Tazminatlar (Reasürör Payı Düşülmüş Olarak) 	-4450999529	-2891670179	-4170287058	-2884745002
+3EAAA	    1.1.1- Brüt Ödenen Tazminatlar (-)	-4666212828	-3019500830	-4319591118	-2966236885
+3EAAB	    1.1.2- Ödenen Tazminatlarda Reasürör Payı (+)	215213299	127830651	149304060	81491883
+3EAB	   1.2- Muallak Tazminatlar Karşılığında Değişim 	-106366538	-59257566	-204582089	-168896190
+3EABA	    1.2.1- Muallak Tazminatlar Karşılığı (-)	-178623694	-112104570	-357628558	-273070084
+3EABB	    1.2.2- Muallak Hasarlar Karşılığında Reasürör Payı (+)	72257156	52847004	153046469	104173894
+3EABC	  2- İkramiye ve İndirimler Karşılığında Değişim	289908	272808	-344367	-386896
+3EABD	   2.1- İkramiye ve İndirimler Karşılığı (-)	399200	427265	-473474	-509094
+3EABE	   2.2- İkramiye ve İndirimler Karşılığında Reasürör Payı (+)	-109292	-154457	129107	122198
+3EBA	  3- Matematik Karşılıklarda Değişim 	-12012513128	-7462385035	-14980792592	-11317962266
+3EBAA	   3.1- Matematik Karşılıklar (-)	-12034025048	-7477915717	-15039010644	-11355748157
+3EBAB	    3.1.1- Aktüeryal Matematik Karşılık (-)	-10211313053	-6368353171	-12925794646	-9785145973
+3EBAC	    3.1.2- Kar Payı Karşılığı (Yat.Riski Pol. Sah. Ait Pol.Ayr.Krş (-))	-1822711995	-1109562546	-2113215998	-1570602184
+3EBAD	   3.2- Matematik Karşılığında Reasürör Payı (+)	21511920	15530682	58218052	37785891
+3EBAE	    3.2.1- Aktüeryal Matematik Karşılıklar Reasürör Payı (+)	21511920	15530682	58218052	37785891
+3EBAF	    3.2.2- Kar P. Karş.Reas. Payı (Yat.Ris.Pol. Sah. Ait Pol.Ayr.Krş (-))	0	0	0	0
+3EBB	  4- Diğer Teknik Karş. Değ. (Reas.Pay Dev. Kıs.Düş.(+/-)	-80692698	-52898465	-101415641	-71338257
+3EBC	  5- Faaliyet Giderleri (-) 	-5306108271	-3615761351	-5527904967	-4246996926
+3EBD	  6- Yatırım Giderler (-)	0	0	0	0
+3EBE	  7- Yatırımlardaki Gerçekleşmemiş Zararlar (-)	0	0	0	0
+3EBF	  8- Teknik Olmayan Bölüme Aktarılan Yatırım Gelirleri (-)	0	0	0	0
+3F	 F- Teknik Bölüm Dengesi- Hayat  (D – E)	4076294632	2345450151	2912900833	1682061787
+3FA	 G- Emeklilik Teknik Gelir	6197204409	4120696437	5725978064	4058646078
+3FB	  1- Fon İşletim Gelirleri 	3646527555	2399781785	3371075442	2337926058
+3FC	  2- Yönetim Gideri Kesintisi 	1613960039	1085885995	1563131787	1157313537
+3FD	  3- Giriş Aidatı Gelirleri 	594538882	399201790	483573543	334441221
+3FE	  4- Ara Verme Halinde Yönetim Gideri Kesintisi	336174302	232313112	299830381	223801543
+3FG	  5- Özel Hizmet Gideri Kesintisi	0	0	0	0
+3FH	  6- Sermaye Tahsis Avansı Değer Artış Gelirleri	0	0	0	0
+3FI	  7- Diğer Teknik Gelirler	6003631	3513755	8366911	5163719
+3FJ	 H- Emeklilik Teknik Gideri	-5449517440	-3659309728	-5074287652	-3484474845
+3FJA	  1- Fon İşletim Giderleri (-)  	-246661155	-177105243	-124213053	-89175342
+3FJB	  2- Sermaye Tahsis Avansları Değer Azalış Giderleri(-)	0	0	0	0
+3FJC	  3- Faaliyet Giderleri (-)	-4920904565	-3287068599	-4668413207	-3191249903
+3FJD	  4- Diğer Teknik Giderler (-) 	-281951720	-195135886	-281661392	-204049600
+3FK	 I- Teknik Bölüm Dengesi- Emeklilik	747686969	461386709	651690412	574171233
+3FKA	II-TEKNİK OLMAYAN BÖLÜM 	0	0	0	0
+3H	 C- Teknik Bölüm Dengesi- Hayat Dışı	-5483123	-3013109	-540815	1359319
+3I	 F- Teknik Bölüm Dengesi- Hayat 	4076294632	2345450151	2912900833	1682061787
+3J	 I - Teknik Bölüm Dengesi- Emeklilik	747686969	461386709	651690412	574171233
+3K	 J- Genel Teknik Bölüm Dengesi	4818498478	2803823751	3564050430	2257592339
+3L	 K- Yatırım Gelirleri	3381782484	2270982599	4205498662	2731475973
+3LA	  1- Finansal Yatırımlardan Elde Edilen Gelirler	1854646088	816763527	2143471982	1320611579
+3LB	  2-Finansal Yatırımların Nakde Çevrilmesinden Elde Edilen Karlar	461724943	408487320	581564534	513895432
+3LC	  3- Finansal Yatırımların Değerlemesi	694547421	659028439	1071683556	587315150
+3LD	  4- Kambiyo Karları	73096575	112065164	271929440	216138691
+3LE	  5- iştiraklerden Gelirler	200000000	200000000	20000000	20000000
+3LF	  6- Bağlı Ortaklıklar ve Müşterek Yönetime Tabi Teşebbüslerden Gelirler	0	0	0	0
+3LG	  7- Arazi, Arsa ile Binalardan Elde Edilen Gelirler	46142825	44001996	71662193	42181180
+3LH	  8- Türev Ürünlerden Elde Edilen Gelirler	0	0	0	0
+3LI	  9- Diğer Yatırımlar	51624632	30636153	45186957	31333941
+3LJ	  10- Hayat Teknik Bölümünden Aktarılan Yatırım Gelirleri	0	0	0	0
+3M	 L- Yatırım Giderleri (-)	-311762513	-189250518	-372017410	-272344961
+3MA	  1- Yatırım Yönetim Giderleri – Faiz Dahil (-)	-138044963	-81534462	-191994550	-140537332
+3MB	  2- Yatırımlar Değer Azalışları (-)	0	0	0	0
+3MC	  3- Yatırımların Nakte Çevrilmesi Sonucunda Oluşan Zararlar (-)	-3702279	-5014	0	-377709
+3MD	  4- Hayat Dışı Teknik Bölümüne Aktarılan Yatırım Gelirleri (-)	0	0	0	0
+3ME	  5- Türev Ürünler Sonucunda Oluşan Zararlar (-)	0	0	0	0
+3MF	  6- Kambiyo Zararları (-)  	-17785211	-14179484	-49589426	-41109542
+3MG	  7- Amortisman Giderleri (-)	-152230060	-93531558	-130433434	-90320378
+3MH	  8- Diğer Yatırım Giderleri (-) 	0	0	0	0
+3N	 M- Diğer Faaliyetlerden ve Olağandışı Faal. Gelir ve Karlar(+/-)	-55797851	-64464149	352596852	363565605
+3NA	  1- Karşılıklar Hesabı (+/-)	-60745617	-43123565	29322668	39148917
+3NB	  2- Reeskont Hesabı (+/-)	0	0	0	0
+3NC	  3- Özellikli Sigortalar Hesabı (+/-)	0	0	0	0
+3ND	  4- Enflasyon Düzeltmesi Hesabı (+/-)	0	0	0	0
+3NE	  5- Ertelenmiş Vergi Varlığı Hesabı (+/-)	11292105	-18291673	310157248	310171867
+3NF	  6- Ertelenmiş Vergi Yükümlülüğü Gideri (-)	0	0	0	0
+3NG	  7- Diğer Gelir ve Karlar	1	0	10000002	10000002
+3NH	  8- Diğer Gider ve Zararlar (-)	-6344340	-3048911	3116934	4244819
+3NI	  9- Önceki Yıl Gelir ve Karları	0	0	0	0
+3NJ	  10- Önceki Yıl Gider ve Zararları(-)	0	0	0	0
+3Z	 N- Dönem Net Karı veya Zararı	5691162698	3537959328	5599076846	3809379249
+3ZA	  1- Dönem Karı Ve Zararı	7832720598	4821091683	7750128534	5080288956
+3ZB	  2- Dönem Karı Vergi ve Diğer Yasal Yükümlülük Karşılıkları(-)	-2141557900	-1283132355	-2151051688	-1270909707
+3ZC	  3- Dönem Net Kar veya Zararı	5691162698	3537959328	5599076846	3809379249
+3ZD	  4- Enflasyon Düzeltme Hesabı	0	0	0	0
+===== TURSG UFRS (2026/9, 2026/6, 2025/12, 2025/9)
+1A	  A- Nakit Ve Nakit Benzeri Varlıklar 	16364465876	12918134988	11162984992	13513006831
+1AA	   1- Kasa	0	0	0	0
+1AB	   2- Alınan Çekler	0	0	0	0
+1AC	   3- Bankalar	8820654438	5930055583	5419670711	8576241853
+1AD	   4- Verilen Çekler Ve Ödeme Emirleri (-)	0	0	0	0
+1AE	   5- Banka Garantili ve Üç Aydan Kısa Vadeli Kredi Kartı Alacakları	7543811438	6988079405	5743314281	4936764978
+1AEA	   6- Diğer Nakit Ve Nakit Benzeri Varlıklar	0	0	0	0
+1B	  B- Finansal Varlıklar ile Riski Sigortalılara Ait Finansal Yatırımlar	87663851416	98173457311	86507064355	83676747409
+1BA	   1- Satılmaya Hazır Finansal Varlıklar	39302069861	37121359731	29834905098	30696740635
+1BB	   2- Vadeye Kadar Elde Tutulacak Finansal Varlıklar 	28211640936	25985402625	24596258610	23389085911
+1BC	   3- Alım Satım Amaçlı Finansal Varlıklar 	27526425327	35066694955	32075900647	29590920863
+1BD	   4- Krediler	0	0	0	0
+1BE	   5- Krediler Karşılığı (-)	0	0	0	0
+1BF	   6- Riski Hayat Poliçesi Sahiplerine Ait  Finansal Yatırımlar	0	0	0	0
+1BG	   7- Şirket Hissesi	0	0	0	0
+1BH	   8- Finansal Varlıklar Değer Düşüklüğü Karşılığı (-) 	-7376284708	0	0	0
+1C	  C- Esas Faaliyetlerden Alacaklar	46501059066	51943757357	31481788521	33622437837
+1CA	   1- Sigortacılık Faaliyetlerinden Alacaklar 	43353104285	48580901480	30361635866	31969574558
+1CB	   2- Sigortacılık Faaliyetlerinden Alacaklar Karşılığı (-)	-224090333	-204009291	-121465371	-169788614
+1CC	   3- Reasürans Faaliyetlerinden Alacaklar 	3368223540	3562925315	1237678173	1818712041
+1CD	   4- Reasürans Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1CE	   5- Sigorta Ve Reasürans Şirketleri Nezdindeki Depolar	0	0	0	0
+1CF	   6- Sigortalılara Krediler (İkrazlar)	0	0	0	0
+1CG	   7- Sigortalılara Krediler (İkrazlar) Karşılığı (-)	0	0	0	0
+1CH	   8- Emeklilik Faaliyetlerinden Alacaklar	0	0	0	0
+1CI	   9- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar	3832945473	3557876501	2989408500	2465456020
+1CJ	   10- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar Karşılığı (-)	-3829123899	-3553936648	-2985468647	-2461516168
+1D	  D- İlişkili Taraflardan Alacaklar 	221618332	221593462	348081	184088071
+1DA	   1- Ortaklardan Alacaklar 	0	0	0	0
+1DB	   2- İştiraklerden Alacaklar	220905686	220905686	0	184088071
+1DC	   3- Bağlı Ortaklıklardan Alacaklar	0	0	0	0
+1DD	   4- Müşterek Yönetime Tabi Teşebbüslerden Alacaklar 	0	0	0	0
+1DE	   5- Personelden Alacaklar	0	0	0	0
+1DF	   6- Diğer İlişkili Taraflardan Alacaklar	712646	687776	348081	0
+1DG	   7- İlişkili Taraflardan Alacaklar Reeskontu (-)	0	0	0	0
+1DH	   8- İlişkili Taraflardan Şüpheli Alacaklar	0	0	0	0
+1DI	   9- İlişkili Taraflardan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1E	  E- Diğer Alacaklar	2528008116	1933721575	1564644488	1816218403
+1EA	   1- Finansal Kiralama Alacakları	0	0	0	0
+1EB	   2- Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)	0	0	0	0
+1EC	   3- Verilen Depozito ve Teminatlar	0	0	0	0
+1ED	   4- Diğer Çeşitli Alacaklar	2528008116	1933721575	1564644488	1816218403
+1EE	   5- Diğer Çeşitli Alacaklar Reeskontu(-)	0	0	0	0
+1EF	   6- Şüpheli Diğer Alacaklar	8963664892	403151	403151	403151
+1EG	   7- Şüpheli Diğer Alacaklar Karşılığı (-)	-8963664892	-403151	-403151	-403151
+1F	  F- Gelecek Aylara Ait Giderler Ve Gelir Tahakkukları 	12258481210	12919532989	10309937036	9235518617
+1FA	   1- Gelecek Aylara Ait Giderler 	11515107471	12501669490	9784839009	8880095897
+1FB	   2- Tahakkuk Etmiş Faiz Ve Kira Gelirleri	0	0	0	0
+1FC	   3- Gelir Tahakkukları	0	0	0	0
+1FD	   4- Gelecek Aylara Ait Diğer Giderler Ve Gelir Tahakkukları 	743373739	417863499	525098027	355422720
+1G	  G- Diğer Cari  Varlıklar	27523598	62643076	790140273	645937561
+1GA	   1- Gelecek Aylar İhtiyacı Stoklar	0	0	0	0
+1GB	   2- Peşin Ödenen Vergiler Ve Fonlar 	17388207	12072146	784762178	621143854
+1GC	   3- Ertelenmiş Vergi Varlıkları	0	0	0	0
+1GD	   4- İş Avansları 	280116	0	0	0
+1GE	   5- Personele Verilen Avanslar 	1093858	7369437	44018	361279
+1GF	   6- Sayım Ve Tesellüm Noksanları 	0	0	0	0
+1GG	   7- Diğer Çeşitli Cari Varlıklar 	8761417	43201493	5334077	24432428
+1GH	   8- Diğer Cari  Varlıklar Karşılığı (-)	0	0	0	0
+1H	 I- Cari Varlıklar Toplamı	165565007614	178172840758	141816907746	142693954729
+1J	  A- Esas Faaliyetlerden Alacaklar 	0	0	0	0
+1JA	   1- Sigortacılık Faaliyetlerinden Alacaklar 	0	0	0	0
+1JB	   2- Sigortacılık Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1JC	   3- Reasürans Faaliyetlerinden Alacaklar	0	0	0	0
+1JD	   4- Reasürans Faaliyetlerinden Alacaklar Karşılığı (-)	0	0	0	0
+1JE	   5- Sigorta ve Reasürans Şirketleri Nezdindeki Depolar 	0	0	0	0
+1JF	   6- Sigortalılara Krediler (İkrazlar)	0	0	0	0
+1JG	   7- Sigortalılara Krediler (İkrazlar) Karşılığı (-)	0	0	0	0
+1JH	   8- Emeklilik Faaliyetlerinden Alacaklar	0	0	0	0
+1JJ	   9-Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar 	0	0	0	0
+1JK	   10- Esas Faaliyetlerden Kaynaklanan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1K	  B- İlişkili Taraflardan Alacaklar 	0	0	0	0
+1KA	   1- Ortaklardan Alacaklar 	0	0	0	0
+1KB	   2- İştiraklerden Alacaklar	0	0	0	0
+1KC	   3- Bağlı Ortaklıklardan Alacaklar 	0	0	0	0
+1KD	   4- Müşterek Yönetime Tabi Teşebbüslerden Alacaklar 	0	0	0	0
+1KE	   5- Personelden Alacaklar 	0	0	0	0
+1KF	   6- Diğer İlişkili Taraflardan Alacaklar	0	0	0	0
+1KG	   7- İlişkili Taraflardan Alacaklar Reeskontu (-)	0	0	0	0
+1KH	   8- İlişkili Taraflardan Şüpheli Alacaklar	0	0	0	0
+1KI	   9- İlişkili Taraflardan Şüpheli Alacaklar Karşılığı (-)	0	0	0	0
+1L	  C- Diğer Alacaklar	5458848	5433678	5451678	5449938
+1LA	   1- Finansal Kiralama Alacakları	0	0	0	0
+1LB	   2- Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)	0	0	0	0
+1LC	   3- Verilen Depozito ve Teminatlar	5458848	5433678	5451678	5449938
+1LD	   4- Diğer Çeşitli Alacaklar	0	0	0	0
+1LE	   5- Diğer Çeşitli Alacaklar Reeskontu(-)	0	0	0	0
+1LF	   6- Şüpheli Diğer Alacaklar	0	0	0	0
+1LG	   7- Şüpheli Diğer Alacaklar Karşılığı (-)	0	0	0	0
+1M	  D- Finansal Varlıklar 	12374163970	12374163970	12366489081	7545106530
+1MA	   1- Bağlı Menkul Kıymetler 	9675198380	9675198380	9667523491	6042740940
+1MB	   2- İştirakler 	0	0	0	0
+1MC	   3- İştirakler Sermaye Taahhütleri (-)	0	0	0	0
+1MD	   4- Bağlı Ortaklıklar	18215590	18215590	18215590	18215590
+1ME	   5- Bağlı Ortaklıklar Sermaye Taahhütleri (-)	0	0	0	0
+1MF	   6- Müşterek Yönetime Tabi Teşebbüsler	2680750000	2680750000	2680750000	1484150000
+1MG	   7- Müşterek Yönetime Tabi Teşebbüsler Sermaye Taahhütleri (-)	0	0	0	0
+1MH	   8- Finansal Varlıklar Ve Riski Sigortalılara Ait Finansal Yatırımlar	0	0	0	0
+1MI	   9- Diğer Finansal Varlıklar 	0	0	0	0
+1MJ	   10- Finansal Varlıklar Değer Düşüklüğü Karşılığı (-) 	0	0	0	0
+1N	  E- Maddi Varlıklar	2442802872	2472342522	2500213487	1928506455
+1NA	   1- Yatırım Amaçlı Gayrımenkuller	408350176	408350176	408350176	325516000
+1NB	   2- Yatırım Amaçlı  Gayrımenkuller Değer Düşüklüğü Karşılığı (-)	0	0	0	0
+1NC	   3- Kullanım Amaçlı Gayrımenkuller	1782597070	1782597070	1782597070	1316612000
+1ND	   4- Makine Ve Teçhizatlar 	223122035	212060929	209963313	167716652
+1NE	   5- Demirbaş Ve Tesisatlar 	99569937	99582607	99582607	84552398
+1NF	   6- Motorlu Taşıtlar 	13117364	13117364	13271012	13271012
+1NG	   7- Diğer Maddi Varlıklar (Özel Maliyet Bedelleri Dahil)	36625649	36625649	36625649	40934946
+1NH	   8- Kiralama Yoluyla Edinilmiş Maddi Varlıklar	227331657	227331657	192771181	192771180
+1NI	   9- Birikmiş Amortismanlar (-)	-347911016	-307322930	-242947521	-212867733
+1NJ	   10- Maddi Var. İlişkin Avanslar (Yap. Olan Yat. Dahil)	0	0	0	0
+1O	  F- Maddi Olmayan Varlıklar	299793580	304947681	286530003	222259109
+1OA	   1- Haklar 	590131606	555429700	465195681	372863015
+1OB	   2- Şerefiye 	0	0	0	0
+1OC	   3- Faaliyet Öncesi Döneme Ait Giderler 	0	0	0	0
+1OD	   4- Araştırma Ve Geliştirme Giderleri  	0	0	0	0
+1OE	   6- Diğer Maddi Olmayan Varlıklar 	38238939	38238939	38238939	38238939
+1OF	   7- Birikmiş İtfalar (Amortismanlar) (-) 	-328576965	-288720958	-216904617	-188842845
+1OG	   8- Maddi Olmayan Varlıklara İlişkin Avanslar 	0	0	0	0
+1P	  G-Gelecek Yıllara Ait Giderler Ve Gelir Tahakkukları 	0	0	0	0
+1PA	   1- Gelecek Yıllara Ait Giderler	0	0	0	0
+1PB	   2- Gelir Tahakkukları  	0	0	0	0
+1PC	   3- Gelecek Yıllara Ait Diğer Giderler Ve Gelir   Tahakkukları 	0	0	0	0
+1R	  H-Diğer Cari Olmayan Varlıklar	3836853588	0	0	0
+1RA	   1- Efektif Yabancı Para Hesapları	0	0	0	0
+1RB	   2- Döviz Hesapları	0	0	0	0
+1RC	   3- Gelecek Yıllar İhtiyacı Stoklar 	0	0	0	0
+1RD	   4- Peşin Ödenen Vergiler Ve Fonlar	0	0	0	0
+1RE	   5- Ertelenmiş Vergi Varlıkları	3836853588	0	0	0
+1RF	   6- Diğer Çeşitli Cari Olmayan Varlıklar 	0	0	0	0
+1RG	   7- Diğer Cari Olmayan Varlıklar Amortismanı (-)	0	0	0	0
+1RH	   8- Diğer Cari Olmayan Varlıklar Karşılığı (-)	0	0	0	0
+1S	 II- Cari Olmayan Varlıklar Toplamı	18959072858	15156887851	15158684249	9701322032
+1Z	 AKTİF TOPLAMI	184524080472	193329728609	156975591995	152395276761
+2A	  A- Finansal Borçlar 	18983075559	15750488984	11108714564	16639495844
+2AA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2AB	   2- Finansal Kiralama İşlemelerinden Borçlar	82494708	93985357	67958518	62036459
+2AC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	0	0	0	0
+2AD	   4- Uzun Vadeli Kredilerin Ana Para Taksitleri Ve Faizleri 	0	0	0	0
+2AE	   5- Çıkarılmış Tahviller(Bonolar) Anapara, Taksit ve Faizleri	0	0	0	0
+2AF	   6- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2AG	   7- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2AH	   8- Diğer Finansal Borçlar (Yükümlülükler)	18900580851	15656503627	11040756046	16577459385
+2B	  B- Esas Faaliyetlerden Borçlar 	18978962544	23376490799	12673413969	20001818286
+2BA	   1- Sigortacılık Faaliyetlerinden Borçlar 	18978962544	23376490799	12673413969	20001818286
+2BB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2BC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	0	0	0	0
+2BD	   4- Emeklilik Faaliyetlerinden Borçlar	0	0	0	0
+2BE	   5- Diğer Esas Faaliyetlerden Borçlar	0	0	0	0
+2BF	   6- Diğer Esas Faaliyetlerden Borçlar Borç Senetleri Reeskontu(-)	0	0	0	0
+2C	  C-İlişkili Taraflara Borçlar 	6248161	3005281159	5547215	7935027
+2CA	   1- Ortaklara Borçlar	5164698	3005164698	5164698	5164698
+2CB	   2- İştiraklere Borçlar	0	0	0	0
+2CC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2CD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar	0	0	0	0
+2CE	   5- Personele Borçlar	1083463	116461	382517	2770329
+2CF	   6- Diğer İlişkili Taraflara Borçlar	0	0	0	0
+2D	  D- Diğer Borçlar 	1718376397	1710952171	1308268262	690197564
+2DA	   1- Alınan Depozito ve Teminatlar	0	0	0	0
+2DB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	348532098	335786374	392071751	398556043
+2DC	   3- Diğer Çeşitli Borçlar	1369844299	1375165797	916196511	291641521
+2DCA	   4- Diğer Çeşitli Borçlar Reeskontu (-)	0	0	0	0
+2E	  E-Sigortacılık Teknik Karşılıkları 	75688006918	73307234426	66607878464	61952767336
+2EA	   1- Kazanılmamış Primler Karşılığı - Net 	44289593991	44501562353	40346692032	34764710233
+2EB	   2- Devam Eden Riskler Karşılığı - Net 	738094340	789800632	1308168985	1053646237
+2EC	   3- Hayat Matematik Karşılığı - Net 	0	0	0	0
+2ED	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	30420311037	27782936964	24703953783	25892020300
+2EE	   5- İkramiye Ve İndirimler Karşılığı - Net	0	0	0	1395000
+2EF	   6- Yatırım Riski Hayat Sigortası Poliçe Sa. Ait Pol. Ayr. Karş. Net	0	0	0	0
+2EG	   7- Diğer Teknik Karşılıklar - Net	240007550	232934477	249063664	240995566
+2F	  F- Ödenecek Vergi Ve Benzeri Diğer Yükümlülükler İle Karşılıkları  	3229085465	3992902755	3905539018	3555635037
+2FA	   1- Ödenecek Vergi Ve Fonlar 	811064629	791949840	774568688	735917195
+2FB	   2- Ödenecek Sosyal Güvenlik Kesintileri 	122216637	117760770	100434921	83340104
+2FC	   3- Vadesi Geçmiş, Ertelenmiş Veya Taks. Vergi Diğ.Yük.	0	0	0	0
+2FD	   4- Ödenecek Diğer Vergi Ve Benzeri Yükümlülükler	0	0	0	0
+2FE	   5- Dönem Karı Vergi Ve Diğer Yasal Yükümlülük Karşılıkları 	6132197255	3745875652	7528620439	5101011012
+2FF	   6- Dönem Karının Peşin Ödenen Vergi Ve Diğer Yükümlülükleri (-)	-3836393056	-662683507	-4498085030	-2364633274
+2FG	   7- Diğer Vergi Ve Benzeri Yükümlülük Karşılıkları 	0	0	0	0
+2FH	  G- Diğer Risklere İlişkin Karşılıklar	2512035349	1589660910	2737955079	2124698939
+2FI	   1- Kıdem Tazminatı Karşılığı	0	0	0	0
+2FJ	   2- Sosyal Yardım Sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2FK	   3- Maliyet Giderleri Karşılığı	2512035349	1589660910	2737955079	2124698939
+2G	  H- Gelecek Aylara Ait Gelirler Ve Gider Tahakkukları 	6023837225	6752603395	5259309800	4340601305
+2GA	   1- Gelecek Aylara Ait Gelirler 	6023837225	6752603395	5259309800	4340601305
+2GB	   2- Gider Tahakkukları	0	0	0	0
+2GC	   3- Gelecek Aylara Ait Diğer Gelirler Ve Gider Tahakkukları	0	0	0	0
+2H	  I- Diğer Kısa Vadeli Yükümlülükler 	0	0	0	0
+2HA	   1- Ertelenmiş Vergi Yükümlüğü	0	0	0	0
+2HB	   2- Sayım Ve Tesellüm Fazlalıkları 	0	0	0	0
+2HC	   3- Diğer Çeşitli Kısa Vadeli Yükümlülükler 	0	0	0	0
+2I	 III - Kısa Vadeli Yükümlülükler Toplamı	127139627618	129485614599	103606626371	109313149338
+2J	  A- Finansal Borçlar 	40830644	52865133	78598942	96994363
+2JA	   1- Kredi Kuruluşlarına Borçlar 	0	0	0	0
+2JB	   2- Finansal Kiralama İşlemlerinden Borçlar	40830644	52865133	78598942	96994363
+2JC	   3- Ertelenmiş Finansal Kiralama Borçlanma Maliyetleri (-)	0	0	0	0
+2JD	   4- Çıkarılmış Tahviller	0	0	0	0
+2JE	   5- Çıkarılmış Diğer Finansal Varlıklar 	0	0	0	0
+2JF	   6- Çıkarılmış Diğer Finansal Varlıklar İhraç Farkı (-)	0	0	0	0
+2JG	   7- Diğer Finansal Borçlar (Yükümlülükler)	0	0	0	0
+2K	  B- Esas Faaliyetlerden Borçlar 	0	0	0	0
+2KA	   1- Sigortacılık Faaliyetlerinden Borçlar 	0	0	0	0
+2KB	   2- Reasürans Faaliyetlerinden Borçlar 	0	0	0	0
+2KC	   3- Sigorta Ve Reasürans Şirketlerinden Alınan Depolar 	0	0	0	0
+2KD	   4- Emeklilik Faaliyetlerinden Borçlar	0	0	0	0
+2KE	   5- Diğer Esas Faaliyetlerden  Borçlar	0	0	0	0
+2KF	   6- Diğer Esas Faaliyetlerden  Borçlar Borç Senetleri Reeskontu (-)	0	0	0	0
+2L	  C- İlişkili Taraflara Borçlar 	0	0	0	0
+2LA	   1- Ortaklara Borçlar	0	0	0	0
+2LB	   2- İştiraklere Borçlar	0	0	0	0
+2LC	   3- Bağlı Ortaklıklara Borçlar	0	0	0	0
+2LD	   4- Müşterek Yönetime Tabi Teşebbüslere Borçlar 	0	0	0	0
+2LE	   5- Personele Borçlar 	0	0	0	0
+2LF	   6- Diğer İlişkili Taraflara Borçlar 	0	0	0	0
+2M	  D- Diğer Borçlar 	123552556	99755797	88074374	82350358
+2MA	   1- Alınan Depozito Ve Teminatlar 	123552556	99755797	88074374	82350358
+2MB	   2- Tedavi Giderlerine İlişkin SGK'ya Borçlar	0	0	0	0
+2MC	   2- Diğer Çeşitli Borçlar 	0	0	0	0
+2MCA	   3- Diğer Çeşitli Borçlar Reeskontu	0	0	0	0
+2MD	  E- Sigortacılık Teknik Karşılıkları 	1160269255	1026006094	807274243	717748557
+2MDA	   1- Kazanılmamış Primler Karşılığı – Net 	0	0	0	0
+2MDB	   2- Devam Eden Riskler Karşılığı - Net 	0	0	0	0
+2MDC	   3- Hayat Matematik Karşılığı - Net 	0	0	0	0
+2MDD	   4- Muallak Hasar Ve Tazminat Karşılığı - Net 	0	0	0	0
+2MDE	   5- İkramiye Ve İndirimler Karşılığı - Net	0	0	0	0
+2MDF	   6-Yatırım Riski Hayat Sigortası Poliçe Sah. Pol. Ayr.Kar. Net	0	0	0	0
+2MDG	   7- Diğer Teknik Karşılıklar - Net	1160269255	1026006094	807274243	717748557
+2MDH	  G-Diğer Yükümlülükler Ve Karşılıkları 	0	0	0	0
+2MDI	   1- Ödenecek Diğer Yükümlülükler  	0	0	0	0
+2MDJ	   2- Vadesi Geçmiş, Ert.ş Veya Tak. Vergi Ve Yük.	0	0	0	0
+2MDK	   3-Diğer Borç Ve Gider Karşılıkları 	0	0	0	0
+2MDM	  F- Diğer Risklere İlişkin Karşılıklar 	275981342	269337309	223855977	189549531
+2MDN	   1- Kıdem Tazminatı Karşılığı	275981342	269337309	223855977	189549531
+2MDO	   2- Sosyal yardım sandığı Varlık Açıkları Karşılığı	0	0	0	0
+2MDP	  H-Gelecek Yıllara Ait Gelirler Ve Gider Tahakkukları 	0	0	0	0
+2MDR	   1- Gelecek Yıllara Ait Gelirler 	0	0	0	0
+2MDS	   2- Gider Tahakkukları	0	0	0	0
+2MDT	   3- Gelecek Yıllara Ait Diğer Gelirler Ve Gider Tahakkukları	0	0	0	0
+2MDU	  I- Diğer Uzun Vadeli Yükümlülükler	0	1340073222	566457718	393866088
+2MDV	   1- Ertelenmiş Vergi Yükümlülüğü	0	1340073222	566457718	393866088
+2MDY	   2- Diğer Uzun Vadeli Yükümlülükler 	0	0	0	0
+2MDZ	 IV- Uzun Vadeli Yükümlülükler Toplamı	1600633797	2788037555	1764261254	1480508897
+2MEA	  A- Ödenmiş Sermaye 	20000000000	20000000000	10000000000	10000000000
+2MEB	   1- (Nominal) Sermaye 	20000000000	20000000000	10000000000	10000000000
+2MEC	   2- Ödenmemiş Sermaye (-)	0	0	0	0
+2MED	   3- Sermaye Düzeltmesi Olumlu Farkları	0	0	0	0
+2MEE	   4- Sermaye Düzeltmesi Olumsuz Farkları (-)	0	0	0	0
+2MEEA	   5- Tescili Beklenen Sermaye	0	0	0	0
+2MEF	  B- Sermaye Yedekleri 	750195576	728985408	728985408	728985408
+2MEG	   1- Hisse Senedi İhraç Primleri 	713525162	692314994	692314994	692314994
+2MEH	   2- Hisse Senedi İptal Karları	0	0	0	0
+2MEI	   3- Sermayeye Eklenecek Satış Karları	0	0	0	0
+2MEJ	   4- Yabancı Para Çevirim Farkları	0	0	0	0
+2MEK	   5- Diğer Sermaye Yedekleri	36670414	36670414	36670414	36670414
+2MEL	  C- Kar Yedekleri 	27036160099	26850925424	21425231383	16514711597
+2MEM	   1- Yasal Yedekler 	2450519971	2450519971	1229269303	1229269303
+2MEN	   2- Statü Yedekleri	0	0	0	0
+2MEO	   3- Olağanüstü Yedekler	12193202974	12193202974	7319154582	7319154582
+2MEP	   4- Özel Fonlar (Yedekler)	0	0	0	0
+2MER	   5- Finansal Varlıkların Değerlemesi	10188543833	10009755380	11006117405	6395457950
+2MES	   6- Diğer Kar Yedekleri 	2203893321	2197447099	1870690093	1570829762
+2MET	  D- Geçmiş Yıllar Karları 	25474205	25474205	25474205	14000298
+2MEU	   1- Geçmiş Yıllar Karları 	0	0	0	0
+2MEV	  E-Geçmiş Yıllar Zararları (-)	0	0	0	0
+2MEY	   1- Geçmiş Yıllar Zararları 	0	0	0	0
+2MEZ	  F-Dönem Net Karı 	7971989177	13450691418	19425013374	14343921223
+2MEZA	   1- Dönem Net Karı	7971989177	13450691418	19425013374	14343921223
+2MEZB	   2- Dönem Net Zararı (-)	0	0	0	0
+2MEZC	   3- Dağıtıma Konu Olmayan Kar	0	0	0	0
+2MEZD	  G-Azınlık Payları	0	0	0	0
+2O	 Özsermaye Toplamı	55783819057	61056076455	51604704370	41601618526
+2Z	PASİF TOPLAMI	184524080472	193329728609	156975591995	152395276761
+3A	 A- Hayat Dışı Teknik Gelir 	74238912232	51341941534	81116434147	60194040454
+3AA	  1- Kazanılmış Primler (Reasürör Payı Düşülmüş Olarak)	60204547723	39248890939	59892225070	43333297215
+3AAA	   1.1- Yazılan Primler (Reasürör Payı Düşülmüş Olarak)	63577375037	42885392906	73469558377	51074125974
+3AAAA	    1.1.1- Brüt Yazılan Primler (+)	134557275439	94213289469	147117164318	105134769767
+3AAAB	    1.1.2 -Reasüröre Devredilen Primler (-)	-70013740378	-50710268629	-72350717810	-53155827364
+3AAAC	    1.1.3- SGK'ya Aktarılan Primler (-)	-966160024	-617627934	-1296888131	-904816429
+3AAB	   1.2- Kaz.Prim. Karş. Değ.(Reas. Payı ve Dev. K.Düşülmüş )(+/-) 	-3942901959	-4154870321	-13581262045	-7999280246
+3AABA	    1.2.1- Kazanılmamış Primler Karşılığı (-)	-11393815727	-14398141859	-25370287337	-14878291792
+3AABB	    1.2.2- Kazanılmamış Primler Karşılığında Reasürör Payı (+)	7486744697	10281481439	11600407078	6771757527
+3AABC	    1.2.3- Kazanılmamış Primler Karşılığında SGK Payı (+)	-35830929	-38209901	188618214	107254019
+3AABD	   1.3- Dev.Eden Risk.Karş. (Reas.ürör Payı ve Dev. Kısım Düş.	570074645	518368354	3928738	258451487
+3AACA	    1.3.1- Devam Eden Riskler Karşılığı (-)	-318431670	160570810	614435693	225076334
+3AACB	    1.3.2- Devam Eden Riskler Karşılığında Reasürör Payı (+)	888506315	357797544	-610506955	33375153
+3AB	  2- Teknik Olmayan Bölümden Aktarılan Yatırım Gelirleri	13203158851	11556755244	19224143606	15483680913
+3AC	  3- Diğer Teknik Gelirler (Reasürör Payı Düşülmüş Olarak)	7535724	2866296	4570827	4570827
+3ACA	   3.1- Brüt Diğer Teknik Gelirler (+)	7535724	2866296	4570827	4570827
+3ACB	   3.2- Brüt Diğer Teknik Gelirlerde Reasürör Payı (-)	0	0	0	0
+3ACC	  4- Tahakkuk Eden Rücu ve Sovtaj Gelirleri (+)	823669934	533429055	1995494644	1372491499
+3B	 B- Hayat Dışı Teknik Gider(-)	-55602245110	-34891296668	-58420991066	-42534999710
+3BA	  1- Gerçekleşen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-41257256092	-25712261801	-42570745293	-31813442133
+3BAA	   1.1- Ödenen Hasarlar (Reasürör Payı Düşülmüş Olarak)	-35540898838	-22633278620	-38530597576	-26585227899
+3BAAA	    1.1.1- Brüt Ödenen Hasarlar (-)	-46322795723	-28450323274	-54321451300	-39832785664
+3BAAB	    1.1.2- Ödenen Hasarlarda Reasürör Payı (+)	10781896885	5817044654	15790853724	13247557765
+3BAB	   1.2- Muallak Hasarlar Karş.Değ. (Reas.Pay Dev. Kıs.Düş. (+/-)	-5716357254	-3078983181	-4040147717	-5228214234
+3BABA	    1.2.1- Muallak Hasarlar Karşılığı (-)	-11088199035	-7585284468	-5388151416	-4878674483
+3BABB	    1.2.2- Muallak Hasarlar Karşılığında Reasürör Payı (+)	5371841781	4506301287	1348003699	-349539751
+3BABC	  2- İkramiye ve İndirimler Karşılığında Değişim	0	0	1395000	0
+3BABD	   2.1- İkramiye ve İndirimler Karşılığı (-)	0	0	1395000	0
+3BABE	   2.2- İkramiye ve İndirimler Karşılığında Reasürör Payı (+)	0	0	0	0
+3BC	  3- Diğer Teknik Karşılıklarda Değişim 	-352995012	-218731851	-291277966	-201752280
+3BD	  4- Faaliyet Giderleri (-)	-13991994006	-8960303016	-15560362807	-10519805297
+3BDA	  5- Matematik Karşılıklarda Değişim 	0	0	0	0
+3BDB	   5.1- Matematik Karşılıklar (-)	0	0	0	0
+3BDC	   5.2- Matematik Karşılıklarda Reasürör Payı (+)	0	0	0	0
+3BDD	  6- Diğer Teknik Giderler (-)	0	0	0	0
+3BDE	   6.1- Brüt Diğer Teknik Giderler (-)	0	0	0	0
+3BDF	   6.2- Brüt Diğer Teknik Giderlerde Reasürör Payı (+)	0	0	0	0
+3C	 C- Teknik Bölüm Dengesi- Hayat Dışı (A - B)	18636667122	16450644866	22695443081	17659040744
+3D	 D- Hayat Teknik Gelir 	0	0	0	0
+3DAA	  1- Kazanılmış Primler (Reasürör Payı Düşülmüş Olarak)	0	0	0	0
+3DAAA	   1.1- Yazılan Primler (Reasürör payı Düşülmüş Olarak) 	0	0	0	0
+3DAAB	    1.1.1- Brüt Yazılan Primler (+)	0	0	0	0
+3DAAC	    1.1.2- Reasüröre Devredilen Primler (-)	0	0	0	0
+3DAB	   1.2- Kazanılmamış Primler Karşılığında Değişim 	0	0	0	0
+3DABA	    1.2.1- Kazanılmamış Primler Karşılığı (-)	0	0	0	0
+3DABB	    1.2.2- Kazanılmamış Primler Karşılığında Reasürör Payı (+)	0	0	0	0
+3DABC	   1.3- Devam Eden Riskler Karşılığında Değişim 	0	0	0	0
+3DABD	    1.3.1- Devam Eden Riskler Karşılığı (-)	0	0	0	0
+3DABE	    1.3.2- Devam Eden Riskler Karşılığında Reasürör Payı (+)	0	0	0	0
+3DB	  2- Hayat Branşı Yatırım Geliri 	0	0	0	0
+3DC	  3- Yatırımlardaki Gerçekleşmemiş Karlar	0	0	0	0
+3DD	  4- Diğer Teknik Gelirler (Reasürör Payı Düşülmüş Olarak)	0	0	0	0
+3DDA	   4.1- Brüt Diğer Teknik Gelirler (+/-)	0	0	0	0
+3DDB	   4.2- Brüt Diğer Teknik Gelirlerde Reasürör Payı (+/-)	0	0	0	0
+3DDC	  5- Tahakkuk Eden Rücu Gelirleri (+)	0	0	0	0
+3E	 E- Hayat Teknik Gider 	0	0	0	0
+3EA	  1- Gerçekleşen Hasarlar (Reasürör Payı Düşülmüş Olarak)	0	0	0	0
+3EAA	   1.1- Ödenen Tazminatlar (Reasürör Payı Düşülmüş Olarak) 	0	0	0	0
+3EAAA	    1.1.1- Brüt Ödenen Tazminatlar (-)	0	0	0	0
+3EAAB	    1.1.2- Ödenen Tazminatlarda Reasürör Payı (+)	0	0	0	0
+3EAB	   1.2- Muallak Tazminatlar Karşılığında Değişim 	0	0	0	0
+3EABA	    1.2.1- Muallak Tazminatlar Karşılığı (-)	0	0	0	0
+3EABB	    1.2.2- Muallak Hasarlar Karşılığında Reasürör Payı (+)	0	0	0	0
+3EABC	  2- İkramiye ve İndirimler Karşılığında Değişim	0	0	0	0
+3EABD	   2.1- İkramiye ve İndirimler Karşılığı (-)	0	0	0	0
+3EABE	   2.2- İkramiye ve İndirimler Karşılığında Reasürör Payı (+)	0	0	0	0
+3EBA	  3- Matematik Karşılıklarda Değişim 	0	0	0	0
+3EBAA	   3.1- Matematik Karşılıklar (-)	0	0	0	0
+3EBAB	    3.1.1- Aktüeryal Matematik Karşılık (-)	0	0	0	0
+3EBAC	    3.1.2- Kar Payı Karşılığı (Yat.Riski Pol. Sah. Ait Pol.Ayr.Krş (-))	0	0	0	0
+3EBAD	   3.2- Matematik Karşılığında Reasürör Payı (+)	0	0	0	0
+3EBAE	    3.2.1- Aktüeryal Matematik Karşılıklar Reasürör Payı (+)	0	0	0	0
+3EBAF	    3.2.2- Kar P. Karş.Reas. Payı (Yat.Ris.Pol. Sah. Ait Pol.Ayr.Krş (-))	0	0	0	0
+3EBB	  4- Diğer Teknik Karş. Değ. (Reas.Pay Dev. Kıs.Düş.(+/-)	0	0	0	0
+3EBC	  5- Faaliyet Giderleri (-) 	0	0	0	0
+3EBD	  6- Yatırım Giderler (-)	0	0	0	0
+3EBE	  7- Yatırımlardaki Gerçekleşmemiş Zararlar (-)	0	0	0	0
+3EBF	  8- Teknik Olmayan Bölüme Aktarılan Yatırım Gelirleri (-)	0	0	0	0
+3F	 F- Teknik Bölüm Dengesi- Hayat  (D – E)	0	0	0	0
+3FA	 G- Emeklilik Teknik Gelir	0	0	0	0
+3FB	  1- Fon İşletim Gelirleri 	0	0	0	0
+3FC	  2- Yönetim Gideri Kesintisi 	0	0	0	0
+3FD	  3- Giriş Aidatı Gelirleri 	0	0	0	0
+3FE	  4- Ara Verme Halinde Yönetim Gideri Kesintisi	0	0	0	0
+3FG	  5- Özel Hizmet Gideri Kesintisi	0	0	0	0
+3FH	  6- Sermaye Tahsis Avansı Değer Artış Gelirleri	0	0	0	0
+3FI	  7- Diğer Teknik Gelirler	0	0	0	0
+3FJ	 H- Emeklilik Teknik Gideri	0	0	0	0
+3FJA	  1- Fon İşletim Giderleri (-)  	0	0	0	0
+3FJB	  2- Sermaye Tahsis Avansları Değer Azalış Giderleri(-)	0	0	0	0
+3FJC	  3- Faaliyet Giderleri (-)	0	0	0	0
+3FJD	  4- Diğer Teknik Giderler (-) 	0	0	0	0
+3FK	 I- Teknik Bölüm Dengesi- Emeklilik	0	0	0	0
+3FKA	II-TEKNİK OLMAYAN BÖLÜM 	0	0	0	0
+3H	 C- Teknik Bölüm Dengesi- Hayat Dışı	18636667122	16450644866	22695443081	17659040744
+3I	 F- Teknik Bölüm Dengesi- Hayat 	0	0	0	0
+3J	 I - Teknik Bölüm Dengesi- Emeklilik	0	0	0	0
+3K	 J- Genel Teknik Bölüm Dengesi	18636667122	16450644866	22695443081	17659040744
+3L	 K- Yatırım Gelirleri	30710101883	19101531961	34071566771	25865379057
+3LA	  1- Finansal Yatırımlardan Elde Edilen Gelirler	28216233430	15818051173	22541089253	17704339852
+3LB	  2-Finansal Yatırımların Nakde Çevrilmesinden Elde Edilen Karlar	0	0	0	0
+3LC	  3- Finansal Yatırımların Değerlemesi	-712011740	1316320757	7660161986	5109140213
+3LD	  4- Kambiyo Karları	2977802875	1741075899	3594593022	2861383021
+3LE	  5- iştiraklerden Gelirler	220905686	220905686	184088071	184088071
+3LF	  6- Bağlı Ortaklıklar ve Müşterek Yönetime Tabi Teşebbüslerden Gelirler	0	0	0	0
+3LG	  7- Arazi, Arsa ile Binalardan Elde Edilen Gelirler	7171632	5178446	91634439	6427900
+3LH	  8- Türev Ürünlerden Elde Edilen Gelirler	0	0	0	0
+3LI	  9- Diğer Yatırımlar	0	0	0	0
+3LJ	  10- Hayat Teknik Bölümünden Aktarılan Yatırım Gelirleri	0	0	0	0
+3M	 L- Yatırım Giderleri (-)	-28046035375	-16184198973	-26619533467	-21207490872
+3MA	  1- Yatırım Yönetim Giderleri – Faiz Dahil (-)	-4460525503	-2743810797	-3479432799	-2498509556
+3MB	  2- Yatırımlar Değer Azalışları (-)	-7326284708	0	0	0
+3MC	  3- Yatırımların Nakte Çevrilmesi Sonucunda Oluşan Zararlar (-)	0	0	0	0
+3MD	  4- Hayat Dışı Teknik Bölümüne Aktarılan Yatırım Gelirleri (-)	-13203158851	-11556755244	-19224143606	-15483680913
+3ME	  5- Türev Ürünler Sonucunda Oluşan Zararlar (-)	0	0	0	0
+3MF	  6- Kambiyo Zararları (-)  	-1885133767	-1129846036	-2746299856	-2397117165
+3MG	  7- Amortisman Giderleri (-)	-224665212	-143544106	-228792284	-121047015
+3MH	  8- Diğer Yatırım Giderleri (-) 	-946267334	-610242790	-940864922	-707136223
+3N	 M- Diğer Faaliyetlerden ve Olağandışı Faal. Gelir ve Karlar(+/-)	-7196547198	-2171410784	-3193842572	-2871996694
+3NA	  1- Karşılıklar Hesabı (+/-)	-11396110762	-969379404	-3735663391	-2601938531
+3NB	  2- Reeskont Hesabı (+/-)	152144592	2270957	-404439148	-293105391
+3NC	  3- Özellikli Sigortalar Hesabı (+/-)	0	0	0	0
+3ND	  4- Enflasyon Düzeltmesi Hesabı (+/-)	0	0	0	0
+3NE	  5- Ertelenmiş Vergi Varlığı Hesabı (+/-)	4051463182	-1204849918	936251926	14375706
+3NF	  6- Ertelenmiş Vergi Yükümlülüğü Gideri (-)	0	0	0	0
+3NG	  7- Diğer Gelir ve Karlar	5613592	4720520	18966337	16061363
+3NH	  8- Diğer Gider ve Zararlar (-)	-9657802	-4172939	-8958296	-7389841
+3NI	  9- Önceki Yıl Gelir ve Karları	0	0	0	0
+3NJ	  10- Önceki Yıl Gider ve Zararları(-)	0	0	0	0
+3Z	 N- Dönem Net Karı veya Zararı	7971989177	13450691418	19425013374	14343921223
+3ZA	  1- Dönem Karı Ve Zararı	14104186432	17196567070	26953633813	19444932235
+3ZB	  2- Dönem Karı Vergi ve Diğer Yasal Yükümlülük Karşılıkları(-)	-6132197255	-3745875652	-7528620439	-5101011012
+3ZC	  3- Dönem Net Kar veya Zararı	7971989177	13450691418	19425013374	14343921223
+3ZD	  4- Enflasyon Düzeltme Hesabı	0	0	0	0
