@@ -1426,3 +1426,27 @@ def uzun_test():
     txt = "\n".join(L)
     (R / "uzun_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def gyo_grup_test():
+    """23 Kas: GYO'lari kendi icinde siralamak (iki sartli) portfoyu iyilestiriyor mu?"""
+    from . import firsat_bt as FB
+    FB.GYO_SET = grup_listesi()["GYO"]
+    L = ["GYO GRUP ICI SIRALAMA TESTI (23 Kas 2026). AL'dan rastgele secim, 25 kosu ortancasi, cikis canli."]
+    rng = np.random.default_rng(21)
+    for ad, on, taban in (("CANLI (GYO tum piyasayla)", False, 0.6), ("GYO kendi icinde, taban %60", True, 0.6), ("GYO kendi icinde, taban %40", True, 0.4)):
+        FB.GYO_GRUP, FB.GYO_TABAN = on, taban
+        idx, C, S, PC, VR, TK, xu, m3 = panel()
+        al = (S.values == "AL cift tik") | (S.values == "AL tek tik")
+        gy = np.array([c in FB.GYO_SET for c in S.columns])
+        sat = [f"AL gunlerinde ort. GYO sayisi {al[:, gy].sum(axis=1).mean():.1f} / tum AL {al.sum(axis=1).mean():.1f}"]
+        for per, m in (("egitim", (idx >= "2021-01-01") & (idx <= "2024-12-31")), ("TEST", idx >= "2025-01-01")):
+            for N in (10, 5):
+                v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+                sat.append(f"{per} {N}h x{np.median(v):.2f}")
+        L.append(f"  {ad:30s} " + " | ".join(sat))
+        print(L[-1])
+    FB.GYO_GRUP = False
+    txt = "\n".join(L)
+    (R / "gyo_grup_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

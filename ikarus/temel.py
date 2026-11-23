@@ -709,6 +709,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "gyo_grup":
+        from . import portfoy_bt
+        portfoy_bt.gyo_grup_test()
     elif sys.argv[1] == "uzun_veri":
         if gecmis_eski() > 0:
             print("KALAN eski ceyrek verisi: devam edecek")

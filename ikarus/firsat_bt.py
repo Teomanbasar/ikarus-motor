@@ -36,6 +36,9 @@ DEGER_AGIRLIK = 1.0
 SEKTOR = False
 POTANSIYEL = False
 SEKTOR_MAP = {}
+GYO_GRUP = False
+GYO_SET = set()
+GYO_TABAN = 0.6
 DEGERLER.update({"kar_pk": ["kaz_pk", "pddd"], "kar_pk2": ["kaz_pk2", "pddd"], "yok": [], "pddd": ["pddd"], "favok+pk": ["fav_get", "kaz_pk", "pddd"]})
 
 
@@ -103,6 +106,10 @@ def puanlar(O, px):
         p = pd.concat([q["buyume3"], q["marj_deg"], q["capex_amort"]], axis=1).mean(axis=1)
         A["v3"] = (A["v3"] * 3 + p.fillna(0.5)) / 4
     A["v3r"] = A["v3"].groupby(A["donem"]).rank(pct=True)
+    if GYO_GRUP and GYO_SET:  # 23 Kas: GYO'lar kendi icinde (ama tum piyasada en az %60 sirada olmali)
+        g_ = A["t"].isin(GYO_SET)
+        rg = A.loc[g_, "v3"].groupby(A.loc[g_, "donem"]).rank(pct=True)
+        A.loc[g_, "v3r"] = np.where(A.loc[g_, "v3r"] >= GYO_TABAN, rg, A.loc[g_, "v3r"])
     A["kotu"] = (q["sue_nk"] <= 0.2) & (q["sue_faal"] <= 0.2)
     if HAM_DONDUR:
         return A
