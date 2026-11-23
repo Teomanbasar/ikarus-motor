@@ -1,31 +1,14 @@
 M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  CANLI (GYO tum piyasayla)      AL gunlerinde ort. GYO sayisi 0.4 / tum AL 2.9 | egitim 10h x11.74 | egitim 5h x13.70 | TEST 10h x1.36 | TEST 5h x1.36
-M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  GYO kendi icinde, taban %60    AL gunlerinde ort. GYO sayisi 0.2 / tum AL 2.7 | egitim 10h x11.00 | egitim 5h x11.90 | TEST 10h x1.41 | TEST 5h x1.38
-M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  GYO kendi icinde, taban %40    AL gunlerinde ort. GYO sayisi 0.2 / tum AL 2.7 | egitim 10h x10.95 | egitim 5h x12.32 | TEST 10h x1.41 | TEST 5h x1.35
-GYO GRUP ICI SIRALAMA TESTI (23 Kas 2026). AL'dan rastgele secim, 25 kosu ortancasi, cikis canli.
-  CANLI (GYO tum piyasayla)      AL gunlerinde ort. GYO sayisi 0.4 / tum AL 2.9 | egitim 10h x11.74 | egitim 5h x13.70 | TEST 10h x1.36 | TEST 5h x1.36
-  GYO kendi icinde, taban %60    AL gunlerinde ort. GYO sayisi 0.2 / tum AL 2.7 | egitim 10h x11.00 | egitim 5h x11.90 | TEST 10h x1.41 | TEST 5h x1.38
-  GYO kendi icinde, taban %40    AL gunlerinde ort. GYO sayisi 0.2 / tum AL 2.7 | egitim 10h x10.95 | egitim 5h x12.32 | TEST 10h x1.41 | TEST 5h x1.35
+50/625 140 sn
+100/625 325 sn
+150/625 484 sn
+200/625 603 sn
+250/625 724 sn
+300/625 850 sn
+350/625 978 sn
+400/625 1094 sn
+450/625 1216 sn
+500/625 1321 sn
+550/625 1430 sn
+600/625 1541 sn
+625/625 hisse islendi, dosyada 609 hisse (1606 sn)
