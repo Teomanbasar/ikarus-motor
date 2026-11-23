@@ -1300,8 +1300,9 @@ def gyo_test():
     for h in F:
         A[f"f{h}"] = [F[h].at[pd.Timestamp(g), t] if pd.Timestamp(g) in F[h].index and t in F[h].columns else np.nan for t, g in zip(A.t, A.giris)]
     A["yil"] = pd.to_datetime(A["giris"]).dt.year
-    nb = O.set_index(["t", "donem"])[["netborc", "varlik"]]
-    A = A.join(nb, on=["t", "donem"])
+    if "netborc" not in A or "varlik" not in A:
+        nb = O.drop_duplicates(["t", "donem"]).set_index(["t", "donem"])[["netborc", "varlik"]]
+        A = A.drop(columns=[c for c in ("netborc", "varlik") if c in A]).join(nb, on=["t", "donem"])
     A["ltv"] = pd.to_numeric(A["netborc"], errors="coerce") / pd.to_numeric(A["varlik"], errors="coerce")
     L = ["SEKTOR GRUPLARI ICINDE OLCU TESTI (22 Kas 2026)",
          "Her grup icinde, ayni bilanco donemindeki sirketler 3 dilime ayrilir (3 = olcuye gore en iyi). 126 gun, piyasa ortancasina gore fazla getiri (kirpik ort. / ortanca).",
