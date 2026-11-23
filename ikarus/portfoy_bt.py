@@ -1319,8 +1319,9 @@ def gyo_test():
                 if len(a) < 60:
                     continue
                 a["dl"] = (yon.get(f, 1) * a[f]).groupby(a["donem"]).rank(pct=True).mul(3).clip(upper=2.999).astype(int) + 1
-                km = lambda v: 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
-                st = a.groupby("dl")["f126"].agg([km, "median"])
+                def km(v):
+                    return 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
+                st = a.groupby("dl")["f126"].agg(km=km, median="median")
                 v3_, v1_ = a.loc[a.dl == 3, "f126"], a.loc[a.dl == 1, "f126"]
                 v3_ = v3_.clip(v3_.quantile(.05), v3_.quantile(.95)); v1_ = v1_.clip(v1_.quantile(.05), v1_.quantile(.95))
                 tst = (v3_.mean() - v1_.mean()) / np.sqrt(v3_.var() / len(v3_) + v1_.var() / len(v1_))
