@@ -342,6 +342,84 @@ def genel_form_topla(hisseler, bas: str = "2024-01-01", gun: int = 4, butce_dk: 
 _PB = r"(?:TRY|TL|USD|EUR|GBP|CHF|HRK|RUB|AZN|KZT|CNY|JPY|PLN|RON|BGN|SEK|NOK|DKK|AED|SAR|QAR|MAD|DZD|EGP|IQD|UAH|GEL|BAM|RSD|MKD|ALL|HUF|CZK)"
 
 
+def sayfa_metin(s, url: str) -> str:
+    import html as _h
+    import re
+    h = s.get(url, headers={k: v for k, v in BASLIK.items() if k != "Content-Type"}, timeout=60).text
+    h = h.replace('\\u003c', '<').replace('\\u003e', '>').replace('\u003c', '<').replace('\u003e', '>').replace('\"', '"').replace('\n', ' ')
+    h = re.sub(r"<style.*?</style>", " ", h, flags=re.S)
+    t = _h.unescape(re.sub(r"<[^>]+>", " ", h))
+    return re.sub(r"\s+", " ", t)
+
+
+def sirket_linkleri(s):
+    """KAP BIST sirketler sayfasindan ticker -> permalink (or. ALARK -> 846-alarko-holding-a-s)."""
+    import re
+    h = s.get("https://www.kap.org.tr/tr/bist-sirketler", headers={k: v for k, v in BASLIK.items() if k != "Content-Type"}, timeout=60).text
+    h2 = h.replace('\\"', '"').replace('\"', '"')
+    out = {}
+    for m in re.finditer(r'"permaLink"\s*:\s*"([^"]+)"[^{}]{0,400}?"stockCode"\s*:\s*"([^"]+)"', h2):
+        for k in m.group(2).split(","):
+            out.setdefault(k.strip(), m.group(1))
+    for m in re.finditer(r'"stockCode"\s*:\s*"([^"]+)"[^{}]{0,400}?"permaLink"\s*:\s*"([^"]+)"', h2):
+        for k in m.group(1).split(","):
+            out.setdefault(k.strip(), m.group(2))
+    for m in re.finditer(r'sirket-bilgileri/ozet/(\d+-[a-z0-9-]+)[^A-Z]{0,300}?([A-Z0-9]{4,6}(?:, ?[A-Z0-9]{4,6})*)', h2):
+        for k in m.group(2).split(","):
+            out.setdefault(k.strip(), m.group(1))
+    if not out:
+        (DATA.parent / "temel" / "kap_bist_sirketler_ornek.txt").write_text(h2[:20000], encoding="utf-8")
+    print("kap sirket linkleri:", len(out))
+    return out
+
+
+def genel_sayfa_paylar(holdingler, bist: pd.DataFrame):
+    """23 Kas: sirketin KAP 'Genel Bilgiler' sayfasindaki guncel bagli ortaklik tablosu (DOGRUDAN/DOLAYLI pay dahil)."""
+    import re
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    link = sirket_linkleri(s)
+    anah = [(t, k) for t, ad in zip(bist["ticker"], bist["ad"].fillna("")) if (k := _anahtar(ad))]
+    pat = re.compile(r"(.{3,200}?)\s+([\d.]+(?:,\d+)?)\s+([\d.]+(?:,\d+)?)\s+(" + _PB + r")\s+(\d{1,3}(?:,\d+)?)\s+"
+                     r"(BAĞLI ORTAKLIK|İŞTİRAK|İŞ ORTAKLIĞI|FİNANSAL YATIRIM|FİNANSAL DURAN VARLIK|DİĞER|Bağlı Ortaklık\w*|İştirak\w*|İş Ortaklı\w*|Finansal \w+|Diğer)"
+                     r"\s*(\([^)]{0,120}\))?")
+    sonuc, ham = {}, []
+    for h in holdingler:
+        if h not in link:
+            ham.append(f"== {h}: KAP linki yok"); continue
+        m = ""
+        for dn in range(3):
+            try:
+                m = sayfa_metin(s, f"https://www.kap.org.tr/tr/sirket-bilgileri/genel/{link[h]}")
+            except Exception as e:
+                ham.append(f"== {h} HATA {e}")
+            if len(m) > 3000:
+                break
+            time.sleep(20 * (dn + 1))
+        i = m.upper().find("BAĞLI ORTAKLIKLAR, FİNANSAL DURAN")
+        t = m[i:] if i >= 0 else m
+        rows = []
+        for r in pat.finditer(t):
+            ad = re.split(r"(?:\)|BAĞLI ORTAKLIK|İŞTİRAK|Bağlı Ortaklık\w*|İştirak\w*|ORTAKLIK PAYI)", r.group(1))[-1].strip()
+            par = r.group(7) or ""
+            pm = re.findall(r"%\s*([\d,]+)", par)
+            rows.append({"ad": ad, "oran": float(r.group(5).replace(",", ".")), "efektif": float(pm[-1].replace(",", ".")) if pm else None,
+                         "pb": r.group(4), "tur": r.group(6), "not": par})
+        bul_h = {}
+        for r in rows:
+            n = " " + _anahtar(r["ad"], kes=False) + " "
+            for tk, k in anah:
+                if tk != h and (f" {k} " in n if " " in k else n.strip().startswith(k + " ") or n.strip() == k):
+                    bul_h[tk] = {"oran": r["oran"], "efektif": r["efektif"], "not": r["not"]}
+        sonuc[h] = {"link": link[h], "satir": len(rows), "borsada": bul_h}
+        ham.append(f"== {h} {link[h]} metin {len(m)} satir {len(rows)} borsada {bul_h}\n" +
+                   "\n".join(f"   {r['oran']:6.2f} ef {r['efektif']} {r['pb']} {r['tur'][:14]:14s} {r['ad'][-80:]}" for r in rows[:120]))
+        if not rows:
+            ham.append("   METIN: " + t[:1500])
+        time.sleep(1.2)
+    return sonuc, ham
+
+
 def bagli_ortakliklar(metin: str):
     """Genel bilgi formu metninden (unvan+faaliyet, sermaye, pay tutari, para birimi, oran %, tur) satirlari."""
     import re
