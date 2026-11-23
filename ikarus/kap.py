@@ -295,3 +295,95 @@ def pas_detay_topla(butce_dk: float = 160, isci: int = 1, en_fazla: int | None =
     if "hata" in Y:
         print("hatalar:", Y["hata"].value_counts().head(8).to_dict())
     return kalan
+
+
+# ---- 23 Kas: holding istirak paylari (KAP 'Sirket Genel Bilgi Formu' -> Bagli Ortakliklar tablosu) ----
+def _norm(x: str) -> str:
+    import re
+    x = str(x).upper()
+    for a, b in (("İ", "I"), ("I", "I"), ("Ş", "S"), ("Ğ", "G"), ("Ü", "U"), ("Ö", "O"), ("Ç", "C"), ("Â", "A")):
+        x = x.replace(a, b)
+    x = x.replace("ı".upper(), "I")
+    return re.sub(r"[^A-Z0-9 ]", " ", re.sub(r"\s+", " ", x)).strip()
+
+
+def genel_form_topla(hisseler, bas: str = "2025-01-01", gun: int = 4, butce_dk: float = 25):
+    """Verilen hisselerin en son 'Sirket Genel Bilgi Formu' bildirimleri (index). Tarih pencereleriyle tarar."""
+    hs = set(hisseler)
+    t0 = time.time()
+    s = requests.Session()
+    s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    a, son = pd.Timestamp(bas), pd.Timestamp.today().normalize()
+    bul = {}
+    while a <= son and time.time() - t0 < butce_dk * 60:
+        b = min(a + pd.Timedelta(days=gun - 1), son)
+        rows = _cek(s, a.strftime("%Y-%m-%d"), b.strftime("%Y-%m-%d"))
+        if rows is not None and len(rows) >= 2000 and b > a:
+            rows = []
+            for g in pd.date_range(a, b):
+                rows += _cek(s, g.strftime("%Y-%m-%d"), g.strftime("%Y-%m-%d")) or []
+                time.sleep(0.4)
+        for r in rows or []:
+            if "Genel Bilgi Formu" not in str(r.get("subject")) + str(r.get("title")):
+                continue
+            kod = [k.strip() for k in str(r.get("stockCodes") or "").split(",")]
+            for k in kod:
+                if k in hs:
+                    bul[k] = {"tarih": str(r.get("publishDate") or ""), "index": str(r.get("disclosureIndex") or "")}
+        a = b + pd.Timedelta(days=1)
+        time.sleep(0.4)
+    print(f"genel bilgi formu: {len(bul)}/{len(hs)} bulundu, son tarama {a:%Y-%m-%d}, {time.time() - t0:.0f} sn")
+    return s, bul
+
+
+_PB = r"(?:TRY|TL|USD|EUR|GBP|CHF|HRK|RUB|AZN|KZT|CNY|JPY|PLN|RON|BGN|SEK|NOK|DKK|AED|SAR|QAR|MAD|DZD|EGP|IQD|UAH|GEL|BAM|RSD|MKD|ALL|HUF|CZK)"
+
+
+def bagli_ortakliklar(metin: str):
+    """Genel bilgi formu metninden (unvan+faaliyet, sermaye, pay tutari, para birimi, oran %, tur) satirlari."""
+    import re
+    i = metin.find("Bağlı Ortaklıklar, Finansal Duran")
+    t = metin[i:] if i >= 0 else metin
+    pat = re.compile(r"(.{3,160}?)\s+([\d.]+(?:,\d+)?)\s+([\d.]+(?:,\d+)?)\s+(" + _PB + r")\s+(\d{1,3}(?:,\d+)?)\s+"
+                     r"(Bağlı Ortaklık(?:lar)?|İştirak(?:ler)?|Finansal Duran Varlık(?:lar)?|Finansal Yatırım(?:lar)?|İş Ortaklı\w*|Diğer\w*)")
+    out = []
+    for m in pat.finditer(t):
+        ad = m.group(1)
+        ad = re.split(r"(?:Bağlı Ortaklık(?:lar)?|İştirak(?:ler)?|Finansal Duran Varlık(?:lar)?|Finansal Yatırım(?:lar)?|İş Ortaklı\w*|\bTür\b|Oranı \(%\))", ad)[-1]
+        try:
+            oran = float(m.group(5).replace(",", "."))
+        except ValueError:
+            continue
+        out.append({"ad": ad.strip(), "oran": oran, "pb": m.group(4), "tur": m.group(6)})
+    return out
+
+
+def holding_paylari(holdingler, bist: pd.DataFrame):
+    """Her holding icin borsadaki istiraklerini (ticker -> pay) bulur. bist: ticker, ad."""
+    s, bul = genel_form_topla(holdingler)
+    anah = []
+    for t, ad in zip(bist["ticker"], bist["ad"].fillna("")):
+        w = [x for x in _norm(ad).split() if x not in ("A", "S", "AS", "ANONIM", "SIRKETI", "VE", "TIC", "SAN", "T")]
+        if len(w) >= 2:
+            anah.append((t, " ".join(w[:3]) if len(w) >= 3 else " ".join(w[:2])))
+    sonuc, ham = {}, []
+    for h, v in bul.items():
+        try:
+            m = detay_metin(s, v["index"])
+        except Exception as e:
+            ham.append(f"== {h} {v} HATA {e}"); continue
+        rows = bagli_ortakliklar(m)
+        if not rows:
+            j = m.find("Bağlı Ortaklık")
+            ham.append(f"== {h} {v} SATIR YOK, metin {len(m)}: " + m[max(0, j - 200):j + 1500])
+        bul_h = {}
+        for r in rows:
+            n = _norm(r["ad"])
+            for t, k in anah:
+                if t != h and k in n:
+                    bul_h[t] = max(bul_h.get(t, 0), r["oran"])
+        sonuc[h] = {"tarih": v["tarih"], "index": v["index"], "borsada": bul_h, "satir": len(rows)}
+        ham.append(f"== {h} {v['tarih']} idx {v['index']} satir {len(rows)} borsada {bul_h}\n" +
+                   "\n".join(f"   {r['oran']:6.2f} {r['pb']} {r['tur'][:12]:12s} {r['ad'][-90:]}" for r in rows[:80]))
+        time.sleep(1.0)
+    return sonuc, ham

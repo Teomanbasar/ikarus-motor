@@ -709,6 +709,17 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "nad_paylar":
+        # 23 Kas: holdinglerin borsadaki istirak paylari (KAP genel bilgi formu)
+        from . import kap as K
+        from . import portfoy_bt as P
+        b = D.bist_list()
+        hs = sorted(P.grup_listesi()["HOLDING"] | {"BLCYT", "OSTIM", "ECZYT", "GSDHO"})
+        sonuc, ham = K.holding_paylari(hs, b[["ticker", "ad"]])
+        (R / "nad_paylar.json").write_text(json.dumps(sonuc, ensure_ascii=False, indent=1), encoding="utf-8")
+        (R / "nad_paylar_ham.txt").write_text("\n".join(ham), encoding="utf-8")
+        for h, v in sorted(sonuc.items()):
+            print(h, v["tarih"], v["satir"], v["borsada"])
     elif sys.argv[1] == "gyo_grup":
         from . import portfoy_bt
         portfoy_bt.gyo_grup_test()
