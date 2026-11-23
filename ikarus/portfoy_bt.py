@@ -1450,3 +1450,89 @@ def gyo_grup_test():
     txt = "\n".join(L)
     (R / "gyo_grup_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def gyo_kontrol():
+    """23 Kas (Teoman: 'GYO duzgun mu emin ol'). GYO karinda deger artis kazanci (kagit kar) puani yaniltiyor mu?
+    Gecmis veride ayri kalem yok; vekil: faaliyet kari - brut kar (GYO'da gider kucuk; buyuk artı = deger artisi faaliyet
+    karinda), net kar - faaliyet kari (yatirim faaliyeti gelirleri / finansman / vergi). Nakit (isletme nakit akisi) kagit kari icermez."""
+    from . import firsat_bt as FB
+    from . import temel as T
+    GR = grup_listesi()
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = B.olaylar(G, D.m3())
+    ek = {}
+    for h, g in G.items():
+        if h not in GR["GYO"]:
+            continue
+        tab = {tuple(map(int, k.split("/"))): v for k, v in g["tab"].items()}
+        for d in tab:
+            ek[(h, f"{d[0]}/{d[1]:02d}")] = {"brut_ttm": T._ttm(tab, d, "3D"), "nk2_ttm": T._ttm(tab, d, "3Z")}
+    px = D.prices(sorted(O["t"].unique()))
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    r = Cx.shift(-126) / Cx - 1
+    F = r.sub(r.median(axis=1), axis=0)
+    A["f126"] = [F.at[pd.Timestamp(g), t] if pd.Timestamp(g) in F.index and t in F.columns else np.nan for t, g in zip(A.t, A.giris)]
+    A["yil"] = pd.to_datetime(A["giris"]).dt.year
+    A["v3r_piyasa"] = A["v3"].groupby(A["donem"]).rank(pct=True)
+    g = A[A.t.isin(GR["GYO"])].copy()
+    g["brut_ttm"] = [ek.get((t, d), {}).get("brut_ttm") for t, d in zip(g.t, g.donem)]
+    num = lambda c: pd.to_numeric(g[c], errors="coerce")
+    va = num("varlik")
+    g["kagit_faal"] = (num("fk_ttm") - num("brut_ttm")) / va            # buyuk = faaliyet karinda deger artisi
+    g["kagit_net"] = (num("nk_ttm") - num("fk_ttm")) / va                # buyuk = faaliyet disi kazanc (yatirim geliri vb.)
+    g["kagit_pay"] = (num("fk_ttm") - num("brut_ttm")) / num("fk_ttm").abs()
+    mc = num("pddd") * num("oz")
+    ev = mc + num("netborc")
+    g["cekirdek_get"] = (num("brut_ttm") + num("favok_ttm") - num("fk_ttm")) / ev   # brut kar + amortisman (deger artisi haric)
+    g["nakit_get"] = num("fnakit_ttm") / ev
+    L = ["GYO KONTROL: deger artis kazanci puani yaniltiyor mu? (23 Kas 2026)",
+         "126 gun, piyasa ortancasina gore fazla getiri; GYO'lar kendi icinde ayni donemde 3 dilim (3 = olcuye gore yuksek). kirpik ort / ortanca.",
+         f"GYO olay sayisi {len(g)}, sirket {g.t.nunique()}. Faaliyet karinin yarisindan fazlasi 'kagit' (faaliyet-brut>0.5*|faaliyet|) olan olay orani: "
+         f"%{100 * (g.kagit_pay > 0.5).mean():.0f}", ""]
+
+    def dilim(f, yon=1, maske=None):
+        out = []
+        for ad, m in (("tum", g.yil >= 2021), ("2025+", g.yil >= 2025)):
+            a = g[m & g[f].notna() & g.f126.notna()].copy()
+            if maske is not None:
+                a = a[maske.reindex(a.index).fillna(False)]
+            if len(a) < 60:
+                out.append(f"  {f:14s} {ad:5s} n={len(a)} (az)"); continue
+            a["dl"] = (yon * a[f]).groupby(a["donem"]).rank(pct=True).mul(3).clip(upper=2.999).astype(int) + 1
+            km = lambda v: 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
+            st = a.groupby("dl")["f126"].agg(km=km, med="median")
+            x3, x1 = a.loc[a.dl == 3, "f126"], a.loc[a.dl == 1, "f126"]
+            x3 = x3.clip(x3.quantile(.05), x3.quantile(.95)); x1 = x1.clip(x1.quantile(.05), x1.quantile(.95))
+            t = (x3.mean() - x1.mean()) / np.sqrt(x3.var() / len(x3) + x1.var() / len(x1))
+            out.append(f"  {f:14s} {ad:5s} n={len(a):4d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}/{100 * st.loc[i, 'med']:+5.1f}" for i in (1, 2, 3))
+                       + f" | D3-D1 {st.loc[3, 'km'] - st.loc[1, 'km']:+5.1f} (t={t:+.1f})")
+        return out
+    L.append("1) Kagit kar olculeri (yuksek = karin daha cok kagit kismi):")
+    for f in ("kagit_faal", "kagit_net"):
+        L += dilim(f)
+    L.append("\n2) Deger olculeri (yuksek = ucuz):")
+    for f in ("fav_get", "cekirdek_get", "nakit_get", "kaz_get"):
+        L += dilim(f)
+    L.append("\n3) v3 (bugunku puan) GYO icinde, ve kagit kari yuksek/dusuk GYO'larda ayri:")
+    L += dilim("v3")
+    yuk = g["kagit_faal"] > g.groupby("donem")["kagit_faal"].transform("median")
+    L.append("  -- kagit kari YUKSEK yari:")
+    L += dilim("v3", maske=yuk)
+    L.append("  -- kagit kari DUSUK yari:")
+    L += dilim("v3", maske=~yuk)
+    L.append("\n4) Bilanco ivmesi bilesenleri GYO icinde (net kar surprizi deger artisindan etkilenir):")
+    for f in ("sue_nk", "sue_faal", "satis_reel", "roe", "F"):
+        if f in g:
+            L += dilim(f)
+    L.append("\n5) Sistemin en iyi %20'sine (piyasa geneli v3) giren GYO olaylari: kagit kari yuksek olanlar vs dusuk olanlar (126g):")
+    top = g[(g.v3r_piyasa >= 0.8) & g.f126.notna()]
+    for ad, m in (("kagit yuksek", top.kagit_faal > g.kagit_faal.median()), ("kagit dusuk", top.kagit_faal <= g.kagit_faal.median())):
+        v = top[m]["f126"]
+        L.append(f"  {ad:13s} n={len(v):4d} ort {100 * v.clip(v.quantile(.05), v.quantile(.95)).mean():+5.1f} ortanca {100 * v.median():+5.1f} kazanma %{100 * (v > 0).mean():.0f}")
+    txt = "\n".join(L)
+    (R / "gyo_kontrol.txt").write_text(txt, encoding="utf-8")
+    print(txt)
