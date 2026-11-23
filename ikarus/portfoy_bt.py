@@ -1186,9 +1186,14 @@ def potansiyel_test():
 def icerden2_test():
     """22 Kas: MKK 'Pay Alim Satim Bildirimi' PDF'lerinden ayristirilan gercek alim/satimlar (kim, ne kadar)."""
     from . import kap
-    kalan = kap.pas_detay_topla(butce_dk=160)
+    _icerden2_hesap(kismi=True)  # once eldeki veriyle test (hizli), sonra okumaya devam
+    kalan = kap.pas_detay_topla(butce_dk=150)
     if kalan > 0:
-        print(f"KALAN {kalan}: test sonraki calistirmada"); return
+        print(f"KALAN {kalan}: okuma suruyor"); return
+    _icerden2_hesap(kismi=False)
+
+
+def _icerden2_hesap(kismi=False):
     P = pd.read_csv(D.DATA / "kap_pas.csv", dtype=str)
     X = pd.read_csv(D.DATA / "kap_pas_detay.csv", dtype=str).merge(P[["index", "tarih", "ilgili", "gonderen"]], on="index", how="left")
     for c in ("alim_nom", "satim_nom", "net_nom", "oran_bas", "oran_son", "satir"):
@@ -1201,7 +1206,8 @@ def icerden2_test():
     X["yonetici"] = g.str.contains("yönetim|yonetim|müdür|mudur|başkan|baskan|üye|uye|ceo|cfo|direkt", regex=True)
     X["d_oran"] = X["oran_son"] - X["oran_bas"]
     ok = X[(X.satir > 0) & X.t.notna() & (X.hisse != "")]
-    L = ["ICERIDEN ALIM-SATIM (PDF'ten ayristirilmis), 22 Kas 2026",
+    L = ["ICERIDEN ALIM-SATIM (PDF'ten ayristirilmis), 22-23 Kas 2026" + (" [KISMI VERI: okuma suruyor]" if kismi else ""),
+         f"bildirim tarih araligi: {X.t.min():%Y-%m-%d} .. {X.t.max():%Y-%m-%d}",
          f"ayristirilan DKB bildirimi {len(X)}, islem tablosu okunan {len(ok)} (%{100 * len(ok) / max(len(X), 1):.0f}); devir/hediye vb. {int(ok.devir.sum())} cikarildi",
          f"yonetici (gorevi yazan) {int(ok.yonetici.sum())}, diger (ortak/sirket/kisi) {int((~ok.yonetici).sum())}",
          "en sik konular: " + " | ".join(f"{k}:{v}" for k, v in ok.konu.value_counts().head(8).items()),

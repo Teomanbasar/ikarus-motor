@@ -253,8 +253,9 @@ def pas_detay_topla(butce_dk: float = 160, isci: int = 1, en_fazla: int | None =
     d = pd.read_csv(DATA / "kap_pas.csv", dtype=str)
     f = DATA / "kap_pas_detay.csv"
     eski = pd.read_csv(f, dtype=str) if f.exists() else pd.DataFrame(columns=["index"])
-    if "satir" in eski:  # okunamamis/hatali satirlari yeniden dene
-        eski = eski[pd.to_numeric(eski["satir"], errors="coerce").fillna(0) > 0]
+    if "hata" in eski:  # yalniz ag hatasi (429 vb.) olanlari yeniden dene; bicimi okunamayanlar kalici
+        h = eski["hata"].fillna("")
+        eski = eski[(h == "") | (h == "ek yok")]
     yap = [i for i in d[d.sinif == "DKB"]["index"].tolist() if i not in set(eski["index"])]
     if en_fazla:
         yap = yap[:en_fazla]
