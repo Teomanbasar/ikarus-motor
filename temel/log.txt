@@ -1,49 +1,14 @@
-AGESA 29 donem
-AKGRT 32 donem
-ANHYT 31 donem
-ANSGR 31 donem
-QUICK 2 donem
-RAYSG 32 donem
-TURSG 32 donem
-SIGORTA OLCU TESTI (24 Kas 2026)
-sirketler: AGESA, AKGRT, ANHYT, ANSGR, QUICK, RAYSG, TURSG (hayat/emeklilik: AGESA, ANHYT)
-bilanco olayi 187, donem 2018/03..2025/12; her donem sigortacilar kendi icinde iki yariya bolunur.
-Sonraki getiri piyasa ortancasina gore %. ust yari = olcuye gore iyi (pddd ve bilesik oranda dusuk iyi).
-
-  kaz_get    f126 ust yari: n  81 ort  +9.8 ort.ca  -0.7 kaz % 49 | alt yari: n  72 ort +26.1 ort.ca  +5.4 kaz % 56 | fark t -1.6
-  kaz_get    f63  ust yari: n  81 ort  +4.1 ort.ca  +1.1 kaz % 53 | alt yari: n  72 ort  +8.1 ort.ca  +3.8 kaz % 54 | fark t -1.0
-             f126 ortanca farki donemlere gore: 2020-22 -2.6 | 2023-24 +4.6 | 2025+ -12.4
-  pddd       f126 ust yari: n  93 ort +14.4 ort.ca  +0.9 kaz % 51 | alt yari: n  90 ort +10.8 ort.ca  -5.0 kaz % 43 | fark t -0.4
-  pddd       f63  ust yari: n  93 ort  +5.9 ort.ca  +0.5 kaz % 52 | alt yari: n  90 ort  +1.6 ort.ca  -3.0 kaz % 47 | fark t +0.8
-             f126 ortanca farki donemlere gore: 2020-22 +5.7 | 2023-24 +28.3 | 2025+ -12.4
-  roe        f126 ust yari: n  80 ort +13.6 ort.ca  -0.9 kaz % 49 | alt yari: n  73 ort +21.9 ort.ca  +3.6 kaz % 56 | fark t -0.4
-  roe        f63  ust yari: n  80 ort  +3.7 ort.ca  +0.5 kaz % 51 | alt yari: n  73 ort  +8.9 ort.ca  +5.6 kaz % 56 | fark t -1.3
-             f126 ortanca farki donemlere gore: 2020-22 -1.7 | 2023-24 -7.8 | 2025+ +16.4
-  nk_reel    f126 ust yari: n  58 ort +22.0 ort.ca  +4.9 kaz % 53 | alt yari: n  48 ort +27.8 ort.ca  +3.1 kaz % 54 | fark t +0.5
-  nk_reel    f63  ust yari: n  58 ort  +6.6 ort.ca  +2.4 kaz % 53 | alt yari: n  48 ort  +8.4 ort.ca  +3.8 kaz % 56 | fark t -0.1
-             f126 ortanca farki donemlere gore: 2020-22 -7.7 | 2023-24 +13.2 | 2025+ +9.3
-  prim_reel  f126 ust yari: n  65 ort +31.9 ort.ca  +6.6 kaz % 55 | alt yari: n  49 ort +10.5 ort.ca  +0.6 kaz % 53 | fark t +1.8
-  prim_reel  f63  ust yari: n  65 ort  +9.6 ort.ca  +3.3 kaz % 54 | alt yari: n  49 ort  +4.2 ort.ca  +6.7 kaz % 57 | fark t +1.1
-             f126 ortanca farki donemlere gore: 2020-22 -7.4 | 2023-24 +35.3 | 2025+ -9.9
-  teknik     f126 ust yari: n  82 ort +18.3 ort.ca  -0.1 kaz % 50 | alt yari: n  71 ort +18.0 ort.ca  +3.6 kaz % 55 | fark t +0.8
-  teknik     f63  ust yari: n  82 ort  +6.6 ort.ca  +3.2 kaz % 55 | alt yari: n  71 ort  +4.1 ort.ca  +0.5 kaz % 52 | fark t +1.0
-             f126 ortanca farki donemlere gore: 2020-22 -2.6 | 2023-24 +33.6 | 2025+ -14.3
-  bilesik    f126 ust yari: n  57 ort +13.1 ort.ca  -4.5 kaz % 40 | alt yari: n  53 ort +25.0 ort.ca  +6.6 kaz % 60 | fark t +0.2
-  bilesik    f63  ust yari: n  57 ort  +2.9 ort.ca  -3.3 kaz % 46 | alt yari: n  53 ort +10.2 ort.ca  +6.7 kaz % 57 | fark t -0.6
-             f126 ortanca farki donemlere gore: 2020-22 -15.9 | 2023-24 +5.4 | 2025+ -7.6
-  deger      f126 ust yari: n  95 ort +11.1 ort.ca  -0.7 kaz % 49 | alt yari: n  88 ort +14.0 ort.ca  -4.3 kaz % 44 | fark t -0.8
-  deger      f63  ust yari: n  95 ort  +6.1 ort.ca  +1.4 kaz % 54 | alt yari: n  88 ort  +1.5 ort.ca  -3.9 kaz % 44 | fark t +0.9
-             f126 ortanca farki donemlere gore: 2020-22 +2.7 | 2023-24 +33.7 | 2025+ -12.4
-  kalite     f126 ust yari: n  89 ort +15.7 ort.ca  +0.3 kaz % 51 | alt yari: n  64 ort +22.3 ort.ca  +3.2 kaz % 55 | fark t -0.4
-  kalite     f63  ust yari: n  89 ort  +5.1 ort.ca  +3.0 kaz % 55 | alt yari: n  64 ort  +6.9 ort.ca  +1.9 kaz % 52 | fark t -0.5
-             f126 ortanca farki donemlere gore: 2020-22 -7.4 | 2023-24 +34.6 | 2025+ +10.8
-  hareket    f126 ust yari: n  68 ort +29.4 ort.ca +12.3 kaz % 60 | alt yari: n  46 ort +14.4 ort.ca  -0.7 kaz % 46 | fark t +1.5
-  hareket    f63  ust yari: n  68 ort  +9.9 ort.ca  +4.2 kaz % 59 | alt yari: n  46 ort  +2.7 ort.ca  +0.0 kaz % 50 | fark t +1.2
-             f126 ortanca farki donemlere gore: 2020-22 -7.4 | 2023-24 +48.0 | 2025+ +14.3
-  puan       f126 ust yari: n  94 ort +15.6 ort.ca  +2.2 kaz % 50 | alt yari: n  89 ort  +8.5 ort.ca  -5.3 kaz % 44 | fark t +1.2
-  puan       f63  ust yari: n  94 ort  +6.4 ort.ca  +3.3 kaz % 55 | alt yari: n  89 ort  +1.0 ort.ca  -4.6 kaz % 43 | fark t +1.7
-             f126 ortanca farki donemlere gore: 2020-22 +2.7 | 2023-24 +48.0 | 2025+ +12.4
-
-  grup olarak: tum sigorta olaylari f126 n 183 ort +12.8 ort.ca  -2.1 kaz % 47 | f63 n 183 ort  +3.7 ort.ca  -0.7 kaz % 49
-
-son durum: AGESA 2025/12 ROE %54 PD/DD 4.47 teknik %8 puan 0.64 | AKGRT 2025/12 ROE %33 PD/DD 1.58 teknik %29 bilesik %107 puan 0.56 | ANSGR 2025/12 ROE %31 PD/DD 1.31 teknik %29 bilesik %108 puan 0.58 | ANHYT 2025/12 ROE %44 PD/DD 3.74 teknik %13 puan 0.50 | RAYSG 2025/12 ROE %44 PD/DD 3.79 teknik %22 bilesik %103 puan 0.53 | TURSG 2025/12 ROE %38 PD/DD 2.54 teknik %38 bilesik %97 puan 0.69
+M3 (EVDS): 2026-11 eklendi
+50/625 90 sn
+100/625 196 sn
+150/625 241 sn
+200/625 284 sn
+250/625 328 sn
+300/625 377 sn
+350/625 430 sn
+400/625 496 sn
+450/625 538 sn
+500/625 582 sn
+550/625 640 sn
+600/625 698 sn
+625/625 hisse islendi, dosyada 609 hisse (722 sn)
