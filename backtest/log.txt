@@ -1,14 +1,12 @@
-pas detay 0/5065 3 sn
-pas detay 500/5065 3346 sn
-pas detay 1000/5065 6648 sn
-pas detay 1500/5065 9601 sn
-pas detay 2000/5065 9601 sn
-pas detay 2500/5065 9601 sn
-pas detay 3000/5065 9601 sn
-pas detay 3500/5065 9601 sn
-pas detay 4000/5065 9601 sn
-pas detay 4500/5065 9601 sn
-pas detay 5000/5065 9601 sn
-pas detay: 1460 yeni, toplam 4369, kalan 3605; okunan 613
-hatalar: {'ek yok': 49}
-KALAN 3605: test sonraki calistirmada
+pas detay 0/4452 3 sn
+pas detay 500/4452 3313 sn
+pas detay 1000/4452 6604 sn
+pas detay 1500/4452 9601 sn
+pas detay 2000/4452 9601 sn
+pas detay 2500/4452 9601 sn
+pas detay 3000/4452 9601 sn
+pas detay 3500/4452 9601 sn
+pas detay 4000/4452 9601 sn
+pas detay: 1459 yeni, toplam 4981, kalan 2993; okunan 528
+hatalar: {'ek yok': 54, "could not convert string to float: '31.706.714'": 2, "could not convert string to float: '3.441.483'": 2, "could not convert string to float: '1.870.000'": 1, "could not convert string to float: '1.342.275'": 1, "could not convert string to float: '20.648.897'": 1, "could not convert string to float: '2.581.112'": 1}
+KALAN 2993: test sonraki calistirmada
