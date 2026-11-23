@@ -1,27 +1,36 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3816, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 172, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 201, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7726, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7734, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'km'
 
-1 Failed download:
-['ADESE.IS']: OperationalError('database is locked')
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
   File "/home/runner/work/ikarus-motor/ikarus-motor/ikarus/temel.py", line 652, in <module>
     portfoy_bt.gyo_test()
-  File "/home/runner/work/ikarus-motor/ikarus-motor/ikarus/portfoy_bt.py", line 1304, in gyo_test
-    A = A.join(nb, on=["t", "donem"])
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/frame.py", line 15900, in join
-    return merge(
-           ^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 405, in merge
-    return op.get_result()
-           ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1139, in get_result
-    result = self._reindex_and_concat(join_index, left_indexer, right_indexer)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1090, in _reindex_and_concat
-    llabels, rlabels = _items_overlap_with_suffix(
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 3347, in _items_overlap_with_suffix
-    raise ValueError(f"columns overlap but no suffix specified: {to_rename}")
-ValueError: columns overlap but no suffix specified: Index(['netborc', 'varlik'], dtype='str')
+  File "/home/runner/work/ikarus-motor/ikarus-motor/ikarus/portfoy_bt.py", line 1327, in gyo_test
+    L.append(f"  {f:10s} {ad:5s} n={len(a):4d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}/{100 * st.loc[i, 'median']:+5.1f}" for i in (1, 2, 3)) + f" | D3-D1 {st.loc[3, 'km'] - st.loc[1, 'km']:+5.1f} (t={tst:+.1f})")
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ikarus-motor/ikarus-motor/ikarus/portfoy_bt.py", line 1327, in <genexpr>
+    L.append(f"  {f:10s} {ad:5s} n={len(a):4d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}/{100 * st.loc[i, 'median']:+5.1f}" for i in (1, 2, 3)) + f" | D3-D1 {st.loc[3, 'km'] - st.loc[1, 'km']:+5.1f} (t={tst:+.1f})")
+                                                                      ~~~~~~^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/indexing.py", line 1334, in __getitem__
+    return self.obj._get_value(*key, takeable=self._takeable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/frame.py", line 4464, in _get_value
+    series = self._get_item(col)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/frame.py", line 4979, in _get_item
+    loc = self.columns.get_loc(item)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3823, in get_loc
+    raise KeyError(key) from err
+KeyError: 'km'
 M3 (EVDS): 2026-11 eklendi
