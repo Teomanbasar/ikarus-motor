@@ -1,0 +1,34 @@
+HOLDINGIN ICINDEN: istirak sepeti onden gider mi? istiraklerin temel puani holdingi aciklar mi? (23 Kas 2026)
+holdingler (borsadaki istirak NAD'in >= %25'i): AGHOL, GLYHO, IHLAS, IHYAY, INVEO, INVES, KCHOL, KLRHO, LRSHO, LYDHO, PAHOL, SAHOL
+
+A) ACIK = son 21 gunde istirak sepeti getirisi - holdingin kendi getirisi (puan). Pozitif: istirakler yukseldi, holding yakalamadi.
+  f21: acik en yuksek 1/3 (kesit): n  416 ort  +0.3 ort.ca  -0.3 kaz % 48 t +0.5
+  f21: acik en dusuk 1/3 (kesit) : n  268 ort  -0.2 ort.ca  -1.7 kaz % 44 t -0.2
+  f21: acik >= +5 puan (mutlak)  : n  276 ort  +0.7 ort.ca  -0.3 kaz % 47 t +0.9
+  f21: acik <= -5 puan (mutlak)  : n  267 ort  +0.1 ort.ca  -2.0 kaz % 43 t +0.1
+  f63: acik en yuksek 1/3 (kesit): n  406 ort  +2.3 ort.ca  -0.8 kaz % 49 t +2.2
+  f63: acik en dusuk 1/3 (kesit) : n  260 ort  +3.8 ort.ca  -3.6 kaz % 43 t +1.8
+  f63: acik >= +5 puan (mutlak)  : n  269 ort  +2.8 ort.ca  +0.1 kaz % 50 t +1.7
+  f63: acik <= -5 puan (mutlak)  : n  259 ort  +3.4 ort.ca  -5.1 kaz % 40 t +1.6
+  f21 2014-17: acik>=+5 n   35 ort  -0.3 ort.ca  -1.9 kaz % 37 t -0.2 | acik<=-5 n   29 ort  +1.7 ort.ca  -2.4 kaz % 41 t +0.7
+  f21 2018-20: acik>=+5 n   35 ort  +6.0 ort.ca  +4.6 kaz % 66 t +2.7 | acik<=-5 n   47 ort  -0.2 ort.ca  -3.0 kaz % 45 t -0.1
+  f21 2021-23: acik>=+5 n   89 ort  +1.8 ort.ca  -0.1 kaz % 48 t +1.2 | acik<=-5 n   85 ort  +2.4 ort.ca  -0.0 kaz % 49 t +1.4
+  f21 2024+: acik>=+5 n  117 ort  -1.5 ort.ca  -1.5 kaz % 44 t -1.1 | acik<=-5 n  106 ort  -2.5 ort.ca  -3.0 kaz % 39 t -1.8
+  holding basina gozlem: AGHOL 149, INVEO 149, KCHOL 149, LYDHO 149, SAHOL 103, IHLAS 59, IHYAY 59, GLYHO 53, LRSHO 53, INVES 31, KLRHO 31, PAHOL 11
+
+B) ISTIRAK PUANI = borsadaki istiraklerin v3 sirasi (0-1, piyasa geneli), pay x piyasa degeri agirlikli. (istirak puani olan agirlik >= %50)
+  f126: istirak puani >= 0.7 (mutlak): n  237 ort +12.0 ort.ca  +4.8 kaz % 54 t +4.0
+  f126: istirak puani 0.4-0.7        : n  365 ort  +5.8 ort.ca  -1.2 kaz % 48 t +3.3
+  f126: istirak puani <= 0.4         : n  396 ort  +5.9 ort.ca  -4.9 kaz % 45 t +2.4
+  f126: ayni gun holdingler arasi en iyi 1/3: n  424 ort +13.4 ort.ca  +3.8 kaz % 55 t +6.1 | en kotu 1/3: n  292 ort  +7.2 ort.ca  -7.3 kaz % 45 t +2.3
+  f63: istirak puani >= 0.7 (mutlak): n  252 ort  +4.2 ort.ca  -0.4 kaz % 50 t +2.7
+  f63: istirak puani 0.4-0.7        : n  370 ort  +3.0 ort.ca  -0.4 kaz % 49 t +2.8
+  f63: istirak puani <= 0.4         : n  412 ort  +1.7 ort.ca  -4.1 kaz % 44 t +1.2
+  f63: ayni gun holdingler arasi en iyi 1/3: n  439 ort  +5.3 ort.ca  +0.6 kaz % 51 t +4.6 | en kotu 1/3: n  304 ort  +2.1 ort.ca  -5.0 kaz % 43 t +1.1
+  f126 2014-17: >=0.7 n   7 | <=0.4 n   56 ort  +2.0 ort.ca  -3.2 kaz % 48 t +0.6
+  f126 2018-20: >=0.7 n   82 ort +38.4 ort.ca  +8.3 kaz % 61 t +4.1 | <=0.4 n  143 ort +19.5 ort.ca  +8.8 kaz % 59 t +5.4
+  f126 2021-23: >=0.7 n   75 ort  +5.2 ort.ca  +8.4 kaz % 65 t +1.4 | <=0.4 n   99 ort  +1.4 ort.ca -20.8 kaz % 30 t +0.2
+  f126 2024+: >=0.7 n   73 ort  +1.8 ort.ca  -8.6 kaz % 40 t +0.3 | <=0.4 n   98 ort  -3.7 ort.ca -16.5 kaz % 36 t -0.7
+  karsilastirma, holdingin KENDI v3'u: >=0.7 n  343 ort +19.4 ort.ca  +5.4 kaz % 56 t +6.6 | <=0.4 n  418 ort  +5.8 ort.ca  -3.2 kaz % 46 t +2.8
+  holding basina gozlem: AGHOL 138, IHLAS 114, INVEO 114, KCHOL 114, SAHOL 114, IHYAY 110, LYDHO 99, LRSHO 97, GLYHO 94, INVES 32, KLRHO 32, PAHOL 12
+  son durum: AGHOL 0.69, GLYHO 0.80, IHLAS 0.53, IHYAY 0.22, INVEO 0.45, INVES 0.03, KCHOL 0.76, KLRHO 0.86, LRSHO 0.42, LYDHO 0.09, PAHOL 0.16, SAHOL 0.73
