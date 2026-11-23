@@ -361,14 +361,28 @@ def bagli_ortakliklar(metin: str):
     return out
 
 
+_DOLGU = {"A", "S", "AS", "ANONIM", "SIRKETI", "SIRKET", "VE", "TIC", "SAN", "T", "INC", "LTD", "SANAYI", "TICARET", "SIRKETIN",
+          "ILE", "OLAN", "ILISKININ", "NITELIGI", "FAALIYET", "KONUSU", "UNVANI"}
+
+
+def _anahtar(ad, kes=True):
+    w = [x for x in _norm(ad).split() if x not in _DOLGU]
+    return " ".join(w[:3]) if kes else " ".join(w)
+
+
 def holding_paylari(holdingler, bist: pd.DataFrame):
-    """Her holding icin borsadaki istiraklerini (ticker -> pay) bulur. bist: ticker, ad."""
-    s, bul = genel_form_topla(holdingler)
-    anah = []
-    for t, ad in zip(bist["ticker"], bist["ad"].fillna("")):
-        w = [x for x in _norm(ad).split() if x not in ("A", "S", "AS", "ANONIM", "SIRKETI", "VE", "TIC", "SAN", "T")]
-        if len(w) >= 2:
-            anah.append((t, " ".join(w[:3]) if len(w) >= 3 else " ".join(w[:2])))
+    """Her holding icin borsadaki istiraklerini (ticker -> pay) bulur. bist: ticker, ad.
+    Form listesi temel/nad_formlar.json'da saklanir (ikinci calismada KAP taramasi atlanir)."""
+    import json as _j
+    fk = DATA.parent / "temel" / "nad_formlar.json"
+    if fk.exists():
+        bul = _j.loads(fk.read_text(encoding="utf-8"))
+        s = requests.Session()
+        s.get("https://www.kap.org.tr/tr/", headers={"User-Agent": BASLIK["User-Agent"]}, timeout=60)
+    else:
+        s, bul = genel_form_topla(holdingler)
+        fk.write_text(_j.dumps(bul, ensure_ascii=False), encoding="utf-8")
+    anah = [(t, k) for t, ad in zip(bist["ticker"], bist["ad"].fillna("")) if (k := _anahtar(ad))]
     sonuc, ham = {}, []
     for h, lst in bul.items():
         rows, v, denenen = [], lst[-1], 0
@@ -376,10 +390,17 @@ def holding_paylari(holdingler, bist: pd.DataFrame):
             if denenen >= 10:
                 break
             denenen += 1
-            try:
-                m = detay_metin(s, v["index"])
-            except Exception as e:
-                ham.append(f"== {h} {v} HATA {e}"); time.sleep(2); continue
+            m = ""
+            for dn in range(4):
+                try:
+                    m = detay_metin(s, v["index"])
+                except Exception as e:
+                    ham.append(f"== {h} {v} HATA {e}")
+                if len(m) > 2000:
+                    break
+                time.sleep(20 * (dn + 1))    # bos sayfa = hiz siniri
+            if len(m) <= 2000:
+                continue
             rows = bagli_ortakliklar(m)
             time.sleep(0.8)
             if rows:
@@ -389,9 +410,9 @@ def holding_paylari(holdingler, bist: pd.DataFrame):
             ham.append(f"== {h} {len(lst)} form, {denenen} denendi, SATIR YOK; son metin {len(m)}: " + m[max(0, j - 200):j + 1200])
         bul_h = {}
         for r in rows:
-            n = _norm(r["ad"])
+            n = " " + _anahtar(r["ad"], kes=False) + " "
             for t, k in anah:
-                if t != h and k in n:
+                if t != h and (f" {k} " in n if " " in k else n.strip().startswith(k + " ") or n.strip() == k):
                     bul_h[t] = max(bul_h.get(t, 0), r["oran"])
         sonuc[h] = {"tarih": v["tarih"], "index": v["index"], "borsada": bul_h, "satir": len(rows)}
         ham.append(f"== {h} {v['tarih']} idx {v['index']} satir {len(rows)} borsada {bul_h}\n" +
