@@ -1,0 +1,648 @@
+== AGHOL 1131-ag-anadolu-grubu-holding-a-s metin 273356 satir 15 borsada {'ADEL': {'oran': 56.89, 'efektif': None, 'not': ''}, 'AEFES': {'oran': 43.05, 'efektif': None, 'not': ''}, 'ASUZU': {'oran': 55.4, 'efektif': None, 'not': ''}}
+   100.00 ef None TRY BAĞLI ORTAKLIK AÇLARIN İHRACATI, DAĞITIMI VE PAZARLAMASI VE MOTORLU ARAÇ KİRALAMA OPERASYONLARI
+   100.00 ef None TRY BAĞLI ORTAKLIK NADOLU MOTOR ÜRETİM VE PAZARLAMA A.Ş. ENDUSTRIEL MOTOR ÜRETİMİ VE TRAKTÖR SATIŞI
+    56.89 ef None TRY BAĞLI ORTAKLIK . ADEL,JOHANN FABER VE FABER CASTELL MARKALARI ALTINDA YAZI GEREÇLERİNİN ÜRETİMİ
+    98.91 ef None TRY BAĞLI ORTAKLIK LİŞİM HİZMETLERİ A.Ş. BİLGİ TEKNOLOJİLERİ,İNTERNET VE ELEKTRONİK TİCARET HİZMETİ
+   100.00 ef None EUR BAĞLI ORTAKLIK OYEX HANDELS GmbH GRUP'TA KULLANILAN ÇEŞİTLİ MALZEMELERİN ALIM SATIMI
+   100.00 ef None TRY BAĞLI ORTAKLIK ARTI ANADOLU DANIŞMANLIK A.Ş. GAYRİFAAL
+   100.00 ef None TRY BAĞLI ORTAKLIK İSİ VE/VEYA KAPASİTESİNİN TOPTAN SATIŞI İLE DOĞRUDAN SERBEST TÜKETİCİLERE SATIŞI
+   100.00 ef None TRY BAĞLI ORTAKLIK AEH SİGORTA ACENTELİĞİ A.Ş. SİGORTA ACENTELİĞİ
+    61.49 ef None TRY BAĞLI ORTAKLIK LARI A.Ş. ELEKTRİK ÜRETİMİ,İLETİMİ VE DAĞITIM TESİSLERİNİN KURULMASI,İŞLETİLMESİ
+   100.00 ef None TRY BAĞLI ORTAKLIK AND ANKARA GAYRİMENKUL YATIRIMLARI A.Ş. GAYRİMENKUL ALIMI,SATIMI VE KİRALANMASI
+   100.00 ef None TRY BAĞLI ORTAKLIK AND KARTAL GAYRİMENKUL YATIRIMLARI A.Ş. GAYRİMENKUL ALIMI,SATIMI VE KİRALANMASI
+   100.00 ef None TRY BAĞLI ORTAKLIK MH PERAKENDECİLİK VE TİCARET A.Ş. PERAKENDECİLİK
+    43.05 ef None TRY BAĞLI ORTAKLIK LT SANAYİ A.Ş. BİRA,GAZLI GAZSIZ ALKOLSÜZ İÇECEK ÜRETİMİ,ŞİŞELENMESİ VE DAĞITIMI
+    55.40 ef None TRY BAĞLI ORTAKLIK ADOLU ISUZU OTOMOTİV SANAYİ VE TİCARET A.Ş. ISUZU MARKA ARAÇLARIN ÜRETİMİ,SATIŞI
+    49.90 ef None TRY BAĞLI ORTAKLIK İŞ ORTAKLIKLARI AE MERCAN DİSTİLE İÇECEKLER PAZARLAMA A.Ş. DIŞ TİCARET İŞLEMLERİ
+== AKYHO 1623-akdeniz-yatirim-holding-a-s metin 191238 satir 4 borsada {}
+    79.42 ef None TRY Bağlı Ortaklık MİLYA ENDÜSTRİ PLASTİK SANAYİ VE TİCARET A.Ş. PLASTİK SANAYİ
+    99.90 ef None TRY Bağlı Ortaklık G ÇEVRE GERİ DÖNÜŞÜM SANAYİ VE TİCARET ANONİM ŞİRKETİ ATIK YÖNETİMİ,GERİ DÖNÜŞÜM
+    99.99 ef None TRY Bağlı Ortaklık NANOX KİMYASAL ÜRÜNLER SAN VE TİC A.Ş. KİMYA VE YAN SANAYİ SEKTÖRÜ
+    80.00 ef None TRY Bağlı Ortaklık TARSAN GIDA TUR İNŞ OTO SAN DIŞ TİC PAZ A.Ş KİMYA TEMİZLİK ÜRÜNLERİSEKTÖRÜ
+== ALARK 846-alarko-holding-a-s metin 314230 satir 39 borsada {'ALGYO': {'oran': 21.43, 'efektif': 56.24, 'not': '(DOĞRUDAN VE DOLAYLI ORTAKLIK PAYI %56,24)'}}
+    99.91 ef 99.99 TRY BAĞLI ORTAKLIK M ALARKO SANAYİ TESİSLERİ VE TİCARET A.Ş. KOMPLE TESİS TAAHHÜDÜ,İNŞAAT VE TURİZM
+    21.43 ef 56.24 TRY BAĞLI ORTAKLIK RTAKLIĞI A.Ş. GAYRİMENKUL VE GAYRİMENKULE DAYALI PİYASA ARAÇLARININ ALIM, SATIMI
+    11.55 ef 12.14 TRY İŞTİRAK        AL-RİVA PROJESİ ARAZİ DEĞERLENDİRME, KONUT İNŞAAT VE TİCARET A.Ş. KONUT, İNŞAAT
+     2.49 ef 2.63 TRY İŞTİRAK        AL-RİVA ARAZİ DEĞERLENDİRME KONUT İNŞAAT VE TİCARET A.Ş. KONUT, İNŞAAT
+     2.16 ef 2.28 TRY İŞTİRAK        LER GOLF İŞLETMESİ VE TİCARET A.Ş. KONUT, İNŞAAT VE TURİSTİK TESİS İŞLETMECİLİĞİ
+   100.00 ef 100.0 TRY BAĞLI ORTAKLIK ALARKO TARIM SANAYİ VE TİCARET A.Ş. TARIM,GIDA & GIDA İŞLETME VE TEKNOLOJİLERİ
+     0.00 ef 51.23 RUB BAĞLI ORTAKLIK A.O. MOSALARKO GAYRİMENKULLERİN PROJELENDİRME. İNŞAAT VE KULLANIMI
+   100.00 ef 100.0 TRY BAĞLI ORTAKLIK ME SATIŞ VE İMALAT A.Ş. SANAYİ MAMULLERİ PAZARLAMASI VE SATIS SONRASI HİZMETLERİ
+     0.46 ef 99.99 TRY BAĞLI ORTAKLIK ATTAŞ ALARKO TURİSTİK TESİSLER A.Ş. TURİSTİK TESİS İŞLETMECİLİĞİ
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK  ALARKO ENERJİ TİCARET A.Ş. ELEKTRİK ENERJİSİ ALIMI, SATIMI, İTHALAT VE İHRACATI
+    10.60 ef 100.0 TRY BAĞLI ORTAKLIK ALTEK ALARKO ELEKTRİK SAN.TES.İŞL.VE TİC.A.Ş. ELEKTRİK ENERJİSİ ÜRETİMİ
+   100.00 ef 100.0 TRY BAĞLI ORTAKLIK ALDEM ALARKO KONUT İNŞAAT VE TİC.A.Ş. KONUT, İNŞAAT
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK MERAM ELEKTRİK ENERJİSİ TOPTAN SATIŞ A.Ş. ELEKTRİK ENERJİSİ TİCARETİ
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK MERAM ELEKTRİK PERAKENDE SATIŞ A.Ş. ELEKTRİK ENERJİSİ TİCARETİ
+    99.95 ef 99.95 TRY BAĞLI ORTAKLIK ALYAT TEKNOLOJİ YATIRIMLARI HOLDİNG A.Ş. HOLDING SIRKETLERININ FAALIYETLERI
+    89.24 ef 100.0 TRY BAĞLI ORTAKLIK ALARKO ENERJİ A.Ş. ENERJİ ÜRETİMİ
+     0.00 ef 99.99 RON BAĞLI ORTAKLIK ALSİM ALARKO S.R.L. İNŞAAT
+     0.00 ef 100.0 KZT BAĞLI ORTAKLIK SARET KZ İNŞAAT İŞLERİ
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK ALSERA JEOTERMAL TARIM GIDA SAN. VE TİC.A.Ş. JEOTERMAL ENERJİYE DAYALI SERACILIK
+    58.18 ef 100.0 TRY BAĞLI ORTAKLIK ALSER ALARKO SERMAYE YATIRIMLARI HOLDİNG A.Ş. HOLDING SIRKETLERININ FAALIYETLERI
+     0.00 ef 80.0 TRY BAĞLI ORTAKLIK PALMİRA AGRO GÜBRE SANAYİ VE TİC.A.Ş. MİKRO GRANÜR GÜBRE ÜRETİMİ
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK İ BİTKİSEL İLAÇ HAM MADDELERİ ÜRETİM SAN. VE TİC.A.Ş. BİTKİSEL İLAÇ HAMMADDELERİ
+   100.00 ef 100.0 TRY BAĞLI ORTAKLIK ALARKO DİJİTAL TEKNOLOJİ ÇÖZÜMLERİ A.Ş. BİLGİ TEKNOLOJİLERİ
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK ULTİLEK BİLGİ TEKNOLOJİLERİ A.Ş. BİLGİSAYAR PROGRAMLAMA FAALİYETLERİ
+   100.00 ef 100.0 TRY BAĞLI ORTAKLIK ALARKO HAVACILIK ENDÜSTRİ YATIRIMLARI A.Ş. HAVACILIK VE UÇAK TEKNİK BAKIM
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK ALARKO GIDA SANAYİ VE TİCARET A.Ş. GIDA, GIDA İŞLETMECİLİĞİ
+     0.00 ef 99.99 TRY BAĞLI ORTAKLIK GENSEED TOHUM ISLAH VE ÜRETİM ANONİM ŞİRKETİ TOHUM ISLAHI VE ÜRETİMİ
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK NAYİ TİCARET ANONİM ŞİRKETİ ÇİÇEK SERACILIĞI ÜRETİMİ, ALIM SATIMI VE PAZARLAMASI
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK BEYBUR TARIM VE HAYVANCILIK ANONİM ŞİRKETİ TARIM
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK NATA TARIM ÜRETİM VE TİCARET A.Ş. JEOTERMAL ENERJİYE DAYALI SERACILIK
+     0.00 ef 75.0 TRY BAĞLI ORTAKLIK İPEKS JEOTERMAL ENERJİ TARIM SAN.TİC.A.Ş. JEOTERMAL ENERJİYE DAYALI SERACILIK
+     0.00 ef 100.0 KZT BAĞLI ORTAKLIK TOO ALSERA K/Z TARIM
+     0.00 ef 51.0 GBP BAĞLI ORTAKLIK ALFOR AVİATİON AND TECHNİCAL SERVİCES LTD. HAVACILIK VE UÇAK TEKNİK BAKIM
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK SERAF TARIM VE HAYVANCILIK A.Ş. TARIM
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK ALCEN ENERJİ TOPLAYICIK A.Ş. ELEKTRİK PİYASASINDA TOPLAYICILIK
+     0.00 ef 100.0 TRY BAĞLI ORTAKLIK SERAVERDE JEOTERMAL TARIM GIDA SANAYİ VE TİCARET A.Ş. TARIM
+     0.00 ef 51.0 TRY BAĞLI ORTAKLIK ALFOR HAVACILIK VE TEKNİK HİZMETLERİ A.Ş. HAVACILIK VE UÇAK TEKNİK BAKIM
+     0.00 ef 51.0 TRY BAĞLI ORTAKLIK CAMSER TARIM GIDA A.Ş. TARIM, SERACILIK
+     0.00 ef 60.0 TRY BAĞLI ORTAKLIK NERGY ENERJİ DEPOLAMA SİSTEMLERİ ÜRETİM A.Ş. ENERJİ DEPOLAMA SİSTEMLERİ, ÜRETİMİ
+== ARSAN 2169-arsan-finans-faktoring-a-s metin 145627 satir 0 borsada {}
+
+   METIN: BAĞLI ORTAKLIKLAR, FİNANSAL DURAN VARLIKLAR İLE FİNANSAL YATIRIMLARA İLİŞKİN BİLGİLER\",\"fields\":{\"subsidiariesFinancialNonCurrentAssetsAndFinancialInvestmentsGrid\":{\"tableTitle\":\"Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar\",\"tableColumns\":[{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-l-lg\",\"columnName\":\"Ticaret Ünvanı\",\"columnKey\":\"companyTitle\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Faaliyet Konusu\",\"columnKey\":\"scopeOfActivitiesOfCompany\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Ödenmiş/Çıkarılmış Sermayesi\",\"columnKey\":\"paidInOrIssuedCapital\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı\",\"columnKey\":\"capitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Para Birimi\",\"columnKey\":\"monetaryUnit\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı(%)\",\"columnKey\":\"ratioOfCapitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-r-lg\",\"columnName\":\"Şirket ile Olan İlişkinin Niteliği\",\"columnKey\":\"relationWithTheCompany\"}],\"note1\":\"(*) 12/06/2026 ve sonrası tarihli fiili dolaşım hesaplaması 04/06/2026 tarih ve 34/1044 sayılı Kurul İlke Kararı kapsamında yapılmaya başlanmıştır. Sermaye Piyasası Kurulu’nun 17.02.2011 tarih ve 
+== ATSYH 869-atlantis-yatirim-holding-a-s metin 183506 satir 4 borsada {}
+   100.00 ef None TRY BAĞLI ORTAKLIK OR-NA TARIM ÜRÜNLERİ SANAYİ VE TİCARET A.Ş. TARIM ÜRÜNLERİ VE KURU GIDA
+    50.20 ef None TRY BAĞLI ORTAKLIK EKSTİL SANAYİ VE DIŞ TİCARET A.Ş. HAZIR GİYİM TASARIM, İMALAT VE PAZARLAMA SATIŞ
+   100.00 ef None TRY BAĞLI ORTAKLIK BALKANEY GIDA TURİZM TEKSTİL TİCARET A.Ş. GIDA
+   100.00 ef None TRY BAĞLI ORTAKLIK IDA MADDELERİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ ELEKTRİK VE ELEKTRONİK PAZARLAMA
+== AVHOL 1691-avrupa-yatirim-holding-a-s metin 202028 satir 10 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık İlişkinin Niteliği ARMED SAĞLIK HİZMETLERİ VE MEDİKAL SANAYİ TİCARET A.Ş. SAĞLIK
+   100.00 ef None TRY Bağlı Ortaklık SEREN SAĞLIK HİZMETLERİ ANONİM ŞİRKETİ SAĞLIK
+   100.00 ef None TRY Bağlı Ortaklık AVREN ENERJİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ ENERJİ
+   100.00 ef None TRY Bağlı Ortaklık ARONYA BİTKİ VE TARIM ÜRÜNLERİ ANONİM ŞİRKETİ TARIM
+   100.00 ef None TRY Bağlı Ortaklık NOYAN DAYANIKLI TÜKETİM ÜRÜNLERİ PAZARLAMA ANONİM ŞİRKETİ PAZARLAMA
+    67.00 ef None TRY Bağlı Ortaklık ERRA KAUÇUK SANAYİ VE TİC. A.Ş. GERİ DÖNÜŞÜM
+   100.00 ef None TRY Bağlı Ortaklık ALS YENİLENEBİLİR ENERJİ A.Ş. ENERJİ
+    95.00 ef None EUR Bağlı Ortaklık MEKEN INVEST S.R.L. ENERJİ
+    12.57 ef None TRY Bağlı Ortaklık ULAŞLAR TURİZM ENERJİ TARIM GIDA VE İNŞAAT YATIRIMLARI A.Ş. TURİZM
+    51.00 ef None TRY Bağlı Ortaklık GAYAMED ECZA DEPOSU SANAYİ VE TİCARET ANONİM ŞİRKETİ ECZA DEPOSU
+== BERA 1693-bera-holding-a-s metin 262101 satir 20 borsada {'GOLDA': {'oran': 37.8, 'efektif': None, 'not': ''}, 'KONKA': {'oran': 72.98, 'efektif': None, 'not': ''}}
+    94.62 ef None TRY Bağlı Ortaklık el Mineraller Sanayi Ticaret Anonim Şirketi Endüstriyel Mineral Üretim Pazarlama
+   100.00 ef None TRY Bağlı Ortaklık Anadolu Rulman İmalat Sanayi Ticaret Anonim Şirketi Rulman Üretimi
+   100.00 ef None TRY Bağlı Ortaklık Bera Turizm İnşaat Seyahat Ticaret Anonim Şirketi Turizm Otel İşletmeciliği
+    99.99 ef None TRY Bağlı Ortaklık Beratek Makine Sanayi ve Ticaret Anonim Şirketi Hidrolik Vinç üretim ve satışı
+   100.00 ef None TRY Bağlı Ortaklık Divapan Entegre Ağaç Panel Sanayi Ticaret Anonim Şirketi Entegre Ağaç İşleri
+    37.80 ef None TRY İştirak        Golda Gıda Sanayi ve Ticaret Anonim Şirketi Gıda Maddeleri Üretim Pazarlama
+   100.00 ef None TRY Bağlı Ortaklık cilik ve Yapı Elemanları Sanayin Ticaret Anonim Şirketi Mikronize Kalsit üretimi
+    80.20 ef None TRY Bağlı Ortaklık Kar-su Çamlıca Köyü Su İşletmeleri Anonim Şirketi Kaynak Su Dolum Pazarlama
+   100.00 ef None TRY Bağlı Ortaklık  Malları Üretim Pazarlama Sanayi Ticaret Anonim Şirketi Gıda Maddeleri Pazarlama
+   100.00 ef None TRY Bağlı Ortaklık  Gıda Sanayi İç ve Dış Ticaret Anonim Şirketi Alışveriş Merkezleri İşletmeciliği
+    86.65 ef None TRY Bağlı Ortaklık VC Yapı ve İnşaat malzemeleri Sanayi Ticaret Anonim Şirketi PVC Üretim Pazarlama
+    82.35 ef None TRY Bağlı Ortaklık Komyapı İnşaat Anonim Şirketi Hazırbeton İnşaat Taahhüt İşleri
+   100.00 ef None TRY Bağlı Ortaklık etrol Ürünleri Pazarlama Sanayi Ticaret Anonim Şirketi Petrol Ürünleri Pazarlama
+    72.98 ef None TRY Bağlı Ortaklık Konya Kağıt Sanayi ve Ticaret Anonim Şirketi Kağıt Matbaa Ambalaj
+   100.00 ef None TRY Bağlı Ortaklık Konya Petrol Sanayi ve Ticaret Anonim Şirketi Petrol Ürünleri
+   100.00 ef None TRY Bağlı Ortaklık Koveka Konya ve Karaman Tekstil Sanayi Dış Ticaret Anonim Şirketi Tekstil
+   100.00 ef None TRY Bağlı Ortaklık Lotus Güç Aktarma Sistemleri Anonim Şirketi Güç Aktarma Sistemleri Üretimi
+    90.71 ef None TRY Bağlı Ortaklık Makine Prodüksiyon Grubu Makine İml. Sanayi Ticaret Anonim Şirketi Makine İmalat
+    49.00 ef None TRY İştirak        ratlı Karton Kağıt Sanayi Ticaret Anonim Şirketi Karton Ambalaj Üretim Pazarlama
+    66.00 ef None TRY Bağlı Ortaklık Taçhan Turizm Hizmetleri Ticaret Anonim Şirketi Turizm Hizmetleri
+== BINHO 5900-1000-yatirimlar-holding-a-s metin 215340 satir 0 borsada {}
+
+   METIN: BAĞLI ORTAKLIKLAR, FİNANSAL DURAN VARLIKLAR İLE FİNANSAL YATIRIMLARA İLİŞKİN BİLGİLER\",\"fields\":{\"subsidiariesFinancialNonCurrentAssetsAndFinancialInvestmentsGrid\":{\"tableTitle\":\"Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar\",\"tableColumns\":[{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-l-lg\",\"columnName\":\"Ticaret Ünvanı\",\"columnKey\":\"companyTitle\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Faaliyet Konusu\",\"columnKey\":\"scopeOfActivitiesOfCompany\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Ödenmiş/Çıkarılmış Sermayesi\",\"columnKey\":\"paidInOrIssuedCapital\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı\",\"columnKey\":\"capitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Para Birimi\",\"columnKey\":\"monetaryUnit\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı(%)\",\"columnKey\":\"ratioOfCapitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-r-lg\",\"columnName\":\"Şirket ile Olan İlişkinin Niteliği\",\"columnKey\":\"relationWithTheCompany\"}],\"note1\":\"(*) 12/06/2026 ve sonrası tarihli fiili dolaşım hesaplaması 04/06/2026 tarih ve 34/1044 sayılı Kurul İlke Kararı kapsamında yapılmaya başlanmıştır. Sermaye Piyasası Kurulu’nun 17.02.2011 tarih ve 
+== BLCYT 1544-bilici-yatirim-sanayi-ve-ticaret-a-s metin 223085 satir 1 borsada {}
+   100.00 ef None GBP Bağlı Ortaklık BILICI İNVEST LIMITED Gayrimenkul Yatırımları
+== COSMO 893-cosmos-yatirim-holding-a-s metin 175114 satir 2 borsada {}
+    60.00 ef None TRY Bağlı Ortaklık dislik ve mimarlık çalışmalarını yapmak ve yaptırmak üzere ofis ve bürolar açmak
+    51.00 ef None TRY Bağlı Ortaklık ve kontrol odaları kurmakta, kurulan sistemlerin bakım ve onarımını yapmaktadır.
+== DENGE 4972-denge-varlik-yonetim-a-s metin 167990 satir 0 borsada {}
+
+   METIN: BAĞLI ORTAKLIKLAR, FİNANSAL DURAN VARLIKLAR İLE FİNANSAL YATIRIMLARA İLİŞKİN BİLGİLER\",\"fields\":{\"subsidiariesFinancialNonCurrentAssetsAndFinancialInvestmentsGrid\":{\"tableTitle\":\"Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar\",\"tableColumns\":[{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-l-lg\",\"columnName\":\"Ticaret Ünvanı\",\"columnKey\":\"companyTitle\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Faaliyet Konusu\",\"columnKey\":\"scopeOfActivitiesOfCompany\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Ödenmiş/Çıkarılmış Sermayesi\",\"columnKey\":\"paidInOrIssuedCapital\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı\",\"columnKey\":\"capitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Para Birimi\",\"columnKey\":\"monetaryUnit\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı(%)\",\"columnKey\":\"ratioOfCapitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-r-lg\",\"columnName\":\"Şirket ile Olan İlişkinin Niteliği\",\"columnKey\":\"relationWithTheCompany\"}],\"note1\":\"(*) 12/06/2026 ve sonrası tarihli fiili dolaşım hesaplaması 04/06/2026 tarih ve 34/1044 sayılı Kurul İlke Kararı kapsamında yapılmaya başlanmıştır. Sermaye Piyasası Kurulu’nun 17.02.2011 tarih ve 
+== DERHL 4864-derluks-yatirim-holding-a-s metin 192428 satir 1 borsada {'SOHOE': {'oran': 46.3, 'efektif': None, 'not': ''}}
+    46.30 ef None TRY Bağlı Ortaklık m ve Enerji A.Ş. Erkek giyim ürünleri, yenilenebilir enerji ve elektrik üretimi.
+== DEVA 916-deva-holding-a-s metin 223471 satir 7 borsada {}
+   100.00 ef None EUR Bağlı Ortaklık DEVATIS Gmbh Beşeri-tıbbi ve veteriner ilaçların Almanya'da satış ve dağıtımı.
+   100.00 ef None CHF Bağlı Ortaklık DEVATIS AG Beşeri-tıbbi ve veteriner ilaçların İsviçre'de satış ve dağıtımı.
+   100.00 ef None USD Bağlı Ortaklık DEVATIS Inc Beşeri-tıbbi ve veteriner ilaçların Amerikada satış ve dağıtımı.
+   100.00 ef None EUR Bağlı Ortaklık .o. BEOGRADE Beşeri-tıbbi ve veteriner ilaçların Sırbistan'da satış ve dağıtımı.
+   100.00 ef None EUR Bağlı Ortaklık DEVATIS B.V. Beşeri-tıbbi ve veteriner ilaçların Hollanda'da satış ve dağıtımı.
+   100.00 ef None AZN Bağlı Ortaklık DEVATIS LLC Beşeri-tıbbi ve veteriner ilaçların Azerbaycan'da satış ve dağıtımı.
+   100.00 ef None GBP Bağlı Ortaklık VATIS UK Ltd Beşeri-tıbbi ve veteriner ilaçların İngiltere'de satış ve dağıtımı.
+== DOHOL 919-dogan-sirketler-grubu-holding-a-s metin 306071 satir 18 borsada {'GWIND': {'oran': 70.0, 'efektif': None, 'not': ''}}
+   100.00 ef None TRY BAĞLI ORTAKLIK lişkinin Niteliği D GAYRİMENKUL YATIRIMLARI VE TİCARET A.Ş. GAYRİMENKUL YÖNETİMİ
+   100.00 ef None TRY BAĞLI ORTAKLIK DEĞER FİNANSAL DANIŞMANLIK A.Ş. FİNANSAL DANIŞMANLIK
+   100.00 ef None TRY BAĞLI ORTAKLIK DOĞAN TREND OTOMOTİV TİCARET HİZMET VE TEKNOLOJİ A.Ş. MOTORLU TAŞIT TİCARETİ
+   100.00 ef None TRY BAĞLI ORTAKLIK MARLİN OTELCİLİK VE TURİZM A.Ş. OTEL VB. KONAKLAMA FAALİYETLERİ
+   100.00 ef None TRY BAĞLI ORTAKLIK DORUK FAKTORİNG A.Ş. FAKTORİNG
+   100.00 ef None TRY BAĞLI ORTAKLIK DEĞER MERKEZİ HİZMETLER VE YÖNETİM DANIŞMANLIĞI A.Ş. İŞLETME DESTEK HİZMETLERİ
+   100.00 ef None TRY BAĞLI ORTAKLIK KELKİT DOĞAN BESİ İŞLETMELERİ A.Ş. HAYVANCILIK
+   100.00 ef None TRY BAĞLI ORTAKLIK MİLTA TURİZM İŞLETMELERİ A.Ş. TURİZM
+   100.00 ef None TRY BAĞLI ORTAKLIK DOĞAN YAYINLARI YAYINCILIK VE YAPIMCILIK TİCARET A.Ş. YAYINCILIK
+   100.00 ef None TRY BAĞLI ORTAKLIK DOĞAN DIŞ TİCARET VE MÜMESSİLLİK A.Ş. İTHALAT-İHRACAT
+   100.00 ef None TRY BAĞLI ORTAKLIK RAPSODİ RADYO VE TELEVİZYON YAYINCILIK A.Ş. RADYO YAYIMCILIĞI
+   100.00 ef None EUR BAĞLI ORTAKLIK DHI INVESTMENT BV HOLDİNG ŞİRKETİ
+   100.00 ef None USD BAĞLI ORTAKLIK M INVESTMENT 1 LLC GAYRİMENKUL YÖNETİMİ
+    91.00 ef None TRY BAĞLI ORTAKLIK D YATIRIM BANKASI A.Ş. YATIRIM BANKACILIĞI
+    75.00 ef None TRY BAĞLI ORTAKLIK ÖNCÜ GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş. YATIRIM
+    75.00 ef None TRY BAĞLI ORTAKLIK GÜMÜŞTAŞ MADENCİLİK VE TİCARET A.Ş. MADENCİLİK
+    75.00 ef None TRY BAĞLI ORTAKLIK DOKU MADENCİLİK VE TİCARET A.Ş. MADENCİLİK
+    70.00 ef None TRY BAĞLI ORTAKLIK GALATA WIND ENERJİ A.Ş. ELEKTRİK ÜRETİM
+== DUNYH 1069-dunya-holding-a-s metin 170547 satir 0 borsada {}
+
+   METIN: BAĞLI ORTAKLIKLAR, FİNANSAL DURAN VARLIKLAR İLE FİNANSAL YATIRIMLARA İLİŞKİN BİLGİLER\",\"fields\":{\"subsidiariesFinancialNonCurrentAssetsAndFinancialInvestmentsGrid\":{\"tableTitle\":\"Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar\",\"tableColumns\":[{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-l-lg\",\"columnName\":\"Ticaret Ünvanı\",\"columnKey\":\"companyTitle\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Faaliyet Konusu\",\"columnKey\":\"scopeOfActivitiesOfCompany\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Ödenmiş/Çıkarılmış Sermayesi\",\"columnKey\":\"paidInOrIssuedCapital\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı\",\"columnKey\":\"capitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Para Birimi\",\"columnKey\":\"monetaryUnit\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı(%)\",\"columnKey\":\"ratioOfCapitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-r-lg\",\"columnName\":\"Şirket ile Olan İlişkinin Niteliği\",\"columnKey\":\"relationWithTheCompany\"}],\"note1\":\"(*) 12/06/2026 ve sonrası tarihli fiili dolaşım hesaplaması 04/06/2026 tarih ve 34/1044 sayılı Kurul İlke Kararı kapsamında yapılmaya başlanmıştır. Sermaye Piyasası Kurulu’nun 17.02.2011 tarih ve 
+== ECOGR 6140-ecogreen-enerji-holding-a-s metin 191603 satir 2 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık Ecofer Gübre ve Enerji Üretim A.Ş. Elektrik enerjisi üretimi
+   100.00 ef None TRY Bağlı Ortaklık Ecowind 3 Enerji A.Ş. Elektrik enerjisi üretimi
+== ECZYT 926-eczacibasi-yatirim-holding-ortakligi-a-s metin 184391 satir 3 borsada {}
+    46.21 ef None TRY İştirak        obilyaları ve aksesuarlarının Türkiye çapında satışı ve satış sonrası hizmetleri
+    30.62 ef None TRY İştirak        ve gayrimenkul yatırımlarında bulunmak
+    11.54 ef None TRY İştirak        bulunmak
+== ENDAE 6057-enda-enerji-holding-a-s metin 243424 satir 5 borsada {}
+    95.00 ef None TRY Bağlı Ortaklık e Olan İlişkinin Niteliği Akçay HES Elektrik Üretim A.Ş. Elektirk Enerji Üretimi
+    74.53 ef None TRY Bağlı Ortaklık Egenda Ege Enerji Üretim A.Ş. Elektrik Enerji Üretimi
+   100.00 ef None TRY Bağlı Ortaklık Ensat Elektrik Enerjisi Tedarik Tic. A.Ş. Elektrik Ticareti
+    49.77 ef None TRY İştirak        Tasfiye Halinde Antalya Enerji Üretim A.Ş. Elektrik Enerji Üretimi
+    14.95 ef None TRY İştirak        RY 0,12 Dolaylı Bağlı Menkul Kıymet İzmir Teknoloji Geliştirme Bölgesi A.Ş. Arge
+== EUHOL 1508-euro-yatirim-holding-a-s metin 192195 satir 6 borsada {}
+    63.50 ef None TRY BAĞLI ORTAKLIK SAĞLIK HİZMETİ
+   100.00 ef None TRY BAĞLI ORTAKLIK COD ENERJİ ÜRETİM SANAYİ TİCARET A.Ş. ENERJİ ÜRETİMİ
+    35.00 ef None TRY İŞTİRAK        ASAFAKIN MADENCİLİK SANAYİ VE TİCARET A.Ş. MADEN İŞLETMECİLİĞİ
+   100.00 ef None TRY BAĞLI ORTAKLIK EGE SİGORTA A.Ş SİGORTA
+    33.46 ef None EUR İŞTİRAK        EUROCITY AG BANK BANKACILIK
+   100.00 ef None TRY BAĞLI ORTAKLIK EURO FİNANS MENKUL DEĞERLER A.Ş. FİNANS
+== GLRYH 1428-guler-yatirim-holding-a-s metin 201145 satir 8 borsada {'PRDGS': {'oran': 28.65, 'efektif': None, 'not': ''}, 'A1YEN': {'oran': 4.0, 'efektif': None, 'not': ''}}
+    65.59 ef None TRY Bağlı Ortaklık ket ile Olan İlişkinin Niteliği İCG Finansal Danışmanlık AŞ Finansal Danışmanlık
+    32.15 ef None TRY Bağlı Ortaklık A1 Capital Yatırım Menkul Değerler AŞ Aracı Kurum
+    17.50 ef None TRY Bağlı Ortaklık A1 Eğitim ve Filo Kiralama AŞ Taşıt Kiralama ve Eğitim
+    28.65 ef None TRY Bağlı Ortaklık  Sermayesi Yatırım Ortaklığı AŞ Girişim sermayesi yatırım ortaklığı faaliyetleri
+     5.39 ef None TRY Bağlı Ortaklık ünler gibi biyolojik ürünler ile kimyasal maddelerin imalat, ihracat ve ticareti
+     4.00 ef None TRY Bağlı Ortaklık A1 Yenilenebilir Enerji Üretim AŞ Yenilenebilir Enerji
+     0.00 ef None TRY Bağlı Ortaklık ASY Yenilenebilir Enerji Üretim AŞ Yenilenebilir Enerji
+     6.00 ef None TRY İştirak        Yapı Radar Bilgi Teknolojileri AŞ Bilgisayar Programlama Faaliyetleri
+== GLYHO 967-global-yatirim-holding-a-s metin 433026 satir 86 borsada {'CONSE': {'oran': 50.99, 'efektif': None, 'not': ''}, 'NTGAZ': {'oran': 100.0, 'efektif': None, 'not': ''}, 'GLBMD': {'oran': 75.0, 'efektif': None, 'not': ''}}
+    90.47 ef None TRY Bağlı Ortaklık rket ile Olan İlişkinin Niteliği Global Liman İşletmeleri A.Ş. Liman Yatırımları
+    81.85 ef None TRY Bağlı Ortaklık Ege Liman İşletmeleri A.Ş. Liman İşletmeciliği
+    81.42 ef None TRY Bağlı Ortaklık Bodrum Yolcu Limanı İşletmeleri A.Ş. Liman İşletmeciliği
+    57.16 ef None EUR Bağlı Ortaklık Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık Liman İşletmeciliği
+   100.00 ef None EUR Bağlı Ortaklık Global Ports Holding B.V. Liman Yatırımları
+    90.47 ef None GBP Bağlı Ortaklık Global Ports Holding Limited Liman Yatırımları
+    90.47 ef None GBP Bağlı Ortaklık Global Ports Group Finance LTD Liman Yatırımları
+    90.47 ef None EUR Bağlı Ortaklık Liman Yatırımları
+    90.47 ef None EUR Bağlı Ortaklık Global Ports Melita Ltd. Liman İşletmeciliği
+    50.30 ef None EUR Bağlı Ortaklık Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık Port Operation Holding S.r.l Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık GPH Cruise Ports Bremerhaven GmbH Liman İşletmeciliği
+    64.14 ef None EUR Bağlı Ortaklık Cagliari Cruise Port S.r.l. Liman İşletmeciliği
+    57.14 ef None EUR Bağlı Ortaklık Catania Terminali Passeggeri S.r.l. Liman İşletmeciliği
+    54.28 ef None MAD Bağlı Ortaklık Casablanca Cruise Port S.A Liman İşletmeciliği
+    90.47 ef None HRK Bağlı Ortaklık Zadar International Ports Operations d.o.o. Liman İşletmeciliği
+    45.28 ef None EUR Bağlı Ortaklık Travel Shopping Limited Turizm İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık Global Ports Mediterranean S.L. Turizm İşletmeciliği
+    90.47 ef None USD Bağlı Ortaklık GPH Antigua Ltd. Liman İşletmeciliği
+    44.33 ef None USD Bağlı Ortaklık Nassau Cruise Port Ltd. Liman İşletmeciliği
+    90.47 ef None USD Bağlı Ortaklık GPH Americas Ltd. Liman Yatırımları
+    90.47 ef None GBP Bağlı Ortaklık Global Ports Americas Holding Ltd. Liman Yatırımları
+    90.47 ef None USD Bağlı Ortaklık GPH Bahamas Ltd. Liman Yatırımları
+    90.47 ef None GBP Bağlı Ortaklık Liman Hizmetleri
+    46.14 ef None EUR Bağlı Ortaklık Balearic Handling S.L.A. Liman Hizmetleri
+    46.14 ef None EUR Bağlı Ortaklık Shore Handling S.L.A. Liman Hizmetleri
+    90.47 ef None EUR Bağlı Ortaklık Port Management Services S.L. Liman İşletmeciliği
+    90.47 ef None GBP Bağlı Ortaklık Port Finance Investments Limited Genel Kurumsal İşlemler
+    90.47 ef None EUR Bağlı Ortaklık Taranto Cruise Port S.r.l Liman Hizmetleri
+    72.37 ef None EUR Bağlı Ortaklık Global Ports Canary Islands S.L. Liman Hizmetleri
+    72.37 ef None EUR Bağlı Ortaklık Global Ports Alicante S.L. Liman Hizmetleri
+    90.47 ef None EUR Bağlı Ortaklık Global Ports Services Med Turizm Yatırımları
+    90.47 ef None EUR Bağlı Ortaklık Port Operations Services Ltd. Liman İşletmeciliği
+    90.47 ef None USD Bağlı Ortaklık GPH Barbados Ltd. Liman Yönetimi
+    90.47 ef None GBP Bağlı Ortaklık GPH Cruise Port Finance LTD. Liman Yatırımları
+    90.47 ef None DKK Bağlı Ortaklık GPH Kalundborg ApS Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık GPH Malta finance PLC Genel Kurumsal İşlemler
+    90.47 ef None EUR Bağlı Ortaklık Global Ports Tarragona S.L. Liman İşletmeciliği
+    90.47 ef None GBP Bağlı Ortaklık GPH Liverpool Cruise Port Ltd. Liman İşletmeciliği
+    90.47 ef None EUR Bağlı Ortaklık Liman İşletmeciliği
+    90.47 ef None USD Bağlı Ortaklık San Juan Cruise Port LLC Liman İşletmeciliği
+    90.47 ef None USD Bağlı Ortaklık GPH Saint Lucia Ltd Liman İşletmeciliği
+    90.47 ef None GBP Bağlı Ortaklık GPH Greenock Cruise Port Limited Liman İşletmeciliği
+    50.99 ef None TRY Bağlı Ortaklık Consus Enerji İşletmeciliği ve Hizmetleri A.Ş. Enerji Yatırımları
+    50.99 ef None TRY Bağlı Ortaklık Tres Enerji Hizmetleri Sanayi ve Ticaret A.Ş. Enerji Üretimi
+    50.99 ef None TRY Bağlı Ortaklık Mavibayrak Enerji Üretim A.Ş. Enerji Üretimi
+    50.99 ef None TRY Bağlı Ortaklık Mavibayrak Doğu Enerji Üretim A.Ş. Enerji Üretimi
+    50.99 ef None TRY Bağlı Ortaklık Doğal Enerji Hizmetleri San. Ve Tic. A.Ş. Elektrik Üretimi
+   100.00 ef None EUR Bağlı Ortaklık Consus Energy Europe BV Enerji Yatırımları
+   100.00 ef None USD Bağlı Ortaklık Global Caribbean Energy Holdings Limited Enerji Yatırımları
+    50.00 ef None USD Bağlı Ortaklık Bahamas Energy Holdings Limited Enerji Yatırımları
+   100.00 ef None USD Bağlı Ortaklık Global Africa Power Investments Enerji Yatırımları
+    51.00 ef None EUR Bağlı Ortaklık Barsolar D.O.O. Enerji Üretimi
+    50.99 ef None TRY Bağlı Ortaklık Ra Güneş Enerjisi Üretim San. ve Tic. A.Ş. Elektrik Üretimi
+    60.00 ef None TRY Bağlı Ortaklık Naturelgaz Sanayi ve Tic. A.Ş. Sıkıştırılmış Doğalgaz Satışı
+   100.00 ef None TRY Bağlı Ortaklık Naturelgaz Gaz İletim A.Ş. Gaz ve Petrol Ürünleri Taşımacılığı
+    97.69 ef None TRY Bağlı Ortaklık Straton Maden Yatırımları ve İşletmeciliği A.Ş. Maden İşletmeciliği
+    50.99 ef None TRY Bağlı Ortaklık Solis Enerji Üretim ve Ticaret A.Ş Enerji Üretimi
+    50.99 ef None TRY Bağlı Ortaklık Tenera Enerji Tic. A.Ş. Elektrik ve Doğalgaz Ticareti
+    50.99 ef None TRY Bağlı Ortaklık Edusa Atık Bertaraf Geri Kazanım ve Depolama San. ve Tic. A.Ş. Enerji Üretimi
+    70.00 ef None TRY Bağlı Ortaklık Dağören Enerji A.Ş. Elektrik Üretimi
+    50.99 ef None USD Bağlı Ortaklık Consus Bahamas Energy Ltd. Elektrik Üretimi
+    17.85 ef None USD Bağlı Ortaklık EA Energy Limited Enerji Üretimi
+   100.00 ef None TRY Bağlı Ortaklık Ardus Gayrimenkul Yatırımları A.Ş. Gayrimenkul Yatırımları
+   100.00 ef None TRY Bağlı Ortaklık Global Ticari Emlak Yatırımları A.Ş. Gayrimenkul Yatırımları
+   100.00 ef None TRY Bağlı Ortaklık Rıhtım51 Gayrimenkul Yatırımları A.Ş. Gayrimenkul Yatırımları
+    75.00 ef None TRY Bağlı Ortaklık Global Menkul Değerler A.Ş. Aracılık Hizmeti
+    75.00 ef None TRY Bağlı Ortaklık Global MD Portföy Yönetimi A.Ş. Portföy Yönetimi
+    75.00 ef None TRY Bağlı Ortaklık Global Fintech Teknoloji Hizmetleri A.Ş. Teknoloji Yatırımları
+    66.60 ef None TRY Bağlı Ortaklık İstanbul Portföy Yönetimi A.Ş. Portföy Yönetimi
+   100.00 ef None TRY Bağlı Ortaklık Global Sigorta Aracılık Hizmetleri A.Ş. Sigorta Acenteliği
+   100.00 ef None TRY Bağlı Ortaklık Güney Madencilik İşletmeleri A.Ş. Maden İşletmeciliği
+    50.00 ef None TRY Bağlı Ortaklık Maya Turizm Ltd. Turizm Yatırımları
+    99.93 ef None EUR Bağlı Ortaklık Adonia Shipping Limited Gemi İşletmeciliği
+    90.00 ef None TRY Bağlı Ortaklık rizm Seyahat ve Nakliyat Hizmetleri A.Ş. Denizcilik Yatırımları ve İşletmeciliği
+    99.93 ef None USD Bağlı Ortaklık Ltd. Turizm Yatırımları
+   100.00 ef None EUR Bağlı Ortaklık Aristaeus Limited Finansal Yatırımlar
+   100.00 ef None TRY Bağlı Ortaklık GFS Holding A.Ş Holding Şirketleri Faaliyetleri
+   100.00 ef None TRY Bağlı Ortaklık GGY1 Gayrimenkul Yatırımları A.Ş. Gayrimenkul Yatırımları
+   100.00 ef None TRY Bağlı Ortaklık GGY2 Gayrimenkul Yatırımları A.Ş. Gayrimenkul Yatırımları
+   100.00 ef None TRY Bağlı Ortaklık GGY3 Gayrimenkul Yatırımları A.Ş. Gayrimenkul Yatırımları
+   100.00 ef None EUR Bağlı Ortaklık Rainbow Tech Ventutres Limited Teknoloji Yatırımları
+   100.00 ef None USD Bağlı Ortaklık Rainbow Destination Development Services Ltd. Danışmanlık Faaliyetleri
+== GRTHO 5717-grainturk-holding-a-s metin 206243 satir 5 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık Özova Tarım A.Ş. Tarım Ürünleri Ticareti
+    51.00 ef None TRY Bağlı Ortaklık k Heguard Savunma ve Siber Güvenlik Teknolojileri A.Ş. Askeri Savunma Hizmetleri
+    49.00 ef None TRY İştirak        Ral Enerji A.Ş. Elektirik Enerjisi Üretimi
+   100.00 ef None TRY Bağlı Ortaklık TERRATURK Yatırım ve Ticaret A.Ş. Yatırım Ticaret
+    50.00 ef None TRY Bağlı Ortaklık 00.000 TRY 100 Dolaylı Ortaklık HÇS Hatay Çimento Anonim Şirketi Çimento İmalatı
+== GSDHO 973-gsd-holding-a-s metin 260602 satir 0 borsada {}
+
+   METIN: BAĞLI ORTAKLIKLAR, FİNANSAL DURAN VARLIKLAR İLE FİNANSAL YATIRIMLARA İLİŞKİN BİLGİLER\",\"fields\":{\"subsidiariesFinancialNonCurrentAssetsAndFinancialInvestmentsGrid\":{\"tableTitle\":\"Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar\",\"tableColumns\":[{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-l-lg\",\"columnName\":\"Ticaret Ünvanı\",\"columnKey\":\"companyTitle\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Faaliyet Konusu\",\"columnKey\":\"scopeOfActivitiesOfCompany\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Ödenmiş/Çıkarılmış Sermayesi\",\"columnKey\":\"paidInOrIssuedCapital\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı\",\"columnKey\":\"capitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Para Birimi\",\"columnKey\":\"monetaryUnit\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı(%)\",\"columnKey\":\"ratioOfCapitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-r-lg\",\"columnName\":\"Şirket ile Olan İlişkinin Niteliği\",\"columnKey\":\"relationWithTheCompany\"}],\"note1\":\"(*) 12/06/2026 ve sonrası tarihli fiili dolaşım hesaplaması 04/06/2026 tarih ve 34/1044 sayılı Kurul İlke Kararı kapsamında yapılmaya başlanmıştır. Sermaye Piyasası Kurulu’nun 17.02.2011 tarih ve 
+== HEDEF 4038-hedef-arac-kiralama-ve-servis-a-s metin 139107 satir 4 borsada {}
+    49.46 ef None TRY Bağlı Ortaklık rketi MOTORLU HAFİF KARA TAŞITLARININ VE ARABALARIN SÜRÜCÜSÜZ OLARAK KİRALANMASI
+    82.24 ef None TRY Bağlı Ortaklık ar Anonim Şirketi OTOMOBİL VE HAFİF MOTORLU KARA TAŞITLARININ PERAKENDE TİCARETİ
+   100.00 ef None TRY Bağlı Ortaklık rketi MOTORLU HAFİF KARA TAŞITLARININ VE ARABALARIN SÜRÜCÜSÜZ OLARAK KİRALANMASI
+   100.00 ef None TRY Bağlı Ortaklık ANLARININ BİR ÜCRET VEYA SÖZLEŞMEYE DAYALI OLARAK TOPTAN SATIŞINI YAPAN ARACILAR
+== IEYHO 1031-isiklar-enerji-ve-yapi-holding-a-s metin 224082 satir 9 borsada {'CEMAS': {'oran': 2.68, 'efektif': None, 'not': ''}}
+    22.53 ef None TRY İŞTİRAK        Işıklar Ambalaj Pazarlama A.Ş. Kağıt Torba Üretim ve Pazarlaması
+    45.51 ef None TRY İŞTİRAK        Işıklar Turizm ve Filo İşletmeciliği A.Ş. İnşaat,Turizm ve Araç Kiralanması
+    48.61 ef None TRY BAĞLI ORTAKLIK Işıklar İnşaat Malzemeleri San.ve Tic.A.Ş. İnşaat Malzemeleri
+    15.78 ef None TRY İŞTİRAK        Global Enerji Elektrik Üretim A.Ş. Enerji Üretimi ve Dağıtımı
+   100.00 ef None TRY BAĞLI ORTAKLIK Metemteks Sentetik İplik Sanayi ve Ticaret A.Ş. İplik Üretimi
+    20.00 ef None TRY İŞTİRAK        Yulaflı Enerji A.Ş Enerji Üretimi ve Dağıtımı
+    38.15 ef None TRY İŞTİRAK        Işıklar Holding A.Ş. Holding Faaliyeti
+     2.68 ef None TRY İŞTİRAK        Çemaş Döküm Sanayi A.Ş. Metal Döküm, Bilye ve Mk. Parçaları Üretimi
+   100.00 ef None BGN BAĞLI ORTAKLIK Işıklar Software and Technology EOOD Yazılım Geliştirme Hizmetleri
+== IHLAS 983-ihlas-holding-a-s metin 252405 satir 13 borsada {'IHYAY': {'oran': 23.96, 'efektif': None, 'not': ''}, 'IHGZT': {'oran': 7.14, 'efektif': None, 'not': ''}, 'IHLGM': {'oran': 21.07, 'efektif': None, 'not': ''}, 'IHEVA': {'oran': 27.26, 'efektif': None, 'not': ''}}
+    23.96 ef None TRY İŞTİRAK        Şirket ile Olan İlişkinin Niteliği İHLAS YAYIN HOLDİNG A.Ş. BASIN YAYIN
+    98.32 ef None TRY BAĞLI ORTAKLIK İHLAS PAZARLAMA A.Ş. ELEKTRİKLİ EV ALETLERİ PAZARLAMASI
+     7.14 ef None TRY İŞTİRAK        İHLAS GAZETECİLİK A.Ş. GAZETE BASIMI
+    50.27 ef None TRY BAĞLI ORTAKLIK TASFİYE HALİNDE İHLAS FİNANS KUR.A.Ş. FİNANSAL FAALİYETLER
+    91.12 ef None TRY BAĞLI ORTAKLIK İHLAS NET A.Ş. İNTERNET HİZMETLERİ
+    21.07 ef None TRY İŞTİRAK        İMENKUL PROJE GELİŞTİRME VE TİCARET A.Ş. GAYRİMENKUL PROJE GELİŞTİRME VE TİCARET
+     2.33 ef None TRY İŞTİRAK        PLICA İNŞAAT TURİZM SAĞLIK VE PETROL ÜRÜNLERİ TİCARET A.Ş. KAPLICA İŞLETMECİLİĞİ
+    11.24 ef None TRY İŞTİRAK        İHLAS ENERJİ YATIRIMLARI A.Ş. ENERJİ YATIRIMLARI
+     1.43 ef None TRY İŞTİRAK        DOĞU YATIRIM HOLDİNG A.Ş. İNŞAAT HİZMETLERİ
+    27.26 ef None TRY BAĞLI ORTAKLIK Rİ İMALAT SANAYİ VE TİCARET A.Ş. ELEKTRİKLİ EV ALETLERİNİN ÜRETİM VE PAZARLAMASI
+     1.00 ef None TRY İŞTİRAK        HARFİYAT GIDA TURİZM SAN. VE TİC. LTD.ŞTİ. ADİ ORTAKLIĞI İNŞAAT YAPIM HİZMETLERİ
+    45.00 ef None TRY İŞTİRAK        İHLAS GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş. FİNANSAL HİZMETLER
+     6.54 ef None TRY İŞTİRAK        KPT LOJİSTİK TAŞIMACILIK TURİZM REKLAM PAZARLAMA İÇ VE DIŞ TİCARET A.Ş. LOJİSTİK
+== IHYAY 1526-ihlas-yayin-holding-a-s metin 218882 satir 8 borsada {'IHGZT': {'oran': 30.91, 'efektif': None, 'not': ''}, 'IHAAS': {'oran': 49.22, 'efektif': None, 'not': ''}}
+    30.91 ef None TRY BAĞLI ORTAKLIK TÜRKİYE GAZETESİ'NİN ÇIKARILMASI DAĞITIMI VE PAZARLAMASI İLE MATBAA BASKI İŞLERİ
+    49.22 ef None TRY BAĞLI ORTAKLIK İHLAS HABER AJANSI A.Ş. HABERCİLİK HİZMETLERİ
+    99.48 ef None TRY BAĞLI ORTAKLIK HABER TV KANALIYLA TELEVİZYON YAYINCILIĞI VE TGRT FM KANALIYLA RADYO YAYINCILIĞI
+    99.63 ef None TRY BAĞLI ORTAKLIK GRT DİJİTAL TV HİZMETLERİ A.Ş. TGRT BELGESEL TV KANALIYLA TELEVİZYON YAYINCILIĞI
+    97.74 ef None TRY BAĞLI ORTAKLIK RNET HİZMETLERİ LTD.ŞTİ. REKLAMCILIK İLANCILIK FOTOĞRAFÇILIK VE REKLAM AJANSLIĞI
+     3.06 ef None TRY İŞTİRAK        İHLAS NET A.Ş İNTERNET HİZMETLERİ
+     3.00 ef None TRY İŞTİRAK        İHLAS GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş. FİNANSAL HİZMETLER
+   100.00 ef None TRY BAĞLI ORTAKLIK TGRT RADYO VE TELEVİZYON YAYINCILIĞI A.Ş. TELEVİZYON VE RADYO YAYINCILIĞI YAPIMI
+== INVEO 962-inveo-yatirim-holding-a-s metin 220456 satir 8 borsada {'GEDIK': {'oran': 81.87, 'efektif': None, 'not': ''}}
+    81.87 ef None TRY Bağlı Ortaklık Gedik Yatırım Menkul Değerler AŞ SPK Lisanslı Yatırım Kuruluşu
+   100.00 ef None TRY Bağlı Ortaklık Inveo Portföy Yönetimi AŞ Portföy Yönetimi
+   100.00 ef None TRY Bağlı Ortaklık Finveo Yatırım Holding AŞ Özel Amaçlı Yatırım Şirketi
+   100.00 ef None TRY Bağlı Ortaklık INVEO Araç Kiralama Hizmetleri AŞ Kurumsal kiralama hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık İstanbul Kandilli Gayrimenkul Yatırım AŞ Gayrimenkul Yatırımları
+    73.33 ef None TRY Bağlı Ortaklık Misyon Yatırım Bankası AŞ Yatırım Bankacılığı Faaliyetleri
+    54.56 ef None TRY Bağlı Ortaklık tures Girişim Sermayesi Yatırım Ortaklığı AŞ Girişim Sermayesi Yatırım Ortaklığı
+    43.91 ef None TRY İştirak        Turpe Teknoloji ve Ticaret AŞ Yurtiçi / Yurtdışı Teknoloji Hizmetleri
+== INVES 5549-investco-holding-a-s metin 274823 satir 5 borsada {'VERUS': {'oran': 63.87, 'efektif': None, 'not': ''}}
+    63.87 ef None TRY Bağlı Ortaklık Şirket ile Olan İlişkinin Niteliği Verusa Holding A.Ş. Holding Faaliyetleri
+   100.00 ef None TRY Bağlı Ortaklık Pan Teknoloji A.Ş. Teknoloji Yatırımları
+   100.00 ef None TRY Bağlı Ortaklık Rem Girişim Sermayesi Yatırım Ortaklığı A.Ş. Girişim Sermayesi Yatırımları
+   100.00 ef None GBP Bağlı Ortaklık Investat Holding Limited Holding Faaliyetleri
+   100.00 ef None USD Bağlı Ortaklık Investat US, Inc. Holding Faaliyetleri
+== ISBIR 1684-isbir-holding-a-s metin 177490 satir 5 borsada {}
+    58.14 ef None TRY Bağlı Ortaklık  özelliklerde sünger ile her türlü yaylı ve sünger yatak üretimi ve pazarlaması.
+    75.82 ef None TRY Bağlı Ortaklık üretimi.
+    60.00 ef None TRY Bağlı Ortaklık iyaçlarını karşılamak üzere kurulmuş olup. Sigorta Aracılık hizmeti vermektedir.
+    58.98 ef None TRY Bağlı Ortaklık ği malları pazarlamak; muhtelif tüketim ürünlerinin iç ve dış ticaretini yapmak.
+    89.71 ef None TRY Bağlı Ortaklık ve müteahhitlik işleri yapmak. Her türlü menkul ve gayrimenkulleri alıp, satmak.
+== IZINV 2060-iz-yatirim-holding-a-s metin 205605 satir 10 borsada {}
+   100.00 ef None TRY BAĞLI ORTAKLIK 
+   100.00 ef None TRY BAĞLI ORTAKLIK 
+   100.00 ef None TRY BAĞLI ORTAKLIK İZ TEMİZ ENERJİ YATIRIMLARI A.Ş. Elektrik enerjisi üretimi
+   100.00 ef None TRY BAĞLI ORTAKLIK 
+   100.00 ef None TRY BAĞLI ORTAKLIK 
+     4.09 ef None TRY FİNANSAL YATIR GEO JEOTERMAL YATIRIMLARI A.Ş. Yenilenebilir Enerji
+     2.37 ef None TRY FİNANSAL YATIR PWT TEKNOLOJİ A.Ş. Teknoloji
+     0.00 ef None TRY FİNANSAL YATIR YAMY STUDIO YAZILIM VE OYUN GELİŞTİRME A.Ş. Yazılım
+   100.00 ef None TRY BAĞLI ORTAKLIK AZUR MÜCEVHERAT A.Ş. Mücevherat
+     0.19 ef None TRY FİNANSAL YATIR MOSTAŞ TEKNOLOJİ SANAYİ VE TİCARET A.Ş. Teknoloji
+== KCHOL 1005-koc-holding-a-s metin 313422 satir 37 borsada {'ARCLK': {'oran': 5.0, 'efektif': None, 'not': ''}, 'AYGAZ': {'oran': 40.68, 'efektif': None, 'not': ''}, 'FROTO': {'oran': 39.32, 'efektif': None, 'not': ''}, 'MAALT': {'oran': 60.08, 'efektif': None, 'not': ''}, 'OTKAR': {'oran': 47.38, 'efektif': None, 'not': ''}, 'TOASO': {'oran': 37.62, 'efektif': None, 'not': ''}, 'TTRAK': {'oran': 37.5, 'efektif': None, 'not': ''}, 'YKBNK': {'oran': 20.22, 'efektif': None, 'not': ''}}
+    30.00 ef None TRY Finansal Yatır irket ile Olan İlişkinin Niteliği Altınyunus Çeşme Turistik Tesisler A.Ş. Turizm
+    48.53 ef None TRY Bağlı Ortaklık Arçelik A.Ş. Üretim/Satış
+     5.00 ef None TRY İş Ortaklığı   Arçelik-LG Klima San. ve Tic. A.Ş. Klima Üretimi
+    40.68 ef None TRY Bağlı Ortaklık Aygaz A.Ş. LPG
+     4.44 ef None TRY Bağlı Ortaklık Ayvalık Marina ve Yat İşletmeciliği San. ve Tic. A.Ş. Turizm
+   100.00 ef None TRY Bağlı Ortaklık Bilkom Bilişim Hizmetleri A.Ş. Ticaret
+    37.38 ef None TRY Bağlı Ortaklık Divan Turizm İşletmeleri A.Ş. Turizm
+    76.72 ef None TRY Bağlı Ortaklık Düzey Tüketim Malları Sanayi Pazarlama A.Ş. Ticaret
+    77.00 ef None TRY Bağlı Ortaklık Enerji Yatırımları A.Ş. Yatırım
+    40.00 ef None TRY Bağlı Ortaklık Entegart Teknoloji Çözüm ve Hizmetleri A.Ş. Teknoloji
+    39.32 ef None TRY İş Ortaklığı   Ford Otomotiv Sanayi A.Ş. Üretim
+    11.66 ef None TRY Bağlı Ortaklık Ingage Dijital Pazarlama Hizmetleri A.Ş. Dijital Pazarlama
+    64.62 ef None USD Bağlı Ortaklık Intumo Therapeutics, Inc. Sağlık
+   100.00 ef None TRY Bağlı Ortaklık r Medical Center Özel Sağlık Hizmetleri Turizm ve Ticaret A.Ş. Sağlık Hizmetleri
+    39.19 ef None TRY Bağlı Ortaklık Koç Bilgi ve Savunma Teknolojileri A.Ş. Teknoloji
+    84.53 ef None TRY Bağlı Ortaklık Koç Finansal Hizmetler A.Ş. Holding
+    73.17 ef None EUR Bağlı Ortaklık Koç Investments B.V. Yatırım
+   100.00 ef None EUR Bağlı Ortaklık Koç Medical B.V. Sağlık
+    48.36 ef None TRY Bağlı Ortaklık Koç Sistem Bilgi ve İletişim Hizmetleri A.Ş. Teknoloji
+    92.47 ef None TRY Bağlı Ortaklık Koç Yapı Malzemeleri Ticaret A.Ş. Ticaret
+    49.78 ef None TRY İş Ortaklığı   Koçtaş Yapı Marketleri Ticaret A.Ş. Perakende
+    22.50 ef None TRY İş Ortaklığı   Kolay Gelsin Dağıtım Hizmetleri A.Ş. Kargo Taşıma/Dağıtım
+    60.08 ef None TRY Bağlı Ortaklık Marmaris Altınyunus Turistik Tesisleri A.Ş. Turizm
+    47.38 ef None TRY Bağlı Ortaklık Otokar Otomotiv ve Savunma Sanayi A.Ş. Üretim
+    99.76 ef None TRY Bağlı Ortaklık Otokoç Otomotiv Tic. ve San. A.Ş. Araç Kiralama ve Ticaret
+    47.24 ef None TRY Bağlı Ortaklık Ram Dış Ticaret A.Ş. Dış Ticaret
+    88.37 ef None TRY Bağlı Ortaklık RMK Marine Gemi Yapım Sanayi ve Deniz Taş. İşl. A.Ş. Gemi İnşaası
+    29.11 ef None TRY Bağlı Ortaklık Setur Servis Turistik A.Ş. Turizm
+   100.00 ef None TRY Bağlı Ortaklık Stembio Kök Hücre Teknolojileri A.Ş. Sağlık
+    86.40 ef None TRY Bağlı Ortaklık Tek-Art Kalamış ve Fenerbahçe Marmara Turizm Tesisleri A.Ş. Turizm
+    37.62 ef None TRY İş Ortaklığı   Tofaş Türk Otomobil Fabrikası A.Ş. Üretim
+    54.44 ef None TRY Bağlı Ortaklık Token Finansal Teknolojiler A.Ş. Bilişim Teknolojileri
+    37.50 ef None TRY İş Ortaklığı   Türk Traktör ve Ziraat Makinaları A.Ş. Üretim
+     3.70 ef None TRY Bağlı Ortaklık Türkiye Petrol Rafinerileri A.Ş. Enerji Üretimi
+    21.00 ef None TRY Bağlı Ortaklık 01.000 INR 1 İş Ortaklığı Wat Mobilite Çözümleri Teknoloji ve Ticaret A.Ş. Satış
+    20.22 ef None TRY Bağlı Ortaklık Yapı ve Kredi Bankası A.Ş. Bankacılık
+    39.54 ef None TRY Bağlı Ortaklık Zer Merkezi Hizmetler ve Ticaret A.Ş. Ticaret
+== KERVN 897-kervansaray-yatirim-holding-a-s metin 186929 satir 6 borsada {}
+    99.94 ef None TRY Bağlı Ortaklık et ve Tekstil Sanayi A.Ş. Tekstil Ürünleri İmalatı, İhracatı, İthalatı ve Satışı
+    83.62 ef None TRY Bağlı Ortaklık imi ve Boyaması, Örgü Kumaş Üretimi, Dokumacılık, Kumaş Boya, Baskı ve Terbiyesi
+    50.00 ef None TRY İştirak        Mintay Tekstil Konfeksiyon San.ve Tic.A.Ş. Gömlek Üretimi ve Ticareti
+    99.13 ef None TRY Bağlı Ortaklık . Tekstil Alanında Dokumacılık ve Örgü Kumaş Üretimi, Boyama, Baskı ve Terbiyesi
+    99.97 ef None TRY Bağlı Ortaklık ar Döşem Tekstil San.ve Tic.A.Ş. Döşeme ve Perdelik Kumaş ve Hazır Giyim Üretimi
+    99.20 ef None TRY Bağlı Ortaklık esis, Baraj İnşaatı, Dekorasyon, Mobilya, İnşaat Malzemeleri Üretimi ve Ticareti
+== KLRHO 3766-kiler-holding-a-s metin 212400 satir 11 borsada {'KLGYO': {'oran': 53.54, 'efektif': None, 'not': ''}, 'KTSKR': {'oran': 23.53, 'efektif': None, 'not': ''}, 'TUREX': {'oran': 25.5, 'efektif': None, 'not': ''}, 'ARASE': {'oran': 40.0, 'efektif': None, 'not': ''}}
+    53.54 ef None TRY BAĞLI ORTAKLIK in Niteliği KİLER GAYRİMENKUL YATIRIM ORTAKLIĞI AŞ GAYRİMENKUL YATIRIM ORTAKLIĞI
+    60.00 ef None TRY BAĞLI ORTAKLIK DENGE REKLAM SAN. VE TİC. LTD.ŞTİ REKLAM AJANSLARININ FAALIYETLERI
+    80.00 ef None TRY BAĞLI ORTAKLIK NUVE ELEKTRİK ÜRETİM A.Ş ELEKTRIK ENERJISI ÜRETIMI
+    55.00 ef None TRY BAĞLI ORTAKLIK I A.Ş İKAMET AMAÇLI VEYA OLMAYAN BİNALARIN YENİDEN DÜZENLENMESİ VEYA YENİLENMESG
+    23.53 ef None TRY İŞTİRAK        KÜTAHYA ŞEKER FABRİKASI A.Ş ŞEKER ÜRETİMİ
+    25.50 ef None TRY İŞTİRAK        TUREKS TURİZM TAŞIMACILIK A.Ş SEYAHAT SERVİS İŞLETMECİLİĞİ VE TAŞIMACILIK
+    40.00 ef None TRY İŞTİRAK        DOĞU ARAS ENERJİ YATIRIMLARI A.Ş ELEKTRİK ENERJİSİ YATIRIMLARI
+    40.00 ef None TRY İŞTİRAK        EKOL GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş DIGER FINANSAL HIZMET FAALIYETLERI
+    80.00 ef None TRY BAĞLI ORTAKLIK RİK ENERJİSİ TOPTAN SATIŞ ANONİM ŞİRKETİ KULLANICILARA YÖNELIK ELEKTRIK TICARETI
+    50.00 ef None TRY BAĞLI ORTAKLIK BEYAZ ÇINAR YAPI İNŞ. EML. YÖN. HİZ. LTD. ŞTİ YAPI İNŞAAT EMLAK
+    81.50 ef None TRY BAĞLI ORTAKLIK REFERANS SİGORTA A.Ş. SİGORTACILIK
+== LRSHO 1498-loras-holding-a-s metin 243626 satir 25 borsada {'ADESE': {'oran': 7.0, 'efektif': None, 'not': ''}, 'SELVA': {'oran': 18.98, 'efektif': None, 'not': ''}, 'IMASM': {'oran': 29.66, 'efektif': None, 'not': ''}, 'NIBAS': {'oran': 17.33, 'efektif': None, 'not': ''}}
+     7.00 ef None TRY Bağlı Ortaklık ırım A.Ş. İşyeri kiralama,gayrimenkul projeleri geliştirmek ve ticaretini yapmak
+    39.72 ef None TRY Bağlı Ortaklık rım A.Ş. İşyeri kiralama, gayrimenkul projeleri geliştirmek ve ticaretini yapmak
+    18.98 ef None TRY Bağlı Ortaklık Selva Gıda San.A.Ş. Makarna un ve irmik üretimi
+    29.66 ef None TRY Bağlı Ortaklık İmaş Makina San.A.Ş. Değirmen ve zirai makine üretimi
+    17.33 ef None TRY Bağlı Ortaklık Niğbaş Niğde Beton Sanayi ve Ticaret A.Ş. İmalat / Taş ve Toprağa Dayalı
+   100.00 ef None TRY Bağlı Ortaklık Loras İnşaat A.Ş. İnşaat
+   100.00 ef None TRY Bağlı Ortaklık Belya Turizm İnş.Enerji Blş.San.Tic.A.Ş. Bilişim ve yazılım hizmetleri
+    18.98 ef None TRY Bağlı Ortaklık Selva İç ve Dış Tic. A. Ş. Gıda ve Tarım Ürünleri İthalatı ve İhracatı Yapmak
+     7.00 ef None TRY Bağlı Ortaklık Kule Yön.ve Org.ve Danışmanlık A.Ş. Yönetim ve organizasyon
+   100.00 ef None TRY Bağlı Ortaklık Selet Entegre Et ve Süt Ür.San.Tic.A.Ş. Tarım ve Hayvancılık
+   100.00 ef None TRY Bağlı Ortaklık eks İç ve Dış Tic.A.Ş. Gıda ve tarım ürünlerinin ihracatını ve ithalatını yapmak
+   100.00 ef None TRY Bağlı Ortaklık 1M İnşaat Mim.Müh.Müt.ve Tic.A.Ş. Mühendislik ve danışmanlık
+   100.00 ef None TRY Bağlı Ortaklık İttifak İnşaat Müh.Müt.ve Tic.A.Ş. İnşaat
+    17.14 ef None TRY Bağlı Ortaklık  Ortaklığı Ticari İşletmesi Zermeram Projesi 1.Etap,2.Etap ve Arasta AVM İnşaası
+   100.00 ef None TRY Bağlı Ortaklık Bıg Power Enerji Hizmetleri Anonim Şirketi Enerji hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Bıg Power Elektrik Üretim Anonim Şirketi Elektrik Enerjisi Üretimi
+     7.00 ef None TRY Bağlı Ortaklık u Hafif Kara Taşıtlarının ve Arabaların Sürücüsüz Olarak Kiralanması ve Leasingi
+    29.66 ef None TRY Bağlı Ortaklık Milleral Makine Sanayi ve A.Ş. Değirmen Sistemleri ve Ziraat Makine İmalatı
+    29.66 ef None TRY Bağlı Ortaklık Viteral Yem Makineleri Sanayi ve A.Ş. Yem ve Ziraat Makine İmalatı
+    29.66 ef None TRY Bağlı Ortaklık Cuteral Makine Sanayi ve A.Ş. Testere Tezgahı Yapısal Çelik İmalatı
+    23.73 ef None TRY Bağlı Ortaklık temleri A.Ş. Enerji depolama çözümleri geliştirmek, üretim ve satış faaliyetleri
+     7.00 ef None TRY Bağlı Ortaklık Loras Real Estate İnşaat A.Ş. İkamet amaçlı binaların inşaatı
+     2.68 ef None TRY Finansal Yatır Asaf 3.İstanbul Gayrimenkul ve Tic.:A.Ş. İnşaat Faaliyeti
+     1.17 ef None TRY Finansal Yatır Konya Savunma Sanayi A.Ş. Savunma Sanayi İmalatı
+     0.00 ef None TRY Finansal Yatır Konbeltaş Konya İnş.Taş.Hiz.Elekt.Ür.A.Ş. Otopark ve kafe işletmeciliği
+== LYDHO 1035-lydia-holding-a-s metin 193375 satir 6 borsada {'LYDYE': {'oran': 64.89, 'efektif': None, 'not': ''}, 'UFUK': {'oran': 62.96, 'efektif': None, 'not': ''}}
+    64.89 ef None TRY Bağlı Ortaklık Lydia Yeşil Enerji Kaynakları A.Ş. Elektrik Enerjisi Üretimi
+    62.96 ef None TRY Bağlı Ortaklık e Gayrimenkul A.Ş. Yatırım, danışmanlık, alım-satım ticareti, ithalat ve ihracat
+   100.00 ef None TRY Bağlı Ortaklık EC Gayrimenkul Yatırımları San. Ve Tic. A.Ş. Gayrimenkul Faaliyetleri
+   100.00 ef None TRY Bağlı Ortaklık Lydia Enerji Elektrik Üretim ve Depolama A.Ş. Elektrik Enerjisi Üretimi
+    50.00 ef None TRY İştirak        Bulls Hava Taşımacılığı A.Ş. Hava Yolu Taşıma Araçlarının Kiralanması
+    33.33 ef None TRY İştirak        Bulls Yatırım Holding A.Ş. İdare Merkezi Faaliyetleri
+== MARMR 6135-marmara-holding-a-s metin 185584 satir 0 borsada {}
+
+   METIN: BAĞLI ORTAKLIKLAR, FİNANSAL DURAN VARLIKLAR İLE FİNANSAL YATIRIMLARA İLİŞKİN BİLGİLER\",\"fields\":{\"subsidiariesFinancialNonCurrentAssetsAndFinancialInvestmentsGrid\":{\"tableTitle\":\"Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar\",\"tableColumns\":[{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-l-lg\",\"columnName\":\"Ticaret Ünvanı\",\"columnKey\":\"companyTitle\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Faaliyet Konusu\",\"columnKey\":\"scopeOfActivitiesOfCompany\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Ödenmiş/Çıkarılmış Sermayesi\",\"columnKey\":\"paidInOrIssuedCapital\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı\",\"columnKey\":\"capitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Para Birimi\",\"columnKey\":\"monetaryUnit\"},{\"className\":\"p-4 mb-3 text-sm font-semibold\",\"columnName\":\"Şirketin Sermayedeki Payı(%)\",\"columnKey\":\"ratioOfCapitalShareOfCompany\",\"isNumber\":true},{\"className\":\"p-4 mb-3 text-sm font-semibold rounded-r-lg\",\"columnName\":\"Şirket ile Olan İlişkinin Niteliği\",\"columnKey\":\"relationWithTheCompany\"}],\"note1\":\"(*) 12/06/2026 ve sonrası tarihli fiili dolaşım hesaplaması 04/06/2026 tarih ve 34/1044 sayılı Kurul İlke Kararı kapsamında yapılmaya başlanmıştır. Sermaye Piyasası Kurulu’nun 17.02.2011 tarih ve 
+== METRO 1120-metro-ticari-ve-mali-yatirimlar-holding-a-s metin 232232 satir 14 borsada {'MEPET': {'oran': 46.87, 'efektif': None, 'not': ''}, 'VANGD': {'oran': 3.1, 'efektif': None, 'not': ''}}
+   100.00 ef None TRY Bağlı Ortaklık inin Niteliği METRO TURİZM SEYAHAT ORGANİZASYON VE TİCARET A.Ş TURİZM; ULAŞTIRMA
+    46.87 ef None TRY Bağlı Ortaklık TESİSLERİ SAN.TİC.A.Ş KARAYOLLARI TESİS VE AKARYAKIT İSTASYONLARI İŞLETMECİLİĞİ.
+     3.10 ef None TRY İştirak        VANET GIDA SAN.İÇ VE DIŞ TİC.A.Ş. GIDA
+    99.85 ef None TRY Bağlı Ortaklık ES BESİCİLİK SANAYİ VE TİCARET A.Ş. HAYVAN BESİCİLİĞİ KESİMİ İTHALAT VE İHRACATI
+   100.00 ef None TRY Bağlı Ortaklık METRO TRAVEL SEYAHAT ORGANİZASYON A.Ş. TURİZM SEYAHAT
+   100.00 ef None TRY Bağlı Ortaklık METRO GRUP ELEKTRİK ENERJİSİ TOPTAN SATIŞ.A.Ş. ENERJİ
+   100.00 ef None TRY Bağlı Ortaklık METRO OTOMOTİV PAZARLAMA SAN.TİC.A.Ş. BAKIM ONARIM-YEDEK PARÇA
+     4.82 ef None TRY İştirak        SAMSUN GIDA SAN.TİC.A.Ş GIDA
+   100.00 ef None TRY Bağlı Ortaklık METRO MADEN PAZARLAMA VE DAĞITIM HİZMETLERİ A.Ş. MADEN
+   100.00 ef None TRY Bağlı Ortaklık METRO ALTIN İŞL.SAN.VE TİC.A.Ş. MADEN
+    50.00 ef None TRY Bağlı Ortaklık PRINCE GRUP SEYAHAT VE ORGANİZASYON ANONİM ŞİRKETİ TURİZM SEYAHAT
+    94.99 ef None GEL Bağlı Ortaklık TURİZM
+   100.00 ef None TRY Bağlı Ortaklık METRO INTERNATIONAL SİGORTA ARACILIK HİZMETLERİ A.Ş. SİGORTACILIK FAALİYETLERİ
+   100.00 ef None TRY Bağlı Ortaklık METRO İNŞAAT İTH.İHR. SAN. TİC. A.Ş. YAPI İNŞAAT FAALİYETLERİ
+== MOGAN 5180-mogan-enerji-yatirim-holding-a-s metin 232132 satir 13 borsada {}
+    85.00 ef None TRY BAĞLI ORTAKLIK Şirket ile Olan İlişkinin Niteliği BELEN ELEKTRİK ÜRETİM A.Ş. ENERJİ
+    90.00 ef None TRY BAĞLI ORTAKLIK GÜRMAT ELEKTRİK ÜRETİM A.Ş. ENERJİ
+    85.00 ef None TRY BAĞLI ORTAKLIK OLGU ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş. ENERJİ
+    85.00 ef None TRY BAĞLI ORTAKLIK EOLOS RÜZGAR ENERJİSİ ÜRETİM A.Ş. ENERJİ
+    80.00 ef None TRY BAĞLI ORTAKLIK DERNE TEMİZ ENERJİ ÜRETİM A.Ş. ENERJİ
+    80.00 ef None TRY BAĞLI ORTAKLIK POKUT ELEKTRİK ÜRETİM A.Ş. ENERJİ
+    80.00 ef None TRY BAĞLI ORTAKLIK ULU YENİLENEBİLİR ENERJİ ÜRETİM A.Ş. ENERJİ
+    80.00 ef None TRY BAĞLI ORTAKLIK ÇERMİKLER ELEKTRİK ÜRETİM A.Ş. ENERJİ
+    80.00 ef None TRY BAĞLI ORTAKLIK ESPİYE ELEKTRİK ÜRETİM A.Ş. ENERJİ
+    80.00 ef None TRY BAĞLI ORTAKLIK AYVACIK ELEKTRİK ÜRETİM A.Ş. ENERJİ
+    75.00 ef None TRY BAĞLI ORTAKLIK İZDEM ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş. ENERJİ
+    85.00 ef None TRY BAĞLI ORTAKLIK GİMAK ENERJİ ÜRETİM LTD ŞTİ ENERJİ
+    40.00 ef None ALL İŞTİRAK        GMB RENEWABLE ENERGY INVESTMENTS SHPK ENERJİ
+== MZHLD 1024-mazhar-zorlu-holding-a-s metin 194849 satir 1 borsada {}
+    28.17 ef None TRY İŞTİRAK        ARLAMA 50.525.000 3.759.984,03 TRY 7,44 BAĞLI MENKUL KIYMET EGEPLAST A.Ş. ÜRETİM
+== NTHOL 1039-net-holding-a-s metin 266500 satir 24 borsada {'MERIT': {'oran': 71.08, 'efektif': None, 'not': ''}}
+   100.00 ef None TRY BAĞLI ORTAKLIK İlişkinin Niteliği Loytaş Laleli Otelcilik Yatırım Turizm ve Ticaret A.Ş. Turizm
+    99.94 ef None TRY BAĞLI ORTAKLIK Göksel Denizcilik Ticaret A.Ş. Turizm
+   100.00 ef None TRY BAĞLI ORTAKLIK İnter Turizm ve Seyahat A.Ş. Turizm
+    99.98 ef None TRY BAĞLI ORTAKLIK Net Turistik Yayınlar Sanayi ve Ticaret A.Ş. Yayıncılık
+    99.03 ef None TRY BAĞLI ORTAKLIK Elite Development and Management Limited Turizm
+    92.31 ef None TRY BAĞLI ORTAKLIK Merit Kıbrıs Turizm Limited Turizm
+    71.08 ef None TRY BAĞLI ORTAKLIK Merit Turizm Yatırım ve İşletme A.Ş. Turizm
+    96.15 ef None TRY BAĞLI ORTAKLIK Net Turistik Hizmetler Limited Turizm
+   100.00 ef None EUR BAĞLI ORTAKLIK Merit D.O.O. Turizm
+   100.00 ef None EUR BAĞLI ORTAKLIK Merit Montenegro D.O.O. Turizm
+   100.00 ef None EUR BAĞLI ORTAKLIK Net Montenegro D.O.O. Turizm
+    80.77 ef None TRY BAĞLI ORTAKLIK Kıbrıs Diyalog Gazetecilik Limited Gazetecilik
+   100.00 ef None TRY BAĞLI ORTAKLIK Merit Travel Turizm ve Seyahat A.Ş Turizm
+   100.00 ef None TRY BAĞLI ORTAKLIK Merit International Turistik İşletmeler ve Hizmetler A.Ş Turizm
+   100.00 ef None EUR BAĞLI ORTAKLIK Merit Bulgaria E.O.O.D. Turizm
+    51.00 ef None EUR BAĞLI ORTAKLIK Merit Global Game O.O.D Turizm
+   100.00 ef None EUR BAĞLI ORTAKLIK Merit Armada E.O.O.D. Turizm
+    51.00 ef None EUR BAĞLI ORTAKLIK Merit Capital Partners O.O.D. Turizm
+    71.08 ef None TRY BAĞLI ORTAKLIK Merit Land Development Limited Emlak Danışmanlığı
+   100.00 ef None USD BAĞLI ORTAKLIK Azer Şans Müessesesi Turizm
+   100.00 ef None TRY BAĞLI ORTAKLIK Asyanet Konaklama Hizmetleri A.Ş. Turizm
+    92.31 ef None TRY BAĞLI ORTAKLIK Net Global Turizm A.Ş. Turizm
+   100.00 ef None TRY BAĞLI ORTAKLIK Enet Sosyal Medya İnternet ve Yayıncılık A.Ş. Sosyal Medya
+    98.93 ef None EUR BAĞLI ORTAKLIK Elite Consulting Limited Turizm
+== OSTIM 1596-ostim-endustriyel-yatirimlar-ve-isletme-a-s metin 209461 satir 6 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık Ostim Finans İş Merk.İnş.Gay.En.Elk.Ür.Tic.A.Ş İş Merkezi Yönetimi
+   100.00 ef None TRY Bağlı Ortaklık Günhan Ostim Alüminyum Döküm Döv.Mak.İm.San.Tic.A.Ş. Alüminyum Döküm Dövme
+    80.95 ef None TRY Bağlı Ortaklık T.H. ODF Ortadoğu Uluslararası Fuarcılık A.Ş. Fuarcılık Org.
+    73.50 ef None TRY Bağlı Ortaklık Ostim Gayrimenkul Danışmanlık ve İşletme A.Ş Gayrimenkul Takip Org.
+    50.00 ef None TRY Bağlı Ortaklık MEKSİS A.Ş. Mekanik Sistemler İmalatı
+    34.19 ef None TRY İştirak        Kızılcahamam Akasya Yatırım İnşaat A.Ş. Sağlık Tesisi. Devre Mülk
+== OTTO 1752-otto-holding-a-s metin 195174 satir 3 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık n, yayın, çoğaltma, yayma ve sair mali haklarının satın alınması ve pazarlanması
+   100.00 ef None TRY Bağlı Ortaklık i teknoloji ve girişimlere iştirak etme, yatırım yapma faaliyetlerinde bulunması
+   100.00 ef None TRY Bağlı Ortaklık ek değerlendirilmesi, artan değerle beraber kiraya verilmesi ve/veya işletilmesi
+== PAHOL 6161-pasifik-holding-a-s metin 218859 satir 6 borsada {'PASEU': {'oran': 17.86, 'efektif': None, 'not': ''}, 'PATEK': {'oran': 45.34, 'efektif': None, 'not': ''}}
+     9.78 ef None TRY İştirak        Pasifik GYO A.Ş. Gayrimenkul Yatırım Ortaklığı
+    17.86 ef None TRY İştirak        Pasifik Eurasia Lojistik Dış Tic. A.Ş. Lojistik
+    45.34 ef None TRY Bağlı Ortaklık Pasifik Teknoloji A.Ş. Teknoloji
+    70.00 ef None TRY Bağlı Ortaklık Pasifik Yenilenebilir Enerji A.Ş. Enerji
+    70.00 ef None TRY Bağlı Ortaklık Pasifik Madencilik A.Ş. Madencilik
+    88.00 ef None TRY Bağlı Ortaklık Aden Pelet A.Ş. Orman Ürünleri
+== PETKM 1053-petkim-petrokimya-holding-a-s metin 247824 satir 3 borsada {}
+     9.90 ef None TRY İŞTİRAK        SOCAR POWER ENERJİ YATIRIMLARI A.Ş. Enerji
+   100.00 ef None TRY BAĞLI ORTAKLIK 
+    20.00 ef None TRY İŞTİRAK        esasları dahilinde gerçekleştirmek ve ana sözleşmesinde yazılı olan diğer işler.
+== POLHO 1608-polisan-holding-a-s metin 203599 satir 2 borsada {}
+    96.00 ef None TRY Bağlı Ortaklık repo, kuru yük ve genel kargo gemilerine yükleme ve boşaltma hizmeti vermektedir
+   100.00 ef None TRY Bağlı Ortaklık A.Ş. Formaldehit, formaldehit reçineleri ve AUS 32 üretimi ve satışı yapmaktadır
+== RALYH 883-ral-yatirim-holding-a-s metin 189363 satir 8 borsada {}
+   100.00 ef None TRY BAĞLI ORTAKLIK HERA TEKNİK YAPI A.Ş İnşaat
+   100.00 ef None TRY BAĞLI ORTAKLIK RAL YAPI MÜHENDİSLİK A.Ş İnşaat
+    51.00 ef None TRY BAĞLI ORTAKLIK RAL ENERJİ A.Ş Elektirik Enerjisi Üretimi
+    49.00 ef None TRY İŞTİRAK        HEGUARD SAVUNMA VE SİBER GÜVENLİK TEKNOLOJİLERİ A.Ş. Savunma Hizmetleri
+    10.00 ef None TRY İŞTİRAK        NİZE KİMYA SANAYİ VE TİCARET ANONİM ŞİRKETİ Endüstriyel Mineral ve Maden Üretimi
+   100.00 ef None TRY BAĞLI ORTAKLIK RAL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş. Gayrimenkul Hizmetleri
+   100.00 ef None TRY BAĞLI ORTAKLIK BEST TREND GAYRİMENKUL A.Ş. Gayrimenkul-İnşaat
+    85.00 ef None TRY BAĞLI ORTAKLIK İLENEBİLİR ENERJİ A.Ş. Elektirik Enerjisi Üretimi ve Enerji Projeleri Geliştirme
+== SAHOL 976-haci-omer-sabanci-holding-a-s metin 252022 satir 12 borsada {'AKBNK': {'oran': 40.75, 'efektif': None, 'not': ''}, 'AKGRT': {'oran': 36.0, 'efektif': None, 'not': ''}, 'AGESA': {'oran': 40.0, 'efektif': None, 'not': ''}, 'KORDS': {'oran': 71.11, 'efektif': None, 'not': ''}, 'BRISA': {'oran': 50.0, 'efektif': None, 'not': ''}, 'TKNSA': {'oran': 50.0, 'efektif': None, 'not': ''}, 'CIMSA': {'oran': 54.54, 'efektif': None, 'not': ''}}
+    40.75 ef None TRY Bağlı Ortaklık Şirket ile Olan İlişkinin Niteliği AKBANK T.A.Ş. Bankacılık
+    36.00 ef None TRY Bağlı Ortaklık AKSİGORTA A.Ş. Finansal Hizmetler
+    40.00 ef None TRY Bağlı Ortaklık AGESA HAYAT VE EMEKLİLİK A.Ş. Finansal Hizmetler
+    71.11 ef None TRY Bağlı Ortaklık KORDSA TEKNİK TEKSTİL A.Ş. Lastik Güçlendirme ve Kompozit Teknolojileri
+    50.00 ef None TRY Bağlı Ortaklık TRY 43,62 Müşterek Yönetime Tabi Ortaklık TEKNOSA İÇ VE DIŞ TİCARET A.Ş. Dijital
+    54.54 ef None TRY Bağlı Ortaklık ÇİMSA ÇİMENTO SANAYİ VE TİCARET A.Ş. Yapı Malzemeleri
+    49.00 ef None TRY Bağlı Ortaklık SABANCI DİJİTAL TEKNOLOJİ HİZMETLERİ A.Ş. Dijital
+   100.00 ef None TRY Bağlı Ortaklık TURSA SABANCI TURİZM VE YAT. İŞL. A.Ş. Turizm
+    31.69 ef None EUR Bağlı Ortaklık  50 Müşterek Yönetime Tabi Ortaklık CIMSA BUILDING SOLUTIONS BV Yapı Malzemeleri
+   100.00 ef None USD Bağlı Ortaklık DX TECHNOLOGY SERVICES AND INVESTMENT BV Teknoloji Yatırımları
+   100.00 ef None TRY Bağlı Ortaklık SABANCI İKLİM TEKNOLOJİLERİ A.Ş. Enerji
+   100.00 ef None TRY Bağlı Ortaklık  Yönetime Tabi Ortaklık TEMSA MOTORLU ARAÇLAR PAZARLAMA VE DAĞITIM A.Ş. Otomotiv
+== TAVHL 1452-tav-havalimanlari-holding-a-s metin 264458 satir 23 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık Havalimanı Terminal Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık AV Ankara Yatırım Yapım ve İşletme Anonim Şirketi Havalimanı Terminal Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Havalimanı Terminal Hizmetleri
+    49.00 ef None TRY İştirak        Fraport TAV Antalya Terminal İşletmeciliği A.Ş. Havalimanı Terminal Hizmetleri
+    51.00 ef None TRY İştirak        Fraport TAV Antalya Yatırım Yapım ve İşletme A.Ş. Havalimanı Terminal Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık TAV Milas-Bodrum Terminal İşletmeciliği A.Ş. Havalimanı Terminal Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Havalimanı İşletmecisi
+    85.00 ef None KZT Bağlı Ortaklık an LLP Havalimanı ve Havalimanıyla ilişkili jet yakıtı ve yiyecek içecek hizmeti
+    80.00 ef None GEL Bağlı Ortaklık Havalimanı İşletmecisi
+   100.00 ef None GEL Bağlı Ortaklık Havalimanı Yönetim Hizmetleri
+   100.00 ef None EUR Bağlı Ortaklık Havalimanı İşletmecisi
+   100.00 ef None EUR Bağlı Ortaklık Ticari Alan İşletmecisi
+    51.00 ef None SAR İştirak        Havalimanı İşletmecisi
+    26.00 ef None SAR İştirak        Havalimanı İşletmecisi
+    15.81 ef None HRK İştirak        Havalimanı İşletmecisi
+    50.00 ef None TRY İştirak        Gümrüksüz Mağaza Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Yer Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Yiyecek ve İçecek Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Ticari Yolcu Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Yazılım ve Sistem Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Güvenlik Hizmetleri
+   100.00 ef None TRY Bağlı Ortaklık Eğitim Hizmetleri
+   100.00 ef None EUR Bağlı Ortaklık Holding
+== TEHOL 968-tera-yatirim-teknoloji-holding-a-s metin 206320 satir 8 borsada {'MANAS': {'oran': 6.06, 'efektif': None, 'not': ''}}
+   100.00 ef None EUR Bağlı Ortaklık Sampo-Rosenlew Oy Biçerdöver ve Orman Makinaları üretimi
+   100.00 ef None TRY Bağlı Ortaklık era Gayrimenkul Yatırımları ve Yönetimi A.Ş. Gayrimenkul Yatırımları ve Yönetimi
+   100.00 ef None TRY Bağlı Ortaklık Tera Turizm ve Ticaret A.Ş. Turizm Yatırımları
+    80.00 ef None TRY Bağlı Ortaklık ekatronik ve yazılım sistemlerinin tasarımı, geliştirilmesi, üretimi ve ticareti
+    70.00 ef None TRY Bağlı Ortaklık Best Grup Savunma Sanayi Tic. A.Ş Yüksek Teknoloji Savunma Ürünleri
+    63.10 ef None TRY Bağlı Ortaklık Barikat İnternet Güvenliği Bilişim Ticaret A.Ş. Siber Güvenlik
+    50.00 ef None TRY İştirak        Maya Turizm Ltd. Şti Turizm Yatırımları
+     6.06 ef None TRY İştirak        mi, Enerji ve Su kaynakları yönetimi konusunda ürün, hizmet ve yazılım çözümleri
+== TKFEN 1470-tekfen-holding-a-s metin 298287 satir 43 borsada {'AKMGY': {'oran': 10.47, 'efektif': None, 'not': ''}, 'TSKB': {'oran': 0.047, 'efektif': None, 'not': ''}, 'AKCNS': {'oran': 0.003, 'efektif': None, 'not': ''}}
+   100.00 ef None TRY Bağlı Ortaklık Şirket ile Olan İlişkinin Niteliği Tekfen İnşaat ve Tesisat A.Ş. İnşaat
+   100.00 ef None TRY Bağlı Ortaklık Tekfen İmalat ve Mühendislik A.Ş. Üretim
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Mühendislik A.Ş. Mühendislik
+    99.98 ef None TRY Bağlı Ortaklık Toros Tarım Sanayi ve Ticaret A.Ş. Gübre - Terminal İşletmeciliği
+   100.00 ef None TRY Bağlı Ortaklık Toros Terminal Servisleri ve Denizcilik A.Ş. Hizmet
+   100.00 ef None TRY Bağlı Ortaklık Toros Adana Yumurtalık Serbest Bölgesi Kurucu ve İşl. A.Ş. Hizmet
+   100.00 ef None TRY Bağlı Ortaklık Toros Gemi Acenteliği ve Ticaret A.Ş. Gemi Acenteliği
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Turizm ve İşletmecilik A.Ş. Hizmet
+   100.00 ef None EUR Bağlı Ortaklık HMB Hallesche Mitteldeutsche BAU AG Ticaret
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Sigorta Aracılık Hizmetleri A.Ş. Aracılık Hizmetleri
+   100.00 ef None USD Bağlı Ortaklık Tekfen International Finance and Inv. SA Yatırım
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Teknoloji Yatırım ve Ticaret A.Ş. Yatırım
+    51.00 ef None AZN Bağlı Ortaklık Cenub Tikinti Servis ASC İnşaat
+   100.00 ef None USD Bağlı Ortaklık Tekfen Ventures LP Yatırım
+   100.00 ef None TRY Bağlı Ortaklık Alanar Meyve ve Gıda Üretim Pazarlama Sanayi ve Ticaret A.Ş. Meyve Üretimi
+   100.00 ef None USD Bağlı Ortaklık Tekfen Venture Management LLC Yönetim Hizmeti
+    40.00 ef None AZN İş Ortaklığı   Azfen MMC İnşaat
+   100.00 ef None TRY Bağlı Ortaklık CFS Petrokimya Sanayi A.Ş. Yatırım
+   100.00 ef None RUB Bağlı Ortaklık OOO Rusfen İnşaat
+    99.83 ef None RON Bağlı Ortaklık Toros Agroport Romania S.A Gübre Ticareti
+    89.00 ef None EUR Bağlı Ortaklık Denkmal in Dahlem Otto-Hahn-Platz GmbH İnşaat
+   100.00 ef None KZT Bağlı Ortaklık Gate Insaat Taahhut Sanayi ve Ticaret A.Ş. İnşaat
+    49.00 ef None QAR Bağlı Ortaklık Tekfen Contruction and Installation W.L.L İnşaat
+   100.00 ef None AZN Bağlı Ortaklık Techinvestments MMC Yatırım
+   100.00 ef None TRY Bağlı Ortaklık Babadağ Elektrik Üretim Sanayi A.Ş. Enerji
+   100.00 ef None GBP Bağlı Ortaklık Tekfen Engineering UK Ltd Mühendislik
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Derince Gayrimenkul A.Ş. Yatırım
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Taşınmaz Yatırım ve Yönetim A.Ş. Yatırım
+   100.00 ef None TRY Bağlı Ortaklık Tekfen Yenilenebilir Enerji Çözümleri A.Ş Enerji
+   100.00 ef None USD Bağlı Ortaklık Tekfen Engineering USA Inc. Mühendislik
+    10.47 ef None TRY Finansal Yatır Akmerkez Gayrimenkul Yatırım Ortaklığı A.Ş. Gayrimenkul Yatırım Ortaklığı
+    27.45 ef None TRY Finansal Yatır Üçgen Bakım ve Yönetim Hizmetleri A.Ş. Hizmet
+     9.56 ef None TRY Finansal Yatır Mersin Serbest Bölge Kurucu ve İşleticisi A.Ş. Hizmet
+     0.05 ef None TRY Finansal Yatır Türkiye Sınai Kalkınma Bankası A.Ş. Banka Faaliyetleri
+    10.00 ef None TRY Finansal Yatır Antalya Serbest Bölge Kurucu ve İşleticisi A.Ş. Hizmet
+     0.00 ef None TRY Finansal Yatır Akçansa Çimento Sanayi ve Ticaret A.Ş. Çimento İmalatı
+     2.50 ef None TRY Finansal Yatır Gaz Depo ve Madencilik A.Ş. Madencilik
+     0.00 ef None TRY Finansal Yatır Turcas Petrol A.Ş. Yakıt Ticareti
+    12.58 ef None EUR Finansal Yatır Cording Dortmund Hiltropwall SCSp İnşaat
+     2.50 ef None TRY Finansal Yatır Toren Doğalgaz Depolama ve Madencilik A.Ş. Doğalgaz
+    30.50 ef None TRY Finansal Yatır Akmerkez Lokantacılık Gıda San. ve Tic. A.Ş. Lokanta İşletmeciliği
+     9.60 ef None EUR Finansal Yatır Berlin Light JV S.a.r.l İnşaat
+    10.00 ef None USD Finansal Yatır SOCAR Polymer Investments LLC Petrokimya ürünleri üretimi
+== TRCAS 1102-turcas-holding-a-s metin 221024 satir 1 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık TURCAS INTERNATIONAL HOLDİNG A.Ş. Holding Faaliyetleri
+== TRHOL 1089-tera-finansal-yatirimlar-holding-a-s metin 165681 satir 2 borsada {}
+     1.00 ef None TRY İştirak        Tera Portföy Yönetimi A.Ş. Sermaye Piyasası Portföy Yönetimi
+     9.00 ef None TRY İştirak        Prive Sigorta A.Ş. Sigortacılık
+== UNLU 2474-unlu-yatirim-holding-a-s metin 228309 satir 2 borsada {}
+    32.50 ef None USD İştirak        212 LTD Finansal Danışmanlık
+     3.31 ef None USD Finansal Varlı 212 Capital Partners I Coöperatief U.A. Girişim Sermayesi Fonu
+== USHOL 1403-us-yatirim-holding-a-s metin 203371 satir 6 borsada {}
+   100.00 ef None TRY Bağlı Ortaklık ENDEĞER MEDYA YÖNETİM SANAYİ VE TİCARET A.Ş. GAYRİMENKUL VE YÖNETİM HİZMETLERİ
+   100.00 ef None TRY Bağlı Ortaklık DÜNYA MARKALARI TEKSTİL AKSESUAR İÇ DIŞ TİCARET A.Ş. PERAKENDE MAĞAZACILIK
+   100.00 ef None TRY Bağlı Ortaklık  ve TEKSTİL ÜRÜNLERİ A.Ş. MODA VE TEKSTİL ÜRÜNLERİ TOPTAN SATIŞ & DİSTRİBÜTÖRLÜK
+    97.55 ef None TRY Bağlı Ortaklık GÖKYÜZÜ ET SÜT GIDA SANAYİ VE TİCARET A.Ş. ET,SÜT,GIDA ÜRÜNLERİ
+   100.00 ef None TRY Bağlı Ortaklık İ İŞLETMECİLİĞİ TURİZM VE TİCARET ANONİM ŞİRKETİ HUZUREVİ VE YAŞLI BAKIM MERKEZİ
+   100.00 ef None TRY Bağlı Ortaklık OMENTUM GİRİŞİM HOLDİNG ANONİM ŞİRKETİ YATIRIM, FİNANSMAN, ORGANİZASYON, YÖNETİM
+== VERUS 2059-verusa-holding-a-s metin 257040 satir 18 borsada {'ACSEL': {'oran': 50.73, 'efektif': None, 'not': ''}}
+   100.00 ef None TRY Bağlı Ortaklık Şirket ile Olan İlişkinin Niteliği Standard Boksit İşletmeleri A.Ş. Madencilik
+   100.00 ef None TRY Bağlı Ortaklık Galata Altın İşletmeleri A.Ş. Altın Madenciliği
+    63.61 ef None TRY Bağlı Ortaklık erusaturk Girişim Sermayesi Yatırım Ortaklığı A.Ş. Girişim Sermayesi Yatırımları
+    50.73 ef None TRY Bağlı Ortaklık Acıselsan Acıpayam Selüloz Sanayi ve Ticaret A.Ş. Kimya
+   100.00 ef None TRY Bağlı Ortaklık Ata Elektrik Enerjisi Toptan Satış A.Ş. Enerji
+    40.75 ef None TRY İştirak        Aldem Çelik Endüstri San. ve Tic. A.Ş. Demir-Çelik
+   100.00 ef None TRY Bağlı Ortaklık Şirket ile Olan İlişkinin Niteliği Standard Boksit İşletmeleri A.Ş. Madencilik
+   100.00 ef None TRY Bağlı Ortaklık Galata Altın İşletmeleri A.Ş. Altın Madenciliği
+    63.61 ef None TRY Bağlı Ortaklık erusaturk Girişim Sermayesi Yatırım Ortaklığı A.Ş. Girişim Sermayesi Yatırımları
+    50.73 ef None TRY Bağlı Ortaklık Acıselsan Acıpayam Selüloz Sanayi ve Ticaret A.Ş. Kimya
+   100.00 ef None TRY Bağlı Ortaklık Ata Elektrik Enerjisi Toptan Satış A.Ş. Enerji
+    40.75 ef None TRY İştirak        Aldem Çelik Endüstri San. ve Tic. A.Ş. Demir-Çelik
+   100.00 ef None TRY Bağlı Ortaklık Şirket ile Olan İlişkinin Niteliği Standard Boksit İşletmeleri A.Ş. Madencilik
+   100.00 ef None TRY Bağlı Ortaklık Galata Altın İşletmeleri A.Ş. Altın Madenciliği
+    63.61 ef None TRY Bağlı Ortaklık erusaturk Girişim Sermayesi Yatırım Ortaklığı A.Ş. Girişim Sermayesi Yatırımları
+    50.73 ef None TRY Bağlı Ortaklık Acıselsan Acıpayam Selüloz Sanayi ve Ticaret A.Ş. Kimya
+   100.00 ef None TRY Bağlı Ortaklık Ata Elektrik Enerjisi Toptan Satış A.Ş. Enerji
+    40.75 ef None TRY İştirak        Aldem Çelik Endüstri San. ve Tic. A.Ş. Demir-Çelik
+== YESIL 1386-yesil-yatirim-holding-a-s metin 176646 satir 1 borsada {}
+     2.38 ef None TRY İştirak        Yeşil Global Enerji A.Ş. Enerji

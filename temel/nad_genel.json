@@ -1,0 +1,595 @@
+{
+ "AGHOL": {
+  "link": "1131-ag-anadolu-grubu-holding-a-s",
+  "satir": 15,
+  "borsada": {
+   "ADEL": {
+    "oran": 56.89,
+    "efektif": null,
+    "not": ""
+   },
+   "AEFES": {
+    "oran": 43.05,
+    "efektif": null,
+    "not": ""
+   },
+   "ASUZU": {
+    "oran": 55.4,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "AKYHO": {
+  "link": "1623-akdeniz-yatirim-holding-a-s",
+  "satir": 4,
+  "borsada": {}
+ },
+ "ALARK": {
+  "link": "846-alarko-holding-a-s",
+  "satir": 39,
+  "borsada": {
+   "ALGYO": {
+    "oran": 21.43,
+    "efektif": 56.24,
+    "not": "(DOĞRUDAN VE DOLAYLI ORTAKLIK PAYI %56,24)"
+   }
+  }
+ },
+ "ARSAN": {
+  "link": "2169-arsan-finans-faktoring-a-s",
+  "satir": 0,
+  "borsada": {}
+ },
+ "ATSYH": {
+  "link": "869-atlantis-yatirim-holding-a-s",
+  "satir": 4,
+  "borsada": {}
+ },
+ "AVHOL": {
+  "link": "1691-avrupa-yatirim-holding-a-s",
+  "satir": 10,
+  "borsada": {}
+ },
+ "BERA": {
+  "link": "1693-bera-holding-a-s",
+  "satir": 20,
+  "borsada": {
+   "GOLDA": {
+    "oran": 37.8,
+    "efektif": null,
+    "not": ""
+   },
+   "KONKA": {
+    "oran": 72.98,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "BINHO": {
+  "link": "5900-1000-yatirimlar-holding-a-s",
+  "satir": 0,
+  "borsada": {}
+ },
+ "BLCYT": {
+  "link": "1544-bilici-yatirim-sanayi-ve-ticaret-a-s",
+  "satir": 1,
+  "borsada": {}
+ },
+ "COSMO": {
+  "link": "893-cosmos-yatirim-holding-a-s",
+  "satir": 2,
+  "borsada": {}
+ },
+ "DENGE": {
+  "link": "4972-denge-varlik-yonetim-a-s",
+  "satir": 0,
+  "borsada": {}
+ },
+ "DERHL": {
+  "link": "4864-derluks-yatirim-holding-a-s",
+  "satir": 1,
+  "borsada": {
+   "SOHOE": {
+    "oran": 46.3,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "DEVA": {
+  "link": "916-deva-holding-a-s",
+  "satir": 7,
+  "borsada": {}
+ },
+ "DOHOL": {
+  "link": "919-dogan-sirketler-grubu-holding-a-s",
+  "satir": 18,
+  "borsada": {
+   "GWIND": {
+    "oran": 70.0,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "DUNYH": {
+  "link": "1069-dunya-holding-a-s",
+  "satir": 0,
+  "borsada": {}
+ },
+ "ECOGR": {
+  "link": "6140-ecogreen-enerji-holding-a-s",
+  "satir": 2,
+  "borsada": {}
+ },
+ "ECZYT": {
+  "link": "926-eczacibasi-yatirim-holding-ortakligi-a-s",
+  "satir": 3,
+  "borsada": {}
+ },
+ "ENDAE": {
+  "link": "6057-enda-enerji-holding-a-s",
+  "satir": 5,
+  "borsada": {}
+ },
+ "EUHOL": {
+  "link": "1508-euro-yatirim-holding-a-s",
+  "satir": 6,
+  "borsada": {}
+ },
+ "GLRYH": {
+  "link": "1428-guler-yatirim-holding-a-s",
+  "satir": 8,
+  "borsada": {
+   "PRDGS": {
+    "oran": 28.65,
+    "efektif": null,
+    "not": ""
+   },
+   "A1YEN": {
+    "oran": 4.0,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "GLYHO": {
+  "link": "967-global-yatirim-holding-a-s",
+  "satir": 86,
+  "borsada": {
+   "CONSE": {
+    "oran": 50.99,
+    "efektif": null,
+    "not": ""
+   },
+   "NTGAZ": {
+    "oran": 100.0,
+    "efektif": null,
+    "not": ""
+   },
+   "GLBMD": {
+    "oran": 75.0,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "GRTHO": {
+  "link": "5717-grainturk-holding-a-s",
+  "satir": 5,
+  "borsada": {}
+ },
+ "GSDHO": {
+  "link": "973-gsd-holding-a-s",
+  "satir": 0,
+  "borsada": {}
+ },
+ "HEDEF": {
+  "link": "4038-hedef-arac-kiralama-ve-servis-a-s",
+  "satir": 4,
+  "borsada": {}
+ },
+ "IEYHO": {
+  "link": "1031-isiklar-enerji-ve-yapi-holding-a-s",
+  "satir": 9,
+  "borsada": {
+   "CEMAS": {
+    "oran": 2.68,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "IHLAS": {
+  "link": "983-ihlas-holding-a-s",
+  "satir": 13,
+  "borsada": {
+   "IHYAY": {
+    "oran": 23.96,
+    "efektif": null,
+    "not": ""
+   },
+   "IHGZT": {
+    "oran": 7.14,
+    "efektif": null,
+    "not": ""
+   },
+   "IHLGM": {
+    "oran": 21.07,
+    "efektif": null,
+    "not": ""
+   },
+   "IHEVA": {
+    "oran": 27.26,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "IHYAY": {
+  "link": "1526-ihlas-yayin-holding-a-s",
+  "satir": 8,
+  "borsada": {
+   "IHGZT": {
+    "oran": 30.91,
+    "efektif": null,
+    "not": ""
+   },
+   "IHAAS": {
+    "oran": 49.22,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "INVEO": {
+  "link": "962-inveo-yatirim-holding-a-s",
+  "satir": 8,
+  "borsada": {
+   "GEDIK": {
+    "oran": 81.87,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "INVES": {
+  "link": "5549-investco-holding-a-s",
+  "satir": 5,
+  "borsada": {
+   "VERUS": {
+    "oran": 63.87,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "ISBIR": {
+  "link": "1684-isbir-holding-a-s",
+  "satir": 5,
+  "borsada": {}
+ },
+ "IZINV": {
+  "link": "2060-iz-yatirim-holding-a-s",
+  "satir": 10,
+  "borsada": {}
+ },
+ "KCHOL": {
+  "link": "1005-koc-holding-a-s",
+  "satir": 37,
+  "borsada": {
+   "ARCLK": {
+    "oran": 5.0,
+    "efektif": null,
+    "not": ""
+   },
+   "AYGAZ": {
+    "oran": 40.68,
+    "efektif": null,
+    "not": ""
+   },
+   "FROTO": {
+    "oran": 39.32,
+    "efektif": null,
+    "not": ""
+   },
+   "MAALT": {
+    "oran": 60.08,
+    "efektif": null,
+    "not": ""
+   },
+   "OTKAR": {
+    "oran": 47.38,
+    "efektif": null,
+    "not": ""
+   },
+   "TOASO": {
+    "oran": 37.62,
+    "efektif": null,
+    "not": ""
+   },
+   "TTRAK": {
+    "oran": 37.5,
+    "efektif": null,
+    "not": ""
+   },
+   "YKBNK": {
+    "oran": 20.22,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "KERVN": {
+  "link": "897-kervansaray-yatirim-holding-a-s",
+  "satir": 6,
+  "borsada": {}
+ },
+ "KLRHO": {
+  "link": "3766-kiler-holding-a-s",
+  "satir": 11,
+  "borsada": {
+   "KLGYO": {
+    "oran": 53.54,
+    "efektif": null,
+    "not": ""
+   },
+   "KTSKR": {
+    "oran": 23.53,
+    "efektif": null,
+    "not": ""
+   },
+   "TUREX": {
+    "oran": 25.5,
+    "efektif": null,
+    "not": ""
+   },
+   "ARASE": {
+    "oran": 40.0,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "LRSHO": {
+  "link": "1498-loras-holding-a-s",
+  "satir": 25,
+  "borsada": {
+   "ADESE": {
+    "oran": 7.0,
+    "efektif": null,
+    "not": ""
+   },
+   "SELVA": {
+    "oran": 18.98,
+    "efektif": null,
+    "not": ""
+   },
+   "IMASM": {
+    "oran": 29.66,
+    "efektif": null,
+    "not": ""
+   },
+   "NIBAS": {
+    "oran": 17.33,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "LYDHO": {
+  "link": "1035-lydia-holding-a-s",
+  "satir": 6,
+  "borsada": {
+   "LYDYE": {
+    "oran": 64.89,
+    "efektif": null,
+    "not": ""
+   },
+   "UFUK": {
+    "oran": 62.96,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "MARMR": {
+  "link": "6135-marmara-holding-a-s",
+  "satir": 0,
+  "borsada": {}
+ },
+ "METRO": {
+  "link": "1120-metro-ticari-ve-mali-yatirimlar-holding-a-s",
+  "satir": 14,
+  "borsada": {
+   "MEPET": {
+    "oran": 46.87,
+    "efektif": null,
+    "not": ""
+   },
+   "VANGD": {
+    "oran": 3.1,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "MOGAN": {
+  "link": "5180-mogan-enerji-yatirim-holding-a-s",
+  "satir": 13,
+  "borsada": {}
+ },
+ "MZHLD": {
+  "link": "1024-mazhar-zorlu-holding-a-s",
+  "satir": 1,
+  "borsada": {}
+ },
+ "NTHOL": {
+  "link": "1039-net-holding-a-s",
+  "satir": 24,
+  "borsada": {
+   "MERIT": {
+    "oran": 71.08,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "OSTIM": {
+  "link": "1596-ostim-endustriyel-yatirimlar-ve-isletme-a-s",
+  "satir": 6,
+  "borsada": {}
+ },
+ "OTTO": {
+  "link": "1752-otto-holding-a-s",
+  "satir": 3,
+  "borsada": {}
+ },
+ "PAHOL": {
+  "link": "6161-pasifik-holding-a-s",
+  "satir": 6,
+  "borsada": {
+   "PASEU": {
+    "oran": 17.86,
+    "efektif": null,
+    "not": ""
+   },
+   "PATEK": {
+    "oran": 45.34,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "PETKM": {
+  "link": "1053-petkim-petrokimya-holding-a-s",
+  "satir": 3,
+  "borsada": {}
+ },
+ "POLHO": {
+  "link": "1608-polisan-holding-a-s",
+  "satir": 2,
+  "borsada": {}
+ },
+ "RALYH": {
+  "link": "883-ral-yatirim-holding-a-s",
+  "satir": 8,
+  "borsada": {}
+ },
+ "SAHOL": {
+  "link": "976-haci-omer-sabanci-holding-a-s",
+  "satir": 12,
+  "borsada": {
+   "AKBNK": {
+    "oran": 40.75,
+    "efektif": null,
+    "not": ""
+   },
+   "AKGRT": {
+    "oran": 36.0,
+    "efektif": null,
+    "not": ""
+   },
+   "AGESA": {
+    "oran": 40.0,
+    "efektif": null,
+    "not": ""
+   },
+   "KORDS": {
+    "oran": 71.11,
+    "efektif": null,
+    "not": ""
+   },
+   "BRISA": {
+    "oran": 50.0,
+    "efektif": null,
+    "not": ""
+   },
+   "TKNSA": {
+    "oran": 50.0,
+    "efektif": null,
+    "not": ""
+   },
+   "CIMSA": {
+    "oran": 54.54,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "TAVHL": {
+  "link": "1452-tav-havalimanlari-holding-a-s",
+  "satir": 23,
+  "borsada": {}
+ },
+ "TEHOL": {
+  "link": "968-tera-yatirim-teknoloji-holding-a-s",
+  "satir": 8,
+  "borsada": {
+   "MANAS": {
+    "oran": 6.06,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "TKFEN": {
+  "link": "1470-tekfen-holding-a-s",
+  "satir": 43,
+  "borsada": {
+   "AKMGY": {
+    "oran": 10.47,
+    "efektif": null,
+    "not": ""
+   },
+   "TSKB": {
+    "oran": 0.047,
+    "efektif": null,
+    "not": ""
+   },
+   "AKCNS": {
+    "oran": 0.003,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "TRCAS": {
+  "link": "1102-turcas-holding-a-s",
+  "satir": 1,
+  "borsada": {}
+ },
+ "TRHOL": {
+  "link": "1089-tera-finansal-yatirimlar-holding-a-s",
+  "satir": 2,
+  "borsada": {}
+ },
+ "UNLU": {
+  "link": "2474-unlu-yatirim-holding-a-s",
+  "satir": 2,
+  "borsada": {}
+ },
+ "USHOL": {
+  "link": "1403-us-yatirim-holding-a-s",
+  "satir": 6,
+  "borsada": {}
+ },
+ "VERUS": {
+  "link": "2059-verusa-holding-a-s",
+  "satir": 18,
+  "borsada": {
+   "ACSEL": {
+    "oran": 50.73,
+    "efektif": null,
+    "not": ""
+   }
+  }
+ },
+ "YESIL": {
+  "link": "1386-yesil-yatirim-holding-a-s",
+  "satir": 1,
+  "borsada": {}
+ }
+}
