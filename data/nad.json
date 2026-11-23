@@ -1,5 +1,5 @@
 {
- "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle. | 12 Kas: ikinci bicim 'paylar' (hisse -> holdingin payi) + 'kalibre_nad_mn': referans gunde NAD bu degere esitlenir, borsada olmayan kisim + net borc sabit kabul edilir (usd=true ise dolar kuruyla tasinir). | 15 Kas: 'halka_acik' bicimi de 'kalibre_nad_mn' alabilir: katkilar katki_tarih fiyatlarina gore tasinir, sabit kisim ref_tarih'te NAD kalibre degerine esit olacak sekilde yeniden hesaplanir. Uzun vade ortalamalari PhillipCapital 2 Kas (KCHOL ~%33, SAHOL ~%49, DOHOL ~%52). | 23 Kas: KAP genel bilgiler sayfasi (temel nad_genel) ile tum holdinglerin borsadaki istirakleri cikarildi (temel/nad_genel.json). ALARK, GLYHO, NTHOL, GSDHO, TRCAS, OSTIM, BLCYT, RALYH'de borsadaki istirak NAD'in kucuk kismi; NAD agirlikla borsada olmayan varliklar (defter) -> gunluk NAD serisi anlamli degil, eklenmedi. 'kalibre_nad_mn' yoksa NAD = yalniz borsadaki istirakler.",
+ "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle. | 12 Kas: ikinci bicim 'paylar' (hisse -> holdingin payi) + 'kalibre_nad_mn': referans gunde NAD bu degere esitlenir, borsada olmayan kisim + net borc sabit kabul edilir (usd=true ise dolar kuruyla tasinir). | 15 Kas: 'halka_acik' bicimi de 'kalibre_nad_mn' alabilir: katkilar katki_tarih fiyatlarina gore tasinir, sabit kisim ref_tarih'te NAD kalibre degerine esit olacak sekilde yeniden hesaplanir. Uzun vade ortalamalari PhillipCapital 2 Kas (KCHOL ~%33, SAHOL ~%49, DOHOL ~%52). | 23 Kas: KAP genel bilgiler sayfasi (temel nad_genel) ile tum holdinglerin borsadaki istirakleri cikarildi (temel/nad_genel.json). ALARK, GLYHO, NTHOL, GSDHO, TRCAS, OSTIM, BLCYT, RALYH'de borsadaki istirak NAD'in kucuk kismi; NAD agirlikla borsada olmayan varliklar (defter) -> gunluk NAD serisi anlamli degil, eklenmedi. 'kalibre_nad_mn' yoksa NAD = yalniz borsadaki istirakler. | 23 Kas gece: 'karar_nad' (karar kutusunda bilanco yerine NAD) GERI ALINDI; 2014-2026 tek standart NAD testi (temel/nad_std_sonuc.txt) holdinglerde NAD/PD-DD iskontosunun getiriyi aciklamadigini gosterdi. NAD yalniz bilgi karti.",
  "KCHOL": {
   "ref_tarih": "2026-10-30",
   "kaynak": "Istirak katkilari Deniz Yatirim 1 Nis 2026; toplam NAD PhillipCapital 2 Kas 2026 (777 982 mn TL) degerine kalibre",
@@ -30,8 +30,7 @@
    "Sabit kiymetler (%25 iskontolu)": 8705
   },
   "katki_tarih": "2026-03-31",
-  "kalibre_nad_mn": 777982,
-  "karar_nad": true
+  "kalibre_nad_mn": 777982
  },
  "SAHOL": {
   "ref_tarih": "2026-10-30",
@@ -60,8 +59,7 @@
   },
   "katki_tarih": "2026-03-31",
   "kalibre_nad_mn": 409362,
-  "not": "Carrefoursa Temmuz 2026'da A101'e satildi; tablodan cikarildi (satis geliri kalibrasyonla nakde girdi).",
-  "karar_nad": true
+  "not": "Carrefoursa Temmuz 2026'da A101'e satildi; tablodan cikarildi (satis geliri kalibrasyonla nakde girdi)."
  },
  "AGHOL": {
   "ref_tarih": "2026-10-02",
@@ -74,8 +72,7 @@
    "MGROS": 0.4918,
    "ASUZU": 0.554,
    "ADEL": 0.5689
-  },
-  "karar_nad": true
+  }
  },
  "DOHOL": {
   "ref_tarih": "2026-10-02",
@@ -84,8 +81,7 @@
   "kalibre_nad_mn": 146304,
   "uzun_vade_iskonto": -0.52,
   "usd": true,
-  "paylar": {},
-  "karar_nad": true
+  "paylar": {}
  },
  "LYDHO": {
   "ref_tarih": "2026-11-20",
