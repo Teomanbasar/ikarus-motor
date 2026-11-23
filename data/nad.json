@@ -30,7 +30,8 @@
    "Sabit kiymetler (%25 iskontolu)": 8705
   },
   "katki_tarih": "2026-03-31",
-  "kalibre_nad_mn": 777982
+  "kalibre_nad_mn": 777982,
+  "karar_nad": true
  },
  "SAHOL": {
   "ref_tarih": "2026-10-30",
@@ -59,7 +60,8 @@
   },
   "katki_tarih": "2026-03-31",
   "kalibre_nad_mn": 409362,
-  "not": "Carrefoursa Temmuz 2026'da A101'e satildi; tablodan cikarildi (satis geliri kalibrasyonla nakde girdi)."
+  "not": "Carrefoursa Temmuz 2026'da A101'e satildi; tablodan cikarildi (satis geliri kalibrasyonla nakde girdi).",
+  "karar_nad": true
  },
  "AGHOL": {
   "ref_tarih": "2026-10-02",
@@ -72,7 +74,8 @@
    "MGROS": 0.4918,
    "ASUZU": 0.554,
    "ADEL": 0.5689
-  }
+  },
+  "karar_nad": true
  },
  "DOHOL": {
   "ref_tarih": "2026-10-02",
@@ -81,7 +84,8 @@
   "kalibre_nad_mn": 146304,
   "uzun_vade_iskonto": -0.52,
   "usd": true,
-  "paylar": {}
+  "paylar": {},
+  "karar_nad": true
  },
  "LYDHO": {
   "ref_tarih": "2026-11-20",
@@ -92,5 +96,58 @@
    "LYDYE": 0.6489,
    "UFUK": 0.6296
   }
+ },
+ "ALARK": {
+  "ref_tarih": "2025-12-09",
+  "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+  "piyasa_degeri_ref": 36855,
+  "kalibre_nad_mn": 55655,
+  "uzun_vade_iskonto": null,
+  "paylar": {
+   "ALGYO": 0.5624,
+   "ALCAR": 0.8406
+  },
+  "test_only": true
+ },
+ "GLYHO": {
+  "ref_tarih": "2025-12-09",
+  "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+  "piyasa_degeri_ref": 21400,
+  "kalibre_nad_mn": 30956,
+  "uzun_vade_iskonto": null,
+  "paylar": {
+   "CONSE": 0.5099,
+   "GLBMD": 0.75
+  },
+  "test_only": true
+ },
+ "NTHOL": {
+  "ref_tarih": "2025-12-09",
+  "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+  "piyasa_degeri_ref": 21328,
+  "kalibre_nad_mn": 86592,
+  "uzun_vade_iskonto": null,
+  "paylar": {
+   "MERIT": 0.7108
+  },
+  "test_only": true
+ },
+ "GSDHO": {
+  "ref_tarih": "2025-12-09",
+  "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+  "piyasa_degeri_ref": 4094,
+  "kalibre_nad_mn": 26046,
+  "uzun_vade_iskonto": null,
+  "paylar": {},
+  "test_only": true
+ },
+ "OSTIM": {
+  "ref_tarih": "2025-12-09",
+  "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+  "piyasa_degeri_ref": 1339,
+  "kalibre_nad_mn": 2487,
+  "uzun_vade_iskonto": null,
+  "paylar": {},
+  "test_only": true
  }
 }

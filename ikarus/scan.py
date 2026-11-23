@@ -319,7 +319,7 @@ def _nad_ekle(stocks, px):
         print("[uyari] USDTRY:", e)
     ser = N.sermayeler()
     for h, c in cfg.items():
-        if h.startswith("_") or h not in px or h not in by:
+        if h.startswith("_") or c.get("test_only") or h not in px or h not in by:
             continue
         try:
             S, eksik = N.seri(h, c, px, ser)
@@ -339,7 +339,7 @@ def _nad_ekle(stocks, px):
             # Konsolide bilanco puani holdingde test edildi ve calismadi. NAD iskontosu 3y en derin %20'de -> 'iyi'
             # (126g endekse gore ort +20, t 2.9, n 27); diger durumlar ORTA (dar iskonto kotu cikmadi, UZAK DUR yok).
             v = (by[h].get("temel") or {}).get("v3")
-            if c.get("kalibre_nad_mn") and v is not None:
+            if c.get("karar_nad") and v is not None:
                 et = v.get("etiketler") or []
                 v.update({"bilanco_sira": v.get("sira"), "bilanco_dilim": v.get("dilim"), "nad_karar": True, "nad_yuzdelik": round(yuz3, 1),
                           "sira": 0.9 if yuz3 <= 20 else 0.7, "dilim": 5 if yuz3 <= 20 else 4,

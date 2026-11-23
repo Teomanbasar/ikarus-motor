@@ -187,7 +187,11 @@ def main():
                 L.append(f"   {ad:34s} gun {len(X):4d} | sonraki 63g BIST100'e gore ort {X.mean():+5.1f} medyan {X.median():+5.1f} kazanma %{100 * (X > 0).mean():3.0f}")
         w = S.resample("W-FRI").last().assign(hisse=h)
         tum.append(w)
-    L += havuz_test(cfg, hs, px, ser, xu)
+    k4 = [h for h in hs if cfg[h].get("karar_nad")]
+    L += [l.replace("== HAVUZ", "== HAVUZ A: KARARDA KULLANILAN 4") for l in havuz_test(cfg, k4, px, ser, xu)]
+    L += [l.replace("== HAVUZ", "== HAVUZ B: 4 + LYDHO") for l in havuz_test(cfg, k4 + ["LYDHO"], px, ser, xu)]
+    tt = [h for h in hs if cfg[h].get("test_only")]
+    L += [l.replace("== HAVUZ", "== HAVUZ C: TEST (Marbas NAD, cogu borsada degil: " + ",".join(tt) + ")") for l in havuz_test(cfg, tt, px, ser, xu)]
     L.append("\nNot: gecmis seri bugunku istirak paylariyla hesaplandi (yaklasik). Test gunleri birbiriyle ortusuyor (63 gunluk pencereler); "
              "bagimsiz gozlem sayisi gun sayisindan cok daha az, sonuclari kaba isaret olarak oku.")
     (R / "nad.json").write_text(json.dumps({"olusturma": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"), "holdingler": ozet},
