@@ -524,6 +524,7 @@ def skor(grup, tab, m3, d=None, yo=None):
     # 22 Kas: "asil F/K" (FD/FAVOK) icin; bankalarda yok
     out["ham"] = {"net_kar": nk, "ozkaynak": oz, "sermaye": B("2OA"), "favok": locals().get("favok"), "net_borc": locals().get("nb"),
                   "faaliyet_kari": None if grup == "UFRS" else T("3DF"),
+                  "brut_kar": None if grup == "UFRS" else T("3D"),
                   "parasal_kazanc": None if grup == "UFRS" else parasal_kazanc_ttm(tab, d)}
     try:
         out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d, yo).items() if k != "nk_ttm"}

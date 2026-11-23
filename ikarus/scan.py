@@ -118,6 +118,11 @@ def _temel_ekle(stocks):
                 k["parasal_kazanc"] = pk
                 k["fk_parasalsiz"] = pd_ / nk2 if nk2 > 0 else None
                 k["parasal_pay"] = 0.75 * pk / nk if nk > 0 else None
+        # 23 Kas (temel/gyo_kontrol.txt): GYO'da faaliyet karinin ne kadari kagit (deger artisi; vekil: faaliyet - brut kar). Yalniz bilgi.
+        ad_ = str(s.get("ad") or "").upper().replace("İ", "I")
+        bk, fk_ = ham.get("brut_kar"), ham.get("faaliyet_kari")
+        if "GAYRIMENKUL YATIRIM" in ad_ and bk is not None and fk_:
+            k["gyo_kagit_pay"] = round((fk_ - bk) / abs(fk_), 3)
         s["temel"] = k
     _temel_v3(stocks)
     _temel_v3(stocks, tip="banka")   # 17 Kas: bankalar kendi icinde (finans_bt: ust 1/3 126g +19.9 / alt 1/3 +7.1); sigorta henuz test edilmedi
