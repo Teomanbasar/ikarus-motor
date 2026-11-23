@@ -57,7 +57,7 @@
 == GSDHO 25 form, 10 denendi, SATIR YOK; son metin 31426:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == GSDHO 01.09.2025 19:06:22 idx 1484583 satir 0 borsada {}
 
-== KCHOL 09.11.2026 18:28:34 idx 1695495 satir 74 borsada {'FROTO': 39.32, 'MAALT': 60.08, 'TOASO': 37.62}
+== KCHOL 09.11.2026 18:28:34 idx 1695495 satir 74 borsada {'ARCLK': 48.53, 'AYGAZ': 40.68, 'FROTO': 39.32, 'MAALT': 60.08, 'OTKAR': 47.38, 'TOASO': 37.62, 'TTRAK': 37.5, 'YKBNK': 20.22}
     30.00 TRY Finansal Yat  Şirket ile Olan İlişkinin Niteliği      Altınyunus Çeşme Turistik Tesisler A.Ş.    Turizm
     48.53 TRY Bağlı Ortakl Arçelik A.Ş.    Üretim/Satış
      5.00 TRY İş Ortaklığı Arçelik-LG Klima San. ve Tic. A.Ş.    Klima Üretimi
@@ -202,7 +202,7 @@
 == ATSYH 21 form, 10 denendi, SATIR YOK; son metin 34817:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == ATSYH 02.07.2026 18:26:20 idx 1623292 satir 0 borsada {}
 
-== SAHOL 17.09.2026 18:39:07 idx 1664870 satir 24 borsada {'KORDS': 71.11, 'CIMSA': 54.54}
+== SAHOL 17.09.2026 18:39:07 idx 1664870 satir 24 borsada {'AKGRT': 36.0, 'AGESA': 40.0, 'KORDS': 71.11, 'TKNSA': 50.0, 'CIMSA': 54.54}
     40.75 TRY Bağlı Ortakl ermayedeki Payı (%)    Şirket ile Olan İlişkinin Niteliği      AKBANK T.A.Ş.    Bankacılık
     36.00 TRY Bağlı Ortakl AKSİGORTA A.Ş.    Finansal Hizmetler
     40.00 TRY Bağlı Ortakl AGESA HAYAT VE EMEKLİLİK A.Ş.    Finansal Hizmetler
@@ -240,7 +240,7 @@
    100.00 TRY Bağlı Ortakl Lydia Enerji Elektrik Üretim ve Depolama A.Ş.    Elektrik Enerjisi Üretimi
     50.00 TRY İştirak      Bulls Hava Taşımacılığı A.Ş.    Hava Yolu Taşıma Araçlarının Kiralanması
     33.33 TRY İştirak      Bulls Yatırım Holding A.Ş.    İdare Merkezi Faaliyetleri
-== TKFEN 29.09.2026 08:47:13 idx 1669229 satir 86 borsada {'AKMGY': 10.47, 'ZGYO': 10.47, 'TSKB': 0.047, 'AKCNS': 0.003}
+== TKFEN 29.09.2026 08:47:13 idx 1669229 satir 86 borsada {'AKMGY': 10.47, 'TSKB': 0.047, 'AKCNS': 0.003}
    100.00 TRY Bağlı Ortakl ayı (%)    Şirket ile Olan İlişkinin Niteliği      Tekfen İnşaat ve Tesisat A.Ş.    İnşaat
    100.00 TRY Bağlı Ortakl Tekfen İmalat ve Mühendislik A.Ş.    Üretim
    100.00 TRY Bağlı Ortakl Tekfen Mühendislik A.Ş.    Mühendislik
@@ -381,110 +381,340 @@
    100.00 TRY Bağlı Ortakl TAV Özel Güvenlik Hizmetleri A.Ş. ("TAV Güvenlik")    Güvenlik Hizmetleri
    100.00 TRY Bağlı Ortakl TAV Akademi Eğitim ve Danışmanlık Hizmetleri A.Ş. ("TAV Akademi")    Eğitim Hizmetleri
    100.00 EUR Bağlı Ortakl Aviator Netherlands B.V. (Aviator Hollanda)    Holding
-== KLRHO 17 form, 10 denendi, SATIR YOK; son metin 0: 
+== KLRHO 17 form, 10 denendi, SATIR YOK; son metin 31072:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == KLRHO 01.09.2025 18:54:24 idx 1484563 satir 0 borsada {}
 
-== DOHOL 24 form, 10 denendi, SATIR YOK; son metin 0: 
+== DOHOL 24 form, 10 denendi, SATIR YOK; son metin 38063: 20 19","fill":"none","children":[["$","path",null,{"d":"M10.9173 6.02783H9.08398V7.86115H10.9173V6.02783Z","fill":"#B12009"}],"$L3e","$L3f","$L40","$L41"]}],"Hak Kullanımları"]}]]}]]}] 43:T3c38,      Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlara İlişkin Bilgiler        Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar           Ticaret Unvanı    Şirketin Faaliyet Konusu    Ödenmiş/Çıkarılmış Sermayesi    Şirketin Sermayedeki Payı    Para Birimi    Şirketin Sermayedeki Payı (%)    Şirket ile Olan İlişkinin Niteliği      D GAYRİMENKUL YATIRIMLARI VE TİCARET A.Ş.    GAYRİMENKUL YÖNETİMİ    5.481.895.729,00    5.481.895.729,00    TRY    100,00    BAĞLI ORTAKLIK      DOĞAN TREND OTOMOTİV TİCARET HİZMET VE TEKNOLOJİ A.Ş.    MOTORLU TAŞIT TİCARETİ    526.000.000,00    526.000.000,00    TRY    100,00    BAĞLI ORTAKLIK      MARLİN OTELCİLİK VE TURİZM A.Ş.    OTEL VB. KONAKLAMA FAALİYETLERİ    250.000.000,00    250.000.000,00    TRY    100,00    BAĞLI ORTAKLIK      KELKİT DOĞAN BESİ İŞLETMELERİ A.Ş.    HAYVANCILIK    57.500.000,00    57.500.000,00    TRY    100,00    BAĞLI ORTAKLIK      MİLTA TURİZM İŞLETMELERİ A.Ş.    TURİZM    50.198.983,49    50.198.983,49    TRY    100,00    BAĞLI ORTAKLIK      DEĞER MERKEZİ HİZMETLER VE YÖNETİM DANIŞMANLIĞI A.Ş.    İŞLETME DESTEK HİZMETLERİ    41.000.000,00    41.000.000,00    TRY    100,00    BAĞLI ORTAKLIK 
 == DOHOL 27.05.2025 12:04:33 idx 1442288 satir 0 borsada {}
 
-== HEDEF 39 form, 10 denendi, SATIR YOK; son metin 0: 
+== HEDEF 39 form, 10 denendi, SATIR YOK; son metin 35488:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == HEDEF 25.06.2026 14:20:18 idx 1620591 satir 0 borsada {}
 
-== INVEO 44 form, 10 denendi, SATIR YOK; son metin 0: 
-== INVEO 24.03.2026 18:25:45 idx 1575242 satir 0 borsada {}
-
-== OSTIM 7 form, 7 denendi, SATIR YOK; son metin 0: 
-== OSTIM 02.02.2024 17:23:28 idx 1246471 satir 0 borsada {}
-
-== RALYH 16 form, 10 denendi, SATIR YOK; son metin 0: 
+== INVEO 18.09.2026 18:14:13 idx 1665523 satir 16 borsada {'GEDIK': 81.87}
+    81.87 TRY Bağlı Ortakl  İlişkinin Niteliği      Gedik Yatırım Menkul Değerler AŞ    SPK Lisanslı Yatırım Kuruluşu
+   100.00 TRY Bağlı Ortakl Inveo Portföy Yönetimi AŞ    Portföy Yönetimi
+   100.00 TRY Bağlı Ortakl Finveo Yatırım Holding AŞ     Özel Amaçlı Yatırım Şirketi
+   100.00 TRY Bağlı Ortakl INVEO Araç Kiralama Hizmetleri AŞ    Kurumsal kiralama hizmetleri
+   100.00 TRY Bağlı Ortakl İstanbul Kandilli Gayrimenkul Yatırım AŞ    Gayrimenkul Yatırımları
+    73.33 TRY Bağlı Ortakl Misyon Yatırım Bankası AŞ    Yatırım Bankacılığı Faaliyetleri
+    54.56 TRY Bağlı Ortakl VEO Ventures Girişim Sermayesi Yatırım Ortaklığı AŞ    Girişim Sermayesi Yatırım Ortaklığı
+    43.91 TRY İştirak      Turpe Teknoloji ve Ticaret AŞ    Yurtiçi / Yurtdışı Teknoloji Hizmetleri
+    81.87 TRY Bağlı Ortakl  İlişkinin Niteliği      Gedik Yatırım Menkul Değerler AŞ    SPK Lisanslı Yatırım Kuruluşu
+   100.00 TRY Bağlı Ortakl Inveo Portföy Yönetimi AŞ    Portföy Yönetimi
+   100.00 TRY Bağlı Ortakl Finveo Yatırım Holding AŞ     Özel Amaçlı Yatırım Şirketi
+   100.00 TRY Bağlı Ortakl INVEO Araç Kiralama Hizmetleri AŞ    Kurumsal kiralama hizmetleri
+   100.00 TRY Bağlı Ortakl İstanbul Kandilli Gayrimenkul Yatırım AŞ    Gayrimenkul Yatırımları
+    73.33 TRY Bağlı Ortakl Misyon Yatırım Bankası AŞ    Yatırım Bankacılığı Faaliyetleri
+    54.56 TRY Bağlı Ortakl VEO Ventures Girişim Sermayesi Yatırım Ortaklığı AŞ    Girişim Sermayesi Yatırım Ortaklığı
+    43.91 TRY İştirak      Turpe Teknoloji ve Ticaret AŞ    Yurtiçi / Yurtdışı Teknoloji Hizmetleri
+== OSTIM 13.12.2024 17:22:23 idx 1365713 satir 14 borsada {}
+   100.00 TRY Bağlı Ortakl şkinin Niteliği      Ostim Finans İş Merk.İnş.Gay.En.Elk.Ür.Tic.A.Ş    İş Merkezi Yönetimi
+   100.00 TRY Bağlı Ortakl Günhan Ostim Alüminyum Döküm Döv.Mak.İm.San.Tic.A.Ş.    Alüminyum Döküm Dövme
+   100.00 TRY Bağlı Ortakl Ostim Kalıp Yatırım Sanayi A.Ş.    Kalıpçılık İmalatı
+    80.95 TRY Bağlı Ortakl T.H. ODF Ortadoğu Uluslararası Fuarcılık A.Ş.    Fuarcılık Org.
+    73.50 TRY Bağlı Ortakl Ostim Gayrimenkul Danışmanlık ve İşletme A.Ş    Gayrimenkul Takip Org.
+    50.00 TRY Bağlı Ortakl MEKSİS A.Ş.    Mekanik Sistemler İmalatı
+    34.19 TRY İştirak      Kızılcahamam Akasya Yatırım İnşaat A.Ş.    Sağlık Tesisi. Devre Mülk
+   100.00 TRY Bağlı Ortakl şkinin Niteliği      Ostim Finans İş Merk.İnş.Gay.En.Elk.Ür.Tic.A.Ş    İş Merkezi Yönetimi
+   100.00 TRY Bağlı Ortakl Günhan Ostim Alüminyum Döküm Döv.Mak.İm.San.Tic.A.Ş.    Alüminyum Döküm Dövme
+   100.00 TRY Bağlı Ortakl Ostim Kalıp Yatırım Sanayi A.Ş.    Kalıpçılık İmalatı
+    80.95 TRY Bağlı Ortakl T.H. ODF Ortadoğu Uluslararası Fuarcılık A.Ş.    Fuarcılık Org.
+    73.50 TRY Bağlı Ortakl Ostim Gayrimenkul Danışmanlık ve İşletme A.Ş    Gayrimenkul Takip Org.
+    50.00 TRY Bağlı Ortakl MEKSİS A.Ş.    Mekanik Sistemler İmalatı
+    34.19 TRY İştirak      Kızılcahamam Akasya Yatırım İnşaat A.Ş.    Sağlık Tesisi. Devre Mülk
+== RALYH 16 form, 10 denendi, SATIR YOK; son metin 32974: 20 19","fill":"none","children":[["$","path",null,{"d":"M10.9173 6.02783H9.08398V7.86115H10.9173V6.02783Z","fill":"#B12009"}],"$L3e","$L3f","$L40","$L41"]}],"Hak Kullanımları"]}]]}]]}] 43:T12ab,      Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlara İlişkin Bilgiler        Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar           Ticaret Unvanı    Şirketin Faaliyet Konusu    Ödenmiş/Çıkarılmış Sermayesi    Şirketin Sermayedeki Payı    Para Birimi    Şirketin Sermayedeki Payı (%)    Şirket ile Olan İlişkinin Niteliği      TRİO TEKNİK YAPI A.Ş    İnşaat Sektöründe Faaliyet Göstermektedir    3000000    3000000    TRY    100    BAĞLI ORTAKLIK      HERA TEKNİK YAPI A.Ş    İnşaat Sektöründe Faaliyet Göstermektedir.    7500000    7500000    TRY    100    BAĞLI ORTAKLIK      RAL YAPI MÜHENDİSLİK A.Ş    İnşaat Sektöründe Faaliyet Göstermektedir.    25000000    25000000    TRY    100    BAĞLI ORTAKLIK      RAL ENERJİ A.Ş    Elektirik Enerjisi Üretimi    275000000    140250000    TRY    51    BAĞLI ORTAKLIK      HEGUARD SAVUNMA VE SİBER GÜVENLİK TEKNOLOJİLERİ A.Ş.    Askeri Savunma Hizmetleri    50000000    24500000    TRY    49    İŞTİRAK      ANADOLU MİKRONİZE KİMYA SANAYİ VE TİCARET ANONİM ŞİRKETİ    Endüstriyel Mineral ve Maden Üretimi    77750000    7750000    TRY    10    İŞTİRAK         38:["$","$L42",null,{"CLIENT_BASE_URL":"https://www.kap.o
 == RALYH 23.04.2025 14:16:26 idx 1428887 satir 0 borsada {}
 
-== DEVA 13 form, 10 denendi, SATIR YOK; son metin 0: 
-== DEVA 10.10.2024 10:20:06 idx 1346525 satir 0 borsada {}
-
-== DUNYH 13 form, 10 denendi, SATIR YOK; son metin 0: 
+== DEVA 09.11.2026 14:10:40 idx 1694899 satir 14 borsada {}
+   100.00 EUR Bağlı Ortakl DEVATIS Gmbh    Beşeri-tıbbi ve veteriner ilaçların Almanya'da satış ve dağıtımı.
+   100.00 CHF Bağlı Ortakl DEVATIS AG    Beşeri-tıbbi ve veteriner ilaçların İsviçre'de satış ve dağıtımı.
+   100.00 USD Bağlı Ortakl DEVATIS Inc    Beşeri-tıbbi ve veteriner ilaçların Amerikada satış ve dağıtımı.
+   100.00 EUR Bağlı Ortakl IS d.o.o. BEOGRADE     Beşeri-tıbbi ve veteriner ilaçların Sırbistan'da satış ve dağıtımı.
+   100.00 EUR Bağlı Ortakl DEVATIS B.V.    Beşeri-tıbbi ve veteriner ilaçların Hollanda'da satış ve dağıtımı.
+   100.00 AZN Bağlı Ortakl DEVATIS LLC    Beşeri-tıbbi ve veteriner ilaçların Azerbaycan'da satış ve dağıtımı.
+   100.00 GBP Bağlı Ortakl DEVATIS UK Ltd    Beşeri-tıbbi ve veteriner ilaçların İngiltere'de satış ve dağıtımı.
+   100.00 EUR Bağlı Ortakl DEVATIS Gmbh    Beşeri-tıbbi ve veteriner ilaçların Almanya'da satış ve dağıtımı.
+   100.00 CHF Bağlı Ortakl DEVATIS AG    Beşeri-tıbbi ve veteriner ilaçların İsviçre'de satış ve dağıtımı.
+   100.00 USD Bağlı Ortakl DEVATIS Inc    Beşeri-tıbbi ve veteriner ilaçların Amerikada satış ve dağıtımı.
+   100.00 EUR Bağlı Ortakl IS d.o.o. BEOGRADE     Beşeri-tıbbi ve veteriner ilaçların Sırbistan'da satış ve dağıtımı.
+   100.00 EUR Bağlı Ortakl DEVATIS B.V.    Beşeri-tıbbi ve veteriner ilaçların Hollanda'da satış ve dağıtımı.
+   100.00 AZN Bağlı Ortakl DEVATIS LLC    Beşeri-tıbbi ve veteriner ilaçların Azerbaycan'da satış ve dağıtımı.
+   100.00 GBP Bağlı Ortakl DEVATIS UK Ltd    Beşeri-tıbbi ve veteriner ilaçların İngiltere'de satış ve dağıtımı.
+== DUNYH 13 form, 10 denendi, SATIR YOK; son metin 31747:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == DUNYH 25.04.2024 18:18:19 idx 1277091 satir 0 borsada {}
 
-== POLHO 14 form, 10 denendi, SATIR YOK; son metin 0: 
-== POLHO 08.07.2025 20:06:27 idx 1460604 satir 0 borsada {}
-
-== UNLU 25 form, 10 denendi, SATIR YOK; son metin 0: 
-== UNLU 18.06.2025 18:17:44 idx 1449970 satir 0 borsada {}
-
-== DERHL 12 form, 10 denendi, SATIR YOK; son metin 0: 
-== DERHL 10.06.2024 11:40:42 idx 1296811 satir 0 borsada {}
-
-== AVHOL 14 form, 10 denendi, SATIR YOK; son metin 0: 
-== AVHOL 25.11.2024 18:06:08 idx 1360300 satir 0 borsada {}
-
-== LRSHO 9 form, 9 denendi, SATIR YOK; son metin 0: 
-== LRSHO 08.03.2024 18:19:44 idx 1257110 satir 0 borsada {}
-
-== PETKM 15 form, 10 denendi, SATIR YOK; son metin 0: 
+== POLHO 26.01.2026 09:30:53 idx 1546419 satir 4 borsada {}
+    96.00 TRY Bağlı Ortakl genel antrepo, kuru yük ve genel kargo gemilerine yükleme ve boşaltma hizmeti  vermektedir
+   100.00 TRY Bağlı Ortakl a San. A.Ş.    Formaldehit, formaldehit reçineleri ve AUS 32 üretimi ve satışı yapmaktadır
+    96.00 TRY Bağlı Ortakl genel antrepo, kuru yük ve genel kargo gemilerine yükleme ve boşaltma hizmeti  vermektedir
+   100.00 TRY Bağlı Ortakl a San. A.Ş.    Formaldehit, formaldehit reçineleri ve AUS 32 üretimi ve satışı yapmaktadır
+== UNLU 06.10.2026 18:22:30 idx 1673677 satir 2 borsada {}
+    32.50 USD İştirak      212 LTD     Finansal Danışmanlık
+    32.50 USD İştirak      212 LTD     Finansal Danışmanlık
+== DERHL 09.10.2026 17:48:01 idx 1678594 satir 4 borsada {'SOHOE': 46.3}
+   100.00 TRY Bağlı Ortakl meleri Pazarlama Sanayi Ticaret A.Ş.    Gıda ve gıda dışı hızlı tüketim maddeleri dağıtımı
+    46.30 TRY Bağlı Ortakl ho Giyim ve Enerji A.Ş.    Erkek giyim ürünleri, yenilenebilir enerji ve elektrik üretimi.
+   100.00 TRY Bağlı Ortakl meleri Pazarlama Sanayi Ticaret A.Ş.    Gıda ve gıda dışı hızlı tüketim maddeleri dağıtımı
+    46.30 TRY Bağlı Ortakl ho Giyim ve Enerji A.Ş.    Erkek giyim ürünleri, yenilenebilir enerji ve elektrik üretimi.
+== AVHOL 22.06.2026 10:37:23 idx 1619201 satir 20 borsada {}
+   100.00 TRY Bağlı Ortakl n İlişkinin Niteliği      ARMED SAĞLIK HİZMETLERİ VE MEDİKAL SANAYİ TİCARET A.Ş.    SAĞLIK
+   100.00 TRY Bağlı Ortakl SEREN SAĞLIK HİZMETLERİ ANONİM ŞİRKETİ    SAĞLIK
+   100.00 TRY Bağlı Ortakl AVREN ENERJİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ    ENERJİ
+   100.00 TRY Bağlı Ortakl ARONYA BİTKİ VE TARIM ÜRÜNLERİ ANONİM ŞİRKETİ    TARIM
+   100.00 TRY Bağlı Ortakl NOYAN DAYANIKLI TÜKETİM ÜRÜNLERİ PAZARLAMA ANONİM ŞİRKETİ    PAZARLAMA
+    67.00 TRY Bağlı Ortakl ERRA KAUÇUK SANAYİ VE TİC. A.Ş.    GERİ DÖNÜŞÜM
+   100.00 TRY Bağlı Ortakl ALS YENİLENEBİLİR ENERJİ A.Ş.    ENERJİ
+    95.00 EUR Bağlı Ortakl MEKEN INVEST S.R.L.    ENERJİ
+    12.57 TRY Bağlı Ortakl ULAŞLAR TURİZM ENERJİ TARIM GIDA VE İNŞAAT YATIRIMLARI A.Ş.    TURİZM
+    51.00 TRY Bağlı Ortakl GAYAMED ECZA DEPOSU SANAYİ VE TİCARET ANONİM ŞİRKETİ    ECZA DEPOSU
+   100.00 TRY Bağlı Ortakl n İlişkinin Niteliği      ARMED SAĞLIK HİZMETLERİ VE MEDİKAL SANAYİ TİCARET A.Ş.    SAĞLIK
+   100.00 TRY Bağlı Ortakl SEREN SAĞLIK HİZMETLERİ ANONİM ŞİRKETİ    SAĞLIK
+   100.00 TRY Bağlı Ortakl AVREN ENERJİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ    ENERJİ
+   100.00 TRY Bağlı Ortakl ARONYA BİTKİ VE TARIM ÜRÜNLERİ ANONİM ŞİRKETİ    TARIM
+   100.00 TRY Bağlı Ortakl NOYAN DAYANIKLI TÜKETİM ÜRÜNLERİ PAZARLAMA ANONİM ŞİRKETİ    PAZARLAMA
+    67.00 TRY Bağlı Ortakl ERRA KAUÇUK SANAYİ VE TİC. A.Ş.    GERİ DÖNÜŞÜM
+   100.00 TRY Bağlı Ortakl ALS YENİLENEBİLİR ENERJİ A.Ş.    ENERJİ
+    95.00 EUR Bağlı Ortakl MEKEN INVEST S.R.L.    ENERJİ
+    12.57 TRY Bağlı Ortakl ULAŞLAR TURİZM ENERJİ TARIM GIDA VE İNŞAAT YATIRIMLARI A.Ş.    TURİZM
+    51.00 TRY Bağlı Ortakl GAYAMED ECZA DEPOSU SANAYİ VE TİCARET ANONİM ŞİRKETİ    ECZA DEPOSU
+== LRSHO 31.12.2025 18:13:57 idx 1531855 satir 38 borsada {'ADESE': 7.0, 'SELVA': 22.86, 'IMASM': 32.66}
+     7.00 TRY Bağlı Ortakl ul Yatırım A.Ş.     İşyeri kiralama,gayrimenkul projeleri geliştirmek ve ticaretini yapmak
+    22.86 TRY Bağlı Ortakl Selva Gıda San.A.Ş.     Makarna un ve irmik üretimi
+    32.66 TRY Bağlı Ortakl İmaş Makina San.A.Ş.     Değirmen ve zirai makine üretimi
+   100.00 TRY Bağlı Ortakl Loras İnşaat A.Ş.    İnşaat
+   100.00 TRY Bağlı Ortakl Belya Turizm İnş.Enerji Blş.San.Tic.A.Ş.    Bilişim ve yazılım hizmetleri
+    22.86 TRY İştirak      Selva İç ve Dış Tic. A. Ş.    Gıda ve Tarım Ürünleri İthaatı ve İhracatı Yapmak
+     7.00 TRY Finansal Yat Kule Yön.ve Org.ve Danışmanlık A.Ş.    Yönetim ve organizasyon
+   100.00 TRY Bağlı Ortakl Selet Entegre Et ve Süt Ür.San.Tic.A.Ş.    Tarım ve Hayvancılık
+   100.00 TRY Bağlı Ortakl Seleks İç ve Dış Tic.A.Ş.    Gıda ve tarım ürünlerinin ihracatını ve ithalatını yapmak
+   100.00 TRY Bağlı Ortakl 1M İnşaat Mim.Müh.Müt.ve Tic.A.Ş.    Mühendislik ve danışmanlık
+   100.00 TRY Bağlı Ortakl İttifak İnşaat Müh.Müt.ve Tic.A.Ş.    İnşaat
+    35.83 TRY İştirak      ram Adi Ortaklığı Ticari İşletmesi    Zermeram Projesi 1.Etap,2.Etap ve Arasta AVM İnşaası
+   100.00 TRY Bağlı Ortakl Bıg Power Enerji Hizmetleri Anonim Şirketi    Enerji hizmetleri
+   100.00 TRY Bağlı Ortakl Bıg Power Elektrik Üretim Anonim Şirketi    Elektrik Enerjisi Üretimi
+     7.00 TRY Finansal Yat     Motorlu Hafif Kara Taşıtlarının ve Arabaların Sürücüsüz Olarak Kiralanması ve Leasingi
+    26.13 TRY İştirak      ama Sistemleri A.Ş.    Enerji depolama çözümleri geliştirmek, üretim ve satış faaliyetleri
+     7.00 TRY Finansal Yat Loras Real Estate İnşaat A.Ş.    İkamet amaçlı binaların inşaatı
+     2.68 TRY Finansal Yat Asaf 3.İstanbul Gayrimenkul ve Tic.:A.Ş.    İnşaat Faaliyeti
+     1.28 TRY Finansal Yat Konya Savunma Sanayi A.Ş.    Savunma Sanayi İmalatı
+     7.00 TRY Bağlı Ortakl ul Yatırım A.Ş.     İşyeri kiralama,gayrimenkul projeleri geliştirmek ve ticaretini yapmak
+    22.86 TRY Bağlı Ortakl Selva Gıda San.A.Ş.     Makarna un ve irmik üretimi
+    32.66 TRY Bağlı Ortakl İmaş Makina San.A.Ş.     Değirmen ve zirai makine üretimi
+   100.00 TRY Bağlı Ortakl Loras İnşaat A.Ş.    İnşaat
+   100.00 TRY Bağlı Ortakl Belya Turizm İnş.Enerji Blş.San.Tic.A.Ş.    Bilişim ve yazılım hizmetleri
+    22.86 TRY İştirak      Selva İç ve Dış Tic. A. Ş.    Gıda ve Tarım Ürünleri İthaatı ve İhracatı Yapmak
+     7.00 TRY Finansal Yat Kule Yön.ve Org.ve Danışmanlık A.Ş.    Yönetim ve organizasyon
+   100.00 TRY Bağlı Ortakl Selet Entegre Et ve Süt Ür.San.Tic.A.Ş.    Tarım ve Hayvancılık
+   100.00 TRY Bağlı Ortakl Seleks İç ve Dış Tic.A.Ş.    Gıda ve tarım ürünlerinin ihracatını ve ithalatını yapmak
+   100.00 TRY Bağlı Ortakl 1M İnşaat Mim.Müh.Müt.ve Tic.A.Ş.    Mühendislik ve danışmanlık
+   100.00 TRY Bağlı Ortakl İttifak İnşaat Müh.Müt.ve Tic.A.Ş.    İnşaat
+    35.83 TRY İştirak      ram Adi Ortaklığı Ticari İşletmesi    Zermeram Projesi 1.Etap,2.Etap ve Arasta AVM İnşaası
+   100.00 TRY Bağlı Ortakl Bıg Power Enerji Hizmetleri Anonim Şirketi    Enerji hizmetleri
+   100.00 TRY Bağlı Ortakl Bıg Power Elektrik Üretim Anonim Şirketi    Elektrik Enerjisi Üretimi
+     7.00 TRY Finansal Yat     Motorlu Hafif Kara Taşıtlarının ve Arabaların Sürücüsüz Olarak Kiralanması ve Leasingi
+    26.13 TRY İştirak      ama Sistemleri A.Ş.    Enerji depolama çözümleri geliştirmek, üretim ve satış faaliyetleri
+     7.00 TRY Finansal Yat Loras Real Estate İnşaat A.Ş.    İkamet amaçlı binaların inşaatı
+     2.68 TRY Finansal Yat Asaf 3.İstanbul Gayrimenkul ve Tic.:A.Ş.    İnşaat Faaliyeti
+     1.28 TRY Finansal Yat Konya Savunma Sanayi A.Ş.    Savunma Sanayi İmalatı
+== PETKM 15 form, 10 denendi, SATIR YOK; son metin 37079:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == PETKM 13.06.2024 20:21:47 idx 1299183 satir 0 borsada {}
 
-== MOGAN 8 form, 8 denendi, SATIR YOK; son metin 0: 
+== MOGAN 8 form, 8 denendi, SATIR YOK; son metin 52837: tici    RES İŞLETMELERİ KOORDİNATÖRÜ, RES İŞLETMELERİ YÖNETİCİSİ, RES İŞLETMELERİ ŞEFİ    -      ÖZGÜR GİRİŞ    RES İŞLETMELERİ KOORDİNATÖRÜ    Yönetici    RES İŞLETMELERİ KOORDİNATÖRÜ    -           Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlara İlişkin Bilgiler        Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar           Ticaret Unvanı    Şirketin Faaliyet Konusu    Ödenmiş/Çıkarılmış Sermayesi    Şirketin Sermayedeki Payı    Para Birimi    Şirketin Sermayedeki Payı (%)    Şirket ile Olan İlişkinin Niteliği      BELEN ELEKTRİK ÜRETİM A.Ş.    ENERJİ    7000000    5950000    TRY    85    BAĞLI ORTAKLIK      GÜRMAT ELEKTRİK ÜRETİM A.Ş.    ENERJİ    480500000    432450001    TRY    90    BAĞLI ORTAKLIK      OLGU ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.    ENERJİ    276000000    234600000    TRY    85    BAĞLI ORTAKLIK      EOLOS RÜZGAR ENERJİSİ ÜRETİM A.Ş.    ENERJİ    117000000    99450000    TRY    85    BAĞLI ORTAKLIK      DERNE TEMİZ ENERJİ ÜRETİM A.Ş.    ENERJİ    371000000    296800000    TRY    80    BAĞLI ORTAKLIK      POKUT ELEKTRİK ÜRETİM A.Ş.    ENERJİ    60000000    48000000    TRY    80    BAĞLI ORTAKLIK      ULU YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.    ENERJİ    155500000    124400000    TRY    80    BAĞLI ORTAKLIK      ÇERMİKLER ELEKTRİK ÜRETİM A.Ş.    ENERJİ    92500000    74000000    TRY    80    BAĞLI ORTAKLIK      ESPİYE EL
 == MOGAN 20.03.2024 15:39:30 idx 1260586 satir 0 borsada {}
 
-== AGHOL 17 form, 10 denendi, SATIR YOK; son metin 0: 
+== AGHOL 17 form, 10 denendi, SATIR YOK; son metin 39432:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == AGHOL 24.04.2025 18:16:35 idx 1429191 satir 0 borsada {}
 
-== BLCYT 13 form, 10 denendi, SATIR YOK; son metin 0: 
-== BLCYT 29.07.2024 16:36:33 idx 1316380 satir 0 borsada {}
-
-== TRCAS 10 form, 10 denendi, SATIR YOK; son metin 0: 
-== TRCAS 22.04.2024 21:17:21 idx 1276280 satir 0 borsada {}
-
-== OTTO 15 form, 10 denendi, SATIR YOK; son metin 0: 
+== BLCYT 19.12.2025 14:28:55 idx 1528037 satir 4 borsada {}
+    21.14 TRY İştirak      lan İlişkinin Niteliği      Biteks İplik Sanayi ve Ticaret A.Ş.    Polyester İplik Üretimi
+   100.00 GBP Bağlı Ortakl 0    Müşterek Yönetime Tabi Ortaklık      BILICI İNVEST LIMITED    Gayrimenkul Yatırımları
+    21.14 TRY İştirak      lan İlişkinin Niteliği      Biteks İplik Sanayi ve Ticaret A.Ş.    Polyester İplik Üretimi
+   100.00 GBP Bağlı Ortakl 0    Müşterek Yönetime Tabi Ortaklık      BILICI İNVEST LIMITED    Gayrimenkul Yatırımları
+== TRCAS 13.08.2026 11:40:28 idx 1648992 satir 2 borsada {}
+   100.00 TRY Bağlı Ortakl TURCAS INTERNATIONAL HOLDİNG A.Ş.    Holding Faaliyetleri
+   100.00 TRY Bağlı Ortakl TURCAS INTERNATIONAL HOLDİNG A.Ş.    Holding Faaliyetleri
+== OTTO 15 form, 10 denendi, SATIR YOK; son metin 31014:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == OTTO 01.07.2025 13:03:39 idx 1453666 satir 0 borsada {}
 
-== GLYHO 11 form, 10 denendi, SATIR YOK; son metin 0: 
-== GLYHO 30.04.2024 18:24:02 idx 1279624 satir 0 borsada {}
-
-== MZHLD 3 form, 3 denendi, SATIR YOK; son metin 0: 
+== GLYHO 04.08.2026 20:13:47 idx 1643203 satir 172 borsada {'CONSE': 50.99, 'NTGAZ': 100.0, 'GLBMD': 75.0}
+    90.47 TRY Bağlı Ortakl Şirket ile Olan İlişkinin Niteliği      Global Liman İşletmeleri A.Ş.    Liman Yatırımları
+    81.85 TRY Bağlı Ortakl Ege Liman İşletmeleri A.Ş.    Liman İşletmeciliği
+    81.42 TRY Bağlı Ortakl Bodrum Yolcu Limanı İşletmeleri A.Ş.     Liman İşletmeciliği
+    57.16 EUR Bağlı Ortakl Port of Adria JSC-Bar (Bar Limanı)    Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl Cruceros Malaga, SA ("Malaga Port")    Liman İşletmeciliği
+   100.00 EUR Bağlı Ortakl Global Ports Holding B.V.     Liman Yatırımları
+    90.47 GBP Bağlı Ortakl Global Ports Holding Limited    Liman Yatırımları
+    90.47 GBP Bağlı Ortakl Global Ports Group Finance LTD    Liman Yatırımları
+    90.47 EUR Bağlı Ortakl Global Ports Europe B.V ("Global BV")    Liman Yatırımları
+    90.47 EUR Bağlı Ortakl Global Ports Melita Ltd.    Liman İşletmeciliği
+    50.30 EUR Bağlı Ortakl Valetta Cruise Port PLC ("VCP")    Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl Creuers del Port de Barcelona, S.A. ("Creuers")     Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl Barcelona Port Investments, S.L ("BPI")     Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl Port Operation Holding S.r.l    Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl GPH Cruise Ports Bremerhaven GmbH     Liman İşletmeciliği
+    64.14 EUR Bağlı Ortakl Cagliari Cruise Port S.r.l.    Liman İşletmeciliği
+    57.14 EUR Bağlı Ortakl Catania Terminali Passeggeri S.r.l.     Liman İşletmeciliği
+    54.28 MAD Bağlı Ortakl Casablanca Cruise Port S.A    Liman İşletmeciliği
+    90.47 HRK Bağlı Ortakl Zadar International Ports Operations d.o.o.     Liman İşletmeciliği
+    45.28 EUR Bağlı Ortakl Travel Shopping Limited    Turizm İşletmeciliği
+    90.47 EUR Bağlı Ortakl Global Ports Mediterranean S.L.    Turizm İşletmeciliği
+    90.47 USD Bağlı Ortakl GPH Antigua Ltd.    Liman İşletmeciliği
+    44.33 USD Bağlı Ortakl Nassau Cruise Port Ltd.    Liman İşletmeciliği
+    90.47 USD Bağlı Ortakl GPH Americas Ltd.    Liman Yatırımları
+    90.47 GBP Bağlı Ortakl Global Ports Americas Holding Ltd.    Liman Yatırımları
+    90.47 USD Bağlı Ortakl GPH Bahamas Ltd.    Liman Yatırımları
+    90.47 GBP Bağlı Ortakl Global Ports Destination Services Ltd (UK)    Liman Hizmetleri
+    46.14 EUR Bağlı Ortakl Balearic Handling S.L.A.    Liman Hizmetleri
+    46.14 EUR Bağlı Ortakl Shore Handling S.L.A.    Liman Hizmetleri
+    90.47 EUR Bağlı Ortakl Port Management Services S.L.     Liman İşletmeciliği
+    90.47 GBP Bağlı Ortakl Port Finance Investments Limited    Genel Kurumsal İşlemler
+    90.47 EUR Bağlı Ortakl Taranto Cruise Port S.r.l    Liman Hizmetleri
+    72.37 EUR Bağlı Ortakl Global Ports Canary Islands S.L.    Liman Hizmetleri
+    72.37 EUR Bağlı Ortakl Global Ports Alicante S.L.     Liman Hizmetleri
+    90.47 EUR Bağlı Ortakl Global Ports Services Med    Turizm Yatırımları
+    90.47 EUR Bağlı Ortakl Port Operations Services Ltd.    Liman İşletmeciliği
+    90.47 USD Bağlı Ortakl GPH Barbados Ltd.    Liman Yönetimi
+    90.47 GBP Bağlı Ortakl GPH Cruise Port Finance LTD.    Liman Yatırımları
+    90.47 DKK Bağlı Ortakl GPH Kalundborg ApS    Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl GPH Malta finance PLC    Genel Kurumsal İşlemler
+    90.47 EUR Bağlı Ortakl Global Ports Tarragona S.L.     Liman İşletmeciliği
+    90.47 GBP Bağlı Ortakl GPH Liverpool Cruise Port Ltd.    Liman İşletmeciliği
+    90.47 EUR Bağlı Ortakl Crotone Cruise Port S.r.l (Crotone Cruise Port, Italy)    Liman İşletmeciliği
+    90.47 USD Bağlı Ortakl San Juan Cruise Port LLC    Liman İşletmeciliği
+    90.47 USD Bağlı Ortakl GPH Saint Lucia Ltd    Liman İşletmeciliği
+    90.47 GBP Bağlı Ortakl GPH Greenock Cruise Port Limited    Liman İşletmeciliği
+    50.99 TRY Bağlı Ortakl Consus Enerji İşletmeciliği ve Hizmetleri A.Ş.     Enerji Yatırımları
+    50.99 TRY Bağlı Ortakl Tres Enerji Hizmetleri Sanayi ve Ticaret A.Ş.     Enerji Üretimi
+    50.99 TRY Bağlı Ortakl Mavibayrak Enerji Üretim A.Ş.     Enerji Üretimi
+    50.99 TRY Bağlı Ortakl Mavibayrak Doğu Enerji Üretim A.Ş.    Enerji Üretimi
+    50.99 TRY Bağlı Ortakl Doğal Enerji Hizmetleri San. Ve Tic. A.Ş.     Elektrik Üretimi
+   100.00 EUR Bağlı Ortakl Consus Energy Europe BV     Enerji Yatırımları
+   100.00 USD Bağlı Ortakl Global Caribbean Energy Holdings Limited    Enerji Yatırımları
+    50.00 USD Bağlı Ortakl Bahamas Energy Holdings Limited    Enerji Yatırımları
+   100.00 USD Bağlı Ortakl Global Africa Power Investments     Enerji Yatırımları
+    51.00 EUR Bağlı Ortakl Barsolar D.O.O.    Enerji Üretimi
+    50.99 TRY Bağlı Ortakl Ra Güneş Enerjisi Üretim San. ve Tic. A.Ş.     Elektrik Üretimi
+    60.00 TRY Bağlı Ortakl Naturelgaz Sanayi ve Tic. A.Ş.     Sıkıştırılmış Doğalgaz Satışı
+   100.00 TRY Bağlı Ortakl Naturelgaz Gaz İletim A.Ş.    Gaz ve Petrol Ürünleri Taşımacılığı
+    97.69 TRY Bağlı Ortakl Straton Maden Yatırımları ve İşletmeciliği A.Ş.    Maden İşletmeciliği
+    50.99 TRY Bağlı Ortakl Solis Enerji Üretim ve Ticaret A.Ş    Enerji Üretimi
+    50.99 TRY Bağlı Ortakl Tenera Enerji Tic. A.Ş.    Elektrik ve Doğalgaz Ticareti
+    50.99 TRY Bağlı Ortakl Edusa Atık Bertaraf Geri Kazanım ve Depolama San. ve Tic. A.Ş.     Enerji Üretimi
+    70.00 TRY Bağlı Ortakl Dağören Enerji A.Ş.    Elektrik Üretimi
+    50.99 USD Bağlı Ortakl Consus Bahamas Energy Ltd.    Elektrik Üretimi
+    17.85 USD Bağlı Ortakl EA Energy Limited           Enerji Üretimi
+   100.00 TRY Bağlı Ortakl Ardus Gayrimenkul Yatırımları A.Ş.    Gayrimenkul Yatırımları
+   100.00 TRY Bağlı Ortakl Global Ticari Emlak Yatırımları A.Ş.    Gayrimenkul Yatırımları
+   100.00 TRY Bağlı Ortakl Rıhtım51 Gayrimenkul Yatırımları A.Ş.     Gayrimenkul Yatırımları
+    75.00 TRY Bağlı Ortakl Global Menkul Değerler A.Ş.    Aracılık Hizmeti
+    75.00 TRY Bağlı Ortakl Global MD Portföy Yönetimi A.Ş.    Portföy Yönetimi
+    75.00 TRY Bağlı Ortakl Global Fintech Teknoloji Hizmetleri A.Ş.    Teknoloji Yatırımları
+    66.60 TRY Bağlı Ortakl İstanbul Portföy Yönetimi A.Ş.    Portföy Yönetimi
+   100.00 TRY Bağlı Ortakl Global Sigorta Aracılık Hizmetleri A.Ş.    Sigorta Acenteliği
+   100.00 TRY Bağlı Ortakl Güney Madencilik İşletmeleri A.Ş.    Maden İşletmeciliği
+    50.00 TRY Bağlı Ortakl Maya Turizm Ltd.    Turizm Yatırımları
+    99.93 EUR Bağlı Ortakl Adonia Shipping Limited    Gemi İşletmeciliği
+    90.00 TRY Bağlı Ortakl ilik Turizm Seyahat ve Nakliyat Hizmetleri A.Ş.    Denizcilik Yatırımları ve İşletmeciliği
+    99.93 USD Bağlı Ortakl Vespa Enterprises (Malta) Ltd.    Turizm Yatırımları
+   100.00 EUR Bağlı Ortakl 
+== MZHLD 3 form, 3 denendi, SATIR YOK; son metin 34876:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == MZHLD 06.05.2024 14:16:09 idx 1281671 satir 0 borsada {}
 
-== METRO 10 form, 10 denendi, SATIR YOK; son metin 0: 
-== METRO 09.05.2024 19:46:01 idx 1284417 satir 0 borsada {}
-
-== GRTHO 11 form, 10 denendi, SATIR YOK; son metin 0: 
-== GRTHO 16.05.2024 13:04:20 idx 1286915 satir 0 borsada {}
-
-== ECZYT 3 form, 3 denendi, SATIR YOK; son metin 0: 
+== METRO 30.09.2026 14:05:31 idx 1670097 satir 28 borsada {'MEPET': 46.87, 'VANGD': 3.1}
+   100.00 TRY Bağlı Ortakl şkinin Niteliği      METRO TURİZM SEYAHAT ORGANİZASYON VE TİCARET A.Ş    TURİZM; ULAŞTIRMA
+    46.87 TRY Bağlı Ortakl ROL VE TESİSLERİ SAN.TİC.A.Ş    KARAYOLLARI TESİS VE AKARYAKIT İSTASYONLARI İŞLETMECİLİĞİ.
+     3.10 TRY İştirak      VANET GIDA SAN.İÇ VE DIŞ TİC.A.Ş.    GIDA
+    99.85 TRY Bağlı Ortakl VAN BES BESİCİLİK SANAYİ VE TİCARET A.Ş.    HAYVAN BESİCİLİĞİ KESİMİ İTHALAT VE İHRACATI
+   100.00 TRY Bağlı Ortakl METRO TRAVEL SEYAHAT ORGANİZASYON A.Ş.    TURİZM SEYAHAT
+   100.00 TRY Bağlı Ortakl METRO GRUP ELEKTRİK ENERJİSİ TOPTAN SATIŞ.A.Ş.    ENERJİ
+   100.00 TRY Bağlı Ortakl METRO OTOMOTİV PAZARLAMA SAN.TİC.A.Ş.    BAKIM ONARIM-YEDEK PARÇA
+     4.82 TRY İştirak      SAMSUN GIDA SAN.TİC.A.Ş    GIDA
+   100.00 TRY Bağlı Ortakl METRO MADEN PAZARLAMA VE DAĞITIM HİZMETLERİ A.Ş.    MADEN
+   100.00 TRY Bağlı Ortakl METRO ALTIN İŞL.SAN.VE TİC.A.Ş.    MADEN
+    50.00 TRY Bağlı Ortakl PRINCE GRUP SEYAHAT VE ORGANİZASYON ANONİM ŞİRKETİ    TURİZM SEYAHAT
+    94.99 GEL Bağlı Ortakl METRO EUPHORİA HOTEL BATUMİ JSC (LEGEND HOTEL BATUMI JSC)    TURİZM
+   100.00 TRY Bağlı Ortakl METRO INTERNATIONAL SİGORTA ARACILIK HİZMETLERİ A.Ş.    SİGORTACILIK FAALİYETLERİ
+   100.00 TRY Bağlı Ortakl METRO İNŞAAT İTH.İHR. SAN. TİC. A.Ş.    YAPI İNŞAAT FAALİYETLERİ
+   100.00 TRY Bağlı Ortakl şkinin Niteliği      METRO TURİZM SEYAHAT ORGANİZASYON VE TİCARET A.Ş    TURİZM; ULAŞTIRMA
+    46.87 TRY Bağlı Ortakl ROL VE TESİSLERİ SAN.TİC.A.Ş    KARAYOLLARI TESİS VE AKARYAKIT İSTASYONLARI İŞLETMECİLİĞİ.
+     3.10 TRY İştirak      VANET GIDA SAN.İÇ VE DIŞ TİC.A.Ş.    GIDA
+    99.85 TRY Bağlı Ortakl VAN BES BESİCİLİK SANAYİ VE TİCARET A.Ş.    HAYVAN BESİCİLİĞİ KESİMİ İTHALAT VE İHRACATI
+   100.00 TRY Bağlı Ortakl METRO TRAVEL SEYAHAT ORGANİZASYON A.Ş.    TURİZM SEYAHAT
+   100.00 TRY Bağlı Ortakl METRO GRUP ELEKTRİK ENERJİSİ TOPTAN SATIŞ.A.Ş.    ENERJİ
+   100.00 TRY Bağlı Ortakl METRO OTOMOTİV PAZARLAMA SAN.TİC.A.Ş.    BAKIM ONARIM-YEDEK PARÇA
+     4.82 TRY İştirak      SAMSUN GIDA SAN.TİC.A.Ş    GIDA
+   100.00 TRY Bağlı Ortakl METRO MADEN PAZARLAMA VE DAĞITIM HİZMETLERİ A.Ş.    MADEN
+   100.00 TRY Bağlı Ortakl METRO ALTIN İŞL.SAN.VE TİC.A.Ş.    MADEN
+    50.00 TRY Bağlı Ortakl PRINCE GRUP SEYAHAT VE ORGANİZASYON ANONİM ŞİRKETİ    TURİZM SEYAHAT
+    94.99 GEL Bağlı Ortakl METRO EUPHORİA HOTEL BATUMİ JSC (LEGEND HOTEL BATUMI JSC)    TURİZM
+   100.00 TRY Bağlı Ortakl METRO INTERNATIONAL SİGORTA ARACILIK HİZMETLERİ A.Ş.    SİGORTACILIK FAALİYETLERİ
+   100.00 TRY Bağlı Ortakl METRO İNŞAAT İTH.İHR. SAN. TİC. A.Ş.    YAPI İNŞAAT FAALİYETLERİ
+== GRTHO 15.09.2026 17:31:35 idx 1663072 satir 10 borsada {}
+   100.00 TRY Bağlı Ortakl (%)    Şirket ile Olan İlişkinin Niteliği      Özova Tarım A.Ş.    Tarım Ürünleri Ticareti
+    51.00 TRY Bağlı Ortakl lık      Heguard Savunma ve Siber Güvenlik Teknolojileri A.Ş.    Askeri Savunma Hizmetleri
+    49.00 TRY İştirak      Ral Enerji A.Ş.    Elektirik Enerjisi Üretimi\t
+   100.00 TRY Bağlı Ortakl TERRATURK Yatırım ve Ticaret A.Ş.    Yatırım Ticaret
+    50.00 TRY Bağlı Ortakl    TRY    100    Dolaylı Ortaklık      HÇS Hatay Çimento Anonim Şirketi    Çimento İmalatı
+   100.00 TRY Bağlı Ortakl (%)    Şirket ile Olan İlişkinin Niteliği      Özova Tarım A.Ş.    Tarım Ürünleri Ticareti
+    51.00 TRY Bağlı Ortakl lık      Heguard Savunma ve Siber Güvenlik Teknolojileri A.Ş.    Askeri Savunma Hizmetleri
+    49.00 TRY İştirak      Ral Enerji A.Ş.    Elektirik Enerjisi Üretimi
+   100.00 TRY Bağlı Ortakl TERRATURK Yatırım ve Ticaret A.Ş.    Yatırım Ticaret
+    50.00 TRY Bağlı Ortakl    TRY    100    Dolaylı Ortaklık      HÇS Hatay Çimento Anonim Şirketi    Çimento İmalatı
+== ECZYT 3 form, 3 denendi, SATIR YOK; son metin 36660:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == ECZYT 24.05.2024 11:10:45 idx 1290554 satir 0 borsada {}
 
-== IHLAS 6 form, 6 denendi, SATIR YOK; son metin 0: 
+== IHLAS 6 form, 6 denendi, SATIR YOK; son metin 42745: ğı Komiteler ve Görevi      AHMET MÜCAHİD ÖREN        Erkek    Yönetim Kurulu Başkanı     Gazeteci    22.12.1992    İcrada Görevli    Yönetim Kurulu Başkanı/İcra Kurulu Başkanı    Muhtelif İştirak ve Bağlı Ortaklıklarda Yönetim Kurulu Üyeliği    Evet    12.9        Bağımsız Üye Değil                YOKTUR.      ZEKİ CELEP        Erkek    Yönetim Kurulu Başkan Vekili ve Murahhas Üye    Yönetici    20.01.1994    İcrada Görevli    Yönetim Kurulu Başkan Vekili/İnşaat İşlerinden Sorumlu Murahhas Üye    Muhtelif İştirak ve Bağlı Ortaklıklarda Yönetim Kurulu Üyeliği\t    Evet            Bağımsız Üye Değil                YOKTUR.      ABDULLAH TUĞCU        Erkek    Murahhas Üye    Yönetici    07.11.2013    İcrada Görevli    Yönetim Kurulu Üyesi/Finans ve Mali İşlerden Sorumlu Muharras Üye    Muhtelif İştirak ve Bağlı Ortaklıklarda Yönetim Kurulu Üyeliği    Evet            Bağımsız Üye Değil                YOKTUR.      ABDURRAHMAN GÖK        Erkek    Murahhas Üye    Avukat    25.12.2013    İcrada Görevli    Yönetim Kurulu Üyesi/Hukuk İşlerinden Sorumlu Murahhas Üye    Muhtelif İştirak ve Bağlı Ortaklıklarda Yönetim Kurulu Üyeliği\t    Hayır            Bağımsız Üye Değil                YOKTUR.      MAHMUT KEMAL AYDIN        Erkek    Yönetim Kurulu Üyesi    Yönetici    12.04.2000    İcrada Görevli Değil    Yönetim Kurulu Üyesi    Muhtelif İştirak ve Bağlı Ortaklıklarda Yönetim Kurulu Üyeli
 == IHLAS 30.05.2024 17:22:07 idx 1292785 satir 0 borsada {}
 
-== TRHOL 14 form, 10 denendi, SATIR YOK; son metin 0: 
-== TRHOL 09.04.2025 14:17:11 idx 1421525 satir 0 borsada {}
-
-== ALARK 7 form, 7 denendi, SATIR YOK; son metin 0: 
+== TRHOL 22.10.2026 18:44:01 idx 1686037 satir 6 borsada {}
+     7.49 TRY İştirak       Niteliği      Tera Yatırım Menkul Değerler A.Ş.    Sermaye Piyasası Aracılık Faaliyetleri
+     1.00 TRY İştirak      Tera Portföy Yönetimi A.Ş.    Sermaye Piyasası Portföy Yönetimi
+     9.00 TRY İştirak      Prive Sigorta A.Ş.    Sigortacılık
+     7.49 TRY İştirak       Niteliği      Tera Yatırım Menkul Değerler A.Ş.    Sermaye Piyasası Aracılık Faaliyetleri
+     1.00 TRY İştirak      Tera Portföy Yönetimi A.Ş.    Sermaye Piyasası Portföy Yönetimi
+     9.00 TRY İştirak      Prive Sigorta A.Ş.    Sigortacılık
+== ALARK 7 form, 7 denendi, SATIR YOK; son metin 37981:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == ALARK 11.07.2024 15:40:46 idx 1311404 satir 0 borsada {}
 
-== IZINV 14 form, 10 denendi, SATIR YOK; son metin 0: 
+== IZINV 14 form, 10 denendi, SATIR YOK; son metin 35124: 83Z","fill":"#B12009"}],["$","path",null,{"d":"M10.002 10.3057V18.25","stroke":"#B12009","strokeWidth":"1.5","strokeMiterlimit":10}],"$L3e","$L3f","$L40"]}],"Hak Kullanımları"]}]]}]]}] 42:T1e28,      Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlara İlişkin Bilgiler        Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar           Ticaret Unvanı    Şirketin Faaliyet Konusu    Ödenmiş/Çıkarılmış Sermayesi    Şirketin Sermayedeki Payı    Para Birimi    Şirketin Sermayedeki Payı (%)    Şirket ile Olan İlişkinin Niteliği      İZ AGRİCULTURE TARIM HAYVANCILIK VE GIDA SANAYİ TİCARET A.Ş.    Süt imalatı, işlenmiş (pastörize edilmiş, sterilize edilmiş, homojenleştirilmiş ve/veya yüksek ısıdan geçirilmiş) (katı veya toz halde süt hariç)    25363349    25363349    TRY    100    BAĞLI ORTAKLIK      İZ KİMYASAL GİRİŞİMLERİ VE YATIRIMLARI SANAYİ TİCARET A.Ş.    Endüstriyel kimyasalların toptan ticareti (anilin, matbaa mürekkebi, kimyasal yapıştırıcı, havai fişek, boyama maddeleri, sentetik reçine, metil alkol, parafin, esans ve tatlandırıcı, soda, sanayi tuzu, parafin, nitrik asit, amonyak, sanayi gazları vb.)    5000000    5000000    TRY    100    BAĞLI ORTAKLIK      İZ TEMİZ ENERJİ YATIRIMLARI A.Ş.    Elektrik enerjisi üretimi    4000000    4000000    TRY    100    BAĞLI ORTAKLIK      İZ GİRİŞİM VE TEKNOLOJİ YATIRIMLARI A.Ş.    Diğer bilgi teknolojisi
 == IZINV 08.11.2024 19:32:51 idx 1356008 satir 0 borsada {}
 
-== COSMO 11 form, 10 denendi, SATIR YOK; son metin 0: 
-== COSMO 02.08.2024 10:58:50 idx 1320279 satir 0 borsada {}
-
-== USHOL 17 form, 10 denendi, SATIR YOK; son metin 0: 
-== USHOL 10.07.2025 00:09:39 idx 1461394 satir 0 borsada {}
-
-== AKYHO 12 form, 10 denendi, SATIR YOK; son metin 0: 
-== AKYHO 19.09.2024 18:52:11 idx 1335978 satir 0 borsada {}
-
-== IHYAY 5 form, 5 denendi, SATIR YOK; son metin 0: 
+== COSMO 09.11.2026 19:15:30 idx 1695759 satir 4 borsada {}
+    60.00 TRY Bağlı Ortakl ında mühendislik ve mimarlık çalışmalarını yapmak ve yaptırmak üzere ofis ve bürolar açmak
+    51.00 TRY Bağlı Ortakl de izleme ve kontrol odaları kurmakta, kurulan sistemlerin bakım ve onarımını yapmaktadır.
+    60.00 TRY Bağlı Ortakl ında mühendislik ve mimarlık çalışmalarını yapmak ve yaptırmak üzere ofis ve bürolar açmak
+    51.00 TRY Bağlı Ortakl de izleme ve kontrol odaları kurmakta, kurulan sistemlerin bakım ve onarımını yapmaktadır.
+== USHOL 08.10.2025 22:01:01 idx 1501221 satir 10 borsada {}
+   100.00 TRY Bağlı Ortakl iği      ENDEĞER MEDYA YÖNETİM SANAYİ VE TİCARET A.Ş.    GAYRİMENKUL VE YÖNETİM HİZMETLERİ
+   100.00 TRY Bağlı Ortakl DÜNYA MARKALARI TEKSTİL AKSESUAR İÇ DIŞ TİCARET A.Ş.    PERAKENDE MAĞAZACILIK
+   100.00 TRY Bağlı Ortakl  TEKSTİL ÜRÜNLERİ A.Ş.     MODA VE TEKSTİL ÜRÜNLERİ TOPTAN SATIŞ \u0026amp; DİSTRİBÜTÖRLÜK
+    97.55 TRY Bağlı Ortakl GÖKYÜZÜ ET SÜT GIDA SANAYİ VE TİCARET A.Ş.    ET,SÜT,GIDA ÜRÜNLERİ
+   100.00 TRY Bağlı Ortakl BAKIMEVİ İŞLETMECİLİĞİ TURİZM VE TİCARET ANONİM ŞİRKETİ    HUZUREVİ VE YAŞLI BAKIM MERKEZİ
+   100.00 TRY Bağlı Ortakl iği      ENDEĞER MEDYA YÖNETİM SANAYİ VE TİCARET A.Ş.    GAYRİMENKUL VE YÖNETİM HİZMETLERİ
+   100.00 TRY Bağlı Ortakl DÜNYA MARKALARI TEKSTİL AKSESUAR İÇ DIŞ TİCARET A.Ş.    PERAKENDE MAĞAZACILIK
+   100.00 TRY Bağlı Ortakl İ MODA ve TEKSTİL ÜRÜNLERİ A.Ş.     MODA VE TEKSTİL ÜRÜNLERİ TOPTAN SATIŞ & DİSTRİBÜTÖRLÜK
+    97.55 TRY Bağlı Ortakl GÖKYÜZÜ ET SÜT GIDA SANAYİ VE TİCARET A.Ş.    ET,SÜT,GIDA ÜRÜNLERİ
+   100.00 TRY Bağlı Ortakl BAKIMEVİ İŞLETMECİLİĞİ TURİZM VE TİCARET ANONİM ŞİRKETİ    HUZUREVİ VE YAŞLI BAKIM MERKEZİ
+== AKYHO 02.02.2026 21:56:25 idx 1551657 satir 8 borsada {}
+    79.42 TRY Bağlı Ortakl n İlişkinin Niteliği      MİLYA ENDÜSTRİ PLASTİK SANAYİ VE TİCARET A.Ş.     PLASTİK SANAYİ
+    99.90 TRY Bağlı Ortakl ATG ÇEVRE GERİ DÖNÜŞÜM SANAYİ VE TİCARET ANONİM ŞİRKETİ     ATIK YÖNETİMİ,GERİ DÖNÜŞÜM
+    99.99 TRY Bağlı Ortakl NANOX KİMYASAL ÜRÜNLER SAN VE TİC A.Ş.    KİMYA VE YAN SANAYİ SEKTÖRÜ
+    80.00 TRY Bağlı Ortakl TARSAN GIDA TUR İNŞ OTO SAN DIŞ TİC PAZ A.Ş    KİMYA TEMİZLİK ÜRÜNLERİSEKTÖRÜ
+    79.42 TRY Bağlı Ortakl n İlişkinin Niteliği      MİLYA ENDÜSTRİ PLASTİK SANAYİ VE TİCARET A.Ş.     PLASTİK SANAYİ
+    99.90 TRY Bağlı Ortakl ATG ÇEVRE GERİ DÖNÜŞÜM SANAYİ VE TİCARET ANONİM ŞİRKETİ     ATIK YÖNETİMİ,GERİ DÖNÜŞÜM
+    99.99 TRY Bağlı Ortakl NANOX KİMYASAL ÜRÜNLER SAN VE TİC A.Ş.    KİMYA VE YAN SANAYİ SEKTÖRÜ
+    80.00 TRY Bağlı Ortakl TARSAN GIDA TUR İNŞ OTO SAN DIŞ TİC PAZ A.Ş    KİMYA TEMİZLİK ÜRÜNLERİSEKTÖRÜ
+== IHYAY 5 form, 5 denendi, SATIR YOK; son metin 33615: 20 19","fill":"none","children":[["$","path",null,{"d":"M10.9173 6.02783H9.08398V7.86115H10.9173V6.02783Z","fill":"#B12009"}],"$L3e","$L3f","$L40","$L41"]}],"Hak Kullanımları"]}]]}]]}] 43:T15a6,      Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlara İlişkin Bilgiler        Bağlı Ortaklıklar, Finansal Duran Varlıklar ile Finansal Yatırımlar           Ticaret Unvanı    Şirketin Faaliyet Konusu    Ödenmiş/Çıkarılmış Sermayesi    Şirketin Sermayedeki Payı    Para Birimi    Şirketin Sermayedeki Payı (%)    Şirket ile Olan İlişkinin Niteliği      İHLAS GAZETECİLİK A.Ş.    TÜRKİYE GAZETESİ'NİN ÇIKARTILMASI. DAĞITIMI VE PAZARLAMASI İLE MATBAA BASKI İŞLERİ    800.000.000,00    247.314.080,94    TRY    30,91    BAĞLI ORTAKLIK      İHLAS HABER AJANSI A.Ş.     İHLAS HABER AJANSI A.Ş.     163.000.000,00    80.226.562,50    TRY    49,22    BAĞLI ORTAKLIK      TGRT HABER TV A.Ş.    TGRT HABER TV KANALIYLA TELEVİZYON YAYINCILIĞI VE TGRT FM KANALIYLA RADYO YAYINCILIĞI    35.500.000,00    35.315.400,00    TRY    99,48    BAĞLI ORTAKLIK      TGRT DİJİTAL TV HİZMETLERİ A.Ş.    TGRT BELGESEL TV KANALIYLA TELEVİZYON YAYINCILIĞI    8.500.000,00    8.468.950,00    TRY    99,63    BAĞLI ORTAKLIK      DİJİTAL VARLIKLAR GÖRSEL MEDYA VE İNTERNET HİZMETLERİ LTD.ŞTİ.    REKLAMCILIK. İLANCILIK. FOTOĞRAFÇILIK VE REKLAM AJANSLIĞI    13.445.950,00    13.141.750,00    TRY    97,74    BAĞLI ORT
 == IHYAY 27.09.2024 19:22:19 idx 1338629 satir 0 borsada {}
 
-== NTHOL 6 form, 6 denendi, SATIR YOK; son metin 0: 
+== NTHOL 6 form, 6 denendi, SATIR YOK; son metin 37718:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == NTHOL 25.09.2024 16:05:41 idx 1337617 satir 0 borsada {}
 
-== YESIL 09.04.2025 20:27:01 idx 1422672 satir 4 borsada {}
-    54.42 TRY Bağlı Ortakl ği      Wowwo E Ticaret Telekomünikasyon ve Teknoloji A.Ş.     Araç alım-satımı, E-ticaret
-    50.00 TRY Bağlı Ortakl Yeşil Dönüşüm İnşaat A.Ş.    İnşaat
-    54.42 TRY Bağlı Ortakl ği      Wowwo E Ticaret Telekomünikasyon ve Teknoloji A.Ş.     Araç alım-satımı, E-ticaret
-    50.00 TRY Bağlı Ortakl Yeşil Dönüşüm İnşaat A.Ş.    İnşaat
+== YESIL 23.12.2025 13:39:39 idx 1528868 satir 4 borsada {}
+    50.00 TRY Bağlı Ortakl ki Payı (%)    Şirket ile Olan İlişkinin Niteliği      Yeşil Dönüşüm İnşaat A.Ş.    İnşaat
+     2.28 TRY İştirak      Yeşil Global Enerji A.Ş.    Enerji
+    50.00 TRY Bağlı Ortakl ki Payı (%)    Şirket ile Olan İlişkinin Niteliği      Yeşil Dönüşüm İnşaat A.Ş.    İnşaat
+     2.28 TRY İştirak      Yeşil Global Enerji A.Ş.    Enerji
 == EUHOL 10 form, 10 denendi, SATIR YOK; son metin 35052:                                           KAP                                  Tüm Kategoriler         Tüm Kategoriler  Özel Durum Açıklaması  Finansal Rapor  Diğer Bildirimler  Fon Bildirimleri                      (*) Aşağıdaki öneriler, sadece endeks/pazar/dönem bilgisi girildiğinde ilgili yılın son 14 günü, diğer durumlarda geçmişe dönük 30 günlük dönem esas alınarak listelenmektedir. Daha geniş dönemli arama “detaylı sorgulama” sayfasından yapılmalıdır.   Bildirim İçeriklerinde ve Eklerinde Ara                                             requestAnimationFrame(function(){$RT=performance.now()});  (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push({"otherChunks":["static/chunks/1zgmbervt4bfj.js","static/chunks/1gkur241q1z2p.js","static/chunks/2ji76n9s-yrv0.js","static/chunks/0ygd6hqsmgbjb.js"],"runtimeModuleIds":[94553]});                   EN                 Bildirim Sorguları        Bildirim Sorguları    Bugün Gelen Bildirimler      Beklenen Bildirimler      Detaylı Sorgulama      Finansal Tablo Kalem Sorgulama            Şirketler        Şirketler    BIST Şirketleri      Yatırım Kuruluşları      Portföy Yönetim Şirketleri      Bağımsız Denetim Kuruluşları      
 == EUHOL 09.01.2025 08:54:19 idx 1375688 satir 0 borsada {}
 
