@@ -325,6 +325,24 @@ def icinden_test():
     X = Bt.dropna(subset=["kendi_v3"])
     L.append(f"  karsilastirma, holdingin KENDI v3'u: >=0.7 {ozet(X[X.kendi_v3 >= 0.7], 'f126')} | <=0.4 {ozet(X[X.kendi_v3 <= 0.4], 'f126')}")
     L.append("  holding basina gozlem: " + ", ".join(f"{h} {n}" for h, n in Bt.h.value_counts().items()))
+    # C) birlesim (karar kutusunun bilanco adimi: kendi v3 sirasi >= 0.8)
+    X = Bt.dropna(subset=["kendi_v3"]).copy()
+    L.append("\nC) BIRLESIM (126g / 63g). Bugunku kural: holdingin kendi v3 sirasi >= 0.8.")
+    kos = [("kendi >= 0.8 (BUGUNKU KURAL)", X.kendi_v3 >= 0.8),
+           ("kendi >= 0.8 ve istirak >= 0.6", (X.kendi_v3 >= 0.8) & (X.sk >= 0.6)),
+           ("kendi >= 0.8 ve istirak < 0.6", (X.kendi_v3 >= 0.8) & (X.sk < 0.6)),
+           ("kendi < 0.8 ve istirak >= 0.7", (X.kendi_v3 < 0.8) & (X.sk >= 0.7)),
+           ("ortalama (kendi+istirak)/2 >= 0.75", (X.kendi_v3 + X.sk) / 2 >= 0.75),
+           ("kendi < 0.6 (UZAK DUR)", X.kendi_v3 < 0.6),
+           ("kendi < 0.6 ama istirak >= 0.7", (X.kendi_v3 < 0.6) & (X.sk >= 0.7)),
+           ("hepsi", X.kendi_v3.notna())]
+    for ad, m in kos:
+        L.append(f"  {ad:38s} 126g {ozet(X[m], 'f126')} | 63g {ozet(X[m], 'f63')}")
+    for per, pm in (("2018-20", X.yil.between(2018, 2020)), ("2021-23", X.yil.between(2021, 2023)), ("2024+", X.yil >= 2024)):
+        L.append(f"  {per}: kendi>=0.8 {ozet(X[pm & (X.kendi_v3 >= 0.8)], 'f126')} | +istirak>=0.6 {ozet(X[pm & (X.kendi_v3 >= 0.8) & (X.sk >= 0.6)], 'f126')} | +istirak<0.6 {ozet(X[pm & (X.kendi_v3 >= 0.8) & (X.sk < 0.6)], 'f126')}")
+    # gunluk tarama icin paylar ve holding listesi
+    (R / "istirak_paylar.json").write_text(json.dumps({"olusturma": pd.Timestamp.now().strftime("%Y-%m-%d"), "holdingler": sec,
+                                                       "paylar": {h: P[h] for h in sec}}, ensure_ascii=False, indent=1), encoding="utf-8")
     son = Bt.groupby("h").tail(1)
     L.append("  son durum: " + ", ".join(f"{h} {r.sk:.2f}" for h, r in son.set_index("h").iterrows()))
     txt = "\n".join(L)
