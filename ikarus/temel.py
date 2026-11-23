@@ -710,6 +710,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "nad_std":
+        from . import nad_std
+        nad_std.main()
     elif sys.argv[1] == "gyo_kontrol":
         from . import portfoy_bt as P
         P.gyo_kontrol()
