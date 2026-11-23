@@ -709,6 +709,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "uzun_veri":
+        if gecmis_eski() > 0:
+            print("KALAN eski ceyrek verisi: devam edecek")
     elif sys.argv[1] == "uzun":
         if gecmis_eski() > 0:
             print("KALAN eski ceyrek verisi: devam edecek")
