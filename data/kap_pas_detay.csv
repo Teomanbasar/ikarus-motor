@@ -7615,14 +7615,6 @@ index,konu,kisi,gorev,satir,islem_ilk,islem_son,alim_nom,satim_nom,net_nom,oran_
 1684697,PAY ALIMI HK.,MNK GİRİŞİM HOLDİNG ANONİM ŞİRKETİ,YÖNETİM KURULU ÜYESİ,1.0,20/10/2026,20/10/2026,514131.0,0.0,514131.0,0.57,0.59,
 1684696,Pay alımı,IŞIKLAR HOLDİNG ANONİM ŞİRKETİ,BAŞKAN,1.0,20/10/2026,20/10/2026,100000.0,0.0,100000.0,11.61,11.62,
 1684695,Pay Alım Satım Bildirimi,YUSUF ŞENEL,YÖNETİM KURULU BAŞKANI,1.0,20/10/2026,20/10/2026,65086927.61,0.0,65086927.61,61.0,3.83,
-1357054,,,,,,,,,,,,could not convert string to float: '1.870.000'
-1361110,,,,,,,,,,,,could not convert string to float: '31.706.714'
-1361060,,,,,,,,,,,,could not convert string to float: '31.706.714'
-1373530,,,,,,,,,,,,could not convert string to float: '3.441.483'
-1381093,,,,,,,,,,,,could not convert string to float: '3.441.483'
-1380924,,,,,,,,,,,,could not convert string to float: '1.342.275'
-1392744,,,,,,,,,,,,could not convert string to float: '20.648.897'
-1392743,,,,,,,,,,,,could not convert string to float: '2.581.112'
 1684694,Pay Alım Bildirimi,FATMA ESRA TARA,şirket Ortağı,1.0,20/10/2026,20/10/2026,300000.0,0.0,300000.0,0.07,0.07,
 1684553,,,,0.0,,,,,,,,
 1684515,PAY ALIM BİLDİRİMİ,HÜRSAN HAVLU ÜRETİM SANAYİ VE TİCARET ANONİM ŞİRKETİ,YÖNETİM KURULU BAŞKANI,4.0,14/10/2026,20/10/2026,13024029.0,0.0,13024029.0,6.75,8.35,
@@ -7973,3 +7965,8 @@ index,konu,kisi,gorev,satir,islem_ilk,islem_son,alim_nom,satim_nom,net_nom,oran_
 1700095,Pay Alımı Bildirimi,YUDA LEON MİZRAHİ,Yönetim Kurulu Başkanı,1.0,18/11/2026,18/11/2026,1000000.0,0.0,1000000.0,35.06,35.26,
 1700094,Pay Alım Bildirimi,MEHMET SİNAN TARA,Şirket Ortağı,1.0,18/11/2026,18/11/2026,400000.0,0.0,400000.0,1.2,1.2,
 1700093,Hisse Alımı Hk.,MEHMED NUREDDİN ÇEVİK,Yönetim Kurulu Başkanı,1.0,18/11/2026,18/11/2026,1000000.0,0.0,1000000.0,31.48,31.85,
+1357054,,,,,,,,,,,,could not convert string to float: '1.870.000'
+1361110,,,,,,,,,,,,could not convert string to float: '31.706.714'
+1361060,,,,,,,,,,,,could not convert string to float: '31.706.714'
+1373530,,,,,,,,,,,,could not convert string to float: '3.441.483'
+1381093,,,,,,,,,,,,could not convert string to float: '3.441.483'

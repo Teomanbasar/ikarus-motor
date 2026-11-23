@@ -144,7 +144,7 @@
      "karar": "AL ✓",
      "getiri": -5.87,
      "fazla": -1.1,
-     "kutu_bugun": "ORTA"
+     "kutu_bugun": "BEKLE teknik"
     },
     "MARBL": {
      "t": "MARBL",
@@ -465,7 +465,7 @@
      "karar": "AL ✓",
      "getiri": -5.87,
      "fazla": -1.1,
-     "kutu_bugun": "ORTA",
+     "kutu_bugun": "BEKLE teknik",
      "stop_aktif": false,
      "stop": 171.7,
      "stop_aktiflesme": 242.4
