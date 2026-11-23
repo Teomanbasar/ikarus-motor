@@ -1,0 +1,4 @@
+GYO GRUP ICI SIRALAMA TESTI (23 Kas 2026). AL'dan rastgele secim, 25 kosu ortancasi, cikis canli.
+  CANLI (GYO tum piyasayla)      AL gunlerinde ort. GYO sayisi 0.4 / tum AL 2.9 | egitim 10h x11.74 | egitim 5h x13.70 | TEST 10h x1.36 | TEST 5h x1.36
+  GYO kendi icinde, taban %60    AL gunlerinde ort. GYO sayisi 0.2 / tum AL 2.7 | egitim 10h x11.00 | egitim 5h x11.90 | TEST 10h x1.41 | TEST 5h x1.38
+  GYO kendi icinde, taban %40    AL gunlerinde ort. GYO sayisi 0.2 / tum AL 2.7 | egitim 10h x10.95 | egitim 5h x12.32 | TEST 10h x1.41 | TEST 5h x1.35
