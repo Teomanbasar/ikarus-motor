@@ -1,0 +1,374 @@
+{
+ "GLRYH": {
+  "tarih": "18.06.2026 09:14:14",
+  "index": "1618426",
+  "borsada": {
+   "PRDGS": 28.65,
+   "A1YEN": 4.0
+  },
+  "satir": 16
+ },
+ "INVES": {
+  "tarih": "08.09.2026 18:10:18",
+  "index": "1660393",
+  "borsada": {
+   "VERUS": 63.87
+  },
+  "satir": 10
+ },
+ "VERUS": {
+  "tarih": "28.03.2025 22:34:46",
+  "index": "1415444",
+  "borsada": {
+   "ACSEL": 50.73
+  },
+  "satir": 24
+ },
+ "BINHO": {
+  "tarih": "06.08.2025 18:50:32",
+  "index": "1473281",
+  "borsada": {},
+  "satir": 0
+ },
+ "GSDHO": {
+  "tarih": "01.09.2025 19:06:22",
+  "index": "1484583",
+  "borsada": {},
+  "satir": 0
+ },
+ "KCHOL": {
+  "tarih": "09.11.2026 18:28:34",
+  "index": "1695495",
+  "borsada": {
+   "FROTO": 39.32,
+   "MAALT": 60.08,
+   "TOASO": 37.62
+  },
+  "satir": 74
+ },
+ "IEYHO": {
+  "tarih": "24.07.2025 16:53:26",
+  "index": "1466202",
+  "borsada": {},
+  "satir": 0
+ },
+ "TEHOL": {
+  "tarih": "29.07.2026 19:15:42",
+  "index": "1638981",
+  "borsada": {
+   "MANAS": 6.06
+  },
+  "satir": 16
+ },
+ "ISBIR": {
+  "tarih": "02.01.2024 09:22:16",
+  "index": "1231059",
+  "borsada": {},
+  "satir": 0
+ },
+ "BERA": {
+  "tarih": "24.09.2026 17:17:43",
+  "index": "1667769",
+  "borsada": {
+   "GOLDA": 37.8,
+   "KONKA": 72.98
+  },
+  "satir": 40
+ },
+ "DENGE": {
+  "tarih": "03.06.2025 19:40:38",
+  "index": "1445435",
+  "borsada": {},
+  "satir": 0
+ },
+ "ATSYH": {
+  "tarih": "02.07.2026 18:26:20",
+  "index": "1623292",
+  "borsada": {},
+  "satir": 0
+ },
+ "SAHOL": {
+  "tarih": "17.09.2026 18:39:07",
+  "index": "1664870",
+  "borsada": {
+   "KORDS": 71.11,
+   "CIMSA": 54.54
+  },
+  "satir": 24
+ },
+ "LYDHO": {
+  "tarih": "15.09.2026 17:21:02",
+  "index": "1663041",
+  "borsada": {
+   "LYDYE": 64.89,
+   "UFUK": 62.96
+  },
+  "satir": 12
+ },
+ "TKFEN": {
+  "tarih": "29.09.2026 08:47:13",
+  "index": "1669229",
+  "borsada": {
+   "AKMGY": 10.47,
+   "ZGYO": 10.47,
+   "TSKB": 0.047,
+   "AKCNS": 0.003
+  },
+  "satir": 86
+ },
+ "ARSAN": {
+  "tarih": "09.04.2026 13:04:39",
+  "index": "1589847",
+  "borsada": {},
+  "satir": 12
+ },
+ "TAVHL": {
+  "tarih": "13.11.2026 20:04:55",
+  "index": "1698202",
+  "borsada": {},
+  "satir": 46
+ },
+ "KLRHO": {
+  "tarih": "01.09.2025 18:54:24",
+  "index": "1484563",
+  "borsada": {},
+  "satir": 0
+ },
+ "DOHOL": {
+  "tarih": "27.05.2025 12:04:33",
+  "index": "1442288",
+  "borsada": {},
+  "satir": 0
+ },
+ "HEDEF": {
+  "tarih": "25.06.2026 14:20:18",
+  "index": "1620591",
+  "borsada": {},
+  "satir": 0
+ },
+ "INVEO": {
+  "tarih": "24.03.2026 18:25:45",
+  "index": "1575242",
+  "borsada": {},
+  "satir": 0
+ },
+ "OSTIM": {
+  "tarih": "02.02.2024 17:23:28",
+  "index": "1246471",
+  "borsada": {},
+  "satir": 0
+ },
+ "RALYH": {
+  "tarih": "23.04.2025 14:16:26",
+  "index": "1428887",
+  "borsada": {},
+  "satir": 0
+ },
+ "DEVA": {
+  "tarih": "10.10.2024 10:20:06",
+  "index": "1346525",
+  "borsada": {},
+  "satir": 0
+ },
+ "DUNYH": {
+  "tarih": "25.04.2024 18:18:19",
+  "index": "1277091",
+  "borsada": {},
+  "satir": 0
+ },
+ "POLHO": {
+  "tarih": "08.07.2025 20:06:27",
+  "index": "1460604",
+  "borsada": {},
+  "satir": 0
+ },
+ "UNLU": {
+  "tarih": "18.06.2025 18:17:44",
+  "index": "1449970",
+  "borsada": {},
+  "satir": 0
+ },
+ "DERHL": {
+  "tarih": "10.06.2024 11:40:42",
+  "index": "1296811",
+  "borsada": {},
+  "satir": 0
+ },
+ "AVHOL": {
+  "tarih": "25.11.2024 18:06:08",
+  "index": "1360300",
+  "borsada": {},
+  "satir": 0
+ },
+ "LRSHO": {
+  "tarih": "08.03.2024 18:19:44",
+  "index": "1257110",
+  "borsada": {},
+  "satir": 0
+ },
+ "PETKM": {
+  "tarih": "13.06.2024 20:21:47",
+  "index": "1299183",
+  "borsada": {},
+  "satir": 0
+ },
+ "MOGAN": {
+  "tarih": "20.03.2024 15:39:30",
+  "index": "1260586",
+  "borsada": {},
+  "satir": 0
+ },
+ "AGHOL": {
+  "tarih": "24.04.2025 18:16:35",
+  "index": "1429191",
+  "borsada": {},
+  "satir": 0
+ },
+ "BLCYT": {
+  "tarih": "29.07.2024 16:36:33",
+  "index": "1316380",
+  "borsada": {},
+  "satir": 0
+ },
+ "TRCAS": {
+  "tarih": "22.04.2024 21:17:21",
+  "index": "1276280",
+  "borsada": {},
+  "satir": 0
+ },
+ "OTTO": {
+  "tarih": "01.07.2025 13:03:39",
+  "index": "1453666",
+  "borsada": {},
+  "satir": 0
+ },
+ "GLYHO": {
+  "tarih": "30.04.2024 18:24:02",
+  "index": "1279624",
+  "borsada": {},
+  "satir": 0
+ },
+ "MZHLD": {
+  "tarih": "06.05.2024 14:16:09",
+  "index": "1281671",
+  "borsada": {},
+  "satir": 0
+ },
+ "METRO": {
+  "tarih": "09.05.2024 19:46:01",
+  "index": "1284417",
+  "borsada": {},
+  "satir": 0
+ },
+ "GRTHO": {
+  "tarih": "16.05.2024 13:04:20",
+  "index": "1286915",
+  "borsada": {},
+  "satir": 0
+ },
+ "ECZYT": {
+  "tarih": "24.05.2024 11:10:45",
+  "index": "1290554",
+  "borsada": {},
+  "satir": 0
+ },
+ "IHLAS": {
+  "tarih": "30.05.2024 17:22:07",
+  "index": "1292785",
+  "borsada": {},
+  "satir": 0
+ },
+ "TRHOL": {
+  "tarih": "09.04.2025 14:17:11",
+  "index": "1421525",
+  "borsada": {},
+  "satir": 0
+ },
+ "ALARK": {
+  "tarih": "11.07.2024 15:40:46",
+  "index": "1311404",
+  "borsada": {},
+  "satir": 0
+ },
+ "IZINV": {
+  "tarih": "08.11.2024 19:32:51",
+  "index": "1356008",
+  "borsada": {},
+  "satir": 0
+ },
+ "COSMO": {
+  "tarih": "02.08.2024 10:58:50",
+  "index": "1320279",
+  "borsada": {},
+  "satir": 0
+ },
+ "USHOL": {
+  "tarih": "10.07.2025 00:09:39",
+  "index": "1461394",
+  "borsada": {},
+  "satir": 0
+ },
+ "AKYHO": {
+  "tarih": "19.09.2024 18:52:11",
+  "index": "1335978",
+  "borsada": {},
+  "satir": 0
+ },
+ "IHYAY": {
+  "tarih": "27.09.2024 19:22:19",
+  "index": "1338629",
+  "borsada": {},
+  "satir": 0
+ },
+ "NTHOL": {
+  "tarih": "25.09.2024 16:05:41",
+  "index": "1337617",
+  "borsada": {},
+  "satir": 0
+ },
+ "YESIL": {
+  "tarih": "09.04.2025 20:27:01",
+  "index": "1422672",
+  "borsada": {},
+  "satir": 4
+ },
+ "EUHOL": {
+  "tarih": "09.01.2025 08:54:19",
+  "index": "1375688",
+  "borsada": {},
+  "satir": 0
+ },
+ "ENDAE": {
+  "tarih": "09.10.2026 16:46:21",
+  "index": "1678552",
+  "borsada": {},
+  "satir": 10
+ },
+ "MARMR": {
+  "tarih": "27.10.2026 21:23:48",
+  "index": "1688585",
+  "borsada": {},
+  "satir": 2
+ },
+ "KERVN": {
+  "tarih": "09.11.2025 20:45:57",
+  "index": "1513706",
+  "borsada": {},
+  "satir": 0
+ },
+ "ECOGR": {
+  "tarih": "19.08.2026 08:42:15",
+  "index": "1652412",
+  "borsada": {},
+  "satir": 6
+ },
+ "PAHOL": {
+  "tarih": "24.02.2026 22:01:10",
+  "index": "1561142",
+  "borsada": {
+   "PASEU": 17.86,
+   "PATEK": 45.34
+  },
+  "satir": 12
+ }
+}
