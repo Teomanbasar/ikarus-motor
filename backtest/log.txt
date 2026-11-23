@@ -1,7 +1,60 @@
-eski 100/609 206 sn
-eski 200/609 354 sn
-eski 300/609 498 sn
-eski 400/609 635 sn
-eski 500/609 785 sn
-eski 600/609 929 sn
-gecmis_eski: 609 yeni, eski verisi olan 481/609, kalan 0
+   y_nad   f63  derin: n 1899 ort   +2.8 ort.ca   -1.0 kaz % 48 t +5.7 | dar: n 1720 ort   +5.8 ort.ca   -1.2 kaz % 48 t +7.2 | fark -3.0
+   kesit   f126 derin: n 1202 ort  +10.1 ort.ca   +1.5 kaz % 54 t +10.1 | dar: n 1345 ort  +15.6 ort.ca   -3.5 kaz % 46 t +8.2 | fark -5.4
+   kesit   f63  derin: n 1232 ort   +4.1 ort.ca   +0.7 kaz % 52 t +7.2 | dar: n 1378 ort   +5.3 ort.ca   -2.4 kaz % 47 t +5.1 | fark -1.2
+   y_pddd  f126 derin: n 1750 ort  +10.3 ort.ca   -1.2 kaz % 48 t +10.4 | dar: n 1769 ort  +13.7 ort.ca   -1.5 kaz % 49 t +9.9 | fark -3.3
+   y_pddd  f63  derin: n 1829 ort   +2.6 ort.ca   -1.2 kaz % 47 t +5.3 | dar: n 1792 ort   +6.2 ort.ca   -0.6 kaz % 49 t +8.0 | fark -3.6
+   y_fiyat f126 derin: n 1756 ort   +9.5 ort.ca   -1.9 kaz % 46 t +10.0 | dar: n 1998 ort  +15.7 ort.ca   +0.9 kaz % 51 t +11.7 | fark -6.2
+   y_fiyat f63  derin: n 1827 ort   +3.3 ort.ca   -1.7 kaz % 46 t +6.6 | dar: n 2038 ort   +6.6 ort.ca   +0.8 kaz % 51 t +8.8 | fark -3.2
+   y_nad f126 2014-17: derin n  592 ort   +3.9 ort.ca   -3.0 kaz % 43 t +3.2 | dar n  466 ort   +2.4 ort.ca   -0.0 kaz % 50 t +2.0
+   y_nad f126 2018-20: derin n  329 ort  +14.8 ort.ca   +7.1 kaz % 59 t +7.7 | dar n  564 ort  +32.3 ort.ca   +7.0 kaz % 57 t +11.0
+   y_nad f126 2021-23: derin n  341 ort  +15.6 ort.ca   -3.5 kaz % 46 t +4.6 | dar n  442 ort   -5.9 ort.ca  -16.7 kaz % 30 t -2.2
+   y_nad f126 2024+: derin n  562 ort  +11.9 ort.ca   -0.1 kaz % 50 t +6.5 | dar n  222 ort  +43.7 ort.ca   +8.2 kaz % 56 t +5.5
+   fiyat ortadayken y_nad f126: derin n  397 ort   +8.1 ort.ca   -2.4 kaz % 46 t +3.8 | dar n  231 ort   +8.1 ort.ca   -4.8 kaz % 45 t +2.5
+
+  -- borsadaki istirak NAD'in >= %30'u (19 holding)
+   y_nad   f126 derin: n  451 ort   +7.0 ort.ca   -0.8 kaz % 49 t +4.1 | dar: n  337 ort   +6.3 ort.ca   +0.3 kaz % 51 t +3.0 | fark +0.8
+   y_nad   f63  derin: n  467 ort   +2.6 ort.ca   -0.4 kaz % 49 t +2.7 | dar: n  343 ort   +3.8 ort.ca   -1.9 kaz % 46 t +2.5 | fark -1.2
+   kesit   f126 derin: n  243 ort   +5.6 ort.ca   +1.4 kaz % 52 t +2.6 | dar: n  110 ort  +11.8 ort.ca   +5.6 kaz % 57 t +3.3 | fark -6.3
+   kesit   f63  derin: n  246 ort   +2.6 ort.ca   +1.6 kaz % 54 t +2.1 | dar: n  111 ort   +5.3 ort.ca   -0.2 kaz % 50 t +2.3 | fark -2.7
+   y_pddd  f126 derin: n  358 ort   +7.2 ort.ca   -3.0 kaz % 46 t +3.3 | dar: n  422 ort  +10.6 ort.ca   +3.8 kaz % 54 t +5.2 | fark -3.4
+   y_pddd  f63  derin: n  376 ort   +1.6 ort.ca   -1.8 kaz % 45 t +1.5 | dar: n  427 ort   +6.2 ort.ca   +0.9 kaz % 52 t +4.6 | fark -4.5
+   y_fiyat f126 derin: n  364 ort  +10.1 ort.ca   -1.8 kaz % 47 t +4.5 | dar: n  441 ort   +9.7 ort.ca   +3.7 kaz % 55 t +4.8 | fark +0.4
+   y_fiyat f63  derin: n  383 ort   +4.7 ort.ca   -1.4 kaz % 48 t +3.6 | dar: n  447 ort   +4.5 ort.ca   +1.2 kaz % 53 t +3.9 | fark +0.2
+   y_nad f126 2014-17: derin n  129 ort   -1.1 ort.ca   -1.5 kaz % 45 t -1.0 | dar n  101 ort   +1.2 ort.ca   +1.0 kaz % 51 t +0.6
+   y_nad f126 2018-20: derin n   55 ort  +25.4 ort.ca  +20.8 kaz % 78 t +5.3 | dar n  109 ort  +23.4 ort.ca   +2.7 kaz % 53 t +4.2
+   y_nad f126 2021-23: derin n  155 ort   +6.7 ort.ca   -3.7 kaz % 47 t +1.8 | dar n   68 ort   -3.3 ort.ca   -4.8 kaz % 43 t -0.7
+   y_nad f126 2024+: derin n  112 ort  +11.1 ort.ca   -6.4 kaz % 40 t +2.4 | dar n   59 ort   +4.5 ort.ca   +4.8 kaz % 54 t +0.6
+   fiyat ortadayken y_nad f126: derin n   94 ort   -2.7 ort.ca   -5.1 kaz % 41 t -0.9 | dar n   44 ort   +7.1 ort.ca   +6.4 kaz % 59 t +1.5
+
+  -- borsadaki istirak NAD'in < %30'u (NAD ~ defter) (47 holding)
+   y_nad   f126 derin: n 1373 ort  +11.1 ort.ca   -0.7 kaz % 48 t +9.9 | dar: n 1357 ort  +15.6 ort.ca   -3.0 kaz % 47 t +8.9 | fark -4.5
+   y_nad   f63  derin: n 1432 ort   +2.9 ort.ca   -1.1 kaz % 48 t +5.0 | dar: n 1377 ort   +6.3 ort.ca   -1.1 kaz % 48 t +6.7 | fark -3.4
+   kesit   f126 derin: n  959 ort  +11.2 ort.ca   +1.5 kaz % 54 t +10.0 | dar: n 1235 ort  +17.2 ort.ca   -4.3 kaz % 45 t +8.0 | fark -6.0
+   kesit   f63  derin: n  986 ort   +4.4 ort.ca   +0.7 kaz % 51 t +7.0 | dar: n 1267 ort   +5.4 ort.ca   -2.5 kaz % 46 t +4.9 | fark -1.0
+   y_pddd  f126 derin: n 1392 ort  +11.1 ort.ca   -0.7 kaz % 48 t +9.9 | dar: n 1347 ort  +15.1 ort.ca   -3.0 kaz % 47 t +8.7 | fark -4.1
+   y_pddd  f63  derin: n 1453 ort   +2.9 ort.ca   -1.1 kaz % 48 t +5.1 | dar: n 1365 ort   +6.3 ort.ca   -1.2 kaz % 48 t +6.7 | fark -3.5
+   y_fiyat f126 derin: n 1392 ort   +9.3 ort.ca   -1.9 kaz % 46 t +8.9 | dar: n 1557 ort  +17.4 ort.ca   -0.4 kaz % 50 t +10.5 | fark -8.2
+   y_fiyat f63  derin: n 1444 ort   +3.2 ort.ca   -1.8 kaz % 45 t +5.7 | dar: n 1591 ort   +7.5 ort.ca   +0.4 kaz % 50 t +8.1 | fark -4.3
+   y_nad f126 2014-17: derin n  463 ort   +6.4 ort.ca   -3.8 kaz % 42 t +3.8 | dar n  365 ort   +2.6 ort.ca   -0.4 kaz % 49 t +1.8
+   y_nad f126 2018-20: derin n  274 ort  +12.9 ort.ca   +4.8 kaz % 55 t +6.1 | dar n  455 ort  +34.3 ort.ca  +10.3 kaz % 58 t +10.2
+   y_nad f126 2021-23: derin n  186 ort  +24.2 ort.ca   -3.1 kaz % 46 t +4.1 | dar n  374 ort   -3.2 ort.ca  -18.1 kaz % 28 t -0.9
+   y_nad f126 2024+: derin n  450 ort  +11.8 ort.ca   +0.8 kaz % 52 t +6.1 | dar n  163 ort  +56.6 ort.ca  +12.7 kaz % 57 t +5.5
+   fiyat ortadayken y_nad f126: derin n  303 ort  +15.1 ort.ca   -1.4 kaz % 47 t +4.6 | dar n  187 ort  +11.0 ort.ca   -7.6 kaz % 42 t +2.5
+
+  -- en buyuk 15 holding (15 holding)
+   y_nad   f126 derin: n  481 ort   +7.7 ort.ca   +2.9 kaz % 54 t +6.8 | dar: n  424 ort   +5.4 ort.ca   +2.2 kaz % 54 t +4.0 | fark +2.3
+   y_nad   f63  derin: n  496 ort   +3.8 ort.ca   +2.7 kaz % 57 t +5.7 | dar: n  438 ort   +3.1 ort.ca   +0.6 kaz % 52 t +3.3 | fark +0.7
+   kesit   f126 derin: n  296 ort  +10.8 ort.ca   +7.8 kaz % 63 t +7.6 | dar: n  250 ort  +10.2 ort.ca   +5.1 kaz % 55 t +4.2 | fark +0.7
+   kesit   f63  derin: n  300 ort   +4.5 ort.ca   +3.9 kaz % 60 t +5.1 | dar: n  257 ort   +5.7 ort.ca   +2.8 kaz % 54 t +3.3 | fark -1.1
+   y_pddd  f126 derin: n  461 ort   +6.6 ort.ca   +0.8 kaz % 52 t +5.8 | dar: n  470 ort   +6.0 ort.ca   +3.7 kaz % 55 t +4.6 | fark +0.5
+   y_pddd  f63  derin: n  478 ort   +3.5 ort.ca   +2.7 kaz % 56 t +5.2 | dar: n  481 ort   +3.9 ort.ca   +1.4 kaz % 54 t +4.2 | fark -0.4
+   y_fiyat f126 derin: n  357 ort   +7.8 ort.ca   +3.0 kaz % 54 t +5.7 | dar: n  578 ort   +5.7 ort.ca   +3.4 kaz % 55 t +5.0 | fark +2.1
+   y_fiyat f63  derin: n  372 ort   +3.9 ort.ca   +2.3 kaz % 56 t +4.8 | dar: n  593 ort   +3.2 ort.ca   +2.3 kaz % 55 t +4.2 | fark +0.7
+   y_nad f126 2014-17: derin n  128 ort   +2.1 ort.ca   +0.7 kaz % 52 t +1.3 | dar n  147 ort   +7.5 ort.ca   +6.5 kaz % 65 t +4.7
+   y_nad f126 2018-20: derin n  126 ort   +8.0 ort.ca   +7.1 kaz % 59 t +4.3 | dar n   91 ort   +5.5 ort.ca   -0.9 kaz % 48 t +2.0
+   y_nad f126 2021-23: derin n   85 ort  +13.6 ort.ca  +10.9 kaz % 66 t +4.0 | dar n  120 ort   -4.4 ort.ca  -10.2 kaz % 36 t -1.7
+   y_nad f126 2024+: derin n  142 ort  +11.8 ort.ca   -2.1 kaz % 44 t +3.6 | dar n   66 ort  +62.1 ort.ca  +16.7 kaz % 71 t +3.3
+   fiyat ortadayken y_nad f126: derin n  128 ort   +2.6 ort.ca   -2.3 kaz % 44 t +1.3 | dar n   62 ort   +0.6 ort.ca   -1.2 kaz % 48 t +0.3
+
+   holding basina gozlem: AGHOL 149, AKYHO 149, ALARK 149, ARSAN 149, ATSYH 149, BERA 149, BLCYT 149, DEVA 149, DOHOL 149, DUNYH 149, ECZYT 149, EUHOL 149, GLRYH 149, GLYHO 149, GSDHO 149, IEYHO 149, IHLAS 149, IHYAY 149, KCHOL 149, LRSHO 149, LYDHO 149, METRO 149, NTHOL 149, OSTIM 149, PETKM 149, POLHO 149, SAHOL 149, TAVHL 149, TEHOL 149, TKFEN 149, TRCAS 149, TRHOL 149, YESIL 149, INVEO 148, USHOL 146, VERUS 144, DENGE 143, RALYH 143, OTTO 140, AVHOL 139, ISBIR 137, KERVN 105, COSMO 103, DERHL 76, MZHLD 65, UNLU 53, HEDEF 49, BINHO 20, GRTHO 20, INVES 20, KLRHO 20, MOGAN 19, ENDAE 7, ECOGR 1
+   kullanilan paylar: AGHOL: ADEL 0.57,AEFES 0.43,ASUZU 0.55,MGROS 0.49; ALARK: ALCAR 0.84,ALGYO 0.56; BERA: GOLDA 0.38,KONKA 0.73; DERHL: SOHOE 0.46; DOHOL: GWIND 0.70; GLRYH: A1YEN 0.04,PRDGS 0.29; GLYHO: CONSE 0.51,GLBMD 0.75,NTGAZ 0.60; IEYHO: CEMAS 0.03; IHLAS: IHAAS 0.12,IHEVA 0.27,IHGZT 0.15,IHLGM 0.21,IHYAY 0.24; IHYAY: IHAAS 0.49,IHGZT 0.31; INVEO: GEDIK 0.82; INVES: VERUS 0.64; KCHOL: ARCLK 0.49,AYCES 0.30,AYGAZ 0.41,FROTO 0.39,MAALT 0.50,OTKAR 0.47,TOASO 0.38,TTRAK 0.38,TUPRS 0.41,YKBNK 0.55; KLRHO: ARASE 0.40,KLGYO 0.54,KTSKR 0.24,TUREX 0.26; LRSHO: ADESE 0.07,IMASM 0.30,NIBAS 0.17,SELVA 0.19; LYDHO: LYDYE 0.65,UFUK 0.63; METRO: MEPET 0.47,VANGD 0.03; NTHOL: MERIT 0.71; PAHOL: PASEU 0.18,PATEK 0.45; SAHOL: AKBNK 0.41,AKCNS 0.40,BRISA 0.44,CIMSA 0.55,ENJSA 0.42,KORDS 0.71,TKNSA 0.50; TEHOL: MANAS 0.06; TKFEN: AKMGY 0.10; VERUS: ACSEL 0.51
