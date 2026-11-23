@@ -16,7 +16,7 @@
    yuzdelik >= 80 (dar)               gun  621 | sonraki 63g BIST100'e gore ort  -0.4 medyan  -3.3 kazanma % 41
    derin + 20g kapaniyor (>2 puan)    gun    1 | sonraki 63g BIST100'e gore ort +20.0 medyan +20.0 kazanma %100
    derin + 20g aciliyor               gun   21 | sonraki 63g BIST100'e gore ort +11.6 medyan +11.9 kazanma %100
-== DOHOL  2026-11-23: NAD 150,700 mn TL | piyasa degeri 40,982 | iskonto %-72.8 | 3y ort %-62.7 | 3y yuzdelik 0 | 20g degisim -1.7 puan | DERIN ISKONTO
+== DOHOL  2026-11-23: NAD 150,699 mn TL | piyasa degeri 40,982 | iskonto %-72.8 | 3y ort %-62.7 | 3y yuzdelik 0 | 20g degisim -1.7 puan | DERIN ISKONTO
    yuzdelik <= 20 (derin)             gun   97 | sonraki 63g BIST100'e gore ort  +6.3 medyan  +4.9 kazanma % 86
    yuzdelik 20-80                     gun  729 | sonraki 63g BIST100'e gore ort  +2.2 medyan  -0.1 kazanma % 50
    yuzdelik >= 80 (dar)               gun  335 | sonraki 63g BIST100'e gore ort  -2.2 medyan  -3.2 kazanma % 36
@@ -28,8 +28,57 @@
    yuzdelik >= 80 (dar)               gun  184 | sonraki 63g BIST100'e gore ort +40.1 medyan +19.1 kazanma % 63
    derin + 20g kapaniyor (>2 puan)    gun  127 | sonraki 63g BIST100'e gore ort +18.1 medyan +22.8 kazanma % 67
    derin + 20g aciliyor               gun  292 | sonraki 63g BIST100'e gore ort +11.6 medyan +15.4 kazanma % 67
+== ALARK  2026-11-23: NAD 51,244 mn TL | piyasa degeri 40,330 | iskonto %-21.3 | 3y ort %-32.9 | 3y yuzdelik 90 | 20g degisim +0.2 puan | ISKONTO DAR (pahali)
+   yuzdelik <= 20 (derin)             gun   13 | sonraki 63g BIST100'e gore ort +14.3 medyan +14.1 kazanma %100
+   yuzdelik 20-80                     gun  496 | sonraki 63g BIST100'e gore ort  +0.1 medyan  -0.0 kazanma % 50
+   yuzdelik >= 80 (dar)               gun  652 | sonraki 63g BIST100'e gore ort  +5.1 medyan  -2.4 kazanma % 48
+   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   derin + 20g aciliyor               gun    8 | sonraki 63g BIST100'e gore ort +12.5 medyan +12.4 kazanma %100
+== GLYHO  2026-11-23: NAD 29,690 mn TL | piyasa degeri 25,067 | iskonto %-15.6 | 3y ort %-50.0 | 3y yuzdelik 82 | 20g degisim -2.1 puan | ISKONTO DAR (pahali)
+   yuzdelik <= 20 (derin)             gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   yuzdelik 20-80                     gun  113 | sonraki 63g BIST100'e gore ort  +6.1 medyan  +2.1 kazanma % 58
+   yuzdelik >= 80 (dar)               gun  723 | sonraki 63g BIST100'e gore ort  +8.4 medyan  +7.8 kazanma % 68
+   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   derin + 20g aciliyor               gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+== NTHOL  2026-11-23: NAD 85,253 mn TL | piyasa degeri 14,996 | iskonto %-82.4 | 3y ort %-79.6 | 3y yuzdelik 20 | 20g degisim +0.5 puan | DERIN ISKONTO
+   yuzdelik <= 20 (derin)             gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   yuzdelik 20-80                     gun  238 | sonraki 63g BIST100'e gore ort  +4.1 medyan  +3.6 kazanma % 57
+   yuzdelik >= 80 (dar)               gun  923 | sonraki 63g BIST100'e gore ort  -1.1 medyan  -1.4 kazanma % 47
+   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   derin + 20g aciliyor               gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+== GSDHO  2026-11-23: NAD 26,046 mn TL | piyasa degeri 3,368 | iskonto %-87.1 | 3y ort %-85.9 | 3y yuzdelik 29 | 20g degisim +0.6 puan | NORMAL
+   yuzdelik <= 20 (derin)             gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   yuzdelik 20-80                     gun  323 | sonraki 63g BIST100'e gore ort  +7.7 medyan  +6.5 kazanma % 73
+   yuzdelik >= 80 (dar)               gun  838 | sonraki 63g BIST100'e gore ort  -5.9 medyan  -7.9 kazanma % 25
+   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   derin + 20g aciliyor               gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+== OSTIM  2026-11-23: NAD 2,487 mn TL | piyasa degeri 592 | iskonto %-76.2 | 3y ort %-53.0 | 3y yuzdelik 0 | 20g degisim -0.5 puan | DERIN ISKONTO
+   yuzdelik <= 20 (derin)             gun   72 | sonraki 63g BIST100'e gore ort  -6.3 medyan  -8.3 kazanma % 29
+   yuzdelik 20-80                     gun  465 | sonraki 63g BIST100'e gore ort  -2.8 medyan -12.6 kazanma % 36
+   yuzdelik >= 80 (dar)               gun  625 | sonraki 63g BIST100'e gore ort  +9.5 medyan  -5.7 kazanma % 41
+   derin + 20g kapaniyor (>2 puan)    gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
+   derin + 20g aciliyor               gun    0 | sonraki 63g BIST100'e gore ort  +nan medyan  +nan kazanma %nan
 
-== HAVUZ (5 holding, 21 gunde bir gozlem): iskonto 3y yuzdeligi -> BIST100'e gore fazla getiri
+== HAVUZ A: KARARDA KULLANILAN 4 (4 holding, 21 gunde bir gozlem): iskonto 3y yuzdeligi -> BIST100'e gore fazla getiri
+   yuzdelik   0- 20 f63  n    7 ort   +5.4 medyan   +2.2 kazanma %100 t +2.4
+   yuzdelik   0- 20 f126 n    7 ort  +23.1 medyan  +16.1 kazanma %100 t +1.8
+   yuzdelik  20- 40 f63  n   22 ort   +3.8 medyan   +1.9 kazanma % 55 t +2.1
+   yuzdelik  20- 40 f126 n   19 ort   +5.2 medyan   +3.6 kazanma % 63 t +1.8
+   yuzdelik  40- 60 f63  n   22 ort   +6.3 medyan   +1.0 kazanma % 55 t +1.3
+   yuzdelik  40- 60 f126 n   18 ort   +4.2 medyan   -1.6 kazanma % 39 t +0.8
+   yuzdelik  60- 80 f63  n   50 ort   +3.2 medyan   -1.9 kazanma % 38 t +1.1
+   yuzdelik  60- 80 f126 n   45 ort   +7.0 medyan   -1.9 kazanma % 40 t +1.7
+   yuzdelik  80-100 f63  n  123 ort   +0.8 medyan   +1.6 kazanma % 57 t +0.7
+   yuzdelik  80-100 f126 n  123 ort   +3.1 medyan   +0.9 kazanma % 50 t +1.6
+   derin(<=30) - dar(>=70) f63: +5.0 puan (n 14/147)
+   KARSILASTIRMA yalniz fiyat (endekse gore 3y yuzdelik) dusuk-yuksek f63: +7.4 puan (n 47/103)
+   fiyat ortadayken NAD derin-dar f63: +0.1 puan (n 3/41)
+   derin(<=30) - dar(>=70) f126: +11.3 puan (n 12/146)
+   KARSILASTIRMA yalniz fiyat (endekse gore 3y yuzdelik) dusuk-yuksek f126: +13.1 puan (n 38/103)
+   fiyat ortadayken NAD derin-dar f126: -2.3 puan (n 3/40)
+   holding basina gozlem: KCHOL 59, SAHOL 59, AGHOL 59, DOHOL 59
+
+== HAVUZ B: 4 + LYDHO (5 holding, 21 gunde bir gozlem): iskonto 3y yuzdeligi -> BIST100'e gore fazla getiri
    yuzdelik   0- 20 f63  n   28 ort  +11.5 medyan  +10.6 kazanma % 71 t +1.7
    yuzdelik   0- 20 f126 n   27 ort  +20.0 medyan  +16.1 kazanma % 78 t +2.9
    yuzdelik  20- 40 f63  n   38 ort   -1.1 medyan   +1.0 kazanma % 58 t -0.4
@@ -47,5 +96,24 @@
    KARSILASTIRMA yalniz fiyat (endekse gore 3y yuzdelik) dusuk-yuksek f126: +37.0 puan (n 51/137)
    fiyat ortadayken NAD derin-dar f126: +5.5 puan (n 5/41)
    holding basina gozlem: KCHOL 59, SAHOL 59, AGHOL 59, DOHOL 59, LYDHO 59
+
+== HAVUZ C: TEST (Marbas NAD, cogu borsada degil: ALARK,GLYHO,NTHOL,GSDHO,OSTIM) (5 holding, 21 gunde bir gozlem): iskonto 3y yuzdeligi -> BIST100'e gore fazla getiri
+   yuzdelik   0- 20 f63  n    5 ort   -4.1 medyan   -9.1 kazanma % 40 t -0.7
+   yuzdelik   0- 20 f126 n    5 ort  -19.9 medyan  -16.5 kazanma %  0 t -3.4
+   yuzdelik  20- 40 f63  n    7 ort   -4.4 medyan  -12.9 kazanma % 43 t -0.7
+   yuzdelik  20- 40 f126 n    5 ort   -2.5 medyan   +4.2 kazanma % 60 t -0.4
+   yuzdelik  40- 60 f63  n   22 ort   +0.8 medyan   +5.4 kazanma % 59 t +0.2
+   yuzdelik  40- 60 f126 n   21 ort   +1.0 medyan   -1.9 kazanma % 43 t +0.2
+   yuzdelik  60- 80 f63  n   50 ort   +4.3 medyan   +2.4 kazanma % 60 t +1.5
+   yuzdelik  60- 80 f126 n   46 ort   +7.3 medyan   -1.4 kazanma % 46 t +1.4
+   yuzdelik  80-100 f63  n  180 ort   +2.5 medyan   -3.9 kazanma % 43 t +1.1
+   yuzdelik  80-100 f126 n  172 ort   +3.9 medyan   -5.0 kazanma % 45 t +1.1
+   derin(<=30) - dar(>=70) f63: -5.7 puan (n 9/213)
+   KARSILASTIRMA yalniz fiyat (endekse gore 3y yuzdelik) dusuk-yuksek f63: +4.5 puan (n 106/85)
+   fiyat ortadayken NAD derin-dar f63: +nan puan (n 0/69)
+   derin(<=30) - dar(>=70) f126: -16.6 puan (n 8/203)
+   KARSILASTIRMA yalniz fiyat (endekse gore 3y yuzdelik) dusuk-yuksek f126: +12.9 puan (n 96/82)
+   fiyat ortadayken NAD derin-dar f126: +nan puan (n 0/67)
+   holding basina gozlem: ALARK 59, NTHOL 59, GSDHO 59, OSTIM 59, GLYHO 43
 
 Not: gecmis seri bugunku istirak paylariyla hesaplandi (yaklasik). Test gunleri birbiriyle ortusuyor (63 gunluk pencereler); bagimsiz gozlem sayisi gun sayisindan cok daha az, sonuclari kaba isaret olarak oku.

@@ -1,5 +1,5 @@
 {
- "olusturma": "2026-11-23 21:19",
+ "olusturma": "2026-11-23 22:02",
  "holdingler": {
   "KCHOL": {
    "tarih": "2026-11-23",
@@ -51,7 +51,7 @@
   },
   "DOHOL": {
    "tarih": "2026-11-23",
-   "nad_mn": 150700,
+   "nad_mn": 150699,
    "piyasa_degeri_mn": 40982,
    "iskonto": -0.7281,
    "ort_3y": -0.6275,
@@ -80,6 +80,86 @@
    "kaynak": "KAP genel bilgiler (23 Kas 2026): LYDYE %64.89, UFUK %62.96; dis NAD kaynagi yok, yalniz borsadaki istirakler",
    "fiyatsiz": [],
    "teorik_fiyat_ort3y": 26.03
+  },
+  "ALARK": {
+   "tarih": "2026-11-23",
+   "nad_mn": 51244,
+   "piyasa_degeri_mn": 40330,
+   "iskonto": -0.213,
+   "ort_3y": -0.3286,
+   "uzun_vade": null,
+   "yuzdelik_3y": 89.7,
+   "yuzdelik_1y": 78.9,
+   "degisim_20g": 0.0019,
+   "degisim_60g": -0.0256,
+   "durum": "ISKONTO DAR (pahali)",
+   "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+   "fiyatsiz": [],
+   "teorik_fiyat_ort3y": 86.59
+  },
+  "GLYHO": {
+   "tarih": "2026-11-23",
+   "nad_mn": 29690,
+   "piyasa_degeri_mn": 25067,
+   "iskonto": -0.1557,
+   "ort_3y": -0.4997,
+   "uzun_vade": null,
+   "yuzdelik_3y": 82.0,
+   "yuzdelik_1y": 46.2,
+   "degisim_20g": -0.0212,
+   "degisim_60g": -0.0801,
+   "durum": "ISKONTO DAR (pahali)",
+   "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+   "fiyatsiz": [],
+   "teorik_fiyat_ort3y": 8.91
+  },
+  "NTHOL": {
+   "tarih": "2026-11-23",
+   "nad_mn": 85253,
+   "piyasa_degeri_mn": 14996,
+   "iskonto": -0.8241,
+   "ort_3y": -0.796,
+   "uzun_vade": null,
+   "yuzdelik_3y": 20.0,
+   "yuzdelik_1y": 0.8,
+   "degisim_20g": 0.0045,
+   "degisim_60g": -0.0512,
+   "durum": "DERIN ISKONTO",
+   "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+   "fiyatsiz": [],
+   "teorik_fiyat_ort3y": 39.39
+  },
+  "GSDHO": {
+   "tarih": "2026-11-23",
+   "nad_mn": 26046,
+   "piyasa_degeri_mn": 3368,
+   "iskonto": -0.8707,
+   "ort_3y": -0.8589,
+   "uzun_vade": null,
+   "yuzdelik_3y": 28.7,
+   "yuzdelik_1y": 4.4,
+   "degisim_20g": 0.0062,
+   "degisim_60g": -0.0289,
+   "durum": "NORMAL",
+   "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+   "fiyatsiz": [],
+   "teorik_fiyat_ort3y": 4.3
+  },
+  "OSTIM": {
+   "tarih": "2026-11-23",
+   "nad_mn": 2487,
+   "piyasa_degeri_mn": 592,
+   "iskonto": -0.7618,
+   "ort_3y": -0.53,
+   "uzun_vade": null,
+   "yuzdelik_3y": 0.0,
+   "yuzdelik_1y": 0.0,
+   "degisim_20g": -0.0049,
+   "degisim_60g": -0.1522,
+   "durum": "DERIN ISKONTO",
+   "kaynak": "TEST: Marbas Holding Bulteni 48.hafta (9 Ara 2025) NAD; paylar KAP genel bilgiler 23 Kas 2026",
+   "fiyatsiz": [],
+   "teorik_fiyat_ort3y": 1.91
   }
  }
 }
