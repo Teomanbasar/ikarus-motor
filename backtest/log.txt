@@ -1,60 +1,60 @@
-  roe        2025+ n= 257 | D1 +41.7/ +3.2 D2  +3.6/ +0.1 D3 +18.7/ +5.5 | D3-D1 -23.0 (t=-1.7)
-  F          tum   n= 853 | D1 +21.2/ +1.5 D2 +18.1/ +1.6 D3  +8.4/ +0.9 | D3-D1 -12.8 (t=-2.7)
-  F          2025+ n= 257 | D1 +28.0/ +3.3 D2 +16.8/ -0.9 D3 +11.4/ +4.8 | D3-D1 -16.5 (t=-1.7)
-  sue_nk     tum   n= 747 | D1 +16.5/ +2.8 D2 +13.5/ +0.5 D3 +19.6/ +3.4 | D3-D1  +3.1 (t=+0.6)
-  sue_nk     2025+ n= 249 | D1 +19.5/ +4.1 D2 +15.4/ -0.1 D3 +20.7/ +3.0 | D3-D1  +1.2 (t=+0.1)
-  satis_reel tum   n= 792 | D1 +14.5/ -0.3 D2 +12.7/ +0.6 D3 +19.6/ +3.3 | D3-D1  +5.1 (t=+1.1)
-  satis_reel 2025+ n= 214 | D1 +17.2/ +4.6 D2  +9.3/ +0.6 D3 +20.3/ -6.0 | D3-D1  +3.1 (t=+0.3)
+bildirim tarih araligi: 2021-01-04 .. 2026-10-22
+ayristirilan DKB bildirimi 7624, islem tablosu okunan 6249 (%82); devir/hediye vb. 77 cikarildi
+yonetici (gorevi yazan) 2914, diger (ortak/sirket/kisi) 3335
+en sik konular: Pay Alım Bildirimi:650 | PAY ALIM BİLDİRİMİ:522 | Pay Alım Satım Bildirimi:405 | Pay Satım Bildirimi:259 | Pay Satış Bildirimi:154 | Pay Alımı:153 | PAY ALIM SATIM BİLDİRİMİ:147 | Sermaye Piyasası Kurulu'nun Seri:122
+en sik gorevler: Yönetim Kurulu Başkanı:649 | YÖNETİM KURULU BAŞKANI:608 | YÖNETİM KURULU ÜYESİ:217 | Yönetim Kurulu Üyesi:137 | BAŞKAN:113 | Yönetim Kurulu Başkan Yardımcısı:90 | Yönetim Kurulu Başkan Vekili:85 | YÖNETİM KURULU BAŞKAN YARDIMCISI:44
 
-== SIGORTA: 0 sirket, 0 bilanco olayi (sistemde puan alan)
+YENI DALGA (hisse bazinda 90 gun sessizlikten sonra ilk bildirim), ertesi gun kapanistan piyasa ortancasina gore fazla getiri (kirpik ort.):
+  NET ALIM (hepsi)                       5g ort %+0.4 ortanca %-0.0 kaz %49 (n=692, t=+1.8) | 21g ort %+1.5 ortanca %-0.2 kaz %50 (n=690, t=+3.0) | 63g ort %+4.9 ortanca %-0.0 kaz %50 (n=641, t=+4.5) | 126g ort %+11.0 ortanca %+1.5 kaz %51 (n=598, t=+5.9)
+  NET SATIM (hepsi)                      5g ort %-0.4 ortanca %-0.7 kaz %45 (n=648, t=-1.3) | 21g ort %-0.3 ortanca %-2.0 kaz %43 (n=648, t=-0.4) | 63g ort %+1.8 ortanca %-5.9 kaz %39 (n=627, t=+1.5) | 126g ort %+7.6 ortanca %-6.8 kaz %42 (n=591, t=+3.8)
+  alim: YONETICI                         5g ort %+0.6 ortanca %+0.5 kaz %55 (n=338, t=+2.0) | 21g ort %+2.3 ortanca %+1.4 kaz %56 (n=336, t=+3.2) | 63g ort %+5.2 ortanca %+1.6 kaz %52 (n=294, t=+3.6) | 126g ort %+10.1 ortanca %+5.7 kaz %55 (n=278, t=+4.3)
+  alim: ortak / diger                    5g ort %+0.4 ortanca %-0.4 kaz %47 (n=467, t=+1.3) | 21g ort %+1.1 ortanca %-1.0 kaz %47 (n=467, t=+1.8) | 63g ort %+4.7 ortanca %-0.2 kaz %49 (n=443, t=+3.5) | 126g ort %+11.7 ortanca %+0.6 kaz %50 (n=412, t=+4.9)
+  satim: YONETICI                        5g ort %-0.4 ortanca %-0.9 kaz %44 (n=333, t=-0.9) | 21g ort %-1.4 ortanca %-2.0 kaz %42 (n=333, t=-1.8) | 63g ort %-0.8 ortanca %-7.1 kaz %36 (n=318, t=-0.5) | 126g ort %+6.9 ortanca %-8.5 kaz %42 (n=296, t=+2.4)
+  alim: paya etkisi >= 0.5 puan          5g ort %+0.2 ortanca %+0.1 kaz %50 (n=252, t=+0.5) | 21g ort %+2.1 ortanca %-1.3 kaz %46 (n=250, t=+1.9) | 63g ort %+4.6 ortanca %-0.8 kaz %47 (n=220, t=+2.1) | 126g ort %+18.4 ortanca %+2.7 kaz %52 (n=199, t=+4.4)
+  alim: paya etkisi < 0.5 puan           5g ort %+0.6 ortanca %+0.0 kaz %50 (n=543, t=+2.3) | 21g ort %+1.7 ortanca %+0.6 kaz %52 (n=543, t=+3.2) | 63g ort %+4.2 ortanca %+0.2 kaz %51 (n=508, t=+3.7) | 126g ort %+10.1 ortanca %+2.5 kaz %53 (n=481, t=+5.0)
+  alim: 30 gunde 2+ farkli alici         5g ort %-1.0 ortanca %+0.4 kaz %53 (n=66, t=-1.1) | 21g ort %-1.7 ortanca %-1.0 kaz %46 (n=65, t=-1.1) | 63g ort %+2.0 ortanca %-2.4 kaz %41 (n=39, t=+0.5) | 126g ort %+35.4 ortanca %+27.3 kaz %68 (n=31, t=+2.9)
+    net alim 2021                        5g ort %+0.9 ortanca %+0.1 kaz %53 (n=92, t=+1.3) | 21g ort %+0.2 ortanca %-0.7 kaz %47 (n=92, t=+0.2) | 63g ort %+4.3 ortanca %+2.3 kaz %53 (n=92, t=+2.0) | 126g ort %+8.0 ortanca %-2.7 kaz %49 (n=92, t=+2.2)
+    net alim 2022                        5g ort %+1.6 ortanca %+0.0 kaz %50 (n=115, t=+2.7) | 21g ort %+4.5 ortanca %+1.7 kaz %58 (n=115, t=+3.2) | 63g ort %+17.1 ortanca %+1.7 kaz %53 (n=115, t=+4.1) | 126g ort %+26.0 ortanca %+9.3 kaz %55 (n=115, t=+3.8)
+    net alim 2023                        5g ort %-1.0 ortanca %-1.8 kaz %36 (n=137, t=-2.0) | 21g ort %+0.2 ortanca %-2.7 kaz %37 (n=137, t=+0.1) | 63g ort %+0.3 ortanca %-4.3 kaz %42 (n=137, t=+0.1) | 126g ort %+4.0 ortanca %-7.7 kaz %45 (n=136, t=+0.9)
+    net alim 2024                        5g ort %+0.7 ortanca %+0.9 kaz %57 (n=116, t=+1.4) | 21g ort %+1.9 ortanca %+1.8 kaz %53 (n=116, t=+1.7) | 63g ort %+4.7 ortanca %+0.3 kaz %51 (n=117, t=+2.1) | 126g ort %+13.5 ortanca %+2.0 kaz %53 (n=117, t=+4.3)
+    net alim 2025                        5g ort %+0.4 ortanca %+0.3 kaz %52 (n=114, t=+0.7) | 21g ort %+0.2 ortanca %-0.9 kaz %46 (n=114, t=+0.2) | 63g ort %+2.3 ortanca %-2.1 kaz %46 (n=114, t=+0.9) | 126g ort %+8.1 ortanca %+3.9 kaz %54 (n=114, t=+2.1)
+    net alim 2026                        5g ort %+0.2 ortanca %+0.3 kaz %52 (n=118, t=+0.3) | 21g ort %+1.8 ortanca %+1.9 kaz %58 (n=116, t=+1.3) | 63g ort %+3.3 ortanca %+2.6 kaz %58 (n=66, t=+1.3) | 126g ort %+4.0 ortanca %+5.6 kaz %54 (n=24, t=+0.8)
+pas detay 0/358 72 sn
+pas detay: 358 yeni, toplam 7974, kalan 0; okunan 279
+hatalar: {"could not convert string to float: '31.706.714'": 2, "could not convert string to float: '3.441.483'": 2, "could not convert string to float: '1.870.000'": 1, "could not convert string to float: '1.342.275'": 1, "could not convert string to float: '20.648.897'": 1, "could not convert string to float: '2.581.112'": 1}
+  NET ALIM (hepsi)                       5g ort %+0.4 ortanca %-0.0 kaz %49 (n=714, t=+1.8) | 21g ort %+1.5 ortanca %-0.2 kaz %50 (n=691, t=+3.0) | 63g ort %+4.9 ortanca %-0.0 kaz %50 (n=641, t=+4.5) | 126g ort %+11.0 ortanca %+1.5 kaz %51 (n=598, t=+5.9)
+  NET SATIM (hepsi)                      5g ort %-0.4 ortanca %-0.8 kaz %45 (n=653, t=-1.4) | 21g ort %-0.3 ortanca %-2.0 kaz %43 (n=648, t=-0.4) | 63g ort %+1.8 ortanca %-5.9 kaz %39 (n=627, t=+1.5) | 126g ort %+7.6 ortanca %-6.8 kaz %42 (n=591, t=+3.8)
+  alim: YONETICI                         5g ort %+0.6 ortanca %+0.5 kaz %55 (n=355, t=+1.9) | 21g ort %+2.3 ortanca %+1.4 kaz %56 (n=336, t=+3.2) | 63g ort %+5.2 ortanca %+1.6 kaz %52 (n=294, t=+3.6) | 126g ort %+10.1 ortanca %+5.7 kaz %55 (n=278, t=+4.3)
+  alim: ortak / diger                    5g ort %+0.3 ortanca %-0.4 kaz %47 (n=478, t=+1.2) | 21g ort %+1.1 ortanca %-1.0 kaz %47 (n=468, t=+1.8) | 63g ort %+4.7 ortanca %-0.2 kaz %49 (n=443, t=+3.5) | 126g ort %+11.7 ortanca %+0.6 kaz %50 (n=412, t=+4.9)
+  satim: YONETICI                        5g ort %-0.3 ortanca %-0.8 kaz %44 (n=335, t=-0.8) | 21g ort %-1.4 ortanca %-2.0 kaz %42 (n=333, t=-1.8) | 63g ort %-0.8 ortanca %-7.1 kaz %36 (n=318, t=-0.5) | 126g ort %+6.9 ortanca %-8.5 kaz %42 (n=296, t=+2.4)
+  alim: paya etkisi >= 0.5 puan          5g ort %+0.1 ortanca %-0.1 kaz %49 (n=260, t=+0.2) | 21g ort %+2.1 ortanca %-1.3 kaz %46 (n=250, t=+1.9) | 63g ort %+4.6 ortanca %-0.8 kaz %47 (n=220, t=+2.1) | 126g ort %+18.4 ortanca %+2.7 kaz %52 (n=199, t=+4.4)
+  alim: paya etkisi < 0.5 puan           5g ort %+0.5 ortanca %+0.0 kaz %50 (n=558, t=+2.2) | 21g ort %+1.7 ortanca %+0.6 kaz %52 (n=543, t=+3.3) | 63g ort %+4.2 ortanca %+0.2 kaz %51 (n=508, t=+3.7) | 126g ort %+10.1 ortanca %+2.5 kaz %53 (n=481, t=+5.0)
+  alim: 30 gunde 2+ farkli alici         5g ort %-1.3 ortanca %+0.5 kaz %53 (n=73, t=-1.5) | 21g ort %-1.7 ortanca %-1.0 kaz %46 (n=65, t=-1.1) | 63g ort %+2.0 ortanca %-2.4 kaz %41 (n=39, t=+0.5) | 126g ort %+35.4 ortanca %+27.3 kaz %68 (n=31, t=+2.9)
+    net alim 2021                        5g ort %+0.9 ortanca %+0.1 kaz %53 (n=92, t=+1.3) | 21g ort %+0.2 ortanca %-0.7 kaz %47 (n=92, t=+0.2) | 63g ort %+4.3 ortanca %+2.3 kaz %53 (n=92, t=+2.0) | 126g ort %+8.0 ortanca %-2.7 kaz %49 (n=92, t=+2.2)
+    net alim 2022                        5g ort %+1.6 ortanca %+0.0 kaz %50 (n=115, t=+2.7) | 21g ort %+4.5 ortanca %+1.7 kaz %58 (n=115, t=+3.2) | 63g ort %+17.1 ortanca %+1.7 kaz %53 (n=115, t=+4.1) | 126g ort %+26.0 ortanca %+9.3 kaz %55 (n=115, t=+3.8)
+    net alim 2023                        5g ort %-1.0 ortanca %-1.8 kaz %36 (n=137, t=-2.0) | 21g ort %+0.2 ortanca %-2.7 kaz %37 (n=137, t=+0.1) | 63g ort %+0.3 ortanca %-4.3 kaz %42 (n=137, t=+0.1) | 126g ort %+4.0 ortanca %-7.7 kaz %45 (n=136, t=+0.9)
+    net alim 2024                        5g ort %+0.7 ortanca %+0.9 kaz %57 (n=116, t=+1.4) | 21g ort %+1.9 ortanca %+1.8 kaz %53 (n=116, t=+1.7) | 63g ort %+4.7 ortanca %+0.3 kaz %51 (n=117, t=+2.1) | 126g ort %+13.5 ortanca %+2.0 kaz %53 (n=117, t=+4.3)
+    net alim 2025                        5g ort %+0.4 ortanca %+0.3 kaz %52 (n=114, t=+0.7) | 21g ort %+0.2 ortanca %-0.9 kaz %46 (n=114, t=+0.2) | 63g ort %+2.3 ortanca %-2.1 kaz %46 (n=114, t=+0.9) | 126g ort %+8.1 ortanca %+3.9 kaz %54 (n=114, t=+2.1)
+    net alim 2026                        5g ort %+0.1 ortanca %+0.3 kaz %51 (n=140, t=+0.1) | 21g ort %+1.8 ortanca %+1.9 kaz %58 (n=117, t=+1.3) | 63g ort %+3.3 ortanca %+2.6 kaz %58 (n=66, t=+1.3) | 126g ort %+4.0 ortanca %+5.6 kaz %54 (n=24, t=+0.8)
+ICERIDEN ALIM-SATIM (PDF'ten ayristirilmis), 22-23 Kas 2026
+bildirim tarih araligi: 2021-01-04 .. 2026-11-20
+ayristirilan DKB bildirimi 7974, islem tablosu okunan 6528 (%82); devir/hediye vb. 78 cikarildi
+yonetici (gorevi yazan) 3106, diger (ortak/sirket/kisi) 3422
+en sik konular: Pay Alım Bildirimi:713 | PAY ALIM BİLDİRİMİ:546 | Pay Alım Satım Bildirimi:416 | Pay Satım Bildirimi:260 | PAY ALIM SATIM BİLDİRİMİ:164 | Pay Alımı:161 | Pay Satış Bildirimi:155 | Sermaye Piyasası Kurulu'nun Seri:122
+en sik gorevler: Yönetim Kurulu Başkanı:692 | YÖNETİM KURULU BAŞKANI:663 | YÖNETİM KURULU ÜYESİ:251 | Yönetim Kurulu Üyesi:145 | BAŞKAN:119 | Yönetim Kurulu Başkan Yardımcısı:90 | Yönetim Kurulu Başkan Vekili:87 | YÖNETİM KURULU BAŞKAN YARDIMCISI:44
 
-== FAKTORING/LEASING: 0 sirket, 0 bilanco olayi (sistemde puan alan)
-
-SEKTOR GRUPLARI ICINDE OLCU TESTI (22 Kas 2026)
-Her grup icinde, ayni bilanco donemindeki sirketler 3 dilime ayrilir (3 = olcuye gore en iyi). 126 gun, piyasa ortancasina gore fazla getiri (kirpik ort. / ortanca).
-pddd ve ltv'de dusuk iyi; digerlerinde yuksek iyi. v3 = sistemin bugunku temel puani.
-
-== GYO: 57 sirket, 1145 bilanco olayi (sistemde puan alan)
-  v3         tum   n= 706 | D1  +3.8/ -0.0 D2 +11.1/ +5.8 D3 +14.3/+13.5 | D3-D1 +10.6 (t=+3.2)
-  v3         2025+ n= 245 | D1 +10.3/ +6.6 D2  +5.5/ +3.1 D3 +15.5/+14.1 | D3-D1  +5.1 (t=+1.0)
-  pddd       tum   n= 896 | D1  -0.8/ -7.6 D2  +8.8/ +4.1 D3 +16.1/+11.7 | D3-D1 +16.9 (t=+5.9)
-  pddd       2025+ n= 259 | D1  +7.3/ -2.2 D2 +12.7/ +5.7 D3 +10.3/ +9.5 | D3-D1  +3.0 (t=+0.6)
-  kaz_get    tum   n= 893 | D1  +2.4/ -2.7 D2  +5.8/ +1.4 D3 +15.7/+13.1 | D3-D1 +13.3 (t=+4.7)
-  kaz_get    2025+ n= 259 | D1  +8.7/ +5.8 D2  +5.7/ -1.4 D3 +15.7/+15.3 | D3-D1  +6.9 (t=+1.6)
-  fav_get    tum   n= 893 | D1  -0.4/ -3.6 D2  +8.9/ +4.5 D3 +15.3/+13.8 | D3-D1 +15.6 (t=+6.2)
-  fav_get    2025+ n= 259 | D1  +6.4/ +5.3 D2  +7.8/ +2.1 D3 +15.9/+14.3 | D3-D1  +9.5 (t=+2.3)
-  ltv        tum   n= 901 | D1 +10.3/ +6.8 D2  +8.2/ +3.2 D3  +7.3/ +3.9 | D3-D1  -3.0 (t=-1.1)
-  ltv        2025+ n= 259 | D1 +12.3/ +7.7 D2  +3.6/ +5.2 D3 +14.1/ +9.6 | D3-D1  +1.9 (t=+0.4)
-  roe        tum   n= 752 | D1  +8.5/ +3.4 D2  +8.1/ +2.4 D3 +10.5/ +8.3 | D3-D1  +2.0 (t=+0.7)
-  roe        2025+ n= 249 | D1  +8.6/ +6.2 D2 +10.9/ +5.2 D3 +11.6/+12.5 | D3-D1  +3.1 (t=+0.7)
-  F          tum   n= 752 | D1  +7.9/ +0.1 D2 +10.2/ +7.8 D3  +9.6/ +6.2 | D3-D1  +1.7 (t=+0.5)
-  F          2025+ n= 249 | D1 +13.4/ +4.1 D2  +9.2/ +9.6 D3  +9.8/ +9.5 | D3-D1  -3.6 (t=-0.7)
-  sue_nk     tum   n= 653 | D1  +8.1/ +4.1 D2  +8.6/ +2.8 D3 +13.3/+12.1 | D3-D1  +5.2 (t=+1.6)
-  sue_nk     2025+ n= 239 | D1  +6.9/ +6.4 D2  +5.8/ +2.7 D3 +18.4/+14.5 | D3-D1 +11.5 (t=+2.5)
-  satis_reel tum   n= 808 | D1  +9.1/ +5.2 D2 +10.3/ +6.0 D3  +8.3/ +4.6 | D3-D1  -0.8 (t=-0.3)
-  satis_reel 2025+ n= 242 | D1  +9.1/ +7.6 D2 +12.5/ +9.3 D3  +8.4/ +6.9 | D3-D1  -0.7 (t=-0.2)
-
-== HOLDING: 54 sirket, 1285 bilanco olayi (sistemde puan alan)
-  v3         tum   n= 789 | D1 +21.8/ +0.1 D2 +16.9/ +0.5 D3 +15.2/ +3.7 | D3-D1  -6.6 (t=-1.3)
-  v3         2025+ n= 253 | D1 +39.8/ -0.3 D2 +17.8/ +3.7 D3  +7.8/ +1.2 | D3-D1 -32.0 (t=-2.6)
-  pddd       tum   n= 994 | D1 +30.9/ -1.2 D2  +6.7/ -3.8 D3 +13.5/ +5.6 | D3-D1 -17.4 (t=-3.2)
-  pddd       2025+ n= 262 | D1 +46.0/ -1.9 D2  +8.4/ -2.4 D3  +8.4/ +5.6 | D3-D1 -37.7 (t=-2.9)
-  kaz_get    tum   n=1001 | D1 +10.9/ -2.7 D2 +16.6/ +1.2 D3 +16.2/ +3.9 | D3-D1  +5.3 (t=+1.4)
-  kaz_get    2025+ n= 262 | D1 +18.5/ +0.9 D2 +22.3/ +0.0 D3 +12.9/ +4.1 | D3-D1  -5.6 (t=-0.7)
-  fav_get    tum   n= 991 | D1 +15.6/ -0.6 D2 +19.7/ +0.5 D3  +9.3/ +2.4 | D3-D1  -6.3 (t=-1.7)
-  fav_get    2025+ n= 255 | D1 +39.2/ +6.3 D2 +18.6/ +0.7 D3  +1.9/ -2.1 | D3-D1 -37.3 (t=-3.6)
-  ltv        tum   n=1005 | D1 +14.8/ +5.5 D2 +18.7/ -2.7 D3  +9.3/ +0.7 | D3-D1  -5.5 (t=-1.7)
-  ltv        2025+ n= 262 | D1 +19.0/ +7.1 D2 +21.4/ -9.8 D3 +17.3/ +4.2 | D3-D1  -1.7 (t=-0.2)
-  roe        tum   n= 853 | D1 +17.0/ -1.4 D2 +10.7/ +2.9 D3 +20.1/ +2.6 | D3-D1  +3.2 (t=+0.6)
-  roe        2025+ n= 257 | D1 +41.7/ +3.2 D2  +3.6/ +0.1 D3 +18.7/ +5.5 | D3-D1 -23.0 (t=-1.7)
-  F          tum   n= 853 | D1 +21.2/ +1.5 D2 +18.1/ +1.6 D3  +8.4/ +0.9 | D3-D1 -12.8 (t=-2.7)
-  F          2025+ n= 257 | D1 +28.0/ +3.3 D2 +16.8/ -0.9 D3 +11.4/ +4.8 | D3-D1 -16.5 (t=-1.7)
-  sue_nk     tum   n= 747 | D1 +16.5/ +2.8 D2 +13.5/ +0.5 D3 +19.6/ +3.4 | D3-D1  +3.1 (t=+0.6)
-  sue_nk     2025+ n= 249 | D1 +19.5/ +4.1 D2 +15.4/ -0.1 D3 +20.7/ +3.0 | D3-D1  +1.2 (t=+0.1)
-  satis_reel tum   n= 792 | D1 +14.5/ -0.3 D2 +12.7/ +0.6 D3 +19.6/ +3.3 | D3-D1  +5.1 (t=+1.1)
-  satis_reel 2025+ n= 214 | D1 +17.2/ +4.6 D2  +9.3/ +0.6 D3 +20.3/ -6.0 | D3-D1  +3.1 (t=+0.3)
-
-== SIGORTA: 0 sirket, 0 bilanco olayi (sistemde puan alan)
-
-== FAKTORING/LEASING: 0 sirket, 0 bilanco olayi (sistemde puan alan)
-
+YENI DALGA (hisse bazinda 90 gun sessizlikten sonra ilk bildirim), ertesi gun kapanistan piyasa ortancasina gore fazla getiri (kirpik ort.):
+  NET ALIM (hepsi)                       5g ort %+0.4 ortanca %-0.0 kaz %49 (n=714, t=+1.8) | 21g ort %+1.5 ortanca %-0.2 kaz %50 (n=691, t=+3.0) | 63g ort %+4.9 ortanca %-0.0 kaz %50 (n=641, t=+4.5) | 126g ort %+11.0 ortanca %+1.5 kaz %51 (n=598, t=+5.9)
+  NET SATIM (hepsi)                      5g ort %-0.4 ortanca %-0.8 kaz %45 (n=653, t=-1.4) | 21g ort %-0.3 ortanca %-2.0 kaz %43 (n=648, t=-0.4) | 63g ort %+1.8 ortanca %-5.9 kaz %39 (n=627, t=+1.5) | 126g ort %+7.6 ortanca %-6.8 kaz %42 (n=591, t=+3.8)
+  alim: YONETICI                         5g ort %+0.6 ortanca %+0.5 kaz %55 (n=355, t=+1.9) | 21g ort %+2.3 ortanca %+1.4 kaz %56 (n=336, t=+3.2) | 63g ort %+5.2 ortanca %+1.6 kaz %52 (n=294, t=+3.6) | 126g ort %+10.1 ortanca %+5.7 kaz %55 (n=278, t=+4.3)
+  alim: ortak / diger                    5g ort %+0.3 ortanca %-0.4 kaz %47 (n=478, t=+1.2) | 21g ort %+1.1 ortanca %-1.0 kaz %47 (n=468, t=+1.8) | 63g ort %+4.7 ortanca %-0.2 kaz %49 (n=443, t=+3.5) | 126g ort %+11.7 ortanca %+0.6 kaz %50 (n=412, t=+4.9)
+  satim: YONETICI                        5g ort %-0.3 ortanca %-0.8 kaz %44 (n=335, t=-0.8) | 21g ort %-1.4 ortanca %-2.0 kaz %42 (n=333, t=-1.8) | 63g ort %-0.8 ortanca %-7.1 kaz %36 (n=318, t=-0.5) | 126g ort %+6.9 ortanca %-8.5 kaz %42 (n=296, t=+2.4)
+  alim: paya etkisi >= 0.5 puan          5g ort %+0.1 ortanca %-0.1 kaz %49 (n=260, t=+0.2) | 21g ort %+2.1 ortanca %-1.3 kaz %46 (n=250, t=+1.9) | 63g ort %+4.6 ortanca %-0.8 kaz %47 (n=220, t=+2.1) | 126g ort %+18.4 ortanca %+2.7 kaz %52 (n=199, t=+4.4)
+  alim: paya etkisi < 0.5 puan           5g ort %+0.5 ortanca %+0.0 kaz %50 (n=558, t=+2.2) | 21g ort %+1.7 ortanca %+0.6 kaz %52 (n=543, t=+3.3) | 63g ort %+4.2 ortanca %+0.2 kaz %51 (n=508, t=+3.7) | 126g ort %+10.1 ortanca %+2.5 kaz %53 (n=481, t=+5.0)
+  alim: 30 gunde 2+ farkli alici         5g ort %-1.3 ortanca %+0.5 kaz %53 (n=73, t=-1.5) | 21g ort %-1.7 ortanca %-1.0 kaz %46 (n=65, t=-1.1) | 63g ort %+2.0 ortanca %-2.4 kaz %41 (n=39, t=+0.5) | 126g ort %+35.4 ortanca %+27.3 kaz %68 (n=31, t=+2.9)
+    net alim 2021                        5g ort %+0.9 ortanca %+0.1 kaz %53 (n=92, t=+1.3) | 21g ort %+0.2 ortanca %-0.7 kaz %47 (n=92, t=+0.2) | 63g ort %+4.3 ortanca %+2.3 kaz %53 (n=92, t=+2.0) | 126g ort %+8.0 ortanca %-2.7 kaz %49 (n=92, t=+2.2)
+    net alim 2022                        5g ort %+1.6 ortanca %+0.0 kaz %50 (n=115, t=+2.7) | 21g ort %+4.5 ortanca %+1.7 kaz %58 (n=115, t=+3.2) | 63g ort %+17.1 ortanca %+1.7 kaz %53 (n=115, t=+4.1) | 126g ort %+26.0 ortanca %+9.3 kaz %55 (n=115, t=+3.8)
+    net alim 2023                        5g ort %-1.0 ortanca %-1.8 kaz %36 (n=137, t=-2.0) | 21g ort %+0.2 ortanca %-2.7 kaz %37 (n=137, t=+0.1) | 63g ort %+0.3 ortanca %-4.3 kaz %42 (n=137, t=+0.1) | 126g ort %+4.0 ortanca %-7.7 kaz %45 (n=136, t=+0.9)
+    net alim 2024                        5g ort %+0.7 ortanca %+0.9 kaz %57 (n=116, t=+1.4) | 21g ort %+1.9 ortanca %+1.8 kaz %53 (n=116, t=+1.7) | 63g ort %+4.7 ortanca %+0.3 kaz %51 (n=117, t=+2.1) | 126g ort %+13.5 ortanca %+2.0 kaz %53 (n=117, t=+4.3)
+    net alim 2025                        5g ort %+0.4 ortanca %+0.3 kaz %52 (n=114, t=+0.7) | 21g ort %+0.2 ortanca %-0.9 kaz %46 (n=114, t=+0.2) | 63g ort %+2.3 ortanca %-2.1 kaz %46 (n=114, t=+0.9) | 126g ort %+8.1 ortanca %+3.9 kaz %54 (n=114, t=+2.1)
+    net alim 2026                        5g ort %+0.1 ortanca %+0.3 kaz %51 (n=140, t=+0.1) | 21g ort %+1.8 ortanca %+1.9 kaz %58 (n=117, t=+1.3) | 63g ort %+3.3 ortanca %+2.6 kaz %58 (n=66, t=+1.3) | 126g ort %+4.0 ortanca %+5.6 kaz %54 (n=24, t=+0.8)
