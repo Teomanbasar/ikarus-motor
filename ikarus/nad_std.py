@@ -210,3 +210,123 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def icinden_test():
+    """23 Kas gece (Teoman: 'holdingin icinden nasil cikilir'). Iki fikir, 2014-2026:
+    A) Istirak sepeti onden gider (ownership-linked firms lead-lag): son 21 gunde borsadaki istiraklerin pay agirlikli
+       getirisi - holdingin kendi getirisi (= 'yakalanmamis' kisim) -> holdingin sonraki 21/63 gun BIST100'e gore getirisi.
+    B) Istiraklerin temel puani: borsadaki istiraklerin v3 sirasi (son bilinen), pay x piyasa degeri agirlikli -> sonraki 126 gun.
+    Holdingler: borsadaki istirak NAD'in >= %25'i olanlar (NAD = duzeltilmis defter, bkz. main)."""
+    from . import portfoy_bt as PB
+    from . import firsat_bt as FB
+    from . import temel_bt2 as B2
+    cfg = json.loads((D.DATA / "nad.json").read_text(encoding="utf-8"))
+    G = T.gecmis_birlesik()
+    GR = PB.grup_listesi()
+    hs = sorted((GR["HOLDING"] | {"BLCYT", "OSTIM", "ECZYT", "GSDHO"}) & set(G))
+    try:
+        K = json.loads((R / "nad_genel.json").read_text(encoding="utf-8"))
+    except Exception:
+        K = {}
+    ist = sorted({t for v in K.values() for t in v.get("borsada", {})} | {t for p in ELLE.values() for t in p}
+                 | {t for c in cfg.values() if isinstance(c, dict) for t in list(c.get("halka_acik", {})) + list(c.get("paylar", {}))})
+    px = D.prices(sorted(set(hs) | set(ist)), start="2013-01-01")
+    xu = PB._xu_duzelt(D.xu100(start="2013-01-01").copy())
+    P = paylar(cfg, px, G)
+    SER = seriler(hs, P, px, G)
+    sec = [h for h, (S, kul) in SER.items() if len(kul) and (S["lis"] / S["nad"]).iloc[-250:].median() >= 0.25]
+    grid = xu.index[xu.index >= "2014-06-01"][::21]
+    L = ["HOLDINGIN ICINDEN: istirak sepeti onden gider mi? istiraklerin temel puani holdingi aciklar mi? (23 Kas 2026)",
+         f"holdingler (borsadaki istirak NAD'in >= %25'i): {', '.join(sec)}", ""]
+    # A) lead-lag
+    rows = []
+    for h in sec:
+        S, kul = SER[h]
+        idx = S.index
+        ch = px[h]["close"].reindex(idx)
+        x = xu.reindex(idx).ffill()
+        smv = {t: _sermaye(G[t]["tab"]) for t in kul}
+        val = pd.DataFrame({t: P[h][t] * px[t]["close"].reindex(idx).ffill() * smv[t] for t in kul})
+        ret21 = {t: px[t]["close"].reindex(idx).ffill().pct_change(21) for t in kul}
+        w = val.shift(21).div(val.shift(21).sum(axis=1), axis=0)
+        sep = sum(w[t] * ret21[t] for t in kul)
+        own = ch.pct_change(21)
+        d = pd.DataFrame({"sepet21": 100 * sep, "kendi21": 100 * own, "x21": 100 * x.pct_change(21),
+                          "f21": 100 * (ch.shift(-21) / ch - x.shift(-21) / x), "f63": 100 * (ch.shift(-63) / ch - x.shift(-63) / x),
+                          "lis_pay": S["lis"] / S["nad"]})
+        d["acik"] = d.sepet21 - d.kendi21
+        d["h"] = h
+        rows.append(d[d.index.isin(grid)])
+    A = pd.concat(rows).dropna(subset=["acik"])
+    A["yil"] = A.index.year
+
+    def ozet(X, k):
+        v = X[k].dropna()
+        if len(v) < 10:
+            return f"n {len(v):3d}"
+        v2 = v.clip(v.quantile(.05), v.quantile(.95))
+        return f"n {len(v):4d} ort {v2.mean():+5.1f} ort.ca {v.median():+5.1f} kaz %{100 * (v > 0).mean():3.0f} t {v2.mean() / (v2.std() / np.sqrt(len(v2))):+.1f}"
+    L.append("A) ACIK = son 21 gunde istirak sepeti getirisi - holdingin kendi getirisi (puan). Pozitif: istirakler yukseldi, holding yakalamadi.")
+    A["q"] = A.groupby(level=0)["acik"].rank(pct=True)
+    for k in ("f21", "f63"):
+        L.append(f"  {k}: acik en yuksek 1/3 (kesit): {ozet(A[A.q >= 2 / 3], k)}")
+        L.append(f"  {k}: acik en dusuk 1/3 (kesit) : {ozet(A[A.q <= 1 / 3], k)}")
+        L.append(f"  {k}: acik >= +5 puan (mutlak)  : {ozet(A[A.acik >= 5], k)}")
+        L.append(f"  {k}: acik <= -5 puan (mutlak)  : {ozet(A[A.acik <= -5], k)}")
+    for per, m in (("2014-17", A.yil <= 2017), ("2018-20", A.yil.between(2018, 2020)), ("2021-23", A.yil.between(2021, 2023)), ("2024+", A.yil >= 2024)):
+        X = A[m]
+        L.append(f"  f21 {per}: acik>=+5 {ozet(X[X.acik >= 5], 'f21')} | acik<=-5 {ozet(X[X.acik <= -5], 'f21')}")
+    L.append("  holding basina gozlem: " + ", ".join(f"{h} {n}" for h, n in A.h.value_counts().items()))
+    # B) istiraklerin temel puani
+    O = B2.olaylar(G, D.m3())
+    pxa = D.prices(sorted(O["t"].unique()), start="2013-01-01")
+    FB.HAM_DONDUR = True
+    E = FB.puanlar(O, pxa)
+    FB.HAM_DONDUR = False
+    E = E.dropna(subset=["v3r"]).sort_values("giris")
+    V = E.pivot_table(index="giris", columns="t", values="v3r", aggfunc="last").sort_index()
+    rows = []
+    for h in sec:
+        S, kul = SER[h]
+        idx = S.index[S.index.isin(grid)]
+        if not len(idx):
+            continue
+        kul2 = [t for t in kul if t in V.columns]
+        if not kul2:
+            continue
+        Vh = V[kul2].reindex(V.index.union(idx)).ffill().reindex(idx)
+        # en fazla ~1 yil eski puan kullan
+        son = E[E.t.isin(kul2)].pivot_table(index="giris", columns="t", values="v3r", aggfunc="last").notna()
+        smv = {t: _sermaye(G[t]["tab"]) for t in kul2}
+        val = pd.DataFrame({t: P[h][t] * px[t]["close"].reindex(idx).ffill() * smv[t] for t in kul2 if t in px})
+        w = val.div(val.sum(axis=1), axis=0)
+        sk = (Vh[val.columns] * w).sum(axis=1) / (w.where(Vh[val.columns].notna()).sum(axis=1))
+        kap = w.where(Vh[val.columns].notna()).sum(axis=1)
+        ch = px[h]["close"].reindex(S.index)
+        x = xu.reindex(S.index).ffill()
+        f126 = (100 * (ch.shift(-126) / ch - x.shift(-126) / x)).reindex(idx)
+        f63 = (100 * (ch.shift(-63) / ch - x.shift(-63) / x)).reindex(idx)
+        own = V[h].reindex(V.index.union(idx)).ffill().reindex(idx) if h in V.columns else pd.Series(np.nan, index=idx)
+        rows.append(pd.DataFrame({"sk": sk, "kap": kap, "f126": f126, "f63": f63, "kendi_v3": own, "h": h}, index=idx))
+    Bt = pd.concat(rows).dropna(subset=["sk"])
+    Bt = Bt[Bt.kap >= 0.5]
+    Bt["yil"] = Bt.index.year
+    Bt["q"] = Bt.groupby(level=0)["sk"].rank(pct=True)
+    L.append("\nB) ISTIRAK PUANI = borsadaki istiraklerin v3 sirasi (0-1, piyasa geneli), pay x piyasa degeri agirlikli. (istirak puani olan agirlik >= %50)")
+    for k in ("f126", "f63"):
+        L.append(f"  {k}: istirak puani >= 0.7 (mutlak): {ozet(Bt[Bt.sk >= 0.7], k)}")
+        L.append(f"  {k}: istirak puani 0.4-0.7        : {ozet(Bt[Bt.sk.between(0.4, 0.7)], k)}")
+        L.append(f"  {k}: istirak puani <= 0.4         : {ozet(Bt[Bt.sk <= 0.4], k)}")
+        L.append(f"  {k}: ayni gun holdingler arasi en iyi 1/3: {ozet(Bt[Bt.q >= 2 / 3], k)} | en kotu 1/3: {ozet(Bt[Bt.q <= 1 / 3], k)}")
+    for per, m in (("2014-17", Bt.yil <= 2017), ("2018-20", Bt.yil.between(2018, 2020)), ("2021-23", Bt.yil.between(2021, 2023)), ("2024+", Bt.yil >= 2024)):
+        X = Bt[m]
+        L.append(f"  f126 {per}: >=0.7 {ozet(X[X.sk >= 0.7], 'f126')} | <=0.4 {ozet(X[X.sk <= 0.4], 'f126')}")
+    X = Bt.dropna(subset=["kendi_v3"])
+    L.append(f"  karsilastirma, holdingin KENDI v3'u: >=0.7 {ozet(X[X.kendi_v3 >= 0.7], 'f126')} | <=0.4 {ozet(X[X.kendi_v3 <= 0.4], 'f126')}")
+    L.append("  holding basina gozlem: " + ", ".join(f"{h} {n}" for h, n in Bt.h.value_counts().items()))
+    son = Bt.groupby("h").tail(1)
+    L.append("  son durum: " + ", ".join(f"{h} {r.sk:.2f}" for h, r in son.set_index("h").iterrows()))
+    txt = "\n".join(L)
+    (R / "icinden_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
