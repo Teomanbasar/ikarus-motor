@@ -1,46 +1,14 @@
 M3 (EVDS): 2026-11 eklendi
-GYO KONTROL: deger artis kazanci puani yaniltiyor mu? (23 Kas 2026)
-126 gun, piyasa ortancasina gore fazla getiri; GYO'lar kendi icinde ayni donemde 3 dilim (3 = olcuye gore yuksek). kirpik ort / ortanca.
-GYO olay sayisi 1145, sirket 57. Faaliyet karinin yarisindan fazlasi 'kagit' (faaliyet-brut>0.5*|faaliyet|) olan olay orani: %33
-
-1) Kagit kar olculeri (yuksek = karin daha cok kagit kismi):
-  kagit_faal     tum   n= 893 | D1  +6.0/ +1.4 D2  +6.1/ +5.3 D3 +12.3/ +6.1 | D3-D1  +6.3 (t=+2.2)
-  kagit_faal     2025+ n= 259 | D1 +10.6/ +3.9 D2  +9.2/+10.2 D3 +13.1/ +7.8 | D3-D1  +2.5 (t=+0.5)
-  kagit_net      tum   n= 893 | D1 +12.9/ +2.6 D2  +5.1/ +4.2 D3  +8.2/ +5.2 | D3-D1  -4.7 (t=-1.5)
-  kagit_net      2025+ n= 259 | D1 +13.4/ +6.2 D2  +5.3/ +3.7 D3 +12.3/+13.9 | D3-D1  -1.1 (t=-0.2)
-
-2) Deger olculeri (yuksek = ucuz):
-  fav_get        tum   n= 893 | D1  -0.4/ -3.6 D2  +8.9/ +4.5 D3 +15.3/+13.8 | D3-D1 +15.6 (t=+6.2)
-  fav_get        2025+ n= 259 | D1  +6.4/ +5.3 D2  +7.8/ +2.1 D3 +15.9/+14.3 | D3-D1  +9.5 (t=+2.3)
-  cekirdek_get   tum   n= 888 | D1  +1.8/ -5.7 D2  +5.8/ +2.0 D3 +15.8/+14.1 | D3-D1 +14.1 (t=+4.8)
-  cekirdek_get   2025+ n= 259 | D1  +8.8/ -2.2 D2  +9.6/ +7.9 D3 +13.2/+13.2 | D3-D1  +4.4 (t=+0.8)
-  nakit_get      tum   n= 887 | D1  +6.7/ +2.6 D2  +4.8/ -0.0 D3 +12.5/+10.0 | D3-D1  +5.7 (t=+2.1)
-  nakit_get      2025+ n= 259 | D1 +11.9/ +6.4 D2  +3.7/ -0.5 D3 +15.1/+14.1 | D3-D1  +3.1 (t=+0.7)
-  kaz_get        tum   n= 893 | D1  +2.4/ -2.7 D2  +5.8/ +1.4 D3 +15.7/+13.1 | D3-D1 +13.3 (t=+4.7)
-  kaz_get        2025+ n= 259 | D1  +8.7/ +5.8 D2  +5.7/ -1.4 D3 +15.7/+15.3 | D3-D1  +6.9 (t=+1.6)
-
-3) v3 (bugunku puan) GYO icinde, ve kagit kari yuksek/dusuk GYO'larda ayri:
-  v3             tum   n= 706 | D1  +3.8/ -0.0 D2 +11.1/ +5.8 D3 +14.3/+13.5 | D3-D1 +10.6 (t=+3.2)
-  v3             2025+ n= 245 | D1 +10.3/ +6.6 D2  +5.5/ +3.1 D3 +15.5/+14.1 | D3-D1  +5.1 (t=+1.0)
-  -- kagit kari YUKSEK yari:
-  v3             tum   n= 354 | D1 +10.4/ -1.2 D2 +11.1/ +7.8 D3 +13.4/+13.2 | D3-D1  +3.0 (t=+0.5)
-  v3             2025+ n= 122 | D1  +8.5/ -2.8 D2 +15.0/+11.8 D3 +14.9/+14.2 | D3-D1  +6.5 (t=+0.8)
-  -- kagit kari DUSUK yari:
-  v3             tum   n= 352 | D1  +0.8/ -0.1 D2  +9.2/ +3.7 D3 +13.6/ +9.5 | D3-D1 +12.8 (t=+2.9)
-  v3             2025+ n= 123 | D1 +14.5/+10.1 D2  +8.8/ +7.9 D3  +5.2/ +2.9 | D3-D1  -9.4 (t=-1.3)
-
-4) Bilanco ivmesi bilesenleri GYO icinde (net kar surprizi deger artisindan etkilenir):
-  sue_nk         tum   n= 653 | D1  +8.1/ +4.1 D2  +8.6/ +2.8 D3 +13.3/+12.1 | D3-D1  +5.2 (t=+1.6)
-  sue_nk         2025+ n= 239 | D1  +6.9/ +6.4 D2  +5.8/ +2.7 D3 +18.4/+14.5 | D3-D1 +11.5 (t=+2.5)
-  sue_faal       tum   n= 653 | D1 +10.3/ +7.0 D2  +5.5/ +1.9 D3 +14.7/+10.2 | D3-D1  +4.4 (t=+1.3)
-  sue_faal       2025+ n= 239 | D1 +13.1/+13.8 D2  +5.6/ +3.3 D3 +13.0/+10.1 | D3-D1  -0.1 (t=-0.0)
-  satis_reel     tum   n= 808 | D1  +9.1/ +5.2 D2 +10.3/ +6.0 D3  +8.3/ +4.6 | D3-D1  -0.8 (t=-0.3)
-  satis_reel     2025+ n= 242 | D1  +9.1/ +7.6 D2 +12.5/ +9.3 D3  +8.4/ +6.9 | D3-D1  -0.7 (t=-0.2)
-  roe            tum   n= 752 | D1  +8.5/ +3.4 D2  +8.1/ +2.4 D3 +10.5/ +8.3 | D3-D1  +2.0 (t=+0.7)
-  roe            2025+ n= 249 | D1  +8.6/ +6.2 D2 +10.9/ +5.2 D3 +11.6/+12.5 | D3-D1  +3.1 (t=+0.7)
-  F              tum   n= 752 | D1  +7.9/ +0.1 D2 +10.2/ +7.8 D3  +9.6/ +6.2 | D3-D1  +1.7 (t=+0.5)
-  F              2025+ n= 249 | D1 +13.4/ +4.1 D2  +9.2/ +9.6 D3  +9.8/ +9.5 | D3-D1  -3.6 (t=-0.7)
-
-5) Sistemin en iyi %20'sine (piyasa geneli v3) giren GYO olaylari: kagit kari yuksek olanlar vs dusuk olanlar (126g):
-  kagit yuksek  n= 213 ort +11.3 ortanca  +9.9 kazanma %62
-  kagit dusuk   n=  62 ort +18.7 ortanca +17.2 kazanma %73
+50/625 61 sn
+100/625 107 sn
+150/625 146 sn
+200/625 187 sn
+250/625 232 sn
+300/625 275 sn
+350/625 321 sn
+400/625 365 sn
+450/625 405 sn
+500/625 449 sn
+550/625 489 sn
+600/625 530 sn
+625/625 hisse islendi, dosyada 609 hisse (555 sn)
