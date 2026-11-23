@@ -824,6 +824,16 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "kalemler_sig":
+        # 24 Kas: sigorta sirketlerinin Is Yatirim kalemleri (banka sablonunda geliyor; adlari gormek icin)
+        out = []
+        for h in ("AKGRT", "ANHYT", "TURSG"):
+            v = _cek4(h, "UFRS", [(2026, 9), (2026, 6), (2025, 12), (2025, 9)])
+            out.append(f"===== {h} UFRS (2026/9, 2026/6, 2025/12, 2025/9)")
+            for x in v:
+                out.append(f"{x.get('itemCode')}\t{x.get('itemDescTr')}\t{x.get('value1')}\t{x.get('value2')}\t{x.get('value3')}\t{x.get('value4')}")
+        (R / "kalemler_sig.txt").write_text("\n".join(out), encoding="utf-8")
+        print("\n".join(out[:200]))
     elif sys.argv[1] == "kalemler":
         # 22 Kas: Is Yatirim kalem kodlari ve adlari (net parasal pozisyon kalemini bulmak icin)
         out = []
