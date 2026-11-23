@@ -1,5 +1,5 @@
 {
- "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle. | 12 Kas: ikinci bicim 'paylar' (hisse -> holdingin payi) + 'kalibre_nad_mn': referans gunde NAD bu degere esitlenir, borsada olmayan kisim + net borc sabit kabul edilir (usd=true ise dolar kuruyla tasinir). | 15 Kas: 'halka_acik' bicimi de 'kalibre_nad_mn' alabilir: katkilar katki_tarih fiyatlarina gore tasinir, sabit kisim ref_tarih'te NAD kalibre degerine esit olacak sekilde yeniden hesaplanir. Uzun vade ortalamalari PhillipCapital 2 Kas (KCHOL ~%33, SAHOL ~%49, DOHOL ~%52).",
+ "_aciklama": "Holding NAD bilesimi. Kaynak: Deniz Yatirim NAD tablosu, fiyatlar 31 Mart 2026. halka_acik: hisse -> holdingin o tarihteki NAD katkisi (mn TL); gunluk deger = katki x (fiyat_t / fiyat_ref). sabit: halka acik olmayan istirakler + net nakit + diger (mn TL), ceyreklik guncellenmeli. Paylar degisirse (pay satisi, birlesme) tabloyu guncelle. | 12 Kas: ikinci bicim 'paylar' (hisse -> holdingin payi) + 'kalibre_nad_mn': referans gunde NAD bu degere esitlenir, borsada olmayan kisim + net borc sabit kabul edilir (usd=true ise dolar kuruyla tasinir). | 15 Kas: 'halka_acik' bicimi de 'kalibre_nad_mn' alabilir: katkilar katki_tarih fiyatlarina gore tasinir, sabit kisim ref_tarih'te NAD kalibre degerine esit olacak sekilde yeniden hesaplanir. Uzun vade ortalamalari PhillipCapital 2 Kas (KCHOL ~%33, SAHOL ~%49, DOHOL ~%52). | 23 Kas: KAP genel bilgiler sayfasi (temel nad_genel) ile tum holdinglerin borsadaki istirakleri cikarildi (temel/nad_genel.json). ALARK, GLYHO, NTHOL, GSDHO, TRCAS, OSTIM, BLCYT, RALYH'de borsadaki istirak NAD'in kucuk kismi; NAD agirlikla borsada olmayan varliklar (defter) -> gunluk NAD serisi anlamli degil, eklenmedi. 'kalibre_nad_mn' yoksa NAD = yalniz borsadaki istirakler.",
  "KCHOL": {
   "ref_tarih": "2026-10-30",
   "kaynak": "Istirak katkilari Deniz Yatirim 1 Nis 2026; toplam NAD PhillipCapital 2 Kas 2026 (777 982 mn TL) degerine kalibre",
@@ -82,5 +82,15 @@
   "uzun_vade_iskonto": -0.52,
   "usd": true,
   "paylar": {}
+ },
+ "LYDHO": {
+  "ref_tarih": "2026-11-20",
+  "kaynak": "KAP genel bilgiler (23 Kas 2026): LYDYE %64.89, UFUK %62.96; dis NAD kaynagi yok, yalniz borsadaki istirakler",
+  "piyasa_degeri_ref": 7124,
+  "uzun_vade_iskonto": null,
+  "paylar": {
+   "LYDYE": 0.6489,
+   "UFUK": 0.6296
+  }
  }
 }

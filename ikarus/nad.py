@@ -42,7 +42,7 @@ def seri(h, cfg, px, sermaye=None):
             r = c[c.index <= ref]
             lis += w * c.reindex(idx).ffill() * sermaye[t] / 1e6
             lis_ref += w * float(r.iloc[-1]) * sermaye[t] / 1e6
-        sabit = cfg["kalibre_nad_mn"] - lis_ref
+        sabit = (cfg.get("kalibre_nad_mn") or lis_ref) - lis_ref   # kalibre yoksa: yalniz borsadaki istirakler
         if cfg.get("usd") and "USDTRY" in px:
             sabit = sabit * oran(px["USDTRY"]["close"]).reindex(idx).ffill()
         elif cfg.get("usd"):
@@ -84,7 +84,9 @@ def havuz_test(cfg, hs, px, ser, xu):
             continue
         c = px[h]["close"].reindex(S.index)
         x = xu.reindex(S.index).ffill()
-        d = pd.DataFrame({"y": S["iskonto"].rolling(756, min_periods=250).apply(lambda a: 100 * (a[:-1] < a[-1]).mean(), raw=True),
+        rp = lambda a: 100 * (a[:-1] < a[-1]).mean()
+        d = pd.DataFrame({"yf": (c / x).rolling(756, min_periods=250).apply(rp, raw=True),
+                          "y": S["iskonto"].rolling(756, min_periods=250).apply(lambda a: 100 * (a[:-1] < a[-1]).mean(), raw=True),
                           "f63": 100 * (c.shift(-63) / c - x.shift(-63) / x), "f126": 100 * (c.shift(-126) / c - x.shift(-126) / x)})
         d = d.iloc[::21].dropna(subset=["y"]).assign(h=h)
         T.append(d)
@@ -101,6 +103,11 @@ def havuz_test(cfg, hs, px, ser, xu):
     for k in ("f63", "f126"):
         v1, v2 = T[T.y <= 30][k].dropna(), T[T.y >= 70][k].dropna()
         L.append(f"   derin(<=30) - dar(>=70) {k}: {v1.mean() - v2.mean():+.1f} puan (n {len(v1)}/{len(v2)})")
+        w1, w2 = T[T.yf <= 30][k].dropna(), T[T.yf >= 70][k].dropna()
+        L.append(f"   KARSILASTIRMA yalniz fiyat (endekse gore 3y yuzdelik) dusuk-yuksek {k}: {w1.mean() - w2.mean():+.1f} puan (n {len(w1)}/{len(w2)})")
+        X = T[T.yf.between(30, 70)]
+        u1, u2 = X[X.y <= 30][k].dropna(), X[X.y >= 70][k].dropna()
+        L.append(f"   fiyat ortadayken NAD derin-dar {k}: {u1.mean() - u2.mean():+.1f} puan (n {len(u1)}/{len(u2)})")
     L.append("   holding basina gozlem: " + ", ".join(f"{h} {n}" for h, n in T.h.value_counts().items()))
     return L
 
