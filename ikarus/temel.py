@@ -100,6 +100,68 @@ def gecmis_pk(ceyrek: int = 16, butce_dk: float = 100, isci: int = 4):
     print(f"gecmis_pk: {n} yeni, dosyada {len(G)} hisse ({time.time() - t0:.0f} sn)")
 
 
+def gecmis_eski(butce_dk: float = 110, isci: int = 4):
+    """23 Kas (Teoman: 'veriler normal bir piyasada ne kadar calisir?'). 2013/3-2019/9 ceyrekleri -> temel/gecmis_uzun.json.gz
+    (gecmis.json.gz + eski ceyrekler; artimli)."""
+    import gzip
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    fu = R / "gecmis_uzun.json.gz"
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    U = json.loads(gzip.decompress(fu.read_bytes())) if fu.exists() else {}
+    donemler = [(y, m) for y in range(2013, 2020) for m in (3, 6, 9, 12)]
+    yap = [h for h in G if not U.get(h, {}).get("eski_tamam")]
+    t0 = time.time()
+    def is_(h):
+        if time.time() - t0 > butce_dk * 60:
+            return h, None
+        grup = G[h]["grup"]
+        tab = {}
+        for i in range(0, len(donemler), 4):
+            dl = donemler[i:i + 4]
+            for it in _cek4(h, grup, dl):
+                kod = it.get("itemCode")
+                if kod not in KODLAR:
+                    continue
+                for j, (y, m) in enumerate(dl, 1):
+                    v = it.get(f"value{j}")
+                    if v not in (None, ""):
+                        try:
+                            tab.setdefault(f"{y}/{m}", {})[kod] = float(v)
+                        except (TypeError, ValueError):
+                            pass
+        return h, tab
+    n = 0
+    with ThreadPoolExecutor(isci) as ex:
+        for fut in as_completed([ex.submit(is_, h) for h in yap]):
+            h, tab = fut.result()
+            if tab is None:
+                continue
+            U[h] = {"grup": G[h]["grup"], "eski": tab, "eski_tamam": True}
+            n += 1
+            if n % 100 == 0:
+                print(f"eski {n}/{len(yap)} {time.time() - t0:.0f} sn")
+                fu.write_bytes(gzip.compress(json.dumps(U, separators=(",", ":")).encode()))
+    fu.write_bytes(gzip.compress(json.dumps(U, separators=(",", ":")).encode()))
+    kalan = sum(1 for h in G if not U.get(h, {}).get("eski_tamam"))
+    dolu = sum(1 for h in U if U[h].get("eski"))
+    print(f"gecmis_eski: {n} yeni, eski verisi olan {dolu}/{len(G)}, kalan {kalan}")
+    return kalan
+
+
+def gecmis_birlesik():
+    """gecmis.json.gz + eski ceyrekler (uzun test icin)."""
+    import gzip
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    fu = R / "gecmis_uzun.json.gz"
+    if fu.exists():
+        U = json.loads(gzip.decompress(fu.read_bytes()))
+        for h, u in U.items():
+            if h in G:
+                for k, v in (u.get("eski") or {}).items():
+                    G[h]["tab"].setdefault(k, v)
+    return G
+
+
 def gecmis(ceyrek: int = 28, butce_dk: float = 120, isci: int = 4):
     """Geriye donuk test icin tum BIST'in uzun ceyrek gecmisi -> temel/gecmis.json.gz (yalniz gereken kalemler)."""
     import gzip
@@ -647,6 +709,12 @@ if __name__ == "__main__":
     elif sys.argv[1] == "finans":
         from . import finans_bt
         finans_bt.main()
+    elif sys.argv[1] == "uzun":
+        if gecmis_eski() > 0:
+            print("KALAN eski ceyrek verisi: devam edecek")
+        else:
+            from . import portfoy_bt
+            portfoy_bt.uzun_test()
     elif sys.argv[1] in ("gyo", "gyo+icerden2"):
         from . import portfoy_bt
         portfoy_bt.gyo_test()

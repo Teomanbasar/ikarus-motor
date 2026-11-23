@@ -30,7 +30,13 @@ MAL = 0.002
 BAS = 100_000.0
 
 # TCMB politika faizi (yillik %), degisim tarihleri. Mevduat icin yaklasik olcu.
-FAIZ = [("2020-09-24", 10.25), ("2020-11-19", 15.0), ("2020-12-24", 17.0), ("2021-03-18", 19.0), ("2021-09-23", 18.0),
+# 23 Kas: 2013-2020 yaklasik etkin TCMB fonlama faizi (2016-2018 gec likidite penceresi donemi etkin fonlama, yaklasik)
+FAIZ_ESKI = [("2013-01-01", 6.0), ("2014-01-29", 10.0), ("2014-05-23", 9.5), ("2014-06-25", 8.75), ("2014-07-18", 8.25),
+             ("2015-01-21", 7.75), ("2015-02-25", 7.5), ("2015-09-01", 8.8), ("2016-06-01", 8.3), ("2017-01-11", 9.5),
+             ("2017-03-01", 11.0), ("2017-04-27", 12.0), ("2017-12-15", 12.75), ("2018-05-24", 16.5), ("2018-06-08", 17.75),
+             ("2018-09-14", 24.0), ("2019-07-26", 19.75), ("2019-09-13", 16.5), ("2019-10-25", 14.0), ("2019-12-13", 12.0),
+             ("2020-01-17", 11.25), ("2020-02-20", 10.75), ("2020-03-18", 9.75), ("2020-04-23", 8.75), ("2020-05-22", 8.25)]
+FAIZ = FAIZ_ESKI + [("2020-09-24", 10.25), ("2020-11-19", 15.0), ("2020-12-24", 17.0), ("2021-03-18", 19.0), ("2021-09-23", 18.0),
         ("2021-10-21", 16.0), ("2021-11-18", 15.0), ("2021-12-16", 14.0), ("2022-08-18", 13.0), ("2022-09-22", 12.0),
         ("2022-10-20", 10.5), ("2022-11-24", 9.0), ("2023-02-23", 8.5), ("2023-06-22", 15.0), ("2023-07-20", 17.5),
         ("2023-08-24", 25.0), ("2023-09-21", 30.0), ("2023-10-26", 35.0), ("2023-11-23", 40.0), ("2023-12-21", 42.5),
@@ -47,16 +53,34 @@ def faiz_serisi(idx):
     return s.reindex(idx.union(s.index)).ffill().reindex(idx).fillna(10.25).values / 100.0
 
 
+UZUN = False  # 23 Kas: 2014'ten baslayan uzun test
+
+
+def _xu_duzelt(xu):
+    """BIST100 27 Tem 2020'de 100'e bolundu; Yahoo serisinde kirilma varsa onceki kismi olcekle."""
+    r = xu / xu.shift(1)
+    k = r[r < 0.05]
+    for t in k.index:
+        xu.loc[xu.index < t] = xu.loc[xu.index < t] / 100.0
+    return xu
+
+
 def panel(ham: dict | None = None):
-    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    if UZUN:
+        from . import temel as _T
+        G = _T.gecmis_birlesik()
+    else:
+        G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
     m3 = D.m3()
     O = B.olaylar(G, m3)
     if OLAY_EK is not None:
         O = OLAY_EK(O, G)
-    px = D.prices(sorted(O["t"].unique()))
-    xu = D.xu100()
+    px = D.prices(sorted(O["t"].unique()), start="2013-01-01" if UZUN else D.START)
+    xu = _xu_duzelt(D.xu100(start="2013-01-01" if UZUN else D.START))
     P = puanlar(O, px)
-    idx = xu.index[xu.index >= pd.Timestamp("2020-09-01")]
+    idx = xu.index[xu.index >= pd.Timestamp("2014-06-01" if UZUN else "2020-09-01")]
+    m3g = m3.copy(); m3g.index = m3g.index + pd.offsets.MonthBegin(1)
+    m3_ref = float(m3[m3.index <= pd.Timestamp("2021-01-01")].iloc[-1])
     C, S, PC, VR, TK = {}, {}, {}, {}, {}
     for n_, (t, df) in enumerate(sorted(px.items())):
         ev = P[P["t"] == t].sort_values("giris")
@@ -87,7 +111,8 @@ def panel(ham: dict | None = None):
         if ham is not None:
             ham[t] = (ix, v3r, kotu, yas <= 200, pct, o5, o20x, taban10, fz, ha, vol)
         d = durumlar(v3r, kotu, yas <= 200, pct, o5, o20x, taban10, fz, ha)
-        d = np.where(vol > 5e6, d, np.where(np.char.startswith(d.astype(str), "AL"), "AL likit degil", d))
+        esik = 5e6 * np.minimum(1.0, m3g.reindex(ix, method="ffill").values / m3_ref) if UZUN else 5e6  # likidite esigi M3 ile (2021 oncesi)
+        d = np.where(vol > esik, d, np.where(np.char.startswith(d.astype(str), "AL"), "AL likit degil", d))
         boz = (yas > 200) | np.isnan(v3r) | (v3r < 0.6) | kotu
         f = lambda a: pd.Series(a, index=ix).reindex(idx)
         C[t], S[t], PC[t] = f(c), f(d), f(pct)
@@ -1330,4 +1355,74 @@ def gyo_test():
         print("\n".join(L[-12:]))
     txt = "\n".join(L)
     (R / "gyo_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def uzun_test():
+    """23 Kas: sistemi 2014-2026'da yil yil sina (2014-2020 hic bakilmamis donem). Rastgele secimli portfoy + tek olcu olay testi."""
+    global UZUN
+    from . import firsat_bt as FB
+    from . import temel as _T
+    UZUN = True
+    G = _T.gecmis_birlesik()
+    O = B.olaylar(G, D.m3())
+    L = ["UZUN TEST 2014-2026 (23 Kas 2026). 2014-2020 sistem kurulurken HIC bakilmamis donem.",
+         "Uyari: yalniz bugun borsada olan sirketler var (batan/cikan sirketler yok -> sonuc biraz iyimser).",
+         "bilanco olayi (yayin yili): " + " ".join(f"{y}:{n}" for y, n in pd.to_datetime(O["yayin"]).dt.year.value_counts().sort_index().items()), ""]
+    px = D.prices(sorted(O["t"].unique()), start="2013-01-01")
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    r = Cx.shift(-126) / Cx - 1
+    F126 = r.sub(r.median(axis=1), axis=0)
+    A["f126"] = [F126.at[pd.Timestamp(g), t] if pd.Timestamp(g) in F126.index and t in F126.columns else np.nan for t, g in zip(A.t, A.giris)]
+    A["yil"] = pd.to_datetime(A["giris"]).dt.year
+    L.append("1) TEK OLCU OLAY TESTI (126 gun, piyasa ortancasina gore fazla %, 5 dilim; D5 = en iyi). Kirpik ort.:")
+    yon = {"pddd": -1}
+    for f in ("v3", "fav_get", "kaz_get", "pddd", "sue_nk", "satis_reel", "roe", "F"):
+        for ad, m in (("2014-17", A.yil.between(2014, 2017)), ("2018-20", A.yil.between(2018, 2020)), ("2021-24", A.yil.between(2021, 2024)), ("2025+", A.yil >= 2025)):
+            a = A[m & A[f].notna() & A.f126.notna()].copy()
+            if len(a) < 150:
+                L.append(f"  {f:10s} {ad:7s} n={len(a)} (az)"); continue
+            a["dl"] = (yon.get(f, 1) * a[f]).groupby(a["donem"]).rank(pct=True).mul(5).clip(upper=4.999).astype(int) + 1
+            def km(v):
+                return 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
+            st = a.groupby("dl")["f126"].agg(km=km, med="median")
+            v5, v1 = a.loc[a.dl == 5, "f126"], a.loc[a.dl == 1, "f126"]
+            v5 = v5.clip(v5.quantile(.05), v5.quantile(.95)); v1 = v1.clip(v1.quantile(.05), v1.quantile(.95))
+            tst = (v5.mean() - v1.mean()) / np.sqrt(v5.var() / len(v5) + v1.var() / len(v1))
+            L.append(f"  {f:10s} {ad:7s} n={len(a):5d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}" for i in range(1, 6)) + f" | D5-D1 {st.loc[5, 'km'] - st.loc[1, 'km']:+5.1f} (t={tst:+.1f}) ortanca D5 {100 * st.loc[5, 'med']:+.1f} D1 {100 * st.loc[1, 'med']:+.1f}")
+        print("\n".join(L[-4:]))
+    L.append("\n2) PORTFOY (canli kurallar; AL listesinden rastgele secim 25 kosu ortancasi; her yil 100.000 TL ile sifirdan). Yillik getiri %:")
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    rr = faiz_serisi(idx)
+    al = (S.values == "AL cift tik") | (S.values == "AL tek tik")
+    rng = np.random.default_rng(14)
+    L.append(f"  {'yil':5s} {'BIST100':>8s} {'mevduat':>8s} {'5 hisse':>8s} {'10 hisse':>9s} {'gunluk AL ort':>14s}")
+    for y in range(2014, 2027):
+        m = idx.year == y
+        if m.sum() < 20:
+            continue
+        ii = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        xg = xu[m].iloc[-1] / xu[m].iloc[0]
+        res = []
+        for N in (5, 10):
+            v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+            res.append(np.median(v))
+        L.append(f"  {y:5d} {100 * (xg - 1):+8.0f} {100 * (mev - 1):+8.0f} {100 * (res[0] - 1):+8.0f} {100 * (res[1] - 1):+9.0f} {al[m].sum(axis=1).mean():14.1f}")
+        print(L[-1])
+    for per, m in (("2014-2020", (idx.year >= 2014) & (idx.year <= 2020)), ("2021-2026", idx.year >= 2021)):
+        ii = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        res = []
+        for N in (5, 10):
+            v = [sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))[0]["deger"].iloc[-1] / BAS for _ in range(25)]
+            res.append(np.median(v))
+        L.append(f"  {per}: BIST100 x{xu[m].iloc[-1] / xu[m].iloc[0]:.2f} | mevduat x{mev:.2f} | sistem 5 hisse x{res[0]:.2f}, 10 hisse x{res[1]:.2f}")
+        print(L[-1])
+    UZUN = False
+    txt = "\n".join(L)
+    (R / "uzun_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
