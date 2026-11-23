@@ -1269,3 +1269,63 @@ def _icerden2_hesap(kismi=False):
     txt = "\n".join(L)
     (R / "icerden2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def grup_listesi():
+    """22 Kas: sektor gruplari (TradingView 'sector' cok kaba: Finance 137 sirket). Unvandan."""
+    b = D.bist_list()
+    a = b["ad"].fillna("").str.upper().str.replace("İ", "I")
+    return {"GYO": set(b.ticker[a.str.contains("GAYRIMENKUL YATIRIM")]),
+            "HOLDING": set(b.ticker[a.str.contains("HOLDING") & ~a.str.contains("GAYRIMENKUL YATIRIM ORT")]),
+            "SIGORTA": set(b.ticker[a.str.contains("SIGORTA|EMEKLILIK", regex=True)]),
+            "FAKTORING/LEASING": set(b.ticker[a.str.contains("FAKTORING|FINANSAL KIRALAMA|FINANSMAN", regex=True)]),
+            "ARACI KURUM": set(b.ticker[a.str.contains("MENKUL DEGER")])}
+
+
+def gyo_test():
+    """22 Kas (Teoman: 'acilen sektore ayarlama; GYO hesaplamalari uygun olmali'). GYO'lar icinde hangi olcu 6 ayi aciklar?"""
+    from . import firsat_bt as FB
+    GR = grup_listesi()
+    G = json.loads(gzip.decompress((R / "gecmis.json.gz").read_bytes()))
+    O = B.olaylar(G, D.m3())
+    px = D.prices(sorted(O["t"].unique()))
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    F = {}
+    for h in (63, 126):
+        r = Cx.shift(-h) / Cx - 1
+        F[h] = r.sub(r.median(axis=1), axis=0)
+    for h in F:
+        A[f"f{h}"] = [F[h].at[pd.Timestamp(g), t] if pd.Timestamp(g) in F[h].index and t in F[h].columns else np.nan for t, g in zip(A.t, A.giris)]
+    A["yil"] = pd.to_datetime(A["giris"]).dt.year
+    nb = O.set_index(["t", "donem"])[["netborc", "varlik"]]
+    A = A.join(nb, on=["t", "donem"])
+    A["ltv"] = pd.to_numeric(A["netborc"], errors="coerce") / pd.to_numeric(A["varlik"], errors="coerce")
+    L = ["SEKTOR GRUPLARI ICINDE OLCU TESTI (22 Kas 2026)",
+         "Her grup icinde, ayni bilanco donemindeki sirketler 3 dilime ayrilir (3 = olcuye gore en iyi). 126 gun, piyasa ortancasina gore fazla getiri (kirpik ort. / ortanca).",
+         "pddd ve ltv'de dusuk iyi; digerlerinde yuksek iyi. v3 = sistemin bugunku temel puani.\n"]
+    yon = {"pddd": -1, "ltv": -1}
+    for grup in ("GYO", "HOLDING", "SIGORTA", "FAKTORING/LEASING"):
+        g = A[A.t.isin(GR[grup])].copy()
+        L.append(f"== {grup}: {g.t.nunique()} sirket, {len(g)} bilanco olayi (sistemde puan alan)")
+        for f in ("v3", "pddd", "kaz_get", "fav_get", "ltv", "roe", "F", "sue_nk", "satis_reel"):
+            if f not in g:
+                continue
+            for ad, m in (("tum", g.yil >= 2021), ("2025+", g.yil >= 2025)):
+                a = g[m & g[f].notna() & g.f126.notna()].copy()
+                if len(a) < 60:
+                    continue
+                a["dl"] = (yon.get(f, 1) * a[f]).groupby(a["donem"]).rank(pct=True).mul(3).clip(upper=2.999).astype(int) + 1
+                km = lambda v: 100 * v.clip(v.quantile(.05), v.quantile(.95)).mean()
+                st = a.groupby("dl")["f126"].agg([km, "median"])
+                v3_, v1_ = a.loc[a.dl == 3, "f126"], a.loc[a.dl == 1, "f126"]
+                v3_ = v3_.clip(v3_.quantile(.05), v3_.quantile(.95)); v1_ = v1_.clip(v1_.quantile(.05), v1_.quantile(.95))
+                tst = (v3_.mean() - v1_.mean()) / np.sqrt(v3_.var() / len(v3_) + v1_.var() / len(v1_))
+                L.append(f"  {f:10s} {ad:5s} n={len(a):4d} | " + " ".join(f"D{i} {st.loc[i, 'km']:+5.1f}/{100 * st.loc[i, 'median']:+5.1f}" for i in (1, 2, 3)) + f" | D3-D1 {st.loc[3, 'km'] - st.loc[1, 'km']:+5.1f} (t={tst:+.1f})")
+        L.append("")
+        print("\n".join(L[-12:]))
+    txt = "\n".join(L)
+    (R / "gyo_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
