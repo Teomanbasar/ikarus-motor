@@ -353,6 +353,39 @@ def _nad_ekle(stocks, px):
             print("[uyari] nad", h, e)
 
 
+def _icerden_ekle(stocks):
+    """23 Kas (temel/icerden2_sonuc.txt, 2021-2026, PDF'ten 6528 islem): yeni dalga sonrasi piyasa ortancasina gore
+    yonetici ALIMI 126g ortanca +5.7 (kaz %55, n 278); 30 gunde 2+ farkli alici 126g ortanca +27 (n 31, az);
+    yonetici SATIMI 63g ortanca -7.1 (kaz %36, n 318). Rozet ve Eldekiler'de DIKKAT; siralamaya/karara girmez (portfoyde test edilmedi)."""
+    try:
+        from . import kap
+        kap.pas_topla(bas="2026-11-01", butce_dk=3)
+        kap.pas_detay_topla(butce_dk=5)
+        X = kap.pas_tablo()
+    except Exception as e:
+        print("[uyari] iceriden alim-satim:", e); return
+    bugun = pd.Timestamp.today().normalize()
+    X = X[X.t >= bugun - pd.Timedelta(days=130)]
+    for s in stocks:
+        x = X[X.hisse == s["t"]]
+        if x.empty:
+            continue
+        ya = x[(x.net_nom > 0) & x.yonetici & (x.t >= bugun - pd.Timedelta(days=60))]
+        al30 = x[(x.net_nom > 0) & (x.t >= bugun - pd.Timedelta(days=30))]
+        ys = x[(x.net_nom < 0) & x.yonetici & (x.t >= bugun - pd.Timedelta(days=63))]
+        d = {}
+        if len(ya):
+            d["yon_alim"] = {"son": f"{ya.t.max():%Y-%m-%d}", "n": int(len(ya)), "kisi_sayisi": int(ya.kisi.nunique()),
+                             "gorev": sorted(ya.gorev.dropna().unique().tolist())[:3]}
+        if al30.kisi.nunique() >= 2:
+            d["coklu_alici"] = {"kisi_sayisi": int(al30.kisi.nunique()), "son": f"{al30.t.max():%Y-%m-%d}"}
+        if len(ys):
+            d["yon_satim"] = {"son": f"{ys.t.max():%Y-%m-%d}", "n": int(len(ys)), "kisi_sayisi": int(ys.kisi.nunique()),
+                              "gorev": sorted(ys.gorev.dropna().unique().tolist())[:3]}
+        if d:
+            s["icerden"] = d
+
+
 def _geri_alim_ekle(stocks):
     """22 Kas: KAP pay geri alimi (temel/geri_alim_sonuc.txt: yeni dalga sonrasi 6 ay piyasa ortancasina gore +%12 ort.,
     ortanca +%5.6, t=6.8, her yil pozitif; AL icinde one almak 2025-26'da x1.33 -> x1.61 (5 hisse))."""
@@ -421,6 +454,7 @@ def run(tickers: list[str] | None = None) -> dict:
     _temel_ekle(stocks)
     _nad_ekle(stocks, px)
     _geri_alim_ekle(stocks)
+    _icerden_ekle(stocks)
 
     # piyasa ozeti (makro etiketi BIST100'den, tum hisselerde ayni)
     m3e = E.m3_effective(m3)

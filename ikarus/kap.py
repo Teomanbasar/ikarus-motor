@@ -496,3 +496,18 @@ def holding_paylari(holdingler, bist: pd.DataFrame):
         ham.append(f"== {h} {v['tarih']} idx {v['index']} satir {len(rows)} borsada {bul_h}\n" +
                    "\n".join(f"   {r['oran']:6.2f} {r['pb']} {r['tur'][:12]:12s} {r['ad'][-90:]}" for r in rows[:80]))
     return sonuc, ham
+
+
+def pas_tablo():
+    """23 Kas: ayristirilmis iceriden alim-satim tablosu (portfoy_bt._icerden2_hesap ile ayni temizlik)."""
+    P = pd.read_csv(DATA / "kap_pas.csv", dtype=str)
+    X = pd.read_csv(DATA / "kap_pas_detay.csv", dtype=str).merge(P[["index", "tarih", "ilgili", "gonderen"]], on="index", how="left")
+    for c in ("alim_nom", "satim_nom", "net_nom", "oran_bas", "oran_son", "satir"):
+        X[c] = pd.to_numeric(X.get(c), errors="coerce")
+    X["t"] = pd.to_datetime(X["tarih"].str[:10], format="%d.%m.%Y", errors="coerce")
+    X["hisse"] = X["ilgili"].fillna(X["gonderen"]).fillna("").str.split(",").str[0].str.strip()
+    konu = X["konu"].fillna("").str.lower()
+    X["devir"] = konu.str.contains("devir|devri|hediye|miras|teminat|bağış|bagis|intikal|birleşme|bedelsiz", regex=True)
+    g = X["gorev"].fillna("").str.lower()
+    X["yonetici"] = g.str.contains("yönetim|yonetim|müdür|mudur|başkan|baskan|üye|uye|ceo|cfo|direkt", regex=True)
+    return X[(X.satir > 0) & X.t.notna() & (X.hisse != "") & ~X.devir]

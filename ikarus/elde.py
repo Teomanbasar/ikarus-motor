@@ -62,6 +62,9 @@ def karar(s: dict, iz: dict | None = None) -> dict:
         sat.append("Temel bozuldu: kötü bilanço sürprizi")
     if r.get("kirdi"):
         dikkat.append("Stop kırıldı")
+    ys = (s.get("icerden") or {}).get("yon_satim")
+    if ys:   # 23 Kas: yonetici satimi sonrasi 63g ortanca -7.1, kazanma %36 (n 318)
+        dikkat.append(f"Yönetici sattı ({ys['son']}, {ys['n']} bildirim)")
     for ad, k in (("Faz", "normal"), ("HA faz", "ha")):
         x = f.get(k) or {}
         if x.get("sinyal") == "DAGITIM" and (x.get("gun") or 0) >= 10:
