@@ -1553,3 +1553,85 @@ def gyo_kontrol():
     txt = "\n".join(L)
     (R / "gyo_kontrol.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def otopsi():
+    """24 Kas (Teoman: 'son yillarda sistem tanimis'): 2025-2026'da canli kurallarla 5 hisselik portfoy nerede para kaybetti?
+    25 rastgele secim kosusunun butun islemleri: hisse, grup, cikis nedeni, tutma suresi, giris anindaki v3/P/faz;
+    ay ay portfoy - mevduat - BIST100; nakitte gecen sure; AL sinyali sayisi."""
+    from . import firsat_bt as FB
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    GR = grup_listesi()
+    grp = lambda t: next((g for g, v in GR.items() if t in v), "diger")
+    rr = faiz_serisi(idx)
+    rng = np.random.default_rng(24)
+    L = ["OTOPSI 2025-2026: canli kurallar, 5 hisse, 25 rastgele kosu (24 Kas 2026)", ""]
+    for bas, son in (("2025-01-01", "2025-12-31"), ("2026-01-01", "2026-12-31"), ("2025-01-01", "2026-12-31")):
+        m = (idx >= bas) & (idx <= son)
+        ii = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        xg = xu.reindex(idx[m]).ffill()
+        xg = float(xg.iloc[-1] / xg.iloc[0])
+        egr, isl = [], []
+        for k in range(25):
+            e, tr, pz = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape))
+            egr.append(e.assign(kosu=k))
+            isl += [(*x, k) for x in tr.itertuples(index=False, name=None)]
+            Cm = C[m]
+            for t, (a_, gf, gt) in pz.items():   # donem sonunda elde kalanlar: son kapanisla
+                cf = Cm[t].dropna().iloc[-1]
+                isl.append((t, gt, Cm.index[-1], gf, cf, 100 * (cf * (1 - MAL) / (gf * (1 + MAL)) - 1), "donem sonu elde", k))
+        E_ = pd.concat(egr)
+        son_d = E_.groupby("kosu")["deger"].last() / BAS
+        L.append(f"== {bas[:4]}-{son[:4]}: sistem ortanca {100 * (son_d.median() - 1):+.0f}% (en kotu kosu {100 * (son_d.min() - 1):+.0f}, en iyi {100 * (son_d.max() - 1):+.0f}) | mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xg - 1):+.0f}%")
+        nak = (E_["nakit"] / E_["deger"]).mean()
+        L.append(f"   ortalama nakit payi %{100 * nak:.0f}; ortalama hisse sayisi {E_['hisse'].mean():.1f}; gunluk AL sinyali ort "
+                 f"{((S[m].values == 'AL cift tik') | (S[m].values == 'AL tek tik')).sum(axis=1).mean():.1f}")
+        if bas == "2025-01-01" and son == "2026-12-31":
+            T_ = pd.DataFrame(isl, columns=["t", "giris", "cikis", "gf", "cf", "getiri", "neden", "kosu"])
+            T_["gun"] = (pd.to_datetime(T_.cikis) - pd.to_datetime(T_.giris)).dt.days
+            xs = xu.reindex(pd.to_datetime(T_.giris)).values, xu.reindex(pd.to_datetime(T_.cikis)).values
+            T_["endeks"] = 100 * (xs[1] / xs[0] - 1)
+            T_["fazla"] = T_.getiri - T_.endeks
+            T_["grup"] = T_.t.map(grp)
+            L.append(f"\n   ISLEMLER (25 kosu toplam {len(T_)}; kosu basina {len(T_) / 25:.1f}). getiri %, endeks ayni sure %, fazla = getiri - endeks")
+            L.append(f"   tum islemler: ort getiri {T_.getiri.mean():+.1f} ortanca {T_.getiri.median():+.1f} kazanan %{100 * (T_.getiri > 0).mean():.0f} | ort fazla {T_.fazla.mean():+.1f} | ort gun {T_.gun.mean():.0f}")
+            for ad, g in T_.groupby("neden"):
+                L.append(f"   cikis '{ad}': n {len(g)} ort getiri {g.getiri.mean():+.1f} ortanca {g.getiri.median():+.1f} kazanan %{100 * (g.getiri > 0).mean():.0f} ort gun {g.gun.mean():.0f}")
+            for ad, g in T_.groupby("grup"):
+                L.append(f"   grup {ad:16s}: n {len(g)} ort getiri {g.getiri.mean():+.1f} kazanan %{100 * (g.getiri > 0).mean():.0f}")
+            T_["tutma"] = pd.cut(T_.gun, [-1, 30, 90, 180, 9999], labels=["<=30g", "31-90g", "91-180g", ">180g"])
+            for ad, g in T_.groupby("tutma", observed=True):
+                L.append(f"   tutma {ad:8s}: n {len(g)} ort getiri {g.getiri.mean():+.1f} kazanan %{100 * (g.getiri > 0).mean():.0f}")
+            # acik pozisyonlar (donem sonunda elde kalanlar) islem listesinde yok: son gun degerlemesi
+            hs = T_.groupby("t").agg(n=("getiri", "size"), ort=("getiri", "mean"), toplam=("getiri", "sum")).sort_values("toplam")
+            L.append("\n   EN COK KAYBETTIREN 12 hisse (25 kosu toplami; n = islem sayisi): " + ", ".join(f"{t} n{r.n} ort{r.ort:+.0f}" for t, r in hs.head(12).iterrows()))
+            L.append("   EN COK KAZANDIRAN 12 hisse: " + ", ".join(f"{t} n{r.n} ort{r.ort:+.0f}" for t, r in hs.tail(12)[::-1].iterrows()))
+            # giris anindaki ozellikler
+            v3v = pd.DataFrame(VR).reindex(idx) if not isinstance(VR, pd.DataFrame) else VR
+            pcv = PC
+            def at(df, t, g):
+                try:
+                    return float(df.at[pd.Timestamp(g), t])
+                except Exception:
+                    return np.nan
+            T_["v3_giris"] = [at(v3v, t, g) for t, g in zip(T_.t, T_.giris)]
+            T_["p_giris"] = [at(pcv, t, g) for t, g in zip(T_.t, T_.giris)]
+            T_["sinyal"] = [S.at[pd.Timestamp(g), t] if pd.Timestamp(g) in S.index else None for t, g in zip(T_.t, T_.giris)]
+            for ad, m_ in (("v3 >= 0.9", T_.v3_giris >= 0.9), ("v3 0.8-0.9", T_.v3_giris.between(0.8, 0.9, inclusive="left")), ("v3 < 0.8", T_.v3_giris < 0.8)):
+                g = T_[m_]
+                L.append(f"   giriste {ad:10s}: n {len(g)} ort getiri {g.getiri.mean():+.1f} kazanan %{100 * (g.getiri > 0).mean():.0f}")
+            for ad, m_ in (("P <= 5", T_.p_giris <= 5), ("P 5-20", T_.p_giris > 5)):
+                g = T_[m_]
+                L.append(f"   giriste {ad:7s}: n {len(g)} ort getiri {g.getiri.mean():+.1f} kazanan %{100 * (g.getiri > 0).mean():.0f}")
+            for ad, g in T_.groupby("sinyal"):
+                L.append(f"   giris sinyali {ad}: n {len(g)} ort getiri {g.getiri.mean():+.1f} kazanan %{100 * (g.getiri > 0).mean():.0f}")
+            # ay ay
+            E1 = E_[E_.kosu == E_.groupby("kosu")["deger"].last().sub(BAS * son_d.median()).abs().idxmin()]
+            ay = E1["deger"].resample("ME").last()
+            xa = xu.reindex(idx[m]).ffill().resample("ME").last()
+            L.append("\n   ortanca kosu ay ay (portfoy % / BIST100 %): " + " | ".join(f"{d:%y-%m} {100 * (ay.iloc[i] / (ay.iloc[i - 1] if i else BAS) - 1):+.0f}/{100 * (xa.iloc[i] / xa.iloc[i - 1] - 1) if i else 0:+.0f}" for i, d in enumerate(ay.index)))
+            T_.to_csv(R / "otopsi_islemler.csv", index=False)
+    txt = "\n".join(L)
+    (R / "otopsi_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
