@@ -426,6 +426,33 @@ def isaretler(tab, m3, d, yo=None):
 _TUFE = None
 
 
+def banka_olculer(tab, d):
+    """24 Kas (temel/bankalar_sonuc.txt, 12 banka 2014-2026): bankaya ozgu olculer. GENIS banka puani bunlarin
+    nim_deg, maliyet_gelir, risk_maliyeti, komisyon_reel kismini kullanir; digerleri bilgi icin."""
+    global _TUFE
+    if _TUFE is None:
+        _TUFE = D.tufe(update=False)
+    y, m = d
+    o = (y - 1, m)
+    g = lambda k, dd=d: (tab.get(dd) or {}).get(k)
+    tt = lambda k, dd=d: _ttm(tab, dd, k)
+    a1 = _TUFE[_TUFE.index <= pd.Timestamp(y, m, 1)]; a0 = _TUFE[_TUFE.index <= pd.Timestamp(y - 1, m, 1)]
+    enf = float(a1.iloc[-1] / a0.iloc[-1]) if len(a1) and len(a0) else None
+    akt, akt1, akt2 = g("1Z"), g("1Z", o), g("1Z", (y - 2, m))
+    nfg, nfg1 = tt("3C"), tt("3C", o)
+    nim = nfg / ((akt + akt1) / 2 if akt and akt1 else akt) if nfg is not None and akt else None
+    nim1 = nfg1 / ((akt1 + akt2) / 2 if akt1 and akt2 else akt1) if nfg1 is not None and akt1 else None
+    fg, gid, kar = tt("3CE"), tt("3CG"), tt("3CF")
+    kom, kom1 = tt("3CA"), tt("3CA", o)
+    kr, mv, oz = g("1AF"), g("2A"), g("2O")
+    return {"nim": nim, "nim_deg": nim - nim1 if nim is not None and nim1 is not None else None,
+            "maliyet_gelir": abs(gid) / fg if gid is not None and fg and fg > 0 else None,
+            "risk_maliyeti": abs(kar) / kr if kar is not None and kr and kr > 0 else None,
+            "komisyon_reel": (kom / kom1) / enf - 1 if kom and kom1 and kom1 > 0 and enf else None,
+            "kredi_mevduat": kr / mv if kr and mv else None,
+            "ozk_aktif": oz / akt if oz and akt else None}
+
+
 def parasal_kazanc_ttm(tab, d):
     """22 Kas: son 4 ceyrek tahmini net parasal pozisyon kazanci (tab birimi). Kazanc ~ ortalama net parasal yukumluluk x ceyrek TUFE.
     Kontrol (temel/parasal_sonuc.txt): TTKOM 2025 9 ay aciklanan 16.9 / tahmin 18.2; BIM 2024 28.3 / 26.4. 2023/12 oncesi 0."""
@@ -555,6 +582,11 @@ def skor(grup, tab, m3, d=None, yo=None):
                   "faaliyet_kari": None if grup == "UFRS" else T("3DF"),
                   "brut_kar": None if grup == "UFRS" else T("3D"),
                   "parasal_kazanc": None if grup == "UFRS" else parasal_kazanc_ttm(tab, d)}
+    if grup == "UFRS":
+        try:
+            out["banka"] = banka_olculer(tab, d)
+        except Exception as e:
+            out["banka"] = {"hata": str(e)}
     try:
         out["isaretler"] = {k: v for k, v in isaretler(tab, m3, d, yo).items() if k != "nk_ttm"}
         if yo:

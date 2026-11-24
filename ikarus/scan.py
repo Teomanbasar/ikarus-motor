@@ -135,6 +135,9 @@ V3_TEST = {"hareket": "+8.4 puan, donemlerin %86'sinda", "kalite": "+2.6 puan, %
            "kotu": "Iki kar surprizi de en alt %20: 63g kirpik -3.8, 126g -7.7 (kaliteli+ucuz olsa bile -11.4)"}
 
 
+BANKA_GENIS = ["nim_deg", "maliyet_gelir", "risk_maliyeti", "komisyon_reel"]
+
+
 def _temel_v3(stocks, tip="sanayi"):
     """Temel puan v3: Hareket (bilanco ivmesi), Kalite, Deger esit agirlik (12 Kas; 10 Kas-12 Kas arasi 50/25/25); hepsi sanayi hisseleri icinde siralama (0-1).
     Bankalar ayri muhasebe yapisinda oldugu icin siralamaya girmez (F-skoru karti kalir)."""
@@ -148,7 +151,7 @@ def _temel_v3(stocks, tip="sanayi"):
         k = s["temel"]; i = k.get("isaretler") or {}; o = k.get("oranlar") or {}
         return {"t": s["t"], "F": k.get("puan"), "roe": o.get("roe"), "sue_nk": i.get("sue_nk"), "sue_faal": i.get("sue_faal"),
                 "satis_reel": i.get("satis_reel"), "roe_ivme": i.get("roe_ivme"), "kaz_get": k.get("kaz_get"), "fav_get": k.get("fav_get"), "pddd": k.get("pddd"),
-                "favok_q": i.get("favok_q")}
+                "favok_q": i.get("favok_q"), **({c: (k.get("banka") or {}).get(c) for c in BANKA_GENIS} if fin else {})}
     X = pd.DataFrame([rows(s) for s in S]).set_index("t").astype(float)
     r = X.rank(pct=True)
     r["pddd"] = 1 - r["pddd"]
@@ -160,7 +163,19 @@ def _temel_v3(stocks, tip="sanayi"):
     kalite = r[["F", "roe"]].mean(axis=1)
     # 22 Kas: sanayide deger = FAVOK/FD + PD/DD (temel/deger_sonuc.txt: test 5 hisse x1.87 / net kar x1.21); bankada net kar/PD
     deger = r[["kaz_get" if fin else "fav_get", "pddd"]].mean(axis=1)
-    toplam = (hareket + kalite + deger) / 3   # 12 Kas: esit agirlik (50/25/25 ile ayni getiri, medyan daha iyi; Teoman: ivmeye fazla agirlik verme)
+    if fin:
+        # 24 Kas (temel/bankalar_sonuc.txt, 12 banka 2014-2026): GENIS banka puani. 126g iyi-kotu 1/3 ortanca farki
+        # 2014-17 -1.0 | 2018-20 +7.4 | 2021-24 +15.2 | 2025+ +10.3 (eski olculer: +2.1 | +4.8 | +20.1 | -1.6). Testte 9 olcu esit
+        # agirlikliydi; canlida dorduncu bilesen 'banka' (NIM degisimi, maliyet/gelir, risk maliyeti, komisyon buyumesi) agirligi 4/9.
+        for c in ("maliyet_gelir", "risk_maliyeti"):
+            if c in r:
+                r[c] = 1 - r[c]
+        bcols = [c for c in BANKA_GENIS if c in r.columns]
+        banka = r[bcols].mean(axis=1).where(r[bcols].notna().sum(axis=1) >= 2)
+        toplam = ((hareket + kalite + deger) / 3 * 5 + banka.fillna((hareket + kalite + deger) / 3) * 4) / 9
+    else:
+        toplam = (hareket + kalite + deger) / 3
+    # 12 Kas: esit agirlik (50/25/25 ile ayni getiri, medyan daha iyi; Teoman: ivmeye fazla agirlik verme)
     sira = toplam.rank(pct=True)
     dilim = toplam.rank(pct=True).apply(lambda v: None if pd.isna(v) else int(max(1, np.ceil(v * 5))))
     for s in S:
