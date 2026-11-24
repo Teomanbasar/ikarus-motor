@@ -298,6 +298,22 @@ def test2():
         uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
         per.append(f"{p} {100 * (uu.median() - ll.median()):+5.1f}" if len(uu) > 3 and len(ll) > 3 else f"{p} az")
     L.append(f"  {'':34s} ortanca farki: " + " | ".join(per))
+    # surpriz + son 3 ay goreli guc (bu testte her donemde dogru yonde cikan iki olcu; SECIM VERIYE BAKILARAK yapildi)
+    for ad, cols in (("SURPRIZ + 3 AY GUC", ("sue", "rel63")), ("SURPRIZ + 3 AY GUC + OZK/AKTIF", ("sue", "rel63", "ozk_aktif"))):
+        a = A.dropna(subset=list(cols)).copy()
+        a["bir"] = pd.concat([a[c].groupby(a.donem).rank(pct=True) for c in cols], axis=1).mean(axis=1)
+        rk = a["bir"].groupby(a.donem).rank(pct=True)
+        u, l_ = a[rk >= 2 / 3]["f126"].dropna(), a[rk <= 1 / 3]["f126"].dropna()
+        u2, l2 = u.clip(u.quantile(.05), u.quantile(.95)), l_.clip(l_.quantile(.05), l_.quantile(.95))
+        t = (u2.mean() - l2.mean()) / np.sqrt(u2.var() / len(u2) + l2.var() / len(l2))
+        per = []
+        for p, mm in donemler:
+            uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
+            per.append(f"{p} {100 * (uu.median() - ll.median()):+5.1f}" if len(uu) > 3 and len(ll) > 3 else f"{p} az")
+        L.append(f"  {ad:34s} 126g iyi: {satir(u)} | kotu: {satir(l_)} | t {t:+.1f}")
+        L.append(f"  {'':34s} ortanca farki: " + " | ".join(per) + f" | 63g iyi {satir(a[rk >= 2 / 3]['f63'])} kotu {satir(a[rk <= 1 / 3]['f63'])}")
+        son_ = a.sort_values("giris").groupby("t").tail(1)
+        L.append(f"  {'':34s} son durum: " + ", ".join(f"{r.t} {r.bir:.2f}" for r in son_.sort_values("bir", ascending=False).itertuples()))
     L.append("\nB) BANKA TURU (tum olaylar, 126g)")
     for tr in ("ozel buyuk", "kamu", "diger"):
         L.append(f"  {tr:11s} {satir(A[A.tur == tr]['f126'])}")
