@@ -1,49 +1,30 @@
-
-1 Failed download:
-['AGHOL.IS']: OperationalError('database is locked')
 M3 (EVDS): 2026-11 eklendi
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-OTOPSI 2025-2026: canli kurallar, 5 hisse, 25 rastgele kosu (24 Kas 2026)
+FAIZ REJIMI TESTI (24 Kas 2026): reel faiz pozitifken hangi hisseler kazandi?
+reel faiz = politika faizi - yillik TUFE (2020 oncesi politika faizi yaklasik). Gozlem: bilanco olaylari 2014-2026 (yalniz bugun borsada olanlar).
+f126 = sonraki 6 ay piyasa ortancasina gore %; mev = ayni 6 ayda mevduata gore %. Her olcu her donemde ucte birlere bolunur; iyi = olcuye gore yuksek (borc, PD/DD, oynaklikta dusuk).
 
-== 2025-2025: sistem ortanca +54% (en kotu kosu +9, en iyi +113) | mevduat +54% | BIST100 +13%
-   ortalama nakit payi %7; ortalama hisse sayisi 4.9; gunluk AL sinyali ort 7.3
-== 2026-2026: sistem ortanca -6% (en kotu kosu -29, en iyi +9) | mevduat +39% | BIST100 -4%
-   ortalama nakit payi %9; ortalama hisse sayisi 4.8; gunluk AL sinyali ort 5.2
-== 2025-2026: sistem ortanca +29% (en kotu kosu -18, en iyi +68) | mevduat +115% | BIST100 +11%
-   ortalama nakit payi %8; ortalama hisse sayisi 4.9; gunluk AL sinyali ort 6.3
+== GEVSEK (reel faiz <= 0): olay 13670, yillar 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024
+   tum hisseler: 6 ayda mevduata gore ortanca +1.5% (mevduati gecen %52)
+== SIKI (reel faiz > 0): olay 7342, yillar 2019, 2020, 2021, 2024, 2025, 2026
+   tum hisseler: 6 ayda mevduata gore ortanca -10.9% (mevduati gecen %33)
 
-   ISLEMLER (25 kosu toplam 761; kosu basina 30.4). getiri %, endeks ayni sure %, fazla = getiri - endeks
-   tum islemler: ort getiri +6.0 ortanca +4.0 kazanan %57 | ort fazla +3.8 | ort gun 110
-   cikis 'bilanco bozuldu': n 307 ort getiri -6.1 ortanca -8.8 kazanan %34 ort gun 77
-   cikis 'donem sonu elde': n 125 ort getiri -36.0 ortanca -37.6 kazanan %0 ort gun 196
-   cikis 'pahali (kar al)': n 229 ort getiri +42.9 ortanca +38.8 kazanan %100 ort gun 118
-   cikis 'takip eden stop': n 100 ort getiri +11.1 ortanca +8.3 kazanan %98 ort gun 85
-   grup ARACI KURUM     : n 38 ort getiri -14.6 kazanan %26
-   grup GYO             : n 94 ort getiri -18.0 kazanan %21
-   grup HOLDING         : n 81 ort getiri +1.3 kazanan %49
-   grup diger           : n 548 ort getiri +12.2 kazanan %66
-   tutma <=30g   : n 69 ort getiri +15.2 kazanan %99
-   tutma 31-90g  : n 280 ort getiri +9.1 kazanan %58
-   tutma 91-180g : n 260 ort getiri +12.0 kazanan %58
-   tutma >180g   : n 152 ort getiri -14.0 kazanan %32
+  net nakit / varlik         | SIKI : iyi 1/3 ort.ca  +1.0 (mevduata gore  -9.3, gecen %40) kotu  -1.1 | fark t +1.8 | GEVSE: iyi 1/3 ort.ca  +0.7 (mevduata gore  +1.8, gecen %52) kotu  -1.2 | fark t +1.5
+  net borc / FAVOK           | SIKI : iyi 1/3 ort.ca  +1.4 (mevduata gore  -9.3, gecen %40) kotu  -0.4 | fark t +1.0 | GEVSE: iyi 1/3 ort.ca  +0.9 (mevduata gore  +3.3, gecen %53) kotu  -0.7 | fark t +1.5
+  FAVOK / FD                 | SIKI : iyi 1/3 ort.ca  +3.9 (mevduata gore  -7.8, gecen %41) kotu  -3.5 | fark t +3.8 | GEVSE: iyi 1/3 ort.ca  +3.7 (mevduata gore  +6.5, gecen %59) kotu  -3.9 | fark t +4.1
+  kar / PD                   | SIKI : iyi 1/3 ort.ca  +2.9 (mevduata gore  -8.1, gecen %40) kotu  -1.0 | fark t +2.3 | GEVSE: iyi 1/3 ort.ca  +3.1 (mevduata gore  +5.8, gecen %58) kotu  -2.7 | fark t +2.1
+  PD/DD                      | SIKI : iyi 1/3 ort.ca  +4.3 (mevduata gore  -7.3, gecen %42) kotu  -4.8 | fark t +3.2 | GEVSE: iyi 1/3 ort.ca  +2.1 (mevduata gore  +4.2, gecen %56) kotu  -3.4 | fark t +4.3
+  bilanco surprizi           | SIKI : iyi 1/3 ort.ca  +2.5 (mevduata gore  -8.3, gecen %41) kotu  -2.0 | fark t +5.8 | GEVSE: iyi 1/3 ort.ca  +1.7 (mevduata gore  +6.5, gecen %57) kotu  -2.2 | fark t +6.9
+  ROE                        | SIKI : iyi 1/3 ort.ca  +0.8 (mevduata gore  -9.9, gecen %39) kotu  -1.3 | fark t -0.3 | GEVSE: iyi 1/3 ort.ca  +0.8 (mevduata gore  +6.5, gecen %56) kotu  -0.4 | fark t -1.7
+  F skoru                    | SIKI : iyi 1/3 ort.ca  +2.3 (mevduata gore  -8.6, gecen %40) kotu  -1.9 | fark t +1.1 | GEVSE: iyi 1/3 ort.ca  +1.3 (mevduata gore  +6.5, gecen %56) kotu  -1.5 | fark t +1.2
+  v3 (sistem puani)          | SIKI : iyi 1/3 ort.ca  +4.2 (mevduata gore  -7.6, gecen %41) kotu  -3.8 | fark t +4.1 | GEVSE: iyi 1/3 ort.ca  +3.5 (mevduata gore +11.7, gecen %61) kotu  -4.2 | fark t +4.8
+  buyukluk (piyasa degeri)   | SIKI : iyi 1/3 ort.ca  -1.3 (mevduata gore -10.9, gecen %37) kotu  +2.9 | fark t -10.1 | GEVSE: iyi 1/3 ort.ca  -1.4 (mevduata gore  +1.0, gecen %51) kotu  +1.4 | fark t -14.9
+  son 6 ay fiyat gucu        | SIKI : iyi 1/3 ort.ca  +0.0 (mevduata gore  -9.8, gecen %41) kotu  -1.2 | fark t +2.6 | GEVSE: iyi 1/3 ort.ca  -0.9 (mevduata gore  +1.7, gecen %52) kotu  -1.4 | fark t +2.0
+  oynaklik (60g)             | SIKI : iyi 1/3 ort.ca  +3.8 (mevduata gore  -7.7, gecen %41) kotu  -3.8 | fark t +1.7 | GEVSE: iyi 1/3 ort.ca  +1.8 (mevduata gore  +5.1, gecen %57) kotu  -3.9 | fark t +1.1
 
-   EN COK KAYBETTIREN 12 hisse (25 kosu toplami; n = islem sayisi): SRVGY n26.0 ort-46, BERA n18.0 ort-46, OYYAT n25.0 ort-29, IHEVA n26.0 ort-20, KRTEK n13.0 ort-38, KZBGY n7.0 ort-68, NTHOL n16.0 ort-26, VBTYZ n11.0 ort-25, ORGE n17.0 ort-16, PGSUS n19.0 ort-14, NUGYO n17.0 ort-10, BALSU n19.0 ort-8
-   EN COK KAZANDIRAN 12 hisse: LRSHO n25.0 ort+54, GUBRF n23.0 ort+39, BLCYT n20.0 ort+44, ALVES n9.0 ort+86, KUTPO n25.0 ort+28, BVSAN n15.0 ort+35, ISDMR n17.0 ort+28, KLSYN n10.0 ort+37, AHGAZ n7.0 ort+50, TTKOM n8.0 ort+43, PNSUT n5.0 ort+62, GEREL n6.0 ort+49
-   giriste v3 >= 0.9 : n 349 ort getiri -2.4 kazanan %50
-   giriste v3 0.8-0.9: n 412 ort getiri +13.1 kazanan %62
-   giriste v3 < 0.8  : n 0 ort getiri +nan kazanan %nan
-   giriste P <= 5 : n 239 ort getiri +11.0 kazanan %70
-   giriste P 5-20 : n 522 ort getiri +3.7 kazanan %50
-   giris sinyali AL cift tik: n 215 ort getiri +8.3 kazanan %58
-   giris sinyali AL tek tik: n 382 ort getiri +9.3 kazanan %61
-   giris sinyali BEKLE KACTI: n 20 ort getiri -15.8 kazanan %40
-   giris sinyali BEKLE TEKNIK: n 25 ort getiri +13.1 kazanan %68
-   giris sinyali BEKLE UCUZ DEGIL: n 119 ort getiri -6.6 kazanan %39
+SIKI donemde birlesimler (6 ay, ortanca piyasaya gore / mevduata gore / mevduati gecen %):
+  v3 ust %20 (bugunku kural)         n 1193 |  +6.2 /  -7.0 / %43
+  v3 ust %20 + net nakit ust yari    n  687 |  +5.7 /  -7.0 / %42
+  v3 ust %20 + net nakit alt yari    n  506 |  +6.9 /  -7.1 / %43
+  hepsi                              n 5921 |  +0.1 / -10.6 / %39
 
-   ortanca kosu ay ay (portfoy % / BIST100 %): 25-01 -2/+0 | 25-02 -10/-3 | 25-03 -2/+0 | 25-04 -5/-6 | 25-05 +7/-1 | 25-06 +7/+10 | 25-07 +23/+8 | 25-08 +2/+5 | 25-09 +7/-2 | 25-10 +5/-0 | 25-11 -2/-1 | 25-12 +9/+3 | 26-01 +20/+23 | 26-02 +2/-1 | 26-03 +0/-7 | 26-04 +16/+13 | 26-05 -2/-5 | 26-06 -8/+3 | 26-07 -11/-5 | 26-08 +0/+7 | 26-09 -14/-17 | 26-10 -13/-10 | 26-11 +7/+3
+bugun reel faiz: +6.3 puan (politika %36.0, yillik TUFE %29.7)
