@@ -897,6 +897,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "cok_kat":
+        from . import portfoy_bt as P
+        P.cok_kat_test()
     elif sys.argv[1] == "rejim2":
         from . import portfoy_bt as P
         P.rejim2_test()

@@ -2367,3 +2367,128 @@ def rejim2_test():
     txt = "\n".join(L)
     (R / "rejim2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def cok_kat_test():
+    """24 Kas (Teoman: 'potansiyelli etiketi belirli standartlari karsilayana verilmeli, test edilmeli').
+    ONCEDEN SABITLENEN TEST (sonuca bakarak degistirilmedi). Kaynak: Yartseva (2025) 'The Alchemy of Multibagger Stocks'.
+    Gozlem: sanayi bilanco olaylari 2014-2024 (giris = yayin sonrasi ilk gun), likidite esigi (M3'e gore).
+    BASARI: 2 yil (504 islem gunu) sonra hisse / BIST100 >= 2 (endeksi en az 2 kat gecmek). Ek: 2 yil icinde nominal en az 3 kat (en yuksek kapanis).
+    SARTLAR (her donemin kesitinde siralama):
+      K1 kucuk: firma degeri (PD + net borc) alt %40   K2 nakit: serbest nakit akisi / PD > 0 ve ust %40
+      K3 ucuz: PD/DD alt %40 (> 0)                      K4 karli: FAVOK > 0 ve ROE > 0
+      K5 yatirim disiplini: yillik varlik buyumesi <= yillik FAVOK buyumesi (gecen yil FAVOK > 0)
+      K6 dibe yakin: fiyat 12 aylik (252g) en dusuk-en yuksek araliginin alt %30'unda
+    POTANSIYEL = K4 zorunlu ve 6 sartin en az 5'i.
+    KABUL: potansiyelde basari olasiligi tabanin >= 1.5 kati, 2014-17 / 2018-20 / 2021-24 donemlerinin HER BIRINDE ve
+           SIKI/GEVSEK rejimlerin her birinde; ortalama goreli getiri tabandan iyi."""
+    global UZUN
+    from . import firsat_bt as FB
+    from . import temel as _T
+    UZUN = True
+    G = _T.gecmis_birlesik()
+    m3 = D.m3()
+    O = B.olaylar(G, m3)
+    px = D.prices(sorted(O["t"].unique()), start="2013-01-01")
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    UZUN = False
+    xu = _xu_duzelt(D.xu100(start="2013-01-01"))
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    Vx = pd.DataFrame({t: (df["close"] * df["volume"]).rolling(20).mean() for t, df in px.items()}).reindex(Cx.index)
+    gun = Cx.index
+    X = xu.reindex(gun).ffill()
+    H = 504
+    rel = (Cx.shift(-H) / Cx).div(X.shift(-H) / X, axis=0)
+    mx3 = Cx[::-1].rolling(H, min_periods=H // 2).max()[::-1].shift(-1) / Cx
+    lo, hi = Cx.rolling(252, min_periods=200).min(), Cx.rolling(252, min_periods=200).max()
+    konum = (Cx - lo) / (hi - lo)
+    m3g = m3.copy(); m3g.index = m3g.index + pd.offsets.MonthBegin(1)
+    m3_ref = float(m3[m3.index <= pd.Timestamp("2021-01-01")].iloc[-1])
+    esik = pd.Series(5e6 * np.minimum(1.0, m3g.reindex(gun, method="ffill").values / m3_ref), index=gun)
+    reel = pd.Series(reel_faiz(gun), index=gun)
+    A = A.copy()
+    A["giris"] = pd.to_datetime(A["giris"])
+    A = A[A.giris.isin(gun) & A.t.isin(Cx.columns) & (A.get("tip", "sanayi") == "sanayi")]
+    A = A[(A.giris >= "2014-06-01") & (A.giris <= gun[-H - 1])]
+    def at(df, t, g):
+        try:
+            return float(df.at[g, t])
+        except Exception:
+            return np.nan
+    num = lambda c: pd.to_numeric(A[c], errors="coerce") if c in A else pd.Series(np.nan, index=A.index)
+    A["vol"] = [at(Vx, t, g) for t, g in zip(A.t, A.giris)]
+    A = A[A.vol > A.giris.map(esik)].copy()
+    num = lambda c: pd.to_numeric(A[c], errors="coerce") if c in A else pd.Series(np.nan, index=A.index)
+    A["rel"] = [at(rel, t, g) for t, g in zip(A.t, A.giris)]
+    A["mx"] = [at(mx3, t, g) for t, g in zip(A.t, A.giris)]
+    A["konum"] = [at(konum, t, g) for t, g in zip(A.t, A.giris)]
+    A = A[A.rel.notna()].copy()
+    num = lambda c: pd.to_numeric(A[c], errors="coerce") if c in A else pd.Series(np.nan, index=A.index)
+    mcap = num("pddd") * num("oz")
+    fd = mcap + num("netborc").fillna(0)
+    A["fd"] = fd
+    A["fcf_y"] = num("sna_ttm") / mcap
+    # gecen yilin ayni donemi varlik
+    A["donem_s"] = A["donem"].astype(str)
+    vmap = {(t, d): v for t, d, v in zip(A.t, A.donem_s, num("varlik"))}
+    onceki = lambda d: f"{int(d[:4]) - 1}{d[4:]}"
+    A["varlik1"] = [vmap.get((t, onceki(d)), np.nan) for t, d in zip(A.t, A.donem_s)]
+    vb = num("varlik") / A["varlik1"] - 1
+    f0, f1 = num("favok_ttm"), num("favok1_ttm")
+    fb = np.where(f1 > 0, f0 / f1 - 1, np.nan)
+    rk = lambda s: s.groupby(A["donem_s"]).rank(pct=True)
+    K = pd.DataFrame(index=A.index)
+    K["K1 kucuk"] = rk(A.fd.where(A.fd > 0)) <= 0.4
+    K["K2 nakit"] = (A.fcf_y > 0) & (rk(A.fcf_y) >= 0.6)
+    K["K3 ucuz PD/DD"] = (num("pddd") > 0) & (rk(num("pddd").where(num("pddd") > 0)) <= 0.4)
+    K["K4 karli"] = (f0 > 0) & (num("roe") > 0)
+    K["K5 yatirim disiplini"] = pd.Series(np.where(np.isnan(fb) | vb.isna(), False, vb <= fb), index=A.index)
+    K["K6 dibe yakin"] = A.konum <= 0.3
+    A["skor"] = K.sum(axis=1)
+    A["pot"] = K["K4 karli"] & (A.skor >= 5)
+    A["basari"] = A.rel >= 2
+    A["kat3"] = A.mx >= 3
+    A["donem_g"] = pd.cut(A.giris.dt.year, [2013, 2017, 2020, 2024], labels=["2014-17", "2018-20", "2021-24"])
+    A["rejim"] = np.where(A.giris.map(reel) > 0, "SIKI", "GEVSEK")
+    v3r = rk(num("v3"))
+    L = ["COK KATLI HISSE TESTI (24 Kas 2026) — onceden sabitlenen tanim (docstring). Yartseva (2025) sartlari, BIST sanayi.",
+         "Not: veri yalniz bugun borsada olan hisseleri kapsiyor (batip cikanlar yok) -> kucuk/ucuz hisseler lehine hafif yanli.", "",
+         f"Gozlem {len(A)} bilanco olayi, {A.t.nunique()} hisse. TABAN: 2 yilda endeksi 2 kat gecen %{100 * A.basari.mean():.1f} | "
+         f"2 yilda nominal 3 kat %{100 * A.kat3.mean():.1f} | goreli getiri ortanca x{A.rel.median():.2f}", ""]
+    def sat(ad, g, taban=None):
+        if len(g) < 20:
+            return f"  {ad:30s} n {len(g):5d}"
+        p = g.basari.mean(); oran = "" if taban is None or taban == 0 else f" ({p / taban:.1f} kat)"
+        return (f"  {ad:30s} n {len(g):5d} | endeksi 2x gecen %{100 * p:5.1f}{oran} | nominal 3x %{100 * g.kat3.mean():5.1f}"
+                f" | goreli ortanca x{g.rel.median():.2f} ort x{g.rel.clip(0, 10).mean():.2f} | endeksin gerisinde kalan %{100 * (g.rel < 1).mean():.0f}")
+    tb = A.basari.mean()
+    L.append("1) TEK TEK SARTLAR (bilgi; secim icin kullanilmadi)")
+    for c in K.columns:
+        L.append(sat(c, A[K[c]], tb))
+    L.append("\n2) KAC SART SAGLANIYOR")
+    for s_ in range(7):
+        L.append(sat(f"{s_} sart", A[A.skor == s_], tb))
+    L.append("\n3) POTANSIYEL (K4 zorunlu + en az 5/6) — KABUL TESTI")
+    L.append(sat("TABAN (hepsi)", A, None))
+    L.append(sat("POTANSIYEL", A[A.pot], tb))
+    ok = []
+    for ad, kol in (("donem", "donem_g"), ("rejim", "rejim")):
+        for k_, g in A.groupby(kol, observed=True):
+            t_ = g.basari.mean(); p_ = g[g.pot]
+            L.append(f"  {ad} {k_}: taban %{100 * t_:.1f} (ort x{g.rel.clip(0, 10).mean():.2f}) | " + sat("potansiyel", p_, t_).strip())
+            if len(p_) >= 20:
+                ok.append(p_.basari.mean() >= 1.5 * t_ and p_.rel.clip(0, 10).mean() > g.rel.clip(0, 10).mean())
+            else:
+                ok.append(False)
+    L.append(f"  -> KABUL SARTI: {'SAGLANDI' if all(ok) else 'SAGLANMADI'} ({sum(ok)}/{len(ok)} alt grup)")
+    L.append("\n4) SISTEMIN ADAYLARI ICINDE (v3 ust %20): potansiyel ek bilgi veriyor mu?")
+    S2 = A[v3r >= 0.8]
+    L.append(sat("v3 ust %20", S2, tb))
+    L.append(sat("v3 ust %20 + POTANSIYEL", S2[S2.pot], S2.basari.mean()))
+    L.append(sat("v3 ust %20, potansiyel DEGIL", S2[~S2.pot], S2.basari.mean()))
+    txt = "\n".join(L)
+    (R / "cok_kat_sonuc.txt").write_text(txt, encoding="utf-8")
+    A[["t", "donem_s", "giris", "rel", "mx", "skor", "pot"] + []].join(K).to_csv(R / "cok_kat_olaylar.csv.gz", index=False, compression="gzip")
+    print(txt)
