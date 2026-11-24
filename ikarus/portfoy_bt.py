@@ -2492,3 +2492,251 @@ def cok_kat_test():
     (R / "cok_kat_sonuc.txt").write_text(txt, encoding="utf-8")
     A[["t", "donem_s", "giris", "rel", "mx", "skor", "pot"] + []].join(K).to_csv(R / "cok_kat_olaylar.csv.gz", index=False, compression="gzip")
     print(txt)
+
+
+def _xu_df(start="2013-01-01"):
+    """BIST100 gunluk OHLCV (IKARUS motoru icin). 2020 bolunmesi tum fiyat kolonlarina uygulanir."""
+    import yfinance as yf
+    raw = yf.download("XU100.IS", start=start, auto_adjust=True, progress=False)
+    if isinstance(raw.columns, pd.MultiIndex):
+        raw = raw.droplevel(1, axis=1)
+    df = D._norm(raw).copy()
+    r = df["close"] / df["close"].shift(1)
+    for t in r[r < 0.05].index:
+        for c in ("open", "high", "low", "close"):
+            if c in df:
+                df.loc[df.index < t, c] = df.loc[df.index < t, c] / 100.0
+    if "volume" not in df or df["volume"].fillna(0).sum() == 0:
+        df["volume"] = 1.0
+    df["volume"] = df["volume"].fillna(0).replace(0, np.nan).ffill().fillna(1.0)
+    return df
+
+
+def endeks_test():
+    """24 Kas (Teoman: 'endeks sictiginda komple nakit, toparlayana kadar; alarm versin, karar kisinin').
+    ONCEDEN SABITLENEN TEST. Canli kural (stop -20, geri +10, yer tut, kar al 90, iz 20/15), 5 hisse, 15 rastgele kosu.
+    Endeks disi gunlerde: elde ne varsa ertesi gun satilir, yeni alim yok, para faizde (para piyasasi fonu varsayimi).
+      A) 200 GUN: BIST100 kapanisi 200 gunluk ortalamanin altindaysa disarida, ustundeyse iceride (gunluk).
+      B) IKARUS FAZ (BIST100'e uygulanmis): sinyal DAGITIM olunca disari, AL (alim) olunca iceri; arada onceki durum surer.
+      Ek bilgi (secim icin degil): A'nin ay sonu kontrollu hali (Faber 10 ay).
+    KABUL: her donemde (2015-17, 2018-20, 2021-24, 2025-26) en buyuk dusus ortancasi en az 1/3 azalir (taban dusus > %20 olan
+           donemlerde) VE 2015-2026 tek parca toplam getiri tabanin en az %90'i."""
+    global UZUN
+    UZUN = True
+    EKSTRA.clear()
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    UZUN = False
+    rr = faiz_serisi(idx)
+    xs = pd.Series(xu.values, index=idx)
+    ma = xs.rolling(200, min_periods=150).mean()
+    disA = (xs < ma).values
+    ay_son = xs.groupby(xs.index.to_period("M")).transform(lambda s: s.index == s.index.max()).astype(bool).values
+    ma10 = xs.resample("ME").last().rolling(10).mean()
+    disF = np.zeros(len(idx), bool); dur = False
+    for i, g in enumerate(idx):
+        if ay_son[i]:
+            m_ = ma10.get(g.to_period("M").to_timestamp("M"), np.nan)
+            m_ = ma10[ma10.index <= g].iloc[-1] if (ma10.index <= g).any() else np.nan
+            if m_ == m_:
+                dur = xs.iloc[i] < m_
+        disF[i] = dur
+    L = ["ENDEKS CIKIS TESTI (24 Kas 2026) — onceden sabitlenen tanim (docstring).", ""]
+    try:
+        xdf = _xu_df()
+        rx = E.compute(xdf, xdf["close"], m3, "D", sig_mod="faz")
+        sg = rx["sinyal"].reindex(idx).ffill().values
+        disB = np.zeros(len(idx), bool); dur = False
+        for i in range(len(idx)):
+            if sg[i] == "DAGITIM":
+                dur = True
+            elif sg[i] in AL:
+                dur = False
+            disB[i] = dur
+        L.append("IKARUS faz BIST100: sinyal dagilimi " + ", ".join(f"{k} {v}" for k, v in pd.Series(sg).value_counts().items()))
+    except Exception as e:
+        disB = None
+        L.append(f"IKARUS faz BIST100 hesaplanamadi: {e}")
+    def gecis(d):
+        return int((np.diff(d.astype(int)) != 0).sum())
+    V = [("TABAN (canli, hep iceride)", None), ("A) 200 gun ortalama", disA)]
+    if disB is not None:
+        V.append(("B) IKARUS faz (BIST100)", disB))
+    V.append(("ek: Faber ay sonu 10 ay", disF))
+    def stop_x(x):
+        return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+    CANLI = {"ek_stop": stop_x(0.20), "geri_gir": lambda i, j, p, cp, cg, gun: p >= cp * 1.10, "slot_tut": True}
+    donemler = [("2015-17", "2015-01-01", "2017-12-31"), ("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"),
+                ("2025-26", "2025-01-01", "2026-12-31"), ("2015-2026 TEK PARCA", "2015-01-01", "2026-12-31")]
+    rng = np.random.default_rng(91)
+    tablo = {}
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        ii_ = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii_[1:]] * np.diff(idx.values[ii_]).astype("timedelta64[D]").astype(float) / 365.0))
+        xm = xs.values[m]
+        xdd = float((xm / np.maximum.accumulate(xm) - 1).min())
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xm[-1] / xm[0] - 1):+.0f}% (en buyuk dusus %{100 * xdd:.0f})")
+        U = [rng.random(C[m].shape) for _ in range(15)]
+        for ad_v, dis in V:
+            ag = None if dis is None else np.where(dis[m], 0.0, 1.0)
+            v, dd = [], []
+            for u in U:
+                e, _, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=u, agirlik=ag, sert=True, **CANLI)
+                d_ = e["deger"]
+                v.append(d_.iloc[-1] / BAS); dd.append(float((d_ / d_.cummax() - 1).min()))
+            v, dd = np.array(v), np.array(dd)
+            tablo[(ad_v, ad_d)] = (np.median(v), np.median(dd), v.min())
+            ek = "" if dis is None else f" | disarida gun %{100 * dis[m].mean():.0f}, gecis {gecis(dis[m])}"
+            L.append(f"  {ad_v:30s} ortanca {100 * (np.median(v) - 1):+7.0f}% (en kotu {100 * (v.min() - 1):+6.0f}%) | en buyuk dusus ortanca %{100 * np.median(dd):.0f}{ek}")
+            print(L[-1])
+        L.append("")
+    L.append("KABUL KONTROLU:")
+    for ad_v, dis in V[1:]:
+        ok = []
+        for ad_d, *_ in donemler[:-1]:
+            t_dd = tablo[(V[0][0], ad_d)][1]; v_dd = tablo[(ad_v, ad_d)][1]
+            if t_dd < -0.20:
+                ok.append(v_dd >= t_dd * (2 / 3))
+        top = tablo[(ad_v, donemler[-1][0])][0] >= 0.9 * tablo[(V[0][0], donemler[-1][0])][0]
+        L.append(f"  {ad_v:30s} dusus 1/3 azaldi: {sum(ok)}/{len(ok)} donem | toplam tabanin %90'i ustunde: {'EVET' if top else 'HAYIR'}"
+                 f" -> {'KABUL' if all(ok) and top else 'RET'}")
+    # bugunku durum
+    L.append(f"\nBUGUN ({idx[-1]:%Y-%m-%d}): BIST100 {xs.iloc[-1]:.0f}, 200g ort {ma.iloc[-1]:.0f} -> A {'DISARI' if disA[-1] else 'ICERI'}"
+             + ("" if disB is None else f" | B {'DISARI' if disB[-1] else 'ICERI'} (son sinyal {sg[-1]})"))
+    txt = "\n".join(L)
+    (R / "endeks_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def saglikli_test():
+    """24 Kas (Teoman: 'son 2 yilda cok gitmis ama spekulasyonsuz, taban taban cakilmamis hisselerin ortak noktalari').
+    ONCEDEN SABITLENEN TEST.
+    SAGLIKLI KAZANAN (2 yillik pencere, 504 islem gunu): hisse/BIST100 >= 2 VE art arda 3+ tavan yok VE art arda 3+ taban yok
+      VE pencere icinde en buyuk dusus -%45'ten az. Evren: pencere basinda likidite esigi ustu, fiyati olan hisseler.
+    OZELLIKLER pencere BASINDA olculur (son bilanco olayi, en fazla 200 gun once; fiyat ozellikleri o gun).
+    KESIF: son 2 yil (bugun - 504 gun -> bugun). Her ozellik icin kazanan olma orani ust 1/3 / alt 1/3.
+      En buyuk etkili 3 ozellik (her ucte birde n >= 30) secilir; yonu kesifte belirlenir.
+      ADAY = secilen 3 ozelligin en az 2'sinde iyi ucte birde.
+    DOGRULAMA (hic bakilmamis): 2016-11, 2018-11, 2020-11, 2022-11 baslangicli 2 yillik pencereler.
+    KABUL: ADAY'in kazanan orani / taban >= 1.5, 4 pencerenin en az 3'unde VE 4'unde de > 1.0."""
+    global UZUN
+    from . import firsat_bt as FB
+    from . import temel as _T
+    UZUN = True
+    EKSTRA.clear()
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    G = _T.gecmis_birlesik()
+    O = B.olaylar(G, m3)
+    px = D.prices(sorted(O["t"].unique()), start="2013-01-01")
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    UZUN = False
+    cols = list(C.columns)
+    A = A[A.t.isin(cols)].copy(); A["giris"] = pd.to_datetime(A["giris"])
+    num = lambda c: pd.to_numeric(A[c], errors="coerce") if c in A else pd.Series(np.nan, index=A.index)
+    A["mcap"] = num("pddd") * num("oz")
+    A["borc"] = num("netborc") / num("favok_ttm").where(num("favok_ttm") > 0)
+    VOL = pd.DataFrame({t: pd.Series(ham[t][10], index=ham[t][0]).reindex(idx) for t in cols if t in ham}).reindex(columns=cols)
+    ret = C.pct_change(fill_method=None)
+    XS = pd.Series(xu.values, index=idx)
+    m3g = m3.copy(); m3g.index = m3g.index + pd.offsets.MonthBegin(1)
+    m3_ref = float(m3[m3.index <= pd.Timestamp("2021-01-01")].iloc[-1])
+    esik = pd.Series(5e6 * np.minimum(1.0, m3g.reindex(idx, method="ffill").values / m3_ref), index=idx)
+    TEMEL = ["v3", "fav_get", "pddd", "kaz_get", "roe", "F", "sue_nk", "sue_faal", "satis_reel", "roe_ivme", "sna_get",
+             "borc", "mcap", "marj_deg", "buyume3", "nakit_kal"]
+    def ardisik(b):
+        m_ = 0; k = 0
+        for x in b:
+            k = k + 1 if x else 0; m_ = max(m_, k)
+        return m_
+    def pencere(i0):
+        i1 = i0 + 504
+        g0, g1 = idx[i0], idx[i1]
+        c0, c1 = C.iloc[i0], C.iloc[i1]
+        ok = c0.notna() & c1.notna() & (VOL.iloc[i0] > esik.iloc[i0])
+        F_ = pd.DataFrame(index=[t for t in cols if ok[t]])
+        rel = (c1 / c0) / (XS.iloc[i1] / XS.iloc[i0])
+        F_["rel"] = rel.reindex(F_.index)
+        w = ret.iloc[i0 + 1:i1 + 1]
+        cw = C.iloc[i0:i1 + 1]
+        F_["tavan3"] = [ardisik((w[t] >= 0.095).values) for t in F_.index]
+        F_["taban3"] = [ardisik((w[t] <= -0.095).values) for t in F_.index]
+        F_["dd"] = [float((cw[t] / cw[t].cummax() - 1).min()) for t in F_.index]
+        F_["kazanan"] = (F_.rel >= 2) & (F_.tavan3 < 3) & (F_.taban3 < 3) & (F_.dd > -0.45)
+        F_["kaba_kazanan"] = F_.rel >= 2
+        # ozellikler (pencere basinda)
+        son = A[(A.giris <= g0) & (A.giris >= g0 - pd.Timedelta(days=200))].sort_values("giris").groupby("t").last()
+        for c in TEMEL:
+            F_[c] = pd.to_numeric(son[c], errors="coerce").reindex(F_.index) if c in son else np.nan
+        F_["P (IKARUS ucuzluk)"] = PC.iloc[i0].reindex(F_.index)
+        F_["tik"] = TK.iloc[i0].reindex(F_.index)
+        F_["mom6"] = (C.iloc[i0] / C.iloc[max(0, i0 - 120)] - 1).reindex(F_.index)
+        F_["mom12"] = (C.iloc[i0] / C.iloc[max(0, i0 - 250)] - 1).reindex(F_.index)
+        lo, hi = C.iloc[max(0, i0 - 250):i0 + 1].min(), C.iloc[max(0, i0 - 250):i0 + 1].max()
+        F_["konum12"] = ((C.iloc[i0] - lo) / (hi - lo)).reindex(F_.index)
+        F_["oynaklik"] = ret.iloc[max(0, i0 - 60):i0 + 1].std().reindex(F_.index)
+        F_["hacim"] = VOL.iloc[i0].reindex(F_.index)
+        return g0, g1, F_
+    OZ = TEMEL + ["P (IKARUS ucuzluk)", "tik", "mom6", "mom12", "konum12", "oynaklik", "hacim"]
+    def ucte(F_, c):
+        r = F_[c].rank(pct=True)
+        return r >= 2 / 3, r <= 1 / 3
+    L = ["SAGLIKLI KAZANAN TESTI (24 Kas 2026) — onceden sabitlenen tanim (docstring).", ""]
+    i_k = len(idx) - 1 - 504
+    g0, g1, K = pencere(i_k)
+    p0 = K.kazanan.mean()
+    L.append(f"KESIF penceresi {g0:%Y-%m-%d} -> {g1:%Y-%m-%d}: evren {len(K)} hisse, saglikli kazanan {int(K.kazanan.sum())} (%{100 * p0:.1f}); "
+             f"kaba (yalniz endeksi 2x gecen) {int(K.kaba_kazanan.sum())}")
+    kz = K[K.kazanan].sort_values("rel", ascending=False)
+    L.append("  saglikli kazananlar (endekse gore kat): " + ", ".join(f"{t} x{r:.1f}" for t, r in kz.rel.items()))
+    elenen = K[K.kaba_kazanan & ~K.kazanan]
+    L.append("  endeksi 2x gecip SPEKULATIF/cakilmali sayilanlar: " + ", ".join(f"{t}(tavan{int(r.tavan3)} taban{int(r.taban3)} dd%{100 * r.dd:.0f})" for t, r in elenen.iterrows()))
+    L.append("\n  Ozellik: kazanan orani ust 1/3 | alt 1/3 | oran (ust/alt) | kazananlarin ortanca siralamasi")
+    etki = []
+    for c in OZ:
+        if K[c].notna().sum() < 90:
+            L.append(f"  {c:20s} veri az"); continue
+        u, a = ucte(K, c)
+        if u.sum() < 30 or a.sum() < 30:
+            continue
+        pu, pa = K.kazanan[u].mean(), K.kazanan[a].mean()
+        rk = K[c].rank(pct=True)[K.kazanan].median()
+        o = (pu + 0.005) / (pa + 0.005)
+        etki.append((abs(np.log(o)), c, o > 1))
+        L.append(f"  {c:20s} %{100 * pu:5.1f} | %{100 * pa:5.1f} | {o:5.2f} | {rk:.2f}")
+    etki.sort(reverse=True)
+    sec = [(c, yuk) for _, c, yuk in etki[:3]]
+    L.append("\n  SECILEN 3 ozellik: " + ", ".join(f"{c} ({'yuksek' if y else 'dusuk'} iyi)" for c, y in sec))
+    def aday(F_):
+        say = pd.Series(0, index=F_.index)
+        for c, y in sec:
+            u, a = ucte(F_, c)
+            say += (u if y else a).astype(int)
+        return say >= 2
+    ad_k = aday(K)
+    L.append(f"  kesifte ADAY: n {int(ad_k.sum())}, kazanan %{100 * K.kazanan[ad_k].mean():.1f} (taban %{100 * p0:.1f}) — kesif verisi, kanit degil")
+    L.append("\nDOGRULAMA (hic bakilmamis pencereler):")
+    oranlar = []
+    for bas in ("2016-11-24", "2018-11-24", "2020-11-24", "2022-11-24"):
+        i0 = int(idx.searchsorted(pd.Timestamp(bas)))
+        if i0 + 504 >= len(idx):
+            continue
+        g0, g1, F_ = pencere(i0)
+        t_ = F_.kazanan.mean(); ad = aday(F_)
+        pa_ = F_.kazanan[ad].mean() if ad.sum() else np.nan
+        o = pa_ / t_ if t_ > 0 else np.nan
+        oranlar.append(o)
+        tek = []
+        for c, y in sec:
+            u, a = ucte(F_, c); m_ = u if y else a
+            tek.append(f"{c} %{100 * F_.kazanan[m_].mean():.1f}")
+        L.append(f"  {g0:%Y-%m}..{g1:%Y-%m}: evren {len(F_)}, taban %{100 * t_:.1f} | ADAY n {int(ad.sum())} kazanan %{100 * pa_:.1f} -> {o:.2f} kat"
+                 f" | tek tek: {'; '.join(tek)} | aday endekse gore ortanca x{F_.rel[ad].median():.2f} (hepsi x{F_.rel.median():.2f})")
+    o = np.array(oranlar, dtype=float)
+    kabul = len(o) == 4 and (o >= 1.5).sum() >= 3 and (o > 1.0).all()
+    L.append(f"  -> KABUL: {'SAGLANDI' if kabul else 'SAGLANMADI'} (>=1.5 kat: {int((o >= 1.5).sum())}/4, >1: {int((o > 1).sum())}/4)")
+    txt = "\n".join(L)
+    (R / "saglikli_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
