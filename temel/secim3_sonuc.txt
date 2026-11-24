@@ -1,0 +1,27 @@
+SECIM 3: DUSUK HACIM SAGLAMLIK (24 Kas 2026). Canli kural, 5 hisse, 45 kosu (3 tohum x 15).
+
+1) YIL YIL (her yil 100.000 TL ile ayri). Ortanca % | dusuk hacim rastgeleyi gecen kosu orani (ayni rastgele dizi ile)
+  yil     rastgele  dus.hacim    kati  dus.devir   gecen
+  2015          +9         +9      +9         +9      0%
+  2016         +13        +13     +13        +13      0%
+  2017         +14        +14     +14        +14      0%
+  2018         -20        -20     -20        -24     11%
+  2019         +35        +35     +35        +35      0%
+  2020         +55        +52     +52        +65     47%
+  2021         +52        +52     +52        +52      0%
+  2022        +143       +119    +119       +148     18%
+  2023        +129       +129    +129       +129     33%
+  2024        +103       +104     +98       +101     56%
+  2025         +60        +47     +50        +35     24%
+  2026          +8        +12     +10        +11     71%
+  -> dusuk hacim 2/12 yilda rastgeleden iyi (ortanca).
+
+2) DONEMLER, normal esik ve 3 KAT likidite esigi (en sig hisseler aday olamaz). Ortanca % (en kotu %)
+  2015-17 normal esik  rastgele    +43 (  +43) | dusuk hacim    +43 (  +43) | kati    +43 | dusuk devir    +43 | dusuk hacim gecen kosu %0
+  2015-17 3 kat esik   rastgele    +39 (  +39) | dusuk hacim    +39 (  +39) | kati    +39 | dusuk devir    +39 | dusuk hacim gecen kosu %0
+  2018-20 normal esik  rastgele    +86 (  +74) | dusuk hacim    +85 (  +75) | kati    +85 | dusuk devir    +91 | dusuk hacim gecen kosu %33
+  2018-20 3 kat esik   rastgele    +73 (  +69) | dusuk hacim    +85 (  +69) | kati    +86 | dusuk devir    +86 | dusuk hacim gecen kosu %38
+  2021-24 normal esik  rastgele  +1821 (+1301) | dusuk hacim  +2208 (+1474) | kati  +2073 | dusuk devir  +1836 | dusuk hacim gecen kosu %89
+  2021-24 3 kat esik   rastgele  +1966 (+1422) | dusuk hacim  +2018 (+1592) | kati  +1974 | dusuk devir  +1893 | dusuk hacim gecen kosu %60
+  2025-26 normal esik  rastgele    +70 (  +11) | dusuk hacim    +68 (  +29) | kati    +67 | dusuk devir    +46 | dusuk hacim gecen kosu %49
+  2025-26 3 kat esik   rastgele    +70 (   +5) | dusuk hacim    +71 (  +19) | kati    +81 | dusuk devir    +61 | dusuk hacim gecen kosu %53
