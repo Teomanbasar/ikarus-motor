@@ -142,6 +142,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
     bek_al, bek_sat = [], []
     egri, isl = [], []
     Cv = C.values; Sv = S.values; PCv = PC.values; VRv = VR.values; TKv = TK.values
+    kv = np.broadcast_to(np.asarray(karal, dtype=float), (len(idx),))   # 24 Kas: kar al esigi gun gun olabilir
     # iz_vol=(aktif, k): geri payi = k x (60 gunluk gunluk getiri oynakligi x kok 20), %8-%35 arasi
     if iz_vol:
         sig = (C.pct_change().rolling(60, min_periods=20).std() * np.sqrt(20)).values
@@ -196,7 +197,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
             if not np.isnan(p):
                 tepe[t] = max(tepe.get(t, p), p)
             gf = poz[t][1]
-            if PCv[i, j] >= karal:
+            if PCv[i, j] >= kv[i]:
                 bek_sat.append((t, "pahali (kar al)"))
             elif VRv[i, j] < 0:
                 bek_sat.append((t, "bilanco bozuldu"))
@@ -228,7 +229,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                 j = col[t]; p = Cv[i, j]; cp, cg = bekleyen[t]
                 if (gun - cg).days > bekle_max or VRv[i, j] < 0:
                     bekleyen.pop(t); continue
-                if not np.isnan(p) and PCv[i, j] < karal and geri_gir(i, j, p, cp, cg, gun):
+                if not np.isnan(p) and PCv[i, j] < kv[i] and geri_gir(i, j, p, cp, cg, gun):
                     geri.append(t); bekleyen.pop(t)
         taban = int(np.floor(N * w + 1e-9)) - len(poz) + len(bek_sat) - (len(bekleyen) if slot_tut else 0)
         geri = geri[:max(0, taban)]
@@ -2196,4 +2197,173 @@ def secim3_test():
             print(L[-1])
     txt = "\n".join(L)
     (R / "secim3_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def reel_faiz(idx):
+    """Gun gun reel faiz = politika faizi - yillik TUFE. TUFE bir ay gecikmeli (ayin 3'unde aciklanir)."""
+    fz = pd.Series({pd.Timestamp(d): v for d, v in FAIZ}).sort_index()
+    fzg = fz.reindex(fz.index.union(idx)).ffill().reindex(idx)
+    tufe = D.tufe(update=False)
+    ty = (tufe / tufe.shift(12) - 1) * 100
+    ty.index = ty.index + pd.offsets.MonthBegin(1) + pd.Timedelta(days=3)
+    tyg = ty.reindex(ty.index.union(idx)).ffill().reindex(idx)
+    return (fzg - tyg).values
+
+
+def rejim2_test():
+    """24 Kas (Teoman 'baslayalim'): siki para doneminde (reel faiz > 0) hangi AL'lar kaybettiriyor?
+    A) canli kuralla 2015-2026 tek parca 15 rastgele kosunun ISLEMLERI; giris anindaki ozelliklere gore, rejime gore,
+       islemin getirisi - ayni surenin mevduati. Siki donem ayrica bolumlere (episod) ayrilir: tutarlilik.
+    B) yalniz SIKI rejimde devreye giren kurallar, portfoy (3 donem x 15 kosu)."""
+    global UZUN
+    UZUN = True
+    EKSTRA.clear()
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    UZUN = False
+    rr = faiz_serisi(idx)
+    reel = reel_faiz(idx)
+    siki = np.nan_to_num(reel, nan=-1) > 0
+    cols = list(C.columns); cj = {t: j for j, t in enumerate(cols)}
+    # siki bolumler
+    ep = []; bas = None
+    for i in range(len(idx)):
+        if siki[i] and bas is None:
+            bas = i
+        if (not siki[i] or i == len(idx) - 1) and bas is not None:
+            if i - bas > 40:
+                ep.append((idx[bas], idx[i]))
+            bas = None
+    L = ["SIKI PARA DONEMI TESTI (24 Kas 2026). reel faiz = politika faizi - yillik TUFE (1 ay gecikmeli). Canli kural, 5 hisse.",
+         "Siki bolumler: " + "; ".join(f"{a:%Y-%m}..{b:%Y-%m}" for a, b in ep), ""]
+    def ep_ad(g):
+        for a, b in ep:
+            if a <= g <= b:
+                return f"{a:%y%m}-{b:%y%m}"
+        return "gevsek"
+    VOL = pd.DataFrame({t: pd.Series(ham[t][10], index=ham[t][0]).reindex(idx) for t in cols if t in ham}).reindex(columns=cols)
+    RH = VOL.rank(axis=1, pct=True).values
+    MOM = (C / C.shift(120) - 1).values
+    O20 = (C / C.shift(20) - 1).values
+    xs = pd.Series(xu.values, index=idx)
+    TREND = (xs > xs.rolling(200, min_periods=150).mean()).values
+    EKv = pd.DataFrame(EKSTRA["EK"]).reindex(index=idx, columns=cols).values if "EK" in EKSTRA else None
+    GR = grup_listesi()
+    grp = lambda t: next((g for g, v in GR.items() if t in v), "diger")
+    def stop_x(x):
+        return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+    CANLI = {"ek_stop": stop_x(0.20), "geri_gir": lambda i, j, p, cp, cg, gun: p >= cp * 1.10, "slot_tut": True}
+    # ---------- A) islemler ----------
+    m = idx >= "2015-01-01"
+    o = np.flatnonzero(m)[0]
+    rng = np.random.default_rng(81)
+    isl = []
+    for k in range(15):
+        e, tr, pz = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=rng.random(C[m].shape), **CANLI)
+        isl += [x for x in tr.itertuples(index=False, name=None)]
+        for t, (a_, gf, gt) in pz.items():
+            cf = C[t][m].dropna().iloc[-1]
+            isl.append((t, gt, idx[-1], gf, cf, 100 * (cf * (1 - MAL) / (gf * (1 + MAL)) - 1), "donem sonu elde"))
+    T_ = pd.DataFrame(isl, columns=["t", "giris", "cikis", "gf", "cf", "getiri", "neden"])
+    pos = {d: i for i, d in enumerate(idx)}
+    gi = T_.giris.map(pos).values; ci = T_.cikis.map(pos).values
+    karar = np.maximum(gi - 1, 0)
+    cum = np.concatenate([[1.0], np.cumprod(1 + rr[1:] * np.diff(idx.values).astype("timedelta64[D]").astype(float) / 365.0)])
+    T_["mevduat"] = 100 * (cum[ci] / cum[gi] - 1)
+    T_["endeks"] = 100 * (xu.values[ci] / xu.values[gi] - 1)
+    T_["fazla_mev"] = 100 * ((1 + T_.getiri / 100) / (1 + T_.mevduat / 100) - 1)
+    T_["gun"] = (ci - gi)
+    T_["rejim"] = np.where(siki[karar], "SIKI", "GEVSEK")
+    T_["bolum"] = [ep_ad(idx[k]) for k in karar]
+    jj = T_.t.map(cj).values
+    T_["P"] = PC.values[karar, jj]; T_["v3"] = VR.values[karar, jj]; T_["tik"] = TK.values[karar, jj]
+    T_["mom6"] = MOM[karar, jj]; T_["ay1"] = O20[karar, jj]; T_["hacim_r"] = RH[karar, jj]
+    T_["trend"] = TREND[karar]; T_["grup"] = T_.t.map(grp)
+    T_["reel"] = reel[karar]
+    if EKv is not None:
+        T_["eksik"] = EKv[karar, jj]
+    T_.to_csv(R / "rejim2_islemler.csv", index=False)
+    def satir(ad, g):
+        if len(g) < 15:
+            return f"  {ad:34s} n {len(g):4d}"
+        return (f"  {ad:34s} n {len(g):4d} | getiri ort {g.getiri.clip(-60, 200).mean():+6.1f} | mevduata gore ortanca {g.fazla_mev.median():+6.1f} ort {g.fazla_mev.clip(-80, 200).mean():+6.1f}"
+                f" | mevduati gecen %{100 * (g.fazla_mev > 0).mean():3.0f} | ort gun {g.gun.mean():4.0f}")
+    L.append(f"A) ISLEMLER (15 kosu, 2015-2026 tek parca; {len(T_)} islem). Getiri %, 'mevduata gore' = islem suresince mevduata gore fazla %.")
+    for rj in ("GEVSEK", "SIKI"):
+        X = T_[T_.rejim == rj]
+        L.append(f"\n== {rj} rejimde alinanlar ==")
+        L.append(satir("TUMU", X))
+        for b_, g in X.groupby("bolum"):
+            if rj == "SIKI":
+                L.append(satir(f"bolum {b_}", g))
+        kos = [("cikis: " + n_, X.neden == n_) for n_ in sorted(X.neden.unique())]
+        kos += [("P <= 5", X.P <= 5), ("P 5-20", X.P > 5),
+                ("v3 >= 0.9", X.v3 >= 0.9), ("v3 0.8-0.9", X.v3 < 0.9),
+                ("cift tik", X.tik >= 2), ("tek tik", X.tik < 2),
+                ("6 ay momentum > 0", X.mom6 > 0), ("6 ay momentum <= 0", X.mom6 <= 0),
+                ("son 1 ay > 0", X.ay1 > 0), ("son 1 ay <= 0", X.ay1 <= 0),
+                ("hacim ust yari", X.hacim_r >= 0.5), ("hacim alt yari", X.hacim_r < 0.5),
+                ("endeks 200g ortalama ustunde", X.trend), ("endeks 200g ortalama altinda", ~X.trend)]
+        if "eksik" in X:
+            kos += [("IKARUS eksik = 0", X.eksik == 0), ("IKARUS eksik >= 1", X.eksik >= 1)]
+        kos += [(f"grup {g_}", X.grup == g_) for g_ in sorted(X.grup.unique())]
+        if rj == "SIKI":
+            kos += [("reel faiz 0-5", X.reel <= 5), ("reel faiz > 5", X.reel > 5)]
+        for ad, mk in kos:
+            L.append(satir(ad, X[mk]))
+            if rj == "SIKI" and not ad.startswith("cikis"):
+                # bolum bolum ayni kosul (tutarlilik)
+                parca = []
+                for b_, g in X[mk].groupby("bolum"):
+                    if len(g) >= 10:
+                        parca.append(f"{b_}: {g.fazla_mev.median():+.0f} (n{len(g)})")
+                L.append("      bolumlerde ortanca: " + " | ".join(parca))
+    L.append("")
+    # ---------- B) portfoy: yalniz siki rejimde devreye giren kurallar ----------
+    VRv = VR.values; PCv = PC.values; TKv = TK.values; GRv = {t: grp(t) for t in cols}
+    def h_(f):
+        return lambda o_: (lambda i, t: siki[o_ + i] and f(o_ + i, cj[t], t))
+    def stop_rj(x):
+        def f(i, j, p, gf, gt, gun):
+            x_ = x if siki[o_glob[0] + i] else 0.20
+            return f"STOP zarar {int(100 * x_)}" if p <= gf * (1 - x_) else None
+        return f
+    o_glob = [0]
+    V = [("CANLI (karsilastirma)", {}, None),
+         ("SIKI: yalniz P <= 5 al", {}, h_(lambda i, j, t: not PCv[i, j] <= 5)),
+         ("SIKI: yalniz cift tik al", {}, h_(lambda i, j, t: TKv[i, j] < 2)),
+         ("SIKI: GYO ve araci kurum alma", {}, h_(lambda i, j, t: GRv[t] in ("GYO", "ARACI KURUM"))),
+         ("SIKI: v3 >= 0.9 alma", {}, h_(lambda i, j, t: VRv[i, j] >= 0.9)),
+         ("SIKI: endeks 200g altindaysa alma", {}, h_(lambda i, j, t: not TREND[i])),
+         ("SIKI: 6 ay momentum <= 0 alma", {}, h_(lambda i, j, t: not MOM[i, j] > 0)),
+         ("SIKI: zarar stopu -%15", {"ek_stop": stop_rj(0.15)}, None),
+         ("SIKI: kar al P >= 80", {"karal_rj": 80}, None),
+         ("SIKI: kar al P >= 95", {"karal_rj": 95}, None)]
+    donemler = [("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31")]
+    L.append("B) PORTFOY: yalniz SIKI rejimde devreye giren kurallar (gevsekte canli kural). 15 kosu ortancasi % (en kotu).")
+    tablo = {}
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        o_ = np.flatnonzero(m)[0]; o_glob[0] = o_
+        ii_ = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii_[1:]] * np.diff(idx.values[ii_]).astype("timedelta64[D]").astype(float) / 365.0))
+        U = [rng.random(C[m].shape) for _ in range(15)]
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xu.values[m][-1] / xu.values[m][0] - 1):+.0f}% | siki gun payi %{100 * siki[m].mean():.0f}")
+        for ad_v, kw, hf in V:
+            kw = {**CANLI, **kw}
+            ka = kw.pop("karal_rj", None)
+            karal = 90 if ka is None else np.where(siki[m], ka, 90)
+            v = np.array([sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=karal, sira=u,
+                              haric=None if hf is None else hf(o_), **kw)[0]["deger"].iloc[-1] / BAS for u in U])
+            tablo[(ad_v, ad_d)] = (np.median(v), v.min())
+            L.append(f"  {ad_v:38s} ortanca {100 * (np.median(v) - 1):+6.0f}% (en kotu {100 * (v.min() - 1):+5.0f}%)")
+            print(L[-1])
+        L.append("")
+    L.append("KABA TOPLAM (uc donem carpimi) | en kotu kosular:")
+    for ad_v, *_ in V:
+        c = np.prod([tablo[(ad_v, d)][0] for d, *_ in donemler]); w = np.prod([tablo[(ad_v, d)][1] for d, *_ in donemler])
+        L.append(f"  {ad_v:38s} x{c:6.1f} | en kotu x{w:6.1f} | 2025-26 {100 * (tablo[(ad_v, '2025-26')][0] - 1):+.0f}%")
+    txt = "\n".join(L)
+    (R / "rejim2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
