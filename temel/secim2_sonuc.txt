@@ -1,0 +1,124 @@
+HISSE SECIM SIRASI TESTI 2 (24 Kas 2026). Uzun veri 2014-2026, canli kural, 5 hisse.
+
+A) ADAY KALITESI: AL'a giris olayi 1046 adet. Olcut dilimine gore sonraki getiri (BIST100'e gore, ortanca %).
+   D1 = olcutte en dusuk %20, D5 = en yuksek %20 (o gunku TUM hisseler icinde). rho = sira korelasyonu.
+  -- 60 islem gunu sonrasi --
+  olcut                                                              2014-20                             2021-26
+                                          D1   D2   D3   D4   D5   rho  n    D1   D2   D3   D4   D5   rho  n  
+  temel puan (v3) yuksek                 +nan +nan   +1   -3   +1 -0.03  111 +nan +nan   -0   +1   -3 -0.05  827
+  ucuz (P dusuk)                         +nan   -6   -1   +3   +0 +0.06  111 +nan  +15   -0   -1   -4 -0.07  827
+  cift tik                               +nan +nan +nan +nan   -0 -0.15  111 +nan +nan +nan   +0   -1 -0.06  827
+  momentum 6 ay yuksek                     +1   -4   +2   -5 +nan +0.01  111   -4   -0   -0   -1 +nan +0.09  827
+  momentum 6 ay dusuk                    +nan   -5   +2   -4   +1 -0.01  111 +nan   -1   -0   -0   -4 -0.09  827
+  son 1 ay dusen (geri donus)              -1   -0   -3   +0   +2 +0.02  111   -3   -1   +2   -2   -5 -0.01  827
+  son 1 ay guclu                           +2   +0   -3   -0   -1 -0.02  111   -5   -2   +2   -1   -3 +0.01  827
+  1 yillik zirveye yakin                   +1   +2   -8   +1   -1 -0.00  111   -3   -2   -1   -0   -2 +0.02  827
+  1 yillik zirveden uzak                   -2   +2   -8   +3   -1 +0.00  111   -1   -0   -1   -2   -2 -0.02  827
+  dusuk oynaklik                           +1   +2   -8   -3   +2 +0.06  111   -9   -1   +1   -2   +0 +0.03  827
+  yuksek oynaklik                          +1   -1   -8   +2   +1 -0.06  111   +0   -2   +1   -2   -9 -0.03  827
+  yuksek hacim                           +nan +nan  +10   +2   -2 -0.28  111   +3   +2   -2   -3   -3 -0.14  827
+  dusuk hacim                              -2   +2  +10 +nan +nan +0.27  111   -3   -3   -2   +1   +3 +0.14  827
+  karma: temel + ucuz + 6ay momentum     +nan +nan   -0   +0 +nan +0.01  111 +nan   -9   -0   -2 +nan -0.01  827
+  karma: temel + ucuz                    +nan +nan   -6   +2   +0 +0.05  111 +nan +nan   +1   -0   -4 -0.08  827
+  -- 120 islem gunu sonrasi --
+  olcut                                                              2014-20                             2021-26
+                                          D1   D2   D3   D4   D5   rho  n    D1   D2   D3   D4   D5   rho  n  
+  temel puan (v3) yuksek                 +nan +nan   +1   -7  -10 -0.06  111 +nan +nan   +5   -0   -3 -0.08  799
+  ucuz (P dusuk)                         +nan  -10   +4   -2   -7 -0.03  111 +nan  +12   +2   -2   -3 -0.13  799
+  cift tik                               +nan +nan +nan +nan   -6 -0.21  111 +nan +nan +nan   +1   -1 -0.05  799
+  momentum 6 ay yuksek                     -6   -8   -0   +5 +nan +0.19  111   -3   -3   +5   +4 +nan +0.14  799
+  momentum 6 ay dusuk                    +nan   +5   -0   -8   -6 -0.19  111 +nan   +4   +5   -3   -3 -0.14  799
+  son 1 ay dusen (geri donus)              -7   -6  -17   -5   -3 +0.07  111   +5   +0   +1   -3   -2 -0.03  799
+  son 1 ay guclu                           -3   -5  -17   -6   -7 -0.07  111   -1   -3   +1   +0   +5 +0.03  799
+  1 yillik zirveye yakin                   -7  -10   -3   -1  -11 +0.02  111   -2   -3   -0   +4   -2 +0.05  799
+  1 yillik zirveden uzak                  -13   -1   -4   -0   -7 -0.02  111   -2   +4   -0   -3   -2 -0.05  799
+  dusuk oynaklik                           -1   -7  -10  -11   -6 -0.01  111   +3   +1   +6   -4   -2 -0.03  799
+  yuksek oynaklik                          -6  -10  -10   -7   -1 +0.01  111   -2   -4   +6   +0   +3 +0.03  799
+  yuksek hacim                           +nan +nan   +2   -6   -7 -0.21  111   +5   +1   -2   -2   -5 -0.14  799
+  dusuk hacim                              -7   -6   +2 +nan +nan +0.21  111   -5   -3   -2   +1   +5 +0.14  799
+  karma: temel + ucuz + 6ay momentum     +nan +nan   -6  -10 +nan +0.06  111 +nan  -29   +0   -1 +nan -0.04  799
+  karma: temel + ucuz                    +nan +nan  -13   -3  -11 -0.04  111 +nan +nan  +10   -2   -4 -0.16  799
+
+== 2018-20: mevduat +62% | BIST100 +26%
+  RASTGELE (canli, karsilastirma)          ortanca    +85% (en kotu   +74%)
+  site sirasi (cift tik once, sonra temel) ortanca    +76% (en kotu   +76%) | kati sira    +76%
+  sektor siniri: ayni sektorden en fazla 1 ortanca    +82% (en kotu   +70%)
+  sektor siniri: ayni sektorden en fazla 2 ortanca    +88% (en kotu   +77%)
+  temel puan (v3) yuksek                   ortanca    +81% (en kotu   +74%) | kati sira    +75%
+  ucuz (P dusuk)                           ortanca    +86% (en kotu   +83%) | kati sira   +100%
+  cift tik                                 ortanca    +84% (en kotu   +74%) | kati sira    +74%
+  momentum 6 ay yuksek                     ortanca    +76% (en kotu   +74%) | kati sira    +91%
+  momentum 6 ay dusuk                      ortanca    +86% (en kotu   +83%) | kati sira    +86%
+  son 1 ay dusen (geri donus)              ortanca    +91% (en kotu   +83%) | kati sira   +100%
+  son 1 ay guclu                           ortanca    +79% (en kotu   +75%) | kati sira    +79%
+  1 yillik zirveye yakin                   ortanca    +75% (en kotu   +74%) | kati sira    +75%
+  1 yillik zirveden uzak                   ortanca    +87% (en kotu   +77%) | kati sira   +103%
+  dusuk oynaklik                           ortanca    +84% (en kotu   +74%) | kati sira    +85%
+  yuksek oynaklik                          ortanca    +91% (en kotu   +75%) | kati sira    +93%
+  yuksek hacim                             ortanca    +86% (en kotu   +75%) | kati sira    +81%
+  dusuk hacim                              ortanca    +85% (en kotu   +76%) | kati sira    +85%
+  karma: temel + ucuz + 6ay momentum       ortanca    +84% (en kotu   +74%) | kati sira    +75%
+  karma: temel + ucuz                      ortanca    +85% (en kotu   +74%) | kati sira    +84%
+
+== 2021-24: mevduat +166% | BIST100 +557%
+  RASTGELE (canli, karsilastirma)          ortanca  +1750% (en kotu +1556%)
+  site sirasi (cift tik once, sonra temel) ortanca  +1280% (en kotu +1280%) | kati sira  +1280%
+  sektor siniri: ayni sektorden en fazla 1 ortanca  +1394% (en kotu +1209%)
+  sektor siniri: ayni sektorden en fazla 2 ortanca  +1488% (en kotu +1226%)
+  temel puan (v3) yuksek                   ortanca  +1546% (en kotu +1479%) | kati sira  +1479%
+  ucuz (P dusuk)                           ortanca  +1843% (en kotu +1666%) | kati sira  +1749%
+  cift tik                                 ortanca  +1635% (en kotu +1391%) | kati sira  +1457%
+  momentum 6 ay yuksek                     ortanca  +2130% (en kotu +1454%) | kati sira  +1990%
+  momentum 6 ay dusuk                      ortanca  +1634% (en kotu +1424%) | kati sira  +1652%
+  son 1 ay dusen (geri donus)              ortanca  +1827% (en kotu +1605%) | kati sira  +1753%
+  son 1 ay guclu                           ortanca  +1703% (en kotu +1434%) | kati sira  +1801%
+  1 yillik zirveye yakin                   ortanca  +1922% (en kotu +1568%) | kati sira  +1909%
+  1 yillik zirveden uzak                   ortanca  +1817% (en kotu +1588%) | kati sira  +1819%
+  dusuk oynaklik                           ortanca  +1681% (en kotu +1513%) | kati sira  +1732%
+  yuksek oynaklik                          ortanca  +1914% (en kotu +1572%) | kati sira  +1745%
+  yuksek hacim                             ortanca  +1586% (en kotu +1406%) | kati sira  +1497%
+  dusuk hacim                              ortanca  +2149% (en kotu +1504%) | kati sira  +2073%
+  karma: temel + ucuz + 6ay momentum       ortanca  +1789% (en kotu +1488%) | kati sira  +1808%
+  karma: temel + ucuz                      ortanca  +1760% (en kotu +1531%) | kati sira  +1715%
+
+== 2025-26: mevduat +115% | BIST100 +10%
+  RASTGELE (canli, karsilastirma)          ortanca    +52% (en kotu   +14%)
+  site sirasi (cift tik once, sonra temel) ortanca    +66% (en kotu   +66%) | kati sira    +66%
+  sektor siniri: ayni sektorden en fazla 1 ortanca    +34% (en kotu    +8%)
+  sektor siniri: ayni sektorden en fazla 2 ortanca    +54% (en kotu    +1%)
+  temel puan (v3) yuksek                   ortanca    +40% (en kotu   +10%) | kati sira    +21%
+  ucuz (P dusuk)                           ortanca    +38% (en kotu    +5%) | kati sira     -4%
+  cift tik                                 ortanca    +52% (en kotu   +16%) | kati sira    +36%
+  momentum 6 ay yuksek                     ortanca    +44% (en kotu    +2%) | kati sira    +11%
+  momentum 6 ay dusuk                      ortanca    +41% (en kotu    +7%) | kati sira    +51%
+  son 1 ay dusen (geri donus)              ortanca    +36% (en kotu    -1%) | kati sira    +43%
+  son 1 ay guclu                           ortanca    +41% (en kotu   +19%) | kati sira    +59%
+  1 yillik zirveye yakin                   ortanca    +40% (en kotu   +16%) | kati sira    +40%
+  1 yillik zirveden uzak                   ortanca    +69% (en kotu   +37%) | kati sira    +57%
+  dusuk oynaklik                           ortanca    +36% (en kotu   +17%) | kati sira    +25%
+  yuksek oynaklik                          ortanca    +65% (en kotu   +39%) | kati sira    +64%
+  yuksek hacim                             ortanca    +52% (en kotu    +8%) | kati sira    +45%
+  dusuk hacim                              ortanca    +54% (en kotu   +20%) | kati sira    +67%
+  karma: temel + ucuz + 6ay momentum       ortanca    +46% (en kotu    -0%) | kati sira    +26%
+  karma: temel + ucuz                      ortanca    +37% (en kotu    +1%) | kati sira    +19%
+
+KABA TOPLAM (uc donem carpimi): yumusak egilim ortancasi | en kotu kosular | kati sira
+  RASTGELE (canli, karsilastirma)          x  52.1 | en kotu x  32.8
+  site sirasi (cift tik once, sonra temel) x  40.4 | en kotu x  40.4 | kati x  40.4
+  sektor siniri: ayni sektorden en fazla 1 x  36.2 | en kotu x  24.0
+  sektor siniri: ayni sektorden en fazla 2 x  45.8 | en kotu x  23.6
+  temel puan (v3) yuksek                   x  41.6 | en kotu x  30.2 | kati x  33.6
+  ucuz (P dusuk)                           x  49.7 | en kotu x  33.9 | kati x  35.5
+  cift tik                                 x  48.4 | en kotu x  30.2 | kati x  36.9
+  momentum 6 ay yuksek                     x  56.3 | en kotu x  27.6 | kati x  44.4
+  momentum 6 ay dusuk                      x  45.4 | en kotu x  29.8 | kati x  49.1
+  son 1 ay dusen (geri donus)              x  50.2 | en kotu x  30.9 | kati x  52.9
+  son 1 ay guclu                           x  45.5 | en kotu x  32.0 | kati x  54.0
+  1 yillik zirveye yakin                   x  49.7 | en kotu x  33.6 | kati x  49.2
+  1 yillik zirveden uzak                   x  60.3 | en kotu x  40.9 | kati x  60.9
+  dusuk oynaklik                           x  44.6 | en kotu x  32.9 | kati x  42.4
+  yuksek oynaklik                          x  63.7 | en kotu x  40.7 | kati x  58.3
+  yuksek hacim                             x  47.8 | en kotu x  28.4 | kati x  41.9
+  dusuk hacim                              x  64.1 | en kotu x  33.8 | kati x  67.2
+  karma: temel + ucuz + 6ay momentum       x  50.7 | en kotu x  27.6 | kati x  42.1
+  karma: temel + ucuz                      x  46.9 | en kotu x  28.7 | kati x  39.6
