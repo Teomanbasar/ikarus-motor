@@ -1,24 +1,18 @@
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:288: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:288: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:288: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
-  uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
-  uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
-  uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
-/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:298: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/home/runner/work/ikarus-motor/ikarus-motor/ikarus/bankalar.py:311: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
   uu, ll = a[mm & (rk >= 2 / 3)]["f126"].dropna(), a[mm & (rk <= 1 / 3)]["f126"].dropna()
 BANKALAR - ARASTIRMA FIKIRLERI TESTI (24 Kas 2026)
 banka 12, olay 568, 2013/12..2026/06. Getiri piyasa ortancasina gore %.
@@ -38,6 +32,12 @@ A) BANKALAR ICINDE SECIM (her ceyrek ucte birler; iyi = olcuye gore iyi)
                                      ortanca farki: 2014-17  +4.3 | 2018-20  +6.3 | 2021-24 +20.1 | 2025+ -21.0 | 63g iyi n 224 ort  +1.9 ort.ca  +2.4 kaz % 58 kotu n 178 ort  -1.2 ort.ca  -2.0 kaz % 41
   BIRLESIK (artik + surpriz + ozk/aktif) 126g iyi: n 124 ort  +2.6 ort.ca  +6.5 kaz % 58 | kotu: n 104 ort  -3.7 ort.ca -12.0 kaz % 36
                                      ortanca farki: 2014-17 az | 2018-20  -8.1 | 2021-24 +27.0 | 2025+  -4.3
+  SURPRIZ + 3 AY GUC                 126g iyi: n 128 ort  +4.2 ort.ca  +4.7 kaz % 55 | kotu: n 104 ort  -3.1 ort.ca  -4.5 kaz % 44 | t +1.7
+                                     ortanca farki: 2014-17 az | 2018-20  +0.4 | 2021-24 +10.8 | 2025+ +12.4 | 63g iyi n 132 ort  +2.8 ort.ca  +1.6 kaz % 53 kotu n 109 ort  -1.0 ort.ca  -1.1 kaz % 48
+                                     son durum: VAKBN 0.88, ALBRK 0.88, HALKB 0.71, ICBCT 0.67, AKBNK 0.58, GARAN 0.54, KLNMA 0.54, SKBNK 0.50, TSKB 0.33, QNBTR 0.33, ISCTR 0.29, YKBNK 0.25
+  SURPRIZ + 3 AY GUC + OZK/AKTIF     126g iyi: n 129 ort  +4.4 ort.ca  +5.6 kaz % 57 | kotu: n  99 ort  -6.0 ort.ca  -5.5 kaz % 43 | t +2.4
+                                     ortanca farki: 2014-17 az | 2018-20  -1.5 | 2021-24 +13.6 | 2025+  -4.5 | 63g iyi n 133 ort  +2.9 ort.ca  +1.1 kaz % 55 kotu n 102 ort  -1.2 ort.ca  -0.6 kaz % 47
+                                     son durum: VAKBN 0.72, KLNMA 0.69, ALBRK 0.67, GARAN 0.64, AKBNK 0.58, TSKB 0.53, HALKB 0.50, ICBCT 0.50, QNBTR 0.47, SKBNK 0.44, ISCTR 0.42, YKBNK 0.33
 
 B) BANKA TURU (tum olaylar, 126g)
   ozel buyuk  n 178 ort  +2.9 ort.ca  +3.1 kaz % 54
@@ -57,4 +57,4 @@ C) FAIZ DONGUSU: banka sepeti (esit agirlikli bankalar) piyasa ortancasina gore,
     ILK artis (dongu donusu)   n 6 63g ort +21.2 | tarihler: 2014-01 +7, 2015-09 +6, 2017-01 +11, 2020-09 -3, 2023-06 +86, 2025-04 +20
 
   bugun: politika faizi %36.0, son 3 ay degisim -1.0 puan
-  son durum ROE'ye gore ucuzluk (yuksek = ucuz): TSKB +0.72, ALBRK +0.65, GARAN +0.27, ISCTR +0.17, VAKBN +0.16, YKBNK +0.08, ICBCT +0.08, AKBNK +0.05, SKBNK -0.32, KLNMA -0.32, HALKB -0.44, QNBTR -1.09
+  son durum ROE'ye gore ucuzluk (yuksek = ucuz): TSKB +0.72, ALBRK +0.65, GARAN +0.27, ISCTR +0.17, VAKBN +0.16, YKBNK +0.08, ICBCT +0.08, AKBNK +0.05, SKBNK -0.32, KLNMA -0.33, HALKB -0.44, QNBTR -1.09
