@@ -900,6 +900,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "saglikli":
         from . import portfoy_bt as P
         P.saglikli_test()
+    elif sys.argv[1] == "endeks2":
+        from . import portfoy_bt as P
+        P.endeks2_test()
     elif sys.argv[1] == "endeks":
         from . import portfoy_bt as P
         P.endeks_test()

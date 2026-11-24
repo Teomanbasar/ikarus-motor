@@ -2740,3 +2740,95 @@ def saglikli_test():
     txt = "\n".join(L)
     (R / "saglikli_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def endeks2_test():
+    """24 Kas (Teoman: 'ikisini de dene'). ONCEDEN SABITLENEN, endeks_test ile ayni kurulum ve KABUL sartlari.
+      C) IKARUS faz BIST100'e UYARLANMIS: goreli guc BIST100'e gore degil MEVDUATA gore (mevduat birikim endeksi).
+         DAGITIM -> disari, alim grubu (ALINABILIR/TOPLANIYOR/YAKIN) -> iceri, BEKLE -> onceki durum.
+      D) Zaman serisi momentumu (Moskowitz-Ooi-Pedersen 2012): ay sonunda BIST100'un son 12 ay getirisi ayni 12 ayin
+         mevduatini geciyorsa sonraki ay iceride, gecmiyorsa disarida."""
+    global UZUN
+    UZUN = True
+    EKSTRA.clear()
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    UZUN = False
+    rr = faiz_serisi(idx)
+    xs = pd.Series(xu.values, index=idx)
+    L = ["ENDEKS CIKIS TESTI 2 (24 Kas 2026) — onceden sabitlenen tanim (docstring). Kabul sartlari endeks_test ile ayni.", ""]
+    # C) IKARUS, mevduata gore guc
+    xdf = _xu_df()
+    gx = xdf.index
+    fz = pd.Series({pd.Timestamp(d): v for d, v in FAIZ}).sort_index()
+    fzg = fz.reindex(fz.index.union(gx)).ffill().reindex(gx).bfill().values / 100.0
+    mev_ix = pd.Series(np.concatenate([[1.0], np.cumprod(1 + fzg[1:] * np.diff(gx.values).astype("timedelta64[D]").astype(float) / 365.0)]), index=gx)
+    try:
+        rx = E.compute(xdf, mev_ix * float(xdf["close"].iloc[0]), m3, "D", sig_mod="faz")
+        sg = rx["sinyal"].reindex(idx).ffill().values
+        disC = np.zeros(len(idx), bool); dur = False
+        for i in range(len(idx)):
+            if sg[i] == "DAGITIM":
+                dur = True
+            elif sg[i] in AL:
+                dur = False
+            disC[i] = dur
+        L.append("C) sinyal dagilimi: " + ", ".join(f"{k} {v}" for k, v in pd.Series(sg).value_counts().items()))
+    except Exception as e:
+        disC = None; sg = None
+        L.append(f"C hesaplanamadi: {e}")
+    # D) 12 ay momentum, mevduata gore, ay sonu
+    cum = np.concatenate([[1.0], np.cumprod(1 + rr[1:] * np.diff(idx.values).astype("timedelta64[D]").astype(float) / 365.0)])
+    MV = pd.Series(cum, index=idx)
+    ay = xs.groupby(xs.index.to_period("M")).tail(1).index
+    disD = np.zeros(len(idx), bool); dur = False
+    aylar = set(ay)
+    for i, g in enumerate(idx):
+        disD[i] = dur
+        if g in aylar:
+            j = idx.searchsorted(g - pd.DateOffset(months=12))
+            if j < i:
+                dur = (xs.iloc[i] / xs.iloc[j]) <= (MV.iloc[i] / MV.iloc[j])
+    def gecis(d):
+        return int((np.diff(d.astype(int)) != 0).sum())
+    V = [("TABAN (canli, hep iceride)", None)]
+    if disC is not None:
+        V.append(("C) IKARUS faz, mevduata gore", disC))
+    V.append(("D) 12 ay momentum (mevduata gore)", disD))
+    def stop_x(x):
+        return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+    CANLI = {"ek_stop": stop_x(0.20), "geri_gir": lambda i, j, p, cp, cg, gun: p >= cp * 1.10, "slot_tut": True}
+    donemler = [("2015-17", "2015-01-01", "2017-12-31"), ("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"),
+                ("2025-26", "2025-01-01", "2026-12-31"), ("2015-2026 TEK PARCA", "2015-01-01", "2026-12-31")]
+    rng = np.random.default_rng(91)
+    tablo = {}
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        ii_ = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii_[1:]] * np.diff(idx.values[ii_]).astype("timedelta64[D]").astype(float) / 365.0))
+        xm = xs.values[m]
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xm[-1] / xm[0] - 1):+.0f}% (en buyuk dusus %{100 * float((xm / np.maximum.accumulate(xm) - 1).min()):.0f})")
+        U = [rng.random(C[m].shape) for _ in range(15)]
+        for ad_v, dis in V:
+            ag = None if dis is None else np.where(dis[m], 0.0, 1.0)
+            v, dd = [], []
+            for u in U:
+                e, _, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=u, agirlik=ag, sert=True, **CANLI)
+                d_ = e["deger"]
+                v.append(d_.iloc[-1] / BAS); dd.append(float((d_ / d_.cummax() - 1).min()))
+            v, dd = np.array(v), np.array(dd)
+            tablo[(ad_v, ad_d)] = (np.median(v), np.median(dd))
+            ek = "" if dis is None else f" | disarida gun %{100 * dis[m].mean():.0f}, gecis {gecis(dis[m])}"
+            L.append(f"  {ad_v:34s} ortanca {100 * (np.median(v) - 1):+7.0f}% (en kotu {100 * (v.min() - 1):+6.0f}%) | en buyuk dusus ortanca %{100 * np.median(dd):.0f}{ek}")
+            print(L[-1])
+        L.append("")
+    L.append("KABUL KONTROLU (her donemde dusus 1/3 azalir [taban dusus > %20 olanlarda] VE tek parca toplam >= tabanin %90'i):")
+    for ad_v, dis in V[1:]:
+        ok = [tablo[(ad_v, d)][1] >= tablo[(V[0][0], d)][1] * (2 / 3) for d, *_ in donemler[:-1] if tablo[(V[0][0], d)][1] < -0.20]
+        top = tablo[(ad_v, donemler[-1][0])][0] >= 0.9 * tablo[(V[0][0], donemler[-1][0])][0]
+        L.append(f"  {ad_v:34s} dusus azaldi {sum(ok)}/{len(ok)} | toplam %{100 * tablo[(ad_v, donemler[-1][0])][0] / tablo[(V[0][0], donemler[-1][0])][0]:.0f}"
+                 f" -> {'KABUL' if all(ok) and top else 'RET'}")
+    L.append(f"\nBUGUN ({idx[-1]:%Y-%m-%d}): " + ("" if disC is None else f"C {'DISARI' if disC[-1] else 'ICERI'} (son sinyal {sg[-1]}) | ")
+             + f"D {'DISARI' if disD[-1] else 'ICERI'}")
+    txt = "\n".join(L)
+    (R / "endeks2_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
