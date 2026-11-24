@@ -1635,3 +1635,95 @@ def otopsi():
     txt = "\n".join(L)
     (R / "otopsi_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def faiz_rejim_test():
+    """24 Kas (Teoman: 'mevduati gecmek'): reel faiz POZITIF (siki) donemlerde hangi hisseler kazanir?
+    Reel faiz = politika faizi (FAIZ; 2020 oncesi yaklasik) - yillik TUFE. Her bilanco olayi giris gunundeki rejime atanir.
+    Olculer bilanco olaylarinda (2014-2026, gecmis_birlesik): net nakit/varlik, borc (net borc/FAVOK), FAVOK/FD, kar/PD, PD/DD,
+    bilanco surprizi, ROE, F, v3, buyukluk (piyasa degeri), son 6 ay fiyat gucu, oynaklik.
+    Getiri: sonraki 126 gun piyasa ortancasina gore VE mevduata gore (ayni 126 gunun faizi)."""
+    global UZUN
+    from . import firsat_bt as FB
+    from . import temel as _T
+    UZUN = True
+    G = _T.gecmis_birlesik()
+    O = B.olaylar(G, D.m3())
+    px = D.prices(sorted(O["t"].unique()), start="2013-01-01")
+    FB.HAM_DONDUR = True
+    A = FB.puanlar(O, px)
+    FB.HAM_DONDUR = False
+    UZUN = False
+    Cx = pd.DataFrame({t: df["close"] for t, df in px.items()}).sort_index()
+    Cx = Cx[Cx.index >= "2013-06-01"]
+    r126 = Cx.shift(-126) / Cx - 1
+    F126 = r126.sub(r126.median(axis=1), axis=0)
+    gun = Cx.index
+    fz = pd.Series({pd.Timestamp(d): v for d, v in FAIZ}).sort_index()
+    fzg = fz.reindex(fz.index.union(gun)).ffill().reindex(gun)
+    tufe = D.tufe(update=False)
+    ty = (tufe / tufe.shift(12) - 1) * 100
+    tyg = ty.reindex(ty.index.union(gun)).ffill().reindex(gun)
+    reel = fzg - tyg
+    mev126 = pd.Series([(1 + fzg.iloc[i] / 100) ** (126 / 252) - 1 for i in range(len(gun))], index=gun)
+    mom = Cx / Cx.shift(126) - 1
+    vol = Cx.pct_change().rolling(60).std()
+    def at(df, t, g):
+        try:
+            return float(df.at[g, t])
+        except Exception:
+            return np.nan
+    A = A.copy()
+    A["giris"] = pd.to_datetime(A["giris"])
+    A = A[A.giris.isin(gun) & A.t.isin(Cx.columns)]
+    A["f126"] = [at(F126, t, g) for t, g in zip(A.t, A.giris)]
+    A["ham126"] = [at(r126, t, g) for t, g in zip(A.t, A.giris)]
+    A["mev_fazla"] = A["ham126"] - A.giris.map(mev126)
+    A["reel"] = A.giris.map(reel)
+    A["mom"] = [at(mom, t, g) for t, g in zip(A.t, A.giris)]
+    A["oyn"] = [at(vol, t, g) for t, g in zip(A.t, A.giris)]
+    num = lambda c: pd.to_numeric(A[c], errors="coerce") if c in A else pd.Series(np.nan, index=A.index)
+    A["net_nakit"] = -num("netborc") / num("varlik")
+    A["borc"] = num("netborc") / num("favok_ttm").where(num("favok_ttm") > 0)
+    A["mcap"] = num("pddd") * num("oz")
+    A["rejim"] = np.where(A.reel > 0, "SIKI (reel faiz > 0)", "GEVSEK (reel faiz <= 0)")
+    A["yil"] = A.giris.dt.year
+    L = ["FAIZ REJIMI TESTI (24 Kas 2026): reel faiz pozitifken hangi hisseler kazandi?",
+         "reel faiz = politika faizi - yillik TUFE (2020 oncesi politika faizi yaklasik). Gozlem: bilanco olaylari 2014-2026 (yalniz bugun borsada olanlar).",
+         "f126 = sonraki 6 ay piyasa ortancasina gore %; mev = ayni 6 ayda mevduata gore %. Her olcu her donemde ucte birlere bolunur; iyi = olcuye gore yuksek (borc, PD/DD, oynaklikta dusuk).", ""]
+    for rj, X in A.groupby("rejim"):
+        L.append(f"== {rj}: olay {len(X)}, yillar {', '.join(str(y) for y in sorted(X.yil.unique()))}")
+        L.append(f"   tum hisseler: 6 ayda mevduata gore ortanca {100 * X.mev_fazla.median():+.1f}% (mevduati gecen %{100 * (X.mev_fazla > 0).mean():.0f})")
+    L.append("")
+    yon = {"borc": -1, "pddd": -1, "oyn": -1}
+    for c, ad in (("net_nakit", "net nakit / varlik"), ("borc", "net borc / FAVOK"), ("fav_get", "FAVOK / FD"), ("kaz_get", "kar / PD"),
+                  ("pddd", "PD/DD"), ("sue_nk", "bilanco surprizi"), ("roe", "ROE"), ("F", "F skoru"), ("v3", "v3 (sistem puani)"),
+                  ("mcap", "buyukluk (piyasa degeri)"), ("mom", "son 6 ay fiyat gucu"), ("oyn", "oynaklik (60g)")):
+        if c not in A:
+            continue
+        row = [f"  {ad:26s}"]
+        for rj in ("SIKI (reel faiz > 0)", "GEVSEK (reel faiz <= 0)"):
+            X = A[(A.rejim == rj) & num(c).notna() & A.f126.notna()].copy()
+            if len(X) < 90:
+                row.append(f"{rj[:5]} az"); continue
+            rk = (yon.get(c, 1) * pd.to_numeric(X[c], errors="coerce")).groupby(X["donem"]).rank(pct=True)
+            u, l_ = X[rk >= 2 / 3], X[rk <= 1 / 3]
+            fu, fl = u.f126.dropna(), l_.f126.dropna()
+            fu2, fl2 = fu.clip(fu.quantile(.05), fu.quantile(.95)), fl.clip(fl.quantile(.05), fl.quantile(.95))
+            t = (fu2.mean() - fl2.mean()) / np.sqrt(fu2.var() / len(fu2) + fl2.var() / len(fl2))
+            row.append(f"{rj[:5]}: iyi 1/3 ort.ca {100 * fu.median():+5.1f} (mevduata gore {100 * u.mev_fazla.median():+5.1f}, gecen %{100 * (u.mev_fazla > 0).mean():.0f}) "
+                       f"kotu {100 * fl.median():+5.1f} | fark t {t:+.1f}")
+        L.append(" | ".join(row))
+    # siki donemde birlesim: v3 ust %20 + net nakit / dusuk borc
+    X = A[(A.rejim == "SIKI (reel faiz > 0)") & A.f126.notna()].copy()
+    X["v3r_"] = pd.to_numeric(X["v3"], errors="coerce").groupby(X["donem"]).rank(pct=True)
+    X["nn_r"] = X["net_nakit"].groupby(X["donem"]).rank(pct=True)
+    L.append("\nSIKI donemde birlesimler (6 ay, ortanca piyasaya gore / mevduata gore / mevduati gecen %):")
+    for ad, m in (("v3 ust %20 (bugunku kural)", X.v3r_ >= 0.8), ("v3 ust %20 + net nakit ust yari", (X.v3r_ >= 0.8) & (X.nn_r >= 0.5)),
+                  ("v3 ust %20 + net nakit alt yari", (X.v3r_ >= 0.8) & (X.nn_r < 0.5)), ("hepsi", X.v3r_.notna())):
+        g = X[m]
+        L.append(f"  {ad:34s} n {len(g):4d} | {100 * g.f126.median():+5.1f} / {100 * g.mev_fazla.median():+5.1f} / %{100 * (g.mev_fazla > 0).mean():.0f}")
+    L.append(f"\nbugun reel faiz: {reel.dropna().iloc[-1]:+.1f} puan (politika %{fzg.iloc[-1]:.1f}, yillik TUFE %{tyg.dropna().iloc[-1]:.1f})")
+    txt = "\n".join(L)
+    (R / "faiz_rejim_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

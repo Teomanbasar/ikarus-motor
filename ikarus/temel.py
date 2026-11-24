@@ -897,6 +897,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "faiz_rejim":
+        from . import portfoy_bt as P
+        P.faiz_rejim_test()
     elif sys.argv[1] == "otopsi":
         from . import portfoy_bt as P
         P.otopsi()
