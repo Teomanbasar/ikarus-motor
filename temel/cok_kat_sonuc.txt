@@ -1,0 +1,36 @@
+COK KATLI HISSE TESTI (24 Kas 2026) — onceden sabitlenen tanim (docstring). Yartseva (2025) sartlari, BIST sanayi.
+Not: veri yalniz bugun borsada olan hisseleri kapsiyor (batip cikanlar yok) -> kucuk/ucuz hisseler lehine hafif yanli.
+
+Gozlem 9424 bilanco olayi, 519 hisse. TABAN: 2 yilda endeksi 2 kat gecen %11.9 | 2 yilda nominal 3 kat %39.9 | goreli getiri ortanca x0.91
+
+1) TEK TEK SARTLAR (bilgi; secim icin kullanilmadi)
+  K1 kucuk                       n  3607 | endeksi 2x gecen % 15.5 (1.3 kat) | nominal 3x % 45.2 | goreli ortanca x0.94 ort x1.34 | endeksin gerisinde kalan %53
+  K2 nakit                       n  3324 | endeksi 2x gecen % 11.6 (1.0 kat) | nominal 3x % 44.1 | goreli ortanca x0.97 ort x1.23 | endeksin gerisinde kalan %52
+  K3 ucuz PD/DD                  n  3655 | endeksi 2x gecen % 12.0 (1.0 kat) | nominal 3x % 42.2 | goreli ortanca x0.99 ort x1.25 | endeksin gerisinde kalan %51
+  K4 karli                       n  5847 | endeksi 2x gecen % 11.6 (1.0 kat) | nominal 3x % 43.9 | goreli ortanca x0.92 ort x1.18 | endeksin gerisinde kalan %56
+  K5 yatirim disiplini           n  3265 | endeksi 2x gecen % 10.9 (0.9 kat) | nominal 3x % 40.7 | goreli ortanca x0.92 ort x1.20 | endeksin gerisinde kalan %56
+  K6 dibe yakin                  n  1603 | endeksi 2x gecen % 15.7 (1.3 kat) | nominal 3x % 39.7 | goreli ortanca x0.94 ort x1.31 | endeksin gerisinde kalan %53
+
+2) KAC SART SAGLANIYOR
+  0 sart                         n   670 | endeksi 2x gecen %  8.1 (0.7 kat) | nominal 3x % 26.1 | goreli ortanca x0.76 ort x1.06 | endeksin gerisinde kalan %66
+  1 sart                         n  1983 | endeksi 2x gecen % 11.5 (1.0 kat) | nominal 3x % 33.9 | goreli ortanca x0.85 ort x1.15 | endeksin gerisinde kalan %60
+  2 sart                         n  2819 | endeksi 2x gecen % 11.7 (1.0 kat) | nominal 3x % 39.8 | goreli ortanca x0.91 ort x1.23 | endeksin gerisinde kalan %56
+  3 sart                         n  2415 | endeksi 2x gecen % 12.8 (1.1 kat) | nominal 3x % 43.5 | goreli ortanca x0.95 ort x1.23 | endeksin gerisinde kalan %53
+  4 sart                         n  1272 | endeksi 2x gecen % 13.2 (1.1 kat) | nominal 3x % 47.4 | goreli ortanca x0.99 ort x1.28 | endeksin gerisinde kalan %51
+  5 sart                         n   243 | endeksi 2x gecen % 12.8 (1.1 kat) | nominal 3x % 49.0 | goreli ortanca x0.99 ort x1.30 | endeksin gerisinde kalan %50
+  6 sart                         n    22 | endeksi 2x gecen % 18.2 (1.5 kat) | nominal 3x % 72.7 | goreli ortanca x1.19 ort x1.63 | endeksin gerisinde kalan %36
+
+3) POTANSIYEL (K4 zorunlu + en az 5/6) — KABUL TESTI
+  TABAN (hepsi)                  n  9424 | endeksi 2x gecen % 11.9 | nominal 3x % 39.9 | goreli ortanca x0.91 ort x1.21 | endeksin gerisinde kalan %56
+  POTANSIYEL                     n   259 | endeksi 2x gecen % 12.7 (1.1 kat) | nominal 3x % 51.4 | goreli ortanca x1.02 ort x1.33 | endeksin gerisinde kalan %49
+  donem 2014-17: taban %6.9 (ort x1.10) | potansiyel                     n     6
+  donem 2018-20: taban %20.0 (ort x1.46) | potansiyel                     n    57 | endeksi 2x gecen % 31.6 (1.6 kat) | nominal 3x % 47.4 | goreli ortanca x1.63 ort x1.96 | endeksin gerisinde kalan %16
+  donem 2021-24: taban %10.3 (ort x1.15) | potansiyel                     n   196 | endeksi 2x gecen %  7.7 (0.7 kat) | nominal 3x % 54.1 | goreli ortanca x0.86 ort x1.15 | endeksin gerisinde kalan %59
+  rejim GEVSEK: taban %11.1 (ort x1.20) | potansiyel                     n   224 | endeksi 2x gecen % 10.3 (0.9 kat) | nominal 3x % 46.4 | goreli ortanca x0.99 ort x1.29 | endeksin gerisinde kalan %50
+  rejim SIKI: taban %16.7 (ort x1.28) | potansiyel                     n    35 | endeksi 2x gecen % 28.6 (1.7 kat) | nominal 3x % 82.9 | goreli ortanca x1.38 ort x1.57 | endeksin gerisinde kalan %40
+  -> KABUL SARTI: SAGLANMADI (2/5 alt grup)
+
+4) SISTEMIN ADAYLARI ICINDE (v3 ust %20): potansiyel ek bilgi veriyor mu?
+  v3 ust %20                     n  1630 | endeksi 2x gecen % 11.7 (1.0 kat) | nominal 3x % 42.5 | goreli ortanca x0.98 ort x1.24 | endeksin gerisinde kalan %52
+  v3 ust %20 + POTANSIYEL        n   110 | endeksi 2x gecen % 10.9 (0.9 kat) | nominal 3x % 47.3 | goreli ortanca x1.02 ort x1.31 | endeksin gerisinde kalan %49
+  v3 ust %20, potansiyel DEGIL   n  1520 | endeksi 2x gecen % 11.7 (1.0 kat) | nominal 3x % 42.2 | goreli ortanca x0.98 ort x1.23 | endeksin gerisinde kalan %52
