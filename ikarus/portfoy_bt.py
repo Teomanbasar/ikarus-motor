@@ -131,7 +131,7 @@ def panel(ham: dict | None = None):
 
 def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False, sira=None, al_set=None,
         ek_stop=None, alim_kontrol=False, p5_oncelik=False, haric=None, geri_gir=None, slot_tut=False, bekle_max=120,
-        iz_geri=False, boyut=None):
+        iz_geri=False, boyut=None, grup=None, grup_max=None):
     """geri_gir(i, j, p, cikis_fiyat, cikis_gun, gun) -> True: ek_stop ile satilan hisse 'duzeltince' yeniden alinir (oncelikli).
     slot_tut=True: stoplanan hissenin yeri en fazla bekle_max gun nakitte bekler (yerine baska hisse alinmaz)."""
     """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
@@ -249,7 +249,20 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                         ad.append((on, -(k_ if not np.isnan(k_) else -1e18), t))
                     else:
                         ad.append((-TKv[i, j], -VRv[i, j], t))
-            bek_al = [t for *_, t in sorted(ad)][:bos]
+            if grup is not None and grup_max:
+                say = {}
+                for t in list(poz) + list(bekleyen) + geri:
+                    if t not in {x for x, _ in bek_sat}:
+                        say[grup.get(t, t)] = say.get(grup.get(t, t), 0) + 1
+                bek_al = []
+                for *_, t in sorted(ad):
+                    if len(bek_al) >= bos:
+                        break
+                    g = grup.get(t, t)
+                    if say.get(g, 0) < grup_max:
+                        bek_al.append(t); say[g] = say.get(g, 0) + 1
+            else:
+                bek_al = [t for *_, t in sorted(ad)][:bos]
         if geri:
             bek_al = geri + bek_al
     E_ = pd.DataFrame(egri, columns=["tarih", "deger", "hisse", "nakit"]).set_index("tarih")
@@ -1981,4 +1994,135 @@ def opt_test():
         L.append(f"  {ad_v:40s} x{c:6.1f} | en kotu x{w:6.1f}")
     txt = "\n".join(L)
     (R / "opt_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def _sektor_haritasi():
+    """24 Kas: TradingView sektoru; Finance ayrica GYO/holding/sigorta/faktoring/araci kurum/banka-diger."""
+    b = D.bist_list()
+    g = dict(zip(b.ticker, b.sektor.fillna("?")))
+    for ad, ts in grup_listesi().items():
+        for t in ts:
+            g[t] = ad
+    return g
+
+
+def secim2_test():
+    """24 Kas (Teoman onay). AL adaylari arasindan HANGISI alinsin? Canli kural (stop -20, geri +10, yer tut, kar al 90,
+    iz 20/15), 5 hisse, 2014-2026 uzun veri.
+    A) Aday kalitesi: AL'a giris gunlerinde olcut siralamasi (o gunku tum hisseler icinde yuzdelik) ile sonraki 60/120 islem
+       gunu BIST100'e gore getiri arasindaki iliski (dilimler + sira korelasyonu), iki donemde ayri.
+    B) Portfoy: olcute gore 'yumusak' egilim (yuzdelik + 0.5 x rastgele, 15 kosu) ve 'kati' sira (1 kosu); sektor siniri."""
+    global UZUN
+    UZUN = True
+    EKSTRA.clear()
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    UZUN = False
+    rr = faiz_serisi(idx)
+    cols = list(C.columns)
+    def hamdf(k):
+        return pd.DataFrame({t: pd.Series(ham[t][k], index=ham[t][0]).reindex(idx) for t in cols if t in ham}).reindex(columns=cols)
+    VOL = hamdf(10)
+    ret = C.pct_change(fill_method=None)
+    K = {
+        "temel puan (v3) yuksek": VR.where(VR >= 0),
+        "ucuz (P dusuk)": -PC,
+        "cift tik": TK.astype(float),
+        "momentum 6 ay yuksek": C / C.shift(120) - 1,
+        "momentum 6 ay dusuk": -(C / C.shift(120) - 1),
+        "son 1 ay dusen (geri donus)": -(C / C.shift(20) - 1),
+        "son 1 ay guclu": C / C.shift(20) - 1,
+        "1 yillik zirveye yakin": C / C.rolling(250, min_periods=120).max(),
+        "1 yillik zirveden uzak": -(C / C.rolling(250, min_periods=120).max()),
+        "dusuk oynaklik": -ret.rolling(60, min_periods=30).std(),
+        "yuksek oynaklik": ret.rolling(60, min_periods=30).std(),
+        "yuksek hacim": VOL,
+        "dusuk hacim": -VOL,
+    }
+    RK = {a: k.rank(axis=1, pct=True) for a, k in K.items()}
+    RK["karma: temel + ucuz + 6ay momentum"] = (RK["temel puan (v3) yuksek"].fillna(0.5) + RK["ucuz (P dusuk)"].fillna(0.5)
+                                              + RK["momentum 6 ay yuksek"].fillna(0.5)) / 3
+    RK["karma: temel + ucuz"] = (RK["temel puan (v3) yuksek"].fillna(0.5) + RK["ucuz (P dusuk)"].fillna(0.5)) / 2
+    L = ["HISSE SECIM SIRASI TESTI 2 (24 Kas 2026). Uzun veri 2014-2026, canli kural, 5 hisse.", ""]
+    # ---------- A) aday kalitesi ----------
+    Sv = S.values
+    al = np.isin(Sv, ["AL cift tik", "AL tek tik"])
+    onc = np.vstack([np.zeros((1, al.shape[1]), bool), al[:-1]])
+    giris = al & ~onc
+    Cv = C.values; xv = xu.values
+    def ileri(h):
+        f = np.full(Cv.shape, np.nan)
+        f[:-h - 1] = Cv[h + 1:] / Cv[1:-h] - 1
+        fx = np.full(len(xv), np.nan); fx[:-h - 1] = xv[h + 1:] / xv[1:-h] - 1
+        return f - fx[:, None]
+    F = {h: ileri(h) for h in (60, 120)}
+    ii, jj = np.nonzero(giris)
+    L.append(f"A) ADAY KALITESI: AL'a giris olayi {len(ii)} adet. Olcut dilimine gore sonraki getiri (BIST100'e gore, ortanca %).")
+    L.append("   D1 = olcutte en dusuk %20, D5 = en yuksek %20 (o gunku TUM hisseler icinde). rho = sira korelasyonu.")
+    don = [("2014-20", idx < "2021-01-01"), ("2021-26", idx >= "2021-01-01")]
+    for h in (60, 120):
+        L.append(f"  -- {h} islem gunu sonrasi --")
+        L.append(f"  {'olcut':38s}" + "".join(f"{d:>36s}" for d, _ in don))
+        L.append(f"  {'':38s}" + "  D1   D2   D3   D4   D5   rho  n  " * 2)
+        for a, R_ in RK.items():
+            rv = R_.values
+            satir = f"  {a:38s}"
+            for d, mk in don:
+                sel = mk[ii]
+                x = rv[ii[sel], jj[sel]]; y = F[h][ii[sel], jj[sel]]
+                ok = ~np.isnan(x) & ~np.isnan(y)
+                x, y = x[ok], y[ok]
+                if len(x) < 50:
+                    satir += " " * 36; continue
+                q = np.clip((x * 5).astype(int), 0, 4)
+                med = [np.median(y[q == k]) * 100 if (q == k).sum() >= 5 else np.nan for k in range(5)]
+                rho = float(pd.Series(x).rank().corr(pd.Series(y).rank()))
+                satir += "".join(f"{v:+5.0f}" for v in med) + f" {rho:+5.2f} {len(x):4d}"
+            L.append(satir)
+            print(satir)
+    L.append("")
+    # ---------- B) portfoy ----------
+    grup = _sektor_haritasi()
+    def stop_x(x):
+        return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+    CANLI = {"ek_stop": stop_x(0.20), "geri_gir": lambda i, j, p, cp, cg, gun: p >= cp * 1.10, "slot_tut": True}
+    donemler = [("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31")]
+    V = [("RASTGELE (canli, karsilastirma)", None, "rnd", {}),
+         ("site sirasi (cift tik once, sonra temel)", None, "site", {}),
+         ("sektor siniri: ayni sektorden en fazla 1", None, "rnd", {"grup": grup, "grup_max": 1}),
+         ("sektor siniri: ayni sektorden en fazla 2", None, "rnd", {"grup": grup, "grup_max": 2})]
+    for a in RK:
+        V.append((a, a, "yumusak", {}))
+    tablo = {}
+    rng = np.random.default_rng(61)
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        ii_ = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii_[1:]] * np.diff(idx.values[ii_]).astype("timedelta64[D]").astype(float) / 365.0))
+        U = [rng.random(C[m].shape) for _ in range(15)]
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xu.values[m][-1] / xu.values[m][0] - 1):+.0f}%")
+        for ad_v, a, tip, kw in V:
+            def kos(sr):
+                e, _, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=sr, **CANLI, **kw)
+                return e["deger"].iloc[-1] / BAS
+            if tip == "site":
+                v = np.array([kos(None)]); kati = v[0]
+            elif tip == "rnd":
+                v = np.array([kos(u) for u in U]); kati = np.nan
+            else:
+                rv = np.nan_to_num(RK[a].values[m], nan=0.0)
+                v = np.array([kos(rv + 0.5 * u) for u in U]); kati = kos(rv + 1e-6 * U[0])
+            tablo[(ad_v, ad_d)] = (np.median(v), v.min(), kati)
+            L.append(f"  {ad_v:40s} ortanca {100 * (np.median(v) - 1):+6.0f}% (en kotu {100 * (v.min() - 1):+5.0f}%)"
+                     + ("" if np.isnan(kati) else f" | kati sira {100 * (kati - 1):+6.0f}%"))
+            print(L[-1])
+        L.append("")
+    L.append("KABA TOPLAM (uc donem carpimi): yumusak egilim ortancasi | en kotu kosular | kati sira")
+    for ad_v, *_ in V:
+        c = np.prod([tablo[(ad_v, d)][0] for d, *_ in donemler]); w = np.prod([tablo[(ad_v, d)][1] for d, *_ in donemler])
+        k = np.prod([tablo[(ad_v, d)][2] for d, *_ in donemler])
+        L.append(f"  {ad_v:40s} x{c:6.1f} | en kotu x{w:6.1f}" + ("" if np.isnan(k) else f" | kati x{k:6.1f}"))
+    txt = "\n".join(L)
+    (R / "secim2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
