@@ -1,0 +1,33 @@
+ENDEKS CIKIS TESTI 2 (24 Kas 2026) — onceden sabitlenen tanim (docstring). Kabul sartlari endeks_test ile ayni.
+
+C) sinyal dagilimi: BEKLE 2662, DAGITIM 303, TOPLANIYOR 112, ALINABILIR 42, YAKIN 4
+== 2015-17: mevduat +32% | BIST100 +35% (en buyuk dusus %-25)
+  TABAN (canli, hep iceride)         ortanca     +43% (en kotu    +43%) | en buyuk dusus ortanca %-4
+  C) IKARUS faz, mevduata gore       ortanca     +32% (en kotu    +32%) | en buyuk dusus ortanca %-3 | disarida gun %49, gecis 10
+  D) 12 ay momentum (mevduata gore)  ortanca     +35% (en kotu    +35%) | en buyuk dusus ortanca %-0 | disarida gun %64, gecis 4
+
+== 2018-20: mevduat +62% | BIST100 +26% (en buyuk dusus %-32)
+  TABAN (canli, hep iceride)         ortanca     +90% (en kotu    +74%) | en buyuk dusus ortanca %-26
+  C) IKARUS faz, mevduata gore       ortanca     +62% (en kotu    +62%) | en buyuk dusus ortanca %-8 | disarida gun %74, gecis 5
+  D) 12 ay momentum (mevduata gore)  ortanca     +57% (en kotu    +54%) | en buyuk dusus ortanca %-10 | disarida gun %74, gecis 6
+
+== 2021-24: mevduat +166% | BIST100 +557% (en buyuk dusus %-23)
+  TABAN (canli, hep iceride)         ortanca   +1799% (en kotu  +1472%) | en buyuk dusus ortanca %-21
+  C) IKARUS faz, mevduata gore       ortanca    +276% (en kotu   +262%) | en buyuk dusus ortanca %-20 | disarida gun %75, gecis 3
+  D) 12 ay momentum (mevduata gore)  ortanca   +2004% (en kotu  +1662%) | en buyuk dusus ortanca %-21 | disarida gun %11, gecis 1
+
+== 2025-26: mevduat +115% | BIST100 +10% (en buyuk dusus %-29)
+  TABAN (canli, hep iceride)         ortanca     +57% (en kotu    +17%) | en buyuk dusus ortanca %-27
+  C) IKARUS faz, mevduata gore       ortanca     +87% (en kotu    +67%) | en buyuk dusus ortanca %-15 | disarida gun %66, gecis 4
+  D) 12 ay momentum (mevduata gore)  ortanca     +98% (en kotu    +98%) | en buyuk dusus ortanca %-12 | disarida gun %97, gecis 2
+
+== 2015-2026 TEK PARCA: mevduat +1131% | BIST100 +1183% (en buyuk dusus %-32)
+  TABAN (canli, hep iceride)         ortanca   +6822% (en kotu  +3626%) | en buyuk dusus ortanca %-30
+  C) IKARUS faz, mevduata gore       ortanca   +1459% (en kotu  +1233%) | en buyuk dusus ortanca %-20 | disarida gun %67, gecis 23
+  D) 12 ay momentum (mevduata gore)  ortanca   +7671% (en kotu  +6349%) | en buyuk dusus ortanca %-20 | disarida gun %54, gecis 13
+
+KABUL KONTROLU (her donemde dusus 1/3 azalir [taban dusus > %20 olanlarda] VE tek parca toplam >= tabanin %90'i):
+  C) IKARUS faz, mevduata gore       dusus azaldi 2/3 | toplam %23 -> RET
+  D) 12 ay momentum (mevduata gore)  dusus azaldi 2/3 | toplam %112 -> RET
+
+BUGUN (2026-11-24): C DISARI (son sinyal DAGITIM) | D DISARI
