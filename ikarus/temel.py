@@ -824,6 +824,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "diger_finans":
+        from . import diger_finans
+        diger_finans.test()
     elif sys.argv[1] == "grup_yokla":
         # 24 Kas: faktoring/leasing/finansman/varlik yonetim sirketleri hangi Is Yatirim sablonunda?
         out = []
