@@ -1,0 +1,125 @@
+STOP + YENIDEN GIRIS TESTI (24 Kas 2026). Bugunku kurallarin uzerine. 5 hisse, 15 rastgele secim (her varyantta ayni diziler). Donem toplam getirisi %, ortanca kosu.
+
+== 2014-17: mevduat +39% | BIST100 +47%
+  YOK (bugunku)                                              ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | geri girmez                                         ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | fiyat cikisin %10 ustu | yer tut                    ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | fiyat cikisin %10 ustu | serbest                    ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | IKARUS AL geri geldi | yer tut                      ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | IKARUS AL geri geldi | serbest                      ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | stop cizgisi ustu + cikis ustu | yer tut            ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%15 | stop cizgisi ustu + cikis ustu | serbest            ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | geri girmez                                         ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | fiyat cikisin %10 ustu | yer tut                    ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | fiyat cikisin %10 ustu | serbest                    ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | IKARUS AL geri geldi | yer tut                      ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | IKARUS AL geri geldi | serbest                      ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | stop cizgisi ustu + cikis ustu | yer tut            ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  -%20 | stop cizgisi ustu + cikis ustu | serbest            ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | geri girmez                        ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | yer tut   ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | serbest   ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | IKARUS AL geri geldi | yer tut     ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | IKARUS AL geri geldi | serbest     ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | yer tut ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | serbest ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | geri girmez                            ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | fiyat cikisin %10 ustu | yer tut       ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | fiyat cikisin %10 ustu | serbest       ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | IKARUS AL geri geldi | yer tut         ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | IKARUS AL geri geldi | serbest         ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | yer tut ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | serbest ortanca    +50% | en kotu    +50% | stop/kosu  0.0 | nakit %95
+
+== 2018-20: mevduat +62% | BIST100 +26%
+  YOK (bugunku)                                              ortanca    +62% | en kotu    +57% | stop/kosu  0.0 | nakit %41
+  -%15 | geri girmez                                         ortanca    +50% | en kotu    +47% | stop/kosu 15.0 | nakit %45
+  -%15 | fiyat cikisin %10 ustu | yer tut                    ortanca   +108% | en kotu    +85% | stop/kosu 10.3 | nakit %54
+  -%15 | fiyat cikisin %10 ustu | serbest                    ortanca    +74% | en kotu    +70% | stop/kosu 15.0 | nakit %44
+  -%15 | IKARUS AL geri geldi | yer tut                      ortanca    +80% | en kotu    +67% | stop/kosu 10.0 | nakit %57
+  -%15 | IKARUS AL geri geldi | serbest                      ortanca    +50% | en kotu    +47% | stop/kosu 15.0 | nakit %45
+  -%15 | stop cizgisi ustu + cikis ustu | yer tut            ortanca    +87% | en kotu    +77% | stop/kosu 13.5 | nakit %44
+  -%15 | stop cizgisi ustu + cikis ustu | serbest            ortanca    +93% | en kotu    +89% | stop/kosu 14.0 | nakit %40
+  -%20 | geri girmez                                         ortanca    +60% | en kotu    +47% | stop/kosu 11.5 | nakit %44
+  -%20 | fiyat cikisin %10 ustu | yer tut                    ortanca    +84% | en kotu    +75% | stop/kosu  8.5 | nakit %46
+  -%20 | fiyat cikisin %10 ustu | serbest                    ortanca    +63% | en kotu    +57% | stop/kosu 10.0 | nakit %44
+  -%20 | IKARUS AL geri geldi | yer tut                      ortanca    +74% | en kotu    +64% | stop/kosu  9.0 | nakit %49
+  -%20 | IKARUS AL geri geldi | serbest                      ortanca    +60% | en kotu    +47% | stop/kosu 11.5 | nakit %44
+  -%20 | stop cizgisi ustu + cikis ustu | yer tut            ortanca    +76% | en kotu    +69% | stop/kosu  9.5 | nakit %41
+  -%20 | stop cizgisi ustu + cikis ustu | serbest            ortanca    +67% | en kotu    +62% | stop/kosu 10.5 | nakit %40
+  IKARUS stop (zararda) | geri girmez                        ortanca    +67% | en kotu    +63% | stop/kosu 16.0 | nakit %48
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | yer tut   ortanca   +106% | en kotu    +92% | stop/kosu 11.5 | nakit %56
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | serbest   ortanca    +76% | en kotu    +66% | stop/kosu 18.0 | nakit %45
+  IKARUS stop (zararda) | IKARUS AL geri geldi | yer tut     ortanca    +75% | en kotu    +61% | stop/kosu 13.1 | nakit %59
+  IKARUS stop (zararda) | IKARUS AL geri geldi | serbest     ortanca    +67% | en kotu    +63% | stop/kosu 16.0 | nakit %48
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | yer tut ortanca    +72% | en kotu    +59% | stop/kosu 23.4 | nakit %44
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | serbest ortanca    +68% | en kotu    +65% | stop/kosu 24.0 | nakit %41
+  endekse gore -%20 | geri girmez                            ortanca    +49% | en kotu    +44% | stop/kosu  7.0 | nakit %41
+  endekse gore -%20 | fiyat cikisin %10 ustu | yer tut       ortanca    +50% | en kotu    +41% | stop/kosu  7.0 | nakit %41
+  endekse gore -%20 | fiyat cikisin %10 ustu | serbest       ortanca    +47% | en kotu    +42% | stop/kosu  7.0 | nakit %41
+  endekse gore -%20 | IKARUS AL geri geldi | yer tut         ortanca    +55% | en kotu    +51% | stop/kosu  6.0 | nakit %42
+  endekse gore -%20 | IKARUS AL geri geldi | serbest         ortanca    +49% | en kotu    +44% | stop/kosu  7.0 | nakit %41
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | yer tut ortanca    +49% | en kotu    +31% | stop/kosu  7.4 | nakit %39
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | serbest ortanca    +53% | en kotu    +36% | stop/kosu  7.4 | nakit %40
+
+== 2021-24: mevduat +166% | BIST100 +557%
+  YOK (bugunku)                                              ortanca  +1838% | en kotu  +1651% | stop/kosu  0.0 | nakit %33
+  -%15 | geri girmez                                         ortanca  +1899% | en kotu  +1462% | stop/kosu 11.2 | nakit %34
+  -%15 | fiyat cikisin %10 ustu | yer tut                    ortanca  +1528% | en kotu  +1290% | stop/kosu  9.8 | nakit %36
+  -%15 | fiyat cikisin %10 ustu | serbest                    ortanca  +1833% | en kotu  +1322% | stop/kosu 11.3 | nakit %33
+  -%15 | IKARUS AL geri geldi | yer tut                      ortanca  +1278% | en kotu  +1107% | stop/kosu 10.3 | nakit %39
+  -%15 | IKARUS AL geri geldi | serbest                      ortanca  +1899% | en kotu  +1462% | stop/kosu 11.2 | nakit %34
+  -%15 | stop cizgisi ustu + cikis ustu | yer tut            ortanca  +1697% | en kotu  +1363% | stop/kosu 10.3 | nakit %32
+  -%15 | stop cizgisi ustu + cikis ustu | serbest            ortanca  +1667% | en kotu  +1362% | stop/kosu 10.3 | nakit %31
+  -%20 | geri girmez                                         ortanca  +1885% | en kotu  +1292% | stop/kosu  4.2 | nakit %33
+  -%20 | fiyat cikisin %10 ustu | yer tut                    ortanca  +1827% | en kotu  +1506% | stop/kosu  4.2 | nakit %33
+  -%20 | fiyat cikisin %10 ustu | serbest                    ortanca  +1871% | en kotu  +1292% | stop/kosu  4.2 | nakit %33
+  -%20 | IKARUS AL geri geldi | yer tut                      ortanca  +1716% | en kotu  +1413% | stop/kosu  4.2 | nakit %34
+  -%20 | IKARUS AL geri geldi | serbest                      ortanca  +1885% | en kotu  +1292% | stop/kosu  4.2 | nakit %33
+  -%20 | stop cizgisi ustu + cikis ustu | yer tut            ortanca  +1872% | en kotu  +1540% | stop/kosu  4.2 | nakit %33
+  -%20 | stop cizgisi ustu + cikis ustu | serbest            ortanca  +1872% | en kotu  +1540% | stop/kosu  4.2 | nakit %33
+  IKARUS stop (zararda) | geri girmez                        ortanca  +1232% | en kotu  +1071% | stop/kosu 20.2 | nakit %36
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | yer tut   ortanca  +1544% | en kotu  +1068% | stop/kosu 19.7 | nakit %42
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | serbest   ortanca  +1453% | en kotu  +1262% | stop/kosu 20.7 | nakit %35
+  IKARUS stop (zararda) | IKARUS AL geri geldi | yer tut     ortanca  +1169% | en kotu   +939% | stop/kosu 16.1 | nakit %47
+  IKARUS stop (zararda) | IKARUS AL geri geldi | serbest     ortanca  +1232% | en kotu  +1071% | stop/kosu 20.2 | nakit %36
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | yer tut ortanca  +1436% | en kotu  +1193% | stop/kosu 20.5 | nakit %35
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | serbest ortanca  +1208% | en kotu  +1014% | stop/kosu 22.1 | nakit %34
+  endekse gore -%20 | geri girmez                            ortanca  +1689% | en kotu  +1449% | stop/kosu  9.1 | nakit %34
+  endekse gore -%20 | fiyat cikisin %10 ustu | yer tut       ortanca  +1647% | en kotu  +1328% | stop/kosu  9.5 | nakit %34
+  endekse gore -%20 | fiyat cikisin %10 ustu | serbest       ortanca  +1765% | en kotu  +1495% | stop/kosu 11.1 | nakit %33
+  endekse gore -%20 | IKARUS AL geri geldi | yer tut         ortanca  +1721% | en kotu  +1406% | stop/kosu  7.5 | nakit %36
+  endekse gore -%20 | IKARUS AL geri geldi | serbest         ortanca  +1689% | en kotu  +1449% | stop/kosu  9.1 | nakit %34
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | yer tut ortanca  +1806% | en kotu  +1199% | stop/kosu  9.8 | nakit %32
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | serbest ortanca  +1806% | en kotu  +1199% | stop/kosu  9.9 | nakit %32
+
+== 2025-26: mevduat +115% | BIST100 +11%
+  YOK (bugunku)                                              ortanca    +32% | en kotu    -13% | stop/kosu  0.0 | nakit %9
+  -%15 | geri girmez                                         ortanca    +47% | en kotu    +25% | stop/kosu 19.0 | nakit %7
+  -%15 | fiyat cikisin %10 ustu | yer tut                    ortanca    +98% | en kotu    +54% | stop/kosu 12.1 | nakit %22
+  -%15 | fiyat cikisin %10 ustu | serbest                    ortanca    +49% | en kotu    +25% | stop/kosu 18.7 | nakit %7
+  -%15 | IKARUS AL geri geldi | yer tut                      ortanca    +76% | en kotu    +41% | stop/kosu 13.3 | nakit %18
+  -%15 | IKARUS AL geri geldi | serbest                      ortanca    +47% | en kotu    +25% | stop/kosu 18.6 | nakit %7
+  -%15 | stop cizgisi ustu + cikis ustu | yer tut            ortanca    +56% | en kotu    +26% | stop/kosu 16.9 | nakit %11
+  -%15 | stop cizgisi ustu + cikis ustu | serbest            ortanca    +45% | en kotu    +29% | stop/kosu 19.0 | nakit %7
+  -%20 | geri girmez                                         ortanca    +43% | en kotu     +2% | stop/kosu 10.6 | nakit %7
+  -%20 | fiyat cikisin %10 ustu | yer tut                    ortanca    +62% | en kotu    +38% | stop/kosu  8.1 | nakit %17
+  -%20 | fiyat cikisin %10 ustu | serbest                    ortanca    +34% | en kotu     -2% | stop/kosu 10.9 | nakit %7
+  -%20 | IKARUS AL geri geldi | yer tut                      ortanca    +65% | en kotu    +27% | stop/kosu  8.7 | nakit %16
+  -%20 | IKARUS AL geri geldi | serbest                      ortanca    +43% | en kotu     +2% | stop/kosu 10.6 | nakit %7
+  -%20 | stop cizgisi ustu + cikis ustu | yer tut            ortanca    +38% | en kotu     -1% | stop/kosu 10.4 | nakit %9
+  -%20 | stop cizgisi ustu + cikis ustu | serbest            ortanca    +34% | en kotu     +3% | stop/kosu 11.0 | nakit %7
+  IKARUS stop (zararda) | geri girmez                        ortanca    +26% | en kotu     -2% | stop/kosu 25.4 | nakit %6
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | yer tut   ortanca    +67% | en kotu    +38% | stop/kosu 17.1 | nakit %23
+  IKARUS stop (zararda) | fiyat cikisin %10 ustu | serbest   ortanca    +19% | en kotu     -0% | stop/kosu 25.8 | nakit %6
+  IKARUS stop (zararda) | IKARUS AL geri geldi | yer tut     ortanca    +71% | en kotu    +25% | stop/kosu 20.0 | nakit %20
+  IKARUS stop (zararda) | IKARUS AL geri geldi | serbest     ortanca    +24% | en kotu     -3% | stop/kosu 24.9 | nakit %6
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | yer tut ortanca    +33% | en kotu    +15% | stop/kosu 23.3 | nakit %11
+  IKARUS stop (zararda) | stop cizgisi ustu + cikis ustu | serbest ortanca    +23% | en kotu     -7% | stop/kosu 26.8 | nakit %6
+  endekse gore -%20 | geri girmez                            ortanca    +28% | en kotu    -17% | stop/kosu  8.7 | nakit %6
+  endekse gore -%20 | fiyat cikisin %10 ustu | yer tut       ortanca    +48% | en kotu     +8% | stop/kosu  7.5 | nakit %15
+  endekse gore -%20 | fiyat cikisin %10 ustu | serbest       ortanca    +35% | en kotu    -17% | stop/kosu  8.7 | nakit %6
+  endekse gore -%20 | IKARUS AL geri geldi | yer tut         ortanca    +34% | en kotu     -4% | stop/kosu  8.2 | nakit %13
+  endekse gore -%20 | IKARUS AL geri geldi | serbest         ortanca    +28% | en kotu    -17% | stop/kosu  8.6 | nakit %6
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | yer tut ortanca    +35% | en kotu     -8% | stop/kosu  8.3 | nakit %10
+  endekse gore -%20 | stop cizgisi ustu + cikis ustu | serbest ortanca    +31% | en kotu    -18% | stop/kosu  8.7 | nakit %6
