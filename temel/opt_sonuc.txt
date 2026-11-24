@@ -1,0 +1,77 @@
+OPTIMIZASYON TESTI (24 Kas 2026). Uzun veri, 15 rastgele secim (ayni diziler). Donem toplam getirisi %, ortanca kosu (en kotu kosu).
+
+== 2018-20: mevduat +62% | BIST100 +26%
+  CANLI (stop -20, geri +10, yer tut)      ortanca    +84% (en kotu   +75%) | nakit %46
+  stopsuz (eski)                           ortanca    +63% (en kotu   +57%) | nakit %41
+  3 hisse CANLI                            ortanca    +98% (en kotu   +68%) | nakit %36
+  3 hisse stopsuz                          ortanca    +51% (en kotu   +28%) | nakit %32
+  7 hisse CANLI                            ortanca    +68% (en kotu   +64%) | nakit %52
+  7 hisse stopsuz                          ortanca    +46% (en kotu   +43%) | nakit %48
+  10 hisse CANLI                           ortanca    +69% (en kotu   +69%) | nakit %62
+  10 hisse stopsuz                         ortanca    +68% (en kotu   +68%) | nakit %55
+  stop -%18                                ortanca    +97% (en kotu   +85%) | nakit %50
+  stop -%22                                ortanca    +93% (en kotu   +84%) | nakit %45
+  geri giris +%5                           ortanca    +82% (en kotu   +71%) | nakit %44
+  geri giris +%15                          ortanca    +93% (en kotu   +86%) | nakit %48
+  + takip eden stop sonrasi da geri gir    ortanca    +84% (en kotu   +71%) | nakit %49
+  kar al P>=85                             ortanca    +73% (en kotu   +64%) | nakit %49
+  kar al P>=95                             ortanca    +98% (en kotu   +88%) | nakit %44
+  boyut: P<=5'e 1.4 pay                    ortanca    +78% (en kotu   +72%) | nakit %49
+  boyut: cift tike 1.4 pay                 ortanca    +72% (en kotu   +61%) | nakit %48
+
+== 2021-24: mevduat +166% | BIST100 +557%
+  CANLI (stop -20, geri +10, yer tut)      ortanca  +1820% (en kotu +1487%) | nakit %33
+  stopsuz (eski)                           ortanca  +1887% (en kotu +1524%) | nakit %33
+  3 hisse CANLI                            ortanca  +1763% (en kotu +1127%) | nakit %30
+  3 hisse stopsuz                          ortanca  +1790% (en kotu +1155%) | nakit %30
+  7 hisse CANLI                            ortanca  +1657% (en kotu +1326%) | nakit %37
+  7 hisse stopsuz                          ortanca  +1694% (en kotu +1340%) | nakit %37
+  10 hisse CANLI                           ortanca  +1533% (en kotu +1468%) | nakit %42
+  10 hisse stopsuz                         ortanca  +1631% (en kotu +1472%) | nakit %42
+  stop -%18                                ortanca  +1802% (en kotu +1472%) | nakit %35
+  stop -%22                                ortanca  +1906% (en kotu +1610%) | nakit %33
+  geri giris +%5                           ortanca  +1876% (en kotu +1534%) | nakit %33
+  geri giris +%15                          ortanca  +1794% (en kotu +1466%) | nakit %34
+  + takip eden stop sonrasi da geri gir    ortanca  +1198% (en kotu  +961%) | nakit %35
+  kar al P>=85                             ortanca  +1454% (en kotu +1325%) | nakit %34
+  kar al P>=95                             ortanca  +1897% (en kotu +1667%) | nakit %33
+  boyut: P<=5'e 1.4 pay                    ortanca  +1605% (en kotu +1341%) | nakit %35
+  boyut: cift tike 1.4 pay                 ortanca  +1633% (en kotu +1297%) | nakit %37
+
+== 2025-26: mevduat +115% | BIST100 +10%
+  CANLI (stop -20, geri +10, yer tut)      ortanca    +73% (en kotu   +22%) | nakit %17
+  stopsuz (eski)                           ortanca    +36% (en kotu    +8%) | nakit %9
+  3 hisse CANLI                            ortanca    +40% (en kotu   +10%) | nakit %14
+  3 hisse stopsuz                          ortanca    +39% (en kotu   -27%) | nakit %7
+  7 hisse CANLI                            ortanca    +54% (en kotu   +30%) | nakit %18
+  7 hisse stopsuz                          ortanca    +37% (en kotu   +10%) | nakit %9
+  10 hisse CANLI                           ortanca    +58% (en kotu   +41%) | nakit %19
+  10 hisse stopsuz                         ortanca    +31% (en kotu   +20%) | nakit %10
+  stop -%18                                ortanca    +85% (en kotu   +35%) | nakit %19
+  stop -%22                                ortanca    +74% (en kotu   +21%) | nakit %17
+  geri giris +%5                           ortanca    +56% (en kotu    +9%) | nakit %15
+  geri giris +%15                          ortanca    +73% (en kotu   +33%) | nakit %19
+  + takip eden stop sonrasi da geri gir    ortanca    +70% (en kotu   +19%) | nakit %19
+  kar al P>=85                             ortanca    +41% (en kotu   +11%) | nakit %18
+  kar al P>=95                             ortanca    +65% (en kotu   +27%) | nakit %18
+  boyut: P<=5'e 1.4 pay                    ortanca    +59% (en kotu   +12%) | nakit %19
+  boyut: cift tike 1.4 pay                 ortanca    +53% (en kotu   +25%) | nakit %21
+
+KABA TOPLAM (uc donem ortancalari carpimi, x kat) ve en kotu kosular carpimi:
+  CANLI (stop -20, geri +10, yer tut)      x  61.1 | en kotu x  34.0
+  stopsuz (eski)                           x  44.2 | en kotu x  27.5
+  3 hisse CANLI                            x  51.8 | en kotu x  22.7
+  3 hisse stopsuz                          x  39.4 | en kotu x  11.7
+  7 hisse CANLI                            x  45.5 | en kotu x  30.5
+  7 hisse stopsuz                          x  36.0 | en kotu x  22.6
+  10 hisse CANLI                           x  43.5 | en kotu x  37.3
+  10 hisse stopsuz                         x  37.9 | en kotu x  31.6
+  stop -%18                                x  69.3 | en kotu x  39.2
+  stop -%22                                x  67.3 | en kotu x  38.0
+  geri giris +%5                           x  56.1 | en kotu x  30.4
+  geri giris +%15                          x  63.2 | en kotu x  38.8
+  + takip eden stop sonrasi da geri gir    x  40.4 | en kotu x  21.6
+  kar al P>=85                             x  37.9 | en kotu x  26.0
+  kar al P>=95                             x  65.1 | en kotu x  42.0
+  boyut: P<=5'e 1.4 pay                    x  48.2 | en kotu x  27.8
+  boyut: cift tike 1.4 pay                 x  45.8 | en kotu x  28.1
