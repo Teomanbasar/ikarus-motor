@@ -556,6 +556,11 @@ def run(tickers: list[str] | None = None) -> dict:
         elde_iz = _elde.iz_hesap(_elde.yukle(), px)
     except Exception as e:
         print("[uyari] elde iz", e); elde_iz = {}
+    try:   # 24 Kas: zarar stopu sonrasi geri giris takibi (data/elde.json 'stop')
+        _H = {s_["t"]: s_ for s_ in stocks}
+        elde_stop = [{**x, **_elde.stop_durum(x, _H.get(x["t"]))} for x in _elde.stop_yukle()]
+    except Exception as e:
+        print("[uyari] elde stop", e); elde_stop = []
     result = {
         "bakim": _bakim(m3, xu, stocks),
         "olusturma": datetime.now().strftime("%Y-%m-%d %H:%M"),
@@ -565,6 +570,7 @@ def run(tickers: list[str] | None = None) -> dict:
         "hisseler": stocks,
         "defter": defter_ozet,
         "elde_iz": elde_iz,
+        "elde_stop": elde_stop,
         "not": "Yatirim tavsiyesi degildir. Sinyal kurali 19 Zippo tablosundan cikarilmis adaydir.",
     }
     OUT.mkdir(exist_ok=True)

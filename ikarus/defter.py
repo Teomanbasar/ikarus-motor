@@ -20,7 +20,10 @@ from . import data as D
 F = D.DATA / "defter.json"
 MAL = 0.002
 BASLANGIC = "2026-11-16"
-KURALLAR = {"yeni": {"karal": 90, "iz": (0.20, 0.15)}, "eski": {"karal": 80, "iz": None}}
+KURALLAR = {"yeni": {"karal": 90, "iz": (0.20, 0.15)}, "eski": {"karal": 80, "iz": None},
+            # 24 Kas (temel/stop2_sonuc.txt): + zarar stopu %20; satistan sonra fiyat satis fiyatinin %10 ustune cikarsa 120 gun icinde geri gir
+            "stoplu": {"karal": 90, "iz": (0.20, 0.15), "zarar": 0.20, "geri": 0.10, "bekle": 120}}
+GECERLI = "stoplu"
 
 
 def kutu(s: dict) -> str:
@@ -77,7 +80,7 @@ def iz_durum(px, t, giris, gun, iz):
 
 
 def _bos_kural():
-    return {"acik": {}, "kapali": [], "bekleyen_sat": {}}
+    return {"acik": {}, "kapali": [], "bekleyen_sat": {}, "stoplanan": {}, "bekleyen_geri": []}
 
 
 def guncelle(stocks: list, px: dict, xu: pd.Series) -> dict:
@@ -93,6 +96,8 @@ def guncelle(stocks: list, px: dict, xu: pd.Series) -> dict:
     if "kural" not in K:   # 18 Kas: tek kurallik eski defterden iki kurala gecis (acik kayitlar ikisine de kopyalanir)
         eski = {"acik": K.pop("acik", {}), "kapali": K.pop("kapali", []), "bekleyen_sat": K.pop("bekleyen_sat", {})}
         K["kural"] = {"eski": eski, "yeni": json.loads(json.dumps(eski))}
+    if "stoplu" not in K["kural"] and "yeni" in K["kural"]:   # 24 Kas: yeni kuralin acik kayitlariyla basla
+        K["kural"]["stoplu"] = {**json.loads(json.dumps(K["kural"]["yeni"])), "stoplanan": {}, "bekleyen_geri": []}
     for ad in KURALLAR:
         K["kural"].setdefault(ad, _bos_kural())
     H = {s["t"]: s for s in stocks}
@@ -105,14 +110,20 @@ def guncelle(stocks: list, px: dict, xu: pd.Series) -> dict:
         for ad, kr in KURALLAR.items():
             Kk = K["kural"][ad]
             # 1) dunku kararlari bugunun kapanisindan uygula
+            Kk.setdefault("stoplanan", {}); Kk.setdefault("bekleyen_geri", [])
             for t, neden in list(Kk["bekleyen_sat"].items()):
                 a = Kk["acik"].pop(t, None)
                 if a:
                     Kk["kapali"].append({**a, "cikis": V, "neden": neden})
-            for t, durum in K["bekleyen_al"]:
+                    if neden == "zarar stopu" and _fiyat(px, t, V):
+                        Kk["stoplanan"][t] = {"cikis_fiyat": _fiyat(px, t, V), "cikis": V}
+            for t in Kk["bekleyen_geri"]:
                 if t not in Kk["acik"] and _fiyat(px, t, V):
+                    Kk["acik"][t] = {"t": t, "giris": V, "karar": "GERI GIRIS (stop sonrasi)"}
+            for t, durum in K["bekleyen_al"]:
+                if t not in Kk["acik"] and t not in Kk["stoplanan"] and _fiyat(px, t, V):
                     Kk["acik"][t] = {"t": t, "giris": V, "karar": durum}
-            Kk["bekleyen_sat"] = {}
+            Kk["bekleyen_sat"] = {}; Kk["bekleyen_geri"] = []
             # 2) bugunun kapanisina gore yarin icin satis karari
             for t, a in Kk["acik"].items():
                 s = H.get(t)
@@ -125,6 +136,17 @@ def guncelle(stocks: list, px: dict, xu: pd.Series) -> dict:
                     Kk["bekleyen_sat"][t] = "bilanco bozuldu"
                 elif iz_durum(px, t, a["giris"], V, kr["iz"])[3]:
                     Kk["bekleyen_sat"][t] = "takip eden stop"
+                elif kr.get("zarar") and (_fiyat(px, t, V) or 0) <= (_fiyat(px, t, a["giris"]) or 0) * (1 - kr["zarar"]):
+                    Kk["bekleyen_sat"][t] = "zarar stopu"
+            # stoplananlar: 120 gun icinde satis fiyatinin %10 ustu -> yarin geri gir
+            if kr.get("zarar"):
+                for t, x in list(Kk["stoplanan"].items()):
+                    s = H.get(t); p = _fiyat(px, t, V)
+                    v = ((s or {}).get("temel") or {}).get("v3") or {}
+                    if (pd.Timestamp(V) - pd.Timestamp(x["cikis"])).days > kr["bekle"] or (v.get("sira") is not None and v["sira"] < 0.6):
+                        Kk["stoplanan"].pop(t); continue
+                    if p and p >= x["cikis_fiyat"] * (1 + kr["geri"]) and ((s or {}).get("D") or {}).get("percentile", 100) < kr["karal"]:
+                        Kk["bekleyen_geri"].append(t); Kk["stoplanan"].pop(t)
         acik_hepsi = set().union(*[set(K["kural"][a]["acik"]) for a in KURALLAR])
         K["bekleyen_al"] = [[s["t"], kutu(s)] for s in stocks if kutu(s).startswith("AL") and s["t"] not in acik_hepsi]
         K["son_gun"] = V
@@ -156,10 +178,12 @@ def guncelle(stocks: list, px: dict, xu: pd.Series) -> dict:
             "ort_fazla": round(sum(x["fazla"] for x in hepsi) / len(hepsi), 2) if hepsi else None,
             "kazanan": round(100 * sum(x["fazla"] > 0 for x in hepsi) / len(hepsi)) if hepsi else None,
             "liste_acik": sorted(Kk["acik"].values(), key=lambda x: x["giris"]),
-            "liste_kapali": Kk["kapali"][-50:], "bekleyen_sat": Kk["bekleyen_sat"]}
+            "liste_kapali": Kk["kapali"][-50:], "bekleyen_sat": Kk["bekleyen_sat"],
+            "stoplanan": Kk.get("stoplanan", {}), "bekleyen_geri": Kk.get("bekleyen_geri", [])}
     F.write_text(json.dumps(K, ensure_ascii=False, indent=1), encoding="utf-8")
-    # site uyumu: ust duzey alanlar = gecerli (yeni) kural
-    y = ozet["kurallar"]["yeni"]
-    ozet.update({k: y[k] for k in ("acik", "kapali", "ort_getiri", "ort_fazla", "kazanan", "liste_acik", "liste_kapali", "bekleyen_sat")})
-    print(f"defter: {K['son_gun']} | yeni acik {y['acik']} kapali {y['kapali']} | eski acik {ozet['kurallar']['eski']['acik']} | yarin alinacak {len(K['bekleyen_al'])}")
+    # site uyumu: ust duzey alanlar = gecerli kural (24 Kas: 'stoplu')
+    y = ozet["kurallar"][GECERLI]
+    ozet["gecerli"] = GECERLI
+    ozet.update({k: y[k] for k in ("acik", "kapali", "ort_getiri", "ort_fazla", "kazanan", "liste_acik", "liste_kapali", "bekleyen_sat", "stoplanan")})
+    print(f"defter: {K['son_gun']} | {GECERLI} acik {y['acik']} kapali {y['kapali']} | eski acik {ozet['kurallar']['eski']['acik']} | yarin alinacak {len(K['bekleyen_al'])}")
     return ozet
