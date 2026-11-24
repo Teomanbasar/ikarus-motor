@@ -217,6 +217,20 @@ def cek(hisse: str, ceyrek: int = 12):
             time.sleep(0.3)
         # dolu donemler: toplam varlik/aktif > 0
         tab = {d: v for d, v in tab.items() if (v.get("1BL") or v.get("1Z") or 0) > 0 or (v.get("3C") or v.get("3A") or 0) != 0}
+        if tab and ceyrek <= 12 and yarim_yillik(tab):
+            # 24 Kas: yari yillik sirketlerde 12 ceyrek = 6 bilanco; surpriz icin en az 4 gecmis fark lazim -> 8 ceyrek daha
+            ek = donemler(*min(dl), 9)[1:]
+            for i in range(0, len(ek), 4):
+                parca = ek[i:i + 4]
+                if len(parca) < 4:
+                    break
+                for it in _cek4(hisse, grup, parca):
+                    for j, d in enumerate(parca, 1):
+                        v = it.get(f"value{j}")
+                        if v not in (None, ""):
+                            tab.setdefault(d, {})[it["itemCode"]] = float(v)
+                time.sleep(0.3)
+            tab = {d: v for d, v in tab.items() if (v.get("1BL") or v.get("1Z") or 0) > 0 or (v.get("3C") or v.get("3A") or 0) != 0}
         if tab:
             return grup, tab
     return None, {}
