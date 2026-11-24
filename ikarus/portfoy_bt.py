@@ -65,6 +65,9 @@ def _xu_duzelt(xu):
     return xu
 
 
+EKSTRA = {}   # 24 Kas: stop testleri icin IKARUS ic durumlari (d_stop, eksik sart sayisi, DAGITIM)
+
+
 def panel(ham: dict | None = None):
     if UZUN:
         from . import temel as _T
@@ -116,6 +119,9 @@ def panel(ham: dict | None = None):
         boz = (yas > 200) | np.isnan(v3r) | (v3r < 0.6) | kotu
         f = lambda a: pd.Series(a, index=ix).reindex(idx)
         C[t], S[t], PC[t] = f(c), f(d), f(pct)
+        EKSTRA.setdefault("DS", {})[t] = f(rfz["d_stop"].values.astype(float))
+        EKSTRA.setdefault("EK", {})[t] = f(rfz["eksik"].values.astype(float))
+        EKSTRA.setdefault("DG", {})[t] = f((rfz["sinyal"].values == "DAGITIM").astype(float))
         VR[t] = f(np.where(boz, -1.0, np.nan_to_num(v3r, nan=-1.0)))
         TK[t] = f(fz.astype(int) + ha.astype(int))
         if n_ % 100 == 0:
@@ -123,7 +129,8 @@ def panel(ham: dict | None = None):
     return idx, pd.DataFrame(C), pd.DataFrame(S), pd.DataFrame(PC), pd.DataFrame(VR), pd.DataFrame(TK), xu.reindex(idx).ffill(), m3
 
 
-def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False, sira=None, al_set=None):
+def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False, sira=None, al_set=None,
+        ek_stop=None, alim_kontrol=False, p5_oncelik=False, haric=None):
     """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
     kapanisin 'geri' kadar altina inerse sat (takip eden stop). karal: kar al Percentile esigi."""
     r = faiz_serisi(idx)
@@ -153,6 +160,8 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
         for t in bek_al:
             if len(poz) >= N or t in poz:
                 continue
+            if alim_kontrol and Sv[i, col[t]] not in ("AL cift tik", "AL tek tik"):
+                continue   # 24 Kas: alim gunu sinyal hala AL mi
             p = Cv[i, col[t]]
             if np.isnan(p) or p <= 0:
                 continue
@@ -185,6 +194,10 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
             elif iz_vol and not np.isnan(p) and not np.isnan(sig[i, j]) and tepe[t] >= gf * (1 + iz_vol[0]) \
                     and p <= tepe[t] * (1 - min(0.35, max(0.08, iz_vol[1] * sig[i, j]))):
                 bek_sat.append((t, "takip eden stop"))
+            elif ek_stop is not None and not np.isnan(p):
+                nd = ek_stop(i, j, p, gf, poz[t][2], gun)
+                if nd:
+                    bek_sat.append((t, nd))
         # agirlik: o gun hisseye ayrilacak en fazla pay (borsa/mevduat kurali). sert=True ise fazlasi satilir.
         w = 1.0 if agirlik is None else float(agirlik[i])
         if sert and w < 1.0 and poz:
@@ -205,10 +218,13 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                 if t in poz:
                     continue
                 s_ = Sv[i, j]
+                if haric is not None and haric(i, t):
+                    continue
                 if (s_ in al_set) if al_set else (s_ == "AL cift tik" or (s_ == "AL tek tik" and not sadece_cift)):
                     if sira is not None:
                         k_ = sira[i, j]
-                        ad.append((-(k_ if not np.isnan(k_) else -1e18), 0, t))
+                        on = (0 if PCv[i, j] <= 5 else 1) if p5_oncelik else 0
+                        ad.append((on, -(k_ if not np.isnan(k_) else -1e18), t))
                     else:
                         ad.append((-TKv[i, j], -VRv[i, j], t))
             bek_al = [t for *_, t in sorted(ad)][:bos]
@@ -1726,4 +1742,96 @@ def faiz_rejim_test():
     L.append(f"\nbugun reel faiz: {reel.dropna().iloc[-1]:+.1f} puan (politika %{fzg.iloc[-1]:.1f}, yillik TUFE %{tyg.dropna().iloc[-1]:.1f})")
     txt = "\n".join(L)
     (R / "faiz_rejim_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def stop_test(uzun=False):
+    """24 Kas (Teoman: 'stop kurali onemli; IKARUS'ta eksik sartlara gore mi, baska yontem mi; her yerde %20 yiyip cikmak
+    da parayi bitirir; stop olmadan da iyi kazaniyor'). Canli kurallar (P>=90 kar al, +%20 sonra %15 takip, bilanco bozulunca sat)
+    UZERINE ek cikis kurallari ve alis secenekleri. 5 hisse; her donem ayni 15 rastgele secim dizisi tum varyantlarda kullanilir."""
+    global UZUN
+    UZUN = uzun
+    EKSTRA.clear()
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    UZUN = False
+    cols = list(C.columns)
+    DS = pd.DataFrame(EKSTRA["DS"]).reindex(index=idx, columns=cols)
+    EK = pd.DataFrame(EKSTRA["EK"]).reindex(index=idx, columns=cols)
+    DG = pd.DataFrame(EKSTRA["DG"]).reindex(index=idx, columns=cols)
+    GR = grup_listesi()
+    riskli = GR["GYO"] | GR.get("ARACI KURUM", set())
+    fz = pd.Series({pd.Timestamp(d): v for d, v in FAIZ}).sort_index()
+    fzg = fz.reindex(fz.index.union(idx)).ffill().reindex(idx)
+    tufe = D.tufe(update=False)
+    ty = (tufe / tufe.shift(12) - 1) * 100
+    reel = (fzg - ty.reindex(ty.index.union(idx)).ffill().reindex(idx)).values
+    rr = faiz_serisi(idx)
+    donemler = ([("2014-17", "2014-06-01", "2017-12-31"), ("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31")]
+                if uzun else [("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31"), ("2021-26", "2021-01-01", "2026-12-31")])
+
+    def varyantlar(m):
+        ds, ek, dg = DS.values[m], EK.values[m], DG.values[m]
+        xv = xu.values[m]
+        xi = {d: k for k, d in enumerate(idx[m])}
+        reel_m = reel[m]
+        def sabit(x):
+            return lambda i, j, p, gf, gt, gun: f"zarar %{int(100 * x)}" if p <= gf * (1 - x) else None
+        def zaman(dd):
+            return lambda i, j, p, gf, gt, gun: f"{dd} gun karsiz" if (gun - gt).days >= dd and p < gf else None
+        def goreli(x, dd=None):
+            def f(i, j, p, gf, gt, gun):
+                k0 = xi.get(gt)
+                if k0 is None:
+                    return None
+                g = (p / gf) / (xv[i] / xv[k0]) - 1
+                if g <= -x:
+                    return f"endekse gore -%{int(100 * x)}"
+                if dd and (gun - gt).days >= dd and p < gf:
+                    return f"{dd} gun karsiz"
+                return None
+            return f
+        V = {"YOK (bugunku)": {},
+             "sabit -%15": {"ek_stop": sabit(0.15)}, "sabit -%20": {"ek_stop": sabit(0.20)}, "sabit -%25": {"ek_stop": sabit(0.25)},
+             "120 gun karsizsa": {"ek_stop": zaman(120)}, "180 gun karsizsa": {"ek_stop": zaman(180)},
+             "IKARUS stop kirildi (zarardayken)": {"ek_stop": lambda i, j, p, gf, gt, gun: "IKARUS stop" if ds[i, j] <= -3.5 and p < gf else None},
+             "IKARUS stop kirildi (her zaman)": {"ek_stop": lambda i, j, p, gf, gt, gun: "IKARUS stop" if ds[i, j] <= -3.5 else None},
+             "eksik sart >= 4 (zarardayken)": {"ek_stop": lambda i, j, p, gf, gt, gun: "eksik sart" if ek[i, j] >= 4 and p < gf else None},
+             "eksik sart >= 5 (zarardayken)": {"ek_stop": lambda i, j, p, gf, gt, gun: "eksik sart" if ek[i, j] >= 5 and p < gf else None},
+             "DAGITIM (zarardayken)": {"ek_stop": lambda i, j, p, gf, gt, gun: "dagitim" if dg[i, j] >= 1 and p < gf else None},
+             "endekse gore -%20": {"ek_stop": goreli(0.20)}, "endekse gore -%25": {"ek_stop": goreli(0.25)},
+             "endekse gore -%20 + 180 gun": {"ek_stop": goreli(0.20, 180)},
+             "ALIS: alim gunu kontrol": {"alim_kontrol": True},
+             "ALIS: P<=5 oncelik": {"p5_oncelik": True},
+             "ALIS: GYO+araci kurum yok": {"haric": lambda i, t: t in riskli},
+             "ALIS: GYO+araci yok (yalniz siki faiz)": {"haric": lambda i, t: t in riskli and reel_m[i] > 0}}
+        return V
+    L = [f"STOP VE ALIS KURALLARI TESTI ({'2014-2026 uzun veri' if uzun else '2021-2026'}) - 24 Kas 2026",
+         "Hepsi bugunku kurallarin UZERINE eklenir. 5 hisse, 15 rastgele secim kosusu (her varyantta ayni diziler). Deger: donem toplam getirisi %, ortanca kosu.",
+         ""]
+    rng = np.random.default_rng(31)
+    sonuc = {}
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        if m.sum() < 50:
+            continue
+        ii = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        xg = float(xu.values[m][-1] / xu.values[m][0])
+        siralar = [rng.random(C[m].shape) for _ in range(15)]
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xg - 1):+.0f}%")
+        for ad_v, kw in varyantlar(m).items():
+            v, nstop, gstop = [], 0, []
+            for sr in siralar:
+                e, tr, pz = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=sr, **kw)
+                v.append(e["deger"].iloc[-1] / BAS)
+                ek_ = tr[~tr.neden.isin(["pahali (kar al)", "bilanco bozuldu", "takip eden stop"])]
+                nstop += len(ek_); gstop += list(ek_.getiri)
+            v = np.array(v)
+            sonuc[(ad_d, ad_v)] = np.median(v)
+            L.append(f"  {ad_v:40s} ortanca {100 * (np.median(v) - 1):+6.0f}% | ort {100 * (v.mean() - 1):+6.0f}% | en kotu {100 * (v.min() - 1):+5.0f}% | "
+                     f"ek cikis/kosu {nstop / 15:4.1f}" + (f" (ort {np.mean(gstop):+.0f}%)" if gstop else ""))
+            print(L[-1])
+        L.append("")
+    txt = "\n".join(L)
+    (R / ("stop_uzun_sonuc.txt" if uzun else "stop_sonuc.txt")).write_text(txt, encoding="utf-8")
     print(txt)
