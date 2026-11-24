@@ -317,8 +317,16 @@ def _bol(a, b):
         return None
 
 
+def yarim_yillik(tab):
+    """24 Kas: yalniz 6 ve 12. ay bilancosu aciklayan sirket (AYES, BALAT, ORMA, YONGA ... 12 sirket)."""
+    ks = [k for k in tab if isinstance(k, tuple)]
+    return bool(ks) and all(k[1] in (6, 12) for k in ks) and len(ks) >= 3
+
+
 def ceyreklik(tab, d, kod):
-    """Yalniz o ceyregin akim degeri (tablolar yil ici kumulatif)."""
+    """Yalniz o ceyregin akim degeri (tablolar yil ici kumulatif).
+    24 Kas: yari yillik aciklayan sirketlerde 'ceyrek' yerine yarim yil (H1 = 6. ay, H2 = 12. ay - 6. ay); gecen yilin
+    ayni yarisiyla karsilastirilir, boylece suprizler ve satis buyumesi bu sirketlerde de hesaplanir."""
     y, m = d
     a = tab.get(d, {}).get(kod)
     if a is None:
@@ -326,6 +334,11 @@ def ceyreklik(tab, d, kod):
     if m == 3:
         return a
     p = tab.get((y, m - 3), {}).get(kod)
+    if p is None and m in (6, 12) and yarim_yillik(tab):
+        if m == 6:
+            return a
+        p6 = tab.get((y, 6), {}).get(kod)
+        return None if p6 is None else a - p6
     return None if p is None else a - p
 
 
@@ -360,6 +373,8 @@ def isaretler(tab, m3, d, yo=None):
     y, m = d
     d1 = (y - 1, m)
     dq = (y, m - 3) if m > 3 else (y - 1, 12)
+    if dq not in tab and m in (6, 12) and yarim_yillik(tab):   # 24 Kas: yari yillik -> onceki yarim yil
+        dq = (y, 6) if m == 12 else (y - 1, 12)
     m3y = _m3_oran(m3, d, d1)
     if m3y:
         m3y *= yo.get((d, "g"), 1.0) / yo.get((d1, "g"), 1.0)
