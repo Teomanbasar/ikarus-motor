@@ -433,12 +433,24 @@ def banka_olculer(tab, d):
     if _TUFE is None:
         _TUFE = D.tufe(update=False)
     y, m = d
-    o = (y - 1, m)
     g = lambda k, dd=d: (tab.get(dd) or {}).get(k)
     tt = lambda k, dd=d: _ttm(tab, dd, k)
-    a1 = _TUFE[_TUFE.index <= pd.Timestamp(y, m, 1)]; a0 = _TUFE[_TUFE.index <= pd.Timestamp(y - 1, m, 1)]
+    # bir yil onceki karsilastirma donemi; kaynakta bos ceyrek varsa (or. AKBNK 2025/9) bir ceyrek once/sonra
+    def _kay(dd, ay):
+        yy, mm = dd[0], dd[1] + ay
+        while mm <= 0:
+            mm += 12; yy -= 1
+        while mm > 12:
+            mm -= 12; yy += 1
+        return (yy, mm)
+    o = (y - 1, m)
+    for aday in ((y - 1, m), _kay((y - 1, m), -3), _kay((y - 1, m), 3)):
+        if tt("3C", aday) is not None and g("1Z", aday):
+            o = aday
+            break
+    a1 = _TUFE[_TUFE.index <= pd.Timestamp(y, m, 1)]; a0 = _TUFE[_TUFE.index <= pd.Timestamp(o[0], o[1], 1)]
     enf = float(a1.iloc[-1] / a0.iloc[-1]) if len(a1) and len(a0) else None
-    akt, akt1, akt2 = g("1Z"), g("1Z", o), g("1Z", (y - 2, m))
+    akt, akt1, akt2 = g("1Z"), g("1Z", o), g("1Z", (o[0] - 1, o[1]))
     nfg, nfg1 = tt("3C"), tt("3C", o)
     nim = nfg / ((akt + akt1) / 2 if akt and akt1 else akt) if nfg is not None and akt else None
     nim1 = nfg1 / ((akt1 + akt2) / 2 if akt1 and akt2 else akt1) if nfg1 is not None and akt1 else None
