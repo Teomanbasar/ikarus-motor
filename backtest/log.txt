@@ -1,55 +1,60 @@
-[uyari] EVDS'ten M3 alinamadi, son bilinen deger kullaniliyor: HTTPSConnectionPool(host='evds3.tcmb.gov.tr', port=443): Read timed out. (read timeout=30)
-panel 0 A1CAP
-panel 100 BIZIM
-panel 200 ENDAE
-panel 300 ISGYO
-panel 400 MOPAS
-panel 500 SILVR
-panel 600 ZEDUR
-  2015          +9         +9      +9         +9      0%
-  2016         +13        +13     +13        +13      0%
-  2017         +14        +14     +14        +14      0%
-  2018         -20        -20     -20        -24     11%
-  2019         +35        +35     +35        +35      0%
-  2020         +55        +52     +52        +65     47%
-  2021         +52        +52     +52        +52      0%
-  2022        +143       +119    +119       +148     18%
-  2023        +129       +129    +129       +129     33%
-  2024        +103       +104     +98       +101     56%
-  2025         +60        +47     +50        +35     24%
-  2026          +8        +12     +10        +11     71%
-  2015-17 normal esik  rastgele    +43 (  +43) | dusuk hacim    +43 (  +43) | kati    +43 | dusuk devir    +43 | dusuk hacim gecen kosu %0
-  2015-17 3 kat esik   rastgele    +39 (  +39) | dusuk hacim    +39 (  +39) | kati    +39 | dusuk devir    +39 | dusuk hacim gecen kosu %0
-  2018-20 normal esik  rastgele    +86 (  +74) | dusuk hacim    +85 (  +75) | kati    +85 | dusuk devir    +91 | dusuk hacim gecen kosu %33
-  2018-20 3 kat esik   rastgele    +73 (  +69) | dusuk hacim    +85 (  +69) | kati    +86 | dusuk devir    +86 | dusuk hacim gecen kosu %38
-  2021-24 normal esik  rastgele  +1821 (+1301) | dusuk hacim  +2208 (+1474) | kati  +2073 | dusuk devir  +1836 | dusuk hacim gecen kosu %89
-  2021-24 3 kat esik   rastgele  +1966 (+1422) | dusuk hacim  +2018 (+1592) | kati  +1974 | dusuk devir  +1893 | dusuk hacim gecen kosu %60
-  2025-26 normal esik  rastgele    +70 (  +11) | dusuk hacim    +68 (  +29) | kati    +67 | dusuk devir    +46 | dusuk hacim gecen kosu %49
-  2025-26 3 kat esik   rastgele    +70 (   +5) | dusuk hacim    +71 (  +19) | kati    +81 | dusuk devir    +61 | dusuk hacim gecen kosu %53
-SECIM 3: DUSUK HACIM SAGLAMLIK (24 Kas 2026). Canli kural, 5 hisse, 45 kosu (3 tohum x 15).
+      bolumlerde ortanca: 2410-2611: -28 (n24)
+  grup GYO                           n   64 | getiri ort   +5.2 | mevduata gore ortanca   -7.3 ort   -0.4 | mevduati gecen % 41 | ort gun   45
+      bolumlerde ortanca: 1902-2001: +35 (n15) | 2410-2611: -21 (n49)
+  grup HOLDING                       n  123 | getiri ort   +5.8 | mevduata gore ortanca   +3.4 ort   -0.9 | mevduati gecen % 59 | ort gun   55
+      bolumlerde ortanca: 1902-2001: +12 (n60) | 2410-2611: -2 (n63)
+  grup diger                         n  604 | getiri ort   +7.8 | mevduata gore ortanca   -4.6 ort   -1.0 | mevduati gecen % 41 | ort gun   60
+      bolumlerde ortanca: 1902-2001: -1 (n105) | 2011-2109: +18 (n60) | 2410-2611: -7 (n439)
+  reel faiz 0-5                      n  389 | getiri ort   +4.6 | mevduata gore ortanca   -7.4 ort   -3.5 | mevduati gecen % 42 | ort gun   64
+      bolumlerde ortanca: 1902-2001: +9 (n135) | 2011-2109: +18 (n60) | 2410-2611: -26 (n194)
+  reel faiz > 5                      n  426 | getiri ort   +8.5 | mevduata gore ortanca   -1.2 ort   +0.3 | mevduati gecen % 43 | ort gun   52
+      bolumlerde ortanca: 1902-2001: -1 (n45) | 2410-2611: -1 (n381)
 
-1) YIL YIL (her yil 100.000 TL ile ayri). Ortanca % | dusuk hacim rastgeleyi gecen kosu orani (ayni rastgele dizi ile)
-  yil     rastgele  dus.hacim    kati  dus.devir   gecen
-  2015          +9         +9      +9         +9      0%
-  2016         +13        +13     +13        +13      0%
-  2017         +14        +14     +14        +14      0%
-  2018         -20        -20     -20        -24     11%
-  2019         +35        +35     +35        +35      0%
-  2020         +55        +52     +52        +65     47%
-  2021         +52        +52     +52        +52      0%
-  2022        +143       +119    +119       +148     18%
-  2023        +129       +129    +129       +129     33%
-  2024        +103       +104     +98       +101     56%
-  2025         +60        +47     +50        +35     24%
-  2026          +8        +12     +10        +11     71%
-  -> dusuk hacim 2/12 yilda rastgeleden iyi (ortanca).
+B) PORTFOY: yalniz SIKI rejimde devreye giren kurallar (gevsekte canli kural). 15 kosu ortancasi % (en kotu).
+== 2018-20: mevduat +62% | BIST100 +26% | siki gun payi %36
+  CANLI (karsilastirma)                  ortanca    +81% (en kotu   +74%)
+  SIKI: yalniz P <= 5 al                 ortanca    +91% (en kotu   +83%)
+  SIKI: yalniz cift tik al               ortanca    +85% (en kotu   +78%)
+  SIKI: GYO ve araci kurum alma          ortanca    +69% (en kotu   +63%)
+  SIKI: v3 >= 0.9 alma                   ortanca    +70% (en kotu   +63%)
+  SIKI: endeks 200g altindaysa alma      ortanca    +69% (en kotu   +62%)
+  SIKI: 6 ay momentum <= 0 alma          ortanca    +86% (en kotu   +78%)
+  SIKI: zarar stopu -%15                 ortanca    +82% (en kotu   +75%)
+  SIKI: kar al P >= 80                   ortanca    +71% (en kotu   +64%)
+  SIKI: kar al P >= 95                   ortanca    +85% (en kotu   +76%)
 
-2) DONEMLER, normal esik ve 3 KAT likidite esigi (en sig hisseler aday olamaz). Ortanca % (en kotu %)
-  2015-17 normal esik  rastgele    +43 (  +43) | dusuk hacim    +43 (  +43) | kati    +43 | dusuk devir    +43 | dusuk hacim gecen kosu %0
-  2015-17 3 kat esik   rastgele    +39 (  +39) | dusuk hacim    +39 (  +39) | kati    +39 | dusuk devir    +39 | dusuk hacim gecen kosu %0
-  2018-20 normal esik  rastgele    +86 (  +74) | dusuk hacim    +85 (  +75) | kati    +85 | dusuk devir    +91 | dusuk hacim gecen kosu %33
-  2018-20 3 kat esik   rastgele    +73 (  +69) | dusuk hacim    +85 (  +69) | kati    +86 | dusuk devir    +86 | dusuk hacim gecen kosu %38
-  2021-24 normal esik  rastgele  +1821 (+1301) | dusuk hacim  +2208 (+1474) | kati  +2073 | dusuk devir  +1836 | dusuk hacim gecen kosu %89
-  2021-24 3 kat esik   rastgele  +1966 (+1422) | dusuk hacim  +2018 (+1592) | kati  +1974 | dusuk devir  +1893 | dusuk hacim gecen kosu %60
-  2025-26 normal esik  rastgele    +70 (  +11) | dusuk hacim    +68 (  +29) | kati    +67 | dusuk devir    +46 | dusuk hacim gecen kosu %49
-  2025-26 3 kat esik   rastgele    +70 (   +5) | dusuk hacim    +71 (  +19) | kati    +81 | dusuk devir    +61 | dusuk hacim gecen kosu %53
+== 2021-24: mevduat +166% | BIST100 +557% | siki gun payi %23
+  CANLI (karsilastirma)                  ortanca  +1905% (en kotu +1565%)
+  SIKI: yalniz P <= 5 al                 ortanca  +1690% (en kotu +1304%)
+  SIKI: yalniz cift tik al               ortanca  +1781% (en kotu +1372%)
+  SIKI: GYO ve araci kurum alma          ortanca  +1905% (en kotu +1565%)
+  SIKI: v3 >= 0.9 alma                   ortanca  +2070% (en kotu +1411%)
+  SIKI: endeks 200g altindaysa alma      ortanca  +1724% (en kotu +1277%)
+  SIKI: 6 ay momentum <= 0 alma          ortanca  +1573% (en kotu +1178%)
+  SIKI: zarar stopu -%15                 ortanca  +1752% (en kotu +1406%)
+  SIKI: kar al P >= 80                   ortanca  +1905% (en kotu +1573%)
+  SIKI: kar al P >= 95                   ortanca  +1905% (en kotu +1565%)
+
+== 2025-26: mevduat +115% | BIST100 +10% | siki gun payi %100
+  CANLI (karsilastirma)                  ortanca    +59% (en kotu    +3%)
+  SIKI: yalniz P <= 5 al                 ortanca     +9% (en kotu    -4%)
+  SIKI: yalniz cift tik al               ortanca    +57% (en kotu   +44%)
+  SIKI: GYO ve araci kurum alma          ortanca    +64% (en kotu   +26%)
+  SIKI: v3 >= 0.9 alma                   ortanca   +119% (en kotu   +54%)
+  SIKI: endeks 200g altindaysa alma      ortanca    +98% (en kotu   +11%)
+  SIKI: 6 ay momentum <= 0 alma          ortanca    +11% (en kotu    +2%)
+  SIKI: zarar stopu -%15                 ortanca    +81% (en kotu   +40%)
+  SIKI: kar al P >= 80                   ortanca    +25% (en kotu    -1%)
+  SIKI: kar al P >= 95                   ortanca    +47% (en kotu   +12%)
+
+KABA TOPLAM (uc donem carpimi) | en kotu kosular:
+  CANLI (karsilastirma)                  x  57.7 | en kotu x  30.0 | 2025-26 +59%
+  SIKI: yalniz P <= 5 al                 x  37.1 | en kotu x  24.7 | 2025-26 +9%
+  SIKI: yalniz cift tik al               x  54.7 | en kotu x  37.6 | 2025-26 +57%
+  SIKI: GYO ve araci kurum alma          x  55.7 | en kotu x  34.1 | 2025-26 +64%
+  SIKI: v3 >= 0.9 alma                   x  80.8 | en kotu x  37.9 | 2025-26 +119%
+  SIKI: endeks 200g altindaysa alma      x  60.9 | en kotu x  24.8 | 2025-26 +98%
+  SIKI: 6 ay momentum <= 0 alma          x  34.8 | en kotu x  23.2 | 2025-26 +11%
+  SIKI: zarar stopu -%15                 x  60.9 | en kotu x  36.9 | 2025-26 +81%
+  SIKI: kar al P >= 80                   x  42.7 | en kotu x  27.3 | 2025-26 +25%
+  SIKI: kar al P >= 95                   x  54.6 | en kotu x  32.9 | 2025-26 +47%

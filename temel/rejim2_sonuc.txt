@@ -1,0 +1,135 @@
+SIKI PARA DONEMI TESTI (24 Kas 2026). reel faiz = politika faizi - yillik TUFE (1 ay gecikmeli). Canli kural, 5 hisse.
+Siki bolumler: 2019-02..2020-01; 2020-11..2021-09; 2024-10..2026-11
+
+A) ISLEMLER (15 kosu, 2015-2026 tek parca; 1876 islem). Getiri %, 'mevduata gore' = islem suresince mevduata gore fazla %.
+
+== GEVSEK rejimde alinanlar ==
+  TUMU                               n 1061 | getiri ort  +24.1 | mevduata gore ortanca  +13.2 ort  +17.1 | mevduati gecen % 66 | ort gun   67
+  cikis: STOP zarar 20               n  149 | getiri ort  -22.3 | mevduata gore ortanca  -27.8 ort  -28.1 | mevduati gecen %  0 | ort gun   70
+  cikis: bilanco bozuldu             n  152 | getiri ort   +3.8 | mevduata gore ortanca   -4.1 ort   -2.5 | mevduati gecen % 36 | ort gun   66
+  cikis: pahali (kar al)             n  462 | getiri ort  +51.9 | mevduata gore ortanca  +38.7 ort  +44.1 | mevduati gecen %100 | ort gun   64
+  cikis: takip eden stop             n  298 | getiri ort  +14.6 | mevduata gore ortanca   +6.9 ort   +7.9 | mevduati gecen % 60 | ort gun   72
+  P <= 5                             n  236 | getiri ort  +18.0 | mevduata gore ortanca   -2.2 ort  +11.7 | mevduati gecen % 44 | ort gun   62
+  P 5-20                             n  825 | getiri ort  +25.9 | mevduata gore ortanca  +17.5 ort  +18.7 | mevduati gecen % 72 | ort gun   69
+  v3 >= 0.9                          n  515 | getiri ort  +29.7 | mevduata gore ortanca  +15.9 ort  +21.6 | mevduati gecen % 67 | ort gun   72
+  v3 0.8-0.9                         n  546 | getiri ort  +18.8 | mevduata gore ortanca   +8.9 ort  +12.9 | mevduati gecen % 64 | ort gun   63
+  cift tik                           n  283 | getiri ort  +21.1 | mevduata gore ortanca  +13.2 ort  +13.9 | mevduati gecen % 58 | ort gun   70
+  tek tik                            n  778 | getiri ort  +25.2 | mevduata gore ortanca  +12.8 ort  +18.3 | mevduati gecen % 68 | ort gun   67
+  6 ay momentum > 0                  n  291 | getiri ort  +23.1 | mevduata gore ortanca  +19.7 ort  +18.3 | mevduati gecen % 73 | ort gun   64
+  6 ay momentum <= 0                 n  770 | getiri ort  +24.5 | mevduata gore ortanca   +9.0 ort  +16.7 | mevduati gecen % 63 | ort gun   69
+  son 1 ay > 0                       n  548 | getiri ort  +30.4 | mevduata gore ortanca  +17.5 ort  +22.4 | mevduati gecen % 72 | ort gun   72
+  son 1 ay <= 0                      n  513 | getiri ort  +17.4 | mevduata gore ortanca   +8.2 ort  +11.5 | mevduati gecen % 58 | ort gun   62
+  hacim ust yari                     n  755 | getiri ort  +21.4 | mevduata gore ortanca  +12.8 ort  +15.7 | mevduati gecen % 63 | ort gun   69
+  hacim alt yari                     n  306 | getiri ort  +30.7 | mevduata gore ortanca  +14.1 ort  +20.6 | mevduati gecen % 72 | ort gun   64
+  endeks 200g ortalama ustunde       n  754 | getiri ort  +28.4 | mevduata gore ortanca  +14.1 ort  +20.3 | mevduati gecen % 67 | ort gun   68
+  endeks 200g ortalama altinda       n  307 | getiri ort  +13.5 | mevduata gore ortanca  +12.8 ort   +9.3 | mevduati gecen % 62 | ort gun   66
+  IKARUS eksik = 0                   n   32 | getiri ort  +27.6 | mevduata gore ortanca  +26.7 ort  +21.6 | mevduati gecen % 53 | ort gun   90
+  IKARUS eksik >= 1                  n 1029 | getiri ort  +24.0 | mevduata gore ortanca  +13.2 ort  +17.0 | mevduati gecen % 66 | ort gun   67
+  grup ARACI KURUM                   n   25 | getiri ort   -9.4 | mevduata gore ortanca  -41.5 ort  -31.2 | mevduati gecen % 16 | ort gun  135
+  grup GYO                           n  165 | getiri ort  +38.6 | mevduata gore ortanca  +28.8 ort  +30.4 | mevduati gecen % 73 | ort gun   62
+  grup HOLDING                       n  132 | getiri ort  +26.0 | mevduata gore ortanca  +19.4 ort  +19.6 | mevduati gecen % 61 | ort gun   73
+  grup diger                         n  739 | getiri ort  +21.7 | mevduata gore ortanca  +12.8 ort  +15.4 | mevduati gecen % 66 | ort gun   65
+
+== SIKI rejimde alinanlar ==
+  TUMU                               n  815 | getiri ort   +6.6 | mevduata gore ortanca   -3.0 ort   -1.5 | mevduati gecen % 42 | ort gun   58
+  bolum 1902-2001                    n  180 | getiri ort   +6.9 | mevduata gore ortanca   +7.8 ort   +3.6 | mevduati gecen % 58 | ort gun   38
+  bolum 2011-2109                    n   60 | getiri ort  +27.4 | mevduata gore ortanca  +18.1 ort  +15.0 | mevduati gecen % 50 | ort gun  134
+  bolum 2410-2611                    n  575 | getiri ort   +4.4 | mevduata gore ortanca   -8.0 ort   -4.9 | mevduati gecen % 37 | ort gun   56
+  cikis: STOP zarar 20               n  163 | getiri ort  -22.6 | mevduata gore ortanca  -27.8 ort  -28.1 | mevduati gecen %  0 | ort gun   54
+  cikis: bilanco bozuldu             n  297 | getiri ort   -0.3 | mevduata gore ortanca   -7.4 ort   -6.2 | mevduati gecen % 33 | ort gun   43
+  cikis: donem sonu elde             n   41 | getiri ort   -7.2 | mevduata gore ortanca   -8.8 ort   -9.5 | mevduati gecen %  2 | ort gun   19
+  cikis: pahali (kar al)             n  202 | getiri ort  +41.0 | mevduata gore ortanca  +29.4 ort  +28.1 | mevduati gecen % 96 | ort gun   77
+  cikis: takip eden stop             n  112 | getiri ort  +10.5 | mevduata gore ortanca   -0.8 ort   -0.7 | mevduati gecen % 46 | ort gun   83
+  P <= 5                             n  283 | getiri ort   +5.8 | mevduata gore ortanca   -1.7 ort   -3.4 | mevduati gecen % 47 | ort gun   58
+      bolumlerde ortanca: 1902-2001: +9 (n45) | 2410-2611: -7 (n238)
+  P 5-20                             n  532 | getiri ort   +7.1 | mevduata gore ortanca   -4.4 ort   -0.5 | mevduati gecen % 40 | ort gun   58
+      bolumlerde ortanca: 1902-2001: -1 (n135) | 2011-2109: +18 (n60) | 2410-2611: -8 (n337)
+  v3 >= 0.9                          n  380 | getiri ort   +2.9 | mevduata gore ortanca   -5.4 ort   -4.8 | mevduati gecen % 39 | ort gun   59
+      bolumlerde ortanca: 1902-2001: +9 (n75) | 2011-2109: +19 (n30) | 2410-2611: -12 (n275)
+  v3 0.8-0.9                         n  435 | getiri ort   +9.8 | mevduata gore ortanca   -1.2 ort   +1.3 | mevduati gecen % 45 | ort gun   57
+      bolumlerde ortanca: 1902-2001: -1 (n105) | 2011-2109: +11 (n30) | 2410-2611: -2 (n300)
+  cift tik                           n  243 | getiri ort   +8.4 | mevduata gore ortanca   -1.0 ort   +0.9 | mevduati gecen % 44 | ort gun   55
+      bolumlerde ortanca: 1902-2001: +9 (n75) | 2011-2109: -1 (n15) | 2410-2611: -7 (n153)
+  tek tik                            n  572 | getiri ort   +5.9 | mevduata gore ortanca   -6.3 ort   -2.5 | mevduati gecen % 42 | ort gun   59
+      bolumlerde ortanca: 1902-2001: +7 (n105) | 2011-2109: +37 (n45) | 2410-2611: -8 (n422)
+  6 ay momentum > 0                  n  154 | getiri ort   +8.8 | mevduata gore ortanca   -1.1 ort   -1.1 | mevduati gecen % 49 | ort gun   69
+      bolumlerde ortanca: 1902-2001: +9 (n15) | 2011-2109: +37 (n15) | 2410-2611: -6 (n124)
+  6 ay momentum <= 0                 n  661 | getiri ort   +6.1 | mevduata gore ortanca   -4.5 ort   -1.6 | mevduati gecen % 41 | ort gun   55
+      bolumlerde ortanca: 1902-2001: +7 (n165) | 2011-2109: -1 (n45) | 2410-2611: -8 (n451)
+  son 1 ay > 0                       n  339 | getiri ort   +2.8 | mevduata gore ortanca   -7.4 ort   -4.5 | mevduati gecen % 35 | ort gun   55
+      bolumlerde ortanca: 1902-2001: -7 (n75) | 2011-2109: +37 (n15) | 2410-2611: -9 (n249)
+  son 1 ay <= 0                      n  476 | getiri ort   +9.3 | mevduata gore ortanca   -0.8 ort   +0.6 | mevduati gecen % 47 | ort gun   60
+      bolumlerde ortanca: 1902-2001: +9 (n105) | 2011-2109: -1 (n45) | 2410-2611: -5 (n326)
+  hacim ust yari                     n  460 | getiri ort   +9.6 | mevduata gore ortanca   -0.9 ort   +1.8 | mevduati gecen % 46 | ort gun   62
+      bolumlerde ortanca: 1902-2001: +8 (n180) | 2011-2109: +18 (n60) | 2410-2611: -8 (n220)
+  hacim alt yari                     n  355 | getiri ort   +2.8 | mevduata gore ortanca   -8.0 ort   -5.9 | mevduati gecen % 38 | ort gun   52
+      bolumlerde ortanca: 2410-2611: -8 (n355)
+  endeks 200g ortalama ustunde       n  535 | getiri ort   +5.0 | mevduata gore ortanca   -7.4 ort   -2.7 | mevduati gecen % 37 | ort gun   61
+      bolumlerde ortanca: 1902-2001: -7 (n105) | 2011-2109: +18 (n60) | 2410-2611: -11 (n370)
+  endeks 200g ortalama altinda       n  280 | getiri ort   +9.8 | mevduata gore ortanca   +2.2 ort   +0.8 | mevduati gecen % 52 | ort gun   51
+      bolumlerde ortanca: 1902-2001: +9 (n75) | 2410-2611: -2 (n205)
+  IKARUS eksik = 0                   n   12
+      bolumlerde ortanca: 2410-2611: -12 (n12)
+  IKARUS eksik >= 1                  n  803 | getiri ort   +6.7 | mevduata gore ortanca   -2.4 ort   -1.4 | mevduati gecen % 43 | ort gun   58
+      bolumlerde ortanca: 1902-2001: +8 (n180) | 2011-2109: +18 (n60) | 2410-2611: -8 (n563)
+  grup ARACI KURUM                   n   24 | getiri ort  -14.8 | mevduata gore ortanca  -28.0 ort  -21.1 | mevduati gecen %  8 | ort gun   45
+      bolumlerde ortanca: 2410-2611: -28 (n24)
+  grup GYO                           n   64 | getiri ort   +5.2 | mevduata gore ortanca   -7.3 ort   -0.4 | mevduati gecen % 41 | ort gun   45
+      bolumlerde ortanca: 1902-2001: +35 (n15) | 2410-2611: -21 (n49)
+  grup HOLDING                       n  123 | getiri ort   +5.8 | mevduata gore ortanca   +3.4 ort   -0.9 | mevduati gecen % 59 | ort gun   55
+      bolumlerde ortanca: 1902-2001: +12 (n60) | 2410-2611: -2 (n63)
+  grup diger                         n  604 | getiri ort   +7.8 | mevduata gore ortanca   -4.6 ort   -1.0 | mevduati gecen % 41 | ort gun   60
+      bolumlerde ortanca: 1902-2001: -1 (n105) | 2011-2109: +18 (n60) | 2410-2611: -7 (n439)
+  reel faiz 0-5                      n  389 | getiri ort   +4.6 | mevduata gore ortanca   -7.4 ort   -3.5 | mevduati gecen % 42 | ort gun   64
+      bolumlerde ortanca: 1902-2001: +9 (n135) | 2011-2109: +18 (n60) | 2410-2611: -26 (n194)
+  reel faiz > 5                      n  426 | getiri ort   +8.5 | mevduata gore ortanca   -1.2 ort   +0.3 | mevduati gecen % 43 | ort gun   52
+      bolumlerde ortanca: 1902-2001: -1 (n45) | 2410-2611: -1 (n381)
+
+B) PORTFOY: yalniz SIKI rejimde devreye giren kurallar (gevsekte canli kural). 15 kosu ortancasi % (en kotu).
+== 2018-20: mevduat +62% | BIST100 +26% | siki gun payi %36
+  CANLI (karsilastirma)                  ortanca    +81% (en kotu   +74%)
+  SIKI: yalniz P <= 5 al                 ortanca    +91% (en kotu   +83%)
+  SIKI: yalniz cift tik al               ortanca    +85% (en kotu   +78%)
+  SIKI: GYO ve araci kurum alma          ortanca    +69% (en kotu   +63%)
+  SIKI: v3 >= 0.9 alma                   ortanca    +70% (en kotu   +63%)
+  SIKI: endeks 200g altindaysa alma      ortanca    +69% (en kotu   +62%)
+  SIKI: 6 ay momentum <= 0 alma          ortanca    +86% (en kotu   +78%)
+  SIKI: zarar stopu -%15                 ortanca    +82% (en kotu   +75%)
+  SIKI: kar al P >= 80                   ortanca    +71% (en kotu   +64%)
+  SIKI: kar al P >= 95                   ortanca    +85% (en kotu   +76%)
+
+== 2021-24: mevduat +166% | BIST100 +557% | siki gun payi %23
+  CANLI (karsilastirma)                  ortanca  +1905% (en kotu +1565%)
+  SIKI: yalniz P <= 5 al                 ortanca  +1690% (en kotu +1304%)
+  SIKI: yalniz cift tik al               ortanca  +1781% (en kotu +1372%)
+  SIKI: GYO ve araci kurum alma          ortanca  +1905% (en kotu +1565%)
+  SIKI: v3 >= 0.9 alma                   ortanca  +2070% (en kotu +1411%)
+  SIKI: endeks 200g altindaysa alma      ortanca  +1724% (en kotu +1277%)
+  SIKI: 6 ay momentum <= 0 alma          ortanca  +1573% (en kotu +1178%)
+  SIKI: zarar stopu -%15                 ortanca  +1752% (en kotu +1406%)
+  SIKI: kar al P >= 80                   ortanca  +1905% (en kotu +1573%)
+  SIKI: kar al P >= 95                   ortanca  +1905% (en kotu +1565%)
+
+== 2025-26: mevduat +115% | BIST100 +10% | siki gun payi %100
+  CANLI (karsilastirma)                  ortanca    +59% (en kotu    +3%)
+  SIKI: yalniz P <= 5 al                 ortanca     +9% (en kotu    -4%)
+  SIKI: yalniz cift tik al               ortanca    +57% (en kotu   +44%)
+  SIKI: GYO ve araci kurum alma          ortanca    +64% (en kotu   +26%)
+  SIKI: v3 >= 0.9 alma                   ortanca   +119% (en kotu   +54%)
+  SIKI: endeks 200g altindaysa alma      ortanca    +98% (en kotu   +11%)
+  SIKI: 6 ay momentum <= 0 alma          ortanca    +11% (en kotu    +2%)
+  SIKI: zarar stopu -%15                 ortanca    +81% (en kotu   +40%)
+  SIKI: kar al P >= 80                   ortanca    +25% (en kotu    -1%)
+  SIKI: kar al P >= 95                   ortanca    +47% (en kotu   +12%)
+
+KABA TOPLAM (uc donem carpimi) | en kotu kosular:
+  CANLI (karsilastirma)                  x  57.7 | en kotu x  30.0 | 2025-26 +59%
+  SIKI: yalniz P <= 5 al                 x  37.1 | en kotu x  24.7 | 2025-26 +9%
+  SIKI: yalniz cift tik al               x  54.7 | en kotu x  37.6 | 2025-26 +57%
+  SIKI: GYO ve araci kurum alma          x  55.7 | en kotu x  34.1 | 2025-26 +64%
+  SIKI: v3 >= 0.9 alma                   x  80.8 | en kotu x  37.9 | 2025-26 +119%
+  SIKI: endeks 200g altindaysa alma      x  60.9 | en kotu x  24.8 | 2025-26 +98%
+  SIKI: 6 ay momentum <= 0 alma          x  34.8 | en kotu x  23.2 | 2025-26 +11%
+  SIKI: zarar stopu -%15                 x  60.9 | en kotu x  36.9 | 2025-26 +81%
+  SIKI: kar al P >= 80                   x  42.7 | en kotu x  27.3 | 2025-26 +25%
+  SIKI: kar al P >= 95                   x  54.6 | en kotu x  32.9 | 2025-26 +47%
