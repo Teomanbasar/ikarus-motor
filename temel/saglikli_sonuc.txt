@@ -1,0 +1,40 @@
+SAGLIKLI KAZANAN TESTI (24 Kas 2026) — onceden sabitlenen tanim (docstring).
+
+KESIF penceresi 2024-11-18 -> 2026-11-24: evren 497 hisse, saglikli kazanan 10 (%2.0); kaba (yalniz endeksi 2x gecen) 21
+  saglikli kazananlar (endekse gore kat): ASELS x4.1, TCKRC x4.0, BAHKM x3.6, METRO x3.3, RYGYO x3.0, YGGYO x2.9, ENERY x2.8, GLYHO x2.4, TUPRS x2.2, KLSYN x2.1
+  endeksi 2x gecip SPEKULATIF/cakilmali sayilanlar: BMSTL(tavan3 taban4 dd%-55), CELHA(tavan5 taban2 dd%-37), CEMZY(tavan3 taban5 dd%-72), CVKMD(tavan1 taban3 dd%-40), DMRGD(tavan3 taban4 dd%-55), DUNYH(tavan4 taban1 dd%-25), GMTAS(tavan3 taban1 dd%-23), GUNDG(tavan12 taban21 dd%-98), HEDEF(tavan11 taban24 dd%-99), TEHOL(tavan7 taban32 dd%-98), TRHOL(tavan13 taban30 dd%-98)
+
+  Ozellik: kazanan orani ust 1/3 | alt 1/3 | oran (ust/alt) | kazananlarin ortanca siralamasi
+  v3                   %  2.6 | %  1.3 |  1.71 | 0.71
+  fav_get              %  1.2 | %  1.2 |  1.00 | 0.62
+  pddd                 %  1.2 | %  2.4 |  0.58 | 0.38
+  kaz_get              %  3.6 | %  1.2 |  2.41 | 0.78
+  roe                  %  3.2 | %  1.3 |  2.07 | 0.82
+  F                    %  2.0 | %  1.9 |  1.06 | 0.56
+  sue_nk               %  2.0 | %  0.0 |  5.03 | 0.56
+  sue_faal             %  2.0 | %  2.0 |  0.99 | 0.57
+  satis_reel           %  3.2 | %  1.9 |  1.52 | 0.66
+  roe_ivme             %  2.5 | %  0.0 |  5.91 | 0.62
+  sna_get              %  1.2 | %  2.4 |  0.58 | 0.37
+  borc                 %  1.4 | %  1.4 |  1.00 | 0.55
+  mcap                 %  3.6 | %  1.2 |  2.41 | 0.69
+  marj_deg             %  2.0 | %  2.6 |  0.79 | 0.38
+  buyume3              %  3.3 | %  0.8 |  2.86 | 0.82
+  nakit_kal            %  1.2 | %  1.8 |  0.74 | 0.46
+  P (IKARUS ucuzluk)   %  3.6 | %  0.6 |  3.71 | 0.76
+  tik                  %  1.1 | %  2.5 |  0.53 | 0.32
+  mom6                 %  3.1 | %  0.0 |  7.21 | 0.80
+  mom12                %  3.4 | %  0.7 |  3.30 | 0.76
+  konum12              %  3.0 | %  1.2 |  2.05 | 0.71
+  oynaklik             %  1.8 | %  2.4 |  0.79 | 0.45
+  hacim                %  3.6 | %  1.8 |  1.77 | 0.73
+
+  SECILEN 3 ozellik: mom6 (yuksek iyi), roe_ivme (yuksek iyi), sue_nk (yuksek iyi)
+  kesifte ADAY: n 149, kazanan %2.0 (taban %2.0) — kesif verisi, kanit degil
+
+DOGRULAMA (hic bakilmamis pencereler):
+  2016-11..2018-11: evren 108, taban %4.6 | ADAY n 29 kazanan %6.9 -> 1.49 kat | tek tek: mom6 %5.4; roe_ivme %8.6; sue_nk %5.6 | aday endekse gore ortanca x0.70 (hepsi x0.85)
+  2018-11..2020-12: evren 125, taban %6.4 | ADAY n 34 kazanan %2.9 -> 0.46 kat | tek tek: mom6 %4.8; roe_ivme %2.5; sue_nk %2.5 | aday endekse gore ortanca x1.75 (hepsi x1.87)
+  2020-11..2022-11: evren 262, taban %3.1 | ADAY n 82 kazanan %3.7 -> 1.20 kat | tek tek: mom6 %1.1; roe_ivme %3.6; sue_nk %3.6 | aday endekse gore ortanca x0.69 (hepsi x0.78)
+  2022-11..2024-12: evren 391, taban %2.0 | ADAY n 115 kazanan %3.5 -> 1.70 kat | tek tek: mom6 %2.4; roe_ivme %2.4; sue_nk %3.5 | aday endekse gore ortanca x0.77 (hepsi x0.82)
+  -> KABUL: SAGLANMADI (>=1.5 kat: 1/4, >1: 3/4)
