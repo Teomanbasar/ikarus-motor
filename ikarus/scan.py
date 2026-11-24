@@ -505,7 +505,7 @@ def run(tickers: list[str] | None = None) -> dict:
     _nad_ekle(stocks, px)
     _istirak_puani(stocks)
     _geri_alim_ekle(stocks)
-    _icerden_ekle(stocks)
+    # 24 Kas (Teoman): iceriden alim-satim sistemden cikarildi (veri ve test raporlari duruyor: data/kap_pas*.csv, temel/icerden2_sonuc.txt)
 
     # piyasa ozeti (makro etiketi BIST100'den, tum hisselerde ayni)
     m3e = E.m3_effective(m3)
