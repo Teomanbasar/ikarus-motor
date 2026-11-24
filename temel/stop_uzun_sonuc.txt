@@ -1,0 +1,82 @@
+STOP VE ALIS KURALLARI TESTI (2014-2026 uzun veri) - 24 Kas 2026
+Hepsi bugunku kurallarin UZERINE eklenir. 5 hisse, 15 rastgele secim kosusu (her varyantta ayni diziler). Deger: donem toplam getirisi %, ortanca kosu.
+
+== 2014-17: mevduat +39% | BIST100 +47%
+  YOK (bugunku)                            ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  sabit -%15                               ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  sabit -%20                               ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  sabit -%25                               ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  120 gun karsizsa                         ortanca    +44% | ort    +44% | en kotu   +44% | ek cikis/kosu  1.0 (ort -3%)
+  180 gun karsizsa                         ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  IKARUS stop kirildi (zarardayken)        ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  IKARUS stop kirildi (her zaman)          ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  eksik sart >= 4 (zarardayken)            ortanca    +39% | ort    +39% | en kotu   +39% | ek cikis/kosu  3.0 (ort -0%)
+  eksik sart >= 5 (zarardayken)            ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  DAGITIM (zarardayken)                    ortanca    +38% | ort    +38% | en kotu   +38% | ek cikis/kosu  3.0 (ort -3%)
+  endekse gore -%20                        ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  endekse gore -%25                        ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  endekse gore -%20 + 180 gun              ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  ALIS: alim gunu kontrol                  ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  ALIS: P<=5 oncelik                       ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  ALIS: GYO+araci kurum yok                ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+  ALIS: GYO+araci yok (yalniz siki faiz)   ortanca    +50% | ort    +50% | en kotu   +50% | ek cikis/kosu  0.0
+
+== 2018-20: mevduat +62% | BIST100 +26%
+  YOK (bugunku)                            ortanca    +64% | ort    +66% | en kotu   +57% | ek cikis/kosu  0.0
+  sabit -%15                               ortanca    +53% | ort    +55% | en kotu   +46% | ek cikis/kosu 15.0 (ort -18%)
+  sabit -%20                               ortanca    +61% | ort    +59% | en kotu   +46% | ek cikis/kosu 11.6 (ort -23%)
+  sabit -%25                               ortanca    +47% | ort    +49% | en kotu   +41% | ek cikis/kosu 10.0 (ort -25%)
+  120 gun karsizsa                         ortanca    +42% | ort    +44% | en kotu   +28% | ek cikis/kosu 11.6 (ort -18%)
+  180 gun karsizsa                         ortanca   +101% | ort   +104% | en kotu   +93% | ek cikis/kosu  4.0 (ort -26%)
+  IKARUS stop kirildi (zarardayken)        ortanca    +69% | ort    +71% | en kotu   +62% | ek cikis/kosu 16.0 (ort -14%)
+  IKARUS stop kirildi (her zaman)          ortanca    +78% | ort    +80% | en kotu   +70% | ek cikis/kosu 16.0 (ort -13%)
+  eksik sart >= 4 (zarardayken)            ortanca   +100% | ort   +101% | en kotu   +85% | ek cikis/kosu 32.3 (ort -5%)
+  eksik sart >= 5 (zarardayken)            ortanca    +61% | ort    +63% | en kotu   +54% | ek cikis/kosu  3.0 (ort -23%)
+  DAGITIM (zarardayken)                    ortanca    +78% | ort    +78% | en kotu   +72% | ek cikis/kosu 42.9 (ort -4%)
+  endekse gore -%20                        ortanca    +57% | ort    +58% | en kotu   +44% | ek cikis/kosu  7.0 (ort -22%)
+  endekse gore -%25                        ortanca    +69% | ort    +71% | en kotu   +62% | ek cikis/kosu  4.0 (ort -37%)
+  endekse gore -%20 + 180 gun              ortanca    +57% | ort    +58% | en kotu   +49% | ek cikis/kosu 10.0 (ort -22%)
+  ALIS: alim gunu kontrol                  ortanca    +78% | ort    +82% | en kotu   +73% | ek cikis/kosu  0.0
+  ALIS: P<=5 oncelik                       ortanca    +64% | ort    +66% | en kotu   +57% | ek cikis/kosu  0.0
+  ALIS: GYO+araci kurum yok                ortanca    +54% | ort    +56% | en kotu   +48% | ek cikis/kosu  0.0
+  ALIS: GYO+araci yok (yalniz siki faiz)   ortanca    +53% | ort    +55% | en kotu   +47% | ek cikis/kosu  0.0
+
+== 2021-24: mevduat +166% | BIST100 +557%
+  YOK (bugunku)                            ortanca  +1876% | ort  +1888% | en kotu +1491% | ek cikis/kosu  0.0
+  sabit -%15                               ortanca  +1903% | ort  +1945% | en kotu +1317% | ek cikis/kosu 11.0 (ort -16%)
+  sabit -%20                               ortanca  +1898% | ort  +1909% | en kotu +1483% | ek cikis/kosu  4.0 (ort -19%)
+  sabit -%25                               ortanca  +1876% | ort  +1887% | en kotu +1486% | ek cikis/kosu  0.5 (ort -23%)
+  120 gun karsizsa                         ortanca  +1890% | ort  +1869% | en kotu +1419% | ek cikis/kosu  6.1 (ort -8%)
+  180 gun karsizsa                         ortanca  +1653% | ort  +1743% | en kotu +1545% | ek cikis/kosu  3.6 (ort -7%)
+  IKARUS stop kirildi (zarardayken)        ortanca  +1232% | ort  +1288% | en kotu +1044% | ek cikis/kosu 19.1 (ort -11%)
+  IKARUS stop kirildi (her zaman)          ortanca  +1220% | ort  +1311% | en kotu +1072% | ek cikis/kosu 20.3 (ort -10%)
+  eksik sart >= 4 (zarardayken)            ortanca  +1601% | ort  +1604% | en kotu +1403% | ek cikis/kosu 58.1 (ort -4%)
+  eksik sart >= 5 (zarardayken)            ortanca  +1933% | ort  +1978% | en kotu +1523% | ek cikis/kosu  9.4 (ort -4%)
+  DAGITIM (zarardayken)                    ortanca  +1452% | ort  +1417% | en kotu +1273% | ek cikis/kosu 68.7 (ort -4%)
+  endekse gore -%20                        ortanca  +1651% | ort  +1669% | en kotu +1367% | ek cikis/kosu  9.1 (ort +1%)
+  endekse gore -%25                        ortanca  +1893% | ort  +1961% | en kotu +1416% | ek cikis/kosu  4.9 (ort -4%)
+  endekse gore -%20 + 180 gun              ortanca  +1588% | ort  +1621% | en kotu +1296% | ek cikis/kosu  9.1 (ort -2%)
+  ALIS: alim gunu kontrol                  ortanca  +1660% | ort  +1650% | en kotu +1471% | ek cikis/kosu  0.0
+  ALIS: P<=5 oncelik                       ortanca  +1999% | ort  +1975% | en kotu +1681% | ek cikis/kosu  0.0
+  ALIS: GYO+araci kurum yok                ortanca  +1367% | ort  +1403% | en kotu +1201% | ek cikis/kosu  0.0
+  ALIS: GYO+araci yok (yalniz siki faiz)   ortanca  +1876% | ort  +1887% | en kotu +1491% | ek cikis/kosu  0.0
+
+== 2025-26: mevduat +115% | BIST100 +11%
+  YOK (bugunku)                            ortanca    +44% | ort    +45% | en kotu    +9% | ek cikis/kosu  0.0
+  sabit -%15                               ortanca    +55% | ort    +57% | en kotu    +9% | ek cikis/kosu 18.5 (ort -16%)
+  sabit -%20                               ortanca    +36% | ort    +37% | en kotu    +4% | ek cikis/kosu 11.2 (ort -23%)
+  sabit -%25                               ortanca    +38% | ort    +35% | en kotu    -2% | ek cikis/kosu  8.1 (ort -26%)
+  120 gun karsizsa                         ortanca    +40% | ort    +39% | en kotu   +10% | ek cikis/kosu  6.8 (ort -17%)
+  180 gun karsizsa                         ortanca    +37% | ort    +38% | en kotu    +6% | ek cikis/kosu  4.9 (ort -26%)
+  IKARUS stop kirildi (zarardayken)        ortanca    +16% | ort    +20% | en kotu    -7% | ek cikis/kosu 26.3 (ort -13%)
+  IKARUS stop kirildi (her zaman)          ortanca    +19% | ort    +22% | en kotu    -7% | ek cikis/kosu 26.6 (ort -13%)
+  eksik sart >= 4 (zarardayken)            ortanca     +4% | ort     +5% | en kotu   -27% | ek cikis/kosu 79.3 (ort -6%)
+  eksik sart >= 5 (zarardayken)            ortanca    +44% | ort    +45% | en kotu    +9% | ek cikis/kosu  0.0
+  DAGITIM (zarardayken)                    ortanca     -8% | ort     -5% | en kotu   -22% | ek cikis/kosu 89.4 (ort -5%)
+  endekse gore -%20                        ortanca    +34% | ort    +28% | en kotu    -5% | ek cikis/kosu  8.5 (ort -24%)
+  endekse gore -%25                        ortanca    +32% | ort    +31% | en kotu    +4% | ek cikis/kosu  5.7 (ort -29%)
+  endekse gore -%20 + 180 gun              ortanca    +33% | ort    +33% | en kotu    -3% | ek cikis/kosu  9.3 (ort -20%)
+  ALIS: alim gunu kontrol                  ortanca    +43% | ort    +48% | en kotu   +12% | ek cikis/kosu  0.0
+  ALIS: P<=5 oncelik                       ortanca    +26% | ort    +28% | en kotu    +4% | ek cikis/kosu  0.0
+  ALIS: GYO+araci kurum yok                ortanca    +53% | ort    +56% | en kotu   +31% | ek cikis/kosu  0.0
+  ALIS: GYO+araci yok (yalniz siki faiz)   ortanca    +53% | ort    +56% | en kotu   +31% | ek cikis/kosu  0.0
