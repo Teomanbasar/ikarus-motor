@@ -104,7 +104,7 @@
      "karar": "AL ✓",
      "getiri": -3.98,
      "fazla": 0.8,
-     "kutu_bugun": "AL ✓"
+     "kutu_bugun": "BEKLE teknik"
     },
     "GOLTS": {
      "t": "GOLTS",
@@ -272,7 +272,7 @@
      "karar": "AL ✓✓",
      "getiri": -4.12,
      "fazla": -1.53,
-     "kutu_bugun": "BEKLE ucuz degil"
+     "kutu_bugun": "AL ✓✓"
     }
    },
    "kapali": [],
@@ -410,7 +410,7 @@
      "karar": "AL ✓",
      "getiri": -3.98,
      "fazla": 0.8,
-     "kutu_bugun": "AL ✓",
+     "kutu_bugun": "BEKLE teknik",
      "stop_aktif": false,
      "stop": 75.95,
      "stop_aktiflesme": 106.92
@@ -641,7 +641,7 @@
      "karar": "AL ✓✓",
      "getiri": -4.12,
      "fazla": -1.53,
-     "kutu_bugun": "BEKLE ucuz degil",
+     "kutu_bugun": "AL ✓✓",
      "stop_aktif": false,
      "stop": 97.75,
      "stop_aktiflesme": 138.0
@@ -652,6 +652,380 @@
     "PSGYO": "bilanco bozuldu",
     "IHGZT": "bilanco bozuldu"
    }
+  },
+  "stoplu": {
+   "acik": {
+    "ACSEL": {
+     "t": "ACSEL",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -10.42,
+     "fazla": -5.64,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 74.8,
+     "stop_aktiflesme": 105.6
+    },
+    "AKSEN": {
+     "t": "AKSEN",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": -7.66,
+     "fazla": -2.89,
+     "kutu_bugun": "ORTA",
+     "stop_aktif": false,
+     "stop": 58.31,
+     "stop_aktiflesme": 82.32
+    },
+    "ARSAN": {
+     "t": "ARSAN",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": -5.31,
+     "fazla": -0.54,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 2.58,
+     "stop_aktiflesme": 3.65
+    },
+    "ASGYO": {
+     "t": "ASGYO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -6.97,
+     "fazla": -2.2,
+     "kutu_bugun": "ORTA",
+     "stop_aktif": false,
+     "stop": 7.85,
+     "stop_aktiflesme": 11.09
+    },
+    "AYEN": {
+     "t": "AYEN",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -4.31,
+     "fazla": 0.46,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 20.35,
+     "stop_aktiflesme": 28.73
+    },
+    "BERA": {
+     "t": "BERA",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -8.87,
+     "fazla": -4.1,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 8.89,
+     "stop_aktiflesme": 12.55
+    },
+    "BNTAS": {
+     "t": "BNTAS",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": -5.13,
+     "fazla": -0.36,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 4.47,
+     "stop_aktiflesme": 6.31
+    },
+    "BRKO": {
+     "t": "BRKO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": -4.33,
+     "fazla": 0.44,
+     "kutu_bugun": "BEKLE kacti",
+     "stop_aktif": false,
+     "stop": 5.79,
+     "stop_aktiflesme": 7.91
+    },
+    "CONSE": {
+     "t": "CONSE",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -11.31,
+     "fazla": -6.54,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 1.24,
+     "stop_aktiflesme": 1.75
+    },
+    "DOHOL": {
+     "t": "DOHOL",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -5.64,
+     "fazla": -0.87,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 14.05,
+     "stop_aktiflesme": 19.84
+    },
+    "DZGYO": {
+     "t": "DZGYO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": 1.73,
+     "fazla": 6.51,
+     "kutu_bugun": "ORTA",
+     "stop_aktif": false,
+     "stop": 6.09,
+     "stop_aktiflesme": 8.41
+    },
+    "FORTE": {
+     "t": "FORTE",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -3.98,
+     "fazla": 0.8,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 75.95,
+     "stop_aktiflesme": 106.92
+    },
+    "GOLTS": {
+     "t": "GOLTS",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -7.31,
+     "fazla": -2.54,
+     "kutu_bugun": "ORTA",
+     "stop_aktif": false,
+     "stop": 197.2,
+     "stop_aktiflesme": 278.4
+    },
+    "GSDHO": {
+     "t": "GSDHO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -4.05,
+     "fazla": 0.72,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 3.48,
+     "stop_aktiflesme": 4.91
+    },
+    "HLGYO": {
+     "t": "HLGYO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -5.39,
+     "fazla": -0.62,
+     "kutu_bugun": "AL ✓",
+     "stop_aktif": false,
+     "stop": 3.05,
+     "stop_aktiflesme": 4.31
+    },
+    "KBORU": {
+     "t": "KBORU",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": -5.55,
+     "fazla": -0.78,
+     "kutu_bugun": "BEKLE kacti",
+     "stop_aktif": false,
+     "stop": 9.37,
+     "stop_aktiflesme": 13.22
+    },
+    "KCHOL": {
+     "t": "KCHOL",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -5.87,
+     "fazla": -1.1,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 171.7,
+     "stop_aktiflesme": 242.4
+    },
+    "MARBL": {
+     "t": "MARBL",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": -7.88,
+     "fazla": -3.1,
+     "kutu_bugun": "AL ✓",
+     "stop_aktif": false,
+     "stop": 7.47,
+     "stop_aktiflesme": 10.55
+    },
+    "MHRGY": {
+     "t": "MHRGY",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -13.61,
+     "fazla": -8.84,
+     "kutu_bugun": "AL ✓",
+     "stop_aktif": false,
+     "stop": 1.67,
+     "stop_aktiflesme": 2.35
+    },
+    "TOASO": {
+     "t": "TOASO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓✓",
+     "getiri": 2.18,
+     "fazla": 6.95,
+     "kutu_bugun": "ORTA",
+     "stop_aktif": false,
+     "stop": 213.99,
+     "stop_aktiflesme": 294.48
+    },
+    "TRGYO": {
+     "t": "TRGYO",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -5.26,
+     "fazla": -0.49,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 72.25,
+     "stop_aktiflesme": 102.0
+    },
+    "VBTYZ": {
+     "t": "VBTYZ",
+     "giris": "2026-11-17",
+     "karar": "AL ✓",
+     "getiri": -6.31,
+     "fazla": -1.53,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 16.91,
+     "stop_aktiflesme": 23.87
+    },
+    "ALBRK": {
+     "t": "ALBRK",
+     "giris": "2026-11-18",
+     "karar": "AL ✓",
+     "getiri": -2.31,
+     "fazla": 0.94,
+     "kutu_bugun": "AL ✓",
+     "stop_aktif": false,
+     "stop": 7.07,
+     "stop_aktiflesme": 9.98
+    },
+    "MOPAS": {
+     "t": "MOPAS",
+     "giris": "2026-11-18",
+     "karar": "AL ✓",
+     "getiri": -8.55,
+     "fazla": -5.3,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 13.26,
+     "stop_aktiflesme": 18.62
+    },
+    "MRGYO": {
+     "t": "MRGYO",
+     "giris": "2026-11-18",
+     "karar": "AL ✓",
+     "getiri": -6.68,
+     "fazla": -3.43,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 0.95,
+     "stop_aktiflesme": 1.33
+    },
+    "PSGYO": {
+     "t": "PSGYO",
+     "giris": "2026-11-18",
+     "karar": "AL ✓",
+     "getiri": -10.08,
+     "fazla": -6.83,
+     "kutu_bugun": "UZAK DUR",
+     "stop_aktif": false,
+     "stop": 1.22,
+     "stop_aktiflesme": 1.73
+    },
+    "SKBNK": {
+     "t": "SKBNK",
+     "giris": "2026-11-18",
+     "karar": "AL ✓✓",
+     "getiri": -4.89,
+     "fazla": -1.64,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 3.02,
+     "stop_aktiflesme": 4.26
+    },
+    "TRCAS": {
+     "t": "TRCAS",
+     "giris": "2026-11-18",
+     "karar": "AL ✓",
+     "getiri": -5.42,
+     "fazla": -2.17,
+     "kutu_bugun": "AL ✓",
+     "stop_aktif": false,
+     "stop": 37.32,
+     "stop_aktiflesme": 51.89
+    },
+    "ALARK": {
+     "t": "ALARK",
+     "giris": "2026-11-19",
+     "karar": "AL ✓",
+     "getiri": -1.94,
+     "fazla": 0.65,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 87.63,
+     "stop_aktiflesme": 123.72
+    },
+    "GSDDE": {
+     "t": "GSDDE",
+     "giris": "2026-11-19",
+     "karar": "AL ✓",
+     "getiri": -3.3,
+     "fazla": -0.71,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 8.47,
+     "stop_aktiflesme": 11.95
+    },
+    "IHGZT": {
+     "t": "IHGZT",
+     "giris": "2026-11-19",
+     "karar": "AL ✓",
+     "getiri": -3.76,
+     "fazla": -1.16,
+     "kutu_bugun": "UZAK DUR",
+     "stop_aktif": false,
+     "stop": 0.76,
+     "stop_aktiflesme": 1.07
+    },
+    "MERCN": {
+     "t": "MERCN",
+     "giris": "2026-11-19",
+     "karar": "AL ✓",
+     "getiri": -8.43,
+     "fazla": -5.83,
+     "kutu_bugun": "BEKLE teknik",
+     "stop_aktif": false,
+     "stop": 2.85,
+     "stop_aktiflesme": 4.02
+    },
+    "PKENT": {
+     "t": "PKENT",
+     "giris": "2026-11-19",
+     "karar": "AL ✓✓",
+     "getiri": -4.12,
+     "fazla": -1.53,
+     "kutu_bugun": "AL ✓✓",
+     "stop_aktif": false,
+     "stop": 97.75,
+     "stop_aktiflesme": 138.0
+    }
+   },
+   "kapali": [],
+   "bekleyen_sat": {
+    "PSGYO": "bilanco bozuldu",
+    "IHGZT": "bilanco bozuldu"
+   },
+   "stoplanan": {},
+   "bekleyen_geri": []
   }
  }
 }
