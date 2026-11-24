@@ -1,14 +1,49 @@
+
+1 Failed download:
+['AGHOL.IS']: OperationalError('database is locked')
 M3 (EVDS): 2026-11 eklendi
-50/625 62 sn
-100/625 110 sn
-150/625 152 sn
-200/625 195 sn
-250/625 239 sn
-300/625 284 sn
-350/625 362 sn
-400/625 421 sn
-450/625 477 sn
-500/625 522 sn
-550/625 567 sn
-600/625 613 sn
-625/625 hisse islendi, dosyada 609 hisse (638 sn)
+panel 0 A1CAP
+panel 100 BIZIM
+panel 200 ENDAE
+panel 300 ISGYO
+panel 400 MOPAS
+panel 500 SILVR
+panel 600 ZEDUR
+OTOPSI 2025-2026: canli kurallar, 5 hisse, 25 rastgele kosu (24 Kas 2026)
+
+== 2025-2025: sistem ortanca +54% (en kotu kosu +9, en iyi +113) | mevduat +54% | BIST100 +13%
+   ortalama nakit payi %7; ortalama hisse sayisi 4.9; gunluk AL sinyali ort 7.3
+== 2026-2026: sistem ortanca -6% (en kotu kosu -29, en iyi +9) | mevduat +39% | BIST100 -4%
+   ortalama nakit payi %9; ortalama hisse sayisi 4.8; gunluk AL sinyali ort 5.2
+== 2025-2026: sistem ortanca +29% (en kotu kosu -18, en iyi +68) | mevduat +115% | BIST100 +11%
+   ortalama nakit payi %8; ortalama hisse sayisi 4.9; gunluk AL sinyali ort 6.3
+
+   ISLEMLER (25 kosu toplam 761; kosu basina 30.4). getiri %, endeks ayni sure %, fazla = getiri - endeks
+   tum islemler: ort getiri +6.0 ortanca +4.0 kazanan %57 | ort fazla +3.8 | ort gun 110
+   cikis 'bilanco bozuldu': n 307 ort getiri -6.1 ortanca -8.8 kazanan %34 ort gun 77
+   cikis 'donem sonu elde': n 125 ort getiri -36.0 ortanca -37.6 kazanan %0 ort gun 196
+   cikis 'pahali (kar al)': n 229 ort getiri +42.9 ortanca +38.8 kazanan %100 ort gun 118
+   cikis 'takip eden stop': n 100 ort getiri +11.1 ortanca +8.3 kazanan %98 ort gun 85
+   grup ARACI KURUM     : n 38 ort getiri -14.6 kazanan %26
+   grup GYO             : n 94 ort getiri -18.0 kazanan %21
+   grup HOLDING         : n 81 ort getiri +1.3 kazanan %49
+   grup diger           : n 548 ort getiri +12.2 kazanan %66
+   tutma <=30g   : n 69 ort getiri +15.2 kazanan %99
+   tutma 31-90g  : n 280 ort getiri +9.1 kazanan %58
+   tutma 91-180g : n 260 ort getiri +12.0 kazanan %58
+   tutma >180g   : n 152 ort getiri -14.0 kazanan %32
+
+   EN COK KAYBETTIREN 12 hisse (25 kosu toplami; n = islem sayisi): SRVGY n26.0 ort-46, BERA n18.0 ort-46, OYYAT n25.0 ort-29, IHEVA n26.0 ort-20, KRTEK n13.0 ort-38, KZBGY n7.0 ort-68, NTHOL n16.0 ort-26, VBTYZ n11.0 ort-25, ORGE n17.0 ort-16, PGSUS n19.0 ort-14, NUGYO n17.0 ort-10, BALSU n19.0 ort-8
+   EN COK KAZANDIRAN 12 hisse: LRSHO n25.0 ort+54, GUBRF n23.0 ort+39, BLCYT n20.0 ort+44, ALVES n9.0 ort+86, KUTPO n25.0 ort+28, BVSAN n15.0 ort+35, ISDMR n17.0 ort+28, KLSYN n10.0 ort+37, AHGAZ n7.0 ort+50, TTKOM n8.0 ort+43, PNSUT n5.0 ort+62, GEREL n6.0 ort+49
+   giriste v3 >= 0.9 : n 349 ort getiri -2.4 kazanan %50
+   giriste v3 0.8-0.9: n 412 ort getiri +13.1 kazanan %62
+   giriste v3 < 0.8  : n 0 ort getiri +nan kazanan %nan
+   giriste P <= 5 : n 239 ort getiri +11.0 kazanan %70
+   giriste P 5-20 : n 522 ort getiri +3.7 kazanan %50
+   giris sinyali AL cift tik: n 215 ort getiri +8.3 kazanan %58
+   giris sinyali AL tek tik: n 382 ort getiri +9.3 kazanan %61
+   giris sinyali BEKLE KACTI: n 20 ort getiri -15.8 kazanan %40
+   giris sinyali BEKLE TEKNIK: n 25 ort getiri +13.1 kazanan %68
+   giris sinyali BEKLE UCUZ DEGIL: n 119 ort getiri -6.6 kazanan %39
+
+   ortanca kosu ay ay (portfoy % / BIST100 %): 25-01 -2/+0 | 25-02 -10/-3 | 25-03 -2/+0 | 25-04 -5/-6 | 25-05 +7/-1 | 25-06 +7/+10 | 25-07 +23/+8 | 25-08 +2/+5 | 25-09 +7/-2 | 25-10 +5/-0 | 25-11 -2/-1 | 25-12 +9/+3 | 26-01 +20/+23 | 26-02 +2/-1 | 26-03 +0/-7 | 26-04 +16/+13 | 26-05 -2/-5 | 26-06 -8/+3 | 26-07 -11/-5 | 26-08 +0/+7 | 26-09 -14/-17 | 26-10 -13/-10 | 26-11 +7/+3
