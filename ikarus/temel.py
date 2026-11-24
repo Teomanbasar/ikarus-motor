@@ -824,6 +824,19 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "grup_yokla":
+        # 24 Kas: faktoring/leasing/finansman/varlik yonetim sirketleri hangi Is Yatirim sablonunda?
+        out = []
+        for h in ("ISFIN", "GARFA", "VAKFN", "BRKVY", "QNBFK", "AYES", "ORMA"):
+            for g in ("XI_29", "UFRS", "UFRS_K", "UFRS_A", "UFRS_B", "UFRS_C", "UFRS_D", "UFRS_E", "UFRS_F", "XI_29K", "XI_30", "XI_31", "XI_32"):
+                v = _cek4(h, g, [(2025, 12), (2025, 9), (2025, 6), (2025, 3)])
+                if v:
+                    out.append(f"{h} {g} {len(v)} kalem: " + " | ".join(f"{x.get('itemCode')} {str(x.get('itemDescTr')).strip()[:40]} {x.get('value1')}" for x in v[:6]))
+                    break
+            else:
+                out.append(f"{h}: hicbir grupta veri yok")
+        (R / "grup_yokla.txt").write_text("\n".join(out), encoding="utf-8")
+        print("\n".join(out))
     elif sys.argv[1] == "sigorta":
         from . import sigorta
         sigorta.test()
