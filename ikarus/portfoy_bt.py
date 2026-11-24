@@ -130,7 +130,8 @@ def panel(ham: dict | None = None):
 
 
 def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False, sira=None, al_set=None,
-        ek_stop=None, alim_kontrol=False, p5_oncelik=False, haric=None, geri_gir=None, slot_tut=False, bekle_max=120):
+        ek_stop=None, alim_kontrol=False, p5_oncelik=False, haric=None, geri_gir=None, slot_tut=False, bekle_max=120,
+        iz_geri=False, boyut=None):
     """geri_gir(i, j, p, cikis_fiyat, cikis_gun, gun) -> True: ek_stop ile satilan hisse 'duzeltince' yeniden alinir (oncelikli).
     slot_tut=True: stoplanan hissenin yeri en fazla bekle_max gun nakitte bekler (yerine baska hisse alinmaz)."""
     """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
@@ -158,7 +159,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                 a, gf, gt = poz.pop(t); tepe.pop(t, None)
                 cash += a * p * (1 - MAL)
                 isl.append((t, gt, gun, gf, p, 100 * (p * (1 - MAL) / (gf * (1 + MAL)) - 1), neden))
-                if geri_gir is not None and neden.startswith("STOP"):
+                if geri_gir is not None and (neden.startswith("STOP") or (iz_geri and neden == "takip eden stop")):
                     bekleyen[t] = (p, gun)
         bek_sat = []
         eq0 = cash + sum(a * son_fiyat.get(t, gf) for t, (a, gf, _) in poz.items())
@@ -170,7 +171,12 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
             p = Cv[i, col[t]]
             if np.isnan(p) or p <= 0:
                 continue
-            tutar = min(eq0 / N, cash)
+            kat = 1.0
+            if boyut == "ucuz":      # 24 Kas: cok ucuz (P<=5) hisseye 1.4 pay, digerlerine 0.8
+                kat = 1.4 if PCv[i, col[t]] <= 5 else 0.8
+            elif boyut == "tik":     # cift tik (iki faz da alimda) 1.4, tek tik 0.8
+                kat = 1.4 if TKv[i, col[t]] >= 2 else 0.8
+            tutar = min(eq0 / N * kat, cash)
             if tutar < 1000:
                 break
             a = tutar / (p * (1 + MAL))
@@ -1914,4 +1920,65 @@ def stop2_test(uzun=True):
         L.append("")
     txt = "\n".join(L)
     (R / "stop2_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def opt_test():
+    """24 Kas (Teoman: 'basla, 4'u de kat'). Canli kural = zarar stopu -%20 + yer tut 120 gun + satisin %10 ustunde geri gir.
+    1) saglamlik: hisse sayisi 3/5/7/10 (stoplu ve stopsuz), stop -%18/-%22, geri giris %5/%15
+    2) takip eden stoptan sonra da geri giris
+    3) kar al esigi P 85/90/95
+    4) pozisyon buyuklugu: cok ucuza (P<=5) / cift tike 1.4 pay. 2014-2026 uzun veri, 15 rastgele secim."""
+    global UZUN
+    UZUN = True
+    EKSTRA.clear()
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    UZUN = False
+    rr = faiz_serisi(idx)
+    donemler = [("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31")]
+    def stop_x(x):
+        return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+    def geri_x(x):
+        return lambda i, j, p, cp, cg, gun: p >= cp * (1 + x)
+    CANLI = {"ek_stop": stop_x(0.20), "geri_gir": geri_x(0.10), "slot_tut": True}
+    V = {"CANLI (stop -20, geri +10, yer tut)": dict(CANLI), "stopsuz (eski)": {}}
+    for n in (3, 7, 10):
+        V[f"{n} hisse CANLI"] = {**CANLI, "N": n}
+        V[f"{n} hisse stopsuz"] = {"N": n}
+    V["stop -%18"] = {**CANLI, "ek_stop": stop_x(0.18)}
+    V["stop -%22"] = {**CANLI, "ek_stop": stop_x(0.22)}
+    V["geri giris +%5"] = {**CANLI, "geri_gir": geri_x(0.05)}
+    V["geri giris +%15"] = {**CANLI, "geri_gir": geri_x(0.15)}
+    V["+ takip eden stop sonrasi da geri gir"] = {**CANLI, "iz_geri": True}
+    V["kar al P>=85"] = {**CANLI, "karal": 85}
+    V["kar al P>=95"] = {**CANLI, "karal": 95}
+    V["boyut: P<=5'e 1.4 pay"] = {**CANLI, "boyut": "ucuz"}
+    V["boyut: cift tike 1.4 pay"] = {**CANLI, "boyut": "tik"}
+    L = ["OPTIMIZASYON TESTI (24 Kas 2026). Uzun veri, 15 rastgele secim (ayni diziler). Donem toplam getirisi %, ortanca kosu (en kotu kosu).", ""]
+    rng = np.random.default_rng(51)
+    tablo = {}
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        ii = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        siralar = [rng.random(C[m].shape) for _ in range(15)]
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xu.values[m][-1] / xu.values[m][0] - 1):+.0f}%")
+        for ad_v, kw in V.items():
+            kw = dict(kw); N = kw.pop("N", 5); karal = kw.pop("karal", 90)
+            v, nak = [], []
+            for sr in siralar:
+                e, tr, pz = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=N, iz=(0.20, 0.15), karal=karal, sira=sr, **kw)
+                v.append(e["deger"].iloc[-1] / BAS); nak.append(float((e["nakit"] / e["deger"]).mean()))
+            v = np.array(v)
+            tablo[(ad_v, ad_d)] = (np.median(v), v.min())
+            L.append(f"  {ad_v:40s} ortanca {100 * (np.median(v) - 1):+6.0f}% (en kotu {100 * (v.min() - 1):+5.0f}%) | nakit %{100 * np.mean(nak):.0f}")
+            print(L[-1])
+        L.append("")
+    # carpim (uc donem art arda, ortancalar): kaba toplam
+    L.append("KABA TOPLAM (uc donem ortancalari carpimi, x kat) ve en kotu kosular carpimi:")
+    for ad_v in V:
+        c = np.prod([tablo[(ad_v, d)][0] for d, *_ in donemler]); w = np.prod([tablo[(ad_v, d)][1] for d, *_ in donemler])
+        L.append(f"  {ad_v:40s} x{c:6.1f} | en kotu x{w:6.1f}")
+    txt = "\n".join(L)
+    (R / "opt_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
