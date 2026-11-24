@@ -130,7 +130,9 @@ def panel(ham: dict | None = None):
 
 
 def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, karal=80, iz_vol=None, agirlik=None, sert=False, sira=None, al_set=None,
-        ek_stop=None, alim_kontrol=False, p5_oncelik=False, haric=None):
+        ek_stop=None, alim_kontrol=False, p5_oncelik=False, haric=None, geri_gir=None, slot_tut=False, bekle_max=120):
+    """geri_gir(i, j, p, cikis_fiyat, cikis_gun, gun) -> True: ek_stop ile satilan hisse 'duzeltince' yeniden alinir (oncelikli).
+    slot_tut=True: stoplanan hissenin yeri en fazla bekle_max gun nakitte bekler (yerine baska hisse alinmaz)."""
     """iz=(aktif, geri): fiyat girisin aktif kadar ustune ciktiktan sonra, girişten beri gorulen en yuksek
     kapanisin 'geri' kadar altina inerse sat (takip eden stop). karal: kar al Percentile esigi."""
     r = faiz_serisi(idx)
@@ -145,6 +147,7 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
     col = {t: j for j, t in enumerate(C.columns)}
     son_fiyat = {}
     tepe = {}
+    bekleyen = {}   # stoplanan hisse -> (cikis fiyati, cikis gunu)
     for i, gun in enumerate(idx):
         if i > 0 and faizli:
             cash *= 1 + r[i] * (gun - idx[i - 1]).days / 365.0
@@ -155,6 +158,8 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                 a, gf, gt = poz.pop(t); tepe.pop(t, None)
                 cash += a * p * (1 - MAL)
                 isl.append((t, gt, gun, gf, p, 100 * (p * (1 - MAL) / (gf * (1 + MAL)) - 1), neden))
+                if geri_gir is not None and neden.startswith("STOP"):
+                    bekleyen[t] = (p, gun)
         bek_sat = []
         eq0 = cash + sum(a * son_fiyat.get(t, gf) for t, (a, gf, _) in poz.items())
         for t in bek_al:
@@ -211,11 +216,22 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                     if t not in satilacak:
                         bek_sat.append((t, "borsa agirligi azaldi"))
                         fazla -= poz[t][0] * son_fiyat.get(t, poz[t][1])
-        bos = int(np.floor(N * w + 1e-9)) - len(poz) + len(bek_sat)
+        geri = []
+        if geri_gir is not None:
+            for t in list(bekleyen):
+                j = col[t]; p = Cv[i, j]; cp, cg = bekleyen[t]
+                if (gun - cg).days > bekle_max or VRv[i, j] < 0:
+                    bekleyen.pop(t); continue
+                if not np.isnan(p) and PCv[i, j] < karal and geri_gir(i, j, p, cp, cg, gun):
+                    geri.append(t); bekleyen.pop(t)
+        taban = int(np.floor(N * w + 1e-9)) - len(poz) + len(bek_sat) - (len(bekleyen) if slot_tut else 0)
+        geri = geri[:max(0, taban)]
+        bos = taban - len(geri)
+        bek_al = []
         if bos > 0:
             ad = []
             for t, j in col.items():
-                if t in poz:
+                if t in poz or t in bekleyen or t in geri:
                     continue
                 s_ = Sv[i, j]
                 if haric is not None and haric(i, t):
@@ -228,6 +244,8 @@ def sim(idx, C, S, PC, VR, TK, N=10, faizli=True, sadece_cift=False, iz=None, ka
                     else:
                         ad.append((-TKv[i, j], -VRv[i, j], t))
             bek_al = [t for *_, t in sorted(ad)][:bos]
+        if geri:
+            bek_al = geri + bek_al
     E_ = pd.DataFrame(egri, columns=["tarih", "deger", "hisse", "nakit"]).set_index("tarih")
     T = pd.DataFrame(isl, columns=["t", "giris", "cikis", "gf", "cf", "getiri", "neden"])
     return E_, T, poz
@@ -1834,4 +1852,66 @@ def stop_test(uzun=False):
         L.append("")
     txt = "\n".join(L)
     (R / ("stop_uzun_sonuc.txt" if uzun else "stop_sonuc.txt")).write_text(txt, encoding="utf-8")
+    print(txt)
+
+
+def stop2_test(uzun=True):
+    """24 Kas (Teoman: 'illa stop olmali; stop oldugu hisse duzeltirse tekrar girmeli; yerine daha sorunlu hisse alinip
+    gideceği kaciriliyor olabilir; full nakit/hep hissede olmak da sorun'). Stop + YENIDEN GIRIS testi.
+    Tetik: sabit -%15, -%20, IKARUS stop kirildi (zarardayken), endekse gore -%20.
+    Yeniden giris: (a) cikis fiyatinin %10 ustu, (b) IKARUS AL sinyali geri geldi, (c) fiyat IKARUS stop cizgisinin ustune dondu ve cikis fiyatinin ustunde.
+    Yer: 'tut' = stoplanan hissenin yeri en fazla 120 gun nakitte bekler (baska hisse alinmaz); 'serbest' = yerine yeni AL alinir, duzeltince bos yer varsa geri girer."""
+    global UZUN
+    UZUN = uzun
+    EKSTRA.clear()
+    idx, C, S, PC, VR, TK, xu, m3 = panel()
+    UZUN = False
+    cols = list(C.columns)
+    DS = pd.DataFrame(EKSTRA["DS"]).reindex(index=idx, columns=cols)
+    rr = faiz_serisi(idx)
+    donemler = [("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31")]
+    if uzun:
+        donemler = [("2014-17", "2014-06-01", "2017-12-31")] + donemler
+    L = ["STOP + YENIDEN GIRIS TESTI (24 Kas 2026). Bugunku kurallarin uzerine. 5 hisse, 15 rastgele secim (her varyantta ayni diziler). Donem toplam getirisi %, ortanca kosu.", ""]
+    rng = np.random.default_rng(41)
+    for ad_d, b0, b1 in donemler:
+        m = (idx >= b0) & (idx <= b1)
+        if m.sum() < 50:
+            continue
+        ds, sv, xv = DS.values[m], S.values[m], xu.values[m]
+        xi = {d: k for k, d in enumerate(idx[m])}
+        def tet_sabit(x):
+            return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+        def tet_ikarus(i, j, p, gf, gt, gun):
+            return "STOP IKARUS" if ds[i, j] <= -3.5 and p < gf else None
+        def tet_endeks(i, j, p, gf, gt, gun):
+            k0 = xi.get(gt)
+            return "STOP endeks" if k0 is not None and (p / gf) / (xv[i] / xv[k0]) - 1 <= -0.20 else None
+        TET = {"-%15": tet_sabit(0.15), "-%20": tet_sabit(0.20), "IKARUS stop (zararda)": tet_ikarus, "endekse gore -%20": tet_endeks}
+        GG = {"fiyat cikisin %10 ustu": lambda i, j, p, cp, cg, gun: p >= cp * 1.10,
+              "IKARUS AL geri geldi": lambda i, j, p, cp, cg, gun: sv[i, j] in ("AL cift tik", "AL tek tik"),
+              "stop cizgisi ustu + cikis ustu": lambda i, j, p, cp, cg, gun: ds[i, j] > 0 and p > cp}
+        V = {"YOK (bugunku)": {}}
+        for tn, tf in TET.items():
+            V[f"{tn} | geri girmez"] = {"ek_stop": tf}
+            for gn, gf_ in GG.items():
+                V[f"{tn} | {gn} | yer tut"] = {"ek_stop": tf, "geri_gir": gf_, "slot_tut": True}
+                V[f"{tn} | {gn} | serbest"] = {"ek_stop": tf, "geri_gir": gf_, "slot_tut": False}
+        ii = np.flatnonzero(m)
+        mev = float(np.prod(1 + rr[ii[1:]] * np.diff(idx.values[ii]).astype("timedelta64[D]").astype(float) / 365.0))
+        siralar = [rng.random(C[m].shape) for _ in range(15)]
+        L.append(f"== {ad_d}: mevduat {100 * (mev - 1):+.0f}% | BIST100 {100 * (xv[-1] / xv[0] - 1):+.0f}%")
+        for ad_v, kw in V.items():
+            v, nst, ngg, nak = [], 0, 0, []
+            for sr in siralar:
+                e, tr, pz = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=sr, **kw)
+                v.append(e["deger"].iloc[-1] / BAS)
+                nst += int(tr.neden.str.startswith("STOP").sum())
+                nak.append(float((e["nakit"] / e["deger"]).mean()))
+            v = np.array(v)
+            L.append(f"  {ad_v:58s} ortanca {100 * (np.median(v) - 1):+6.0f}% | en kotu {100 * (v.min() - 1):+6.0f}% | stop/kosu {nst / 15:4.1f} | nakit %{100 * np.mean(nak):.0f}")
+            print(L[-1])
+        L.append("")
+    txt = "\n".join(L)
+    (R / "stop2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)

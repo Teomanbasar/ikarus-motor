@@ -897,6 +897,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "stop2":
+        from . import portfoy_bt as P
+        P.stop2_test(uzun=True)
     elif sys.argv[1] == "stop":
         from . import portfoy_bt as P
         P.stop_test(uzun=False)
