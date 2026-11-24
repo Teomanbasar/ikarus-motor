@@ -2126,3 +2126,74 @@ def secim2_test():
     txt = "\n".join(L)
     (R / "secim2_sonuc.txt").write_text(txt, encoding="utf-8")
     print(txt)
+
+
+def secim3_test():
+    """24 Kas: secim2'de 'dusuk hacim' one cikti. Saglamlik: (1) yil yil (her yil ayri baslar), rastgele vs dusuk hacim,
+    3 tohum x 15 kosu; (2) likidite esigi 3 kat (en sig hisseler aday olamaz) altinda ayni karsilastirma;
+    (3) hacim yerine 'devir hizi' (hacim / piyasa degeri) dusuk; (4) dusuk hacim kati sira."""
+    global UZUN
+    UZUN = True
+    EKSTRA.clear()
+    ham = {}
+    idx, C, S, PC, VR, TK, xu, m3 = panel(ham)
+    UZUN = False
+    rr = faiz_serisi(idx)
+    cols = list(C.columns)
+    VOL = pd.DataFrame({t: pd.Series(ham[t][10], index=ham[t][0]).reindex(idx) for t in cols if t in ham}).reindex(columns=cols)
+    RH = (-VOL).rank(axis=1, pct=True)
+    b = D.bist_list()
+    mc = dict(zip(b.ticker, b.mcap))
+    # devir hizi ~ 20g hacim / (bugunku piyasa degeri x fiyat orani): sermaye degisimini yok sayar (yaklasik)
+    MC = pd.DataFrame({t: C[t] / C[t].dropna().iloc[-1] * mc[t] for t in cols if t in mc and C[t].notna().any() and mc[t] == mc[t]}).reindex(columns=cols)
+    RD = (-(VOL / MC)).rank(axis=1, pct=True)
+    m3g = m3.copy(); m3g.index = m3g.index + pd.offsets.MonthBegin(1)
+    m3_ref = float(m3[m3.index <= pd.Timestamp("2021-01-01")].iloc[-1])
+    esik = 5e6 * np.minimum(1.0, m3g.reindex(idx, method="ffill").values / m3_ref)
+    VOLv = VOL.values; cj = {t: j for j, t in enumerate(cols)}
+    def stop_x(x):
+        return lambda i, j, p, gf, gt, gun: f"STOP zarar {int(100 * x)}" if p <= gf * (1 - x) else None
+    CANLI = {"ek_stop": stop_x(0.20), "geri_gir": lambda i, j, p, cp, cg, gun: p >= cp * 1.10, "slot_tut": True}
+    rng = np.random.default_rng(71)
+    L = ["SECIM 3: DUSUK HACIM SAGLAMLIK (24 Kas 2026). Canli kural, 5 hisse, 45 kosu (3 tohum x 15).", ""]
+    def kos(m, sr, haric=None):
+        e, _, _ = sim(idx[m], C[m], S[m], PC[m], VR[m], TK[m], N=5, iz=(0.20, 0.15), karal=90, sira=sr, haric=haric, **CANLI)
+        return e["deger"].iloc[-1] / BAS
+    def blok(m, haric_fn=None):
+        o = np.flatnonzero(m)[0]
+        h = None if haric_fn is None else (lambda i, t: haric_fn(o + i, t))
+        U = [rng.random(C[m].shape) for _ in range(45)]
+        r_ = np.array([kos(m, u, h) for u in U])
+        hv = np.nan_to_num(RH.values[m], nan=0.0)
+        d_ = np.array([kos(m, hv + 0.5 * u, h) for u in U])
+        dv = np.nan_to_num(RD.values[m], nan=0.0)
+        dd = np.array([kos(m, dv + 0.5 * u, h) for u in U[:15]])
+        k_ = kos(m, hv + 1e-6 * U[0], h)
+        return r_, d_, dd, k_
+    L.append("1) YIL YIL (her yil 100.000 TL ile ayri). Ortanca % | dusuk hacim rastgeleyi gecen kosu orani (ayni rastgele dizi ile)")
+    L.append(f"  {'yil':6s}{'rastgele':>10s}{'dus.hacim':>11s}{'kati':>8s}{'dus.devir':>11s}{'gecen':>8s}")
+    kazan = 0; yil_n = 0
+    for y in range(2015, 2027):
+        m = idx.year == y
+        if m.sum() < 60:
+            continue
+        r_, d_, dd, k_ = blok(m)
+        gec = float((d_ > r_).mean())
+        kazan += np.median(d_) > np.median(r_); yil_n += 1
+        L.append(f"  {y:<6d}{100 * (np.median(r_) - 1):+10.0f}{100 * (np.median(d_) - 1):+11.0f}{100 * (k_ - 1):+8.0f}{100 * (np.median(dd) - 1):+11.0f}{100 * gec:7.0f}%")
+        print(L[-1])
+    L.append(f"  -> dusuk hacim {kazan}/{yil_n} yilda rastgeleden iyi (ortanca).\n")
+    L.append("2) DONEMLER, normal esik ve 3 KAT likidite esigi (en sig hisseler aday olamaz). Ortanca % (en kotu %)")
+    def sig3(i, t):
+        v = VOLv[i, cj[t]]
+        return not (v == v) or v < 3 * esik[i]
+    for ad_d, b0, b1 in [("2015-17", "2015-01-01", "2017-12-31"), ("2018-20", "2018-01-01", "2020-12-31"), ("2021-24", "2021-01-01", "2024-12-31"), ("2025-26", "2025-01-01", "2026-12-31")]:
+        m = (idx >= b0) & (idx <= b1)
+        for et, hf in (("normal esik", None), ("3 kat esik", sig3)):
+            r_, d_, dd, k_ = blok(m, hf)
+            L.append(f"  {ad_d} {et:12s} rastgele {100 * (np.median(r_) - 1):+6.0f} ({100 * (r_.min() - 1):+5.0f}) | dusuk hacim {100 * (np.median(d_) - 1):+6.0f} ({100 * (d_.min() - 1):+5.0f})"
+                     f" | kati {100 * (k_ - 1):+6.0f} | dusuk devir {100 * (np.median(dd) - 1):+6.0f} | dusuk hacim gecen kosu %{100 * (d_ > r_).mean():.0f}")
+            print(L[-1])
+    txt = "\n".join(L)
+    (R / "secim3_sonuc.txt").write_text(txt, encoding="utf-8")
+    print(txt)

@@ -897,6 +897,9 @@ if __name__ == "__main__":
     elif sys.argv[1] == "deger":
         from . import portfoy_bt
         portfoy_bt.deger_test()
+    elif sys.argv[1] == "secim3":
+        from . import portfoy_bt as P
+        P.secim3_test()
     elif sys.argv[1] == "secim2":
         from . import portfoy_bt as P
         P.secim2_test()
